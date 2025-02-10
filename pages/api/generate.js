@@ -4,7 +4,7 @@ export default async function handler(req, res) {
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-    // ✅ Handle OPTIONS preflight requests
+    // ✅ Handle preflight requests
     if (req.method === "OPTIONS") {
         return res.status(200).end();
     }
@@ -19,12 +19,7 @@ export default async function handler(req, res) {
     }
 
     try {
-        // ✅ Correctly extract `prompt`
-        const prompt = req.body.prompt;
-
-        if (!prompt) {
-            return res.status(400).json({ error: "Missing prompt in request body" });
-        }
+        const { prompt } = req.body;
 
         const response = await fetch("https://api.openai.com/v1/completions", {
             method: "POST",
