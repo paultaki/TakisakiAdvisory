@@ -1,10 +1,8 @@
 export default async function handler(req, res) {
-    // ✅ Fix CORS issues
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-    // ✅ Handle preflight requests
     if (req.method === "OPTIONS") {
         return res.status(200).end();
     }
@@ -15,11 +13,13 @@ export default async function handler(req, res) {
 
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) {
+        console.error("❌ Missing API Key!");
         return res.status(500).json({ error: "Missing API key" });
     }
 
     try {
         const { prompt } = req.body;
+        console.log("🟢 Received Prompt:", prompt);
 
         const response = await fetch("https://api.openai.com/v1/completions", {
             method: "POST",
@@ -35,13 +35,16 @@ export default async function handler(req, res) {
         });
 
         if (!response.ok) {
+            console.error("❌ OpenAI API Error:", response.statusText);
             throw new Error(`OpenAI API error: ${response.statusText}`);
         }
 
         const data = await response.json();
+        console.log("✅ OpenAI Response:", data);
+
         return res.status(200).json(data);
     } catch (error) {
-        console.error("Error fetching OpenAI API:", error);
+        console.error("❌ Server Error:", error.message);
         return res.status(500).json({ error: error.message });
     }
 }
