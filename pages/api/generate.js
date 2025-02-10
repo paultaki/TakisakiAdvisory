@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-    // ✅ Allow CORS for all origins
+    // ✅ Fix CORS headers
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -9,19 +9,22 @@ export default async function handler(req, res) {
         return res.status(200).end();
     }
 
-    // ✅ Handle incorrect methods
     if (req.method !== "POST") {
         return res.status(405).json({ error: "Method Not Allowed" });
     }
 
     const apiKey = process.env.OPENAI_API_KEY;
-
     if (!apiKey) {
         return res.status(500).json({ error: "Missing API key" });
     }
 
     try {
-        const { prompt } = req.body;
+        // ✅ Correctly extract `prompt`
+        const prompt = req.body.prompt;
+
+        if (!prompt) {
+            return res.status(400).json({ error: "Missing prompt in request body" });
+        }
 
         const response = await fetch("https://api.openai.com/v1/completions", {
             method: "POST",
