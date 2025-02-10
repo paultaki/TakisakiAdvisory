@@ -1,11 +1,11 @@
 export default async function handler(req, res) {
-    // Allow requests from your frontend
+    // ✅ Fix CORS
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
     if (req.method === "OPTIONS") {
-        return res.status(200).end(); // Preflight request response
+        return res.status(200).end(); // ✅ Preflight request response
     }
 
     if (req.method !== "POST") {
@@ -39,7 +39,6 @@ export default async function handler(req, res) {
         }
 
         const data = await response.json();
-
         return res.status(200).json(data);
     } catch (error) {
         console.error("Error fetching OpenAI API:", error);
