@@ -8,7 +8,6 @@
     
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/png" href="images/favicon.webp">
-    <script defer src="js/script.js"></script>
 </head>
 <body>
     <!-- Hero Section -->
@@ -22,6 +21,7 @@
     </header>
 
     <div class="container">
+        <!-- Services Section -->
         <section class="services">
             <h2>What I Fix</h2>
             <div class="services-grid">
@@ -43,6 +43,7 @@
             </div>
         </section>
 
+        <!-- About Section -->
         <section class="about-section">
             <h2>Meet Paul Takisaki</h2>
             <div class="about-container">
@@ -62,6 +63,7 @@
             </div>
         </section>
         
+        <!-- Testimonials Section -->
         <section class="testimonials-section">
             <h2>What Our Clients Say</h2>
             <div class="testimonials-container">
@@ -70,6 +72,7 @@
             </div>
         </section>
                   
+        <!-- AI Quiz Section -->
         <section class="ai-quiz">
             <div class="quiz-container">
                 <div class="quiz-content">
@@ -84,7 +87,7 @@
                                 <option value="large">21+</option>
                             </select>
                         </div>
-        
+
                         <div class="form-group">
                             <label for="biggest-challenge">What's your biggest sales challenge?</label>
                             <select id="biggest-challenge" name="biggest-challenge">
@@ -93,45 +96,21 @@
                                 <option value="competition">Losing to competitors</option>
                             </select>
                         </div>
-        
+
                         <button type="submit" class="cta-button">Get My AI Insights 🚀</button>
                     </form>
                     <div id="quiz-results" class="hidden"></div>
                 </div>
             </div>
         </section>
-        <script>
-            document.getElementById("sales-quiz").addEventListener("submit", async function(event) {
-    event.preventDefault();
-    const teamSize = document.getElementById("team-size").value;
-    const challenge = document.getElementById("biggest-challenge").value;
-
-    const prompt = `I am a sales consultant. A user with a ${teamSize} sales team is struggling with ${challenge}. Provide a 3-sentence AI-driven recommendation.`;
-
-    try {
-        const response = await fetch("/api/generate", {  // 🔥 Calls your Vercel function!
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ prompt })
-        });
-
-        const data = await response.json();
-        document.getElementById("quiz-results").innerHTML = `<p><strong>AI Insights:</strong> ${data.choices[0].text.trim()}</p>`;
-        document.getElementById("quiz-results").classList.remove("hidden");
-    } catch (error) {
-        console.error("Error fetching AI insights:", error);
-        document.getElementById("quiz-results").innerHTML = `<p><strong>Error:</strong> Unable to fetch AI insights at this time.</p>`;
-        document.getElementById("quiz-results").classList.remove("hidden");
-    }
-});
-
-        </script>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 Takisaki Advisory | All Rights Reserved | Contact: <a href="mailto:info@paultakisaki.com">info@paultakisaki.com</a></p>
     </footer>
+
+    <!-- Load JavaScript -->
+    <script defer src="js/index.js"></script>
 </body>
 </html>
