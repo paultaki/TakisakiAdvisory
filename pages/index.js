@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import "../css/styles.css";
 
 export default function Home() {
     /*** 🏆 Testimonials Data 🏆 ***/
@@ -34,37 +35,6 @@ export default function Home() {
         return () => clearInterval(interval);
     }, []);
 
-    // AI Quiz Submission Handling
-    const [quizResult, setQuizResult] = useState(null);
-    const [loading, setLoading] = useState(false);
-
-    const handleQuizSubmit = async (event) => {
-        event.preventDefault();
-        setLoading(true);
-
-        const teamSize = event.target["team-size"].value;
-        const challenge = event.target["biggest-challenge"].value;
-
-        const prompt = `I am a sales consultant. A user with a ${teamSize} sales team is struggling with ${challenge}. Provide a 3-sentence AI-driven recommendation.`;
-
-        try {
-            const response = await fetch("/api/generate", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ prompt })
-            });
-
-            if (!response.ok) throw new Error("API request failed");
-            const data = await response.json();
-
-            setQuizResult(data.choices[0]?.text.trim() || "No insights available.");
-        } catch (error) {
-            setQuizResult("Error fetching AI insights. Please try again later.");
-        } finally {
-            setLoading(false);
-        }
-    };
-
     return (
         <>
             <Head>
@@ -83,7 +53,50 @@ export default function Home() {
             </header>
 
             <div className="container">
-                {/* Testimonials Section */}
+                {/* 🔥 MISSING "What I Fix" SECTION FIXED 🔥 */}
+                <section className="services">
+                    <h2>What I Fix</h2>
+                    <div className="services-grid">
+                        <div className="service-card">
+                            <h3>🚀 Your Revenue Has Stalled</h3>
+                            <p>Slow growth, long sales cycles, and inconsistent pipelines.</p>
+                            <strong>✅ Solution:</strong> GTM strategy audit, sales motion fixes, and revenue engine optimization.
+                        </div>
+                        <div className="service-card">
+                            <h3>📈 Your Sales Team Is Missing Quotas</h3>
+                            <p>Underperforming reps, lost deals, and objection struggles.</p>
+                            <strong>✅ Solution:</strong> Sales process optimization, ICP refinement, and elite coaching.
+                        </div>
+                        <div className="service-card">
+                            <h3>🎯 Your Competitors Are Scaling Faster</h3>
+                            <p>Losing deals, weak positioning, or falling behind in market share.</p>
+                            <strong>✅ Solution:</strong> Product repositioning, pricing adjustments, and market strategy.
+                        </div>
+                    </div>
+                </section>
+
+
+
+                {/* 🔥 MISSING "Meet Paul Takisaki" (About Me) SECTION FIXED 🔥 */}
+                <section className="about-section">
+                    <h2>Meet Paul Takisaki</h2>
+                    <div className="about-container">
+                        <div className="about-image">
+                            <img src="/images/headshot.webp" alt="Paul Takisaki" />
+                        </div>
+                        <div className="about-content">
+                            <ul className="about-list">
+                                <li>🚀 <strong>20+ years scaling B2B, SaaS & AI startups</strong></li>
+                                <li>🏆 <strong>4x Verizon President's Cabinet Winner</strong></li>
+                                <li>🔥 <strong>Expert in GTM, ICP targeting, & deal conversion</strong></li>
+                                <li>📈 <strong>Built high-performing sales teams that smashed revenue goals</strong></li>
+                            </ul>
+                            <img src="/images/pc.webp" alt="President's Cabinet Badge" className="award-badge" style={{ width: "150px", height: "auto" }} />
+                            <a href="https://calendly.com/paultakisaki-info" className="cta-button">Let's Build Your Sales Engine 🚀</a>
+                        </div>
+                    </div>
+                </section>
+
                 <section className="testimonials-section">
                     <h2>What Our Clients Say</h2>
                     <div className="testimonials-container">
@@ -95,38 +108,6 @@ export default function Home() {
                             <p className="testimonial-text">"{rightTestimonial.text}"</p>
                             <p className="testimonial-author">- {rightTestimonial.author}</p>
                         </div>
-                    </div>
-                </section>
-
-                {/* AI Quiz Section */}
-                <section className="ai-quiz">
-                    <div className="quiz-container">
-                        <h2>🚀 AI-Powered Sales Strategy Quiz</h2>
-                        <p className="quiz-subtitle">Discover what's holding your sales team back and get instant, AI-generated insights.</p>
-                        <form onSubmit={handleQuizSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="team-size">How big is your sales team?</label>
-                                <select id="team-size" name="team-size">
-                                    <option value="small">1-5</option>
-                                    <option value="medium">6-20</option>
-                                    <option value="large">21+</option>
-                                </select>
-                            </div>
-
-                            <div className="form-group">
-                                <label htmlFor="biggest-challenge">What's your biggest sales challenge?</label>
-                                <select id="biggest-challenge" name="biggest-challenge">
-                                    <option value="pipeline">Inconsistent pipeline</option>
-                                    <option value="closing">Low close rates</option>
-                                    <option value="competition">Losing to competitors</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" className="cta-button" disabled={loading}>
-                                {loading ? "Generating Insights..." : "Get My AI Insights 🚀"}
-                            </button>
-                        </form>
-                        {quizResult && <div id="quiz-results"><p>{quizResult}</p></div>}
                     </div>
                 </section>
             </div>
