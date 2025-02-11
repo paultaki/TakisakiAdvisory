@@ -1,6 +1,7 @@
 {
   "name": "takisakiadvisory",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
@@ -16,9 +17,4 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
-}
-"scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start"
 }
