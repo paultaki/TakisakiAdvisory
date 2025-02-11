@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import "../css/styles.css";
 
 export default function Home() {
+    console.log("✅ Home Component Rendered");
+
+    useEffect(() => {
+        console.log("✅ Checking for missing sections...");
+    }, []);
     /*** 🏆 Testimonials Data 🏆 ***/
     const testimonials = [
         { text: "Paul consistently demonstrated excellence as a sales leader, achieving Verizon's highest sales honor, the President's Cabinet, four times. His ability to drive results and elevate his teams is unmatched.", author: "Mike Caralis" },
@@ -77,7 +81,8 @@ export default function Home() {
 
 
 
-                {/* 🔥 MISSING "Meet Paul Takisaki" (About Me) SECTION FIXED 🔥 */}
+                {/* 🔥 Check if "Meet Paul Takisaki" is being processed */}
+                {console.log("🔍 Rendering 'Meet Paul Takisaki' Section")}
                 <section className="about-section">
                     <h2>Meet Paul Takisaki</h2>
                     <div className="about-container">
@@ -96,6 +101,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
+            </div>
 
                 <section className="testimonials-section">
                     <h2>What Our Clients Say</h2>
