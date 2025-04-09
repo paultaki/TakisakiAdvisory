@@ -723,3 +723,371 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* Enhanced Visual Hierarchy - Key Elements */
+
+/* 1. Make important headings more distinct */
+.section-title h2 {
+  font-size: 2.8rem; /* Slightly larger */
+  letter-spacing: -0.5px; /* Tighter letter spacing for sophistication */
+}
+
+/* Add visual emphasis to special sections */
+.featured-section {
+  position: relative;
+  padding: 5rem 0;
+  background-color: var(--primary);
+  color: white;
+  overflow: hidden;
+}
+
+.featured-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  background: url("/api/placeholder/600/800") no-repeat center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.featured-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-section .section-title h2,
+.featured-section .section-title p {
+  color: white;
+}
+
+.featured-section .section-title h2::after {
+  background: var(--accent);
+  width: 100px; /* Make the accent line wider for emphasis */
+}
+
+/* 2. Highlighted card for key methodologies */
+.key-method-card {
+  position: relative;
+  border-left: 4px solid var(--accent);
+  padding: 2rem;
+  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.key-method-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.key-method-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(241, 143, 1, 0.1) 0%,
+    transparent 50%
+  );
+  z-index: 0;
+}
+
+.key-method-card h3 {
+  position: relative;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--primary);
+  z-index: 1;
+}
+
+.key-method-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.key-method-card p {
+  position: relative;
+  z-index: 1;
+}
+
+/* 3. Hero enhanced visual weight */
+.hero h1 {
+  font-size: 4.2rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+}
+
+/* 4. Featured case study with stronger visual presence */
+.featured-case {
+  position: relative;
+  grid-column: 1 / -1;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0;
+  margin-bottom: 2rem;
+}
+
+.featured-case::before {
+  content: "Featured Case Study";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.featured-case .case-img {
+  height: 100%;
+  position: relative;
+}
+
+.featured-case .case-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent 70%, rgba(0, 0, 0, 0.2));
+}
+
+.featured-case .case-content {
+  padding: 2.5rem;
+}
+
+.featured-case h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* 5. Statistics with more visual impact */
+.enhanced-stat-item {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.enhanced-stat-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--accent);
+}
+
+.enhanced-stat-item h4 {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+}
+
+.enhanced-stat-item p {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+/* 6. Enhanced testimonial card for executive quotes */
+.executive-testimonial {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.executive-testimonial::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 8rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.executive-testimonial p {
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  z-index: 1;
+}
+
+.executive-testimonial .testimonial-author {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.executive-testimonial .testimonial-name h4 {
+  color: white;
+  margin-bottom: 0.2rem;
+}
+
+.executive-testimonial .testimonial-position {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+/* 7. CTA with stronger visual presence */
+.primary-cta {
+  display: inline-block;
+  padding: 15px 35px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.primary-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.primary-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(241, 143, 1, 0.3);
+}
+
+.primary-cta:hover::before {
+  left: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-case {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-case .case-img {
+    height: 250px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .enhanced-stat-item h4 {
+    font-size: 2.8rem;
+  }
+}
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-btns .btn {
+  min-width: 180px;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .hero-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+/* Hover effect for the methodology cards */
+.philosophy-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.philosophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Learn more indicator that appears on hover */
+.philosophy-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-card::after {
+  content: "Learn more →";
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: var(--accent);
+  font-weight: 600;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.philosophy-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
