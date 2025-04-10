@@ -1091,3 +1091,228 @@ footer {
   opacity: 1;
   transform: translateX(0);
 }
+/* Service List Styling */
+.service-list {
+  list-style-type: none;
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+}
+
+.service-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.service-list li i {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+/* Logo Styling */
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+  transition: var(--transition);
+}
+
+.footer-logo img {
+  height: 40px;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1); /* Make the logo white in the footer */
+}
+
+/* Results Dashboard styles */
+.results-dashboard {
+  background: var(--light);
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.results-dashboard::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 70%;
+  height: 140%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 105, 137, 0.1) 0%,
+    rgba(15, 48, 87, 0.1) 100%
+  );
+  transform: rotate(-15deg);
+  z-index: 0;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+.results-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.results-title h2 {
+  margin-bottom: 0.5rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.result-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.result-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent);
+}
+
+.result-icon {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.result-icon i {
+  font-size: 2.5rem;
+  color: var(--accent);
+  background: rgba(241, 143, 1, 0.1);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.result-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.result-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+.result-desc {
+  font-size: 0.9rem;
+  color: var(--dark);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(108, 122, 137, 0.2);
+}
+
+/* Enhanced transition for call-to-action buttons */
+.btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+/* Pulsing animation for key metrics */
+@keyframes subtle-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.key-metric {
+  animation: subtle-pulse 3s infinite;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .result-icon i {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+
+  .result-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.key-method-card p {
+  color: #333333; /* Dark gray text color for readability */
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* For the emphasized text */
+.key-method-card em {
+  color: #0d3b66; /* Your primary color */
+  font-weight: 600;
+}
+
+.about-img {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-img {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  line-height: 0; /* Removes any potential spacing */
+}
