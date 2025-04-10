@@ -736,7 +736,7 @@ footer {
   position: relative;
   padding: 5rem 0;
   background-color: var(--primary);
-  color: white;
+  color: black;
   overflow: hidden;
 }
 
@@ -1297,4 +1297,240 @@ footer {
 .key-method-card em {
   color: #0d3b66; /* Your primary color */
   font-weight: 600;
+}
+/* Leadership Flywheel Section Styling */
+.leadership-flywheel {
+  padding: 6rem 0;
+  background-color: var(--lightgray);
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-flywheel::before {
+  content: "";
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  width: 40%;
+  height: 120%;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 48, 87, 0.05) 0%,
+    rgba(0, 105, 137, 0.05) 100%
+  );
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+
+.flywheel-content {
+  position: relative;
+  z-index: 2;
+  padding-right: 2rem;
+}
+
+.flywheel-content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: var(--primary);
+  position: relative;
+}
+
+.flywheel-content h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+}
+
+.flywheel-content p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.flywheel-content strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.flywheel-image {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flywheel-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .leadership-flywheel .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flywheel-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Enhanced Hero Section */
+.hero h1 {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  font-size: 1.4rem;
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.highlighted-text {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3.2rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+}
+/* Flywheel Leadership Section Styles */
+.leadership-flywheel {
+  padding: 6rem 0;
+  background-color: var(--light);
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-flywheel::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(241, 143, 1, 0.1) 0%,
+    rgba(15, 48, 87, 0.1) 100%
+  );
+  z-index: 0;
+}
+
+.leadership-flywheel::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 48, 87, 0.05) 0%,
+    rgba(241, 143, 1, 0.05) 100%
+  );
+  z-index: 0;
+}
+
+.flywheel-content {
+  position: relative;
+  z-index: 1;
+  padding-right: 2rem;
+}
+
+.flywheel-content h2 {
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.flywheel-content h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.flywheel-content p {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
+
+.flywheel-content strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.flywheel-image {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flywheel-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease;
+}
+
+.flywheel-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Animation for the flywheel concept */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.flywheel-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.2;
+  animation: spin 20s linear infinite;
+}
+
+@media (max-width: 768px) {
+  .flywheel-content {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .flywheel-image {
+    order: -1;
+    margin-bottom: 2rem;
+  }
 }
