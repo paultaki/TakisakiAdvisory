@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Case Study: How Paul Takisaki transformed a flawed quota system into a fair national standard at Verizon, driving record growth and becoming the company benchmark for six years."
+    />
+    <title>
+      Case Study: National Quota Model Transformation | Paul Takisaki
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Case Study Page Specific Styles */
+      .case-study-hero {
+        background: linear-gradient(
+          to right,
+          rgba(15, 48, 87, 0.9),
+          rgba(0, 105, 137, 0.7)
+        ),
+        url("/api/placeholder/1200/500") no-repeat center center/cover;
+        padding: 130px 0 80px;
+        color: white;
+      }
+
+      .case-study-hero h1 {
+        color: white;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .case-meta {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .meta-item {
+        display: flex;
+        align-items: center;
+      }
+
+      .meta-icon {
+        font-size: 1.2rem;
+        color: var(--accent);
+        margin-right: 10px;
+      }
+
+      .meta-text {
+        font-weight: 600;
+      }
+
+      .results-overview {
+        background-color: var(--lightgray);
+        padding: 4rem 0;
+      }
+
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .result-box {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: var(--transition);
+      }
+
+      .result-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .result-value {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      .result-description {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .case-content {
+        padding: 5rem 0;
+      }
+
+      .case-content h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 2.2rem;
+      }
+
+      .case-content h3 {
+        color: var(--secondary);
+        margin: 2rem 0 1rem;
+        font-size: 1.8rem;
+      }
+
+      .case-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+
+      .case-content ul,
+      .case-content ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2rem;
+      }
+
+      .case-content li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+      }
+
+      .quote-box {
+        background-color: var(--lightgray);
+        padding: 2.5rem;
+        border-radius: 10px;
+        margin: 3rem 0;
+        position: relative;
+      }
+
+      .quote-box::before {
+        content: """;
+        font-size: 5rem;
+        font-family: Georgia, serif;
+        color: rgba(15, 48, 87, 0.1);
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        line-height: 1;
+      }
+
+      .quote-text {
+        font-size: 1.3rem;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 1.2rem;
+        position: relative;
+        z-index: 1;
+        color: var(--primary);
+      }
+
+      .quote-author {
+        font-weight: 700;
+        color: var(--secondary);
+        font-size: 1.1rem;
+      }
+
+      .phase-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-left: 5px solid var(--accent);
+      }
+
+      .phase-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .phase-number {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--accent);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-right: 1rem;
+      }
+
+      .phase-heading {
+        font-size: 1.4rem;
+        color: var(--primary);
+        margin: 0;
+      }
+
+      .implementation-section {
+        background-color: var(--lightgray);
+        padding: 4rem 0;
+      }
+
+      .implementation-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      .implementation-image {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .implementation-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .takeaways-section {
+        padding: 5rem 0;
+      }
+
+      .takeaway-box {
+        background-color: rgba(15, 48, 87, 0.05);
+        padding: 2rem;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-left: 4rem;
+      }
+
+      .takeaway-icon {
+        position: absolute;
+        left: 1.5rem;
+        top: 2rem;
+        font-size: 1.5rem;
+        color: var(--accent);
+      }
+
+      .takeaway-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.8rem;
+      }
+
+      .cta-section {
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        color: white;
+        padding: 4rem 0;
+        text-align: center;
+      }
+
+      .cta-section h2 {
+        color: white;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-section p {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+      }
+
+      .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--lightgray);
+      }
+
+      .nav-btn {
+        display: flex;
+        align-items: center;
+        color: var(--primary);
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      .nav-btn:hover {
+        color: var(--accent);
+      }
+
+      .nav-btn-icon {
+        margin: 0 10px;
+      }
+
+      .visual-divider {
+        height: 4px;
+        width: 80px;
+        background: var(--accent);
+        margin: 2rem 0;
+      }
+
+      @media (max-width: 992px) {
+        .implementation-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .case-study-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .result-value {
+          font-size: 2.5rem;
+        }
+
+        .quote-text {
+          font-size: 1.1rem;
+        }
+
+        .nav-buttons {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header (Include your site header here) -->
+    <header id="header">
+      <div class="container flex-between">
+        <a href="index.html" class="logo">Paul<span>Takisaki</span></a>
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#blog">Insights</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="case-study-hero">
+      <div class="container">
+        <h1>From Flawed to Fair: National Quota Model Transformation</h1>
+        <p>
+          How a revolutionary four-dimensional quota system became Verizon's
+          national standard and delivered 19 consecutive months of
+          record-breaking growth.
+        </p>
+        <div class="case-meta">
+          <div class="meta-item">
+            <div class="meta-icon"><i class="fas fa-calendar-alt"></i></div>
+            <div class="meta-text">2017-2023</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-icon"><i class="fas fa-industry"></i></div>
+            <div class="meta-text">Telecommunications</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-icon"><i class="fas fa-tag"></i></div>
+            <div class="meta-text">Sales Operations</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="meta-text">National Scale</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Overview Section -->
+    <section class="results-overview">
+      <div class="container">
+        <div class="section-title">
+          <h2>Results at a Glance</h2>
+          <p>
+            Measurable impact that transformed how an entire organization
+            approached sales performance
+          </p>
+        </div>
+        <div class="results-grid">
+          <div class="result-box">
+            <div class="result-value">19</div>
+            <div class="result-description">
+              Consecutive months of year-over-year growth
+            </div>
+          </div>
+          <div class="result-box">
+            <div class="result-value">0</div>
+            <div class="result-description">
+              Quota complaints from the field during rollout
+            </div>
+          </div>
+          <div class="result-box">
+            <div class="result-value">6+</div>
+            <div class="result-description">
+              Years as Verizon's national standard model
+            </div>
+          </div>
+          <div class="result-box">
+            <div class="result-value">500%+</div>
+            <div class="result-description">
+              Year-over-year growth in strategic region
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Study Content -->
+    <section class="case-content">
+      <div class="container">
+        <h2>The Challenge</h2>
+        <p>
+          When I took over as Senior Director overseeing B2B sales across seven
+          states, I inherited a quota system that was quietly eroding
+          performance and culture. The existing model relied heavily on a
+          rolling three-month average: if a rep delivered X% of quota, their
+          next allocation adjusted accordingly. On paper, this seemed
+          equitable—reward consistency and smooth out anomalies. In practice, it
+          was actively undermining our business.
+        </p>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">1</div>
+            <h3 class="phase-heading">High performers were being punished</h3>
+          </div>
+          <p>
+            Sales representatives who crushed their quota saw their targets
+            skyrocket without proportional rewards, effectively penalizing them
+            for excellence. This created a perverse incentive: why go above and
+            beyond if it only makes next month harder?
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">2</div>
+            <h3 class="phase-heading">Underperformers were coasting</h3>
+          </div>
+          <p>
+            Meanwhile, reps who missed their targets watched their quotas
+            shrink, lowering the bar and shielding them from accountability. The
+            system wasn't just unfair—it was actively encouraging mediocrity.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">3</div>
+            <h3 class="phase-heading">
+              Leadership couldn't drive accountability
+            </h3>
+          </div>
+          <p>
+            As a leader, I couldn't effectively hold reps accountable. In
+            high-potential territories (Zone 1), an underperformer's quota would
+            drop, masking their failure and weakening our best patches. My
+            regional managers called monthly with lengthy arguments about why
+            their quotas were unfair, wasting valuable time we didn't have.
+          </p>
+        </div>
+
+        <p>
+          The business impact was clear: we were losing top talent who felt
+          handicapped by the system, while low performers coasted with no
+          incentive to improve. The quota model had become a convenient
+          scapegoat for missed targets, creating a culture of excuses rather
+          than execution.
+        </p>
+
+        <div class="quote-box">
+          <p class="quote-text">
+            "The status quo wasn't just ineffective—it was actively toxic. We
+            needed a system that reflected territory potential, rewarded effort,
+            and gave us a clear benchmark for success. Most importantly, it had
+            to feel fair and transparent to the frontline."
+          </p>
+          <p class="quote-author">— Paul Takisaki</p>
+        </div>
+
+        <h2>The Solution</h2>
+        <p>
+          I recognized that a simple patch wouldn't fix this structural problem.
+          We needed a comprehensive solution that aligned incentives with both
+          business needs and human psychology. After analyzing data across my
+          seven-state region—examining territory size, customer density,
+          historical results, and rep feedback—I developed a four-dimensional
+          quota framework:
+        </p>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">1</div>
+            <h3 class="phase-heading">Territory Potential (40%)</h3>
+          </div>
+          <p>
+            We divided territories into five zones based on objective
+            opportunity factors: market maturity, industry presence, and growth
+            trends. Zone 1 represented our highest potential areas; Zone 5 our
+            least. Quotas scaled accordingly—higher in Zone 1, lower in Zone
+            5—while never capping achievement. This ensured we didn't punish
+            strength or undervalue weaker markets.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">2</div>
+            <h3 class="phase-heading">Zip Code Complexity (10%)</h3>
+          </div>
+          <p>
+            We accounted for geographic sprawl in our model. More zip codes
+            meant more travel time—especially in rural markets like Montana or
+            Alaska where reps pulled over on highways or prospected from
+            airports at night. Quotas adjusted slightly downward to credit this
+            logistical grind, making effort visible in the math.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">3</div>
+            <h3 class="phase-heading">
+              Active Lines / Existing Customer Base (30%)
+            </h3>
+          </div>
+          <p>
+            Data showed that reps with larger existing customer bases
+            consistently outperformed, benefiting from established relationships
+            and product diversity (phones, IoT, SaaS). We weighted this
+            component heavily but not overwhelmingly—reps still needed to hustle
+            rather than simply leverage legacy wins.
+          </p>
+        </div>
+
+        <div class="phase-card">
+          <div class="phase-title">
+            <div class="phase-number">4</div>
+            <h3 class="phase-heading">Performance Influence (20%)</h3>
+          </div>
+          <p>
+            We allowed past performance to shape quotas, but with guardrails: a
+            floor prevented underperformers from coasting, and a ceiling
+            protected high achievers from unfair expectations. At 20%, this
+            component gave modest weight to history while prioritizing potential
+            over past results.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Section -->
+    <section class="implementation-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Implementation Strategy</h2>
+          <p>
+            A brilliant model on paper means nothing without effective
+            execution. The messaging approach was as critical as the math.
+          </p>
+        </div>
+        <div class="implementation-grid">
+          <div>
+            <h3>Transparency as the Foundation</h3>
+            <p>
+              I recognized that even the best model would fail if people didn't
+              trust it. So I built a rollout focused on education, transparency,
+              and inclusion:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Organization-Wide Kickoff Calls</strong> — I held
+                virtual town halls across all seven states, walking through the
+                model's logic live. I showed the data—territory zones, zip code
+                impacts, active line correlations—and tied it to their wallets:
+                "This is how you'll hit quota, earn commission, and win
+                recognition." I took questions on the spot, letting reps vent or
+                clarify. No scripts, just straight talk.
+              </li>
+
+              <li>
+                <strong>Team-by-Team Reinforcement</strong> — After the big
+                calls, I scheduled individual sessions with each team and their
+                managers. We drilled into their specific territories—Zone 1
+                urban hubs, Zone 5 rural stretches—showing how their quotas were
+                built. I'd say, "Here's your active lines, here's your zip code
+                adjustment—any gaps?" Transparency killed the "this is unfair"
+                chatter. Reps saw the numbers weren't arbitrary.
+              </li>
+
+              <li>
+                <strong>Peer-Based Buy-In</strong> — My directs still grumbled
+                early on, so I flipped the script: "You think I'm off?
+                Distribute the quotas yourselves—data-backed and
+                peer-defensible." They dug into the same inputs I did—potential,
+                zip codes, lines—and landed within 5% of my allocations. After
+                that, complaints vanished. They owned it because they built it.
+              </li>
+            </ul>
+          </div>
+          <div class="implementation-image">
+            <img
+              src="/api/placeholder/600/800"
+              alt="Implementation Strategy in Action"
+            />
+          </div>
+        </div>
+
+        <div class="visual-divider"></div>
+
+        <h3>The Leadership Shift: Accountability Meets Aspiration</h3>
+        <p>
+          The model changed more than quotas—it transformed how we led.
+          Previously, I couldn't hold a rep accountable in a Zone 1 territory
+          because their underperformance lowered the target, masking the issue.
+          Now, the data set a baseline: "This is what a good rep produces here."
+          If they missed, it wasn't the quota's fault—someone else could step in
+          and deliver.
+        </p>
+
+        <p>
+          Over time, Zone 1 territories became prizes, not burdens. Top reps
+          applied for them, pitching why they deserved the higher quota and
+          bigger upside. Existing reps made cases to take them over rather than
+          leaving them for new hires. It flipped the dynamic—high quotas became
+          a badge of honor, driving ownership and competition.
+        </p>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="case-content">
+      <div class="container">
+        <h2>The Impact</h2>
+        <p>The results spoke quickly and clearly:</p>
+
+        <ul>
+          <li>
+            <strong>Quota Complaints Dropped to Zero</strong> for a full quarter
+            during rollout—a first in my tenure. Reps stopped arguing fairness
+            and started chasing results.
+          </li>
+
+          <li>
+            <strong>Top 20% Thrived</strong>—Zone 1 reps crushed quotas, setting
+            records and inspiring peers without feeling penalized.
+          </li>
+
+          <li>
+            <strong>Underperformers Stepped Up</strong>—the floor kept them
+            honest, and the transparency showed them the path.
+          </li>
+
+          <li>
+            <strong>19 Months of Year-Over-Year Growth</strong>—our seven-state
+            team broke historical benchmarks, even against a competitor across
+            the street.
+          </li>
+        </ul>
+
+        <p>
+          Word spread quickly. Other Senior Directors called for our playbook,
+          and I shared everything—org calls, team breakdowns, peer distribution
+          strategies, all of it. Verizon's national leadership took notice,
+          piloted the model across more regions, and refined it with my input.
+          By 2019, it became the standard quota model for all B2B SMB reps
+          nationwide.
+        </p>
+
+        <p>For the last six years, it's held strong, delivering:</p>
+
+        <ul>
+          <li>
+            <strong>Consistency</strong>—a fair, predictable framework reps
+            could rely on
+          </li>
+          <li>
+            <strong>Scalability</strong>—adaptable to urban hubs or rural
+            sprawls, big teams or small
+          </li>
+          <li>
+            <strong>Retention</strong>—top performers stayed, motivated by a
+            system that rewarded them appropriately
+          </li>
+          <li>
+            <strong>Performance</strong>—aligned with business goals like net
+            adds and recurring revenue
+          </li>
+        </ul>
+
+        <div class="quote-box">
+          <p class="quote-text">
+            "Paul's quota model changed everything for us. For the first time, I
+            had clear expectations based on my territory's potential—not just
+            what happened last quarter. My team started seeing high quotas as
+            opportunities rather than punishments."
+          </p>
+          <p class="quote-author">— Regional Manager, Verizon</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Takeaways Section -->
+    <section class="takeaways-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Leadership Takeaways</h2>
+          <p>
+            Core principles from this transformation that can apply across
+            industries and challenges
+          </p>
+        </div>
+
+        <div class="takeaway-box">
+          <div class="takeaway-icon"><i class="fas fa-bullseye"></i></div>
+          <h3 class="takeaway-title">System Design Trumps Individual Effort</h3>
+          <p>
+            When structural problems create misalignment, no amount of
+            motivation or pressure will fix performance. By focusing on the
+            underlying system rather than pushing harder on people, we created
+            sustainable improvement that outlasted individual contributors.
+          </p>
+        </div>
+
+        <div class="takeaway-box">
+          <div class="takeaway-icon"><i class="fas fa-search"></i></div>
+          <h3 class="takeaway-title">Transparency Builds Trust</h3>
+          <p>
+            The success of this initiative wasn't just in the math—it was in
+            showing the work. By making the quota calculation visible and
+            understandable, we eliminated the perception of arbitrary or unfair
+            targets that had previously undermined performance.
+          </p>
+        </div>
+
+        <div class="takeaway-box">
+          <div class="takeaway-icon"><i class="fas fa-users"></i></div>
+          <h3 class="takeaway-title">Peer Validation Accelerates Adoption</h3>
+          <p>
+            Having skeptical managers distribute quotas themselves using our
+            model was a turning point. When they arrived at nearly identical
+            figures, resistance evaporated. Involvement created ownership in a
+            way that top-down directives never could.
+          </p>
+        </div>
+
+        <div class="takeaway-box">
+          <div class="takeaway-icon"><i class="fas fa-balance-scale"></i></div>
+          <h3 class="takeaway-title">
+            Fairness Matters More Than Favorability
+          </h3>
+          <p>
+            People will accept challenging targets if they believe the process
+            behind them is fair. Our model didn't make quotas easier—in many
+            cases, it made them harder—but the transparency and equity in how
+            they were calculated made them more motivating, not less.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Transform Your Sales Performance Systems</h2>
+        <p>
+          Every organization faces unique challenges in aligning incentives with
+          performance. I can help you develop compensation and quota frameworks
+          that drive the right behaviors while feeling fair to your team.
+        </p>
+        <a href="index.html#contact" class="btn btn-accent"
+          >Schedule a Consultation</a
+        >
+      </div>
+    </section>
+
+    <!-- Navigation Buttons -->
+    <div class="container">
+      <div class="nav-buttons">
+        <a href="case-studies.html" class="nav-btn">
+          <i class="fas fa-arrow-left nav-btn-icon"></i>
+          Back to All Case Studies
+        </a>
+        <a href="customer-success-case-study.html" class="nav-btn">
+          Next Case Study: Customer Success Team
+          <i class="fas fa-arrow-right nav-btn-icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer (Include your site footer here) -->
+    <footer>
+      <div class="container">
+        <div class="grid grid-4">
+          <div class="footer-col footer-about">
+            <div class="footer-logo">Paul<span>Takisaki</span></div>
+            <p>
+              Transforming underperforming teams into record-breaking engines
+              through strategic leadership and people-first culture building.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="index.html"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="index.html#about"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="index.html#services"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="case-studies.html"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a href="index.html#testimonials"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a href="index.html#blog"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Insights</a
+                >
+              </li>
+              <li>
+                <a href="index.html#contact"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-heading">Services</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="services.html#fractional-cro"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Fractional CRO Services</a
+                >
+              </li>
+              <li>
+                <a href="services.html#sales-transformation"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Sales Team Transformation</a
+                >
+              </li>
+              <li>
+                <a href="services.html#leadership-coaching"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Executive Leadership Coaching</a
+                >
+              </li>
+              <li>
+                <a href="services.html#growth-strategy"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Growth Strategy Consulting</a
+                >
+              </li>
+              <li>
+                <a href="services.html#team-building"
+                  ><i
+                    class="fas fa-chevron-right"
+                    style="font-size: 0.8em; margin-right: 8px"
+                  ></i
+                  >Team Building Workshops</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3 class="footer-heading">Subscribe</h3>
+            <p>
+              Stay updated with my latest insights on leadership and growth
+              strategy.
+            </p>
+            <form class="mt-2">
+              <input
+                type="email"
+                placeholder="Your Email"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  margin-bottom: 10px;
+                  border: none;
+                  border-radius: 4px;
+                "
+              />
+              <button type="submit" class="btn btn-accent" style="width: 100%">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
