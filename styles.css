@@ -532,8 +532,7 @@ nav ul li a.active::after {
 .blog-content {
   padding: 1.5rem;
 }
-
-.blog-date {
+7 .blog-date {
   color: var(--gray);
   margin-bottom: 0.5rem;
 }
@@ -2194,5 +2193,10 @@ footer {
 
   .blog-card .post-image {
     height: 220px; /* Fixed height for image on mobile */
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 170px; /* Adjust if header height changes */
   }
 }
