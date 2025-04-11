@@ -182,3 +182,24 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(el);
   });
 });
+// Hero content animation on scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-content");
+
+  if (!hero) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          hero.classList.add("animate");
+        }
+      });
+    },
+    {
+      threshold: 0.6,
+    }
+  );
+
+  observer.observe(hero);
+});
