@@ -2197,6 +2197,9 @@ footer {
 }
 @media (max-width: 768px) {
   .hero {
-    padding-top: 170px; /* Adjust if header height changes */
+    padding-top: 100px;
   }
+}
+section {
+  scroll-margin-top: 100px;
 }
