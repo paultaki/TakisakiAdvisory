@@ -2195,11 +2195,18 @@ footer {
     height: 220px; /* Fixed height for image on mobile */
   }
 }
+
+section {
+  scroll-margin-top: 100px; /* match your header height */
+}
+
 @media (max-width: 768px) {
   .hero {
+    height: auto;
+    min-height: 100vh;
     padding-top: 100px;
+    padding-bottom: 3rem;
+    display: flex;
+    align-items: center;
   }
-}
-section {
-  scroll-margin-top: 100px;
 }
