@@ -96,7 +96,7 @@ function goToSlide(index) {
 setInterval(() => {
   currentSlide = (currentSlide + 1) % slides.length;
   goToSlide(currentSlide);
-}, 5000);
+}, 8000);
 
 // Polyfill for scrollIntoConstrainedView
 if (!Element.prototype.scrollIntoConstrainedView) {
