@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Case Study Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0f3057;
+      --secondary: #006989;
+      --accent: #f18f01;
+      --dark: #333;
+      --light: #f5f5f5;
+      --success: #2ecc71;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: #f8f9fa;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    
+    .premium-case-study {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      background: white;
+      margin-bottom: 40px;
+    }
+    
+    .premium-badge {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: linear-gradient(135deg, var(--accent), #e67e22);
+      color: white;
+      padding: 6px 40px;
+      font-size: 12px;
+      font-weight: bold;
+      transform: rotate(45deg);
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .case-study-content {
+      padding: 35px;
+      max-height: 800px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    h2 {
+      color: var(--primary);
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+    
+    h3 {
+      color: var(--secondary);
+      margin: 25px 0 15px;
+      font-size: 22px;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    /* Preview stats section */
+    .preview-stats {
+      display: flex;
+      margin: 30px 0;
+      gap: 20px;
+    }
+    
+    .stat-box {
+      flex: 1;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-box:hover {
+      transform: translateY(-5px);
+    }
+    
+    .stat-value {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    
+    .stat-label {
+      font-size: 14px;
+      color: #7f8c8d;
+      font-weight: 600;
+    }
+    
+    /* Quote styling */
+    .preview-quote {
+      padding: 25px;
+      background: #f0f7fc;
+      border-left: 4px solid var(--accent);
+      margin: 25px 0;
+      font-style: italic;
+      position: relative;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .preview-quote:before {
+      content: '"';
+      font-size: 60px;
+      color: rgba(15, 48, 87, 0.1);
+      position: absolute;
+      left: 15px;
+      top: 10px;
+    }
+    
+    .preview-quote-text {
+      margin-left: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Content blur effect */
+    .content-blur {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 350px; /* Control how much content is blurred */
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 30%,
+        rgba(255, 255, 255, 0.97) 70%
+      );
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      pointer-events: none; /* Let clicks pass through */
+      z-index: 1;
+    }
+    
+    /* CTA button and container */
+    .premium-cta {
+      position: absolute;
+      bottom: 60px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 2;
+    }
+    
+    .premium-button {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      color: white;
+      padding: 14px 35px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .premium-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .lock-icon {
+      font-size: 16px;
+    }
+    
+    /* List styling */
+    ol {
+      margin: 20px 0 20px 25px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    .title {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 40px;
+      font-size: 36px;
+    }
+    
+    /* Case study tags */
+    .case-tag {
+      display: inline-block;
+      background: rgba(15, 48, 87, 0.1);
+      color: var(--primary);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .preview-stats {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .case-study-content {
+        padding: 25px;
+      }
+      
+      h2 {
+        font-size: 24px;
+      }
+      
+      .premium-cta {
+        bottom: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Premium Case Studies</h1>
+    
+    <div class="premium-case-study">
+      <div class="premium-badge">PREMIUM</div>
+      
+      <div class="case-study-content">
+        <span class="case-tag">FIELD ENABLEMENT</span>
+        <h2>The Field Enablement Revolution: From Chaos to Clarity</h2>
+        
+        <p>When Paul took over leadership of the Field Enablement organization, he inherited more than a mess—it was a battlefield of misaligned incentives, scattered support, and zero clarity. Sales reps were drowning in 87 disconnected documents and support teams were competing for credit instead of collaborating.</p>
+
+        <div class="preview-stats">
+          <div class="stat-box">
+            <div class="stat-value">37%</div>
+            <div class="stat-label">Faster Sales Cycle</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1M+</div>
+            <div class="stat-label">FWA Connections</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">95%</div>
+            <div class="stat-label">Reduced Conflicts</div>
+          </div>
+        </div>
+
+        <p>It was especially damaging during the Fixed Wireless Access (FWA) product push—a massive growth opportunity that was falling flat due to confusion around positioning, technical validation, and execution. The rules of engagement (ROE) were a full page of font size 7 that no one actually followed.</p>
+
+        <div class="preview-quote">
+          <p class="preview-quote-text">"The transformation Paul led gave our reps the one thing they were missing: clarity. By simplifying structure, aligning incentives, and removing noise, he built a system we could trust—and a path to win."</p>
+        </div>
+
+        <h3>The Solution</h3>
+        <p>Paul implemented a three-part solution that transformed the organization:</p>
+        
+        <ol>
+          <li><strong>Content Consolidation & Clarity</strong> - Reduced 87 conflicting resources into one single source of truth</li>
+          <li><strong>Enablement Function Launch</strong> - Created a team of 6 enablement pros responsible for owning resource quality</li>
+          <li><strong>POD Structure & Incentive Alignment</strong> - Designed a simplified ROE with role clarity and shared recognition</li>
+        </ol>
+        
+        <p>What made the rollout stick wasn't just process—it was trust. Paul involved the sales directors directly in the pod design. He pulled in team influencers early, asked for input, gave visibility, and made them part of the build.</p>
+        
+        <p>The transformation gave reps the one thing they were missing: clarity. By simplifying structure, aligning incentives, and removing noise, Paul gave the organization a system they could trust—and a path to win.</p>
+        
+        <p>This case study details the complete process, including the specific metrics tracking methodology, the exact document templates created, the full POD structure design, and the implementation roadmap that you can adapt for your organization.</p>
+        
+        <h3>Implementation Timeline</h3>
+        <p>The transformation followed a carefully structured timeline to ensure minimal disruption while maximizing impact:</p>
+        
+        <p>Week 1-2: Document audit and consolidation planning<br>
+        Week 3-4: Key stakeholder interviews and needs assessment<br>
+        Week 5-6: POD structure design with cross-functional input<br>
+        Week 7-8: Content consolidation and simplification<br>
+        Week 9-10: Pilot implementation with select sales directors<br>
+        Week 11-12: Full organizational rollout<br>
+        Week 13-16: Feedback collection and iteration</p>
+        
+        <h3>Metrics and Impact</h3>
+        <p>The transformation delivered measurable improvements across multiple dimensions:</p>
+        
+        <p>• Sales cycle time decreased by 37% as reps could quickly find information and get support<br>
+        • Fixed Wireless Access growth exploded, with Paul's team recognized for helping drive the first million connections<br>
+        • Field organization confidence in the product increased dramatically<br>
+        • Support team collaboration improved, reducing territorial conflicts by 95%<br>
+        • Documentation quality scores improved from 3.2/10 to 8.7/10 in user surveys</p>
+        
+        <h3>Key Lessons and Transferable Insights</h3>
+        <p>This case study offers valuable lessons for any organization facing similar challenges...</p>
+        
+        <!-- Content blur effect -->
+        <div class="content-blur"></div>
+        
+        <!-- CTA overlay -->
+        <div class="premium-cta">
+          <button class="premium-button">
+            <span class="lock-icon"><i class="fas fa-lock"></i></span>
+            Unlock Full Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.querySelectorAll('.premium-button').forEach(button => {
+      button.addEventListener('click', function() {
+        alert('This would open your pricing or subscription modal');
+      });
+    });
+  </script>
+</body>
+</html>

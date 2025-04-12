@@ -203,3 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   observer.observe(hero);
 });
+function openPricingModal() {
+  alert("Full case studies coming soon! Check back for purchase options.");
+}

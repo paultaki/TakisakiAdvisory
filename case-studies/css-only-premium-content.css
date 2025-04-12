@@ -1,0 +1,196 @@
+/* 
+ * CSS-Only Premium Content Blur
+ * This technique doesn't require JavaScript and works with modern browsers
+ */
+
+.premium-case-study {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin-bottom: 35px;
+}
+
+.case-study-inner {
+  /* The container for the content */
+  position: relative;
+  padding: 30px;
+  max-height: 600px; /* Adjust as needed */
+  overflow: hidden;
+}
+
+/* Create the blur effect container */
+.blur-effect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 300px; /* How much of the content to blur */
+  pointer-events: none; /* Makes clicks go through */
+  
+  /* This creates the blur gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 35%,
+    rgba(255, 255, 255, 0.9) 70%
+  );
+  
+  /* For additional blur effect */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black
+  );
+}
+
+/* The blurred content is actually a duplicate of the real content */
+.blur-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 300px; /* Same as blur-effect */
+  
+  /* Apply the actual blur */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  /* Create a gradient that only reveals the bottom portion */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 35%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 35%
+  );
+}
+
+/* The CTA overlay */
+.premium-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px; /* Height of CTA area */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  z-index: 10;
+}
+
+.premium-tag {
+  background: #ff5722;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.premium-cta-button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.premium-cta-button:hover {
+  background: #1abc9c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Optional: Accessibility info that's only visible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Premium content badge */
+.premium-corner-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #f18f01, #f26d21);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.premium-corner-badge i {
+  font-size: 10px;
+}
+
+/* Statistics section styling */
+.stats-container {
+  display: flex;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  background: #f5f9fc;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 800;
+  color: #f18f01;
+  margin-bottom: 5px;
+}
+
+.stat-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+  }
+  
+  .case-study-inner {
+    padding: 20px;
+  }
+}
