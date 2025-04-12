@@ -269,7 +269,7 @@ nav ul li a.active::after {
       rgba(15, 48, 87, 0.9),
       rgba(0, 105, 137, 0.7)
     ),
-    url("/api/placeholder/1200/800") no-repeat center center/cover;
+    url("api/placeholder/1200/800.html") no-repeat center center/cover;
   color: white;
   display: flex;
   align-items: center;
@@ -684,7 +684,7 @@ footer {
   right: 0;
   width: 30%;
   height: 100%;
-  background: url("/api/placeholder/600/800") no-repeat center/cover;
+  background: url("api/placeholder/600/800.html") no-repeat center/cover;
   opacity: 0.1;
   z-index: 0;
 }
@@ -1444,7 +1444,7 @@ footer {
       rgba(15, 48, 87, 0.8),
       rgba(0, 105, 137, 0.6)
     ),
-    url("../images/blog-header.jpg") no-repeat center center / cover;
+    url("images/blog-header.html") no-repeat center center / cover;
   color: white;
   padding: 120px 0 60px;
   text-align: center;
@@ -1470,7 +1470,7 @@ footer {
       rgba(15, 48, 87, 0.8),
       rgba(0, 105, 137, 0.6)
     ),
-    url("../images/blog-header.jpg") no-repeat center center / cover;
+    url("images/blog-header.html") no-repeat center center / cover;
   color: white;
   padding: 120px 0 60px;
   text-align: center;
@@ -2241,7 +2241,7 @@ section {
       rgba(15, 48, 87, 0.9),
       rgba(0, 105, 137, 0.7)
     ),
-    url("/api/placeholder/1200/500") no-repeat center center/cover;
+    url("api/placeholder/1200/500.html") no-repeat center center/cover;
   padding: 100px 0 60px;
   color: white;
   text-align: center;
