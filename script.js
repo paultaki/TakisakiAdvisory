@@ -202,7 +202,13 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   observer.observe(hero);
+
+  // Fix for mobile: if already in view on load, force the animation
+  if (window.innerHeight >= hero.getBoundingClientRect().top) {
+    hero.classList.add("animate");
+  }
 });
+
 function openPricingModal() {
   alert("Full case studies coming soon! Check back for purchase options.");
 }
