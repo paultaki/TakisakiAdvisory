@@ -1,19 +1,19 @@
-import sendgrid from '@sendgrid/mail';
+import sendgrid from "@sendgrid/mail";
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Only POST requests allowed' });
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Only POST requests allowed" });
   }
 
   const { name, email, subject, message } = req.body;
 
   try {
     await sendgrid.send({
-      to: 'paul@paultakisaki.com',
-      from: 'info@paultakisaki.com',
-      subject: subject || 'New message from your site',
+      to: "paul@paultakisaki.com",
+      from: "info@paultakisaki.com",
+      subject: subject || "New message from your site",
       replyTo: email,
       text: message,
       html: `
@@ -23,9 +23,13 @@ export default async function handler(req, res) {
       `,
     });
 
-    return res.status(200).json({ message: 'Email sent successfully' });
+    return res.status(200).json({ message: "Email sent successfully" });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: 'Email failed to send', error });
+    console.error("SendGrid Error:", error.response?.body || error);
+    return res.status(500).json({
+      message: "Email failed to send",
+      error: error.message,
+      response: error.response?.body,
+    });
   }
 }
