@@ -9,6 +9,11 @@ export default async function handler(req, res) {
 
   const { name, email, subject, message } = req.body;
 
+  // ✅ Add this validation block
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: "Missing required fields" });
+  }
+
   try {
     await sendgrid.send({
       to: "paul@paultakisaki.com",
