@@ -777,31 +777,47 @@ z<!DOCTYPE html>
               </div>
             </div>
             <div class="social-links mt-3">
-              <a
-                href="https://www.linkedin.com/in/paultaki/"
-                class="social-link"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
+              <a href="https://www.linkedin.com/in/paultaki/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
               <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
+              <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
           <div>
-            <form class="contact-form">
+            <form class="contact-form" id="contact-form">
               <div class="grid grid-2">
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Your Email" required />
+                <input type="text" name="name" placeholder="Your Name" required />
+                <input type="email" name="email" placeholder="Your Email" required />
               </div>
-              <input type="text" placeholder="Subject" />
-              <textarea placeholder="Your Message" required></textarea>
+              <input type="text" name="subject" placeholder="Subject" />
+              <textarea name="message" placeholder="Your Message" required></textarea>
               <button type="submit" class="btn btn-accent">Send Message</button>
             </form>
           </div>
         </div>
       </div>
     </section>
+    
+    <script>
+    document.getElementById("contact-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form).entries());
+    
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+    
+      if (res.ok) {
+        alert("Message sent! I’ll get back to you soon.");
+        form.reset();
+      } else {
+        alert("Oops. Something went wrong. Try again later.");
+      }
+    });
+    </script>
+    
 
     <!-- Footer -->
     <footer>
