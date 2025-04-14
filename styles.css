@@ -404,12 +404,12 @@ nav ul li a.active::after {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--lightgray);
+  background: #ccc; /* or whatever you want for inactive */
   margin: 0 5px;
   cursor: pointer;
 }
 .testimonial-dot.active {
-  background: var(--accent);
+  background: var(--accent); /* keeps the orange */
 }
 .blog-card {
   background: white;

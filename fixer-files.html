@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Paul Takisaki - Real-world case studies of leadership transformation and strategic growth initiatives that delivered measurable results."
+      content="Fixer Files by Paul Takisaki — Real stories of transformation, told through results."
     />
-    <title>Case Studies | Paul Takisaki Leadership Consulting</title>
+    <title>Fixer Files | Paul Takisaki</title>
     <link
       rel="stylesheet"
       href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Header (Include your site header here) -->
+    <!-- Header -->
     <header id="header">
       <div class="container flex-between">
         <a href="index.html" class="logo">Paul<span>Takisaki</span></a>
@@ -27,7 +27,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#about">About</a></li>
             <li><a href="index.html#services">Services</a></li>
-            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+            <li><a href="#" class="active">Fixer Files</a></li>
             <li><a href="index.html#testimonials">Testimonials</a></li>
             <li><a href="blogs/blogs.html#blog">Blog</a></li>
             <li><a href="index.html#contact">Contact</a></li>
@@ -36,869 +36,89 @@
       </div>
     </header>
 
-    <!-- Case Studies Hero -->
+    <!-- Fixer Files Hero -->
     <section class="fixer-hero">
       <div class="container">
         <h1 class="docu-title">Fixer Files</h1>
-        <p class="docu-subtitle">Real Leadership. Real Results. Like You've Never Seen Before.</p>
+        <p class="docu-subtitle">
+          Real Leadership. Real Results. Like You've Never Seen Before.
+        </p>
         <a href="#fixer-grid" class="primary-cta">See The Episodes</a>
       </div>
     </section>
 
-    <!-- Filter Bar -->
-    <div class="filter-bar">
-      <div class="container">
-        <div class="filter-container">
-          <button class="filter-btn active" data-filter="all">
-            All Case Studies
-          </button>
-          <button class="filter-btn" data-filter="sales">
-            Sales Transformation
-          </button>
-          <button class="filter-btn" data-filter="operations">
-            Operations
-          </button>
-          <button class="filter-btn" data-filter="culture">
-            Culture Building
-          </button>
-          <button class="filter-btn" data-filter="technology">
-            Technology
-          </button>
-        </div>
+    <!-- Fixer Files Grid -->
+    <section id="fixer-grid" class="fixer-grid container">
+      <div class="fixer-card">
+        <h2>EP01 · From Flawed to Fair</h2>
+        <p>
+          How I rewired a national quota model and changed the game for every
+          B2B sales rep at Verizon.
+        </p>
+        <a href="case-studies/quota-revamp.html" class="btn"
+          >Watch Case Study</a
+        >
       </div>
-    </div>
-
-    <!-- Case Studies Section -->
-    <section class="case-studies">
-      <div class="container">
-        <!-- Featured Case Study (Premium with Blur Effect) -->
-        <div class="premium-case-study">
-          <div class="premium-badge">PREMIUM</div>
-
-          <div class="case-study-content">
-            <span class="case-tag">Sales Operations</span>
-            <h2 class="case-title">
-              From Flawed to Fair: National Quota Model Transformation
-            </h2>
-
-            <div class="preview-content">
-              <p>
-                When I inherited a broken quota system that punished top
-                performers and rewarded underperformers, I designed a
-                revolutionary four-dimensional model that balanced fairness,
-                business needs, and psychological motivation. The model was so
-                successful that it became Verizon's national standard for all
-                B2B sales representatives.
-              </p>
-
-              <div class="preview-stats">
-                <div class="stat-box">
-                  <div class="stat-value">19</div>
-                  <div class="stat-label">Consecutive Months of YOY Growth</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-value">6+</div>
-                  <div class="stat-label">Years as National Standard</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-value">0</div>
-                  <div class="stat-label">Quota Complaints</div>
-                </div>
-              </div>
-
-              <div class="preview-quote">
-                <p class="preview-quote-text">
-                  "Paul's quota redesign was a game-changer. It aligned
-                  incentives with potential and gave my team clarity on what
-                  success looked like. Most importantly, it felt fair."
-                </p>
-              </div>
-
-              <h3>The Solution</h3>
-              <p>
-                I set out to build a quota model that balanced potential,
-                effort, and performance while removing excuses. After analyzing
-                data across my seven-state region—territory size, customer
-                density, historical results, and rep feedback—I landed on a
-                four-part framework:
-              </p>
-
-              <ol>
-                <li>
-                  <strong>Territory Potential (40%)</strong> - Divided
-                  territories into five zones based on opportunity: market
-                  maturity, industry presence, and growth trends.
-                </li>
-                <li>
-                  <strong>Zip Code Complexity (10%)</strong> - Accounted for
-                  geographic sprawl. More zip codes meant more travel time.
-                </li>
-                <li>
-                  <strong>Active Lines / Existing Customer Base (30%)</strong> -
-                  Recognized that more current customers meant more upsell and
-                  cross-sell opportunities.
-                </li>
-                <li>
-                  <strong>Performance Influence (20%)</strong> - Allowed past
-                  performance to shape quotas, but with guardrails.
-                </li>
-              </ol>
-
-              <p>
-                This wasn't just a spreadsheet tweak—it was a behavioral reset.
-                The model aimed to keep the top 20% motivated and unleashed,
-                give underperformers a fair shot without escape hatches, and
-                align quotas with business priorities, not just past results.
-              </p>
-
-              <p>
-                A model this nuanced wouldn't stick without clear, consistent
-                communication. Messaging became as critical as the math...
-              </p>
-            </div>
-
-            <!-- This creates the blur effect -->
-            <div class="content-blur"></div>
-
-            <!-- CTA overlay -->
-            <div class="premium-cta">
-              <button class="premium-button" onclick="openPricingModal()">
-                <span class="lock-icon"><i class="fas fa-lock"></i></span>
-                Unlock Full Case Study
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Regular Case Studies Grid -->
-        <div class="case-study-grid">
-          <!-- Premium Case Study: Field Enablement Revolution -->
-          <div class="premium-case-study">
-            <div class="premium-badge">PREMIUM</div>
-
-            <div class="case-study-content">
-              <span class="case-tag">Sales Enablement</span>
-              <h2 class="case-title">
-                Field Enablement Revolution: From Chaos to Clarity
-              </h2>
-
-              <div class="preview-content">
-                <p>
-                  When I took over leadership of the Field Enablement
-                  organization, I inherited more than a mess—it was a
-                  battlefield of misaligned incentives, scattered support, and
-                  zero clarity. Sales reps were drowning in 87 disconnected
-                  documents and support teams were competing for credit instead
-                  of collaborating.
-                </p>
-
-                <div class="preview-stats">
-                  <div class="stat-box">
-                    <div class="stat-value">37%</div>
-                    <div class="stat-label">Faster Sales Cycle</div>
-                  </div>
-                  <div class="stat-box">
-                    <div class="stat-value">1M+</div>
-                    <div class="stat-label">FWA Connections</div>
-                  </div>
-                  <div class="stat-box">
-                    <div class="stat-value">95%</div>
-                    <div class="stat-label">Reduced Conflicts</div>
-                  </div>
-                </div>
-
-                <p>
-                  It was especially damaging during the Fixed Wireless Access
-                  (FWA) product push—a massive growth opportunity that was
-                  falling flat due to confusion around positioning, technical
-                  validation, and execution. The rules of engagement (ROE) were
-                  a full page of font size 7 that no one actually followed.
-                </p>
-
-                <div class="preview-quote">
-                  <p class="preview-quote-text">
-                    "The transformation Paul led gave our reps the one thing
-                    they were missing: clarity. By simplifying structure,
-                    aligning incentives, and removing noise, he built a system
-                    we could trust—and a path to win."
-                  </p>
-                </div>
-
-                <h3>The Solution</h3>
-                <p>
-                  I implemented a three-part solution that transformed the
-                  organization:
-                </p>
-
-                <ol>
-                  <li>
-                    <strong>Content Consolidation & Clarity</strong> - Reduced
-                    87 conflicting resources into one single source of truth
-                  </li>
-                  <li>
-                    <strong>Enablement Function Launch</strong> - Created a team
-                    of 6 enablement pros responsible for owning resource quality
-                  </li>
-                  <li>
-                    <strong>POD Structure & Incentive Alignment</strong> -
-                    Designed a simplified ROE with role clarity and shared
-                    recognition
-                  </li>
-                </ol>
-              </div>
-
-              <!-- This creates the blur effect -->
-              <div class="content-blur"></div>
-
-              <!-- CTA overlay -->
-              <div class="premium-cta">
-                <button class="premium-button" onclick="openPricingModal()">
-                  <span class="lock-icon"><i class="fas fa-lock"></i></span>
-                  Unlock Full Case Study
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/cst.webp" alt="Customer Success Team" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Customer Experience</span>
-              <h3 class="case-title">Customer Success Team Creation</h3>
-              <p class="case-summary">
-                Designed, built, and launched Verizon's first dedicated Customer
-                Success Team providing white-glove onboarding for new B2B
-                customers, dramatically reducing churn and improving
-                satisfaction.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">50%</div>
-                  <div class="result-label">Churn Reduction</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">$14M</div>
-                  <div class="result-label">Revenue Protected</div>
-                </div>
-              </div>
-              <a href="case-studies/customer-success.html" class="btn case-btn"
-                >Read Case Study</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/techcheck.webp" alt="Tech Check Initiative" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Sales Enablement</span>
-              <h3 class="case-title">Tech Check Initiative</h3>
-              <p class="case-summary">
-                Reimagined B2B prospecting by offering free technology
-                assessments that provided genuine value to prospects before
-                asking for their business, dramatically improving conversion
-                rates.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">19x</div>
-                  <div class="result-label">Meeting Conversion</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">250%</div>
-                  <div class="result-label">Pipeline Increase</div>
-                </div>
-              </div>
-              <a href="tech-check-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/prospecting.webp" alt="Prospecting Maps" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Field Sales</span>
-              <h3 class="case-title">
-                Prospecting Maps: Location Intelligence
-              </h3>
-              <p class="case-summary">
-                Created a revolutionary tool integrating customer and prospect
-                data directly into Google Maps for intuitive, location-based
-                territory management, saving reps significant time.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">7</div>
-                  <div class="result-label">Hours Saved Weekly</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">34%</div>
-                  <div class="result-label">More Customer Interactions</div>
-                </div>
-              </div>
-              <a href="prospecting-maps-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <!-- Premium Case Study: Unscalable Advantage -->
-          <div class="premium-case-study">
-            <div class="premium-badge">PREMIUM</div>
-
-            <div class="case-study-content">
-              <span class="case-tag">Leadership</span>
-              <h2 class="case-title">
-                The Unscalable Advantage: Building Deep Connection in a
-                400-Person Org
-              </h2>
-
-              <div class="preview-content">
-                <p>
-                  In an era of dashboards and KPIs, I maintained an "unscalable"
-                  commitment to personal connection—holding regular 1:1s with
-                  people three layers down in my 400-person organization. The
-                  results speak for themselves.
-                </p>
-
-                <div class="preview-stats">
-                  <div class="stat-box">
-                    <div class="stat-value">63%</div>
-                    <div class="stat-label">Higher Retention</div>
-                  </div>
-                  <div class="stat-box">
-                    <div class="stat-value">41%</div>
-                    <div class="stat-label">More Internal Promotion</div>
-                  </div>
-                  <div class="stat-box">
-                    <div class="stat-value">2.3x</div>
-                    <div class="stat-label">Idea Implementation</div>
-                  </div>
-                </div>
-
-                <p>
-                  Leadership at scale is a trap. The bigger things get, the
-                  easier it is to hide behind dashboards, reports, and filtered
-                  feedback. You get polished presentations. You get secondhand
-                  updates. You get just enough truth to feel informed—but not
-                  enough to feel connected.
-                </p>
-
-                <div class="preview-quote">
-                  <p class="preview-quote-text">
-                    "The most valuable information in your organization rarely
-                    makes it up the chain of command unless you intentionally
-                    create pathways for it."
-                  </p>
-                </div>
-
-                <h3>The Approach</h3>
-                <p>
-                  I developed a systematic approach to making the "unscalable"
-                  manageable:
-                </p>
-
-                <ol>
-                  <li>
-                    <strong>Structured Randomization</strong> - A quarterly
-                    rotation system ensuring wide and representative coverage
-                  </li>
-                  <li>
-                    <strong>Strategic Question Framework</strong> - Four key
-                    questions that revealed organizational blind spots
-                  </li>
-                  <li>
-                    <strong>Pattern Matching Methodology</strong> - A system for
-                    identifying themes across conversations
-                  </li>
-                </ol>
-              </div>
-
-              <!-- This creates the blur effect -->
-              <div class="content-blur"></div>
-
-              <!-- CTA overlay -->
-              <div class="premium-cta">
-                <button class="premium-button" onclick="openPricingModal()">
-                  <span class="lock-icon"><i class="fas fa-lock"></i></span>
-                  Unlock Full Case Study
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/pdom.webp" alt="Project Domination" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Competitive Intelligence</span>
-              <h3 class="case-title">Project Domination (PDOM)</h3>
-              <p class="case-summary">
-                Developed an innovative competitive intelligence program that
-                incentivized reps to gather market insights while simultaneously
-                increasing meeting acceptance rates through creative outreach.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">62%</div>
-                  <div class="result-label">Meeting Acceptance</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">5,000+</div>
-                  <div class="result-label">Intel Records</div>
-                </div>
-              </div>
-              <a href="pdom-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/reporting.webp" alt="TSO Reporting Revolution" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Sales Operations</span>
-              <h3 class="case-title">TSO Reporting Revolution</h3>
-              <p class="case-summary">
-                Transformed how 400+ commissioned sales professionals tracked
-                performance by creating real-time dashboards and implementing a
-                continuous payout model that maintained motivation throughout
-                the quarter.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">28%</div>
-                  <div class="result-label">Quota Attainment Increase</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">35%</div>
-                  <div class="result-label">Late-Quarter Productivity</div>
-                </div>
-              </div>
-              <a href="tso-reporting-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img
-                src="images/aipower.webp"
-                alt="AI-Powered Sales Intelligence"
-              />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Technology</span>
-              <h3 class="case-title">AI-Powered Sales Intelligence</h3>
-              <p class="case-summary">
-                Partnered with Verizon's AI team to develop an intelligent
-                assistant that could understand nuanced sales questions and
-                provide contextually relevant responses in seconds rather than
-                the hours it previously took to research manually.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">23%</div>
-                  <div class="result-label">Productivity Increase</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">94%</div>
-                  <div class="result-label">Adoption Rate</div>
-                </div>
-              </div>
-              <a
-                href="ai-sales-intelligence-case-study.html"
-                class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/failure_friday.webp" alt="Failure Fridays" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Culture Building</span>
-              <h3 class="case-title">Failure Fridays</h3>
-              <p class="case-summary">
-                Implemented weekly sessions where team members volunteered to
-                share recent failures and what they learned, transforming the
-                organization's approach to innovation and risk-taking.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">28%</div>
-                  <div class="result-label">Revenue Increase</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">78%</div>
-                  <div class="result-label">Pilot Program Success</div>
-                </div>
-              </div>
-              <a href="failure-fridays-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img src="images/badges.webp" alt="Badge Engagement Program" />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Remote Leadership</span>
-              <h3 class="case-title">Badge Engagement Program</h3>
-              <p class="case-summary">
-                Created a gamified recognition system during COVID-19 that
-                maintained team engagement and focus on priorities while working
-                remotely, resulting in industry-leading performance.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">4,000+</div>
-                  <div class="result-label">Badges Earned</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">#1</div>
-                  <div class="result-label">In Enterprise SMB</div>
-                </div>
-              </div>
-              <a href="badge-engagement-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img
-                src="images/strength.webp"
-                alt="Strengths-Based Team Redesign"
-              />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Team Building</span>
-              <h3 class="case-title">Strengths-Based Team Redesign</h3>
-              <p class="case-summary">
-                Transformed a dysfunctional team that had missed targets for
-                seven consecutive quarters by realigning responsibilities based
-                on innate strengths rather than traditional job descriptions.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">27%</div>
-                  <div class="result-label">Target Exceeded</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">Top 10%</div>
-                  <div class="result-label">Employee Engagement</div>
-                </div>
-              </div>
-              <a
-                href="strengths-based-redesign-case-study.html"
-                class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-
-          <div class="case-card">
-            <div class="case-image">
-              <img
-                src="images/p2w.webp"
-                alt="Five-Question Strategy Framework"
-              />
-            </div>
-            <div class="case-content">
-              <span class="case-tag">Strategic Planning</span>
-              <h3 class="case-title">Five-Question Strategy Framework</h3>
-              <p class="case-summary">
-                Simplified complex strategic planning by adopting a framework
-                focused on five essential questions, creating alignment from
-                senior leadership to frontline representatives.
-              </p>
-              <div class="case-results">
-                <div class="result-item">
-                  <div class="result-value">100%</div>
-                  <div class="result-label">Strategy Alignment</div>
-                </div>
-                <div class="result-item">
-                  <div class="result-value">40%</div>
-                  <div class="result-label">Faster Execution</div>
-                </div>
-              </div>
-              <a href="strategy-framework-case-study.html" class="btn case-btn"
-                >Coming Soon</a
-              >
-            </div>
-          </div>
-        </div>
+      <div class="fixer-card">
+        <h2>EP02 · Field Enablement Revolution</h2>
+        <p>
+          87 documents, zero clarity. Here's how we flipped the chaos into a
+          sales enablement machine.
+        </p>
+        <a href="case-studies/field-enablement.html" class="btn"
+          >Watch Case Study</a
+        >
+      </div>
+      <div class="fixer-card">
+        <h2>EP03 · Tech Check Gambit</h2>
+        <p>
+          We stopped cold-calling and started consulting. 19x conversion says we
+          were onto something.
+        </p>
+        <a href="case-studies/tech-check.html" class="btn">Coming Soon</a>
+      </div>
+      <div class="fixer-card">
+        <h2>EP04 · The Unscalable Advantage</h2>
+        <p>
+          400-person org. Still did 1:1s three layers deep. They said it was
+          unscalable. I said, watch me.
+        </p>
+        <a href="case-studies/unscalable.html" class="btn">Coming Soon</a>
+      </div>
+      <div class="fixer-card">
+        <h2>EP05 · Badge Up, Rise Up</h2>
+        <p>
+          A gamified system born during COVID that kept remote teams engaged and
+          at the top of the leaderboard.
+        </p>
+        <a href="case-studies/badge-engagement.html" class="btn">Coming Soon</a>
       </div>
     </section>
 
     <!-- Call to Action -->
     <section class="contact-cta">
       <div class="container">
-        <h2>Ready to Transform Your Organization?</h2>
+        <h2>Want Results Like This?</h2>
         <p>
-          Let's discuss how these proven methodologies can be adapted to your
-          specific business challenges. Whether you're facing sales performance
-          issues, operational inefficiencies, or cultural challenges, I can help
-          develop customized solutions.
+          Let’s talk about how we can build your Fixer File together.
+          Leadership, strategy, culture—it’s all connected.
         </p>
-        <a href="index-2.html#contact" class="btn btn-accent"
-          >Schedule a Consultation</a
+        <a href="index.html#contact" class="btn btn-accent"
+          >Schedule a Consult</a
         >
       </div>
     </section>
 
-    <!-- Footer (Include your site footer here) -->
+    <!-- Footer -->
     <footer>
       <div class="container">
-        <div class="grid grid-4">
-          <div class="footer-col footer-about">
-            <div class="footer-logo">Paul<span>Takisaki</span></div>
-            <p>
-              Transforming underperforming teams into record-breaking engines
-              through strategic leadership and people-first culture building.
-            </p>
-            <div class="social-links">
-              <a href="#" class="social-link"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-link"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h3 class="footer-heading">Quick Links</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="index-2.html"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a href="index-2.html#about"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >About</a
-                >
-              </li>
-              <li>
-                <a href="index.html#services"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Services</a
-                >
-              </li>
-              <li>
-                <a href="case-studies.html"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Case Studies</a
-                >
-              </li>
-              <li>
-                <a href="index-2.html#testimonials"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Testimonials</a
-                >
-              </li>
-              <li>
-                <a href="index-2.html#blog"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Insights</a
-                >
-              </li>
-              <li>
-                <a href="index-2.html#contact"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3 class="footer-heading">Services</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="services.html#fractional-cro"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Fractional CRO Services</a
-                >
-              </li>
-              <li>
-                <a href="services.html#sales-transformation"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Sales Team Transformation</a
-                >
-              </li>
-              <li>
-                <a href="services.html#leadership-coaching"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Executive Leadership Coaching</a
-                >
-              </li>
-              <li>
-                <a href="services.html#growth-strategy"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Growth Strategy Consulting</a
-                >
-              </li>
-              <li>
-                <a href="services.html#team-building"
-                  ><i
-                    class="fas fa-chevron-right"
-                    style="font-size: 0.8em; margin-right: 8px"
-                  ></i
-                  >Team Building Workshops</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h3 class="footer-heading">Subscribe</h3>
-            <p>
-              Stay updated with my latest insights on leadership and growth
-              strategy.
-            </p>
-            <form class="mt-2">
-              <input
-                type="email"
-                placeholder="Your Email"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  margin-bottom: 10px;
-                  border: none;
-                  border-radius: 4px;
-                "
-              />
-              <button type="submit" class="btn btn-accent" style="width: 100%">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
-        </div>
+        <p class="text-center">
+          &copy; 2025 Paul Takisaki. All rights reserved.
+        </p>
       </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-      // Filter functionality for case studies
-      document.addEventListener("DOMContentLoaded", function () {
-        const filterButtons = document.querySelectorAll(".filter-btn");
-        const caseCards = document.querySelectorAll(".case-card");
-        const premiumCaseStudies = document.querySelectorAll(
-          ".premium-case-study"
-        );
-
-        filterButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            // Remove active class from all buttons
-            filterButtons.forEach((btn) => btn.classList.remove("active"));
-
-            // Add active class to clicked button
-            this.classList.add("active");
-
-            // Get filter value
-            const filter = this.getAttribute("data-filter");
-
-            // Show/hide case studies based on filter
-            if (filter === "all") {
-              caseCards.forEach((card) => (card.style.display = "block"));
-              premiumCaseStudies.forEach(
-                (study) => (study.style.display = "block")
-              );
-            } else {
-              // Filter regular case cards
-              caseCards.forEach((card) => {
-                const cardTag = card
-                  .querySelector(".case-tag")
-                  .textContent.toLowerCase();
-
-                if (cardTag.includes(filter)) {
-                  card.style.display = "block";
-                } else {
-                  card.style.display = "none";
-                }
-              });
-
-              // Filter premium case studies
-              premiumCaseStudies.forEach((study) => {
-                const studyTag = study
-                  .querySelector(".case-tag")
-                  .textContent.toLowerCase();
-
-                if (studyTag.includes(filter)) {
-                  study.style.display = "block";
-                } else {
-                  study.style.display = "none";
-                }
-              });
-            }
-          });
-        });
-      });
-
-      // Function to handle the premium content unlock process
-      function openPricingModal() {
-        // For now, just show an alert since there's no payment system yet
-        alert(
-          "Premium case studies coming soon! Check back for purchase options."
-        );
-        // When you implement a payment system, replace the alert with:
-        // window.location.href = '/pricing';
-        // or a modal popup functionality
-      }
-    </script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
   </body>
 </html>
