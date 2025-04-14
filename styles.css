@@ -2338,3 +2338,70 @@ section {
   transform: scale(1.05);
   background: #e08100;
 }
+
+/* Coaching Page Specific Styles */
+
+#coaching {
+  background-color: #fefefe;
+  padding: 4rem 0;
+}
+
+#coaching .section-title h2 {
+  font-size: 2.5rem;
+  color: #0f3057;
+}
+
+.executive-testimonial {
+  background: linear-gradient(135deg, #0f3057, #006989);
+  color: white;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.executive-testimonial p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.executive-testimonial strong {
+  font-weight: bold;
+  color: #f18f01;
+}
+
+.executive-testimonial .testimonial-author {
+  margin-top: 1.5rem;
+}
+
+.executive-testimonial .testimonial-name h4 {
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.executive-testimonial .testimonial-position {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.testimonial-slider {
+  margin-top: 3rem;
+}
+
+.highlighted-quote {
+  color: #0f3057;
+  font-style: italic;
+  font-weight: 600;
+  border-left: 5px solid #f18f01;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+#coaching {
+  scroll-margin-top: 100px; /* this already exists in styles.css */
+  padding-top: 120px; /* new addition to compensate visually */
+}
