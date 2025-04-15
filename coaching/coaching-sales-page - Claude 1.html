@@ -620,141 +620,6 @@
         background: var(--accent);
       }
 
-      .executive-testimonial {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-        color: white;
-        padding: 2.5rem;
-        border-radius: 8px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 3rem;
-      }
-
-      .executive-testimonial::before {
-        content: '"';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 8rem;
-        line-height: 1;
-        font-family: Georgia, serif;
-        color: rgba(255, 255, 255, 0.1);
-      }
-
-      .executive-testimonial p {
-        position: relative;
-        font-size: 1.2rem;
-        line-height: 1.7;
-        font-style: italic;
-        margin-bottom: 1.5rem;
-        z-index: 1;
-      }
-
-      .executive-testimonial .testimonial-author {
-        margin-top: 1.5rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .executive-testimonial .testimonial-name h4 {
-        color: white;
-        margin-bottom: 0.2rem;
-      }
-
-      .executive-testimonial .testimonial-position {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 600;
-      }
-
-      /* Leadership Qualities */
-      .leadership-qualities {
-        padding: 5rem 0;
-        background: #f9f9f9;
-      }
-
-      .quality-card {
-        background: white;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-      }
-
-      .quality-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .quality-card i {
-        font-size: 2.5rem;
-        color: var(--accent);
-        margin-bottom: 1rem;
-      }
-
-      .quality-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .quality-card p {
-        font-size: 0.9rem;
-        color: var(--gray);
-      }
-
-      /* Testimonial Bubbles */
-      .testimonial-bubbles {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 4rem;
-      }
-
-      .testimonial-bubble {
-        background: var(--primary);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 30px;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-
-      .testimonial-bubble:nth-child(2n) {
-        background: var(--secondary);
-      }
-
-      .testimonial-bubble:nth-child(3n) {
-        background: var(--accent);
-      }
-
-      /* Philosophy Section */
-      .philosophy-section {
-        margin-top: 4rem;
-        text-align: center;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .philosophy-quote {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-        font-style: italic;
-        line-height: 1.4;
-      }
-
-      .philosophy-description {
-        font-size: 1.1rem;
-        color: var(--gray);
-      }
-
       /* CTA Section */
       .cta-section {
         padding: 5rem 0;
@@ -927,10 +792,6 @@
           align-items: center;
           text-align: center;
         }
-
-        .philosophy-quote {
-          font-size: 1.5rem;
-        }
       }
 
       @media (max-width: 576px) {
@@ -997,9 +858,6 @@
           <div class="coaching-badge">
             <i class="fas fa-users"></i> 450+ Team Members Led
           </div>
-          <div class="coaching-badge">
-            <i class="fas fa-check-double"></i> 14/14 on Job Applications
-          </div>
         </div>
 
         <a href="#coaching-packages" class="btn btn-accent"
@@ -1060,24 +918,6 @@
               </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Leadership Philosophy -->
-    <section class="coaching-offerings" style="padding-bottom: 0">
-      <div class="container">
-        <div class="philosophy-section">
-          <div class="philosophy-quote">
-            "People don't perform for bosses. They rise for people who
-            <span class="highlighted-text">see</span> them,
-            <span class="highlighted-text">love</span> them, and
-            <span class="highlighted-text">won't give up</span> on them."
-          </div>
-          <p class="philosophy-description">
-            This leadership philosophy has guided me through 20+ years of
-            transforming underperforming teams into record-breakers.
-          </p>
         </div>
       </div>
     </section>
@@ -1251,8 +1091,8 @@
             <i
               class="fas fa-arrow-up"
               style="
-                font-size: 2rem;
                 color: var(--accent);
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
               "
             ></i>
@@ -1267,8 +1107,8 @@
             <i
               class="fas fa-road"
               style="
-                font-size: 2rem;
                 color: var(--accent);
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
               "
             ></i>
@@ -1284,8 +1124,8 @@
             <i
               class="fas fa-chart-line"
               style="
-                font-size: 2rem;
                 color: var(--accent);
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
               "
             ></i>
@@ -1301,8 +1141,8 @@
             <i
               class="fas fa-balance-scale"
               style="
-                font-size: 2rem;
                 color: var(--accent);
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
               "
             ></i>
@@ -1317,8 +1157,8 @@
             <i
               class="fas fa-clock"
               style="
-                font-size: 2rem;
                 color: var(--accent);
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
               "
             ></i>
@@ -1333,8 +1173,8 @@
             <i
               class="fas fa-compass"
               style="
-                font-size: 2rem;
                 color: var(--accent);
+                font-size: 2rem;
                 margin-bottom: 1.5rem;
               "
             ></i>
@@ -1357,215 +1197,69 @@
       </div>
     </section>
 
-    <!-- Leadership Qualities -->
-    <section class="leadership-qualities">
-      <div class="container">
-        <div class="section-title">
-          <h2>Leadership Qualities</h2>
-          <p>What clients and colleagues consistently recognize</p>
-        </div>
-
-        <div class="grid grid-3">
-          <div class="quality-card">
-            <i class="fas fa-fire"></i>
-            <h3>Inspiring</h3>
-            <p>Awakens something in people. Makes them want to rise.</p>
-          </div>
-
-          <div class="quality-card">
-            <i class="fas fa-chess"></i>
-            <h3>Strategic</h3>
-            <p>
-              Lives in the future and works backwards. Sees the moves ahead.
-            </p>
-          </div>
-
-          <div class="quality-card">
-            <i class="fas fa-heart"></i>
-            <h3>Authentic</h3>
-            <p>
-              What people see is real, raw, and consistent. No false personas.
-            </p>
-          </div>
-
-          <div class="quality-card">
-            <i class="fas fa-users"></i>
-            <h3>Empowering</h3>
-            <p>Raises armies of capable leaders. Gives others the spotlight.</p>
-          </div>
-
-          <div class="quality-card">
-            <i class="fas fa-hands-helping"></i>
-            <h3>Servant Leader</h3>
-            <p>
-              In the trenches with the team. Earns trust, doesn't demand it.
-            </p>
-          </div>
-
-          <div class="quality-card">
-            <i class="fas fa-lightbulb"></i>
-            <h3>Innovative</h3>
-            <p>Breaks the mold, rewires systems, and brings others along.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Testimonials -->
     <section class="testimonials">
       <div class="container">
         <div class="section-title">
-          <h2>What Clients & Colleagues Say</h2>
-          <p>Building leaders at every level for over two decades</p>
+          <h2>What Clients Are Saying</h2>
+          <p>You don't need to guess—just ask the people I've coached</p>
         </div>
 
-        <!-- Featured Executive Testimonial -->
-        <div class="executive-testimonial">
-          <p>
-            "You've had an indelible mark on the business markets with all that
-            you've done in the field and with the TSO team—always with a smile.
-            I'm going to personally miss working with you."
-          </p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">
-              <img src="../images/aparna.webp" alt="Aparna Khurjekar" />
-            </div>
-            <div class="testimonial-name">
-              <h4>Aparna Khurjekar</h4>
-              <div class="testimonial-position">
-                Chief Revenue Officer, Verizon
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial Grid -->
-        <div class="grid grid-3">
-          <!-- Testimonial 1 -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p>
-                "Paul doesn't just coach—he empowers. His mentorship helped me
-                navigate career questions with clarity and conviction. He leads
-                with heart, strategy, and lived wisdom."
-              </p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <img src="images/emmanuel_nwoke.webp" alt="Emmanuel Nwoke" />
-                </div>
-                <div class="testimonial-name">
-                  <h4>Emmanuel Nwoke</h4>
-                  <div class="testimonial-position">Sr. Director, Verizon</div>
+        <div class="testimonial-slider">
+          <div class="testimonial-track" id="testimonial-track">
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    "Paul doesn't just coach—he empowers. His mentorship helped
+                    me navigate career questions with clarity and conviction. He
+                    leads with heart, strategy, and lived wisdom."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                      <img
+                        src="images/emmanuel_nwoke.webp"
+                        alt="Emmanuel Nwoke"
+                      />
+                    </div>
+                    <div class="testimonial-name">
+                      <h4>Emmanuel Nwoke</h4>
+                      <div class="testimonial-position">
+                        Sr. Director, Verizon
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Testimonial 2 -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p>
-                "Paul's coaching brought out the very best in me. I'm a stronger
-                communicator, a more confident leader, and I've seen the impact
-                across every team I touch."
-              </p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <img src="images/cam_vogt.webp" alt="Cam Vogt" />
-                </div>
-                <div class="testimonial-name">
-                  <h4>Cam Vogt</h4>
-                  <div class="testimonial-position">Sr. Director, Verizon</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p>
-                "You saw something in me that I didn't even know I had. That's
-                what makes you so special as a leader. Your energy and
-                positivity pushed me to heights I didn't even think were
-                attainable."
-              </p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <img
-                    src="../images/testimonial-default.webp"
-                    alt="Venkatesh Iyer"
-                  />
-                </div>
-                <div class="testimonial-name">
-                  <h4>Venkatesh Iyer</h4>
-                  <div class="testimonial-position">
-                    Senior Director, Verizon
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <p>
+                    "Paul's coaching brought out the very best in me. I'm a
+                    stronger communicator, a more confident leader, and I've
+                    seen the impact across every team I touch."
+                  </p>
+                  <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                      <img src="images/cam_vogt.webp" alt="Cam Vogt" />
+                    </div>
+                    <div class="testimonial-name">
+                      <h4>Cam Vogt</h4>
+                      <div class="testimonial-position">
+                        Sr. Director, Verizon
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Additional Testimonials Grid -->
-        <div class="grid grid-2 mt-3">
-          <!-- VP Testimonial -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p>
-                "Paul brings a calm, thoughtful, and empowering leadership
-                style. He has a remarkable ability to analyze complex data and
-                translate it into actionable strategies that drive results."
-              </p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <img src="../images/caralis.webp" alt="Mike Caralis" />
-                </div>
-                <div class="testimonial-name">
-                  <h4>Mike Caralis</h4>
-                  <div class="testimonial-position">Vice President</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- VP Testimonial -->
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p>
-                "He is a role model for active listening and intellectual
-                curiosity. He boasts just the right amount of competitiveness
-                which yields superior performance, while showing a desire to
-                help others win."
-              </p>
-              <div class="testimonial-author">
-                <div class="testimonial-avatar">
-                  <img src="../images/shank.webp" alt="Chris Shank" />
-                </div>
-                <div class="testimonial-name">
-                  <h4>Chris Shank</h4>
-                  <div class="testimonial-position">Vice President</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial Bubbles -->
-        <div class="testimonial-bubbles">
-          <div class="testimonial-bubble">
-            "Extraordinary leader" — Shannon B.
-          </div>
-          <div class="testimonial-bubble">
-            "He's playing chess, not checkers" — Team Member
-          </div>
-          <div class="testimonial-bubble">"4x President's Cabinet Winner"</div>
-          <div class="testimonial-bubble">
-            "Genuinely cares about people" — Shannon B.
-          </div>
-          <div class="testimonial-bubble">
-            "Built a culture of empowerment" — Jon B.
+          <div class="testimonial-nav">
+            <span class="testimonial-dot active"></span>
+            <span class="testimonial-dot"></span>
           </div>
         </div>
       </div>
@@ -1639,7 +1333,7 @@
             </div>
             <div class="faq-answer">
               <p>
-                >I work with established executives, rising leaders, and
+                I work with established executives, rising leaders, and
                 high-potential managers ready to accelerate their growth. The
                 common thread is ambition, openness to growth, and a desire to
                 lead with purpose and impact. My clients range from directors
@@ -1692,6 +1386,25 @@
           mobileToggle.addEventListener("click", function () {
             navbar.classList.toggle("active");
             mobileToggle.classList.toggle("active");
+          });
+        }
+
+        // Testimonial Slider
+        const track = document.getElementById("testimonial-track");
+        const dots = document.querySelectorAll(".testimonial-dot");
+
+        if (dots.length > 0 && track) {
+          dots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+              // Update active dot
+              document
+                .querySelector(".testimonial-dot.active")
+                .classList.remove("active");
+              dot.classList.add("active");
+
+              // Move slider to corresponding slide
+              track.style.transform = `translateX(-${index * 100}%)`;
+            });
           });
         }
 
