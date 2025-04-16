@@ -5092,3 +5092,77 @@ footer {
     text-align: center;
   }
 }
+/* For premium case study images */
+.premium-case-study .case-image {
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.premium-case-study .case-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.premium-case-study:hover .case-image img {
+  transform: scale(1.05);
+}
+.footer-logo-vertical {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+.footer-logo-vertical img {
+  margin-bottom: 10px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+}
+.footer-logo-vertical span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.footer-logo img {
+  filter: brightness(0) invert(1);
+}
+.footer-logo-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-vertical img {
+  margin-bottom: 10px;
+  height: 50px;
+  filter: brightness(0) invert(1); /* makes dark logo show up white on navy */
+}
+
+.footer-logo-vertical .footer-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.footer-logo-vertical {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.footer-logo-vertical img {
+  margin-bottom: 10px;
+  height: 50px;
+  filter: brightness(0) invert(1); /* makes dark logo show up white on footer */
+}
+
+.footer-logo-vertical .footer-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+}
+.footer-logo.footer-logo-vertical img {
+  order: -1;
+  filter: invert(1);
+}
+          
