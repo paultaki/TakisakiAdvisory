@@ -4759,7 +4759,7 @@ footer {
 }
 
 .process-section {
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: #f9f9f9;
 }
 
@@ -5165,4 +5165,83 @@ footer {
   order: -1;
   filter: invert(1);
 }
-          
+
+.footer-logo-vertical {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo-vertical img {
+  height: 50px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1);
+}
+.footer-logo-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-vertical img {
+  max-width: 180px;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1);
+}
+
+.footer-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-name span {
+  color: var(--accent);
+}
+.name-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.name-primary {
+  color: white; /* or var(--primary) if you want blue */
+}
+
+.name-accent {
+  color: var(--accent); /* your orange accent color */
+}
+.pricing-toggle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-toggle {
+  display: inline-flex;
+  background: #f5f5f5;
+  border-radius: 30px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-type {
+  padding: 10px 25px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pricing-type.active {
+  background: var(--primary);
+  color: white;
+}
+
+.pricing-group {
+  display: none;
+}
+
+.pricing-group.active {
+  display: block;
+}
