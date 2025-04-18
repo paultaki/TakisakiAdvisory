@@ -1090,10 +1090,135 @@
     <!-- Footer -->
     <footer>
       <div class="container">
+        <div class="grid grid-4">
+          <!-- About Column -->
+          <div class="footer-col footer-about">
+            <div class="footer-logo-vertical">
+              <img
+                src="../images/pt-logo-white.webp"
+                alt="Paul Takisaki Logo"
+                style="height: 120px; margin-bottom: 15px"
+              />
+              <div class="footer-name">Paul<span>Takisaki</span></div>
+
+              <p>
+                Transforming underperforming teams into record-breaking engines
+                through strategic leadership and people-first culture building.
+              </p>
+            </div>
+
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/paultaki/"
+                class="social-link"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link" target="_blank" rel="noopener">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
+              </li>
+              <li>
+                <a href="#about"><i class="fas fa-chevron-right"></i> About</a>
+              </li>
+              <li>
+                <a href="#services"
+                  ><i class="fas fa-chevron-right"></i> Services</a
+                >
+              </li>
+              <li>
+                <a href="coaching/index.html"
+                  ><i class="fas fa-chevron-right"></i> Coaching</a
+                >
+              </li>
+              <li>
+                <a href="#testimonials"
+                  ><i class="fas fa-chevron-right"></i> Testimonials</a
+                >
+              </li>
+              <li>
+                <a href="blogs/index.html"
+                  ><i class="fas fa-chevron-right"></i> Blog</a
+                >
+              </li>
+              <li>
+                <a href="#contact"
+                  ><i class="fas fa-chevron-right"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services Column -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Services</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="coaching/index.html"
+                  ><i class="fas fa-chevron-right"></i> Executive Coaching</a
+                >
+              </li>
+              <li>
+                <a href="#services"
+                  ><i class="fas fa-chevron-right"></i> Fractional CRO
+                  Services</a
+                >
+              </li>
+              <li>
+                <a href="#services"
+                  ><i class="fas fa-chevron-right"></i> Strategic Consulting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Subscribe Column -->
+          <div class="footer-col">
+            <h3 class="footer-heading">Subscribe</h3>
+            <p>
+              Stay updated with my latest insights on leadership and growth
+              strategy.
+            </p>
+            <form class="mt-2">
+              <input
+                type="email"
+                placeholder="Your Email"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  margin-bottom: 10px;
+                  border: none;
+                  border-radius: 4px;
+                "
+              />
+              <button type="submit" class="btn btn-accent" style="width: 100%">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
         <div class="footer-bottom">
           <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
         </div>
       </div>
+
+      <!-- Link external script -->
+      <script src="script.js"></script>
     </footer>
 
     <!-- JavaScript -->
@@ -1103,52 +1228,26 @@
         const mobileToggle = document.getElementById("mobile-toggle");
         const navbar = document.getElementById("navbar");
 
-        if (mobileToggle) {
-          mobileToggle.addEventListener("click", function () {
-            navbar.classList.toggle("active");
-            mobileToggle.classList.toggle("active");
-          });
-        }
-
-        // Pricing Toggle
-        const individualToggle = document.getElementById("individual-toggle");
-        const corporateToggle = document.getElementById("corporate-toggle");
-        const individualPricing = document.getElementById("individual-pricing");
-        const corporatePricing = document.getElementById("corporate-pricing");
-
-        // Toggle to individual pricing
-        individualToggle.addEventListener("click", function () {
-          individualToggle.classList.add("active");
-          corporateToggle.classList.remove("active");
-          individualPricing.classList.add("active");
-          corporatePricing.classList.remove("active");
+        mobileToggle.addEventListener("click", function () {
+          navbar.classList.toggle("active");
+          mobileToggle.classList.toggle("active");
         });
 
-        // Toggle to corporate pricing
-        corporateToggle.addEventListener("click", function () {
-          corporateToggle.classList.add("active");
-          individualToggle.classList.remove("active");
-          corporatePricing.classList.add("active");
-          individualPricing.classList.remove("active");
-        });
+        // Testimonial Slider
+        const track = document.getElementById("testimonial-track");
+        const dots = document.querySelectorAll(".testimonial-dot");
+        const slides = document.querySelectorAll(".testimonial-slide");
 
-        // FAQ Toggles
-        const faqQuestions = document.querySelectorAll(".faq-question");
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            // Update active dot
+            document
+              .querySelector(".testimonial-dot.active")
+              .classList.remove("active");
+            dot.classList.add("active");
 
-        faqQuestions.forEach((question) => {
-          question.addEventListener("click", () => {
-            const faqItem = question.parentElement;
-            const faqAnswer = question.nextElementSibling;
-            const faqToggle = question.querySelector(".faq-toggle i");
-
-            // Toggle this FAQ item
-            if (faqAnswer.style.display === "block") {
-              faqAnswer.style.display = "none";
-              faqToggle.className = "fas fa-plus";
-            } else {
-              faqAnswer.style.display = "block";
-              faqToggle.className = "fas fa-minus";
-            }
+            // Move slider to corresponding slide
+            track.style.transform = `translateX(-${index * 100}%)`;
           });
         });
 
@@ -1160,6 +1259,16 @@
           } else {
             header.classList.remove("scrolled");
           }
+        });
+
+        // Form submission
+        const contactForm = document.getElementById("contact-form");
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Here you would normally handle the form submission with AJAX
+          alert("Thank you for your message! I will get back to you soon.");
+          contactForm.reset();
         });
       });
     </script>
