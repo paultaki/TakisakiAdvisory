@@ -1087,140 +1087,20 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="grid grid-4">
-          <!-- About Column -->
-          <div class="footer-col footer-about">
-            <div class="footer-logo-vertical">
-              <img
-                src="../images/pt-logo-white.webp"
-                alt="Paul Takisaki Logo"
-                style="height: 120px; margin-bottom: 15px"
-              />
-              <div class="footer-name">Paul<span>Takisaki</span></div>
 
-              <p>
-                Transforming underperforming teams into record-breaking engines
-                through strategic leadership and people-first culture building.
-              </p>
-            </div>
-
-            <div class="social-links">
-              <a
-                href="https://www.linkedin.com/in/paultaki/"
-                class="social-link"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" class="social-link" target="_blank" rel="noopener">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-link" target="_blank" rel="noopener">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Quick Links Column -->
-          <div class="footer-col">
-            <h3 class="footer-heading">Quick Links</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="../index.html#home"
-                  ><i class="fas fa-chevron-right"></i> Home</a
-                >
-              </li>
-              <li>
-                <a href="../index.html#about"
-                  ><i class="fas fa-chevron-right"></i> About</a
-                >
-              </li>
-              <li>
-                <a href="../index.html#services"
-                  ><i class="fas fa-chevron-right"></i> Services</a
-                >
-              </li>
-              <li>
-                <a href="../index.html"
-                  ><i class="fas fa-chevron-right"></i> Coaching</a
-                >
-              </li>
-              <li>
-                <a href="../#testimonials"
-                  ><i class="fas fa-chevron-right"></i> Testimonials</a
-                >
-              </li>
-              <li>
-                <a href="../blogs/index.html"
-                  ><i class="fas fa-chevron-right"></i> Blog</a
-                >
-              </li>
-              <li>
-                <a href="../index.html#contact"
-                  ><i class="fas fa-chevron-right"></i> Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Services Column -->
-          <div class="footer-col">
-            <h3 class="footer-heading">Services</h3>
-            <ul class="footer-links">
-              <li>
-                <a href="coaching/index.html"
-                  ><i class="fas fa-chevron-right"></i> Executive Coaching</a
-                >
-              </li>
-              <li>
-                <a href="../index.html#services"
-                  ><i class="fas fa-chevron-right"></i> Fractional CRO
-                  Services</a
-                >
-              </li>
-              <li>
-                <a href="../index.html#services"
-                  ><i class="fas fa-chevron-right"></i> Strategic Consulting</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Subscribe Column -->
-          <div class="footer-col">
-            <h3 class="footer-heading">Subscribe</h3>
-            <p>
-              Stay updated with my latest insights on leadership and growth
-              strategy.
-            </p>
-            <form class="mt-2">
-              <input
-                type="email"
-                placeholder="Your Email"
-                style="
-                  width: 100%;
-                  padding: 10px;
-                  margin-bottom: 10px;
-                  border: none;
-                  border-radius: 4px;
-                "
-              />
-              <button type="submit" class="btn btn-accent" style="width: 100%">
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
-        </div>
-      </div>
-
+    <div id="site-footer"></div>
+    <script>
+      fetch("../footer.html")
+        .then(res => res.text())
+        .then(html => {
+          const footer = document.getElementById("site-footer");
+          footer.innerHTML = html;
+          footer.classList.add("loaded");
+        })
+        .catch(err => console.error("Failed to load footer:", err));
+    </script>
+    
+    
       <!-- Link external script -->
       <script src="script.js"></script>
     </footer>

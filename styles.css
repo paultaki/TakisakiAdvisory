@@ -6458,3 +6458,10 @@ footer {
     text-align: center;
   }
 }
+#site-footer {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+#site-footer.loaded {
+  opacity: 1;
+}
