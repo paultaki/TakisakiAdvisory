@@ -36,1230 +36,9 @@
   <!-- Preload critical fonts and assets -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="images/hero-bg.webp" as="image" />
+  <link rel="stylesheet" href="styles.css" />
 
-    <style>
-      :root {
-        --primary: #0f3057;
-        --secondary: #006989;
-        --accent: #f18f01;
-        --light: #f5f5f5;
-        --dark: #333;
-        --success: #2ecc71;
-        --gray: #777;
-        --lightgray: #eee;
-        --transition: all 0.3s ease;
-        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        --container-width: 1200px;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--dark);
-        background-color: var(--light);
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        color: var(--primary);
-      }
-
-      h1 {
-        font-size: 3rem;
-      }
-
-      h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-      }
-
-      h3 {
-        font-size: 1.8rem;
-        color: var(--secondary);
-      }
-
-      p {
-        margin-bottom: 1.2rem;
-        font-size: 1.1rem;
-      }
-
-      a {
-        color: var(--secondary);
-        text-decoration: none;
-        transition: var(--transition);
-      }
-
-      a:hover {
-        color: var(--accent);
-      }
-
-      img {
-        max-width: 100%;
-      }
-
-      .container {
-        width: 100%;
-        max-width: var(--container-width);
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      section {
-        padding: 2rem 0;
-      }
-
-      .section-title {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .section-title h2 {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 1rem;
-      }
-
-      .section-title h2::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -10px;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--accent);
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 12px 32px;
-        background: var(--primary);
-        color: white;
-        border: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: var(--transition);
-        text-align: center;
-      }
-
-      .btn:hover {
-        background: var(--secondary);
-        color: white;
-        transform: translateY(-3px);
-        box-shadow: var(--shadow);
-      }
-
-      .btn-accent {
-        background: var(--accent);
-      }
-
-      .btn-accent:hover {
-        background: #e08100;
-      }
-
-      .btn-outline {
-        background: transparent;
-        border: 2px solid var(--accent);
-        color: var(--accent);
-      }
-
-      .btn-outline:hover {
-        background: var(--accent);
-        color: white;
-      }
-
-      .text-center {
-        text-align: center;
-      }
-
-      .grid {
-        display: grid;
-        gap: 2rem;
-      }
-
-      .grid-2 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .flex {
-        display: flex;
-      }
-
-      .flex-center {
-        justify-content: center;
-        align-items: center;
-      }
-
-      .flex-between {
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .mt-1 {
-        margin-top: 1rem;
-      }
-      .mt-2 {
-        margin-top: 2rem;
-      }
-      .mt-3 {
-        margin-top: 3rem;
-      }
-      .mb-1 {
-        margin-bottom: 1rem;
-      }
-      .mb-2 {
-        margin-bottom: 2rem;
-      }
-      .mb-3 {
-        margin-bottom: 3rem;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        padding: 1rem 0;
-        z-index: 1000;
-        transition: var(--transition);
-      }
-
-      header.scrolled {
-        padding: 0.7rem 0;
-      }
-
-      .logo {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: var(--primary);
-      }
-
-      .logo span {
-        color: var(--accent);
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-        margin: 0;
-        padding: 0;
-        justify-content: flex-end;
-      }
-
-      nav ul li a {
-        font-weight: 600;
-        position: relative;
-      }
-
-      nav ul li a::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 0;
-        height: 2px;
-        background: var(--accent);
-        transition: var(--transition);
-      }
-
-      nav ul li a:hover::after,
-      nav ul li a.active::after {
-        width: 100%;
-      }
-
-      .mobile-toggle {
-        display: none;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--primary);
-      }
-
-      .hero {
-        position: relative;
-        height: 100vh;
-        background: linear-gradient(
-            to right,
-            rgba(15, 48, 87, 0.9),
-            rgba(0, 105, 137, 0.7)
-          ),
-          url("images/hero-bg.html") no-repeat center center/cover;
-        color: white;
-        display: flex;
-        align-items: center;
-        text-align: center;
-      }
-
-      .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-        color: white;
-      }
-
-      .hero p {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-      }
-
-      .hero .btn {
-        margin: 0 0.5rem;
-      }
-
-      .hero-badge {
-        display: inline-block;
-        background: rgba(241, 143, 1, 0.2);
-        color: white;
-        font-size: 0.9rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        padding: 8px 16px;
-        border-radius: 30px;
-        margin-bottom: 1.5rem;
-        text-transform: uppercase;
-      }
-
-      .hero-stats {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .hero-stat {
-        display: flex;
-        align-items: center;
-        font-size: 1rem;
-        font-weight: 500;
-      }
-
-      .hero-stat i {
-        color: var(--accent);
-        margin-right: 8px;
-      }
-
-      .highlighted-text {
-        color: var(--accent);
-        font-weight: 600;
-      }
-
-      .results-dashboard {
-        background: var(--light);
-        padding: 4rem 0;
-        position: relative;
-      }
-
-      .results-title {
-        text-align: center;
-        margin-bottom: 3rem;
-      }
-
-      .results-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .result-card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        padding: 2rem;
-        text-align: center;
-        transition: all 0.3s ease;
-        position: relative;
-      }
-
-      .result-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-      }
-
-      .result-card::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: var(--accent);
-      }
-
-      .result-icon {
-        margin-bottom: 1.5rem;
-      }
-
-      .result-icon i {
-        font-size: 2.5rem;
-        color: var(--accent);
-        background: rgba(241, 143, 1, 0.1);
-        width: 80px;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        margin: 0 auto;
-      }
-
-      .result-number {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: var(--primary);
-        line-height: 1;
-        margin-bottom: 0.5rem;
-      }
-
-      .result-label {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--gray);
-        margin-bottom: 0;
-      }
-
-      .result-desc {
-        font-size: 0.9rem;
-        color: var(--dark);
-        margin-top: 1rem;
-        padding-top: 1rem;
-        border-top: 1px dashed rgba(108, 122, 137, 0.2);
-      }
-
-      .key-metric {
-        animation: subtle-pulse 3s infinite;
-      }
-
-      @keyframes subtle-pulse {
-        0% {
-          transform: scale(1);
-        }
-        50% {
-          transform: scale(1.03);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-
-      .about {
-        padding: 5rem 0;
-        background-color: white;
-      }
-
-      .about-img {
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-
-      .about-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        margin-top: 2rem;
-      }
-
-      .enhanced-stat-item {
-        text-align: center;
-        padding: 2rem;
-        border-radius: 8px;
-        background: white;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        transition: var(--transition);
-        overflow: hidden;
-        position: relative;
-      }
-
-      .enhanced-stat-item::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: var(--accent);
-      }
-
-      .enhanced-stat-item h4 {
-        font-size: 3.5rem;
-        color: var(--primary);
-        margin-bottom: 0.8rem;
-        font-weight: 800;
-      }
-
-      .enhanced-stat-item p {
-        margin-bottom: 0;
-        font-weight: 600;
-        color: var(--secondary);
-      }
-
-      .services {
-        background-color: var(--lightgray);
-        padding: 5rem 0;
-      }
-
-      .service-card {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        height: 100%;
-      }
-
-      .service-card:hover {
-        transform: translateY(-10px);
-      }
-
-      .service-icon {
-        font-size: 3rem;
-        color: var(--accent);
-        margin-bottom: 1.5rem;
-      }
-
-      .service-card h3 {
-        margin-bottom: 1rem;
-      }
-
-      .service-list {
-        list-style-type: none;
-        margin-bottom: 1.5rem;
-        padding-left: 0;
-      }
-
-      .service-list li {
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-      }
-
-      .service-list li i {
-        margin-right: 8px;
-        flex-shrink: 0;
-      }
-
-      .featured-service {
-        border: 2px solid var(--accent);
-        transform: scale(1.05);
-        position: relative;
-      }
-
-      .service-badge {
-        position: absolute;
-        top: -12px;
-        right: 20px;
-        background: var(--accent);
-        color: white;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      .service-cta {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-
-      .text-link {
-        color: var(--accent);
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .text-link i {
-        transition: var(--transition);
-      }
-
-      .text-link:hover i {
-        transform: translateX(5px);
-      }
-
-      .testimonials {
-        background-color: var(--lightgray);
-        padding: 5rem 0;
-      }
-
-      .testimonial-slider {
-        position: relative;
-        overflow: hidden;
-        padding: 2rem 0;
-      }
-
-      .testimonial-track {
-        display: flex;
-        transition: transform 0.5s ease;
-      }
-
-      .testimonial-slide {
-        min-width: 100%;
-        padding: 0 1rem;
-      }
-
-      .testimonial-card {
-        background: white;
-        border-radius: 8px;
-        padding: 2rem;
-        box-shadow: var(--shadow);
-        position: relative;
-      }
-
-      .testimonial-card::before {
-        content: '"';
-        font-size: 5rem;
-        position: absolute;
-        color: var(--lightgray);
-        top: 2rem;
-        left: 2rem;
-        font-family: Georgia, serif;
-        opacity: 0.5;
-      }
-
-      .testimonial-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .testimonial-content p {
-        font-style: italic;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-        margin-top: 1.5rem;
-      }
-
-      .testimonial-avatar {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 1rem;
-        flex-shrink: 0;
-      }
-
-      .testimonial-name h4 {
-        margin-bottom: 0.2rem;
-      }
-
-      .testimonial-position {
-        color: var(--gray);
-      }
-
-      .testimonial-nav {
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-      }
-
-      .testimonial-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #ccc;
-        margin: 0 5px;
-        cursor: pointer;
-      }
-
-      .testimonial-dot.active {
-        background: var(--accent);
-      }
-
-      .executive-testimonial {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--secondary) 100%
-        );
-        color: white;
-        padding: 2.5rem;
-        border-radius: 8px;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .executive-testimonial::before {
-        content: '"';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 8rem;
-        line-height: 1;
-        font-family: Georgia, serif;
-        color: rgba(255, 255, 255, 0.1);
-      }
-
-      .executive-testimonial p {
-        position: relative;
-        font-size: 1.2rem;
-        line-height: 1.7;
-        font-style: italic;
-        margin-bottom: 1.5rem;
-        z-index: 1;
-      }
-
-      .executive-testimonial .testimonial-author {
-        display: flex;
-        align-items: center;
-        margin-top: 1.5rem;
-        position: relative;
-        z-index: 1;
-      }
-
-      .executive-testimonial .testimonial-name h4 {
-        color: white;
-        margin-bottom: 0.2rem;
-      }
-
-      .executive-testimonial .testimonial-position {
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 600;
-      }
-
-      .contact {
-        background-color: var(--lightgray);
-        padding: 5rem 0;
-      }
-
-      .contact-info {
-        margin-bottom: 2rem;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-      }
-
-      .contact-icon {
-        font-size: 1.5rem;
-        color: var(--accent);
-        margin-right: 1rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea,
-      .contact-form select {
-        width: 100%;
-        padding: 12px 15px;
-        margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        font-family: inherit;
-        font-size: 1rem;
-      }
-
-      .contact-form textarea {
-        height: 150px;
-        resize: vertical;
-      }
-
-      .social-links {
-        display: flex;
-      }
-
-      .social-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        margin-right: 10px;
-        color: white;
-        transition: var(--transition);
-      }
-
-      .social-link:hover {
-        background: var(--accent);
-        transform: translateY(-5px);
-      }
-
-      footer {
-        background: var(--primary);
-        color: white;
-        padding: 4rem 0 1rem;
-      }
-
-      .footer-logo {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-      }
-
-      .footer-logo span {
-        color: var(--accent);
-      }
-
-      .footer-logo img {
-        height: 50px;
-        margin-right: 10px;
-      }
-
-      .footer-about p {
-        margin-bottom: 1.5rem;
-      }
-
-      .footer-heading {
-        color: white;
-        font-size: 1.3rem;
-        margin-bottom: 1.5rem;
-        position: relative;
-      }
-
-      .footer-heading::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        width: 50px;
-        height: 2px;
-        background: var(--accent);
-      }
-
-      .footer-links li {
-        list-style: none;
-        margin-bottom: 0.8rem;
-      }
-
-      .footer-links a {
-        color: #ddd;
-        transition: var(--transition);
-      }
-
-      .footer-links a:hover {
-        color: var(--accent);
-        padding-left: 5px;
-      }
-
-      .footer-bottom {
-        text-align: center;
-        padding-top: 3rem;
-        margin-top: 3rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      /* Coaching page styles */
-      .coaching-hero {
-        background: linear-gradient(
-            rgba(15, 48, 87, 0.9),
-            rgba(0, 105, 137, 0.7)
-          ),
-          url("images/leadership-bg.html") center/cover;
-        padding: 8rem 0 5rem;
-        color: white;
-        text-align: center;
-      }
-
-      .coaching-hero h1 {
-        font-size: 3.5rem;
-        color: white;
-        margin-bottom: 1rem;
-      }
-
-      .coaching-subtitle {
-        font-size: 1.25rem;
-        max-width: 700px;
-        margin: 0 auto 2.5rem;
-      }
-
-      .coaching-badges {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-bottom: 2.5rem;
-      }
-
-      .coaching-badge {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.5rem 1rem;
-        border-radius: 30px;
-        font-size: 0.9rem;
-      }
-
-      .process-section {
-        padding: 5rem 0;
-        background: #f9f9f9;
-      }
-
-      .process-steps {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .process-step {
-        display: flex;
-        gap: 1.5rem;
-      }
-
-      .step-number {
-        background: var(--accent);
-        color: white;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-
-      .step-content h3 {
-        margin-bottom: 0.5rem;
-      }
-
-      .success-story {
-        padding: 5rem 0;
-        background: white;
-      }
-
-      .story-content {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2.5rem;
-        border: 1px solid #eee;
-        border-radius: 8px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      }
-
-      .story-quote {
-        font-size: 1.1rem;
-        font-style: italic;
-        color: #555;
-        margin-bottom: 2rem;
-        padding-left: 1.5rem;
-        border-left: 4px solid var(--accent);
-      }
-
-      .story-results {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-        text-align: center;
-      }
-
-      .result-number {
-        font-size: 2.5rem;
-        font-weight: 700;
-        color: var(--accent);
-        margin-bottom: 0.5rem;
-      }
-
-      .result-label {
-        font-size: 0.9rem;
-        color: #666;
-      }
-
-      .pricing-section {
-        padding: 5rem 0;
-        background: linear-gradient(135deg, #f5f7fa, #eef2f7);
-      }
-
-      .pricing-options {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-
-      .pricing-card {
-        background: white;
-        border-radius: 8px;
-        padding: 2.5rem;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        position: relative;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .pricing-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .pricing-card.featured {
-        border: 2px solid var(--accent);
-        transform: scale(1.05);
-      }
-
-      .pricing-badge {
-        position: absolute;
-        top: -12px;
-        right: 20px;
-        background: var(--accent);
-        color: white;
-        padding: 0.25rem 1rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 600;
-      }
-
-      .pricing {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin: 1.5rem 0;
-      }
-
-      .pricing span {
-        font-size: 1rem;
-        font-weight: 400;
-        color: #666;
-      }
-
-      .pricing-features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 2rem;
-      }
-
-      .pricing-features li {
-        padding: 0.5rem 0;
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-      }
-
-      .pricing-features i {
-        color: var(--accent);
-      }
-
-      .pricing-note {
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 1.5rem;
-        font-style: italic;
-      }
-
-      .btn-block {
-        display: block;
-        width: 100%;
-        text-align: center;
-      }
-
-      .faq-section {
-        padding: 5rem 0;
-        background: white;
-      }
-
-      .faq-container {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .faq-item {
-        border-bottom: 1px solid #eee;
-        margin-bottom: 1rem;
-      }
-
-      .faq-question {
-        padding: 1rem 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-      }
-
-      .faq-question h3 {
-        margin: 0;
-        font-size: 1.1rem;
-      }
-
-      .faq-toggle {
-        color: var(--accent);
-        transition: transform 0.3s ease;
-      }
-
-      .faq-question.active .faq-toggle {
-        transform: rotate(45deg);
-      }
-
-      .faq-answer {
-        padding: 0 0 1rem;
-        display: none;
-      }
-
-      .faq-item.active .faq-answer {
-        display: block;
-      }
-
-      /* Media Queries */
-      @media (max-width: 992px) {
-        .grid-3,
-        .grid-4 {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .featured-service {
-          transform: none;
-        }
-
-        .pricing-card.featured {
-          transform: none;
-        }
-      }
-
-      @media (max-width: 768px) {
-        h1 {
-          font-size: 2.5rem;
-        }
-
-        h2 {
-          font-size: 2rem;
-        }
-
-        .hero h1 {
-          font-size: 2.7rem;
-        }
-
-        .hero p {
-          font-size: 1.1rem;
-        }
-
-        .grid-2,
-        .grid-3,
-        .grid-4 {
-          grid-template-columns: 1fr;
-        }
-
-        .mobile-toggle {
-          display: block;
-        }
-
-        nav {
-          position: fixed;
-          top: 0;
-          right: -300px;
-          width: 280px;
-          height: 100vh;
-          background: white;
-          padding: 80px 20px 20px;
-          transition: 0.4s;
-          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        nav.active {
-          right: 0;
-        }
-
-        nav ul {
-          flex-direction: column;
-        }
-
-        nav ul li {
-          margin: 1rem 0;
-        }
-
-        .about-stats,
-        .story-results {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .hero-stats {
-          flex-direction: column;
-          gap: 1rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero {
-          height: auto;
-          min-height: 100vh;
-          padding: 120px 0 3rem;
-        }
-
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-
-        .hero p {
-          font-size: 1rem;
-        }
-
-        .hero-btns {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .hero-btns .btn {
-          width: 100%;
-          margin: 0.5rem 0;
-        }
-
-        .about-stats {
-          grid-template-columns: 1fr;
-        }
-
-        .story-results {
-          grid-template-columns: 1fr;
-        }
-
-        .coaching-hero h1 {
-          font-size: 2.5rem;
-        }
-
-        .coaching-badges {
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .process-step {
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-      }
-    </style>
-  </head>
+</head>
   <body>
     <!-- Header -->
     <header id="header">
@@ -1311,7 +90,8 @@
             </div>
             <div class="hero-stat">
               <i class="fas fa-chart-line"></i>
-              <span>250%+ YOY Growth</span>
+              <span>$1B+ Revenue Launched
+              </span>
             </div>
             <div class="hero-stat">
               <i class="fas fa-users"></i>
@@ -1335,12 +115,14 @@
               <i class="fas fa-chart-line"></i>
             </div>
             <div class="result-number">
-              250%<span style="font-size: 2rem">+</span>
+              $1B+ <span style="font-size: 2rem">+</span>
             </div>
-            <div class="result-label">Year-Over-Year Growth</div>
+            <div class="result-label">Revenue Launched
+              h</div>
             <div class="result-desc">
-              Breaking all historic benchmarks in my region, even against direct
-              competitors across the street
+              Built and led the national technical sales org that launched 
+              Verizon’s Fixed Wireless Access business from $0 to over $1B ARR. 
+              My team translated vision into execution, enabling one of the fastest scale-outs in company history.
             </div>
           </div>
 
@@ -1894,17 +676,19 @@
         <div class="grid grid-4">
           <!-- About Column -->
           <div class="footer-col footer-about">
-            <div class="footer-logo footer-logo-vertical">
-              <img src="images/paul-logo.webp" alt="Paul Takisaki Logo" />
-              <div class="footer-name">
-                Paul<span style="color: var(--accent)">Takisaki</span>
-              </div>
-            </div>
+            <div class="footer-logo-vertical">
+              <img
+                src="images/pt-logo-white.webp"
+                alt="Paul Takisaki Logo"
+                style="height: 120px; margin-bottom: 15px"
+              />
+              <div class="footer-name">Paul<span>Takisaki</span></div>
 
-            <p>
-              Transforming underperforming teams into record-breaking engines
-              through strategic leadership and people-first culture building.
-            </p>
+              <p>
+                Transforming underperforming teams into record-breaking engines
+                through strategic leadership and people-first culture building.
+              </p>
+            </div>
 
             <div class="social-links">
               <a
@@ -2023,53 +807,362 @@
     <!-- JavaScript -->
     <script>
       // Mobile Menu Toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileToggle = document.getElementById("mobile-toggle");
-        const navbar = document.getElementById("navbar");
+// Wrap all code in a DOMContentLoaded event listener to ensure elements exist
+document.addEventListener("DOMContentLoaded", function() {
+  // Mobile Menu Toggle
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const navbar = document.getElementById("navbar");
+  
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+      mobileToggle.classList.toggle("active");
+    });
+  }
 
-        mobileToggle.addEventListener("click", function () {
-          navbar.classList.toggle("active");
-          mobileToggle.classList.toggle("active");
+  // The rest of your existing script.js code
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (navbar.classList.contains("active")) {
+        navbar.classList.remove("active");
+      }
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
         });
+      }
+    });
+  });
 
-        // Testimonial Slider
-        const track = document.getElementById("testimonial-track");
-        const dots = document.querySelectorAll(".testimonial-dot");
-        const slides = document.querySelectorAll(".testimonial-slide");
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= sectionTop - 200) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
 
-        dots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            // Update active dot
-            document
-              .querySelector(".testimonial-dot.active")
-              .classList.remove("active");
-            dot.classList.add("active");
+  const testimonialTrack = document.getElementById("testimonial-track");
+  const testimonialNav = document.getElementById("testimonial-nav");
+  
+  if (testimonialTrack && testimonialNav) {
+    const slides = testimonialTrack.children;
+    let currentSlide = 0;
+    
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("testimonial-dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        goToSlide(i);
+      });
+      testimonialNav.appendChild(dot);
+    }
+    
+    function goToSlide(index) {
+      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+      document.querySelectorAll(".testimonial-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
+    
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      goToSlide(currentSlide);
+    }, 8000);
+  }
 
-            // Move slider to corresponding slide
-            track.style.transform = `translateX(-${index * 100}%)`;
-          });
-        });
+  if (!Element.prototype.scrollIntoConstrainedView) {
+    Element.prototype.scrollIntoConstrainedView = function (scrollIntoViewOptions) {
+      const headerOffset = 80;
+      const elementPosition = this.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: scrollIntoViewOptions?.behavior || "auto",
+      });
+    };
+  }
 
-        // Header scroll effect
-        const header = document.getElementById("header");
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 100) {
-            header.classList.add("scrolled");
-          } else {
-            header.classList.remove("scrolled");
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = this.querySelector('input[placeholder="Your Name"]').value;
+      const email = this.querySelector('input[placeholder="Your Email"]').value;
+      const subject = this.querySelector('input[placeholder="Subject"]').value;
+      const message = this.querySelector("textarea").value;
+      
+      const successMessage = document.createElement("div");
+      successMessage.className = "success-message";
+      successMessage.style.padding = "1rem";
+      successMessage.style.backgroundColor = "var(--success)";
+      successMessage.style.color = "white";
+      successMessage.style.borderRadius = "4px";
+      successMessage.style.marginTop = "1rem";
+      successMessage.textContent = "Thank you for your message! I'll get back to you soon.";
+      
+      contactForm.innerHTML = "";
+      contactForm.appendChild(successMessage);
+      
+      console.log({
+        name,
+        email,
+        subject,
+        message,
+      });
+    });
+  }
+
+  const animatedElements = document.querySelectorAll(".service-card, .case-card, .blog-card, .stat-item");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  
+  animatedElements.forEach((el) => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(el);
+  });
+
+  const hero = document.querySelector(".hero-content");
+  if (hero) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            hero.classList.add("animate");
           }
         });
+      },
+      { threshold: 0.6 }
+    );
+    
+    observer.observe(hero);
+    
+    if (window.innerHeight >= hero.getBoundingClientRect().top) {
+      hero.classList.add("animate");
+    }
+  }
+});
+// Wrap all code in a DOMContentLoaded event listener to ensure elements exist
+document.addEventListener("DOMContentLoaded", function() {
+  // Mobile Menu Toggle
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const navbar = document.getElementById("navbar");
+  
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+      mobileToggle.classList.toggle("active");
+    });
+  }
 
-        // Form submission
-        const contactForm = document.getElementById("contact-form");
-        contactForm.addEventListener("submit", function (e) {
-          e.preventDefault();
+  // The rest of your existing script.js code
+  window.addEventListener("scroll", () => {
+    const header = document.getElementById("header");
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
 
-          // Here you would normally handle the form submission with AJAX
-          alert("Thank you for your message! I will get back to you soon.");
-          contactForm.reset();
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (navbar.classList.contains("active")) {
+        navbar.classList.remove("active");
+      }
+      const targetId = this.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        const headerOffset = 80;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
         });
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (scrollY >= sectionTop - 200) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").includes(current)) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  const testimonialTrack = document.getElementById("testimonial-track");
+  const testimonialNav = document.getElementById("testimonial-nav");
+  
+  if (testimonialTrack && testimonialNav) {
+    const slides = testimonialTrack.children;
+    let currentSlide = 0;
+    
+    for (let i = 0; i < slides.length; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("testimonial-dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        goToSlide(i);
       });
+      testimonialNav.appendChild(dot);
+    }
+    
+    function goToSlide(index) {
+      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+      document.querySelectorAll(".testimonial-dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+      currentSlide = index;
+    }
+    
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      goToSlide(currentSlide);
+    }, 8000);
+  }
+
+  if (!Element.prototype.scrollIntoConstrainedView) {
+    Element.prototype.scrollIntoConstrainedView = function (scrollIntoViewOptions) {
+      const headerOffset = 80;
+      const elementPosition = this.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: scrollIntoViewOptions?.behavior || "auto",
+      });
+    };
+  }
+
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = this.querySelector('input[placeholder="Your Name"]').value;
+      const email = this.querySelector('input[placeholder="Your Email"]').value;
+      const subject = this.querySelector('input[placeholder="Subject"]').value;
+      const message = this.querySelector("textarea").value;
+      
+      const successMessage = document.createElement("div");
+      successMessage.className = "success-message";
+      successMessage.style.padding = "1rem";
+      successMessage.style.backgroundColor = "var(--success)";
+      successMessage.style.color = "white";
+      successMessage.style.borderRadius = "4px";
+      successMessage.style.marginTop = "1rem";
+      successMessage.textContent = "Thank you for your message! I'll get back to you soon.";
+      
+      contactForm.innerHTML = "";
+      contactForm.appendChild(successMessage);
+      
+      console.log({
+        name,
+        email,
+        subject,
+        message,
+      });
+    });
+  }
+
+  const animatedElements = document.querySelectorAll(".service-card, .case-card, .blog-card, .stat-item");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  
+  animatedElements.forEach((el) => {
+    el.style.opacity = 0;
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(el);
+  });
+
+  const hero = document.querySelector(".hero-content");
+  if (hero) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            hero.classList.add("animate");
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+    
+    observer.observe(hero);
+    
+    if (window.innerHeight >= hero.getBoundingClientRect().top) {
+      hero.classList.add("animate");
+    }
+  }
+});
+
+function openPricingModal() {
+  alert("Full case studies coming soon! Check back for purchase options.");
+}
+
+
     </script>
   </body>
 

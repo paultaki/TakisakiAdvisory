@@ -1,0 +1,3044 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul Takisaki | Executive Leadership Resume</title>
+    <style>
+      :root {
+        --primary: #0f3057;
+        --secondary: #006989;
+        --accent: #f18f01;
+        --light: #f5f5f5;
+        --dark: #333;
+        --success: #2ecc71;
+        --gray: #777;
+        --lightgray: #eee;
+        --transition: all 0.3s ease;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --container-width: 1200px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        padding-top: 80px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 80px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        color: var(--secondary);
+      }
+
+      p {
+        margin-bottom: 1.2rem;
+        font-size: 1.1rem;
+      }
+
+      a {
+        color: var(--secondary);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .text-right {
+        text-align: right;
+      }
+
+      .mt-1 {
+        margin-top: 1rem;
+      }
+
+      .mt-2 {
+        margin-top: 2rem;
+      }
+
+      .mt-3 {
+        margin-top: 3rem;
+      }
+
+      .mb-1 {
+        margin-bottom: 1rem;
+      }
+
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+
+      .mb-3 {
+        margin-bottom: 3rem;
+      }
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      header.scrolled {
+        padding: 0.7rem 0;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      .logo img {
+        height: 50px;
+        margin-right: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul li a {
+        font-weight: 600;
+        position: relative;
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: var(--transition);
+      }
+
+      nav ul li a:hover::after,
+      nav ul li a.active::after {
+        width: 100%;
+      }
+
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--primary);
+      }
+
+      .resume-header {
+        padding: 4rem 0;
+        background: linear-gradient(
+          to right,
+          rgba(15, 48, 87, 0.9),
+          rgba(0, 105, 137, 0.7)
+        );
+        color: white;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .resume-header h1 {
+        color: white;
+        margin-bottom: 1rem;
+      }
+
+      .resume-header p {
+        max-width: 800px;
+        margin: 0 auto 1.5rem;
+        font-size: 1.25rem;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .contact-link {
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 500;
+      }
+
+      .contact-link i {
+        font-size: 1.2rem;
+      }
+
+      .section-title {
+        text-align: left;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .section-title h2 {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-title p {
+        color: var(--gray);
+        font-size: 1.1rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .executive-summary {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        margin-bottom: 3rem;
+      }
+
+      .summary-content {
+        font-size: 1.2rem;
+        line-height: 1.8;
+      }
+
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .highlight-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.8rem;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        border-top: 3px solid var(--accent);
+      }
+
+      .highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .highlight-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .highlight-card h3 i {
+        color: var(--accent);
+        font-size: 1.2rem;
+      }
+
+      .career-section {
+        padding: 3rem 0;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 6px;
+        background-color: var(--lightgray);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .container-timeline {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .container-timeline::after {
+        content: "";
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -12px;
+        background-color: white;
+        border: 4px solid var(--accent);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid white;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent white;
+      }
+
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+
+      .right::after {
+        left: -12px;
+      }
+
+      .content {
+        padding: 20px 30px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+        box-shadow: var(--shadow);
+      }
+
+      .job-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.3rem;
+        color: var(--primary);
+      }
+
+      .job-company {
+        font-size: 1.1rem;
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .job-period {
+        display: inline-block;
+        background: var(--lightgray);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      .job-description {
+        margin-bottom: 1rem;
+      }
+
+      .achievements {
+        list-style-type: none;
+        margin-top: 1rem;
+      }
+
+      .achievements li {
+        padding-left: 1.5rem;
+        position: relative;
+        margin-bottom: 0.7rem;
+      }
+
+      .achievements li::before {
+        content: "→";
+        color: var(--accent);
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .metric {
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .initiatives-section {
+        background: var(--lightgray);
+        padding: 4rem 0;
+      }
+
+      .initiative-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .initiative-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .initiative-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .initiative-header {
+        background: var(--primary);
+        color: white;
+        padding: 1.5rem;
+      }
+
+      .initiative-header h3 {
+        color: white;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+      }
+
+      .initiative-body {
+        padding: 1.5rem;
+        flex-grow: 1;
+      }
+
+      .initiative-body p {
+        margin-bottom: 1.5rem;
+      }
+
+      .initiative-results {
+        background: rgba(15, 48, 87, 0.05);
+        padding: 1rem;
+        border-radius: 6px;
+        margin-bottom: 1.5rem;
+      }
+
+      .initiative-results h4 {
+        font-size: 1rem;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .result-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .result-item i {
+        color: var(--accent);
+      }
+
+      .initiative-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid var(--lightgray);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .case-study-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent);
+        font-weight: 600;
+        transition: var(--transition);
+      }
+
+      .case-study-link:hover {
+        transform: translateX(5px);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        position: relative;
+        background-color: white;
+        margin: 5% auto;
+        padding: 2rem;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 900px;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        animation: modalopen 0.4s;
+      }
+
+      @keyframes modalopen {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1.5rem;
+        color: var(--gray);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .close-modal:hover {
+        color: var(--primary);
+      }
+
+      .case-study-header {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--lightgray);
+      }
+
+      .case-study-content {
+        max-height: 70vh;
+        overflow-y: auto;
+        padding-right: 1rem;
+      }
+
+      .case-study-content h3 {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+
+      .stat-box {
+        background: var(--lightgray);
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .stat-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      .skills-section {
+        padding: 4rem 0;
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .skill-category {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .skill-category h3 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--lightgray);
+      }
+
+      .skill-list {
+        list-style: none;
+      }
+
+      .skill-list li {
+        padding: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .skill-list li i {
+        color: var(--accent);
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin: 2rem 0;
+      }
+
+      .skill-tag {
+        background: var(--lightgray);
+        color: var(--dark);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .skill-tag:hover {
+        background: var(--accent);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .testimonials-section {
+        background: var(--lightgray);
+        padding: 4rem 0;
+      }
+
+      .testimonials-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 8px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        font-size: 5rem;
+        font-family: Georgia, serif;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+        color: rgba(15, 48, 87, 0.1);
+        line-height: 1;
+      }
+
+      .testimonial-content {
+        position: relative;
+        font-style: italic;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        padding-left: 1.5rem;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-info h4 {
+        margin-bottom: 0.2rem;
+      }
+
+      .testimonial-position {
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .executive-testimonial {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        color: white;
+      }
+
+      .executive-testimonial::before {
+        color: rgba(255, 255, 255, 0.1);
+      }
+
+      .executive-testimonial .testimonial-content {
+        color: white;
+      }
+
+      .executive-testimonial .testimonial-info h4 {
+        color: white;
+      }
+
+      .executive-testimonial .testimonial-position {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .education-section {
+        padding: 4rem 0;
+      }
+
+      .education-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .education-card {
+        background: white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .education-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .education-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .education-institution {
+        color: var(--secondary);
+        margin-bottom: 0.5rem;
+      }
+
+      .education-period {
+        font-size: 0.9rem;
+        color: var(--gray);
+        margin-bottom: 1rem;
+      }
+
+      footer {
+        background: var(--primary);
+        color: white;
+        padding: 4rem 0 1rem;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-about h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .footer-about h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .footer-about p {
+        margin-bottom: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .social-links {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        background: var(--accent);
+        transform: translateY(-5px);
+      }
+
+      .quick-links h3 {
+        color: white;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .quick-links h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .quick-links ul {
+        list-style: none;
+      }
+
+      .quick-links ul li {
+        margin-bottom: 0.7rem;
+      }
+
+      .quick-links ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .quick-links ul li a:hover {
+        color: white;
+        transform: translateX(5px);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+      }
+
+      .footer-quote {
+        font-style: italic;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 2rem;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      @media (max-width: 992px) {
+        .grid-3,
+        .grid-4 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .initiative-grid {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .timeline::after {
+          left: 31px;
+        }
+
+        .container-timeline {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .container-timeline::before {
+          left: 60px;
+          border: medium solid white;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent white transparent transparent;
+        }
+
+        .left::after,
+        .right::after {
+          left: 18px;
+        }
+
+        .right {
+          left: 0%;
+        }
+
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -300px;
+          width: 280px;
+          height: 100vh;
+          background: white;
+          padding: 80px 20px 20px;
+          transition: 0.4s;
+          box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        nav ul li {
+          margin: 1rem 0;
+        }
+
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .highlights,
+        .initiative-grid,
+        .education-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .resume-header {
+          padding: 3rem 0;
+        }
+
+        .resume-header h1 {
+          font-size: 2.2rem;
+        }
+
+        .resume-header p {
+          font-size: 1rem;
+        }
+
+        .testimonial-author {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container header-container">
+        <a href="#" class="logo">Paul<span>Takisaki</span></a>
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <nav id="navbar">
+          <ul>
+            <li><a href="#resume-top" class="active">Home</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#initiatives">Initiatives</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Resume Header -->
+    <section id="resume-top" class="resume-header">
+      <div class="container">
+        <h1>Paul Takisaki</h1>
+        <p>
+          Transformative Leadership | Results-Driven Strategy | People-First
+          Culture
+        </p>
+        <div class="contact-links">
+          <a href="mailto:paul@paultakisaki.com" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            paul@paultakisaki.com
+          </a>
+          <a
+            href="https://linkedin.com/in/paultakisaki"
+            class="contact-link"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+            linkedin.com/in/paultakisaki
+          </a>
+          <a
+            href="https://paultakisaki.com"
+            class="contact-link"
+            target="_blank"
+          >
+            <i class="fas fa-globe"></i>
+            paultakisaki.com
+          </a>
+          <a href="#" class="contact-link">
+            <i class="fas fa-map-marker-alt"></i>
+            Gilbert, Arizona
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Executive Summary -->
+    <section id="summary" class="container">
+      <div class="section-title">
+        <h2>Executive Summary</h2>
+        <p>My leadership approach in a nutshell</p>
+      </div>
+
+      <div class="executive-summary">
+        <div class="summary-content">
+          <p>
+            Trailblazing executive, strategist, and culture architect with a
+            20-year track record of redefining leadership through performance,
+            empathy, and precision. From mall kiosk to Associate VP at Verizon,
+            I earned 12 promotions, 4 President's Cabinet Awards (top 1%
+            nationally), and a farewell video from the CRO. I specialize in
+            fixing broken systems, building elite teams, and turning chaos into
+            clarity—without sacrificing my soul or my family dinners. Quietly
+            competitive. Ruthlessly focused. Results that speak louder than I
+            do.
+          </p>
+        </div>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight-card">
+          <h3><i class="fas fa-heart"></i>Leadership Philosophy</h3>
+          <p>
+            I don't just lead. I awaken potential in people. I create systems
+            that outlast me. I focus on the vital 20% that drives 80% of
+            results. I prioritize empowerment over control, trust over
+            micromanagement, and transformation over transactions.
+          </p>
+        </div>
+
+        <div class="highlight-card">
+          <h3><i class="fas fa-bolt"></i>Impact Metrics</h3>
+          <p>
+            My strategies have consistently yielded record-breaking performance:
+            <span class="metric">19 consecutive months</span> of YOY growth,
+            <span class="metric">28% increase</span> in quota attainment,
+            <span class="metric">50% reduction</span> in customer churn,
+            <span class="metric">$53M</span> in protected revenue, and
+            <span class="metric">quadrupled</span> team productivity.
+          </p>
+        </div>
+
+        <div class="highlight-card">
+          <h3><i class="fas fa-lightbulb"></i>Unique Approach</h3>
+          <p>
+            I identify structural problems that others accept as "how things
+            are." I design data-driven solutions that align incentives with
+            outcomes. I focus on implementation excellence, because great ideas
+            fail without exceptional execution.
+          </p>
+        </div>
+      </div>
+    </section>
+    <div class="timeline">
+      <!-- Associate VP role -->
+      <div class="container-timeline left">
+        <div class="content">
+          <h3 class="job-title">Associate Vice President</h3>
+          <p class="job-company">
+            Verizon — National Technical Sales (450+ org)
+          </p>
+          <span class="job-period">Jan 2022 - Present</span>
+          <ul class="achievements">
+            <li>
+              Led nationwide organization including architects, engineers, and
+              customer success professionals
+            </li>
+            <li>
+              Designed & rolled out real-time commission dashboards, increasing
+              quota attainment by <span class="metric">28%</span>
+            </li>
+            <li>
+              Drove adoption of new AI-powered sales intelligence—<span
+                class="metric"
+                >94% daily usage rate</span
+              >
+              in 90 days
+            </li>
+            <li>
+              Created the first Customer Success Team, cutting churn by
+              <span class="metric">50%</span> and saving
+              <span class="metric">$53M</span> in projected revenue
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Southwest region -->
+      <div class="container-timeline right">
+        <div class="content">
+          <h3 class="job-title">Sr. Director, Business Sales</h3>
+          <p class="job-company">Verizon — Southwest Region</p>
+          <span class="job-period">Jul 2020 - Jan 2022</span>
+          <ul class="achievements">
+            <li>
+              Led sales teams across AZ, NM, NV, El Paso with 150+ reps, leaders
+              & support staff
+            </li>
+            <li>
+              Grew top-line revenue <span class="metric">+37% YoY</span>, with
+              Net Adds up <span class="metric">96%</span> and UCC sales up
+              <span class="metric">46%</span>
+            </li>
+            <li>
+              Increased quota attainment by
+              <span class="metric">20%</span> through cultural reset, coaching
+              frameworks, and targeted training
+            </li>
+            <li>
+              Won President's Cabinet (top <span class="metric">1%</span> of
+              sales leaders nationally)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Pacific Northwest indirect distribution -->
+      <div class="container-timeline left">
+        <div class="content">
+          <h3 class="job-title">Sr. Director, Indirect Distribution</h3>
+          <p class="job-company">Verizon — Pacific Northwest</p>
+          <span class="job-period">Apr 2019 - Jul 2020</span>
+          <ul class="achievements">
+            <li>
+              Led sales, operations, and financials across
+              <span class="metric">600+</span> national and local indirect
+              points of distribution
+            </li>
+            <li>
+              Pivoted to optimize remaining channels, retain market share, and
+              preserve partner relationships during unprecedented COVID-19
+              downturn
+            </li>
+            <li>
+              Maintained performance benchmarks and retention during one of the
+              most volatile periods in retail history
+            </li>
+            <li>
+              <em
+                >Key lesson: Sometimes leadership is about protecting the floor,
+                not chasing the ceiling.</em
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PNW Business Sales -->
+      <div class="container-timeline right">
+        <div class="content">
+          <h3 class="job-title">Sr. Director, Business Sales</h3>
+          <p class="job-company">Verizon — Pacific Northwest Region</p>
+          <span class="job-period">Jun 2017 - Mar 2019</span>
+          <ul class="achievements">
+            <li>
+              Led full regional turnaround, driving
+              <span class="metric">19 consecutive months</span> of YOY growth in
+              a highly competitive market
+            </li>
+            <li>
+              Won Winners Circle (2018) and President's Cabinet (2019)—top
+              <span class="metric">1%</span> of sales leaders nationally
+            </li>
+            <li>
+              New Net Adds ↑ <span class="metric">50%</span>, churn ↓
+              <span class="metric">47%</span>, and employee satisfaction soared
+              from <span class="metric">20%</span> to
+              <span class="metric">80%</span>, while competing directly with
+              T-Mobile HQ
+            </li>
+            <li>
+              Launched "Playing to Win" strategy, anchored in clarity,
+              strengths-based leadership, and ruthless prioritization
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Minneapolis-St. Paul -->
+      <div class="container-timeline left">
+        <div class="content">
+          <h3 class="job-title">Sr. Director of Business Sales</h3>
+          <p class="job-company">Verizon — Minneapolis-St. Paul</p>
+          <span class="job-period">Jan 2014 - Jun 2017</span>
+          <ul class="achievements">
+            <li>
+              Designed customer acquisition strategy that increased new
+              acquisitions by <span class="metric">60%</span> (2015-2016),
+              #<span class="metric">1</span> of
+              <span class="metric">21</span> territories
+            </li>
+            <li>
+              Empowered employees and reshaped leadership, territories and quota
+              model that led to a
+              <span class="metric">22% increase</span> in subscribers base over
+              3 years
+            </li>
+            <li>
+              Launched customer feedback loops to identify and solve top issues,
+              increasing customer satisfaction scores by
+              <span class="metric">100% in 2 years</span>
+            </li>
+            <li>
+              Achieved President's Cabinet in 2017 & 2018 (top
+              <span class="metric">1%</span> in sales)
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Early Career -->
+      <div class="container-timeline right">
+        <div class="content">
+          <h3 class="job-title">Early Career Progression</h3>
+          <p class="job-company">Verizon — Multiple Locations</p>
+          <span class="job-period">2005-2014</span>
+
+          <div class="early-career-item">
+            <strong>Regional Director of Data Sales (2011-2014)</strong>
+            Led Kansas City region, increased IoT sales by
+            <span class="metric">260% year 1, 550% year 2</span>, received
+            <span class="metric">2</span>
+            Presidential Awards and Winners Circle 2012
+          </div>
+
+          <div class="early-career-item">
+            <strong>Director, Technical Solutions Sales (2008-2011)</strong>
+            Increased results by <span class="metric">500%</span> in
+            <span class="metric">3</span>
+            years, created "Prospecting Maps" leading to
+            <span class="metric">34% uptick</span> in daily interactions,
+            launched "Failure Fridays"
+          </div>
+
+          <div class="early-career-item">
+            <strong>Principal Manager - Solutions Architect (2010-2011)</strong>
+            Increased market penetration by developing strategies for technical
+            products and services growth
+          </div>
+
+          <div class="early-career-item">
+            <strong>Client Executive (2008-2010)</strong>
+            Responsible for increasing revenues and providing world-class
+            support to largest accounts including Fortune 100
+          </div>
+
+          <div class="early-career-item">
+            <strong>Solutions Architect (2007-2008)</strong>
+            Data Solution support for Retail and Indirect channels
+          </div>
+
+          <div class="early-career-item">
+            <strong>Data Sales Consultant (2006-2007)</strong>
+            Supporting solutions sales in Retail and Indirect channels
+          </div>
+
+          <div class="early-career-item">
+            <strong>Indirect Account Manager (2005-2006)</strong>
+            First role at Verizon, beginning a 20-year career journey
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signature Initiatives -->
+    <section id="initiatives" class="initiatives-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Signature Initiatives</h2>
+          <p>Innovative solutions with measurable impacts</p>
+        </div>
+
+        <div class="initiative-grid">
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>Quota Model Transformation</h3>
+            </div>
+            <div class="initiative-body">
+              <p>
+                Overhauled unfair quota system; replaced legacy comp model with
+                a 4-dimension framework that became the national standard,
+                driving 19 consecutive months of growth.
+              </p>
+
+              <div class="initiative-results">
+                <h4>Key Results:</h4>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Quota complaints dropped to
+                    <span class="metric">zero</span> for a full quarter</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">19 consecutive months</span> of YOY
+                    growth</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Adopted as
+                    <span class="metric">national standard</span> model for all
+                    B2B SMB reps</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="initiative-footer">
+              <a
+                href="#"
+                class="case-study-link"
+                data-modal="quota-model-modal"
+              >
+                Read Case Study <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>Customer Success Revolution</h3>
+            </div>
+            <div class="initiative-body">
+              <p>
+                Created Verizon's first Customer Success team, implementing a
+                5-touchpoint onboarding process that cut churn by 50% and
+                protected $53M in revenue.
+              </p>
+
+              <div class="initiative-results">
+                <h4>Key Results:</h4>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">100% 5-star</span> reviews from
+                    customers and sales reps</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Saved <span class="metric">2,000 hours</span> per month in
+                    sales rep time</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Protected <span class="metric">$14M</span> in revenue first
+                    year, projected <span class="metric">$53M</span> year
+                    two</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="initiative-footer">
+              <a
+                href="#"
+                class="case-study-link"
+                data-modal="customer-success-modal"
+              >
+                Read Case Study <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>Tech Check Initiative</h3>
+            </div>
+            <div class="initiative-body">
+              <p>
+                Reimagined B2B prospecting with consultative technology
+                assessments, achieving 19x increase in conversion and
+                transforming how prospects viewed Verizon.
+              </p>
+
+              <div class="initiative-results">
+                <h4>Key Results:</h4>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">19% call-to-meeting</span> conversion
+                    rate (19x higher than standard)</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Multiple opportunity areas in
+                    <span class="metric">84%</span> of assessed accounts</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Pipeline value increased by
+                    <span class="metric">250%</span> per account</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="initiative-footer">
+              <a href="#" class="case-study-link" data-modal="tech-check-modal">
+                Read Case Study <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>PDOM (Project Domination)</h3>
+            </div>
+            <div class="initiative-body">
+              <p>
+                Designed branded cupcake campaign that achieved 62% meeting
+                acceptance rate and gathered 5,000+ competitive intelligence
+                logs, driving unprecedented growth.
+              </p>
+
+              <div class="initiative-results">
+                <h4>Key Results:</h4>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">62% meeting acceptance</span> rate
+                    with decision-makers</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Gathered <span class="metric">5,000+</span> competitive
+                    intelligence records</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">10x ROI</span> over 12 months</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="initiative-footer">
+              <a href="#" class="case-study-link" data-modal="pdom-modal">
+                Read Case Study <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>TSO Reporting Revolution</h3>
+            </div>
+            <div class="initiative-body">
+              <p>
+                Transformed compensation tracking with real-time dashboards that
+                improved rep trust, boosted stretch-period performance by 35%,
+                and increased retention of top talent.
+              </p>
+
+              <div class="initiative-results">
+                <h4>Key Results:</h4>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">28% increase</span> in quota
+                    attainment across the organization</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Top performer retention +
+                    <span class="metric">22%</span></span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    >Final weeks of quarters saw
+                    <span class="metric">35% higher</span> productivity</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="initiative-footer">
+              <a
+                href="#"
+                class="case-study-link"
+                data-modal="tso-reporting-modal"
+              >
+                Read Case Study <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>AI-Powered Sales Intelligence</h3>
+            </div>
+            <div class="initiative-body">
+              <p>
+                Led development of AI assistant that transformed knowledge
+                management, enabling reps to find answers in seconds instead of
+                hours, with 94% adoption in 90 days.
+              </p>
+
+              <div class="initiative-results">
+                <h4>Key Results:</h4>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">23% increase</span> in productivity
+                    (customer-facing time)</span
+                  >
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">12% improvement</span> in win rates
+                  </span>
+                </div>
+                <div class="result-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span
+                    ><span class="metric">94% adoption rate</span> within three
+                    months</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="initiative-footer">
+              <a href="#" class="case-study-link" data-modal="ai-sales-modal">
+                Read Case Study <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Core Competencies</h2>
+          <p>Professional strengths and expertise</p>
+        </div>
+
+        <div class="skill-tags">
+          <span class="skill-tag">Strategic Leadership</span>
+          <span class="skill-tag">Team Turnarounds</span>
+          <span class="skill-tag">Sales Transformation</span>
+          <span class="skill-tag">System Design</span>
+          <span class="skill-tag">Performance Management</span>
+          <span class="skill-tag">Organizational Development</span>
+          <span class="skill-tag">Enterprise Technology</span>
+          <span class="skill-tag">Culture Building</span>
+          <span class="skill-tag">Coaching & Mentoring</span>
+          <span class="skill-tag">P&L Management</span>
+          <span class="skill-tag">Quota Modeling</span>
+          <span class="skill-tag">B2B Sales Strategy</span>
+          <span class="skill-tag">Cross-Functional Leadership</span>
+          <span class="skill-tag">AI & Sales Intelligence</span>
+          <span class="skill-tag">Process Optimization</span>
+        </div>
+
+        <div class="skills-container">
+          <div class="skill-category">
+            <h3>Leadership Philosophy</h3>
+            <ul class="skill-list">
+              <li>
+                <i class="fas fa-check-circle"></i>The Handlebar Test: Let go.
+                Let others fly.
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Failure Fridays: Celebrate
+                smart risks. Normalize learning.
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>The Vital Few Scorecard:
+                Focus on the top 20%. Ditch the rest.
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Aggressive Agreement: Name
+                the misfires—even if you're on the same team.
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>The Quiet Confidence OS: Lead
+                with action. Let results speak.
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>First 90 Days: 1:1s with
+                everyone. Find influencers. Secure early wins.
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Strategic Expertise</h3>
+            <ul class="skill-list">
+              <li>
+                <i class="fas fa-check-circle"></i>Broken System Diagnosis &
+                Transformation
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Cross-Functional Alignment &
+                Collaboration
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Cultural Transformations &
+                Team Turnarounds
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Data-Driven Decision Making
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Change Management & Adoption
+                Strategy
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Strategic Planning &
+                Execution
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Sales Leadership</h3>
+            <ul class="skill-list">
+              <li>
+                <i class="fas fa-check-circle"></i>Quota & Compensation System
+                Design
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Performance Management
+                Frameworks
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Sales Process Optimization
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Territory Planning &
+                Alignment
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Pipeline Management &
+                Forecasting
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Sales Enablement & Training
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category">
+            <h3>Technical Knowledge</h3>
+            <ul class="skill-list">
+              <li>
+                <i class="fas fa-check-circle"></i>Enterprise Technology
+                Solutions
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>AI & Machine Learning
+                Applications
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>IoT & Advanced Connectivity
+              </li>
+              <li><i class="fas fa-check-circle"></i>SaaS & Cloud Solutions</li>
+              <li>
+                <i class="fas fa-check-circle"></i>Cybersecurity Frameworks
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i>Data Analytics & Business
+                Intelligence
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>What colleagues and clients say about working with me</p>
+        </div>
+
+        <div class="testimonials-container">
+          <div class="testimonial-card executive-testimonial">
+            <div class="testimonial-content">
+              "You've had an indelible mark on the business markets with all
+              that you've done in the field and with the TSO team—always with a
+              smile. I'm going to personally miss working with you."
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="/api/placeholder/60/60" alt="Aparna Khurjekar" />
+              </div>
+              <div class="testimonial-info">
+                <h4>Aparna Khurjekar</h4>
+                <div class="testimonial-position">
+                  Chief Revenue Officer, Verizon
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "You don't just lead. You awaken people. You saw something in me
+              that I didn't even know I had. I guess that's what makes you so
+              special as a person and a leader."
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="/api/placeholder/60/60" alt="Venkatesh Iyer" />
+              </div>
+              <div class="testimonial-info">
+                <h4>Venkatesh Iyer</h4>
+                <div class="testimonial-position">Senior Director, Verizon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Paul is one of the most strategic, people first leaders that I
+              have ever worked for. He drives his leaders through a creative,
+              business first and transparent mindset."
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="/api/placeholder/60/60" alt="Zac Lagen" />
+              </div>
+              <div class="testimonial-info">
+                <h4>Zac Lagen</h4>
+                <div class="testimonial-position">Senior Director, Verizon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Paul has thrived in multiple roles, work structures, and
+              disciplines. He is a role model for active listening and
+              intellectual curiosity. He boasts just the right amount of
+              competitiveness which yields superior performance, while showing a
+              desire to help other's win."
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="/api/placeholder/60/60" alt="Chris Shank" />
+              </div>
+              <div class="testimonial-info">
+                <h4>Chris Shank</h4>
+                <div class="testimonial-position">Vice President, Verizon</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Education & Certifications</h2>
+          <p>Academic credentials and professional development</p>
+        </div>
+
+        <div class="education-grid">
+          <div class="education-card">
+            <h3>B.S. Business Administration</h3>
+            <p class="education-institution">Bellevue University</p>
+            <p class="education-period">In Progress</p>
+          </div>
+
+          <div class="education-card">
+            <h3>Cybersecurity Enterprise Certification</h3>
+            <p class="education-institution">Rutgers University</p>
+            <p class="education-period">2020</p>
+          </div>
+
+          <div class="education-card">
+            <h3>Red Team Master Certified</h3>
+            <p class="education-institution">Verizon</p>
+            <p class="education-period">2021</p>
+          </div>
+
+          <div class="education-card">
+            <h3>Program on Negotiations</h3>
+            <p class="education-institution">Harvard University</p>
+            <p class="education-period">2015</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entrepreneurial Ventures -->
+    <section id="ventures" class="initiatives-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Entrepreneurial Ventures</h2>
+          <p>Side projects and creative endeavors</p>
+        </div>
+
+        <div class="initiative-grid">
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>Righteously Wretched</h3>
+            </div>
+            <div class="initiative-body">
+              <p>Faith-based storytelling brand (fashion, healing, truth)</p>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>My Phoenix App</h3>
+            </div>
+            <div class="initiative-body">
+              <p>AI-matched local service finder (BETA)</p>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>The Finals Loadout</h3>
+            </div>
+            <div class="initiative-body">
+              <p>Gamer tool for loadout optimization</p>
+            </div>
+          </div>
+
+          <div class="initiative-card">
+            <div class="initiative-header">
+              <h3>Wired for Impact</h3>
+            </div>
+            <div class="initiative-body">
+              <p>Leadership frameworks turned tactical content vault</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-quote">
+          "People don't perform for bosses. They rise for people who see them,
+          love them, and won't give up on them."
+        </div>
+
+        <div class="footer-content">
+          <div class="footer-about">
+            <h3>About Paul</h3>
+            <p>
+              Trailblazing executive, strategist, and culture architect with a
+              20-year track record of redefining leadership through performance,
+              empathy, and precision. I specialize in fixing broken systems,
+              building elite teams, and turning chaos into clarity.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/paultakisaki" target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="mailto:paul@paultakisaki.com"
+                ><i class="fas fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <a href="#resume-top"
+                  ><i class="fas fa-chevron-right"></i> Home</a
+                >
+              </li>
+              <li>
+                <a href="#experience"
+                  ><i class="fas fa-chevron-right"></i> Experience</a
+                >
+              </li>
+              <li>
+                <a href="#initiatives"
+                  ><i class="fas fa-chevron-right"></i> Initiatives</a
+                >
+              </li>
+              <li>
+                <a href="#skills"
+                  ><i class="fas fa-chevron-right"></i> Skills</a
+                >
+              </li>
+              <li>
+                <a href="#testimonials"
+                  ><i class="fas fa-chevron-right"></i> Testimonials</a
+                >
+              </li>
+              <li>
+                <a href="https://paultakisaki.com" target="_blank"
+                  ><i class="fas fa-chevron-right"></i> Website</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Case Study Modals -->
+    <!-- Quota Model Case Study -->
+    <div class="modal" id="quota-model-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="case-study-header">
+          <h2>National Quota Model Transformation</h2>
+          <p>From broken system to national standard</p>
+        </div>
+        <div class="case-study-content">
+          <h3>The Challenge</h3>
+          <p>
+            When taking over as Senior Director for B2B sales across seven
+            states, I inherited a fundamentally flawed quota model. The system
+            used a rolling three-month average that inadvertently punished high
+            performers by dramatically increasing their targets after success,
+            while simultaneously allowing underperformers to coast with
+            progressively lower quotas.
+          </p>
+
+          <p>This created three critical problems:</p>
+          <ul>
+            <li>
+              Top talent felt demotivated and began leaving the organization
+            </li>
+            <li>Low performers had no incentive to improve</li>
+            <li>Sales leaders couldn't effectively hold reps accountable</li>
+            <li>
+              Regional managers spent excessive time arguing about "unfair"
+              quotas
+            </li>
+          </ul>
+
+          <div class="stats-container">
+            <div class="stat-box">
+              <div class="stat-value">0</div>
+              <div class="stat-label">
+                Quota Complaints After Implementation
+              </div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">19</div>
+              <div class="stat-label">Consecutive Months of Growth</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">6+</div>
+              <div class="stat-label">Years as National Standard</div>
+            </div>
+          </div>
+
+          <h3>The Solution</h3>
+          <p>
+            I designed a revolutionary four-dimensional quota model that
+            balanced fairness, business needs, and motivational psychology:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Territory Potential (40%)</strong>: Categorized
+              territories into five zones based on market potential, with higher
+              quotas for Zone 1 (highest potential) and lower for Zone 5 (lowest
+              potential)
+            </li>
+            <li>
+              <strong>Zip Code Complexity (10%)</strong>: Adjusted for
+              geographic challenges, acknowledging that reps covering vast
+              territories (like Montana or Alaska) faced unique time management
+              challenges
+            </li>
+            <li>
+              <strong>Active Lines/Existing Customer Base (30%)</strong>:
+              Recognized that larger existing customer bases created more
+              upsell/cross-sell opportunities
+            </li>
+            <li>
+              <strong>Performance Influence (20%)</strong>: Allowed some past
+              performance impact but with guardrails to prevent both coasting
+              and crushing overachievers
+            </li>
+          </ol>
+
+          <h3>The Implementation</h3>
+          <p>My implementation strategy was as crucial as the model itself:</p>
+
+          <ul>
+            <li>
+              <strong>Transparency First</strong>: Conducted organization-wide
+              town halls to explain the model's logic, showing the data and
+              calculations behind each territory's quota
+            </li>
+            <li>
+              <strong>Team-by-Team Reinforcement</strong>: Scheduled individual
+              sessions with each team to drill into their specific territory
+              metrics and answer questions
+            </li>
+            <li>
+              <strong>Peer Validation</strong>: When managers initially
+              resisted, I invited them to distribute quotas themselves using the
+              model's inputs—they ultimately arrived at allocations within 5% of
+              my original calculations
+            </li>
+            <li>
+              <strong>Accountability Tools</strong>: Published average payouts
+              by role monthly, showing historical trends and making the path to
+              success visible
+            </li>
+          </ul>
+
+          <h3>The Results</h3>
+          <ul>
+            <li>
+              <strong>Immediate Impact</strong>: Quota complaints dropped to
+              zero for a full quarter—the first time in my tenure
+            </li>
+            <li>
+              <strong>Performance Boost</strong>: Top performers thrived without
+              feeling punished; underperformers had clear accountability
+            </li>
+            <li>
+              <strong>Cultural Shift</strong>: Zone 1 territories became highly
+              desirable, with top reps competing for them
+            </li>
+            <li>
+              <strong>Sustained Growth</strong>: The region achieved 19
+              consecutive months of year-over-year growth
+            </li>
+            <li>
+              <strong>National Adoption</strong>: The model was so successful
+              that Verizon adopted it as the standard quota model for all B2B
+              SMB reps nationwide—a framework still in use six years later
+            </li>
+          </ul>
+
+          <h3>The Leadership Lesson</h3>
+          <p>
+            The initiative demonstrated how thoughtful system design can
+            transform culture and performance. By focusing on fairness,
+            transparency, and balanced incentives, I created a framework that
+            aligned individual motivation with organizational goals. The
+            national adoption underscored how powerful bottom-up innovation can
+            be when executed with rigor and clear communication.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Success Case Study -->
+    <div class="modal" id="customer-success-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="case-study-header">
+          <h2>Customer Success Team - From Concept to Game-Changer</h2>
+          <p>Creating Verizon's first white-glove onboarding experience</p>
+        </div>
+        <div class="case-study-content">
+          <h3>The Challenge</h3>
+          <p>
+            Analysis of customer data revealed a troubling pattern: a
+            disproportionate number of new B2B customers were churning within
+            their first 90 days after activation. The root cause was a
+            disconnect between the sales promise and customer experience, as
+            sales teams lacked the structure, time, and sometimes expertise to
+            ensure smooth implementation and adoption.
+          </p>
+
+          <div class="stats-container">
+            <div class="stat-box">
+              <div class="stat-value">50%</div>
+              <div class="stat-label">Reduction in Churn</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">$53M</div>
+              <div class="stat-label">Projected Year Two Revenue</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">100%</div>
+              <div class="stat-label">5-Star Customer Reviews</div>
+            </div>
+          </div>
+
+          <h3>The Solution</h3>
+          <p>
+            I developed a comprehensive business case for a specialized Customer
+            Success function that would provide white-glove onboarding with five
+            proactive touchpoints over 90 days:
+          </p>
+
+          <ol>
+            <li>Setting initial expectations</li>
+            <li>Equipment delivery verification</li>
+            <li>Digital tool training</li>
+            <li>First bill review</li>
+            <li>Second bill review and satisfaction check</li>
+          </ol>
+
+          <p>
+            The program created a structured handoff between sales and service,
+            ensuring consistent customer experience and early issue
+            identification.
+          </p>
+
+          <h3>The Implementation</h3>
+          <p>
+            In a cost-conscious environment, securing budget required
+            demonstrating compelling ROI:
+          </p>
+
+          <ul>
+            <li>
+              Conducted detailed analysis of churn costs and retention value
+            </li>
+            <li>
+              Calculated potential savings from reducing customer care call
+              volume
+            </li>
+            <li>
+              Developed metrics to track both customer satisfaction and
+              operational impacts
+            </li>
+            <li>Secured approval for a pilot program with five team members</li>
+            <li>
+              Established systematic feedback loops to identify root causes of
+              issues
+            </li>
+          </ul>
+
+          <h3>The Results</h3>
+          <ul>
+            <li>
+              <strong>Perfect Customer Satisfaction</strong>: 100% 5-star
+              reviews from both customers and internal sales representatives
+            </li>
+            <li>
+              <strong>Massive Productivity Gains</strong>: Saved sales reps
+              approximately 2,000 hours per month (equivalent to $2 million in
+              annual payroll savings)
+            </li>
+            <li>
+              <strong>Dramatic Churn Reduction</strong>: Customers going through
+              the onboarding process were 50% less likely to churn
+            </li>
+            <li>
+              <strong>Revenue Protection</strong>: In its first year, saved
+              3,000 billed lines from churning, preserving $14 million in
+              lifetime revenue (projections of $53 million in year two)
+            </li>
+            <li>
+              <strong>Operational Improvements</strong>: 50% reduction in call
+              volume to customer care centers and 25% reduction in activation
+              failures
+            </li>
+          </ul>
+
+          <p>
+            Perhaps most valuable was the continuous improvement feedback loop
+            established, where the CS Team systematically documented every
+            internal issue encountered and shared findings with relevant
+            departments.
+          </p>
+
+          <h3>The Business Impact</h3>
+          <p>
+            The economics proved compelling: the $5 million cost of running the
+            CS team generated over $14 million in protected revenue in the first
+            year alone, plus millions more in operational savings and
+            productivity improvements. Based on these results, the program was
+            expanded and eventually became standard practice for B2B customer
+            onboarding across Verizon.
+          </p>
+
+          <h3>The Leadership Lesson</h3>
+          <p>
+            This initiative exemplified my approach to identifying structural
+            problems, developing data-driven solutions, and focusing on
+            implementation excellence. By creating a system that bridged the gap
+            between sales and service, I not only improved customer experience
+            but also established a virtuous cycle of continuous improvement that
+            benefited the entire organization.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Check Case Study -->
+    <div class="modal" id="tech-check-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="case-study-header">
+          <h2>Tech Check Initiative - Reimagining B2B Prospecting</h2>
+          <p>Transforming cold calls into valuable consultations</p>
+        </div>
+        <div class="case-study-content">
+          <div style="text-align: center; margin-bottom: 20px">
+            <img
+              src="../images/techcheck_logo.webp"
+              alt="Tech Check Logo"
+              style="max-width: 250px; height: auto"
+            />
+          </div>
+
+          <h3>The Challenge</h3>
+          <p>
+            Traditional B2B prospecting had become increasingly ineffective,
+            with cold calls yielding dismal 1% meeting rates. Decision-makers
+            were overwhelmed with generic sales outreach, and Verizon needed a
+            fundamentally different approach to break through the noise.
+          </p>
+
+          <div class="stats-container">
+            <div class="stat-box">
+              <div class="stat-value">19%</div>
+              <div class="stat-label">Call-to-Meeting Conversion</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">84%</div>
+              <div class="stat-label">Multiple Opportunity Areas</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">250%</div>
+              <div class="stat-label">Pipeline Value Increase</div>
+            </div>
+          </div>
+
+          <h3>The Solution</h3>
+          <p>
+            I developed the "Tech Check Initiative," which flipped the
+            traditional sales approach. Rather than leading with products, the
+            program offered something prospects actually valued: a free,
+            comprehensive technology assessment conducted by solutions
+            architects.
+          </p>
+
+          <p>
+            The assessment evaluated the prospect's current technology
+            environment across eight dimensions:
+          </p>
+
+          <ol>
+            <li>Cloud infrastructure</li>
+            <li>Collaboration tools</li>
+            <li>Communication systems</li>
+            <li>Customer-facing technology</li>
+            <li>Connectivity</li>
+            <li>Applications</li>
+            <li>Employee productivity tools</li>
+            <li>Cybersecurity readiness</li>
+          </ol>
+
+          <p>
+            What made this approach powerful was its consultative nature.
+            Solutions architects weren't instructed to find gaps that Verizon
+            products could fill; they were directed to provide an honest
+            assessment regardless of whether Verizon had solutions for the
+            identified issues.
+          </p>
+
+          <h3>The Implementation</h3>
+          <p>
+            The output was a professional, visually appealing scorecard that
+            used a red/yellow/green rating system for each category, accompanied
+            by detailed recommendations, relevant visualizations, and clear,
+            actionable next steps.
+          </p>
+
+          <p>
+            I conducted a full-scale pilot in the East Market, making 1,700
+            calls and scheduling 320 appointments to test and refine the
+            approach.
+          </p>
+
+          <h3>The Results</h3>
+          <ul>
+            <li>
+              <strong>19% Call-to-Meeting Conversion Rate</strong>: 19 times
+              higher than standard prospecting efforts
+            </li>
+            <li>
+              <strong>Multiple Opportunity Areas</strong>: The tech check
+              process revealed multiple opportunity areas in 84% of assessed
+              accounts
+            </li>
+            <li>
+              <strong>Increased Deal Size</strong>: Average of 3.2 potential
+              projects per customer identified
+            </li>
+            <li>
+              <strong>Expanded Pipeline</strong>: Pipeline value per account
+              increased by 250% compared to traditional prospecting methods
+            </li>
+          </ul>
+
+          <h3>The Business Impact</h3>
+          <p>
+            Beyond metrics, the initiative fundamentally changed how sales teams
+            approached new prospects and how those prospects perceived Verizon.
+            Instead of seeing Verizon as just another vendor pushing products,
+            clients experienced them as strategic advisors invested in their
+            technological success.
+          </p>
+
+          <p>
+            The Tech Check methodology spread rapidly throughout the
+            organization, becoming a standard best practice for engaging new
+            prospects. It evolved into a core go-to-market strategy that
+            differentiated Verizon in a crowded marketplace and drove
+            significant revenue growth.
+          </p>
+
+          <h3>The Leadership Lesson</h3>
+          <p>
+            This case study demonstrates my ability to fundamentally reimagine
+            customer engagement. By creating genuine value for prospects before
+            asking for their business, I established a new paradigm that aligned
+            Verizon's success with customer outcomes. The approach built trust,
+            positioned Verizon as a thought leader, and created natural
+            opportunities for deeper business relationships.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PDOM Case Study -->
+    <div class="modal" id="pdom-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="case-study-header">
+          <h2>
+            Project Domination (PDOM) - Competitive Intelligence With a Twist
+          </h2>
+          <p>Using branded treats to open doors and gain market insights</p>
+        </div>
+        <div class="case-study-content">
+          <h3>The Challenge</h3>
+          <p>
+            Analysis of sales data revealed a significant blind spot: Verizon
+            lacked comprehensive information about competitors' offerings,
+            pricing structures, and contract terms across the market. This put
+            frontline sales reps at a disadvantage when prospects compared
+            solutions.
+          </p>
+
+          <p>
+            Simply mandating data entry would create administrative overhead
+            that busy sales reps would resent and likely ignore.
+          </p>
+
+          <div class="stats-container">
+            <div class="stat-box">
+              <div class="stat-value">62%</div>
+              <div class="stat-label">Meeting Acceptance Rate</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">5,000+</div>
+              <div class="stat-label">Competitive Intel Logs</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">10x</div>
+              <div class="stat-label">Return on Investment</div>
+            </div>
+          </div>
+
+          <h3>The Solution</h3>
+          <p>
+            Rather than implementing a mandatory data entry requirement, I
+            designed "Project Domination" (PDOM) as an opt-in program with
+            compelling incentives. The structure was simple but effective:
+          </p>
+
+          <ol>
+            <li>
+              Each participating rep would select 10 high-value prospect
+              accounts monthly
+            </li>
+            <li>
+              They would execute a structured 7-step touchpoint sequence with
+              each prospect
+            </li>
+            <li>
+              Additionally, they would log detailed competitive intelligence on
+              10 additional prospect accounts in Salesforce
+            </li>
+            <li>
+              Reps who completed all requirements earned access to the highly
+              effective "PDOM Cupcakes" delivery program
+            </li>
+          </ol>
+
+          <h3>The Implementation</h3>
+          <p>
+            The cupcake delivery became legendary within the organization.
+            Branded cupcakes were sent to target accounts with personalized
+            notes from sales reps, resulting in an astonishing 62% meeting
+            acceptance rate—exponentially higher than cold calls or emails.
+          </p>
+
+          <p>
+            What made PDOM uniquely effective was its voluntary nature combined
+            with immediate rewards. Reps could see the direct correlation
+            between their effort (logging data and following the sequence) and
+            results (getting meetings with previously inaccessible prospects).
+          </p>
+
+          <h3>The Results</h3>
+          <p>
+            PDOM created a virtuous cycle where more participation led to better
+            results, which in turn increased participation. The impact extended
+            far beyond immediate sales results:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Consistent Results</strong>: Delivered 19 consecutive
+              months of record-breaking year-over-year growth
+            </li>
+            <li>
+              <strong>Rich Competitive Intelligence</strong>: Within six months,
+              the Salesforce database contained detailed competitive
+              intelligence on over 5,000 accounts
+            </li>
+            <li>
+              <strong>Strategic Insights</strong>: Patterns in competitor
+              weaknesses were identified, informing value propositions and
+              competitive strategies
+            </li>
+            <li>
+              <strong>Viral Adoption</strong>: The program spread throughout the
+              organization, with other directors requesting the playbook
+            </li>
+            <li>
+              <strong>Cultural Shift</strong>: Transformed how the organization
+              approached competitive intelligence gathering and prospect
+              engagement
+            </li>
+          </ul>
+
+          <h3>The Business Impact</h3>
+          <p>
+            When a new finance team later tried to cut the program during cost
+            reductions, I presented meticulous tracking data showing the
+            program's 10x return over 12 months. Not only was the budget
+            preserved, but it was increased by 40% after reviewing the data. The
+            program became a cornerstone of Verizon's market penetration
+            strategy, driving millions in new revenue over three years.
+          </p>
+
+          <h3>The Leadership Lesson</h3>
+          <p>
+            PDOM demonstrated my innovative approach to solving multiple
+            business challenges simultaneously. Rather than forcing compliance,
+            I created a system where participating created immediate value for
+            sales reps while building a strategic asset for the organization.
+            This approach to aligned incentives proved more effective and
+            sustainable than traditional top-down mandates.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TSO Reporting Case Study -->
+    <div class="modal" id="tso-reporting-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="case-study-header">
+          <h2>TSO Reporting Revolution - Transforming Sales Compensation</h2>
+          <p>Creating visibility to drive performance and trust</p>
+        </div>
+        <div class="case-study-content">
+          <h3>The Challenge</h3>
+          <p>
+            When taking over the Technical Sales Organization (TSO), I inherited
+            a deeply flawed compensation system. The team of 400+ commissioned
+            sales professionals operated on a quarterly commission model but
+            received updates on their performance only once a month—and these
+            reports were notoriously inaccurate. By the time reps knew where
+            they stood, it was often too late to course-correct within the
+            quarter.
+          </p>
+
+          <p>This created three critical problems:</p>
+          <ol>
+            <li>
+              Sales professionals couldn't optimize their activities in
+              real-time
+            </li>
+            <li>
+              Distrust between the field organization and corporate functions
+              like Finance and HR
+            </li>
+            <li>
+              Decreased motivation and engagement, especially near the end of
+              quarters
+            </li>
+          </ol>
+
+          <div class="stats-container">
+            <div class="stat-box">
+              <div class="stat-value">28%</div>
+              <div class="stat-label">Increase in Quota Attainment</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">22%</div>
+              <div class="stat-label">Improvement in Top Talent Retention</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">35%</div>
+              <div class="stat-label">Higher Late-Quarter Productivity</div>
+            </div>
+          </div>
+
+          <h3>The Solution</h3>
+          <p>
+            Rather than accepting this as unchangeable, I took a novel approach:
+            bringing Finance leadership into the field to experience the
+            challenges firsthand. I organized a two-day strategic session in
+            Denver where Finance executives:
+          </p>
+
+          <ul>
+            <li>Joined customer meetings</li>
+            <li>
+              Heard directly from sales teams about the impact of the broken
+              reporting system
+            </li>
+            <li>
+              Participated in fully engaged discussions without digital
+              distractions
+            </li>
+          </ul>
+
+          <p>
+            By the end of the session, I secured agreement on a complete
+            overhaul:
+          </p>
+
+          <ol>
+            <li>
+              <strong>Real-Time Commission Dashboard</strong>: Connected
+              previously siloed systems to create a dashboard giving reps daily
+              visibility into performance and earnings
+            </li>
+            <li>
+              <strong>Continuous Payout Model</strong>: Replaced the problematic
+              tiered commission structure with an incremental model that paid
+              for every percentage point achieved
+            </li>
+            <li>
+              <strong>Expanded Earning Potential</strong>: Raised the ceiling
+              from 200% to 300% maximum payout while also raising floor
+              requirements
+            </li>
+            <li>
+              <strong>Governance Structure</strong>: Established a bi-weekly
+              cross-functional governance call with representatives from
+              Operations, Finance, HR, and IT
+            </li>
+            <li>
+              <strong>Comprehensive Performance Visibility</strong>: Created
+              dashboards showing all relevant sales metrics and implemented a
+              leaderboard with stack rankings
+            </li>
+          </ol>
+
+          <h3>The Implementation</h3>
+          <p>
+            The implementation required executive-level sponsorship to overcome
+            entrenched resistance to system integration. I navigated complex
+            organizational politics and technical barriers to connect previously
+            isolated systems and create new workflow processes.
+          </p>
+
+          <h3>The Results</h3>
+          <ul>
+            <li>
+              <strong>Performance Boost</strong>: 28% increase in quota
+              attainment across the organization within six months
+            </li>
+            <li>
+              <strong>Talent Retention</strong>: Top performer retention
+              improved by 22%
+            </li>
+            <li>
+              <strong>Late-Quarter Performance</strong>: Final weeks of each
+              quarter saw 35% higher productivity as reps could see exactly
+              where they stood
+            </li>
+            <li>
+              <strong>Cultural Impact</strong>: Significantly improved trust
+              between the field organization and corporate functions
+            </li>
+          </ul>
+
+          <h3>The Business Impact</h3>
+          <p>
+            After decades of operating with inadequate systems, the TSO finally
+            had the tools and transparency needed for world-class performance.
+            The initiative shifted the organization from reactive to proactive
+            performance management, enabling data-driven decisions and creating
+            a culture of continuous improvement.
+          </p>
+
+          <h3>The Leadership Lesson</h3>
+          <p>
+            This case study exemplifies my approach to leadership
+            transformation: identifying structural problems that undermine
+            performance, bringing key stakeholders into direct contact with the
+            issue, developing comprehensive solutions that address root causes,
+            and implementing with disciplined execution. By creating alignment
+            between finance, operations, and sales, I delivered a system that
+            benefited all stakeholders.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Sales Intelligence Case Study -->
+    <div class="modal" id="ai-sales-modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="case-study-header">
+          <h2>
+            AI-Powered Sales Intelligence - Transforming Information Access
+          </h2>
+          <p>Using artificial intelligence to enhance sales effectiveness</p>
+        </div>
+        <div class="case-study-content">
+          <h3>The Challenge</h3>
+          <p>
+            Verizon's sales teams were hampered by outdated knowledge management
+            systems. The primary repository, nicknamed "InfoMangler" by
+            frustrated users, contained tens of thousands of outdated documents
+            with no clear organization or search capability.
+          </p>
+
+          <p>This information chaos had tangible business consequences:</p>
+          <ul>
+            <li>
+              Reps spent an average of 5.7 hours per week searching for basic
+              information
+            </li>
+            <li>
+              For a team of 450 sales professionals, this represented over 2,500
+              hours of lost selling time weekly
+            </li>
+            <li>
+              Outdated or incorrect information led to customer frustration and
+              lost opportunities
+            </li>
+          </ul>
+
+          <div class="stats-container">
+            <div class="stat-box">
+              <div class="stat-value">23%</div>
+              <div class="stat-label">Productivity Increase</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">12%</div>
+              <div class="stat-label">Win Rate Improvement</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-value">94%</div>
+              <div class="stat-label">Adoption Rate in 90 Days</div>
+            </div>
+          </div>
+
+          <h3>The Solution</h3>
+          <p>I launched a three-phase transformation initiative:</p>
+
+          <h4>Phase 1: Content Rationalization and Consolidation</h4>
+          <ul>
+            <li>
+              Conducted a comprehensive audit and cleanup of existing content
+            </li>
+            <li>
+              Reduced the document library by 68% while increasing useful
+              information availability
+            </li>
+            <li>
+              Standardized and organized content into a logical structure based
+              on sales workflows
+            </li>
+          </ul>
+
+          <h4>Phase 2: Unified Digital Experience</h4>
+          <ul>
+            <li>
+              Created a single, intuitive web portal housing all sales content
+            </li>
+            <li>
+              Implemented robust search, tagging, and filtering capabilities
+            </li>
+            <li>
+              Established strict governance to maintain content quality and
+              relevance
+            </li>
+          </ul>
+
+          <h4>Phase 3: AI-Powered Sales Intelligence</h4>
+          <ul>
+            <li>
+              Partnered with the AI team to develop an intelligent assistant
+            </li>
+            <li>
+              Trained the system on the entire knowledge base to understand
+              nuanced sales questions
+            </li>
+            <li>
+              Created a solution that could provide contextually relevant
+              responses in seconds
+            </li>
+          </ul>
+
+          <h3>The Implementation</h3>
+          <p>
+            The development process was meticulous, involving detailed
+            information gathering, collaborative work with the AI team on
+            learning models, and extensive testing with actual sales scenarios
+            before rollout.
+          </p>
+
+          <h3>The Results</h3>
+          <ul>
+            <li>
+              <strong>23% Increase in Productivity</strong>: Measured by
+              customer-facing time
+            </li>
+            <li>
+              <strong>12% Improvement in Win Rates</strong>: Against key
+              competitors due to better competitive intelligence
+            </li>
+            <li>
+              <strong>94% Adoption Rate</strong>: Within three months, becoming
+              the most widely adopted sales tool in the organization
+            </li>
+          </ul>
+
+          <h3>The Business Impact</h3>
+          <p>
+            The initiative demonstrated how technology could augment human
+            capabilities rather than replace them. By eliminating low-value
+            administrative work, I enabled sales professionals to focus on
+            uniquely human skills—building relationships, solving problems, and
+            creating value for customers.
+          </p>
+
+          <h3>The Leadership Lesson</h3>
+          <p>
+            This case study showcases my strategic approach to technology
+            implementation. Rather than implementing technology for its own
+            sake, I identified a specific business problem, developed a phased
+            solution, and focused on adoption and outcomes. The result was a
+            tool that sales professionals embraced because it solved real
+            challenges they faced daily.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileToggle = document.getElementById("mobile-toggle");
+      const navbar = document.getElementById("navbar");
+
+      mobileToggle.addEventListener("click", () => {
+        navbar.classList.toggle("active");
+        mobileToggle.classList.toggle("active");
+      });
+
+      // Window Scroll
+      window.addEventListener("scroll", () => {
+        const header = document.getElementById("header");
+        if (window.scrollY > 50) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Smooth Scrolling for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          if (navbar.classList.contains("active")) {
+            navbar.classList.remove("active");
+          }
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            const headerOffset = 80;
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Modal Handling
+      const modals = document.querySelectorAll(".modal");
+      const modalTriggers = document.querySelectorAll(".case-study-link");
+      const closeModalButtons = document.querySelectorAll(".close-modal");
+
+      modalTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (e) => {
+          e.preventDefault();
+          const modalId = trigger.getAttribute("data-modal");
+          const modal = document.getElementById(modalId);
+          modal.style.display = "block";
+          document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+        });
+      });
+
+      closeModalButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const modal = button.closest(".modal");
+          modal.style.display = "none";
+          document.body.style.overflow = "auto"; // Restore scrolling
+        });
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener("click", (e) => {
+        modals.forEach((modal) => {
+          if (e.target === modal) {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+      });
+
+      // Toggle collapsible previous roles section
+      const toggleSection = document.querySelector(".toggle-section-title");
+      const collapsibleContent = document.querySelector(".collapsible-content");
+
+      if (toggleSection && collapsibleContent) {
+        toggleSection.addEventListener("click", () => {
+          toggleSection.classList.toggle("active");
+
+          if (collapsibleContent.classList.contains("active")) {
+            collapsibleContent.style.height = "0";
+            collapsibleContent.classList.remove("active");
+          } else {
+            collapsibleContent.classList.add("active");
+            collapsibleContent.style.height =
+              collapsibleContent.scrollHeight + "px";
+          }
+        });
+      }
+
+      // Toggle role details for individual roles
+      const toggleDetailButtons = document.querySelectorAll(".toggle-details");
+
+      toggleDetailButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const card = button.closest(".role-card");
+          const details = card.querySelector(".role-details");
+          const showButton = card.querySelector(".show-details");
+
+          details.classList.toggle("hidden");
+
+          if (showButton) {
+            showButton.classList.toggle("active");
+
+            if (details.classList.contains("hidden")) {
+              showButton.textContent = "View Details";
+            } else {
+              showButton.textContent = "Hide Details";
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
