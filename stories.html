@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO Meta Tags -->
+    <title>Stories of Impact | Paul Takisaki</title>
+    <meta
+      name="description"
+      content="Discover the transformative impact of Paul Takisaki's leadership through authentic stories from executives, directors, and team members who experienced his unique approach to people-first leadership."
+    />
+    <meta
+      name="keywords"
+      content="leadership stories, executive coaching, Paul Takisaki, leadership impact, transformation stories, leadership development"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Stories of Impact | Paul Takisaki" />
+    <meta
+      property="og:description"
+      content="Discover the transformative impact of Paul Takisaki's leadership through authentic stories from executives, directors, and team members."
+    />
+    <meta
+      property="og:image"
+      content="https://www.paultakisaki.com/images/paul-og-image.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://www.paultakisaki.com/stories-of-impact"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Additional Page-Specific Styles */
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      .testimonial-content {
+        flex-grow: 1;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-content p {
+        font-style: italic;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .testimonial-card::before {
+        content: '"';
+        font-size: 8rem;
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        line-height: 1;
+        font-family: Georgia, serif;
+        color: rgba(15, 48, 87, 0.05);
+        z-index: 0;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .testimonial-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 1rem;
+        flex-shrink: 0;
+        background-color: var(--lightgray);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .testimonial-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .testimonial-author-details {
+        flex-grow: 1;
+      }
+
+      .testimonial-name {
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.2rem;
+      }
+
+      .testimonial-position {
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      .testimonial-tag {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--accent);
+        color: white;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .impact-category {
+        margin-top: 5rem;
+        margin-bottom: 3rem;
+      }
+
+      .impact-category h2 {
+        margin-bottom: 1rem;
+        color: var(--primary);
+        position: relative;
+        display: inline-block;
+      }
+
+      .impact-category h2::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 80px;
+        height: 4px;
+        background: var(--accent);
+      }
+
+      .impact-category p {
+        max-width: 800px;
+        margin-bottom: 2rem;
+      }
+
+      .featured-testimonial {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        color: white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 3rem;
+      }
+
+      .featured-testimonial::before {
+        content: '"';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 8rem;
+        line-height: 1;
+        font-family: Georgia, serif;
+        color: rgba(255, 255, 255, 0.1);
+      }
+
+      .featured-testimonial p {
+        position: relative;
+        font-size: 1.3rem;
+        line-height: 1.7;
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        z-index: 1;
+      }
+
+      .featured-testimonial .testimonial-author {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .featured-testimonial .testimonial-name {
+        color: white;
+      }
+
+      .featured-testimonial .testimonial-position {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .impact-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 4rem 0;
+        text-align: center;
+      }
+
+      .impact-stat {
+        padding: 2rem;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .impact-stat-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .impact-stat-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--gray);
+      }
+
+      .quote-bubbles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin: 3rem 0;
+      }
+
+      .quote-bubble {
+        background: var(--lightgray);
+        color: var(--primary);
+        padding: 0.75rem 1.5rem;
+        border-radius: 30px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .quote-bubble:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .quote-bubble:nth-child(2n) {
+        background: rgba(0, 105, 137, 0.1);
+      }
+
+      .quote-bubble:nth-child(3n) {
+        background: rgba(241, 143, 1, 0.1);
+      }
+
+      .video-section {
+        margin: 5rem 0;
+        text-align: center;
+      }
+
+      .video-container {
+        position: relative;
+        overflow: hidden;
+        width: 400px; /* Exact width */
+        height: 225px; /* Exact height */
+        border-radius: 12px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        margin: 2rem auto;
+        padding-top: 0; /* Remove padding-top since we're setting explicit height */
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .stories-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 4rem;
+      }
+
+      .stories-intro h2 {
+        margin-bottom: 1.5rem;
+      }
+
+      .stories-intro p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .stories-cta {
+        margin-top: 5rem;
+        padding: 3rem;
+        background: linear-gradient(135deg, #f5f7fa, #eef2f7);
+        border-radius: 12px;
+        text-align: center;
+      }
+
+      .stories-cta h2 {
+        margin-bottom: 1.5rem;
+      }
+
+      .stories-cta p {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+      }
+
+      .testimonial-quote {
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .testimonial-quote span {
+        color: var(--accent);
+      }
+
+      @media (max-width: 768px) {
+        .featured-testimonial p {
+          font-size: 1.1rem;
+        }
+
+        .impact-stat {
+          padding: 1.5rem;
+        }
+
+        .impact-stat-number {
+          font-size: 2.8rem;
+        }
+      }
+
+      /* Filter buttons */
+      .filter-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .filter-btn {
+        padding: 0.75rem 1.5rem;
+        background: white;
+        border: 2px solid var(--primary);
+        border-radius: 30px;
+        color: var(--primary);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-btn:hover,
+      .filter-btn.active {
+        background: var(--primary);
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container flex-between">
+        <a href="index.html" class="logo">Paul<span>Takisaki</span></a>
+
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="coaching/index.html">Coaching</a></li>
+            <li><a href="#" class="active">Stories of Impact</a></li>
+            <li><a href="blogs/index.html">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="coaching-hero h1">
+      <div class="container">
+        <h1>Stories of Impact</h1>
+        <p class="hero-subtitle">
+          See how leadership transformation happens through the eyes of those
+          who experienced it
+        </p>
+
+        <div class="coaching-badges">
+          <div class="coaching-badge">
+            <i class="fas fa-users"></i>
+            <span>450+ Team Members Led</span>
+          </div>
+          <div class="coaching-badge">
+            <i class="fas fa-award"></i>
+            <span>4x President's Cabinet Winner</span>
+          </div>
+          <div class="coaching-badge">
+            <i class="fas fa-chart-line"></i>
+            <span>$1B+ Revenue Launched</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container">
+      <div class="stories-intro">
+        <h2>The Paul Effect</h2>
+        <p>
+          Over 20 years of leadership, these are the stories of
+          transformation, growth, and impact from the people who lived it. Each
+          testimonial represents a real person whose career and life were
+          touched by Paul's unique approach to leadership.
+        </p>
+ 
+        </p>
+      </div>
+
+      <!-- Video Section -->
+      <div class="video-section">
+        <h2>Watch The Farewell Tribute</h2>
+        <p>
+          Created by peers, employees and executives for Paul's departure from
+          Verizon after 20 years of transformational leadership.
+        </p>
+        <div class="video-container" id="video-container">
+          <div class="video-thumbnail" id="video-thumbnail">
+            <img
+              src="images/paul_effect.webp"
+              alt="The Paul Effect Video Thumbnail"
+            />
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="impact-stats">
+        <div class="impact-stat">
+          <div class="impact-stat-number">20+</div>
+          <div class="impact-stat-label">Years of Leadership</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-number">12</div>
+          <div class="impact-stat-label">Different Positions</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-number">6</div>
+          <div class="impact-stat-label">Relocations</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-number">100+</div>
+          <div class="impact-stat-label">Leaders Mentored</div>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Stories</button>
+        <button class="filter-btn" data-filter="executive">
+          Executive Impact
+        </button>
+        <button class="filter-btn" data-filter="career">
+          Career Transformation
+        </button>
+        <button class="filter-btn" data-filter="leadership">
+          Leadership Development
+        </button>
+        <button class="filter-btn" data-filter="mentorship">Mentorship</button>
+      </div>
+
+      <!-- Executive Impact Section -->
+      <div class="impact-category">
+        <h2>Executive Impact</h2>
+        <p>
+          Hear from senior leaders and executives about Paul's lasting impact on
+          both business results and organizational culture.
+        </p>
+
+        <!-- Featured Testimonial -->
+        <div class="featured-testimonial">
+          <p>
+            "You've had an indelible mark on the business markets with all that
+            you've done in the field and with the TSO team—always with a smile.
+            I'm going to personally miss working with you."
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <img src="images/aparna.webp" alt="Aparna Khurjekar" />
+            </div>
+            <div class="testimonial-author-details">
+              <div class="testimonial-name">Aparna Khurjekar</div>
+              <div class="testimonial-position">
+                Chief Revenue Officer, Verizon
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card" data-category="executive">
+            <div class="testimonial-tag">Executive</div>
+            <div class="testimonial-content">
+              <p>
+                "Paul brings a calm, thoughtful, and empowering leadership
+                style. He has a remarkable ability to analyze complex data and
+                translate it into actionable strategies that drive results."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/caralis.webp" alt="Michael Caralis" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Michael Caralis</div>
+                <div class="testimonial-position">Vice President, Verizon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="executive">
+            <div class="testimonial-tag">Executive</div>
+            <div class="testimonial-content">
+              <p>
+                "He is a role model for active listening and intellectual
+                curiosity. He boasts just the right amount of competitiveness
+                which yields superior performance, while showing a desire to
+                help others win."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/shank.webp" alt="Chris Shank" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Chris Shank</div>
+                <div class="testimonial-position">Vice President, Verizon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="executive">
+            <div class="testimonial-tag">Executive</div>
+            <div class="testimonial-content">
+              <p>
+                "I don't know how to top that, but Paul, I know you worked for
+                me twice. Directly and then indirectly for many years, you made
+                a huge impact on my business. I know I can look back and see the
+                things I've learned from you."
+              </p>
+            </div>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                  <img src="images/hickey.webp" alt="Chris Shank" />
+                </div>
+                <div class="testimonial-author-details">
+                  <div class="testimonial-name">Dave Hickey</div>
+                  <div class="testimonial-position">Vice President, Verizon</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Transformation Section -->
+      <div class="impact-category">
+        <h2>Career Transformation</h2>
+        <p>
+          Stories from individuals whose career trajectories were changed
+          through Paul's guidance and belief in their potential.
+        </p>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card" data-category="career">
+            <div class="testimonial-tag">Transformation</div>
+            <div class="testimonial-content">
+              <p>
+                "This is the person that took a chance on me. You saw something
+                in me that I didn't even know I had. I guess that's what makes
+                you so special as a person and a leader. Your energy and
+                positivity pushed me and I'm sure the rest of our teams to
+                heights we didn't even think were attainable."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/venkatesh.webp" alt="Venkatesh Iyer" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Venkatesh Iyer</div>
+                <div class="testimonial-position">
+                  Senior Director of Sales, Verizon
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="career">
+            <div class="testimonial-tag">Transformation</div>
+            <div class="testimonial-content">
+              <p>
+                "You saw something in me that I didn't even know I had. That's
+                what makes you so special as a leader. Your energy and
+                positivity pushed me to heights I didn't even think were
+                attainable."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/cam_vogt.webp" alt="Cam Vogt" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Cam Vogt</div>
+                <div class="testimonial-position">
+                  Senior Director of Sales, Verizon
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="career">
+            <div class="testimonial-tag">Transformation</div>
+            <div class="testimonial-content">
+              <p>
+                "When I started working with Paul, I was stuck at the Director
+                level despite strong performance. Within 9 months of
+                implementing his strategic guidance, I secured a Sr. Director
+                role and increased my team's productivity by 37%."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">CS</div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Client Success Story</div>
+                <div class="testimonial-position">
+                  Director to VP in 9 Months
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Leadership Development Section -->
+      <div class="impact-category">
+        <h2>Leadership Development</h2>
+        <p>
+          How Paul's approach to leadership development created lasting change
+          in both individuals and organizations.
+        </p>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card" data-category="leadership">
+            <div class="testimonial-tag">Leadership</div>
+            <div class="testimonial-content">
+              <p>
+                "Paul 'Leaders instill in their people a hope for success and a
+                belief in themselves. Positive leaders empower people to
+                accomplish their goals.' This quote sums up what Paul has meant
+                to me in my journey of becoming the leader I am now."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/lunger.webp" alt="Joy Lunger" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Joy Lunger</div>
+                <div class="testimonial-position">
+                  Director Tech Sales, Verizon
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="leadership">
+            <div class="testimonial-tag">Leadership</div>
+            <div class="testimonial-content">
+              <p>
+                "Paul is one of the most strategic, people first leaders that I
+                have ever worked for. I have seen him lead sales leaders,
+                technology consultants, and operational teams to equal levels of
+                best in class results."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/lagen.webp" alt="Zac Lagen" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Zac Lagen</div>
+                <div class="testimonial-position">Sr. Director, Verizon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="leadership">
+            <div class="testimonial-tag">Leadership</div>
+            <div class="testimonial-content">
+              <p>
+                "Extraordinary is the word I would use to describe you. You are
+                a leader who genuinely cares about your people and is able to
+                bring out the best in those around you."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/burge.webp" alt="Shannon Burge" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Shannon Burge</div>
+                <div class="testimonial-position">
+                  Director of Customer Success, Verizon
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentorship Section -->
+      <div class="impact-category">
+        <h2>Mentorship Impact</h2>
+        <p>
+          The profound effect of Paul's mentorship approach on personal and
+          professional growth.
+        </p>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card" data-category="mentorship">
+            <div class="testimonial-tag">Mentorship</div>
+            <div class="testimonial-content">
+              <p>
+                "Working with Paul Takisaki has been a deeply transformative
+                experience. His compassion and unwavering focus on building from
+                a place of strength made me feel truly seen and supported. As a
+                mentor, Paul leads with vulnerability—drawing from his own lived
+                experiences to create a space of trust and openness."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/nwoke.webp" alt="Emmanuel Nwoke" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Emmanuel Nwoke</div>
+                <div class="testimonial-position">
+                  Senior Director of Sales, Verizon
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="mentorship">
+            <div class="testimonial-tag">Mentorship</div>
+            <div class="testimonial-content">
+              <p>
+                "Paul held a title several steps above mine but always treated
+                me as a peer. I'll never forget how comfortable and
+                collaborative it felt to join our regular mentorship meetings
+                and how energized I felt leaving them. In one on one
+                conversation, Paul has the rare ability to truly provide his
+                undivided attention."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">BP</div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Ben Prather</div>
+                <div class="testimonial-position">Assoc. Director, Verizon</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card" data-category="mentorship">
+            <div class="testimonial-tag">Mentorship</div>
+            <div class="testimonial-content">
+              <p>
+                "Paul has a unique ability to foster a culture of empowerment &
+                innovation. Over 7+ years Paul has provided mentorship &
+                resources to grow & exceed in a strategic sales environment.
+                It's been an absolute pleasure growing & learning from Paul."
+              </p>
+            </div>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">
+                <img src="images/buia.webp" alt="Jonathan Buia" />
+              </div>
+              <div class="testimonial-author-details">
+                <div class="testimonial-name">Jonathan Buia</div>
+                <div class="testimonial-position">Assoc Director, Verizon</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-bubbles">
+        <div class="quote-bubble">"He's playing chess, not checkers."</div>
+        <div class="quote-bubble">"OG"</div>
+        <div class="quote-bubble">"Dad-mode activated"</div>
+        <div class="quote-bubble">"He'll figure it out."</div>
+        <div class="quote-bubble">"Faith-driven, not fear-driven"</div>
+        <div class="quote-bubble">"Sleeper beast"</div>
+        <div class="quote-bubble">"Real one"</div>
+        <div class="quote-bubble">"Magic-show hustler to AVP"</div>
+        <div class="quote-bubble">"Quietly powerful"</div>
+        <div class="quote-bubble">"Never average. Never fake."</div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="stories-cta">
+        <h2>Ready for Your Own Transformation Story?</h2>
+        <p>
+          Leadership development that brings out the best in you and your team
+        </p>
+        <div class="cta-buttons">
+          <a href="coaching/index.html" class="btn btn-accent"
+            >Explore Coaching Programs</a
+          >
+          <a href="index.html#contact" class="btn">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="grid grid-4">
+          <div class="footer-about">
+            <div class="footer-logo footer-logo-vertical">
+              <img src="images/paul-logo-white.png" alt="Paul Takisaki" />
+              <div class="footer-name">
+                <span class="name-primary">Paul</span
+                ><span class="name-accent">Takisaki</span>
+              </div>
+            </div>
+            <p>
+              Transforming underperforming teams into record-breaking engines
+              through strategic leadership and people-first culture building.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/paultaki/"
+                class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="coaching/index.html">Coaching</a></li>
+              <li><a href="#">Stories of Impact</a></li>
+              <li><a href="blogs/index.html">Blog</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Services</h3>
+            <ul class="footer-links">
+              <li><a href="coaching/index.html">Executive Coaching</a></li>
+              <li><a href="index.html#services">Fractional CRO Services</a></li>
+              <li><a href="index.html#services">Strategic Consulting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Subscribe</h3>
+            <p>
+              Stay updated with my latest insights on leadership and growth
+              strategy.
+            </p>
+            <form class="mt-2">
+              <input
+                type="email"
+                placeholder="Your Email"
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  margin-bottom: 1rem;
+                  border-radius: 4px;
+                  border: none;
+                "
+              />
+              <button class="btn btn-accent" style="width: 100%">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Add this at the beginning of your existing script section
+      // Video thumbnail click handler
+      const videoThumbnail = document.getElementById("video-thumbnail");
+      const videoContainer = document.getElementById("video-container");
+
+      if (videoThumbnail) {
+        videoThumbnail.addEventListener("click", () => {
+          const iframe = document.createElement("iframe");
+          iframe.setAttribute(
+            "src",
+            "https://www.youtube.com/embed/TaWvv6tf6Js?autoplay=1"
+          );
+          iframe.setAttribute("frameborder", "0");
+          iframe.setAttribute(
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          );
+          iframe.setAttribute("allowfullscreen", "");
+
+          videoContainer.innerHTML = "";
+          videoContainer.appendChild(iframe);
+        });
+      }
+
+      // The rest of your existing JavaScript goes below this
+      // Mobile Menu Toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileToggle = document.getElementById("mobile-toggle");
+        const navbar = document.getElementById("navbar");
+
+        mobileToggle.addEventListener("click", () => {
+          navbar.classList.toggle("active");
+          mobileToggle.classList.toggle("active");
+        });
+
+        // Header scroll effect
+        window.addEventListener("scroll", () => {
+          const header = document.getElementById("header");
+          if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+
+        // Filter functionality
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const testimonialCards = document.querySelectorAll(".testimonial-card");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            // Remove active class from all buttons
+            filterBtns.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            btn.classList.add("active");
+
+            const filter = btn.getAttribute("data-filter");
+
+            testimonialCards.forEach((card) => {
+              if (
+                filter === "all" ||
+                card.getAttribute("data-category") === filter
+              ) {
+                card.style.display = "flex";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+
+        // Animation for testimonial cards
+        const animateCards = () => {
+          testimonialCards.forEach((card, index) => {
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+            }, 100 * index);
+          });
+        };
+
+        // Set initial styles for animation
+        testimonialCards.forEach((card) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition = "all 0.5s ease";
+        });
+
+        // Run animation on page load
+        animateCards();
+      });
+    </script>
+  </body>
+</html>
