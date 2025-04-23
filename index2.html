@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Paul Takisaki - Leadership for Misfits</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      a {
+        color: #0055b8;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #003366;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 16px 32px;
+        font-weight: 500;
+        border-radius: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      .btn-primary {
+        background-color: #000;
+        color: #fff;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #333;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #000;
+        border: 1px solid #000;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      /* Header */
+      header {
+        padding: 20px 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .logo span {
+        color: #00e5ff;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url("https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2671&q=80");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero h1 span {
+        color: #00e5ff;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Advantage Section */
+      .advantage {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .advantage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .advantage-item {
+        padding: 0 20px;
+      }
+
+      .advantage-item h3 {
+        font-size: 1.5rem;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .advantage-item p {
+        color: #555;
+      }
+
+      /* About Section */
+      .about {
+        padding: 100px 0;
+        background-color: #f8f8f8;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-content h2 {
+        font-size: 2.5rem;
+        color: #000;
+        margin-bottom: 30px;
+        line-height: 1.3;
+      }
+
+      .about-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #555;
+      }
+
+      /* Impact Section */
+      .impact {
+        padding: 100px 0;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .impact-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .impact-item {
+        margin-bottom: 100px;
+        position: relative;
+      }
+
+      .impact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .impact-number {
+        font-size: 12rem;
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        top: -30px;
+        left: 0;
+        z-index: 1;
+      }
+
+      .impact-content {
+        position: relative;
+        z-index: 2;
+        padding-left: 120px;
+      }
+
+      .impact-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #00e5ff;
+      }
+
+      .impact-content p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .service-item {
+        padding: 20px;
+      }
+
+      .service-item h3 {
+        font-size: 1.5rem;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .service-item p {
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 150px 0;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .cta h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .btn-cta-primary {
+        background-color: #00e5ff;
+        color: #000;
+        font-weight: 600;
+        padding: 16px 40px;
+      }
+
+      .btn-cta-secondary {
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f8f8f8;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991px) {
+        .hero h1 {
+          font-size: 3.5rem;
+        }
+
+        .impact-number {
+          font-size: 8rem;
+        }
+
+        .impact-content {
+          padding-left: 60px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+
+        .impact-number {
+          font-size: 6rem;
+          position: relative;
+          top: 0;
+          margin-bottom: 20px;
+        }
+
+        .impact-content {
+          padding-left: 0;
+        }
+
+        .impact-content h3 {
+          font-size: 1.8rem;
+        }
+
+        .cta h2 {
+          font-size: 2.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a class="logo" href="#">Paul<span>Takisaki</span></a>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>I DON'T JUST PLAY THE GAME.</h1>
+        <p>I <span>REWIRE</span> IT.</p>
+        <p>
+          Quiet rebel. Strategic disruptor. Built for the ones who never fit in.
+        </p>
+      </div>
+    </section>
+    <!-- Advantage Section -->
+    <section class="advantage" id="advantage">
+      <div class="container">
+        <div class="section-header">
+          <h2>The Advantage of Being Unaligned</h2>
+        </div>
+        <div class="advantage-grid">
+          <div class="advantage-item">
+            <h3>Work Smarter</h3>
+            <p>Efficiency isn't laziness—it's evolution.</p>
+          </div>
+          <div class="advantage-item">
+            <h3>Skip the Fire Drills</h3>
+            <p>Save energy for what actually matters.</p>
+          </div>
+          <div class="advantage-item">
+            <h3>Delegate to Multiply</h3>
+            <p>Release control to release capability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2>
+          Quiet Competitor. Culture Architect.<br />Chess Player in a Checkers
+          World.
+        </h2>
+        <p>
+          Misdiagnosed with ADHD. Branded lazy. Turns out I was optimized for
+          the wrong system.<br />I don't fit into most orgs. That's why I build
+          them.
+        </p>
+      </div>
+    </section>
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-number">1K+</div>
+          <div class="impact-content">
+            <h2
+              style="
+                font-size: 5rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 10px;
+              "
+            >
+              1K+
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.6); font-size: 1.1rem">
+              Team Members Led — Not managed. Not directed. Led with purpose and
+              vision that sparked revolutionary performance.
+            </p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-number">4x</div>
+          <div class="impact-content">
+            <h2
+              style="
+                font-size: 5rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 10px;
+              "
+            >
+              4x
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.6); font-size: 1.1rem">
+              President's Cabinet — Recognition not for playing by the rules,
+              but for rewriting them in ways nobody thought possible.
+            </p>
+          </div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-number">$1B+</div>
+          <div class="impact-content">
+            <h2
+              style="
+                font-size: 5rem;
+                font-weight: bold;
+                color: white;
+                margin-bottom: 10px;
+              "
+            >
+              $1B+
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.6); font-size: 1.1rem">
+              Revenue Launched — Not incremental improvements. Breakthrough
+              initiatives that created entirely new value categories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Services</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-item">
+            <h3>Executive Coaching</h3>
+            <p>For leaders ready to rise without conforming.</p>
+          </div>
+          <div class="service-item">
+            <h3>Misfit Leadership Program</h3>
+            <p>Transform your "disorder" into your operating system.</p>
+          </div>
+          <div class="service-item">
+            <h3>Strategic Consulting</h3>
+            <p>Win the critical few metrics that actually matter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="misfit-manifesto"
+      class="manifesto-section fade-section"
+      style="padding: 6rem 0"
+    >
+      <div class="container text-center">
+        <h2 class="manifesto-title fade-in" style="transition-delay: 0.1s">
+          THE MISFIT MANIFESTO
+        </h2>
+        <p class="lead fade-in" style="transition-delay: 0.2s">
+          I DON'T JUST PLAY THE GAME. I REWIRE IT.
+        </p>
+        <hr class="section-divider fade-in" style="transition-delay: 0.3s" />
+
+        <div class="manifesto-scroll">
+          <p class="fade-in" style="transition-delay: 0.4s">
+            This is not a disorder. It's a different operating system.
+          </p>
+          <p class="fade-in" style="transition-delay: 0.5s">
+            Misdiagnosed with ADHD. Branded lazy. Turns out I was optimized for
+            the wrong system.
+          </p>
+          <p class="fade-in" style="transition-delay: 0.6s">
+            I don't fit into most organizations. That's why I build them.
+          </p>
+
+          <h3 class="fade-in" style="transition-delay: 0.7s">
+            THE QUIET REBEL'S CODE
+          </h3>
+
+          <ul class="manifesto-list">
+            <li class="fade-in" style="transition-delay: 0.8s">
+              <strong>WORK SMARTER</strong><br />Efficiency isn't laziness—it's
+              evolution.
+            </li>
+            <li class="fade-in" style="transition-delay: 0.9s">
+              <strong>SKIP THE FIRE DRILLS</strong><br />Save energy for what
+              actually matters.
+            </li>
+            <li class="fade-in" style="transition-delay: 1s">
+              <strong>DECIDE ONCE, DECIDE WELL</strong><br />One meaningful
+              decision > 100 shallow ones.
+            </li>
+            <li class="fade-in" style="transition-delay: 1.1s">
+              <strong>IF IT'S BORING, IT'S BROKEN</strong><br />You don't blame
+              the audience—you rewrite the act.
+            </li>
+            <li class="fade-in" style="transition-delay: 1.2s">
+              <strong>DELEGATE TO MULTIPLY</strong><br />Release control to
+              release capability.
+            </li>
+            <li class="fade-in" style="transition-delay: 1.3s">
+              <strong>LEAD FROM THE TRENCHES</strong><br />The best ideas never
+              came from corporate retreats. They came from listening to the
+              frontlines.
+            </li>
+            <li class="fade-in" style="transition-delay: 1.4s">
+              <strong>THE CRITICAL FEW > THE TRIVIAL MANY</strong><br />Win the
+              top 3 metrics—take the heat for the rest.
+            </li>
+            <li class="fade-in" style="transition-delay: 1.5s">
+              <strong>PASSION > PERFECTION</strong><br />A 90% flawed idea with
+              full heart beats a 100% polished one nobody cares about.
+            </li>
+            <li class="fade-in" style="transition-delay: 1.6s">
+              <strong>INFLUENCE > AUTHORITY</strong><br />Quiet leadership. Loud
+              results.
+            </li>
+          </ul>
+
+          <h3 class="fade-in" style="transition-delay: 1.7s">
+            THE TRUTH ABOUT MISFITS
+          </h3>
+          <p class="fade-in" style="transition-delay: 1.8s">
+            You weren't broken—you were early.<br />
+            You weren't failing—you were filtering.<br />
+            You weren't too much—you were just built different.
+          </p>
+
+          <p class="fade-in" style="transition-delay: 1.9s">
+            I used to want to belong.<br />
+            Now I build belonging for the ones who never did.
+          </p>
+
+          <p class="fade-in" style="transition-delay: 2s">
+            I was called a problem.<br />
+            Now I show others they were the solution all along.
+          </p>
+
+          <h3 class="fade-in" style="transition-delay: 2.1s">
+            THIS IS YOUR INVITATION
+          </h3>
+          <p class="fade-in" style="transition-delay: 2.2s">
+            If you're done with systems that weren't built for you...<br />
+            If you're tired of dimming your light to fit in...<br />
+            If you're ready to turn your "disorder" into your advantage...
+          </p>
+
+          <p class="fade-in" style="transition-delay: 2.3s">
+            <strong>Run your own operating system.</strong><br />
+            No titles. No permission. No backup plan.
+          </p>
+
+          <div class="cta-buttons mt-3 fade-in" style="transition-delay: 2.4s">
+            <a href="#contact" class="btn btn-accent">Book a Call</a>
+          </div>
+
+          <p class="closing-note mt-4 fade-in" style="transition-delay: 2.5s">
+            <em
+              >For the black sheep. The square pegs. The ones who never fit
+              in.<br />This is for them, by them—because I am, and always will
+              be, one of them.</em
+            >
+          </p>
+          <p class="signature fade-in" style="transition-delay: 2.6s">
+            —PAUL TAKISAKI
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this once to your global JS -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const faders = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        faders.forEach((el) => {
+          el.classList.add("invisible");
+          observer.observe(el);
+        });
+      });
+    </script>
+
+    <!-- Add this to your CSS -->
+    <style>
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .visible {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+      }
+      .invisible {
+        opacity: 0;
+      }
+    </style>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+      <div class="cta-content">
+        <h2>Run Your Own Operating System.</h2>
+        <p>No titles. No permission. No backup plan.</p>
+        <div class="cta-buttons">
+          <a class="btn btn-cta-primary" href="#">Book a Call</a>
+          <a class="btn btn-cta-secondary" href="#">Read the Manifesto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="footer-content">
+        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+      </div>
+    </footer>
+  </body>
+</html>

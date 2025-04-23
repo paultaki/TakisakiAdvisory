@@ -63,44 +63,39 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="container">
-        <div class="hero-content">
-          <div class="hero-badge">
-            FORMER VERIZON AVP & 4X PRESIDENT'S CABINET WINNER
-          </div>
-          <h1>
-            I Don't Just Play the Game.
-            <span class="highlighted-text">I Rewire It.</span>
-          </h1>
-          <p>
-            From mall kiosk to AVP at Verizon, I led teams to shatter every
-            record—and still made it home for dinner. My edge? Leaving at 5.
-            Betting on trust. Scaling systems, not stress.
-          </p>
+        <div class="hero-content text-center">
+          <h1>I Don’t Just Play the Game. <span style="color: var(--accent)">I Rewire It.</span></h1>
+          <p>From mall kiosk to AVP at Verizon. I build leaders, cultures, and systems that don’t just win—<strong>they keep winning.</strong></p>
+    
           <div class="hero-btns">
-            <a href="#services" class="btn btn-accent">Explore Services</a>
-            <a href="#contact" class="btn">Book a Call</a>
+            <a href="#coaching-packages" class="btn btn-accent">See Coaching Offers</a>
+            <a href="#services" class="btn">What I Do</a>
           </div>
-          <div class="coaching-badges">
-            <div class="coaching-badge">
-              <i class="fas fa-award"></i>
-              <span>4x President's Cabinet</span>
-            </div>
-            <div class="coaching-badge">
-              <i class="fas fa-chart-line"></i>
-              <span>$1B+ Revenue Launched
-              </span>
-            </div>
-            <div class="coaching-badge">
-              <i class="fas fa-users"></i>
-              <span>450+ Team Members Led</span>
-            </div>
+        </div>
+    
+        <!-- Quick Coaching Preview -->
+        <div class="grid grid-3 mt-3" style="margin-top: 3rem">
+          <div class="service-card">
+            <h4 class="mb-1">Career Coaching</h4>
+            <p class="mb-1">Land the role. Lead with confidence.</p>
+            <a href="/coaching/index.html" class="btn btn-accent btn-sm">Explore</a>
+          </div>
+          <div class="service-card">
+            <h4 class="mb-1">Executive Development</h4>
+            <p class="mb-1">Scale impact, build legacy.</p>
+            <a href="/coaching/index.html#coaching-packages" class="btn btn-accent btn-sm">See Packages</a>
+          </div>
+          <div class="service-card">
+            <h4 class="mb-1">Fractional Leadership</h4>
+            <p class="mb-1">Inject clarity, lead bold growth.</p>
+            <a href="#contact" class="btn btn-accent btn-sm">Let's Talk</a>
           </div>
         </div>
       </div>
     </section>
+    
 
     <!-- Results Dashboard -->
     <section id="results-dashboard" class="results-dashboard">
@@ -236,7 +231,7 @@
                 <p>President's Cabinet Awards</p>
               </div>
               <div class="enhanced-stat-item">
-                <h4>450+</h4>
+                <h4>1K+</h4>
                 <p>Team Members Led</p>
               </div>
               <div class="enhanced-stat-item">
@@ -753,35 +748,46 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   const testimonialTrack = document.getElementById("testimonial-track");
-  const testimonialNav = document.getElementById("testimonial-nav");
-  
-  if (testimonialTrack && testimonialNav) {
-    const slides = testimonialTrack.children;
-    let currentSlide = 0;
-    
-    for (let i = 0; i < slides.length; i++) {
-      const dot = document.createElement("div");
-      dot.classList.add("testimonial-dot");
-      if (i === 0) dot.classList.add("active");
-      dot.addEventListener("click", () => {
-        goToSlide(i);
-      });
-      testimonialNav.appendChild(dot);
+const testimonialNav = document.getElementById("testimonial-nav");
+
+if (testimonialTrack && testimonialNav) {
+  const allSlides = Array.from(testimonialTrack.children);
+  const maxVisibleSlides = 6;
+  const slides = allSlides.slice(0, maxVisibleSlides); // Only the first 6
+
+  // Hide the extra slides
+  allSlides.forEach((slide, index) => {
+    if (index >= maxVisibleSlides) {
+      slide.style.display = "none";
     }
-    
-    function goToSlide(index) {
-      testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
-      document.querySelectorAll(".testimonial-dot").forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-      currentSlide = index;
-    }
-    
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      goToSlide(currentSlide);
-    }, 8000);
+  });
+
+  let currentSlide = 0;
+
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("testimonial-dot");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      goToSlide(i);
+    });
+    testimonialNav.appendChild(dot);
   }
+
+  function goToSlide(index) {
+    testimonialTrack.style.transform = `translateX(-${index * 100}%)`;
+    document.querySelectorAll(".testimonial-dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+    currentSlide = index;
+  }
+
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    goToSlide(currentSlide);
+  }, 8000);
+}
+
 
   if (!Element.prototype.scrollIntoConstrainedView) {
     Element.prototype.scrollIntoConstrainedView = function (scrollIntoViewOptions) {

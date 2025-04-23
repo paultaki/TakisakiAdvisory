@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul Takisaki - Leadership for Misfits</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      a {
+        color: #0055b8;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #003366;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 16px 32px;
+        font-weight: 500;
+        border-radius: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        margin: 10px 0;
+      }
+
+      .btn-primary {
+        background-color: #000;
+        color: #fff;
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #333;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #000;
+        border: 1px solid #000;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      /* Header */
+      header {
+        padding: 20px 0;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      .logo span {
+        color: #00e5ff;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-links li {
+        margin-left: 30px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url("https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2671&q=80");
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero h1 span {
+        color: #00e5ff;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Advantage Section */
+      .advantage {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .advantage-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .advantage-item {
+        padding: 0 20px;
+      }
+
+      .advantage-item h3 {
+        font-size: 1.5rem;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .advantage-item p {
+        color: #555;
+      }
+
+      /* About Section */
+      .about {
+        padding: 100px 0;
+        background-color: #f8f8f8;
+      }
+
+      .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-content h2 {
+        font-size: 2.5rem;
+        color: #000;
+        margin-bottom: 30px;
+        line-height: 1.3;
+      }
+
+      .about-content p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        color: #555;
+      }
+
+      /* Impact Section */
+      .impact {
+        padding: 100px 0;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .impact-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .impact-item {
+        margin-bottom: 100px;
+        position: relative;
+      }
+
+      .impact-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .impact-number {
+        font-size: 12rem;
+        font-weight: 700;
+        line-height: 1;
+        color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        top: -30px;
+        left: 0;
+        z-index: 1;
+      }
+
+      .impact-content {
+        position: relative;
+        z-index: 2;
+        padding-left: 120px;
+      }
+
+      .impact-content h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: #00e5ff;
+      }
+
+      .impact-content p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Services Section */
+      .services {
+        padding: 100px 0;
+        background-color: #fff;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .service-item {
+        padding: 20px;
+      }
+
+      .service-item h3 {
+        font-size: 1.5rem;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .service-item p {
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 150px 0;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .cta h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 50px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .btn-cta-primary {
+        background-color: #00e5ff;
+        color: #000;
+        font-weight: 600;
+        padding: 16px 40px;
+      }
+
+      .btn-cta-secondary {
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f8f8f8;
+        padding: 50px 0;
+        text-align: center;
+      }
+
+      .footer-content {
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      /* Media Queries */
+      @media (max-width: 991px) {
+        .hero h1 {
+          font-size: 3.5rem;
+        }
+
+        .impact-number {
+          font-size: 8rem;
+        }
+
+        .impact-content {
+          padding-left: 60px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+
+        .impact-number {
+          font-size: 6rem;
+          position: relative;
+          top: 0;
+          margin-bottom: 20px;
+        }
+
+        .impact-content {
+          padding-left: 0;
+        }
+
+        .impact-content h3 {
+          font-size: 1.8rem;
+        }
+
+        .cta h2 {
+          font-size: 2.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-inner">
+          <a href="#" class="logo">Paul<span>Takisaki</span></a>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>I DON'T JUST PLAY THE GAME.</h1>
+        <p>I <span>REWIRE</span> IT.</p>
+        <p>
+          Quiet rebel. Strategic disruptor. Built for the ones who never fit in.
+        </p>
+      </div>
+    </section>
+
+    <!-- Advantage Section -->
+    <section class="advantage" id="advantage">
+      <div class="container">
+        <div class="section-header">
+          <h2>The Advantage of Being Unaligned</h2>
+        </div>
+
+        <div class="advantage-grid">
+          <div class="advantage-item">
+            <h3>Work Smarter</h3>
+            <p>Efficiency isn't laziness—it's evolution.</p>
+          </div>
+
+          <div class="advantage-item">
+            <h3>Skip the Fire Drills</h3>
+            <p>Save energy for what actually matters.</p>
+          </div>
+
+          <div class="advantage-item">
+            <h3>Delegate to Multiply</h3>
+            <p>Release control to release capability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2>
+          Quiet Competitor. Culture Architect.<br />Chess Player in a Checkers
+          World.
+        </h2>
+        <p>
+          Misdiagnosed with ADHD. Branded lazy. Turns out I was optimized for
+          the wrong system.<br />I don't fit into most orgs. That's why I build
+          them.
+        </p>
+      </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-number">1K+</div>
+          <div class="impact-content">
+            <h3>Team Members Led</h3>
+            <p>
+              Not managed. Not directed. Led with purpose and vision that
+              sparked revolutionary performance.
+            </p>
+          </div>
+        </div>
+
+        <div class="impact-item">
+          <div class="impact-number">4x</div>
+          <div class="impact-content">
+            <h3>President's Cabinet</h3>
+            <p>
+              Recognition not for playing by the rules, but for rewriting them
+              in ways nobody thought possible.
+            </p>
+          </div>
+        </div>
+
+        <div class="impact-item">
+          <div class="impact-number">$1B+</div>
+          <div class="impact-content">
+            <h3>Revenue Launched</h3>
+            <p>
+              Not incremental improvements. Breakthrough initiatives that
+              created entirely new value categories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Services</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-item">
+            <h3>Executive Coaching</h3>
+            <p>For leaders ready to rise without conforming.</p>
+          </div>
+
+          <div class="service-item">
+            <h3>Misfit Leadership Program</h3>
+            <p>Transform your "disorder" into your operating system.</p>
+          </div>
+
+          <div class="service-item">
+            <h3>Strategic Consulting</h3>
+            <p>Win the critical few metrics that actually matter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="cta">
+      <div class="cta-content">
+        <h2>Run Your Own Operating System.</h2>
+        <p>No titles. No permission. No backup plan.</p>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-cta-primary">Book a Call</a>
+          <a href="#" class="btn btn-cta-secondary">Read the Manifesto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+      <div class="footer-content">
+        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+      </div>
+    </footer>
+  </body>
+</html>
