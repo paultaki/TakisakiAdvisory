@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Executive Coaching Services | Leadership Transformation | Paul Takisaki
+    </title>
+    <meta
+      name="description"
+      content="Transform your leadership with Paul Takisaki's executive coaching. For innovative leaders who want to rise without conforming. Turn your unique perspective into your advantage."
+    />
+    <meta
+      name="keywords"
+      content="executive coaching, leadership transformation, coaching for executives, leadership development, Paul Takisaki, misfit leadership"
+    />
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://paultakisaki.com/executive_coaching.html"
+    />
+    <meta property="og:title" content="Executive Coaching | Paul Takisaki" />
+    <meta
+      property="og:description"
+      content="Transform your leadership with coaching that brings out your authentic strengths. For leaders ready to rise without conforming."
+    />
+    <meta
+      property="og:image"
+      content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Executive Coaching | Paul Takisaki" />
+    <meta
+      name="twitter:description"
+      content="Transform your leadership with coaching that brings out your authentic strengths. For leaders ready to rise without conforming."
+    />
+    <meta
+      name="twitter:image"
+      content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://paultakisaki.com/executive_coaching.html"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Helvetica Neue", sans-serif;
+      }
+
+      body {
+        color: #1d1d1f;
+        background-color: #ffffff;
+        line-height: 1.47059;
+        font-weight: 400;
+        letter-spacing: -0.022em;
+      }
+
+      /* Typography */
+      h1 {
+        font-size: 64px;
+        line-height: 1.0625;
+        font-weight: 700;
+        letter-spacing: -0.009em;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 48px;
+        line-height: 1.08349;
+        font-weight: 600;
+        letter-spacing: -0.003em;
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 32px;
+        line-height: 1.125;
+        font-weight: 600;
+        letter-spacing: 0.004em;
+        margin-bottom: 14px;
+      }
+
+      p {
+        font-size: 21px;
+        line-height: 1.38105;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+
+      .small-text {
+        font-size: 17px;
+        line-height: 1.47059;
+        font-weight: 400;
+        letter-spacing: -0.022em;
+      }
+
+      /* Layout */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      section {
+        padding: 100px 0;
+        position: relative;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: #000;
+        color: #fff;
+        padding: 200px 0 150px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 72px;
+        max-width: 800px;
+        margin: 0 auto 30px;
+      }
+
+      .hero p {
+        max-width: 600px;
+        margin: 0 auto 50px;
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Executive Transformation Section */
+      .exec-transform {
+        text-align: center;
+        padding: 120px 0;
+      }
+
+      .exec-transform h2 {
+        max-width: 800px;
+        margin: 0 auto 30px;
+      }
+
+      .exec-transform p {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        color: #555;
+      }
+
+      /* Package Grid */
+      .package-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+      }
+
+      .package {
+        background-color: #f5f5f7;
+        border-radius: 18px;
+        padding: 40px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .package:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .package h3 {
+        margin-bottom: 15px;
+        font-size: 28px;
+      }
+
+      .package-price {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #00e5ff;
+      }
+
+      .package-description {
+        font-size: 17px;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .package-features {
+        list-style: none;
+        margin-bottom: 30px;
+      }
+
+      .package-features li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        font-size: 17px;
+      }
+
+      .package-features li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: -2px;
+        color: #00e5ff;
+        font-size: 24px;
+      }
+
+      /* Testimonial Section */
+      .testimonial {
+        background-color: #000;
+        color: #fff;
+        padding: 120px 0;
+        text-align: center;
+      }
+
+      .testimonial-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .testimonial-quote {
+        font-size: 32px;
+        line-height: 1.4;
+        font-weight: 600;
+        margin-bottom: 40px;
+      }
+
+      .testimonial-author {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .testimonial-role {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 0;
+      }
+
+      /* Approach Section */
+      .approach {
+        padding: 120px 0;
+      }
+
+      .approach-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .approach-item {
+        padding: 30px;
+        border-radius: 18px;
+        background-color: #f5f5f7;
+        transition: transform 0.3s ease;
+      }
+
+      .approach-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .approach-item h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .approach-item p {
+        font-size: 17px;
+        color: #555;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 18px 40px;
+        font-size: 17px;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        letter-spacing: 0.027em;
+      }
+
+      .btn-primary {
+        background-color: #00e5ff;
+        color: #000;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #00e5ff;
+        border: 2px solid #00e5ff;
+      }
+
+      .btn-primary:hover {
+        background-color: #00c8e0;
+      }
+
+      .btn-secondary:hover {
+        background-color: rgba(0, 229, 255, 0.1);
+      }
+
+      /* CTA Section */
+      .cta {
+        background-color: #000;
+        color: #fff;
+        padding: 120px 0;
+        text-align: center;
+      }
+
+      .cta h2 {
+        max-width: 700px;
+        margin: 0 auto 30px;
+        font-size: 48px;
+      }
+
+      .cta p {
+        max-width: 600px;
+        margin: 0 auto 50px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Media Queries */
+      @media (max-width: 991px) {
+        h1 {
+          font-size: 48px;
+        }
+
+        h2 {
+          font-size: 36px;
+        }
+
+        h3 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 18px;
+        }
+
+        .package-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .approach-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .hero {
+          padding: 150px 0 100px;
+        }
+
+        .hero h1 {
+          font-size: 42px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        section {
+          padding: 80px 0;
+        }
+
+        .package-grid,
+        .approach-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .testimonial-quote {
+          font-size: 24px;
+        }
+      }
+    </style>
+
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Paul Takisaki Executive Coaching",
+        "description": "Executive coaching services for innovative leaders who want to rise without conforming",
+        "url": "https://paultakisaki.com/executive_coaching.html",
+        "logo": "https://paultakisaki.com/images/logo.png",
+        "image": "https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gilbert",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
+        },
+        "email": "paul@paultakisaki.com",
+        "telephone": "+1-555-123-4567",
+        "priceRange": "$$",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "33.3528",
+          "longitude": "-111.7890"
+        },
+        "sameAs": ["https://www.linkedin.com/in/paultaki"]
+      }
+    </script>
+
+    <!-- Structured Data for Service -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Executive Coaching",
+        "provider": {
+          "@type": "Person",
+          "name": "Paul Takisaki",
+          "description": "Executive Coach with 20+ years of leadership experience",
+          "image": "https://paultakisaki.com/images/paul-takisaki.jpg"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Executive Brand Refresh",
+            "price": "500",
+            "priceCurrency": "USD",
+            "description": "Reposition your professional narrative with precision and power."
+          },
+          {
+            "@type": "Offer",
+            "name": "Executive Acceleration Sprint",
+            "price": "1000",
+            "priceCurrency": "USD",
+            "description": "A targeted 90-day roadmap to visibility and advancement."
+          },
+          {
+            "@type": "Offer",
+            "name": "The Rise",
+            "price": "1500",
+            "priceCurrency": "USD",
+            "description": "From overlooked to indispensable in 90 days."
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>This isn't corporate coaching. It's transformation.</h1>
+        <p>For leaders ready to rise without conforming.</p>
+        <a
+          href="#packages"
+          class="btn btn-primary"
+          aria-label="Explore coaching packages"
+          >Explore Coaching Options</a
+        >
+      </div>
+    </section>
+
+    <!-- Executive Transformation Section -->
+    <section class="exec-transform">
+      <div class="container">
+        <h2>Run Your Own Operating System</h2>
+        <p>
+          You weren't broken—you were early. You weren't failing—you were
+          filtering. Now it's time to transform what others called a disorder
+          into your advantage.
+        </p>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <h3>Chess Player in a Checkers World</h3>
+            <p>
+              Stop playing small. Learn strategic moves that create outsized
+              results while others chase quick wins.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>Delegate to Multiply</h3>
+            <p>
+              Release control to release capability. Build systems that amplify
+              your impact without requiring your presence.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>Win the Critical Few</h3>
+            <p>
+              Focus on the 20% that drives 80% of results. Ignore the trivial
+              many that drain your energy and attention.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Package Section -->
+    <section id="packages">
+      <div class="container">
+        <h2>Executive Coaching Packages</h2>
+        <p>Simple. Focused. Transformational.</p>
+        <div class="package-grid">
+          <div class="package">
+            <h3>Executive Brand Refresh</h3>
+            <div class="package-price">$500</div>
+            <p class="package-description">
+              Reposition your professional narrative with precision and power.
+            </p>
+            <ul class="package-features">
+              <li>Strategic LinkedIn and resume rewrite</li>
+              <li>30-minute clarity call</li>
+              <li>ATS optimization and keyword strategy</li>
+              <li>Optional Loom video walkthrough</li>
+            </ul>
+            <a
+              href="#contact"
+              class="btn btn-secondary"
+              aria-label="Contact about Executive Brand Refresh"
+              >Get Started</a
+            >
+          </div>
+          <div class="package">
+            <h3>Executive Acceleration Sprint</h3>
+            <div class="package-price">$1,000</div>
+            <p class="package-description">
+              A targeted 90-day roadmap to visibility and advancement.
+            </p>
+            <ul class="package-features">
+              <li>90-minute deep strategy session</li>
+              <li>Custom visibility plan</li>
+              <li>Promotion timeline and strategy</li>
+              <li>30-day follow-up call</li>
+            </ul>
+            <a
+              href="#contact"
+              class="btn btn-primary"
+              aria-label="Apply for Executive Acceleration Sprint"
+              >Apply Now</a
+            >
+          </div>
+          <div class="package">
+            <h3>The Rise</h3>
+            <div class="package-price">$1,500/month</div>
+            <p class="package-description">
+              From overlooked to indispensable in 90 days.
+            </p>
+            <ul class="package-features">
+              <li>Bi-weekly 1:1 coaching calls</li>
+              <li>Unlimited async feedback via Voxer</li>
+              <li>Career clarity and tactical wins</li>
+              <li>Leadership growth framework</li>
+              <li>Limited to 8 clients per quarter</li>
+            </ul>
+            <a
+              href="#contact"
+              class="btn btn-secondary"
+              aria-label="Apply for The Rise coaching program"
+              >Apply Now</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+      <div class="container">
+        <div class="testimonial-content">
+          <div class="testimonial-quote">
+            "Paul has been an invaluable leader and mentor, providing guidance
+            that deeply shaped my leadership style and professional growth. His
+            coaching equipped me with the tools to lead others with clarity and
+            purpose."
+          </div>
+          <div class="testimonial-author">Pritesh Patel</div>
+          <p class="testimonial-role">
+            Sr. Director, Solutions Architect Public Sector
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach" id="methodology">
+      <div class="container">
+        <h2>The Quiet Rebel's Approach</h2>
+        <p>
+          No cookie-cutter solutions. No generic leadership platitudes.
+          Everything I teach comes from two decades of building high-performing
+          teams and breaking records in every role.
+        </p>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <h3>The Handlebar Test</h3>
+            <p>
+              Let go. Let others fly. Create the conditions for your team to
+              thrive without constant oversight.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>Failure Fridays</h3>
+            <p>
+              Celebrate smart risks. Normalize learning. Create psychological
+              safety that drives innovation.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>Aggressive Agreement</h3>
+            <p>
+              Name the misfires—even if you're on the same team. Build cultures
+              of candor and continuous improvement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Second Testimonial -->
+    <section class="testimonial">
+      <div class="container">
+        <div class="testimonial-content">
+          <div class="testimonial-quote">
+            "Working with Paul Takisaki has been a deeply transformative
+            experience. His compassion and unwavering focus on building from a
+            place of strength made me feel truly seen and supported."
+          </div>
+          <div class="testimonial-author">Emmanuel Nwoke</div>
+          <p class="testimonial-role">Senior Director of Sales, Verizon</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <h3>Who is executive coaching for?</h3>
+            <p>
+              My coaching is designed for innovative leaders who feel
+              constrained by traditional corporate models. Whether you're a
+              senior executive looking to maximize your impact, a rising leader
+              preparing for your next role, or an entrepreneur building your
+              leadership brand, my approach helps you leverage your unique
+              strengths.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How long does the coaching process take?</h3>
+            <p>
+              Meaningful transformation takes time, which is why my core
+              programs range from 90 days to 6 months. However, many clients see
+              tangible results within the first 30 days, especially in areas
+              like communication clarity, strategic focus, and leadership
+              confidence.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>What makes your approach different?</h3>
+            <p>
+              Unlike traditional coaching that focuses on fixing weaknesses, my
+              strength-based approach helps you leverage your natural talents.
+              My methodology comes from two decades of frontline leadership
+              experience, not just theory. I've personally faced the challenges
+              you're navigating.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>How do we get started?</h3>
+            <p>
+              The process begins with a discovery call to understand your
+              specific goals and challenges. From there, we'll determine if
+              we're the right fit and which program aligns best with your needs.
+              Every engagement includes a customized roadmap tailored to your
+              unique situation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>Ready to Break Through?</h2>
+        <p>
+          Take the first step toward the leadership impact you're capable of.
+        </p>
+        <a
+          href="mailto:paul@paultakisaki.com"
+          class="btn btn-primary"
+          aria-label="Email Paul to book a coaching call"
+          >Book a Call</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer with Contact Information -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>Paul Takisaki</h3>
+            <p>Executive Coaching & Leadership Development</p>
+          </div>
+          <div class="footer-contact">
+            <p>
+              Email:
+              <a href="mailto:paul@paultakisaki.com">paul@paultakisaki.com</a>
+            </p>
+            <p>Location: Gilbert, AZ</p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/paultaki"
+                target="_blank"
+                rel="noopener"
+                aria-label="Paul's LinkedIn Profile"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+          <p class="copyright">
+            © 2025 Takisaki Strategy. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="header.js"></script>
+
+    <!-- Add site analytics script here -->
+
+    <!-- Defer non-critical JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lazy load images
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        if ("loading" in HTMLImageElement.prototype) {
+          // Browser supports native lazy loading
+        } else {
+          // Fallback for browsers that don't support lazy loading
+          // You could implement a JavaScript-based lazy loading solution here
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
