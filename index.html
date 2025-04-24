@@ -519,44 +519,44 @@
         opacity: 0;
       }
       #cta {
-  background-color: #000;
-  color: #fff;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-.main-content {
-  padding-bottom: 20px;
-}
+      .main-content {
+        padding-bottom: 20px;
+      }
 
-.cta-content h2 {
-  font-size: 4.5rem;
-  margin-bottom: 15px;
-  line-height: 1.1;
-  font-weight: 700;
-  color: #fff;
-}
+      .cta-content h2 {
+        font-size: 4.5rem;
+        margin-bottom: 15px;
+        line-height: 1.1;
+        font-weight: 700;
+        color: #fff;
+      }
 
-.cta-content p {
-  font-size: 1.2rem;
-  margin-bottom: 25px;
-  color: rgba(255, 255, 255, 0.8);
-}
+      .cta-content p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        color: rgba(255, 255, 255, 0.8);
+      }
 
-.cta-footer {
-  width: 100%;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-}
+      .cta-footer {
+        width: 100%;
+        padding: 20px 0;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.6);
+      }
 
-.cta-footer a {
-  color: #00e5ff;
-  text-decoration: none;
-}
+      .cta-footer a {
+        color: #00e5ff;
+        text-decoration: none;
+      }
 
       /* Media Queries for Responsive Design */
       @media (max-width: 991px) {
@@ -625,8 +625,8 @@
           padding-bottom: 10px;
         }
         .cta-content h2 {
-    font-size: 2.8rem;
-  }
+          font-size: 2.8rem;
+        }
         #cta h2 {
           font-size: 2.8rem; /* slightly smaller for tight mobile view */
         }
@@ -1263,32 +1263,95 @@
     </section>
 
     <!-- "Run Your Own OS" Section - Vertically Centered -->
-    <section id="cta">
-      <div class="main-content">
-        <div class="cta-content">
-          <h2>Run Your Own<br />Operating<br />System.</h2>
-          <p>No titles. No permission. No backup plan.</p>
-          <div>
-            <a href="#contact" class="btn-cta-primary">BOOK A CALL</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="contact" class="cta-footer">
-        <p>
-          Email:
-          <a href="mailto:paul@paultakisaki.com">paul@paultakisaki.com</a>
-        </p>
-        <p>Location: Gilbert, AZ</p>
-        <p>
-          <a
-            href="https://www.linkedin.com/in/paultakisaki"
-            target="_blank"
-            rel="noopener"
-            >LinkedIn</a
+    <section
+      id="cta"
+      style="
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      "
+    >
+      <!-- Outer Wrapper with full height behavior -->
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 1;
+        "
+      >
+        <!-- Main Content Centered -->
+        <div
+          class="main-content"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+          "
+        >
+          <h2 style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem">
+            Run Your Own<br />Operating<br />System.
+          </h2>
+          <p
+            style="
+              font-size: 1.2rem;
+              color: rgba(255, 255, 255, 0.8);
+              margin-bottom: 2rem;
+            "
           >
-        </p>
-        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+            No titles. No permission. No backup plan.
+          </p>
+          <a
+            href="#contact"
+            style="
+              background-color: #00e5ff;
+              color: #000;
+              font-weight: 600;
+              padding: 14px 30px;
+              text-transform: uppercase;
+              text-decoration: none;
+              letter-spacing: 1px;
+              border-radius: 4px;
+            "
+            >Book a Call</a
+          >
+        </div>
+
+        <!-- Footer always locked to bottom -->
+        <footer
+          id="contact"
+          style="
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+          "
+        >
+          <p>
+            Email:
+            <a
+              href="mailto:paul@paultakisaki.com"
+              style="color: #00e5ff; text-decoration: none"
+              >paul@paultakisaki.com</a
+            >
+          </p>
+          <p>Location: Gilbert, AZ</p>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/paultakisaki"
+              target="_blank"
+              style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+              >LinkedIn</a
+            >
+          </p>
+          <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+        </footer>
       </div>
     </section>
 
