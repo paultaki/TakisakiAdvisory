@@ -1506,3 +1506,12 @@ footer.enhanced {
 footer {
   margin-top: auto;
 }
+.footer-lock {
+  margin-top: auto;
+}
+@media (max-width: 767px) {
+  #cta {
+    padding-top: 160px !important;
+    padding-bottom: 80px !important;
+  }
+}
