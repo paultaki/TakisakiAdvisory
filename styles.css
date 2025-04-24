@@ -924,7 +924,7 @@ footer {
 }
 
 .testimonial-quote::before {
-  content: """;
+  content: "";
   font-size: 4rem;
   color: rgba(0, 170, 204, 0.1);
   position: absolute;

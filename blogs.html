@@ -3,19 +3,108 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Paul Takisaki - Leadership Insights</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Leadership Insights & Articles | Paul Takisaki's Blog</title>
+    <meta
+      name="description"
+      content="Practical leadership advice from a 20-year executive career. Articles on team building, strategic execution, and creating high-performance cultures without burnout."
+    />
+    <meta
+      name="keywords"
+      content="leadership blog, executive coaching, team transformation, strategic execution, Paul Takisaki, leadership articles"
+    />
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://paultakisaki.com/blogs.html" />
+    <meta
+      property="og:title"
+      content="Leadership Insights & Articles | Paul Takisaki's Blog"
+    />
+    <meta
+      property="og:description"
+      content="Practical wisdom from two decades of transforming teams, building cultures, and delivering exceptional results—without the burnout."
+    />
+    <meta
+      property="og:image"
+      content="https://paultakisaki.com/images/leadership-insights-blog.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://paultakisaki.com/blogs.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Leadership Insights & Articles | Paul Takisaki's Blog"
+    />
+    <meta
+      property="twitter:description"
+      content="Practical wisdom from two decades of transforming teams, building cultures, and delivering exceptional results—without the burnout."
+    />
+    <meta
+      property="twitter:image"
+      content="https://paultakisaki.com/images/leadership-insights-blog.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://paultakisaki.com/blogs.html" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Leadership Insights Blog | Paul Takisaki",
+        "description": "Practical wisdom from two decades of transforming teams, building cultures, and delivering exceptional results—without the burnout.",
+        "url": "https://paultakisaki.com/blogs.html",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Paul Takisaki Leadership",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://paultakisaki.com/images/logo.png"
+          }
+        },
+        "blogPosts": [
+          {
+            "@type": "BlogPosting",
+            "headline": "The Unscalable Advantage: Why I Still Held 1:1s with Everyone, 3 Layers Down",
+            "description": "Leadership at scale is a trap. The bigger things get, the easier it is to hide behind dashboards and filtered feedback.",
+            "image": "https://paultakisaki.com/images/unscalable.webp",
+            "datePublished": "2025-03-22",
+            "mainEntityOfPage": "https://paultakisaki.com/blog-post.html",
+            "author": {
+              "@type": "Person",
+              "name": "Paul Takisaki"
+            }
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "The Invisible Resume: Building a Legacy That Outlives Your Title",
+            "description": "When I retired from corporate life at 41, I received a farewell video from peers, employees, and executives.",
+            "image": "https://paultakisaki.com/images/resume.webp",
+            "datePublished": "2025-04-05",
+            "mainEntityOfPage": "https://paultakisaki.com/blog-post.html",
+            "author": {
+              "@type": "Person",
+              "name": "Paul Takisaki"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
     <div id="header-container"></div>
 
-
     <!-- Blog Hero Section -->
     <section class="blog-hero">
       <div class="container">
-        <h1>LEADERSHIP INSIGHTS</h1>
+        <h1>LEADERSHIP INSIGHTS BLOG</h1>
         <p>
           Practical wisdom from two decades of transforming teams, building
           cultures, and delivering exceptional results—without the burnout.
@@ -26,16 +115,54 @@
     <!-- Filter Bar -->
     <div class="filter-bar">
       <div class="container">
-        <div class="filter-container">
-          <button class="filter-btn active" data-filter="all">All Posts</button>
-          <button class="filter-btn" data-filter="leadership">
+        <div
+          class="filter-container"
+          role="tablist"
+          aria-label="Filter articles by category"
+        >
+          <button
+            class="filter-btn active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+            aria-controls="all-articles"
+          >
+            All Posts
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="leadership"
+            role="tab"
+            aria-selected="false"
+            aria-controls="leadership-articles"
+          >
             Leadership
           </button>
-          <button class="filter-btn" data-filter="culture">
+          <button
+            class="filter-btn"
+            data-filter="culture"
+            role="tab"
+            aria-selected="false"
+            aria-controls="culture-articles"
+          >
             Culture Building
           </button>
-          <button class="filter-btn" data-filter="strategy">Strategy</button>
-          <button class="filter-btn" data-filter="transformation">
+          <button
+            class="filter-btn"
+            data-filter="strategy"
+            role="tab"
+            aria-selected="false"
+            aria-controls="strategy-articles"
+          >
+            Strategy
+          </button>
+          <button
+            class="filter-btn"
+            data-filter="transformation"
+            role="tab"
+            aria-selected="false"
+            aria-controls="transformation-articles"
+          >
             Team Transformation
           </button>
         </div>
@@ -46,11 +173,13 @@
     <section class="blog">
       <div class="container">
         <!-- Featured Post -->
-        <div class="featured-post fade-in">
+        <article class="featured-post fade-in">
           <div class="post-image">
             <img
               src="/images/unscalable.webp"
-              alt="The Unscalable Advantage"
+              alt="Leadership article about holding 1:1s with employees three layers down"
+              width="600"
+              height="400"
             />
           </div>
           <div class="post-content">
@@ -63,11 +192,39 @@
             </h2>
             <div class="post-meta">
               <div class="post-meta-item">
-                <i class="far fa-calendar"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
                 <span>March 22, 2025</span>
               </div>
               <div class="post-meta-item">
-                <i class="far fa-clock"></i>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
                 <span>4 min read</span>
               </div>
             </div>
@@ -86,18 +243,25 @@
                 connected.
               </p>
             </div>
-            <a href="blog-post.html" class="btn btn-primary">Read Article</a>
+            <a
+              href="blog-post.html"
+              class="btn btn-primary"
+              aria-label="Read full article about unscalable advantage"
+              >Read Full Article</a
+            >
           </div>
-        </div>
+        </article>
 
         <!-- Blog Grid -->
         <div class="blog-grid">
           <!-- Blog Post 1 -->
-          <div class="blog-card fade-in">
+          <article class="blog-card fade-in">
             <div class="post-image">
               <img
                 src="/images/resume.webp"
-                alt="The Invisible Resume"
+                alt="Article about building a legacy that outlives your professional title"
+                width="400"
+                height="300"
               />
             </div>
             <div class="post-content">
@@ -110,11 +274,46 @@
               </h3>
               <div class="post-meta">
                 <div class="post-meta-item">
-                  <i class="far fa-calendar"></i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
                   <span>April 5, 2025</span>
                 </div>
                 <div class="post-meta-item">
-                  <i class="far fa-clock"></i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
                   <span>3 min read</span>
                 </div>
               </div>
@@ -126,16 +325,23 @@
                   deeper—what I call the "invisible resume."
                 </p>
               </div>
-              <a href="blog-post.html" class="read-more-btn">Read Article</a>
+              <a
+                href="blog-post.html"
+                class="read-more-btn"
+                aria-label="Read full article about invisible resume"
+                >Read Full Article</a
+              >
             </div>
-          </div>
+          </article>
 
           <!-- Blog Post 2 -->
-          <div class="blog-card fade-in">
+          <article class="blog-card fade-in">
             <div class="post-image">
               <img
                 src="/images/strategy_sticks.webp"
-                alt="Strategy That Sticks"
+                alt="Article about creating effective strategies that actually work"
+                width="400"
+                height="300"
               />
             </div>
             <div class="post-content">
@@ -148,11 +354,46 @@
               </h3>
               <div class="post-meta">
                 <div class="post-meta-item">
-                  <i class="far fa-calendar"></i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
                   <span>April 12, 2025</span>
                 </div>
                 <div class="post-meta-item">
-                  <i class="far fa-clock"></i>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
                   <span>5 min read</span>
                 </div>
               </div>
@@ -164,9 +405,14 @@
                   delivers results every time.
                 </p>
               </div>
-              <a href="blog-post.html" class="read-more-btn">Read Article</a>
+              <a
+                href="blog-post.html"
+                class="read-more-btn"
+                aria-label="Read full article about strategy that sticks"
+                >Read Full Article</a
+              >
             </div>
-          </div>
+          </article>
 
           <!-- Coming Soon Post 1 -->
           <div class="blog-card coming-soon-card fade-in">
@@ -193,17 +439,41 @@
         </div>
 
         <!-- Pagination -->
-        <div class="pagination fade-in">
-          <a href="#" class="pagination-arrow">
-            <i class="fas fa-chevron-left"></i>
+        <nav class="pagination fade-in" aria-label="Blog pagination">
+          <a href="#" class="pagination-arrow" aria-label="Previous page">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
           </a>
-          <a href="#" class="pagination-item active">1</a>
+          <a href="#" class="pagination-item active" aria-current="page">1</a>
           <a href="#" class="pagination-item">2</a>
           <a href="#" class="pagination-item">3</a>
-          <a href="#" class="pagination-arrow">
-            <i class="fas fa-chevron-right"></i>
+          <a href="#" class="pagination-arrow" aria-label="Next page">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </a>
-        </div>
+        </nav>
       </div>
     </section>
 
@@ -216,12 +486,18 @@
             Join my newsletter for practical wisdom on leadership, team
             building, and creating cultures that perform and endure.
           </p>
-          <form class="newsletter-form">
+          <form
+            class="newsletter-form"
+            method="post"
+            action="/subscribe"
+            aria-label="Newsletter subscription form"
+          >
             <div class="newsletter-form-row">
               <input
                 type="email"
                 placeholder="Your Email"
                 required
+                aria-label="Your email address"
                 style="
                   flex: 1;
                   padding: 12px 15px;
@@ -232,6 +508,10 @@
               <button type="submit" class="btn btn-primary">Subscribe</button>
             </div>
           </form>
+          <p class="small-text">
+            By subscribing, you'll receive exclusive leadership content. No
+            spam, unsubscribe anytime.
+          </p>
         </div>
       </div>
     </section>
@@ -239,23 +519,43 @@
     <!-- CTA Section -->
     <section class="cta" id="contact">
       <div class="cta-content">
-        <h2 class="fade-in">READY TO BREAK THROUGH?</h2>
+        <h2 class="fade-in">READY TO TRANSFORM YOUR LEADERSHIP?</h2>
         <p class="fade-in">
           Take the first step toward the leadership impact you're capable of.
         </p>
         <div class="cta-buttons fade-in">
-          <a class="btn btn-cta-primary" href="mailto:paul@paultakisaki.com"
-            >EMAIL ME</a
+          <a
+            class="btn btn-cta-primary"
+            href="mailto:paul@paultakisaki.com"
+            aria-label="Contact Paul via email"
+            >BOOK A DISCOVERY CALL</a
           >
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Enhanced SEO & Accessibility -->
     <footer>
       <div class="footer-content">
-        <p>Paul Takisaki | Gilbert, AZ | paul@paultakisaki.com</p>
-        <p>© 2025 Takisaki Strategy</p>
+        <div class="contact-info">
+          <p>
+            Email:
+            <a href="mailto:paul@paultakisaki.com" title="Email Paul Takisaki"
+              >paul@paultakisaki.com</a
+            >
+          </p>
+          <p>Location: Gilbert, AZ</p>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/paultakisaki"
+              title="Connect with Paul on LinkedIn"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
       </div>
     </footer>
 
@@ -279,10 +579,14 @@
         filterButtons.forEach((button) => {
           button.addEventListener("click", function () {
             // Remove active class from all buttons
-            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("active");
+              btn.setAttribute("aria-selected", "false");
+            });
 
             // Add active class to clicked button
             this.classList.add("active");
+            this.setAttribute("aria-selected", "true");
 
             // Get filter value
             const filter = this.getAttribute("data-filter");
@@ -314,6 +618,22 @@
                 featuredPost.style.display = "none";
               }
             }
+
+            // Announce filter change for screen readers
+            const filterAnnouncement = document.createElement("div");
+            filterAnnouncement.setAttribute("role", "status");
+            filterAnnouncement.setAttribute("aria-live", "polite");
+            filterAnnouncement.style.position = "absolute";
+            filterAnnouncement.style.clip = "rect(0 0 0 0)";
+            filterAnnouncement.innerHTML = `Showing ${
+              filter === "all" ? "all" : filter
+            } articles`;
+            document.body.appendChild(filterAnnouncement);
+
+            // Remove announcement after it's been read
+            setTimeout(() => {
+              document.body.removeChild(filterAnnouncement);
+            }, 1000);
           });
         });
 
@@ -333,8 +653,37 @@
         faders.forEach((el) => {
           observer.observe(el);
         });
+
+        // Track newsletter signups
+        const newsletterForm = document.querySelector(".newsletter-form");
+        if (newsletterForm) {
+          newsletterForm.addEventListener("submit", function (e) {
+            // Prevent actual form submission in this demo
+            e.preventDefault();
+
+            // Show success message
+            const emailInput = this.querySelector('input[type="email"]');
+            const email = emailInput.value;
+
+            // Clear the form
+            emailInput.value = "";
+
+            // Show success message
+            const successMessage = document.createElement("p");
+            successMessage.style.color = "#00e5ff";
+            successMessage.style.fontWeight = "bold";
+            successMessage.textContent =
+              "Thanks for subscribing! Check your inbox to confirm.";
+            this.appendChild(successMessage);
+
+            // Remove success message after 3 seconds
+            setTimeout(() => {
+              this.removeChild(successMessage);
+            }, 3000);
+          });
+        }
       });
     </script>
-        <script src="header.js"></script>
+    <script src="header.js"></script>
   </body>
 </html>
