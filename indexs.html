@@ -6,463 +6,486 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Paul Takisaki - Leadership for Misfits</title>
     <style>
-      /* Reset and Base Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
-      }
+            /* Reset and Base Styles */
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif;
+            }
 
-      body {
-        line-height: 1.6;
-        color: #333;
-        background-color: #fff;
-      }
+            body {
+              line-height: 1.6;
+              color: #333;
+              background-color: #fff;
+            }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-weight: 600;
-        line-height: 1.3;
-      }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              font-weight: 600;
+              line-height: 1.3;
+            }
 
-      a {
-        color: #0055b8;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
+            a {
+              color: #0055b8;
+              text-decoration: none;
+              transition: color 0.3s ease;
+            }
 
-      a:hover {
-        color: #003366;
-      }
+            a:hover {
+              color: #003366;
+            }
 
-      .container {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+            .container {
+              width: 100%;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+            }
 
-      .btn {
-        display: inline-block;
-        padding: 16px 32px;
-        font-weight: 500;
-        border-radius: 0;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 14px;
-        margin: 10px 0;
-      }
+            .btn {
+              display: inline-block;
+              padding: 16px 32px;
+              font-weight: 500;
+              border-radius: 0;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              text-align: center;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              font-size: 14px;
+              margin: 10px 0;
+            }
 
-      .btn-primary {
-        background-color: #000;
-        color: #fff;
-        border: none;
-      }
+            .btn-primary {
+              background-color: #000;
+              color: #fff;
+              border: none;
+            }
 
-      .btn-primary:hover {
-        background-color: #333;
-      }
+            .btn-primary:hover {
+              background-color: #333;
+            }
 
-      .btn-secondary {
-        background-color: transparent;
-        color: #000;
-        border: 1px solid #000;
-      }
+            .btn-secondary {
+              background-color: transparent;
+              color: #000;
+              border: 1px solid #000;
+            }
 
-      .btn-secondary:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
+            .btn-secondary:hover {
+              background-color: rgba(0, 0, 0, 0.05);
+            }
 
-      /* Header */
-      header {
-        padding: 20px 0;
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 10;
-      }
+            /* Header */
+            header {
+              padding: 20px 0;
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+              z-index: 10;
+            }
 
-      .header-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+            .header-inner {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            }
 
-      .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #fff;
-      }
+            .logo {
+              font-size: 1.5rem;
+              font-weight: 700;
+              color: #fff;
+            }
 
-      .logo span {
-        color: #00e5ff;
-      }
+            .logo span {
+              color: #00e5ff;
+            }
 
-      .nav-links {
-        display: flex;
-        list-style: none;
-      }
+            .nav-links {
+              display: flex;
+              list-style: none;
+            }
 
-      .nav-links li {
-        margin-left: 30px;
-      }
+            .nav-links li {
+              margin-left: 30px;
+            }
 
-      .nav-links a {
-        color: #fff;
-        font-weight: 500;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
+            .nav-links a {
+              color: #fff;
+              font-weight: 500;
+              font-size: 0.9rem;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+            }
 
-      /* Hero Section */
-      .hero {
-        height: 100vh;
-        background-image: linear-gradient(
-            rgba(0, 0, 0, 0.7),
-            rgba(0, 0, 0, 0.7)
-          ),
-          url("https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2671&q=80");
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        text-align: center;
-      }
+            /* Hero Section */
+            .hero {
+              height: 100vh;
+              background-image: linear-gradient(
+                  rgba(0, 0, 0, 0.7),
+                  rgba(0, 0, 0, 0.7)
+                ),
+                url("https://images.unsplash.com/photo-1529699211952-734e80c4d42b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2671&q=80");
+              background-size: cover;
+              background-position: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              text-align: center;
+            }
 
-      .hero-content {
-        max-width: 800px;
-      }
+            .hero-content {
+              max-width: 800px;
+            }
 
-      .hero h1 {
-        font-size: 4rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-      }
+            .hero h1 {
+              font-size: 4rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              line-height: 1.2;
+            }
 
-      .hero h1 span {
-        color: #00e5ff;
-      }
+            .hero h1 span {
+              color: #00e5ff;
+            }
 
-      .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        max-width: 600px;
-        margin: 0 auto;
-      }
+            .hero p {
+              font-size: 1.2rem;
+              margin-bottom: 2rem;
+              max-width: 600px;
+              margin: 0 auto;
+            }
 
-      /* Advantage Section */
-      .advantage {
-        padding: 100px 0;
-        background-color: #fff;
-      }
+            /* Advantage Section */
+            .advantage {
+              padding: 100px 0;
+              background-color: #fff;
+            }
 
-      .section-header {
-        text-align: center;
-        margin-bottom: 60px;
-      }
+            .section-header {
+              text-align: center;
+              margin-bottom: 60px;
+            }
 
-      .section-header h2 {
-        font-size: 2.5rem;
-        color: #000;
-        margin-bottom: 15px;
-      }
+            .section-header h2 {
+              font-size: 2.5rem;
+              color: #000;
+              margin-bottom: 15px;
+            }
 
-      .advantage-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 50px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+            .advantage-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 50px;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
 
-      .advantage-item {
-        padding: 0 20px;
-      }
+            .advantage-item {
+              padding: 0 20px;
+            }
 
-      .advantage-item h3 {
-        font-size: 1.5rem;
-        color: #000;
-        margin-bottom: 15px;
-      }
+            .advantage-item h3 {
+              font-size: 1.5rem;
+              color: #000;
+              margin-bottom: 15px;
+            }
 
-      .advantage-item p {
-        color: #555;
-      }
+            .advantage-item p {
+              color: #555;
+            }
 
-      /* About Section */
-      .about {
-        padding: 100px 0;
-        background-color: #f8f8f8;
-      }
+            /* About Section */
+            .about {
+              padding: 100px 0;
+              background-color: #f8f8f8;
+            }
 
-      .about-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
+            .about-content {
+              max-width: 800px;
+              margin: 0 auto;
+              text-align: center;
+            }
 
-      .about-content h2 {
-        font-size: 2.5rem;
-        color: #000;
-        margin-bottom: 30px;
-        line-height: 1.3;
-      }
+            .about-content h2 {
+              font-size: 2.5rem;
+              color: #000;
+              margin-bottom: 30px;
+              line-height: 1.3;
+            }
 
-      .about-content p {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-        color: #555;
-      }
+            .about-content p {
+              font-size: 1.1rem;
+              margin-bottom: 0.3rem;
+              color: #555;
+            }
 
-      /* Impact Section */
-      .impact {
-        padding: 100px 0;
-        background-color: #000;
-        color: #fff;
-      }
+            /* Impact Section */
+            .impact {
+              padding: 100px 0;
+              background-color: #000;
+              color: #fff;
+            }
 
-      .impact-grid {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+            .impact-grid {
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+            }
 
-      .impact-item {
-        margin-bottom: 100px;
-        position: relative;
-      }
+            .impact-item {
+              margin-bottom: 100px;
+              position: relative;
+            }
 
-      .impact-item:last-child {
-        margin-bottom: 0;
-      }
+            .impact-item:last-child {
+              margin-bottom: 0;
+            }
 
-      .impact-number {
-        font-size: 12rem;
-        font-weight: 700;
-        line-height: 1;
-        color: rgba(255, 255, 255, 0.1);
-        position: absolute;
-        top: -30px;
-        left: 0;
-        z-index: 1;
-      }
+            .impact-number {
+              font-size: 12rem;
+              font-weight: 700;
+              line-height: 1;
+              color: rgba(255, 255, 255, 0.1);
+              position: absolute;
+              top: -30px;
+              left: 0;
+              z-index: 1;
+            }
 
-      .impact-content {
-        position: relative;
-        z-index: 2;
-        padding-left: 120px;
-      }
+            .impact-content {
+              position: relative;
+              z-index: 2;
+              padding-left: 120px;
+            }
 
-      .impact-content h3 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        color: #00e5ff;
-      }
+            .impact-content h3 {
+              font-size: 2rem;
+              margin-bottom: 15px;
+              color: #00e5ff;
+            }
 
-      .impact-content p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        color: rgba(255, 255, 255, 0.8);
-      }
+            .impact-content p {
+              font-size: 1.1rem;
+              max-width: 600px;
+              color: rgba(255, 255, 255, 0.8);
+            }
 
-      /* Services Section */
-      .services {
-        padding: 100px 0;
-        background-color: #fff;
-      }
+            /* Services Section */
+            .services {
+              padding: 100px 0;
+              background-color: #fff;
+            }
 
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 50px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+            .services-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+              gap: 50px;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+            }
 
-      .service-item {
-        padding: 20px;
-      }
+            .service-item {
+              padding: 20px;
+            }
 
-      .service-item h3 {
-        font-size: 1.5rem;
-        color: #000;
-        margin-bottom: 15px;
-      }
+            .service-item h3 {
+              font-size: 1.5rem;
+              color: #000;
+              margin-bottom: 15px;
+            }
 
-      .service-item p {
-        color: #555;
-        margin-bottom: 20px;
-      }
+            .service-item p {
+              color: #555;
+              margin-bottom: 20px;
+            }
 
-      /* CTA Section */
-      .cta {
-        padding: 150px 0;
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-      }
+            /* CTA Section */
+            .cta {
+              padding: 150px 0;
+              background-color: #000;
+              color: #fff;
+              text-align: center;
+            }
 
-      .cta-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
+            .cta-content {
+              max-width: 800px;
+              margin: 0 auto;
+              padding: 0 20px;
+            }
 
-      .cta h2 {
-        font-size: 3.5rem;
-        margin-bottom: 20px;
-        line-height: 1.2;
-      }
+            .cta h2 {
+              font-size: 3.5rem;
+              margin-bottom: 20px;
+              line-height: 1.2;
+            }
 
-      .cta p {
-        font-size: 1.2rem;
-        margin-bottom: 50px;
-        color: rgba(255, 255, 255, 0.8);
-      }
+            .cta p {
+              font-size: 1.2rem;
+              margin-bottom: 50px;
+              color: rgba(255, 255, 255, 0.8);
+            }
 
-      .cta-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      }
+            .cta-buttons {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              gap: 20px;
+            }
 
-      .btn-cta-primary {
-        background-color: #00e5ff;
-        color: #000;
-        font-weight: 600;
-        padding: 16px 40px;
-      }
+            .btn-cta-primary {
+              background-color: #00e5ff;
+              color: #000;
+              font-weight: 600;
+              padding: 16px 40px;
+            }
 
-      .btn-cta-secondary {
-        background-color: transparent;
-        color: #fff;
-        border: 1px solid #fff;
-      }
+            .btn-cta-secondary {
+              background-color: transparent;
+              color: #fff;
+              border: 1px solid #fff;
+            }
 
-      /* Footer */
-      footer {
-        background-color: #f8f8f8;
-        padding: 50px 0;
-        text-align: center;
-      }
+            /* Footer */
+            footer {
+              background-color: #f8f8f8;
+              padding: 50px 0;
+              text-align: center;
+            }
 
-      .footer-content {
-        font-size: 0.9rem;
-        color: #777;
-      }
+            .footer-content {
+              font-size: 0.9rem;
+              color: #777;
+            }
 
-      /* Media Queries */
-      @media (max-width: 991px) {
+            /* Media Queries */
+            @media (max-width: 991px) {
+              .hero h1 {
+                font-size: 3.5rem;
+              }
+
+              .impact-number {
+                font-size: 8rem;
+              }
+
+              .impact-content {
+                padding-left: 60px;
+              }
+            }
+
+            @media (max-width: 767px) {
+        .hero {
+          height: auto;
+          padding: 100px 20px 60px;
+          text-align: center;
+          background-position: center;
+        }
+
         .hero h1 {
-          font-size: 3.5rem;
+          font-size: 2.2rem;
+          line-height: 1.3;
+          margin-bottom: 1rem;
         }
 
-        .impact-number {
-          font-size: 8rem;
+        .hero p {
+          font-size: 1rem;
+          max-width: 100%;
+          margin: 0 auto 1.5rem;
         }
 
-        .impact-content {
-          padding-left: 60px;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .hero h1 {
-          font-size: 2.8rem;
+        .hero-content {
+          max-width: 100%;
+          padding: 0 1rem;
         }
 
-        .impact-number {
-          font-size: 6rem;
-          position: relative;
-          top: 0;
-          margin-bottom: 20px;
-        }
-
-        .impact-content {
-          padding-left: 0;
-        }
-
-        .impact-content h3 {
-          font-size: 1.8rem;
-        }
-
-        .cta h2 {
-          font-size: 2.8rem;
-        }
+        $1
       }
 
-      .impact-number {
-        font-size: 16rem;
-        line-height: 1;
-        color: rgba(255, 255, 255, 0.07);
-      }
+              .impact-number {
+                font-size: 6rem;
+                position: relative;
+                top: 0;
+                margin-bottom: 20px;
+              }
 
-      .impact-content h2 {
-        font-size: 6rem;
-        text-align: center;
-        margin-bottom: 20px;
-      }
+              .impact-content {
+                padding-left: 0;
+              }
 
-      .impact-content p {
-        text-align: center;
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto;
-        color: rgba(255, 255, 255, 0.7);
-      }
+              .impact-content h3 {
+                font-size: 1.8rem;
+              }
 
-      .advantage-item h3 {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 10px;
-      }
+              .cta h2 {
+                font-size: 2.8rem;
+              }
+            }
 
-      .advantage-item p {
-        text-align: center;
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
+            .impact-number {
+              font-size: 16rem;
+              line-height: 1;
+              color: rgba(255, 255, 255, 0.07);
+            }
 
-      .manifesto-scroll {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-      }
+            .impact-content h2 {
+              font-size: 6rem;
+              text-align: center;
+              margin-bottom: 20px;
+            }
 
-      .manifesto-scroll p,
-      .manifesto-scroll li {
-        line-height: 2.1;
-        font-size: 1.2rem;
-        text-align: center;
-      }
+            .impact-content p {
+              text-align: center;
+              font-size: 1.2rem;
+              max-width: 700px;
+              margin: 0 auto;
+              color: rgba(255, 255, 255, 0.7);
+            }
 
-      .manifesto-scroll ul {
-        list-style: none;
-        padding-left: 0;
-        margin: 2rem 0;
-      }
+            .advantage-item h3 {
+              text-align: center;
+              font-size: 2rem;
+              margin-bottom: 10px;
+            }
 
-      .manifesto-scroll li strong {
-        display: block;
-        font-size: 1.4rem;
-        margin-bottom: 0.3rem;
-      }
+            .advantage-item p {
+              text-align: center;
+              font-size: 1.1rem;
+              line-height: 1.6;
+            }
+
+            .manifesto-scroll {
+              max-width: 800px;
+              margin: 0 auto;
+              text-align: center;
+            }
+
+            .manifesto-scroll p,
+            .manifesto-scroll li {
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+            }
+
+            .manifesto-scroll ul {
+              list-style: none;
+              padding-left: 0;
+              margin: 2rem 0;
+            }
+
+            .manifesto-scroll li strong {
+              display: block;
+              font-size: 1.4rem;
+              margin-bottom: 0.3rem;
+            }
     </style>
   </head>
   <body>
@@ -633,7 +656,7 @@
                 margin-left: 0;
               "
             >
-              PPresident’s Cabinet — Top 1%. Not for playing by the rules, but
+              President’s Cabinet — Top 1%. Not for playing by the rules, but
               for rewriting them in ways nobody thought possible.
             </p>
           </div>
@@ -815,35 +838,34 @@
           </h3>
 
           <div class="manifesto-list" style="margin: 3rem 0; padding: 0">
-            
             <div
-            class="fade-in"
-            style="margin-bottom: 2.5rem; margin-top: 2.5rem"
-          >
-            <div
-              style="
-                font-size: 1.2rem;
-                font-weight: 600;
-                letter-spacing: 1px;
-                text-align: center;
-                margin-bottom: 0rem;
-              "
+              class="fade-in"
+              style="margin-bottom: 2.5rem; margin-top: 2.5rem"
             >
-              IF IT'S BORING, IT'S BROKEN
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0rem;
+                "
+              >
+                IF IT'S BORING, IT'S BROKEN
+              </div>
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
+                You don't blame the audience—you rewrite the act.
+              </div>
             </div>
-            <div
-              style="
-                font-size: 1.1rem;
-                font-weight: 300;
-                color: #555;
-                text-align: center;
-                margin-top: 0.1rem;
-              "
-            >
-              You don't blame the audience—you rewrite the act.
-            </div>
-          </div>
-            
+
             <div class="fade-in" style="margin-bottom: 2.5rem">
               <div
                 style="
@@ -925,8 +947,6 @@
               </div>
             </div>
 
-           
-
             <div
               class="fade-in"
               style="margin-bottom: 2.5rem; margin-top: 2.5rem"
@@ -979,7 +999,7 @@
                   margin-top: 0.1rem;
                 "
               >
-                The best ideas never came from corporate retreats. They came
+                Breakthrough ideas never came from corporate retreats. They came
                 from listening to the frontlines.
               </div>
             </div>
@@ -1068,6 +1088,54 @@
                 Quiet leadership. Loud results.
               </div>
             </div>
+            <!-- GUT-CHECK INSERT -->
+            <div class="fade-in" style="margin-top: 4rem">
+              <div
+                style="
+                  font-size: 1.6rem;
+                  font-weight: 700;
+                  margin-bottom: 0.2rem;
+                  color: #000;
+                  text-align: center;
+                "
+              >
+                THE GUT-CHECKS THAT NEVER FAIL
+              </div>
+              <div
+                style="
+                  font-size: 0.95rem;
+                  font-style: italic;
+                  color: #777;
+                  margin-bottom: 2rem;
+                  text-align: center;
+                "
+              >
+                (Wisdom from my dad)
+              </div>
+              <div
+                style="
+                  font-size: 1.2rem;
+                  color: #444;
+                  margin-bottom: 1.2rem;
+                  line-height: 1.8;
+                  text-align: center;
+                "
+              >
+                If I drop this, will I get fired? If not — it can wait.
+              </div>
+              <div
+                style="
+                  font-size: 1.2rem;
+                  color: #444;
+                  margin-bottom: 2.5rem;
+                  line-height: 1.8;
+                  text-align: center;
+                "
+              >
+                Would I work for them? If not — don’t hire them.
+              </div>
+            </div>
+            <!-- END GUT-CHECK INSERT -->
           </div>
 
           <h3
