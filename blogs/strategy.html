@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strategy That Sticks | Paul Takisaki</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Jobs-inspired overrides */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+      }
+
+      .blog-post-hero {
+        background-color: #f5f5f7;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .blog-post-hero h1 {
+        font-size: 48px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .blog-post-hero p {
+        font-size: 22px;
+        font-weight: 300;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .blog-post-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 20px;
+      }
+
+      .blog-post-text p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+        font-weight: 300;
+      }
+
+      .blog-post-text h2 {
+        font-size: 36px;
+        font-weight: 600;
+        margin: 60px 0 20px;
+        letter-spacing: -0.5px;
+      }
+
+      .blog-post-text h3 {
+        font-size: 24px;
+        font-weight: 500;
+        margin: 40px 0 20px;
+      }
+
+      .blog-post-featured-text {
+        font-size: 30px;
+        line-height: 1.3;
+        margin: 40px 0;
+        text-align: center;
+        font-weight: 400;
+      }
+
+      blockquote {
+        border-left: 4px solid #000;
+        padding-left: 20px;
+        margin: 40px 0;
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      blockquote p {
+        font-weight: 400 !important;
+      }
+
+      .blog-post-text ul,
+      .blog-post-text ol {
+        margin-bottom: 30px;
+        padding-left: 20px;
+      }
+
+      .blog-post-text li {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+
+      .blog-post-text strong {
+        font-weight: 500;
+      }
+
+      /* Framework section */
+      .framework-section {
+        background-color: #000;
+        color: #fff;
+        padding: 60px 20px;
+        margin: 60px 0;
+      }
+
+      .framework-title {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
+
+      .framework-list {
+        max-width: 600px;
+        margin: 0 auto;
+        counter-reset: item;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .framework-item {
+        display: flex;
+        margin-bottom: 30px;
+        align-items: flex-start;
+      }
+
+      .framework-number {
+        font-size: 24px;
+        font-weight: 300;
+        margin-right: 20px;
+        opacity: 0.5;
+        flex-shrink: 0;
+        width: 30px;
+      }
+
+      .framework-content {
+        flex: 1;
+      }
+
+      .framework-heading {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+
+      .framework-desc {
+        font-size: 18px;
+        opacity: 0.8;
+        font-weight: 300;
+      }
+
+      /* Case Study section */
+      .case-study {
+        background-color: #f5f5f7;
+        padding: 60px 20px;
+        margin: 60px 0;
+      }
+
+      .case-study-title {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: 600;
+      }
+
+      .case-study-container {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .case-study-content {
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 300;
+      }
+
+      .case-study-highlight {
+        font-weight: 500;
+        background-color: rgba(0, 0, 0, 0.05);
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+
+      .case-study-metric {
+        font-size: 60px;
+        font-weight: 600;
+        text-align: center;
+        margin: 30px 0;
+        letter-spacing: -1px;
+      }
+
+      /* Author section */
+      .author-box {
+        display: flex;
+        align-items: center;
+        margin: 60px 0;
+        padding: 30px;
+        background-color: #f5f5f7;
+        border-radius: 8px;
+      }
+
+      .author-box .author-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+      }
+
+      .author-box .author-info h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      .author-box .author-info p {
+        font-size: 16px;
+        margin-bottom: 0;
+        font-weight: 300;
+      }
+
+      /* CTA Section */
+      .contact-cta {
+        background-color: #000;
+        color: #fff;
+        padding: 80px 20px;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .contact-cta h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .contact-cta p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-weight: 300;
+      }
+
+      .btn-accent {
+        background-color: #fff;
+        color: #000 !important;
+        border-radius: 30px;
+        padding: 15px 30px;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+      }
+
+      .btn-accent:hover {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 768px) {
+        .blog-post-hero h1 {
+          font-size: 36px;
+        }
+
+        .blog-post-hero p {
+          font-size: 18px;
+        }
+
+        .blog-post-featured-text {
+          font-size: 24px;
+        }
+
+        blockquote {
+          font-size: 20px;
+        }
+
+        .case-study-metric {
+          font-size: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header-container"></div>
+    <script src="../header.js"></script>
+
+    <!-- Blog Post Hero -->
+    <section class="blog-post-hero">
+      <div class="container">
+        <h1>Strategy That Sticks</h1>
+        <p>Why most plans fail and how to make yours actually work</p>
+      </div>
+    </section>
+
+    <!-- Blog Post Content -->
+    <div class="blog-post-content">
+      <div class="blog-post-text">
+        <p>Most strategies fail for one of three reasons:</p>
+        <ul>
+          <li>The goal isn't bold enough</li>
+          <li>No one decides where <em>not</em> to play</li>
+          <li>There's zero governance to support it</li>
+        </ul>
+
+        <h2>Set a Goal That Actually Stretches You</h2>
+        <p>
+          Toyota once set a goal to double sales of the Camry. They did it—but
+          still weren't dominating the market. Then they changed the goal:
+          become the top-selling midsize sedan in America. That shift in
+          ambition changed everything.
+        </p>
+
+        <div class="blog-post-featured-text">
+          Bold strategy demands a bold target.
+        </div>
+
+        <h2>Say No—Clearly and on Purpose</h2>
+        <p>
+          Most teams hate this part. It feels limiting. But deciding where not
+          to play is where strategy gets sharp. Gain, the detergent brand, spent
+          years as a "me too" product. Nothing worked—until they made a call:
+          target scent-seekers, and ignore the rest. That clarity turned Gain
+          into a billion-dollar business.
+        </p>
+
+        <div class="blog-post-featured-text">
+          You can't be everything to everyone. Strategy that works starts with
+          the critical few.
+        </div>
+      </div>
+
+      <!-- Framework Section -->
+      <section class="framework-section">
+        <h2 class="framework-title">The 5-Part "Playing to Win" Framework</h2>
+
+        <ol class="framework-list">
+          <li class="framework-item">
+            <div class="framework-number">1</div>
+            <div class="framework-content">
+              <div class="framework-heading">
+                What's our winning aspiration?
+              </div>
+              <div class="framework-desc">
+                Define a clear, ambitious goal that stretches but doesn't break
+                your team
+              </div>
+            </div>
+          </li>
+
+          <li class="framework-item">
+            <div class="framework-number">2</div>
+            <div class="framework-content">
+              <div class="framework-heading">Where will we play?</div>
+              <div class="framework-desc">
+                And more importantly, where won't we? Make deliberate choices
+                about markets, segments, and channels
+              </div>
+            </div>
+          </li>
+
+          <li class="framework-item">
+            <div class="framework-number">3</div>
+            <div class="framework-content">
+              <div class="framework-heading">How will we win?</div>
+              <div class="framework-desc">
+                The meat of the strategy—your unique approach and value
+                proposition
+              </div>
+            </div>
+          </li>
+
+          <li class="framework-item">
+            <div class="framework-number">4</div>
+            <div class="framework-content">
+              <div class="framework-heading">What capabilities do we need?</div>
+              <div class="framework-desc">
+                The skills, resources, and assets required to execute
+                successfully
+              </div>
+            </div>
+          </li>
+
+          <li class="framework-item">
+            <div class="framework-number">5</div>
+            <div class="framework-content">
+              <div class="framework-heading">
+                What governance systems must support this?
+              </div>
+              <div class="framework-desc">
+                The structures, processes, and metrics that ensure
+                accountability and execution
+              </div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <div class="blog-post-text">
+        <h2>Rollout Matters More Than the Slide Deck</h2>
+        <p>
+          If strategy is created in a boardroom and handed down like
+          commandments, it's dead on arrival. You want buy-in? You've got to
+          build <em>with</em>, not <em>for</em>.
+        </p>
+
+        <p>
+          When I was three layers removed from the field, I'd build strategy
+          with my directors. They'd bring it to their managers. Managers would
+          take it to their reps and build tactical versions that aligned with
+          the bigger vision but owned the ground-level execution.
+        </p>
+
+        <p>
+          The key? Every level needs to leave space for the next to shape it.
+          That's how it becomes <em>theirs</em>.
+        </p>
+
+        <div class="blog-post-featured-text">
+          When the team builds it, they believe in it. And when they believe in
+          it, they chase it hard.
+        </div>
+      </div>
+
+      <!-- Case Study Section -->
+      <section class="case-study">
+        <h2 class="case-study-title">
+          Case in Point: 10,000 Adds in One Month
+        </h2>
+
+        <div class="case-study-container">
+          <div class="case-study-content">
+            <p>
+              We ran a promotion with crazy good offers—record-breaking
+              month-level stuff. But the first time we missed. Why?
+            </p>
+
+            <p>
+              We targeted the wrong people. We pitched admins managing the
+              phones instead of the CFOs and controllers who actually cared
+              about cost savings. Rookie move.
+            </p>
+
+            <p>
+              Still, we hit 9.5K net adds. Not bad—<span
+                class="case-study-highlight"
+                >especially considering the previous record was 7.3K</span
+              >. But we weren't trying to beat the old record. We were trying to
+              crush it. Our goal was 10K+. And we missed.
+            </p>
+
+            <p>
+              The next time, we adjusted everything: better targeting, tighter
+              feedback loops, daily check-ins. We hit:
+            </p>
+
+            <div class="case-study-metric">10.2K</div>
+
+            <p>
+              That shattered the territory record, because we learned from our
+              mistakes and adjusted our approach.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="blog-post-text">
+        <h2>The Secret Weapon: Team Influencers</h2>
+        <p>
+          Most teams have that one rep others look to before deciding if they'll
+          follow the new plan. The high performer. The vet. The unofficial voice
+          of the team.
+        </p>
+
+        <p>
+          I pull those people in early—right after the director-level strategy
+          session, before the frontline rollout. I ask for input, integrate what
+          makes sense, and then let them know:
+        </p>
+
+        <blockquote>
+          <p>
+            "You're a leader here. People watch what you do. Can I count on your
+            help to bring this to life?"
+          </p>
+        </blockquote>
+
+        <p>
+          They're honored. They're activated. They become internal champions.
+        </p>
+
+        <div class="blog-post-featured-text">
+          That's how you turn the ship overnight.
+        </div>
+
+        <h2>Final Thought</h2>
+        <p>
+          Strategy doesn't fail because it's flawed. It fails because no one
+          believes in it, no one owns it, and no one builds the systems to
+          support it.
+        </p>
+
+        <p>But when you do all three? It sticks. And you win.</p>
+      </div>
+
+      <!-- Author Box -->
+      <div class="author-box">
+        <div class="author-img">
+          <img src="../images/headshot.webp" alt="Paul Takisaki" />
+        </div>
+        <div class="author-info">
+          <h3>Paul Takisaki</h3>
+          <p>
+            From mall kiosk to AVP at Verizon, I built teams that broke every
+            record—and still made it home for dinner. 4x President's Cabinet
+            winner, builder of bold cultures, and believer in people over
+            process.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="contact-cta">
+      <div class="container">
+        <h2>Get Leadership Insights Delivered to Your Inbox</h2>
+        <p>
+          Join my newsletter for practical wisdom on leadership, team building,
+          and creating cultures that perform and endure.
+        </p>
+        <div style="max-width: 500px; margin: 0 auto">
+          <form class="newsletter-form">
+            <div style="display: flex; gap: 10px">
+              <input
+                type="email"
+                placeholder="Your Email"
+                required
+                style="
+                  flex: 1;
+                  padding: 12px 15px;
+                  border: none;
+                  border-radius: 4px;
+                "
+              />
+              <button type="submit" class="btn btn-accent">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer handled by your existing scripts -->
+  </body>
+</html>
