@@ -623,22 +623,8 @@
     </script>
   </head>
   <body>
-    <!-- Header -->
-    <div id="header-container">
-      <header>
-        <div class="header-inner">
-          <a class="logo" href="index.html">Paul<span>Takisaki</span></a>
-          <button id="mobile-toggle" class="mobile-toggle">☰</button>
-          <ul class="nav-links">
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="index.html#about">ABOUT</a></li>
-            <li><a href="stories.html">STORIES</a></li>
-            <li><a href="services.html">SERVICES</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-          </ul>
-        </div>
-      </header>
-    </div>
+    <div id="header-container"></div>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -919,35 +905,87 @@
     </div>
   </div>
 </section>
-<!-- "Run Your Own OS" Section - Balanced Spacing -->
-<section id="cta" style="background-color: #000; color: #fff; text-align: center; padding: 30px 0 0 0; margin: 0;">
-  <!-- Main Content - Top Section -->
-  <div style="max-width: 800px; margin: 0 auto; padding: 0 15px;">
-    <h2 style="font-size: 3.8rem; margin-bottom: 10px; line-height: 1.1; color: #fff; font-weight: 700;">
-      Run Your Own<br>Operating<br>System.
-    </h2>
-    <p style="font-size: 1.1rem; margin-bottom: 20px; color: rgba(255, 255, 255, 0.8);">
-      No titles. No permission. No backup plan.
-    </p>
-    <div style="margin-bottom: 80px;">
-      <a href="#contact" style="display: inline-block; padding: 14px 36px; background-color: #00e5ff; color: #000; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-size: 1rem;">
-        BOOK A CALL
-      </a>
+
+
+
+
+<!-- "Run Your Own OS" Section - Vertically Centered -->
+<section id="cta" style="background-color: #000; color: #fff; text-align: center; padding: 0; margin: 0; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+  <!-- Main Content Area - Vertically Centered -->
+  <div style="padding: 40px 0;">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 20px;">
+      <h2 style="font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; color: #fff; font-weight: 700;">
+        Run Your Own<br>Operating<br>System.
+      </h2>
+      <p style="font-size: 1.2rem; margin-bottom: 25px; color: rgba(255, 255, 255, 0.8);">
+        No titles. No permission. No backup plan.
+      </p>
+      <div style="margin-bottom: 60px;">
+        <a href="#contact" style="display: inline-block; padding: 16px 40px; background-color: #00e5ff; color: #000; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-size: 1rem;">
+          BOOK A CALL
+        </a>
+      </div>
     </div>
   </div>
   
-  <!-- Footer - Slightly Closer -->
-  <div id="contact" style="width: 100%; padding: 15px 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); text-align: center;">
-    <p style="margin-bottom: 4px;">
+  <!-- Footer Area - At Bottom -->
+  <div id="contact" style="width: 100%; padding: 20px 0; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6); text-align: center; margin-top: auto;">
+    <p style="margin-bottom: 5px;">
       Email: <a href="mailto:paul@paultakisaki.com" style="color: #00e5ff; text-decoration: none;">paul@paultakisaki.com</a>
     </p>
-    <p style="margin-bottom: 4px;">Location: Gilbert, AZ</p>
-    <p style="margin-bottom: 4px;">
+    <p style="margin-bottom: 5px;">Location: Gilbert, AZ</p>
+    <p style="margin-bottom: 5px;">
       <a href="https://www.linkedin.com/in/paultakisaki" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;" target="_blank" rel="noopener">LinkedIn</a>
     </p>
-    <p style="margin-bottom: 4px;">Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+    <p style="margin-bottom: 5px;">Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
   </div>
 </section>
+
+<!-- Media Queries for Responsive Adjustments -->
+<style>
+  /* Desktop Specific Adjustments */
+  @media (min-width: 768px) {
+    #cta {
+      padding-top: 120px;
+    }
+    
+    #cta h2 {
+      font-size: 5rem;
+    }
+    
+    #cta .footer-area {
+      padding: 30px 0;
+    }
+  }
+  
+  /* Mobile Specific Adjustments */
+  @media (max-width: 767px) {
+    #cta {
+      padding-top: 60px;
+    }
+    
+    #cta h2 {
+      font-size: 3.6rem;
+    }
+    
+    /* Adjust spacing between button and footer on mobile */
+    #cta .main-content {
+      padding-bottom: 40px;
+    }
+  }
+  
+  /* Very Small Screens */
+  @media (max-width: 360px) {
+    #cta h2 {
+      font-size: 3.2rem;
+    }
+    
+    #cta .main-content {
+      padding-bottom: 30px;
+    }
+  }
+</style>
+
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -962,5 +1000,7 @@
         }
       });
     </script>
+        <script src="header.js"></script>
+
   </body>
 </html>
