@@ -179,9 +179,9 @@
       }
 
       .stat-item {
+        background-color: transparent; /* This removes the white background */
         text-align: center;
       }
-
       .stat-number {
         font-size: 72px;
         font-weight: 700;
@@ -520,6 +520,42 @@
         font-size: 14px;
         color: #888;
       }
+      .stats {
+  padding: 100px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  width: 33.33%;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #00e5ff;
+  font-family: "SF Mono", monospace;
+  display: block;
+}
+
+.stat-label {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  display: block;
+}
 
       /* Media Queries */
       @media (max-width: 991px) {
@@ -681,7 +717,6 @@
       </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats">
       <div class="container">
         <div class="stats-grid">
@@ -700,7 +735,6 @@
         </div>
       </div>
     </section>
-
     <!-- Approach Section -->
     <section class="approach" id="approach">
       <div class="container">
