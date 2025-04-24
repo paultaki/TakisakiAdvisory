@@ -74,9 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
           width: 100%;
           box-shadow: none;
           padding-left: 20px;
+          background-color: rgba(0, 0, 0, 0.2); /* Slightly lighter background to distinguish dropdown items */
         }
         .nav-links .has-dropdown:hover .dropdown-menu {
-          display: none;
+          display: none; /* Prevent hover from opening dropdown on mobile */
         }
         .nav-links .dropdown-menu.show {
           display: block;
@@ -91,23 +92,49 @@ document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelector(".nav-links");
   
   if (toggle && navLinks) {
-    toggle.addEventListener("click", function () {
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation(); // Prevent event from bubbling up
       navLinks.classList.toggle("active");
     });
   }
 
-  // Setup dropdown functionality
+  // Setup dropdown functionality - improved for mobile
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
   
   dropdownToggles.forEach(toggle => {
     toggle.addEventListener('click', function(e) {
-      // Only prevent default on mobile
-      if (window.innerWidth <= 767) {
-        e.preventDefault();
-        this.parentElement.querySelector('.dropdown-menu').classList.toggle('show');
-      }
+      // Always prevent default on the dropdown toggle
+      e.preventDefault();
+      e.stopPropagation(); // Prevent event from bubbling up
+      
+      // Toggle the dropdown menu
+      const dropdownMenu = this.parentElement.querySelector('.dropdown-menu');
+      dropdownMenu.classList.toggle('show');
     });
   });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    // Close all dropdown menus
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      if (menu.classList.contains('show')) {
+        menu.classList.remove('show');
+      }
+    });
+    
+    // Close the mobile menu
+    if (navLinks && navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+  
+  // Prevent clicks inside the navigation from closing it
+  const navElement = document.querySelector('nav');
+  if (navElement) {
+    navElement.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
 
   // Add structured data for SEO
   const structuredData = document.createElement('script');
