@@ -270,21 +270,32 @@
       }
 
       .testimonial-quote {
-        font-size: 32px;
-        line-height: 1.4;
-        font-weight: 600;
-        margin-bottom: 40px;
+        font-size: 1.8rem;
+  line-height: 1.6;
+  font-weight: 600;
+  max-width: 800px;
+  margin: 0 auto 40px;
+  color: #ffffff;
+  text-align: center;
+  opacity: 0.95;
+  letter-spacing: 0.2px;
       }
 
       .testimonial-author {
-        font-size: 18px;
-        font-weight: 600;
+        display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 5px;
       }
 
-      .testimonial-role {
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 0;
+      .testimonial-author {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+  color: #fff;
       }
 
       /* Approach Section */
@@ -999,17 +1010,29 @@
     <section
     id="cta"
     style="
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       background-color: #000;
       color: #fff;
       text-align: center;
-      padding: 80px 20px 40px;
     "
   >
-    <div style="max-width: 800px; margin: 0 auto;">
-      <h2 style="font-size: 2.6rem; font-weight: 800; margin-bottom: 1rem;">
+    <!-- CTA Content -->
+    <div
+      style="
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px 30px;
+      "
+    >
+      <h2 style="font-size: 3.4rem; font-weight: 800; margin-bottom: 1rem;">
         Run Your Own<br />Operating<br />System.
       </h2>
-      <p style="font-size: 1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
+      <p style="font-size: 1.2rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem;">
         No titles. No permission. No backup plan.
       </p>
       <a
@@ -1029,14 +1052,18 @@
       </a>
     </div>
   
+    <!-- Footer -->
     <footer
-      id="contact"
-      style="
-        margin-top: 60px;
-        font-size: 0.75rem;
-        color: rgba(255, 255, 255, 0.5);
-      "
-    >
+  id="contact"
+  style="
+    margin-top: auto;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 20px 0;
+  "
+>
+
       <p>
         Email:
         <a
@@ -1057,6 +1084,8 @@
       <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
     </footer>
   </section>
+  
+
   
   <!-- KEEP THIS SCRIPT SECTION EXACTLY AS IS BELOW -->
   <script src="header.js"></script>
