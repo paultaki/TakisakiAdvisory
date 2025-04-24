@@ -3,210 +3,359 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Executive Coaching Services | Leadership Transformation | Paul Takisaki
-    </title>
-    <meta
-      name="description"
-      content="Transform your leadership with Paul Takisaki's executive coaching. For innovative leaders who want to rise without conforming. Turn your unique perspective into your advantage."
-    />
-    <meta
-      name="keywords"
-      content="executive coaching, leadership transformation, coaching for executives, leadership development, Paul Takisaki, misfit leadership"
-    />
-
-    <!-- Open Graph / Social Media Tags -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://paultakisaki.com/executive_coaching.html"
-    />
-    <meta property="og:title" content="Executive Coaching | Paul Takisaki" />
-    <meta
-      property="og:description"
-      content="Transform your leadership with coaching that brings out your authentic strengths. For leaders ready to rise without conforming."
-    />
-    <meta
-      property="og:image"
-      content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg"
-    />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Executive Coaching | Paul Takisaki" />
-    <meta
-      name="twitter:description"
-      content="Transform your leadership with coaching that brings out your authentic strengths. For leaders ready to rise without conforming."
-    />
-    <meta
-      name="twitter:image"
-      content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg"
-    />
-
-    <!-- Canonical URL -->
-    <link
-      rel="canonical"
-      href="https://paultakisaki.com/executive_coaching.html"
-    />
-
-    <link rel="stylesheet" href="styles.css" />
-
+    <title>Paul Takisaki | Executive Leadership</title>
     <style>
-      /* Base Styles */
+      /* Base styles */
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
         font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
           "Helvetica Neue", sans-serif;
-      }
-
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-      }
-
-      body {
         color: #1d1d1f;
-        background-color: #ffffff;
-        line-height: 1.47059;
-        font-weight: 400;
-        letter-spacing: -0.022em;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+        line-height: 1.5;
       }
 
-      main {
-        flex: 1 0 auto; /* This makes main take up all available space */
-      }
-
-      /* Typography */
-      h1 {
-        font-size: 64px;
-        line-height: 1.0625;
-        font-weight: 700;
-        letter-spacing: -0.009em;
-        margin-bottom: 20px;
-      }
-
-      h2 {
-        font-size: 48px;
-        line-height: 1.08349;
-        font-weight: 600;
-        letter-spacing: -0.003em;
-        margin-bottom: 20px;
-      }
-
-      h3 {
-        font-size: 32px;
-        line-height: 1.125;
-        font-weight: 600;
-        letter-spacing: 0.004em;
-        margin-bottom: 14px;
-      }
-
-      p {
-        font-size: 21px;
-        line-height: 1.38105;
-        font-weight: 400;
-        margin-bottom: 20px;
-      }
-
-      .small-text {
-        font-size: 17px;
-        line-height: 1.47059;
-        font-weight: 400;
-        letter-spacing: -0.022em;
-      }
-
-      /* Layout */
       .container {
-        max-width: 1000px;
+        max-width: 980px;
         margin: 0 auto;
         padding: 0 20px;
       }
 
-      section {
-        padding: 100px 0;
-        position: relative;
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        backdrop-filter: saturate(180%) blur(20px);
+        z-index: 1000;
+      }
+
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 16px 20px;
+      }
+
+      .logo {
+        color: #fff;
+        font-size: 21px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #fff;
       }
 
       /* Hero Section */
       .hero {
+        height: 100vh;
         background-color: #000;
-        color: #fff;
-        padding: 200px 0 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
+        padding-top: 50px;
+      }
+
+      .hero-content {
+        max-width: 700px;
       }
 
       .hero h1 {
-        font-size: 72px;
-        max-width: 800px;
-        margin: 0 auto 30px;
+        font-size: 64px;
+        line-height: 1.07;
+        font-weight: 700;
+        letter-spacing: -0.005em;
+        color: #fff;
+        margin-bottom: 30px;
       }
 
       .hero p {
-        max-width: 600px;
-        margin: 0 auto 50px;
         font-size: 24px;
-        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.3;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 40px;
       }
 
-      /* Executive Transformation Section */
-      .exec-transform {
+      /* Manifesto Section */
+      .manifesto {
+        padding: 160px 0;
+        background-color: #fff;
         text-align: center;
-        padding: 120px 0;
       }
 
-      .exec-transform h2 {
-        max-width: 800px;
-        margin: 0 auto 30px;
+      .manifesto h2 {
+        font-size: 48px;
+        line-height: 1.08;
+        font-weight: 600;
+        letter-spacing: -0.003em;
+        margin-bottom: 24px;
       }
 
-      .exec-transform p {
+      .manifesto-grid {
+        display: grid;
+        grid-template-columns: 1fr;
         max-width: 700px;
-        margin: 0 auto 40px;
+        margin: 60px auto 0;
+        gap: 40px;
+      }
+
+      .manifesto-item {
+        text-align: left;
+        padding: 0;
+      }
+
+      .manifesto-item h3 {
+        font-size: 28px;
+        line-height: 1.14;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .manifesto-item p {
+        font-size: 17px;
+        line-height: 1.47;
         color: #555;
       }
 
-      /* Package Grid */
-      .package-grid {
+      /* Testimonial */
+      .testimonial {
+        padding: 160px 0;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .testimonial-content {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .testimonial-quote {
+        font-size: 32px;
+        line-height: 1.25;
+        font-weight: 600;
+        margin-bottom: 40px;
+      }
+
+      .testimonial-author {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+
+      .testimonial-role {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Approach Section */
+      .approach {
+        padding: 160px 0;
+        background-color: #f5f5f7;
+        text-align: center;
+      }
+
+      .approach h2 {
+        font-size: 48px;
+        line-height: 1.08;
+        font-weight: 600;
+        margin-bottom: 60px;
+      }
+
+      .approach-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin-top: 80px;
+        gap: 30px;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .approach-item {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 12px;
+        text-align: left;
+        height: 100%;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .approach-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .approach-item h3 {
+        font-size: 24px;
+        line-height: 1.16;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      .approach-item p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #555;
+      }
+
+      /* Tools Section */
+      .tools {
+        padding: 120px 0;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+      }
+
+      .tools h2 {
+        font-size: 48px;
+        line-height: 1.08;
+        font-weight: 600;
+        margin-bottom: 60px;
+      }
+
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      .tool-item {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        height: 100%;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .tool-item:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .tool-item h3 {
+        font-size: 18px;
+        line-height: 1.3;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .tool-item p {
+        font-size: 14px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Programs Section */
+      .program {
+        padding: 160px 0;
+        background-color: #fff;
+        text-align: center;
+      }
+
+      .program h2 {
+        font-size: 48px;
+        line-height: 1.08;
+        font-weight: 600;
+        margin-bottom: 60px;
+      }
+
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 980px;
+        margin: 0 auto;
       }
 
       .package {
         background-color: #f5f5f7;
-        border-radius: 18px;
         padding: 40px;
+        border-radius: 12px;
+        text-align: left;
+        position: relative;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
 
       .package:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
       }
 
+      .package.featured {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
+
+      .package.featured:hover {
+        transform: translateY(-5px) scale(1.05);
+      }
+
+      .featured-badge {
+        position: absolute;
+        top: -10px;
+        right: 30px;
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 12px;
+        font-weight: 500;
+        border-radius: 4px;
+      }
+
       .package h3 {
+        font-size: 24px;
+        line-height: 1.16;
+        font-weight: 600;
         margin-bottom: 15px;
-        font-size: 28px;
       }
 
       .package-price {
-        font-size: 24px;
+        font-size: 32px;
         font-weight: 700;
-        margin-bottom: 20px;
-        color: #00e5ff;
+        margin-bottom: 15px;
+      }
+
+      .package-price span {
+        font-size: 16px;
+        font-weight: 400;
+        color: #555;
       }
 
       .package-description {
-        font-size: 17px;
+        font-size: 16px;
+        line-height: 1.4;
         color: #555;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
       }
 
       .package-features {
@@ -216,620 +365,453 @@
 
       .package-features li {
         position: relative;
-        padding-left: 30px;
-        margin-bottom: 15px;
-        font-size: 17px;
+        padding-left: 24px;
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 1.47;
       }
 
       .package-features li:before {
-        content: "•";
+        content: "—";
         position: absolute;
         left: 0;
-        top: -2px;
-        color: #00e5ff;
-        font-size: 24px;
-      }
-
-      /* Testimonial Section */
-      .testimonial {
-        background-color: #000;
-        color: #fff;
-        padding: 120px 0;
-        text-align: center;
-      }
-
-      .testimonial-content {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .testimonial-quote {
-        font-size: 1.8rem;
-        line-height: 1.6;
-        font-weight: 600;
-        max-width: 800px;
-        margin: 0 auto 40px;
-        color: #ffffff;
-        text-align: center;
-        opacity: 0.95;
-        letter-spacing: 0.2px;
-      }
-
-      .testimonial-author {
-        display: block;
-        text-align: center;
-        font-weight: 600;
-        font-size: 1rem;
-        color: #fff;
-        margin-bottom: 5px;
-      }
-
-      .testimonial-role {
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 0;
-      }
-
-      /* Approach Section */
-      .approach {
-        padding: 120px 0;
-      }
-
-      .approach-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin-top: 60px;
-      }
-
-      .approach-item {
-        padding: 30px;
-        border-radius: 18px;
-        background-color: #f5f5f7;
-        transition: transform 0.3s ease;
-      }
-
-      .approach-item:hover {
-        transform: translateY(-5px);
-      }
-
-      .approach-item h3 {
-        font-size: 24px;
-        margin-bottom: 15px;
-      }
-
-      .approach-item p {
-        font-size: 17px;
-        color: #555;
-      }
-
-      /* Buttons */
-      .btn {
-        display: inline-block;
-        padding: 18px 40px;
-        font-size: 17px;
-        font-weight: 600;
-        text-decoration: none;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        letter-spacing: 0.027em;
-      }
-
-      .btn-primary {
-        background-color: #00e5ff;
         color: #000;
       }
 
-      .btn-secondary {
+      .btn {
+        display: inline-block;
+        padding: 14px 24px;
+        background-color: #000;
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        text-align: center;
+        width: 100%;
+      }
+
+      .btn:hover {
+        background-color: #333;
+      }
+
+      .btn-small {
         background-color: transparent;
-        color: #00e5ff;
-        border: 2px solid #00e5ff;
+        color: #000;
+        border: 1px solid #000;
       }
 
-      .btn-primary:hover {
-        background-color: #00c8e0;
-      }
-
-      .btn-secondary:hover {
-        background-color: rgba(0, 229, 255, 0.1);
+      .btn-small:hover {
+        background-color: rgba(0, 0, 0, 0.05);
       }
 
       /* CTA Section */
       .cta {
+        padding: 160px 0;
         background-color: #000;
         color: #fff;
-        padding: 120px 0;
         text-align: center;
-        margin-bottom: 0; /* Connect with footer */
       }
 
-      .cta h2 {
+      .cta-content {
         max-width: 700px;
-        margin: 0 auto 30px;
-        font-size: 48px;
-      }
-
-      .cta p {
-        max-width: 600px;
-        margin: 0 auto 50px;
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      /* FAQ Section */
-      .faq-container {
-        max-width: 800px;
         margin: 0 auto;
       }
 
-      .faq-item {
+      .cta h2 {
+        font-size: 48px;
+        line-height: 1.08;
+        font-weight: 600;
+        margin-bottom: 24px;
+      }
+
+      .cta p {
+        font-size: 21px;
+        line-height: 1.38;
+        color: rgba(255, 255, 255, 0.7);
         margin-bottom: 40px;
       }
 
-      .faq-item h3 {
-        margin-bottom: 15px;
-        font-size: 24px;
+      .cta .btn {
+        background-color: #fff;
+        color: #000;
+        max-width: 200px;
       }
 
-      .faq-item p {
-        font-size: 18px;
-        color: #555;
+      .cta .btn:hover {
+        background-color: rgba(255, 255, 255, 0.9);
       }
 
-
-      .social-links {
-        margin: 10px 0;
-      }
-
-      .social-links a {
-        color: #00e5ff;
-        text-decoration: none;
-        margin: 0 10px;
-        transition: color 0.3s ease;
-      }
-
-      .social-links a:hover {
+      /* Footer */
+      footer {
+        background-color: #000;
+        padding: 40px 0;
         color: #fff;
       }
 
-      .copyright {
-        font-size: 14px;
-        color: rgba(255, 255, 255, 0.5);
-        margin-bottom: 0;
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
 
-      /* Media Queries */
+      .footer-content h3 {
+        margin-bottom: 2px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      .footer-subtitle {
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-contact {
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+
+      .footer-contact a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .copyright {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* Responsive Design */
       @media (max-width: 991px) {
-        h1 {
+        .hero h1 {
           font-size: 48px;
         }
 
-        h2 {
-          font-size: 36px;
+        .manifesto h2,
+        .program h2,
+        .approach h2,
+        .tools h2,
+        .cta h2 {
+          font-size: 40px;
         }
 
-        h3 {
-          font-size: 24px;
-        }
-
-        p {
-          font-size: 18px;
-        }
-
-        .package-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
+        .packages-grid,
         .approach-grid {
           grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
+        }
+
+        .tools-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+
+        .package.featured {
+          grid-column: span 2;
+          max-width: 500px;
+          margin: 0 auto;
         }
       }
 
       @media (max-width: 767px) {
         .hero {
-          padding: 150px 0 100px;
+          padding-top: 100px;
         }
 
         .hero h1 {
-          font-size: 42px;
+          font-size: 40px;
         }
 
         .hero p {
-          font-size: 18px;
+          font-size: 20px;
         }
 
-        section {
-          padding: 80px 0;
+        .nav-links {
+          display: none;
         }
 
-        .package-grid,
-        .approach-grid {
-          grid-template-columns: 1fr;
+        .manifesto,
+        .testimonial,
+        .program,
+        .approach,
+        .tools,
+        .cta {
+          padding: 100px 0;
         }
 
         .testimonial-quote {
           font-size: 24px;
         }
 
-  }
-  .footer-contact a::before,
-  .footer-contact span::before {
-    content: none;
-  }
+        .packages-grid,
+        .approach-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+
+        .package.featured {
+          grid-column: span 1;
+          transform: scale(1);
+        }
+
+        .package,
+        .approach-item {
+          max-width: 400px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .tools-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .tool-item {
+          max-width: 280px;
+          margin: 0 auto;
+        }
       }
     </style>
-
-    <!-- Structured Data for Local Business -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Paul Takisaki Executive Coaching",
-        "description": "Executive coaching services for innovative leaders who want to rise without conforming",
-        "url": "https://paultakisaki.com/executive_coaching.html",
-        "logo": "https://paultakisaki.com/images/logo.png",
-        "image": "https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Gilbert",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "email": "paul@paultakisaki.com",
-        "telephone": "+1-555-123-4567",
-        "priceRange": "$$",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "33.3528",
-          "longitude": "-111.7890"
-        },
-        "sameAs": ["https://www.linkedin.com/in/paultaki"]
-      }
-    </script>
-
-    <!-- Structured Data for Service -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Executive Coaching",
-        "provider": {
-          "@type": "Person",
-          "name": "Paul Takisaki",
-          "description": "Executive Coach with 20+ years of leadership experience",
-          "image": "https://paultakisaki.com/images/paul-takisaki.jpg"
-        },
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Executive Brand Refresh",
-            "price": "500",
-            "priceCurrency": "USD",
-            "description": "Reposition your professional narrative with precision and power."
-          },
-          {
-            "@type": "Offer",
-            "name": "Executive Acceleration Sprint",
-            "price": "1000",
-            "priceCurrency": "USD",
-            "description": "A targeted 90-day roadmap to visibility and advancement."
-          },
-          {
-            "@type": "Offer",
-            "name": "The Rise",
-            "price": "1500",
-            "priceCurrency": "USD",
-            "description": "From overlooked to indispensable in 90 days."
-          }
-        ]
-      }
-    </script>
   </head>
   <body>
-    <div id="header-container"></div>
-
-    <main>
-      <!-- Hero Section -->
-      <section class="hero">
-        <div class="container">
-          <h1>This isn't corporate coaching. It's transformation.</h1>
-          <p>For leaders ready to rise without conforming.</p>
-          <a
-            href="#packages"
-            class="btn btn-primary"
-            aria-label="Explore coaching packages"
-            >Explore Coaching Options</a
-          >
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-content">
+        <a href="/" class="logo">Paul Takisaki</a>
+        <div class="nav-links">
+          <a href="#manifesto">Manifesto</a>
+          <a href="#program">Programs</a>
+          <a href="#apply">Apply</a>
         </div>
-      </section>
+      </div>
+    </nav>
 
-      <!-- Executive Transformation Section -->
-      <section class="exec-transform">
-        <div class="container">
-          <h2>Run Your Own Operating System</h2>
-          <p>
-            You weren't broken—you were early. You weren't failing—you were
-            filtering. Now it's time to transform what others called a disorder
-            into your advantage.
-          </p>
-          <div class="approach-grid">
-            <div class="approach-item">
-              <h3>Chess Player in a Checkers World</h3>
-              <p>
-                Stop playing small. Learn strategic moves that create outsized
-                results while others chase quick wins.
-              </p>
-            </div>
-            <div class="approach-item">
-              <h3>Delegate to Multiply</h3>
-              <p>
-                Release control to release capability. Build systems that
-                amplify your impact without requiring your presence.
-              </p>
-            </div>
-            <div class="approach-item">
-              <h3>Win the Critical Few</h3>
-              <p>
-                Focus on the 20% that drives 80% of results. Ignore the trivial
-                many that drain your energy and attention.
-              </p>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>I DON'T JUST PLAY THE GAME.<br />I REWIRE IT.</h1>
+          <p>For leaders ready to run their own operating system.</p>
+          <a href="#apply" class="btn">Apply for Coaching</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section class="manifesto" id="manifesto">
+      <div class="container">
+        <h2>The Advantage of Being Unaligned</h2>
+        <div class="manifesto-grid">
+          <div class="manifesto-item">
+            <h3>Work Smarter</h3>
+            <p>
+              Efficiency isn't laziness—it's evolution. You weren't failing. You
+              were filtering. You weren't too much. You were too early.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Package Section -->
-      <section id="packages">
-        <div class="container">
-          <h2>Executive Coaching Packages</h2>
-          <p>Simple. Focused. Transformational.</p>
-          <div class="package-grid">
-            <div class="package">
-              <h3>Executive Brand Refresh</h3>
-              <div class="package-price">$500</div>
-              <p class="package-description">
-                Reposition your professional narrative with precision and power.
-              </p>
-              <ul class="package-features">
-                <li>Strategic LinkedIn and resume rewrite</li>
-                <li>30-minute clarity call</li>
-                <li>ATS optimization and keyword strategy</li>
-                <li>Optional Loom video walkthrough</li>
-              </ul>
-              <a
-                href="#contact"
-                class="btn btn-secondary"
-                aria-label="Contact about Executive Brand Refresh"
-                >Get Started</a
-              >
-            </div>
-            <div class="package">
-              <h3>Executive Acceleration Sprint</h3>
-              <div class="package-price">$1,000</div>
-              <p class="package-description">
-                A targeted 90-day roadmap to visibility and advancement.
-              </p>
-              <ul class="package-features">
-                <li>90-minute deep strategy session</li>
-                <li>Custom visibility plan</li>
-                <li>Promotion timeline and strategy</li>
-                <li>30-day follow-up call</li>
-              </ul>
-              <a
-                href="#contact"
-                class="btn btn-primary"
-                aria-label="Apply for Executive Acceleration Sprint"
-                >Apply Now</a
-              >
-            </div>
-            <div class="package">
-              <h3>The Rise</h3>
-              <div class="package-price">$1,500/month</div>
-              <p class="package-description">
-                From overlooked to indispensable in 90 days.
-              </p>
-              <ul class="package-features">
-                <li>Bi-weekly 1:1 coaching calls</li>
-                <li>Unlimited async feedback via Voxer</li>
-                <li>Career clarity and tactical wins</li>
-                <li>Leadership growth framework</li>
-                <li>Limited to 8 clients per quarter</li>
-              </ul>
-              <a
-                href="#contact"
-                class="btn btn-secondary"
-                aria-label="Apply for The Rise coaching program"
-                >Apply Now</a
-              >
-            </div>
+          <div class="manifesto-item">
+            <h3>Skip the Fire Drills</h3>
+            <p>
+              Save energy for what actually matters. The same "ADHD" behavior
+              that derailed you in school becomes an executive superpower once
+              you have autonomy.
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Testimonial Section -->
-      <section class="testimonial">
-        <div class="container">
-          <div class="testimonial-content">
-            <div class="testimonial-quote">
-              "Paul has been an invaluable leader and mentor, providing guidance
-              that deeply shaped my leadership style and professional growth.
-              His coaching equipped me with the tools to lead others with
-              clarity and purpose."
-            </div>
-            <div class="testimonial-author">Pritesh Patel</div>
-            <p class="testimonial-role">
-              Sr. Director, Solutions Architect Public Sector
+          <div class="manifesto-item">
+            <h3>Delegate to Multiply</h3>
+            <p>
+              Release control to release capability. You don't delegate to do
+              less—you delegate so others can do more. This isn't a disorder.
+              It's a different OS.
             </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Approach Section -->
-      <section class="approach" id="methodology">
-        <div class="container">
-          <h2>The Quiet Rebel's Approach</h2>
-          <p>
-            No cookie-cutter solutions. No generic leadership platitudes.
-            Everything I teach comes from two decades of building
-            high-performing teams and breaking records in every role.
-          </p>
-          <div class="approach-grid">
-            <div class="approach-item">
-              <h3>The Handlebar Test</h3>
-              <p>
-                Let go. Let others fly. Create the conditions for your team to
-                thrive without constant oversight.
-              </p>
-            </div>
-            <div class="approach-item">
-              <h3>Failure Fridays</h3>
-              <p>
-                Celebrate smart risks. Normalize learning. Create psychological
-                safety that drives innovation.
-              </p>
-            </div>
-            <div class="approach-item">
-              <h3>Aggressive Agreement</h3>
-              <p>
-                Name the misfires—even if you're on the same team. Build
-                cultures of candor and continuous improvement.
-              </p>
-            </div>
+    <!-- Testimonial Section -->
+    <section class="testimonial">
+      <div class="container">
+        <div class="testimonial-content">
+          <div class="testimonial-quote">
+            "Paul doesn't just coach—he empowers. He saw something in me I
+            didn't even know I had. That's what makes him special."
+          </div>
+          <div class="testimonial-author">Venkatesh Iyer</div>
+          <div class="testimonial-role">Senior Director, Verizon</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach" id="approach">
+      <div class="container">
+        <h2>How I Coach Executives to Win Differently</h2>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <h3>I see the whole board.</h3>
+            <p>
+              I don't just react to symptoms—I diagnose the system. I uncover
+              hidden friction, invisible ceilings, and leadership contradictions
+              that block growth. Clients walk away with insight they can't
+              unsee—and a clear path forward.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>I build playbooks from the trenches.</h3>
+            <p>
+              Every tool I teach is battle-tested. These aren't fluffy
+              frameworks. They're the same plays I used to lead 400+ in one of
+              the most complex orgs at Verizon—strategies that scaled nationally
+              and broke records.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>I create clarity out of chaos.</h3>
+            <p>
+              Most execs are drowning in noise. I cut through it by helping you
+              identify your "critical few" metrics, align your org behind them,
+              and ditch the trivial many. Less spinning. More winning.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>I rewire how you lead.</h3>
+            <p>
+              You won't leave with more to do—you'll leave with less. Less
+              control. Less reactivity. More delegation, more leverage, more
+              <em>freedom</em>. It's not about optimizing your calendar—it's
+              about building a system that doesn't need you to be the hero.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>I lead with belief, not pressure.</h3>
+            <p>
+              People don't rise for KPIs. They rise for someone who sees them. I
+              help leaders unlock this skill so their team becomes
+              self-correcting, not just compliant. You'll stop chasing
+              performance—and start attracting it.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Second Testimonial -->
-      <section class="testimonial">
-        <div class="container">
-          <div class="testimonial-content">
-            <div class="testimonial-quote">
-              "Working with Paul Takisaki has been a deeply transformative
-              experience. His compassion and unwavering focus on building from a
-              place of strength made me feel truly seen and supported."
-            </div>
-            <div class="testimonial-author">Emmanuel Nwoke</div>
-            <p class="testimonial-role">Senior Director of Sales, Verizon</p>
+    <!-- Tools Section -->
+    <section class="tools" id="tools">
+      <div class="container">
+        <h2>The Toolkit</h2>
+        <div class="tools-grid">
+          <div class="tool-item">
+            <h3>The Handlebar Test</h3>
+            <p>How to delegate without chaos</p>
+          </div>
+          <div class="tool-item">
+            <h3>The Critical Few</h3>
+            <p>Simplify priorities for maximum traction</p>
+          </div>
+          <div class="tool-item">
+            <h3>First 90 Days Reset</h3>
+            <p>Trust-building tactics that transform orgs</p>
+          </div>
+          <div class="tool-item">
+            <h3>Quiet Influence Playbook</h3>
+            <p>How to drive change without playing politics</p>
+          </div>
+          <div class="tool-item">
+            <h3>The Flywheel Build</h3>
+            <p>Turn early traction into long-term momentum</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- FAQ Section -->
-      <section id="faq">
-        <div class="container">
-          <h2>Frequently Asked Questions</h2>
-          <div class="faq-container">
-            <div class="faq-item">
-              <h3>Who is executive coaching for?</h3>
-              <p>
-                My coaching is designed for innovative leaders who feel
-                constrained by traditional corporate models. Whether you're a
-                senior executive looking to maximize your impact, a rising
-                leader preparing for your next role, or an entrepreneur building
-                your leadership brand, my approach helps you leverage your
-                unique strengths.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>How long does the coaching process take?</h3>
-              <p>
-                Meaningful transformation takes time, which is why my core
-                programs range from 90 days to 6 months. However, many clients
-                see tangible results within the first 30 days, especially in
-                areas like communication clarity, strategic focus, and
-                leadership confidence.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>What makes your approach different?</h3>
-              <p>
-                Unlike traditional coaching that focuses on fixing weaknesses,
-                my strength-based approach helps you leverage your natural
-                talents. My methodology comes from two decades of frontline
-                leadership experience, not just theory. I've personally faced
-                the challenges you're navigating.
-              </p>
-            </div>
-            <div class="faq-item">
-              <h3>How do we get started?</h3>
-              <p>
-                The process begins with a discovery call to understand your
-                specific goals and challenges. From there, we'll determine if
-                we're the right fit and which program aligns best with your
-                needs. Every engagement includes a customized roadmap tailored
-                to your unique situation.
-              </p>
-            </div>
+    <!-- The Programs Section -->
+    <section class="program" id="program">
+      <div class="container">
+        <h2>Choose Your Path</h2>
+        <div class="packages-grid">
+          <div class="package">
+            <h3>Executive Brand Refresh</h3>
+            <div class="package-price">$500</div>
+            <p class="package-description">
+              Reposition your professional narrative with precision and power.
+            </p>
+            <ul class="package-features">
+              <li>Strategic LinkedIn and resume rewrite</li>
+              <li>30-minute clarity call</li>
+              <li>ATS optimization and keyword strategy</li>
+              <li>Optional Loom video walkthrough</li>
+            </ul>
+            <a href="#apply" class="btn btn-small">Apply Now</a>
+          </div>
+
+          <div class="package featured">
+            <div class="featured-badge">Most Popular</div>
+            <h3>Executive Acceleration Sprint</h3>
+            <div class="package-price">$1,000</div>
+            <p class="package-description">
+              A targeted 90-day roadmap to visibility and advancement.
+            </p>
+            <ul class="package-features">
+              <li>90-minute deep strategy session</li>
+              <li>Custom visibility plan</li>
+              <li>Promotion timeline and strategy</li>
+              <li>30-day follow-up call</li>
+            </ul>
+            <a href="#apply" class="btn">Apply Now</a>
+          </div>
+
+          <div class="package">
+            <h3>The Rise</h3>
+            <div class="package-price">$1,500<span>/month</span></div>
+            <p class="package-description">
+              From overlooked to indispensable in 90 days.
+            </p>
+            <ul class="package-features">
+              <li>Bi-weekly strategic coaching calls</li>
+              <li>The Misfit Operating System framework</li>
+              <li>Unlimited access via private messaging</li>
+              <li>Custom visibility and impact plan</li>
+              <li>Limited to 8 leaders per quarter</li>
+            </ul>
+            <a href="#apply" class="btn btn-small">Apply Now</a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- CTA Section -->
-      <section class="cta" id="contact">
-        <div class="container">
-          <h2>Ready to Break Through?</h2>
-          <p>
-            Take the first step toward the leadership impact you're capable of.
-          </p>
-          <a
-            href="mailto:paul@paultakisaki.com"
-            class="btn btn-primary"
-            aria-label="Email Paul to book a coaching call"
-            >Book a Call</a
+    <!-- CTA Section -->
+    <section class="cta" id="apply">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Run Your Own Operating System</h2>
+          <p>No titles. No permission. No backup plan.</p>
+          <a href="mailto:paul@paultakisaki.com" class="btn"
+            >Apply for Coaching</a
           >
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- Footer with Contact Information -->
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-content">
-          <h3 style="margin-bottom: 2px;">Paul Takisaki</h3>
-          <p class="footer-subtitle" style="margin-bottom: 8px;">
-            Executive Coaching & Leadership Development
+          <h3>Paul Takisaki</h3>
+          <p class="footer-subtitle">Gilbert, AZ</p>
+          <p class="footer-contact">
+            <a href="mailto:paul@paultakisaki.com">paul@paultakisaki.com</a>
           </p>
-          <p class="footer-contact" style="font-size: 0.85rem; margin-bottom: 6px;">
-            <a href="mailto:paul@paultakisaki.com">paul@paultakisaki.com</a> &nbsp;|&nbsp;
-            Gilbert, AZ &nbsp;|&nbsp;
-            <a href="https://www.linkedin.com/in/paultaki" target="_blank">LinkedIn</a>
-          </p>
-          <p class="copyright" style="font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); margin: 0;">
-            © 2025 Takisaki Strategy. All rights reserved.
-          </p>
+          <p class="copyright">© 2025 Takisaki Strategy</p>
         </div>
       </div>
     </footer>
-    
-    
-
-    <script src="header.js"></script>
-
-    <!-- Defer non-critical JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Lazy load images
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        if ("loading" in HTMLImageElement.prototype) {
-          // Browser supports native lazy loading
-        } else {
-          // Fallback for browsers that don't support lazy loading
-          // You could implement a JavaScript-based lazy loading solution here
-        }
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href");
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-              targetElement.scrollIntoView({
-                behavior: "smooth",
-              });
-            }
-          });
-        });
-      });
-    </script>
   </body>
 </html>
