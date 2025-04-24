@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Insert the header HTML with initially hidden dropdowns
+  // Insert the header HTML
   const headerContainer = document.getElementById("header-container");
   if (headerContainer) {
     headerContainer.innerHTML = `
@@ -27,10 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </header>
     `;
-    
-    // Add necessary CSS for dropdown functionality directly in the header.js
-    const dropdownStyles = document.createElement('style');
-    dropdownStyles.textContent = `
+  }
+
+  // Ensure menu styles are properly applied
+  if (!document.getElementById("header-styles")) {
+    const styleElement = document.createElement("style");
+    styleElement.id = "header-styles";
+    styleElement.textContent = `
       /* Dropdown Menu Styles */
       .nav-links .has-dropdown {
         position: relative;
@@ -45,9 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
         box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         z-index: 1000;
         padding: 0;
+        list-style: none;
       }
       .nav-links .dropdown-menu li {
         margin: 0;
+        padding: 0;
         display: block;
       }
       .nav-links .dropdown-menu a {
@@ -59,113 +64,105 @@ document.addEventListener("DOMContentLoaded", function () {
       .nav-links .dropdown-menu a:hover {
         background-color: rgba(0, 229, 255, 0.1);
       }
-      /* Active dropdown state */
-      .nav-links .has-dropdown:hover .dropdown-menu,
-      .nav-links .dropdown-menu.show {
-        display: block;
+      /* Desktop hover behavior */
+      @media (min-width: 768px) {
+        .nav-links .has-dropdown:hover .dropdown-menu {
+          display: block;
+        }
       }
       /* Mobile styles for dropdowns */
       @media (max-width: 767px) {
-        .nav-links {
-          flex-direction: column;
-        }
         .nav-links .dropdown-menu {
           position: static;
           width: 100%;
           box-shadow: none;
           padding-left: 20px;
-          background-color: rgba(0, 0, 0, 0.2); /* Slightly lighter background to distinguish dropdown items */
+          background-color: rgba(0, 0, 0, 0.3);
         }
-        .nav-links .has-dropdown:hover .dropdown-menu {
-          display: none; /* Prevent hover from opening dropdown on mobile */
-        }
-        .nav-links .dropdown-menu.show {
-          display: block;
+        .dropdown-menu.show {
+          display: block !important;
         }
       }
     `;
-    document.head.appendChild(dropdownStyles);
+    document.head.appendChild(styleElement);
   }
 
-  // Setup mobile toggle functionality
-  const toggle = document.getElementById("mobile-toggle");
+  // Configure mobile menu toggle
+  const mobileToggle = document.getElementById("mobile-toggle");
   const navLinks = document.querySelector(".nav-links");
-  
-  if (toggle && navLinks) {
-    toggle.addEventListener("click", function (e) {
-      e.stopPropagation(); // Prevent event from bubbling up
+
+  if (mobileToggle && navLinks) {
+    // Remove any existing event listeners to prevent duplicates
+    const newMobileToggle = mobileToggle.cloneNode(true);
+    mobileToggle.parentNode.replaceChild(newMobileToggle, mobileToggle);
+
+    // Add fresh event listener
+    newMobileToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
       navLinks.classList.toggle("active");
     });
   }
 
-  // Setup dropdown functionality - improved for mobile
-  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-  
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-      // Always prevent default on the dropdown toggle
+  // Configure dropdown toggles
+  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+  dropdownToggles.forEach((toggle) => {
+    // Remove any existing event listeners
+    const newToggle = toggle.cloneNode(true);
+    toggle.parentNode.replaceChild(newToggle, toggle);
+
+    // Add fresh event listener
+    newToggle.addEventListener("click", function (e) {
+      // Always prevent default to stop navigation
       e.preventDefault();
-      e.stopPropagation(); // Prevent event from bubbling up
-      
-      // Toggle the dropdown menu
-      const dropdownMenu = this.parentElement.querySelector('.dropdown-menu');
-      dropdownMenu.classList.toggle('show');
-    });
-  });
-  
-  // Close menu when clicking outside
-  document.addEventListener('click', function(e) {
-    // Close all dropdown menus
-    document.querySelectorAll('.dropdown-menu').forEach(menu => {
-      if (menu.classList.contains('show')) {
-        menu.classList.remove('show');
+      e.stopPropagation();
+
+      // Find the dropdown menu
+      const dropdownMenu = this.nextElementSibling;
+
+      // Toggle the show class
+      if (dropdownMenu) {
+        // Close any other open dropdowns first
+        document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+          if (menu !== dropdownMenu) {
+            menu.classList.remove("show");
+          }
+        });
+
+        // Toggle this dropdown
+        dropdownMenu.classList.toggle("show");
       }
     });
-    
-    // Close the mobile menu
-    if (navLinks && navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
+  });
+
+  // Close menus when clicking outside
+  document.addEventListener("click", function (e) {
+    // Don't close if we're clicking inside the menu
+    if (e.target.closest(".nav-links")) {
+      return;
+    }
+
+    // Close all dropdowns
+    document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+      menu.classList.remove("show");
+    });
+
+    // Close mobile menu
+    if (navLinks && navLinks.classList.contains("active")) {
+      navLinks.classList.remove("active");
     }
   });
-  
-  // Prevent clicks inside the navigation from closing it
-  const navElement = document.querySelector('nav');
-  if (navElement) {
-    navElement.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-  }
 
-  // Add structured data for SEO
-  const structuredData = document.createElement('script');
-  structuredData.type = 'application/ld+json';
-  structuredData.text = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Paul Takisaki Leadership",
-    "description": "Executive coaching, leadership development, and strategic consulting for innovative leaders and teams.",
-    "url": window.location.origin,
-    "logo": window.location.origin + "/images/logo.png",
-    "sameAs": [
-      "https://www.linkedin.com/in/paultaki"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Gilbert",
-      "addressRegion": "AZ",
-      "addressCountry": "US"
-    },
-    "priceRange": "$$"
-  });
-  document.head.appendChild(structuredData);
-  
   // Highlight current page in navigation
-  const currentPage = window.location.pathname.split('/').pop();
-  const navItems = document.querySelectorAll('.nav-links > li > a');
-  navItems.forEach(item => {
-    const href = item.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      item.classList.add('active');
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+  const navItems = document.querySelectorAll(".nav-links > li > a");
+  navItems.forEach((item) => {
+    const href = item.getAttribute("href");
+    if (
+      href === currentPage ||
+      (href === "index.html" &&
+        (currentPage === "" || currentPage === "index.html"))
+    ) {
+      item.classList.add("active");
     }
   });
 });
