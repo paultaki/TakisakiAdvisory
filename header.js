@@ -1,27 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Determine if we're in a subfolder
+  const pathParts = window.location.pathname.split("/");
+  const inSubfolder =
+    pathParts.length > 2 && pathParts[pathParts.length - 2] !== "";
+
+  // Set the base path prefix depending on whether we're in a subfolder
+  const basePath = inSubfolder ? "../" : "";
+
   // Insert the header HTML
   const headerContainer = document.getElementById("header-container");
   if (headerContainer) {
     headerContainer.innerHTML = `
       <header>
         <div class="header-inner">
-          <a class="logo" href="index.html" title="Paul Takisaki - Leadership for Misfits">Paul<span>Takisaki</span></a>
+          <a class="logo" href="${basePath}index.html" title="Paul Takisaki - Leadership for Misfits">Paul<span>Takisaki</span></a>
           <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
           <nav aria-label="Main Navigation">
             <ul class="nav-links">
-              <li><a href="index.html" title="Home">HOME</a></li>
+              <li><a href="${basePath}index.html" title="Home">HOME</a></li>
               <li class="has-dropdown">
-                <a href="services.html" title="Services" class="dropdown-toggle">SERVICES</a>
+                <a href="#" title="Services" class="dropdown-toggle">SERVICES</a>
                 <ul class="dropdown-menu">
-                  <li><a href="executive_coaching.html" title="Executive Coaching">EXECUTIVE COACHING</a></li>
-                  <li><a href="leader_development.html" title="Leadership Development">LEADERSHIP DEVELOPMENT</a></li>
-                  <li><a href="strategic_consulting.html" title="Strategic Consulting">STRATEGIC CONSULTING</a></li>
+                  <li><a href="${basePath}executive_coaching.html" title="Executive Coaching">EXECUTIVE COACHING</a></li>
+                  <li><a href="${basePath}leader_development.html" title="Leadership Development">LEADERSHIP DEVELOPMENT</a></li>
+                  <li><a href="${basePath}strategic_consulting.html" title="Strategic Consulting">STRATEGIC CONSULTING</a></li>
                 </ul>
               </li>
-              <li><a href="index.html#about" title="About Paul Takisaki">ABOUT</a></li>
-              <li><a href="stories.html" title="Success Stories">SUCCESS STORIES</a></li>
-              <li><a href="blogs.html" title="Insights">INSIGHTS</a></li>
-              <li><a href="#contact" title="Contact Paul Takisaki">CONTACT</a></li>
+              <li><a href="${basePath}index.html#about" title="About Paul Takisaki">ABOUT</a></li>
+              <li><a href="${basePath}stories.html" title="Success Stories">SUCCESS STORIES</a></li>
+              <li><a href="${basePath}blogs.html" title="Insights">INSIGHTS</a></li>
+              <li><a href="${basePath}index.html#contact" title="Contact Paul Takisaki">CONTACT</a></li>
             </ul>
           </nav>
         </div>
@@ -156,13 +164,36 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
   const navItems = document.querySelectorAll(".nav-links > li > a");
   navItems.forEach((item) => {
+    // Skip dropdown toggles
+    if (item.classList.contains("dropdown-toggle")) {
+      return;
+    }
+
     const href = item.getAttribute("href");
+    // Extract page name from href (remove path and hash)
+    const hrefPage = href.split("/").pop().split("#")[0];
+
+    // Check for various matching conditions
     if (
-      href === currentPage ||
-      (href === "index.html" &&
-        (currentPage === "" || currentPage === "index.html"))
+      // Exact match
+      hrefPage === currentPage ||
+      // Index page variations
+      (hrefPage === "index.html" &&
+        (currentPage === "" || currentPage === "index.html")) ||
+      // Blog pages match the blogs.html link
+      (currentPage.startsWith("blog-") && hrefPage === "blogs.html") ||
+      // For pages with hash, check if the base URL matches
+      (href.includes("#") && hrefPage === currentPage)
     ) {
       item.classList.add("active");
+      // Also mark parent dropdown as active if this is a dropdown item
+      const parentLi = item.closest("li.has-dropdown");
+      if (parentLi) {
+        const parentLink = parentLi.querySelector("a.dropdown-toggle");
+        if (parentLink) {
+          parentLink.classList.add("active");
+        }
+      }
     }
   });
 });
