@@ -22,7 +22,8 @@ h6 {
   font-weight: 600;
   line-height: 1.3;
 }
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -123,7 +124,6 @@ header {
   font-size: 1.5rem;
   cursor: pointer;
 }
-
 
 /* Hero Sections */
 .hero {
@@ -1340,7 +1340,6 @@ footer.enhanced {
     padding: 0 20px;
   }
 
-
   .stats-grid {
     flex-direction: column;
     align-items: center;
@@ -1451,99 +1450,99 @@ footer {
     padding-bottom: 80px !important;
   }
 }
-  /* Footer Styles */
-  footer {
-    background-color: #000;
-    color: #fff;
-    padding: 40px 0;
-    margin-top: 0;
-    width: 100%;
-    position: relative;
-  }
+/* Footer Styles */
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 0;
+  margin-top: 0;
+  width: 100%;
+  position: relative;
+}
 
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  .footer-logo h3 {
-    margin-bottom: 5px;
-    font-size: 24px;
-  }
+.footer-logo h3 {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
 
-  .footer-logo p {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: rgba(255, 255, 255, 0.7);
-  }
+.footer-logo p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
 
-  .footer-contact {
-    margin-bottom: 20px;
-  }
+.footer-contact {
+  margin-bottom: 20px;
+}
 
-  .footer-contact p {
-    font-size: 15px;
-    margin-bottom: 5px;
-    color: rgba(255, 255, 255, 0.8);
-  }
+.footer-contact p {
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.8);
+}
 
-  .footer-contact a {
-    color: #00e5ff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+.footer-contact a {
+  color: #00e5ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
 
-  .footer-contact a:hover {
-    color: #fff;
-  }
+.footer-contact a:hover {
+  color: #fff;
+}
 
-  .social-links {
-    margin: 10px 0;
-  }
+.social-links {
+  margin: 10px 0;
+}
 
-  .social-links a {
-    color: #00e5ff;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-  }
+.social-links a {
+  color: #00e5ff;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
 
-  .social-links a:hover {
-    color: #fff;
-  }
+.social-links a:hover {
+  color: #fff;
+}
 
-  .copyright {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 0;
-  }
+.copyright {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0;
+}
 
-  /* Make sure footer stays at the bottom */
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+/* Make sure footer stays at the bottom */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-  main {
-    flex: 1;
-  }
+main {
+  flex: 1;
+}
 
-  /* This ensures the CTA section connects directly with the footer */
-  .cta {
-    margin-bottom: 0;
-  }
-  
-  
+/* This ensures the CTA section connects directly with the footer */
+.cta {
+  margin-bottom: 0;
+}
+
 .footer-content h3 {
   margin-bottom: 0;
   font-size: 22px;
@@ -1584,11 +1583,11 @@ footer {
   footer {
     padding: 15px 0;
   }
-  
+
   .footer-content {
     gap: 2px;
   }
-  
+
   .footer-contact {
     padding: 0 10px;
   }
@@ -1598,7 +1597,7 @@ footer {
     white-space: normal;
     padding: 0 10px;
   }
-  
+
   /* Add line breaks after the separators */
   .footer-contact .separator {
     display: block;
@@ -1741,6 +1740,248 @@ footer {
   }
 }
 
+/* Desktop layout (default) */
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
 
+/* Mobile layout fix */
+@media (max-width: 767px) {
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .manifesto-item {
+    margin-bottom: 30px;
+  }
+}
 
+/* Headline accent color */
+.accent-text {
+  color: #00e5ff;
+}
+
+/* Improved body text spacing */
+body {
+  line-height: 1.7;
+}
+
+/* Enhanced testimonial styling */
+.testimonial-quote {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* Card spacing */
+.manifesto-item,
+.approach-item,
+.tool-item,
+.package {
+  padding: 32px;
+}
+
+/* Section spacing */
+section {
+  padding: 120px 0;
+}
+
+/* CTA button enhancement */
+.btn {
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+/* Mobile layout fix for manifesto/advantage section */
+@media (max-width: 767px) {
+  .manifesto-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .manifesto-item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  /* Force text to wrap properly */
+  .manifesto-item p {
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 480px) {
+  .manifesto h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .manifesto-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+}
+/* Overall design improvements */
+
+/* Typography enhancements */
+.manifesto h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.manifesto h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #00e5ff;
+}
+
+.manifesto-item h3 {
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.manifesto-item p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Accent colors */
+.manifesto-item h3 {
+  position: relative;
+  padding-left: 15px;
+}
+
+.manifesto-item h3:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 20px;
+  background-color: #00e5ff;
+}
+
+/* Card styling */
+.manifesto-item {
+  padding: 25px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manifesto-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Spacing for section */
+.manifesto {
+  padding: 100px 0;
+  background-color: #f8f8f8;
+}
+
+@media (max-width: 767px) {
+  .manifesto {
+    padding: 60px 0;
+  }
+
+  .manifesto-item {
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}
+/* Design enhancements for manifesto section */
+
+/* General improvements */
+.manifesto {
+  padding: 80px 0;
+  background-color: #f8f8f8;
+}
+
+.manifesto h2 {
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Add underline accent to heading */
+.manifesto h2:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #00e5ff;
+}
+
+/* Card styling */
+.manifesto-item {
+  padding: 25px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.manifesto-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography improvements */
+.manifesto-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #222;
+  position: relative;
+  padding-left: 15px;
+}
+
+/* Accent color for headings */
+.manifesto-item h3:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 70%;
+  background-color: #00e5ff;
+}
+
+.manifesto-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Add accent color to Takisaki to match */
+.logo span,
+.accent-text {
+  color: #00e5ff;
+}

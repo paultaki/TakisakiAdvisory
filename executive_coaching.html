@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paul Takisaki | Executive Leadership</title>
-    <link rel="stylesheet" href="mobile-navigation.css">
-    <link rel="stylesheet" href="services.css">
-
-
+    <link rel="stylesheet" href="mobile-navigation.css" />
+    <link rel="stylesheet" href="services.css" />
   </head>
   <body>
     <!-- Navigation -->
     <div id="header-container"></div>
-    
+
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <div class="hero-content">
-          <h1>I DON'T JUST PLAY THE GAME.<br />I REWIRE IT.</h1>
+        <div class="hero-content reveal-up">
+          <h1>
+            I DON'T JUST PLAY THE <span class="accent-text">GAME</span>.<br />I
+            REWIRE IT.
+          </h1>
           <p>For leaders ready to run their own operating system.</p>
           <a href="#apply" class="btn">Apply for Coaching</a>
         </div>
@@ -27,16 +28,16 @@
     <!-- Manifesto Section -->
     <section class="manifesto" id="manifesto">
       <div class="container">
-        <h2>The Advantage of Being Unaligned</h2>
+        <h2 style="margin-bottom: 30px;">The Advantage of Being Unaligned</h2>
         <div class="manifesto-grid">
-          <div class="manifesto-item">
+          <div class="manifesto-item reveal-up">
             <h3>Work Smarter</h3>
             <p>
               Efficiency isn't laziness—it's evolution. You weren't failing. You
               were filtering. You weren't too much. You were too early.
             </p>
           </div>
-          <div class="manifesto-item">
+          <div class="manifesto-item reveal-up">
             <h3>Skip the Fire Drills</h3>
             <p>
               Save energy for what actually matters. The same "ADHD" behavior
@@ -44,7 +45,7 @@
               you have autonomy.
             </p>
           </div>
-          <div class="manifesto-item">
+          <div class="manifesto-item reveal-up">
             <h3>Delegate to Multiply</h3>
             <p>
               Release control to release capability. You don't delegate to do
@@ -59,17 +60,17 @@
     <!-- Testimonial Section -->
     <section class="testimonial">
       <div class="container">
-        <div class="testimonial-content">
+        <div class="testimonial-content reveal-up">
           <div class="testimonial-quote">
             "Paul doesn't just coach—he empowers. He saw something in me I
             didn't even know I had. That's what makes him special."
           </div>
-          <div class="testimonial-author">Venkatesh Iyer</div>
+          <div class="testimonial-author reveal-up">Venkatesh Iyer</div>
           <div class="testimonial-role">Senior Director, Verizon</div>
         </div>
       </div>
     </section>
-    
+
     <!-- Approach Section -->
     <section class="approach" id="approach">
       <div class="container">
@@ -80,7 +81,7 @@
           shatter them.
         </p>
         <div class="approach-grid">
-          <div class="approach-item">
+          <div class="approach-item reveal-up">
             <h3>See the whole board.</h3>
             <p>
               Don't just react to symptoms—diagnose the system. Uncover hidden
@@ -89,7 +90,7 @@
               path forward.
             </p>
           </div>
-          <div class="approach-item">
+          <div class="approach-item reveal-up">
             <h3>Build playbooks from the trenches.</h3>
             <p>
               Every tool is battle-tested. These aren't fluffy frameworks.
@@ -98,7 +99,7 @@
               broke records.
             </p>
           </div>
-          <div class="approach-item">
+          <div class="approach-item reveal-up">
             <h3>Create clarity out of chaos.</h3>
             <p>
               Most execs are drowning in noise. Cut through it by identifying
@@ -106,7 +107,7 @@
               ditching the trivial many. Less spinning. More winning.
             </p>
           </div>
-          <div class="approach-item">
+          <div class="approach-item reveal-up">
             <h3>Rewire how you lead.</h3>
             <p>
               You won't leave with more to do—you'll leave with less. Less
@@ -115,7 +116,7 @@
               about building a system that doesn't need you to be the hero.
             </p>
           </div>
-          <div class="approach-item">
+          <div class="approach-item reveal-up">
             <h3>Lead with belief, not pressure.</h3>
             <p>
               People don't rise for KPIs. They rise for someone who sees them.
@@ -123,7 +124,7 @@
               compliant. Stop chasing performance—and start attracting it.
             </p>
           </div>
-          <div class="approach-item">
+          <div class="approach-item reveal-up">
             <h3>Transform, not just inform.</h3>
             <p>
               Real executives need more than information—they need
@@ -136,29 +137,29 @@
         </div>
       </div>
     </section>
-    
+
     <!-- Tools Section -->
     <section class="tools" id="tools">
       <div class="container">
         <h2>The Toolkit</h2>
         <div class="tools-grid">
-          <div class="tool-item">
+          <div class="tool-item reveal-up">
             <h3>The Handlebar Test</h3>
             <p>How to delegate without chaos</p>
           </div>
-          <div class="tool-item">
+          <div class="tool-item reveal-up">
             <h3>The Critical Few</h3>
             <p>Simplify priorities for maximum traction</p>
           </div>
-          <div class="tool-item">
+          <div class="tool-item reveal-up">
             <h3>First 90 Days Reset</h3>
             <p>Trust-building tactics that transform orgs</p>
           </div>
-          <div class="tool-item">
+          <div class="tool-item reveal-up">
             <h3>Quiet Influence Playbook</h3>
             <p>How to drive change without playing politics</p>
           </div>
-          <div class="tool-item">
+          <div class="tool-item reveal-up">
             <h3>The Flywheel Build</h3>
             <p>Turn early traction into long-term momentum</p>
           </div>
@@ -248,5 +249,28 @@
       </div>
     </footer>
     <script src="header.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const elements = document.querySelectorAll(".reveal-up");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+        elements.forEach((el) => observer.observe(el));
+      });
+      let delay = 0;
+      elements.forEach((el) => {
+        el.style.transitionDelay = `${delay}s`;
+        observer.observe(el);
+        delay += 0.1;
+      });
+    </script>
   </body>
 </html>
