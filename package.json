@@ -1,0 +1,8 @@
+{
+  "name": "paultakisaki-site",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0"
+  }
+}
