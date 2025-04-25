@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <li><a href="${basePath}strategic_consulting.html" title="Strategic Consulting">STRATEGIC CONSULTING</a></li>
                 </ul>
               </li>
+              <li><a href="${basePath}playbook.html" title="Leadership Vault">Leadership Vault</a></li>
               <li><a href="${basePath}index.html#about" title="About Paul Takisaki">ABOUT</a></li>
               <li><a href="${basePath}stories.html" title="Success Stories">SUCCESS STORIES</a></li>
               <li><a href="${basePath}blogs.html" title="Insights">INSIGHTS</a></li>
