@@ -408,9 +408,8 @@
           Experience the leadership development coaching that brings out the best in you and your team.
         </p>
         <div class="cta-buttons fade-in">
-          <button onclick="showModal('contact')" class="btn btn-cta-primary" aria-label="Discovery callrequestiopnall with Paul Takisaki">
-            Discovery Call Request
-          </button>
+          <a href="mailto:your@email.com" class="btn btn-accent">Book a Discovery Call</a>
+
                     <a href="services.html" class="btn btn-cta-secondary" aria-label="Explore Paul Takisaki's coaching services">Explore Coaching Services</a>
         </div>
       </div>
@@ -476,6 +475,24 @@
 
 
 <script src="discovery-call-js.js"></script>
+
+<button class="btn btn-accent" onclick="openDiscoveryCallModal()">Book a Discovery Call</button>
+
+<div id="discoveryCallModal" style="display: none;">
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Tell me about your goals..." required></textarea>
+    <button type="submit" class="btn btn-accent">Send</button>
+  </form>
+</div>
+
+<script>
+function openDiscoveryCallModal() {
+  document.getElementById('discoveryCallModal').style.display = 'block';
+}
+</script>
+
 
   </body>
 </html>
