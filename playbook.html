@@ -1697,7 +1697,7 @@
         }
       };
     </script>
-   <script>
+  <script>
     document
       .getElementById("strategy-session-form")
       ?.addEventListener("submit", async function (e) {
@@ -1726,7 +1726,7 @@
           if (res.ok) {
             alert("Thank you! Paul will follow up shortly.");
             this.reset();
-            closeModal("premium-modal"); // or closeModal('contact-modal') if that's the right one
+            closeModal("contact-modal"); // ✅ correct modal ID
           } else {
             alert("Something went wrong. Please try again.");
           }
@@ -1736,6 +1736,7 @@
         }
       });
     </script>
+    
     
     
   </body>
