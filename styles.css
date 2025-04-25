@@ -2067,3 +2067,78 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+/* Remove the play button overlay */
+.play-button {
+  display: none !important;
+}
+
+/* Add proper focus and hover states for the video link */
+.video-container a:focus,
+.video-container a:hover {
+  opacity: 0.9;
+  outline: 2px solid #00e5ff;
+}
+
+/* Ensure proper contrast and visibility */
+.video-container {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+}
+
+.video-container a {
+  display: block;
+  width: 100%;
+}
+
+.video-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Remove default play button */
+.play-button {
+  display: none !important;
+}
+
+/* For very small screens, adjust padding */
+@media (max-width: 480px) {
+  .video-testimonial {
+    padding: 60px 0;
+  }
+  
+  .video-testimonial h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .video-testimonial p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .video-container {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
