@@ -4,202 +4,653 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Takisaki Leadership Playbook</title>
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Helvetica Neue", sans-serif;
+      }
+
+      body {
+        line-height: 1.5;
+        color: #333;
+        background-color: #f5f5f7;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 40px;
+      }
+
+      /* Controls Section */
+      .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+
+      .view-toggle {
+        display: flex;
+        background-color: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .view-toggle button {
+        padding: 10px 20px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .view-toggle button.active {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .search-container {
+        position: relative;
+        width: 300px;
+      }
+
+      .search-container input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+        transition: all 0.2s ease;
+      }
+
+      .search-container input:focus {
+        border-color: #000;
+        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .clear-search {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #999;
+        cursor: pointer;
+        font-size: 14px;
+        display: none;
+      }
+
+      /* Category Grid */
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+      }
+
+      .category-card {
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .category-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .category-header {
+        padding: 20px;
+        cursor: pointer;
+        position: relative;
+        border-top-width: 5px;
+        border-top-style: solid;
+      }
+
+      .category-title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .category-icon {
+        font-size: 24px;
+        margin-right: 12px;
+      }
+
+      .category-title h3 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .category-description {
+        font-size: 14px;
+        color: #666;
+      }
+
+      .category-items {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        border-top: 1px solid #eee;
+      }
+
+      .category-items.active {
+        max-height: 1000px;
+      }
+
+      .category-items-inner {
+        padding: 20px;
+      }
+
+      .framework-item {
+        padding: 10px 15px;
+        margin-bottom: 8px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        position: relative;
+      }
+
+      .framework-item:hover {
+        background-color: #f5f5f7;
+      }
+
+      .framework-item.active {
+        background-color: #f0f0f0;
+      }
+
+      .framework-title {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .framework-description {
+        font-size: 13px;
+        color: #666;
+        font-style: italic;
+        margin-top: 6px;
+        display: none;
+      }
+
+      .framework-item.active .framework-description {
+        display: block;
+      }
+
+      .framework-action {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .framework-button {
+        background: none;
+        border: none;
+        color: #0070c9;
+        font-size: 12px;
+        padding: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      .framework-button:hover {
+        text-decoration: underline;
+      }
+
+      .lock-icon {
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+        display: inline-block;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="%23888" d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      .premium-tag {
+        display: inline-block;
+        background-color: #f8f5e4;
+        color: #856404;
+        font-size: 10px;
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-left: 8px;
+        font-weight: 500;
+      }
+
+      /* Journey Map View */
+      .journey-map {
+        display: none;
+        padding: 20px;
+        position: relative;
+      }
+
+      .phase-legend {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+
+      .phase-item {
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+      }
+
+      .phase-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 5px;
+      }
+
+      .phase-name {
+        font-size: 14px;
+        text-transform: capitalize;
+      }
+
+      .journey-path {
+        position: relative;
+        padding-bottom: 40px;
+      }
+
+      .journey-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 4px;
+        background-color: #ddd;
+        transform: translateX(-50%);
+      }
+
+      .phase-section {
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .phase-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .phase-title {
+        display: inline-block;
+        padding: 8px 20px;
+        border-radius: 30px;
+        color: white;
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .phase-categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .journey-category {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease;
+        position: relative;
+      }
+
+      .journey-category:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .journey-category:nth-child(odd) {
+        transform: translateX(20px);
+      }
+
+      .journey-category:nth-child(even) {
+        transform: translateX(-20px);
+      }
+
+      .journey-category:nth-child(odd):hover {
+        transform: translateX(20px) translateY(-5px);
+      }
+
+      .journey-category:nth-child(even):hover {
+        transform: translateX(-20px) translateY(-5px);
+      }
+
+      .journey-category-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .journey-category-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin-right: 12px;
+        font-size: 18px;
+      }
+
+      .journey-category-title {
+        font-weight: 600;
+        font-size: 16px;
+      }
+
+      .journey-category-description {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      .journey-frameworks {
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+      }
+
+      .journey-frameworks h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .journey-frameworks ul {
+        list-style: none;
+        font-size: 13px;
+        color: #666;
+      }
+
+      .journey-frameworks li {
+        margin-bottom: 5px;
+        position: relative;
+        padding-left: 12px;
+        display: flex;
+        align-items: center;
+      }
+
+      .journey-frameworks li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+      }
+
+      .journey-frameworks .more-frameworks {
+        color: #0070c9;
+        cursor: pointer;
+        margin-top: 5px;
+      }
+
+      .journey-frameworks .more-frameworks:hover {
+        text-decoration: underline;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        text-align: center;
+        margin-top: 60px;
+        padding: 20px;
+      }
+
+      .cta-text {
+        font-style: italic;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .cta-button {
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+        border: none;
+        font-size: 15px;
+      }
+
+      .cta-button.primary {
+        background-color: #000;
+        color: #fff;
+      }
+
+      .cta-button.primary:hover {
+        background-color: #333;
+      }
+
+      .cta-button.secondary {
+        background-color: #fff;
+        color: #000;
+        border: 1px solid #000;
+      }
+
+      .cta-button.secondary:hover {
+        background-color: #f5f5f7;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 500px;
+        width: 100%;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 22px;
+        font-weight: 300;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #999;
+      }
+
+      .modal-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      .modal-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #666;
+      }
+
+      .modal-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .modal-form input {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        width: 100%;
+      }
+
+      .modal-form button {
+        background-color: #000;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        margin-top: 15px;
+      }
+
+      .modal-form button:hover {
+        background-color: #333;
+      }
+
+      .modal-note {
+        font-size: 13px;
+        color: #666;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      /* Responsive styles */
+      @media (max-width: 768px) {
+        .controls {
+          flex-direction: column;
+          gap: 15px;
+          align-items: stretch;
+        }
+
+        .search-container {
+          width: 100%;
+        }
+
+        .category-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .phase-categories {
+          grid-template-columns: 1fr;
+        }
+
+        .journey-category:nth-child(odd),
+        .journey-category:nth-child(even),
+        .journey-category:nth-child(odd):hover,
+        .journey-category:nth-child(even):hover {
+          transform: none;
+        }
+
+        .journey-category:hover {
+          transform: translateY(-5px);
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="header-container"></div>
-    <link rel="stylesheet" href="playbook.css" />
-    <link rel="stylesheet" href="mobile-navigation.css" />
+    <div class="container">
+      <h1>The Takisaki Leadership Playbook</h1>
+      <p class="subtitle">
+        A decade of meticulously documented leadership strategies proven to
+        deliver exceptional results.
+      </p>
 
-    <!-- Intro Hero Section -->
-    <section class="intro-hero">
-      <div class="container">
-        <div class="intro-content">
-          <div class="intro-subtitle">
-            THE TACTICAL PLAYBOOK OF A PROVEN MISFIT
-          </div>
-          <h1 class="intro-title">
-            Leadership Strategies That Actually Work in the Real World
-          </h1>
-          <p class="intro-description">
-            This isn't off-the-shelf leadership theory. It's a tactical playbook
-            built from 20 years of breaking records while being told I didn't
-            fit the mold. Every strategy custom-tailored because I've been where
-            you are—and I've documented what actually works.
-          </p>
+      <div class="controls">
+        <div class="view-toggle">
+          <button class="grid-view active" onclick="toggleView('grid')">
+            Category View
+          </button>
+          <button class="journey-view" onclick="toggleView('journey')">
+            Journey Map
+          </button>
+        </div>
+
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search frameworks..."
+          />
+          <button class="clear-search" id="clear-search">✕</button>
         </div>
       </div>
-    </section>
 
-    <!-- Messaging Panels -->
-    <section class="messaging-panels">
-      <div class="container">
-        <div class="panels">
-          <div class="panel">
-            <h3 class="panel-title">For the Misfit Leaders</h3>
-            <p class="panel-content">
-              You've been called difficult, distracted, or too much. I've been
-              called worse. The traits they tried to medicate out of you are
-              exactly what make you exceptional. I don't need to "fix" you—I'll
-              help you build systems that leverage who you already are.
-            </p>
-          </div>
+      <div class="category-grid" id="category-grid">
+        <!-- Categories will be dynamically inserted here -->
+      </div>
 
-          <div class="panel">
-            <h3 class="panel-title">The Methodology Differentiator</h3>
-            <p class="panel-content">
-              Every coaching relationship starts with pure curiosity—not a
-              cookie-cutter program. I bring a vault of battle-tested plays, but
-              we'll custom-build your strategy using only what fits your unique
-              wiring, team dynamics, and objectives.
-            </p>
-          </div>
+      <div class="journey-map" id="journey-map">
+        <div class="phase-legend">
+          <!-- Phase legend will be dynamically inserted here -->
+        </div>
+
+        <div class="journey-path">
+          <div class="journey-line"></div>
+          <!-- Phase sections will be dynamically inserted here -->
         </div>
       </div>
-    </section>
 
-    <!-- Key Differentiator Section -->
-    <section class="key-differentiator">
-      <div class="container">
-        <h2 class="differentiator-title">What Makes This Playbook Different</h2>
-
-        <div class="differentiator-content">
-          <div class="differentiator-item">
-            <div class="differentiator-item-title">
-              <div class="differentiator-icon">📝</div>
-              <h3>Documentation Differentiator</h3>
-            </div>
-            <p>
-              I've documented every initiative, every success, and every failure
-              meticulously for over 10 years. This isn't coaching based on
-              theory—it's a practical playbook built from real-world
-              experimentation across multiple roles and territories.
-            </p>
-          </div>
-
-          <div class="differentiator-item">
-            <div class="differentiator-item-title">
-              <div class="differentiator-icon">⚡</div>
-              <h3>Pattern Recognition</h3>
-            </div>
-            <p>
-              After transforming 7 different markets and mentoring 100+ leaders,
-              I see patterns others miss. I can identify your unique strengths
-              and match them with proven plays from my vault that will drive
-              breakthrough results.
-            </p>
-          </div>
-
-          <div class="differentiator-item">
-            <div class="differentiator-item-title">
-              <div class="differentiator-icon">♟️</div>
-              <h3>Quiet Credibility</h3>
-            </div>
-            <p>
-              You won't find me shouting "hustle harder" platitudes. My approach
-              is chess, not checkers—strategic moves that appear simple but
-              create cascading effects throughout your organization.
-            </p>
-          </div>
-
-          <div class="differentiator-item">
-            <div class="differentiator-item-title">
-              <div class="differentiator-icon">🌱</div>
-              <h3>Human-Centered Results</h3>
-            </div>
-            <p>
-              We broke every record while working 10am-4pm. My teams collected
-              awards while others burned out. This isn't about grinding—it's
-              about working smarter with systems that honor both results and
-              humanity.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Playbook Section -->
-    <section class="playbook-section">
-      <div class="container">
-        <h2 class="playbook-title">The Takisaki Leadership Playbook</h2>
-        <p class="playbook-subtitle">
-          A decade of meticulously documented leadership strategies proven to
-          deliver exceptional results.
-        </p>
-
-        <div class="controls">
-          <div class="view-toggle">
-            <button class="grid-view active" onclick="toggleView('grid')">
-              Category View
-            </button>
-            <button class="journey-view" onclick="toggleView('journey')">
-              Journey Map
-            </button>
-          </div>
-
-          <div class="search-container">
-            <input
-              type="text"
-              id="search-input"
-              placeholder="Search frameworks..."
-            />
-            <button class="clear-search" id="clear-search">✕</button>
-          </div>
-        </div>
-
-        <div class="category-grid" id="category-grid">
-          <!-- Categories will be dynamically inserted here -->
-        </div>
-
-        <div class="journey-map" id="journey-map">
-          <div class="phase-legend">
-            <!-- Phase legend will be dynamically inserted here -->
-          </div>
-
-          <div class="journey-path">
-            <div class="journey-line"></div>
-            <!-- Phase sections will be dynamically inserted here -->
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <h2 class="cta-title">Ready to Run Your Own Operating System?</h2>
+      <div class="cta-section">
         <p class="cta-text">
-          Stop trying to fit into systems built for someone else. Start creating
-          the systems worthy of who you really are.
+          Each framework is backed by real-world implementation and documented
+          results.
         </p>
         <div class="cta-buttons">
-          <button class="cta-button primary" onclick="showModal('premium')">
-            Book Your Strategy Session
+          <button class="cta-button primary" onclick="showModal('contact')">
+            Book Your Custom Strategy Session
           </button>
           <button class="cta-button secondary">
             Download Playbook Overview
           </button>
         </div>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">Paul Takisaki</div>
-          <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Results</a>
-            <a href="#">Blog</a>
-            <a href="#">Contact</a>
-          </div>
-          <div class="footer-copyright">
-            © 2025 Takisaki Strategy. All rights reserved.
-          </div>
-        </div>
-      </div>
-    </footer>
+    </div>
 
     <!-- Premium Content Modal -->
     <div class="modal" id="premium-modal">
@@ -213,12 +664,13 @@
           implementation guides and case studies.
         </p>
 
-        <form class="modal-form" id="strategy-session-form">
-          <input type="text" id="fullName" placeholder="Full Name" required />
-          <input type="email" id="email" placeholder="Email Address" required />
-          <input type="text" id="company" placeholder="Company" required />
-          <input type="tel" id="phone" placeholder="Phone Number" required />
-          <button type="submit">Schedule My Call</button>
+        <form class="modal-form">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="text" placeholder="Company" required />
+          <button type="button" onclick="closeModal('premium-modal')">
+            Continue to Framework
+          </button>
         </form>
 
         <p class="modal-note">
@@ -239,12 +691,14 @@
           leadership challenges.
         </p>
 
-        <form class="modal-form" id="strategy-session-form">
-          <input type="text" id="fullName" placeholder="Full Name" required />
-          <input type="email" id="email" placeholder="Email Address" required />
-          <input type="text" id="company" placeholder="Company" required />
-          <input type="tel" id="phone" placeholder="Phone Number" required />
-          <button type="submit">Schedule My Call</button>
+        <form class="modal-form">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="text" placeholder="Company" required />
+          <input type="tel" placeholder="Phone Number" required />
+          <button type="button" onclick="closeModal('contact-modal')">
+            Schedule My Call
+          </button>
         </form>
 
         <p class="modal-note">
@@ -1165,30 +1619,24 @@
 
       // Toggle framework expand/collapse
       function toggleFramework(frameworkId) {
-        const overlay = document.getElementById("frameworkOverlay");
-        const backdrop = document.getElementById("frameworkBackdrop");
+        const frameworkElements = document.querySelectorAll(".framework-item");
 
-        // Parse category and item
-        const [catId, itemIndex] = frameworkId.split("-");
-        const category = categories.find((c) => c.id === catId);
-        const item = category.items[parseInt(itemIndex)];
+        if (activeFramework === frameworkId) {
+          // Collapse if already active
+          document
+            .querySelector(`.framework-item[data-id="${frameworkId}"]`)
+            .classList.remove("active");
+          activeFramework = null;
+        } else {
+          // Collapse any currently active framework
+          frameworkElements.forEach((el) => el.classList.remove("active"));
 
-        // Fill overlay with content
-        overlay.innerHTML = `
-    <h3 style="margin-bottom: 12px;">${item.title}</h3>
-    <p style="font-size: 15px; color: #444;">${item.description}</p>
-    <div style="margin-top: 20px; text-align: right;">
-      <button onclick="closeFloatingFramework()" style="background: #000; color: #fff; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer;">Close</button>
-    </div>
-  `;
-
-        overlay.classList.add("show");
-        backdrop.classList.add("show");
-      }
-
-      function closeFloatingFramework() {
-        document.getElementById("frameworkOverlay").classList.remove("show");
-        document.getElementById("frameworkBackdrop").classList.remove("show");
+          // Expand the clicked framework
+          document
+            .querySelector(`.framework-item[data-id="${frameworkId}"]`)
+            .classList.add("active");
+          activeFramework = frameworkId;
+        }
       }
 
       // Handle search input
@@ -1249,50 +1697,6 @@
           event.target.style.display = "none";
         }
       };
-    </script>
-    <script src="header.js"></script>
-    <div id="frameworkOverlay" class="framework-description"></div>
-    <div
-      id="frameworkBackdrop"
-      class="backdrop-blur"
-      onclick="closeFloatingFramework()"
-    ></div>
-    <script>
-      document
-        .getElementById("strategy-session-form")
-        ?.addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          const name = document.getElementById("fullName").value;
-          const email = document.getElementById("email").value;
-          const company = document.getElementById("company").value;
-          const phone = document.getElementById("phone").value;
-
-          const subject = "Strategy Session Request";
-          const message = `
-            <p><strong>Company:</strong> ${company}</p>
-            <p><strong>Phone:</strong> ${phone}</p>
-          `;
-
-          try {
-            const res = await fetch("/api/send", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ name, email, subject, message }),
-            });
-
-            if (res.ok) {
-              alert("Thanks, Paul will follow up shortly.");
-              this.reset();
-              closeModal("contact-modal");
-            } else {
-              alert("Something went wrong. Please try again.");
-            }
-          } catch (err) {
-            console.error("Form submission error:", err);
-            alert("Network error. Please try again later.");
-          }
-        });
     </script>
   </body>
 </html>

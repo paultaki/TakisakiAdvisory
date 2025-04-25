@@ -3787,3 +3787,194 @@ footer {
       padding: 24px;
     }
   }
+  /* Playbook Category Expansion Styles */
+
+/* Category Card Styles */
+.category-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 24px;
+  }
+  
+  .category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+  
+  .category-card.expanded {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .category-header {
+    padding: 24px;
+    cursor: pointer;
+    position: relative;
+    border-top-width: 5px;
+    border-top-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Add an indicator to show expandability */
+  .category-header::after {
+    content: "+";
+    font-size: 24px;
+    color: #666;
+    transition: transform 0.3s ease;
+  }
+  
+  .category-card.expanded .category-header::after {
+    content: "−";
+    transform: rotate(0deg);
+  }
+  
+  .category-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  .category-icon {
+    font-size: 24px;
+    margin-right: 14px;
+  }
+  
+  /* Category Items Container */
+  .category-items {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+    border-top: 1px solid #f5f5f7;
+  }
+  
+  .category-items.active {
+    max-height: 2000px;
+    opacity: 1;
+    padding-bottom: 16px;
+  }
+  
+  .category-items-inner {
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  /* Framework Item Styles */
+  .framework-item {
+    width: 100%;
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-bottom: 12px;
+  }
+  
+  /* For desktop, make items side by side */
+  @media (min-width: 768px) {
+    .framework-item {
+      width: calc(50% - 12px);
+      margin-bottom: 16px;
+    }
+  }
+  
+  .framework-item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+  }
+  
+  .framework-item.active {
+    background-color: #f5f5f7;
+  }
+  
+  .framework-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Framework Description - In-place expansion */
+  .framework-description {
+    display: none;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+  }
+  
+  .framework-item.active .framework-description {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .framework-action {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .framework-button {
+    background: none;
+    border: none;
+    color: #06c;
+    font-size: 13px;
+    padding: 6px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+  
+  .framework-button:hover {
+    background-color: rgba(0, 102, 204, 0.1);
+  }
+  
+  .lock-icon {
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    display: inline-block;
+    opacity: 0.7;
+  }
+  
+  .premium-tag {
+    display: inline-block;
+    background-color: #f8f5e4;
+    color: #856404;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-weight: 500;
+  }
+  
+  /* Remove modal-style popups for framework descriptions */
+  .backdrop-blur {
+    display: none;
+  }
