@@ -11,8 +11,8 @@ export default async function handler(req, res) {
 
   try {
     await sendgrid.send({
-      to: "your@email.com", // <- Change this to YOUR email
-      from: "no-reply@paultakisaki.com", // <- This must be verified in SendGrid
+      to: "paul@paultakisaki.com", // <- Change this to YOUR email
+      from: "info@paultakisaki.com", // <- This must be verified in SendGrid
       subject: `[Contact Form] ${subject}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
