@@ -801,3 +801,179 @@
   transform: translateY(0);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
+.manifesto-item {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.advantage {
+  background-color: #f8f8f8;
+  padding: 100px 0;
+}
+
+.advantage .manifesto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.advantage .manifesto-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.advantage .manifesto-item:hover {
+  transform: translateY(-5px);
+}
+
+.advantage h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 60px;
+}
+
+.advantage .manifesto-item h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.advantage .manifesto-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+/* Headline accent color */
+.accent-text {
+  color: #00e5ff;
+}
+
+/* Improved body text spacing */
+body {
+  line-height: 1.7;
+}
+
+/* Enhanced testimonial styling */
+.testimonial-quote {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+/* Desktop layout (default) */
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Mobile layout fix */
+@media (max-width: 767px) {
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .manifesto-item {
+    margin-bottom: 30px;
+  }
+}
+/* Headline accent color */
+.accent-text {
+  color: #00e5ff;
+}
+
+/* Improved body text spacing */
+body {
+  line-height: 1.7;
+}
+
+/* Enhanced testimonial styling */
+.testimonial-quote {
+  font-size: 1.8rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+/* Button hover states */
+.btn:hover {
+  background-color: #00e5ff;
+  color: #000;
+}
+
+/* Pricing numbers */
+.package-price {
+  color: #00e5ff;
+  font-weight: 700;
+}
+
+/* Section background gradients */
+.hero, .cta, footer, .testimonial {
+  background: linear-gradient(135deg, #121212 0%, #000000 100%);
+}
+/* Card spacing */
+.manifesto-item, .approach-item, .tool-item, .package {
+  padding: 32px;
+}
+
+/* Section spacing */
+section {
+  padding: 120px 0;
+}
+
+/* CTA button enhancement */
+.btn {
+  padding: 12px 16px;
+  font-size: 16px;
+}
+.faq-accordion {
+  margin-top: 40px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  padding: 20px 0;
+  width: 100%;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 20px;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: "−";
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding-left: 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 10px 0 20px 0;
+}
+.hero p strong {
+  display: block;
+  margin-bottom: 1rem;
+}
