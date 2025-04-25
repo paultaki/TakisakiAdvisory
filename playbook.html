@@ -641,10 +641,9 @@
           Each framework is backed by real-world implementation and documented
           results.
         </p>
-        <button class="cta-button primary" onclick="showModal('premium')">
-
-            Book Your Custom Strategy Session
-          </button>
+        <button class="cta-button primary" onclick="showModal('contact')">
+          Book Your Custom Strategy Session
+        </button>
           <button class="cta-button secondary">
             Download Playbook Overview
           </button>
@@ -1697,47 +1696,50 @@
         }
       };
     </script>
-  <script>
-    document
-      .getElementById("strategy-session-form")
-      ?.addEventListener("submit", async function (e) {
-        e.preventDefault();
-    
-        const name = document.getElementById("fullName").value;
-        const email = document.getElementById("email").value;
-        const company = document.getElementById("company").value;
-        const phone = document.getElementById("phone").value;
-    
-        const subject = "Strategy Session Request";
-        const message = `
-          <p><strong>Company:</strong> ${company}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-        `;
-    
-        console.log("Submitting form:", { name, email, subject, message }); // debug
-    
-        try {
-          const res = await fetch("/api/send", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, email, subject, message }),
-          });
-    
-          if (res.ok) {
-            alert("Thank you! Paul will follow up shortly.");
-            this.reset();
-            closeModal("contact-modal"); // ✅ correct modal ID
-          } else {
-            alert("Something went wrong. Please try again.");
-          }
-        } catch (err) {
-          console.error("Form error:", err);
-          alert("Network error. Please try again.");
+<script>
+  const form = document.getElementById("strategy-session-form");
+
+  if (form) {
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("fullName").value;
+      const email = document.getElementById("email").value;
+      const company = document.getElementById("company").value;
+      const phone = document.getElementById("phone").value;
+
+      const subject = "Strategy Session Request";
+      const message = `
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+      `;
+
+      console.log("Submitting form:", { name, email, subject, message });
+
+      try {
+        const res = await fetch("/api/send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, subject, message }),
+        });
+
+        if (res.ok) {
+          alert("Thanks, Paul will follow up shortly.");
+          form.reset();
+          closeModal("contact-modal");
+        } else {
+          alert("Something went wrong.");
         }
-      });
-    </script>
-    
-    
+      } catch (err) {
+        console.error("Submission failed:", err);
+        alert("Network error.");
+      }
+    });
+  } else {
+    console.warn("Form not found");
+  }
+</script>
+
     
   </body>
 </html>
