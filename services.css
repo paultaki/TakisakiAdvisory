@@ -1,0 +1,769 @@
+/* ==========================================================================
+   Service Pages Stylesheet
+   For: executive_coaching.html, leader_development.html, strategic_consulting.html
+   ========================================================================== */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+    color: #1d1d1f;
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    background-color: #ffffff;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  h1 {
+    font-size: 64px;
+    line-height: 1.07;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    font-size: 48px;
+    line-height: 1.08;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    margin-bottom: 24px;
+  }
+  
+  h3 {
+    font-size: 24px;
+    line-height: 1.16;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 17px;
+    line-height: 1.47;
+    color: #555;
+  }
+  
+  /* Logo */
+  .logo {
+    color: #fff;
+    font-size: 21px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  /* Header and Navigation */
+  header {
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+  }
+  
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  #header-container {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    margin: 0;
+  }
+  
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #fff;
+  }
+  
+  /* Mobile Nav Toggle */
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+  }
+  
+  .mobile-toggle:focus {
+    outline: none;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
+  .hero-content {
+    max-width: 700px;
+  }
+  
+  .hero p {
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+  }
+  
+  /* Button Styles */
+  .btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background-color: #fff;
+    color: #000;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .btn-primary {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #333;
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .cta .btn {
+    background-color: #fff;
+    color: #000;
+    max-width: 200px;
+  }
+  
+  /* Philosophy/Manifesto Section */
+  .philosophy, .manifesto {
+    padding: 160px 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .philosophy p, .manifesto-item p {
+    font-size: 21px;
+    line-height: 1.38;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    color: #555;
+  }
+  
+  .principles-grid, .manifesto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .principle-item, .manifesto-item {
+    background-color: #f5f5f7;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: left;
+  }
+  
+  .manifesto-item {
+    text-align: left;
+    padding: 0;
+    background-color: transparent;
+  }
+  
+  /* Stats Section */
+  .stats {
+    padding: 160px 0;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .stats-grid {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 72px;
+    line-height: 1;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+    font-family: "SF Mono", monospace;
+  }
+  
+  .stat-label {
+    font-size: 17px;
+    line-height: 1.4;
+    max-width: 180px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Testimonial */
+  .testimonial {
+    padding: 160px 0;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .testimonial-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .testimonial-quote {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 500;
+    margin-bottom: 40px;
+  }
+  
+  .testimonial-author {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .testimonial-role {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Approach Section */
+  .approach {
+    padding: 160px 0;
+    background-color: #f5f5f7;
+    text-align: center;
+  }
+  
+  .approach-subtitle {
+    font-size: 20px;
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #555;
+  }
+  
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .approach-item {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: left;
+    height: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .approach-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tools Section */
+  .tools, .frameworks {
+    padding: 120px 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .tools h2, .frameworks h2 {
+    margin-bottom: 60px;
+  }
+  
+  .tools-grid, .frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .tool-item, .framework-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    height: 100%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .tool-item:hover, .framework-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .tool-item p, .framework-item p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .framework-item {
+    text-align: left;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .framework-item p {
+    color: #555;
+  }
+  
+  /* Programs/Solutions Section */
+  .program, .solutions {
+    padding: 160px 0;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .program h2, .solutions h2 {
+    margin-bottom: 60px;
+  }
+  
+  .packages-grid, .solutions-grid, .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .package, .solution-item, .program-item {
+    background-color: #f5f5f7;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .package:hover, .solution-item:hover, .program-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .package.featured {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .package.featured:hover {
+    transform: translateY(-5px) scale(1.05);
+  }
+  
+  .featured-badge {
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  
+  .package-price, .solution-price, .program-price {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  
+  .package-price span, .solution-price span, .program-price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555;
+  }
+  
+  .package-description, .solution-description, .program-description {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .package-features, .solution-features, .program-features {
+    list-style: none;
+    margin-bottom: 30px;
+  }
+  
+  .package-features li, .solution-features li, .program-features li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.47;
+  }
+  
+  .package-features li:before, .solution-features li:before, .program-features li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #000;
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    padding: 160px 0;
+    background-color: #f5f5f7;
+  }
+  
+  .testimonials h2 {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  
+  .testimonial-item {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    height: 100%;
+  }
+  
+  .testimonial-item .testimonial-quote {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  .testimonial-item .testimonial-author {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  
+  .testimonial-item .testimonial-role {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* FAQ Section */
+  .faq {
+    padding: 160px 0;
+    background-color: #f5f5f7;
+  }
+  
+  .faq h2 {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  
+  .faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 40px;
+  }
+  
+  /* CTA Section */
+  .cta {
+    padding: 160px 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .cta p {
+    font-size: 21px;
+    line-height: 1.38;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #000;
+    padding: 40px 0;
+    color: #fff;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content h3 {
+    margin-bottom: 2px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .footer-subtitle {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .footer-contact {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .footer-contact a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 991px) {
+    .principles-grid,
+    .frameworks-grid,
+    .solutions-grid,
+    .packages-grid,
+    .programs-grid,
+    .approach-grid,
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+    
+    .tools-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .stats-grid {
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .stat-item {
+      margin-bottom: 40px;
+    }
+    
+    .hero h1,
+    .philosophy h2,
+    .manifesto h2,
+    .program h2,
+    .approach h2,
+    .tools h2,
+    .frameworks h2,
+    .solutions h2,
+    .testimonials h2,
+    .cta h2 {
+      font-size: 40px;
+    }
+    
+    .hero p,
+    .philosophy p,
+    .approach p,
+    .cta p {
+      font-size: 18px;
+    }
+    
+    .package.featured {
+      grid-column: span 2;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .hero {
+      padding-top: 100px;
+    }
+    
+    .hero h1 {
+      font-size: 36px;
+    }
+    
+    .hero p {
+      font-size: 18px;
+    }
+    
+    .principles-grid,
+    .frameworks-grid,
+    .solutions-grid,
+    .packages-grid,
+    .programs-grid,
+    .approach-grid,
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tools-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .stats-grid {
+      flex-direction: column;
+    }
+    
+    .stat-item {
+      margin-bottom: 40px;
+    }
+    
+    .stat-number {
+      font-size: 56px;
+    }
+    
+    .testimonial-quote {
+      font-size: 24px;
+    }
+    
+    .philosophy,
+    .manifesto,
+    .stats,
+    .testimonial,
+    .program,
+    .approach,
+    .tools,
+    .frameworks,
+    .solutions,
+    .testimonials,
+    .faq,
+    .cta {
+      padding: 100px 0;
+    }
+    
+    .package.featured {
+      grid-column: span 1;
+      transform: scale(1);
+    }
+    
+    .package,
+    .solution-item,
+    .program-item,
+    .approach-item {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .nav-links {
+      display: none;
+    }
+    
+    .nav-links.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+    }
+    
+    .nav-links li {
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .tool-item {
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  }

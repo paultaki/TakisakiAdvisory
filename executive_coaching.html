@@ -4,595 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paul Takisaki | Executive Leadership</title>
-    <style>
-      /* Base styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        -webkit-font-smoothing: antialiased;
-      }
+    <link rel="stylesheet" href="mobile-navigation.css">
+    <link rel="stylesheet" href="services.css">
 
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-          "Helvetica Neue", sans-serif;
-        color: #1d1d1f;
-        line-height: 1.5;
-      }
 
-      .container {
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Navigation */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: saturate(180%) blur(20px);
-        z-index: 1000;
-      }
-
-      .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 980px;
-        margin: 0 auto;
-        padding: 16px 20px;
-      }
-
-      .logo {
-        color: #fff;
-        font-size: 21px;
-        font-weight: 600;
-        text-decoration: none;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 40px;
-      }
-
-      .nav-links a {
-        color: rgba(255, 255, 255, 0.8);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 400;
-        transition: color 0.3s ease;
-      }
-
-      .nav-links a:hover {
-        color: #fff;
-      }
-
-      /* Hero Section */
-      .hero {
-        height: 100vh;
-        background-color: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding-top: 50px;
-      }
-
-      .hero-content {
-        max-width: 700px;
-      }
-
-      .hero h1 {
-        font-size: 64px;
-        line-height: 1.07;
-        font-weight: 700;
-        letter-spacing: -0.005em;
-        color: #fff;
-        margin-bottom: 30px;
-      }
-
-      .hero p {
-        font-size: 24px;
-        line-height: 1.3;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 40px;
-      }
-
-      /* Manifesto Section */
-      .manifesto {
-        padding: 160px 0;
-        background-color: #fff;
-        text-align: center;
-      }
-
-      .manifesto h2 {
-        font-size: 48px;
-        line-height: 1.08;
-        font-weight: 600;
-        letter-spacing: -0.003em;
-        margin-bottom: 24px;
-      }
-
-      .manifesto-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        max-width: 700px;
-        margin: 60px auto 0;
-        gap: 40px;
-      }
-
-      .manifesto-item {
-        text-align: left;
-        padding: 0;
-      }
-
-      .manifesto-item h3 {
-        font-size: 28px;
-        line-height: 1.14;
-        font-weight: 600;
-        margin-bottom: 16px;
-      }
-
-      .manifesto-item p {
-        font-size: 17px;
-        line-height: 1.47;
-        color: #555;
-      }
-
-      /* Testimonial */
-      .testimonial {
-        padding: 160px 0;
-        background-color: #000;
-        color: #fff;
-      }
-
-      .testimonial-content {
-        max-width: 700px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .testimonial-quote {
-        font-size: 32px;
-        line-height: 1.25;
-        font-weight: 600;
-        margin-bottom: 40px;
-      }
-
-      .testimonial-author {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 4px;
-      }
-
-      .testimonial-role {
-        font-size: 16px;
-        color: rgba(255, 255, 255, 0.6);
-      }
-
-      /* Approach Section */
-      .approach {
-        padding: 160px 0;
-        background-color: #f5f5f7;
-        text-align: center;
-      }
-
-      .approach h2 {
-        font-size: 48px;
-        line-height: 1.08;
-        font-weight: 600;
-        margin-bottom: 60px;
-      }
-
-      .approach-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 980px;
-        margin: 0 auto;
-      }
-
-      .approach-item {
-        background-color: #fff;
-        padding: 40px;
-        border-radius: 12px;
-        text-align: left;
-        height: 100%;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .approach-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .approach-item h3 {
-        font-size: 24px;
-        line-height: 1.16;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .approach-item p {
-        font-size: 16px;
-        line-height: 1.5;
-        color: #555;
-      }
-
-      /* Tools Section */
-      .tools {
-        padding: 120px 0;
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-      }
-
-      .tools h2 {
-        font-size: 48px;
-        line-height: 1.08;
-        font-weight: 600;
-        margin-bottom: 60px;
-      }
-
-      .tools-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 20px;
-        max-width: 980px;
-        margin: 0 auto;
-      }
-
-      .tool-item {
-        background-color: rgba(255, 255, 255, 0.05);
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        height: 100%;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-      }
-
-      .tool-item:hover {
-        transform: translateY(-5px);
-        background-color: rgba(255, 255, 255, 0.1);
-      }
-
-      .tool-item h3 {
-        font-size: 18px;
-        line-height: 1.3;
-        font-weight: 600;
-        margin-bottom: 10px;
-      }
-
-      .tool-item p {
-        font-size: 14px;
-        line-height: 1.4;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      /* Programs Section */
-      .program {
-        padding: 160px 0;
-        background-color: #fff;
-        text-align: center;
-      }
-
-      .program h2 {
-        font-size: 48px;
-        line-height: 1.08;
-        font-weight: 600;
-        margin-bottom: 60px;
-      }
-
-      .packages-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 980px;
-        margin: 0 auto;
-      }
-
-      .package {
-        background-color: #f5f5f7;
-        padding: 40px;
-        border-radius: 12px;
-        text-align: left;
-        position: relative;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .package:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
-
-      .package.featured {
-        transform: scale(1.05);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        z-index: 1;
-      }
-
-      .package.featured:hover {
-        transform: translateY(-5px) scale(1.05);
-      }
-
-      .featured-badge {
-        position: absolute;
-        top: -10px;
-        right: 30px;
-        background-color: #000;
-        color: #fff;
-        padding: 5px 10px;
-        font-size: 12px;
-        font-weight: 500;
-        border-radius: 4px;
-      }
-
-      .package h3 {
-        font-size: 24px;
-        line-height: 1.16;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .package-price {
-        font-size: 32px;
-        font-weight: 700;
-        margin-bottom: 15px;
-      }
-
-      .package-price span {
-        font-size: 16px;
-        font-weight: 400;
-        color: #555;
-      }
-
-      .package-description {
-        font-size: 16px;
-        line-height: 1.4;
-        color: #555;
-        margin-bottom: 25px;
-      }
-
-      .package-features {
-        list-style: none;
-        margin-bottom: 30px;
-      }
-
-      .package-features li {
-        position: relative;
-        padding-left: 24px;
-        margin-bottom: 12px;
-        font-size: 15px;
-        line-height: 1.47;
-      }
-
-      .package-features li:before {
-        content: "—";
-        position: absolute;
-        left: 0;
-        color: #000;
-      }
-
-      .btn {
-        display: inline-block;
-        padding: 14px 24px;
-        background-color: #000;
-        color: #fff;
-        font-size: 15px;
-        font-weight: 500;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: all 0.3s ease;
-        text-align: center;
-        width: 100%;
-      }
-
-      .btn:hover {
-        background-color: #333;
-      }
-
-      .btn-small {
-        background-color: transparent;
-        color: #000;
-        border: 1px solid #000;
-      }
-
-      .btn-small:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-
-      /* CTA Section */
-      .cta {
-        padding: 160px 0;
-        background-color: #000;
-        color: #fff;
-        text-align: center;
-      }
-
-      .cta-content {
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      .cta h2 {
-        font-size: 48px;
-        line-height: 1.08;
-        font-weight: 600;
-        margin-bottom: 24px;
-      }
-
-      .cta p {
-        font-size: 21px;
-        line-height: 1.38;
-        color: rgba(255, 255, 255, 0.7);
-        margin-bottom: 40px;
-      }
-
-      .cta .btn {
-        background-color: #fff;
-        color: #000;
-        max-width: 200px;
-      }
-
-      .cta .btn:hover {
-        background-color: rgba(255, 255, 255, 0.9);
-      }
-
-      /* Footer */
-      footer {
-        background-color: #000;
-        padding: 40px 0;
-        color: #fff;
-      }
-
-      .footer-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .footer-content h3 {
-        margin-bottom: 2px;
-        font-size: 18px;
-        font-weight: 500;
-      }
-
-      .footer-subtitle {
-        font-size: 14px;
-        margin-bottom: 8px;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .footer-contact {
-        font-size: 14px;
-        margin-bottom: 6px;
-      }
-
-      .footer-contact a {
-        color: #fff;
-        text-decoration: none;
-      }
-
-      .copyright {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      /* Responsive Design */
-      @media (max-width: 991px) {
-        .hero h1 {
-          font-size: 48px;
-        }
-
-        .manifesto h2,
-        .program h2,
-        .approach h2,
-        .tools h2,
-        .cta h2 {
-          font-size: 40px;
-        }
-
-        .packages-grid,
-        .approach-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 25px;
-        }
-
-        .tools-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
-        }
-
-        .package.featured {
-          grid-column: span 2;
-          max-width: 500px;
-          margin: 0 auto;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .hero {
-          padding-top: 100px;
-        }
-
-        .hero h1 {
-          font-size: 40px;
-        }
-
-        .hero p {
-          font-size: 20px;
-        }
-
-        .nav-links {
-          display: none;
-        }
-
-        .manifesto,
-        .testimonial,
-        .program,
-        .approach,
-        .tools,
-        .cta {
-          padding: 100px 0;
-        }
-
-        .testimonial-quote {
-          font-size: 24px;
-        }
-
-        .packages-grid,
-        .approach-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .tools-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
-        }
-
-        .package.featured {
-          grid-column: span 1;
-          transform: scale(1);
-        }
-
-        .package,
-        .approach-item {
-          max-width: 400px;
-          margin: 0 auto;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .tools-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .tool-item {
-          max-width: 280px;
-          margin: 0 auto;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- Navigation -->
-    <nav>
-      <div class="nav-content">
-        <a href="/" class="logo">Paul Takisaki</a>
-        <div class="nav-links">
-          <a href="#manifesto">Manifesto</a>
-          <a href="#program">Programs</a>
-          <a href="#apply">Apply</a>
-        </div>
-      </div>
-    </nav>
-
+    <div id="header-container"></div>
+    
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
@@ -649,40 +69,45 @@
         </div>
       </div>
     </section>
-
+    
     <!-- Approach Section -->
     <section class="approach" id="approach">
       <div class="container">
-        <h2>How I Coach Executives to Win Differently</h2>
+        <h2>How Executives Win Differently</h2>
+        <p class="approach-subtitle">
+          I provide the framework that elevates both your team and career to
+          unprecedented heights. Together, we won't just meet expectations—we'll
+          shatter them.
+        </p>
         <div class="approach-grid">
           <div class="approach-item">
-            <h3>I see the whole board.</h3>
+            <h3>See the whole board.</h3>
             <p>
-              I don't just react to symptoms—I diagnose the system. I uncover
-              hidden friction, invisible ceilings, and leadership contradictions
-              that block growth. Clients walk away with insight they can't
-              unsee—and a clear path forward.
+              Don't just react to symptoms—diagnose the system. Uncover hidden
+              friction, invisible ceilings, and leadership contradictions that
+              block growth. Walk away with insight you can't unsee—and a clear
+              path forward.
             </p>
           </div>
           <div class="approach-item">
-            <h3>I build playbooks from the trenches.</h3>
+            <h3>Build playbooks from the trenches.</h3>
             <p>
-              Every tool I teach is battle-tested. These aren't fluffy
-              frameworks. They're the same plays I used to lead 400+ in one of
-              the most complex orgs at Verizon—strategies that scaled nationally
-              and broke records.
+              Every tool is battle-tested. These aren't fluffy frameworks.
+              They're the same plays used to lead 400+ in one of the most
+              complex orgs at Verizon—strategies that scaled nationally and
+              broke records.
             </p>
           </div>
           <div class="approach-item">
-            <h3>I create clarity out of chaos.</h3>
+            <h3>Create clarity out of chaos.</h3>
             <p>
-              Most execs are drowning in noise. I cut through it by helping you
-              identify your "critical few" metrics, align your org behind them,
-              and ditch the trivial many. Less spinning. More winning.
+              Most execs are drowning in noise. Cut through it by identifying
+              your "critical few" metrics, aligning your org behind them, and
+              ditching the trivial many. Less spinning. More winning.
             </p>
           </div>
           <div class="approach-item">
-            <h3>I rewire how you lead.</h3>
+            <h3>Rewire how you lead.</h3>
             <p>
               You won't leave with more to do—you'll leave with less. Less
               control. Less reactivity. More delegation, more leverage, more
@@ -691,18 +116,27 @@
             </p>
           </div>
           <div class="approach-item">
-            <h3>I lead with belief, not pressure.</h3>
+            <h3>Lead with belief, not pressure.</h3>
             <p>
-              People don't rise for KPIs. They rise for someone who sees them. I
-              help leaders unlock this skill so their team becomes
-              self-correcting, not just compliant. You'll stop chasing
-              performance—and start attracting it.
+              People don't rise for KPIs. They rise for someone who sees them.
+              Unlock this skill so your team becomes self-correcting, not just
+              compliant. Stop chasing performance—and start attracting it.
+            </p>
+          </div>
+          <div class="approach-item">
+            <h3>Transform, not just inform.</h3>
+            <p>
+              Real executives need more than information—they need
+              transformation. Your mental models about leadership will be
+              reconstructed from the ground up. When you walk out, you won't
+              just think differently—you'll act differently, without having to
+              remember what you learned.
             </p>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Tools Section -->
     <section class="tools" id="tools">
       <div class="container">
@@ -749,7 +183,7 @@
               <li>ATS optimization and keyword strategy</li>
               <li>Optional Loom video walkthrough</li>
             </ul>
-            <a href="#apply" class="btn btn-small">Apply Now</a>
+            <a href="#apply" class="btn btn-secondary">Apply Now</a>
           </div>
 
           <div class="package featured">
@@ -781,7 +215,7 @@
               <li>Custom visibility and impact plan</li>
               <li>Limited to 8 leaders per quarter</li>
             </ul>
-            <a href="#apply" class="btn btn-small">Apply Now</a>
+            <a href="#apply" class="btn btn-secondary">Apply Now</a>
           </div>
         </div>
       </div>
@@ -814,6 +248,5 @@
       </div>
     </footer>
     <script src="header.js"></script>
-
   </body>
 </html>
