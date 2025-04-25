@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Paul Takisaki</title>
-    <link rel="stylesheet" href="mobile-navigation.css">
-    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="mobile-navigation.css" />
+    <link rel="stylesheet" href="contact.css" />
   </head>
   <body>
     <!-- Header -->
@@ -115,27 +115,33 @@
 
     <!-- Scripts -->
     <script>
-      // Form submission handling with SendGrid
       document
         .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
+        .addEventListener("submit", async function (e) {
           e.preventDefault();
 
-          // Here you would normally add your SendGrid API integration
-          // For demonstration purposes, we'll just show the success message
-
-          // Get form data
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
-          const service = document.getElementById("service").value;
+          const subject = document.getElementById("service").value;
           const message = document.getElementById("message").value;
 
-          // Log form data (replace with actual SendGrid integration)
-          console.log("Form submitted:", { name, email, service, message });
+          try {
+            const response = await fetch("/api/send", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, subject, message }),
+            });
 
-          // Show success message and hide form
-          document.getElementById("contact-form").style.display = "none";
-          document.getElementById("form-success").style.display = "block";
+            if (response.ok) {
+              document.getElementById("contact-form").style.display = "none";
+              document.getElementById("form-success").style.display = "block";
+            } else {
+              alert("Something went wrong. Please try again later.");
+            }
+          } catch (err) {
+            console.error("Submission error:", err);
+            alert("Network error. Please try again later.");
+          }
         });
     </script>
 
