@@ -641,8 +641,8 @@
           Each framework is backed by real-world implementation and documented
           results.
         </p>
-        <div class="cta-buttons">
-          <button class="cta-button primary" onclick="showModal('contact')">
+        <button class="cta-button primary" onclick="showModal('premium')">
+
             Book Your Custom Strategy Session
           </button>
           <button class="cta-button secondary">
@@ -691,15 +691,14 @@
           leadership challenges.
         </p>
 
-        <form class="modal-form">
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="text" placeholder="Company" required />
-          <input type="tel" placeholder="Phone Number" required />
-          <button type="button" onclick="closeModal('contact-modal')">
-            Schedule My Call
-          </button>
+        <form class="modal-form" id="strategy-session-form">
+          <input type="text" id="fullName" placeholder="Full Name" required />
+          <input type="email" id="email" placeholder="Email Address" required />
+          <input type="text" id="company" placeholder="Company" required />
+          <input type="tel" id="phone" placeholder="Phone Number" required />
+          <button type="submit">Schedule My Call</button>
         </form>
+        
 
         <p class="modal-note">
           I'll follow up within 24 hours to confirm your session.
