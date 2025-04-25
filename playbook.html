@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Takisaki Leadership Playbook</title>
-   
   </head>
   <body>
     <div id="header-container"></div>
-    <link rel="stylesheet" href="playbook.css">
+    <link rel="stylesheet" href="playbook.css" />
+    <link rel="stylesheet" href="mobile-navigation.css" />
 
     <!-- Intro Hero Section -->
     <section class="intro-hero">
@@ -1168,24 +1168,30 @@
 
       // Toggle framework expand/collapse
       function toggleFramework(frameworkId) {
-        const frameworkElements = document.querySelectorAll(".framework-item");
+        const overlay = document.getElementById("frameworkOverlay");
+        const backdrop = document.getElementById("frameworkBackdrop");
 
-        if (activeFramework === frameworkId) {
-          // Collapse if already active
-          document
-            .querySelector(`.framework-item[data-id="${frameworkId}"]`)
-            .classList.remove("active");
-          activeFramework = null;
-        } else {
-          // Collapse any currently active framework
-          frameworkElements.forEach((el) => el.classList.remove("active"));
+        // Parse category and item
+        const [catId, itemIndex] = frameworkId.split("-");
+        const category = categories.find((c) => c.id === catId);
+        const item = category.items[parseInt(itemIndex)];
 
-          // Expand the clicked framework
-          document
-            .querySelector(`.framework-item[data-id="${frameworkId}"]`)
-            .classList.add("active");
-          activeFramework = frameworkId;
-        }
+        // Fill overlay with content
+        overlay.innerHTML = `
+    <h3 style="margin-bottom: 12px;">${item.title}</h3>
+    <p style="font-size: 15px; color: #444;">${item.description}</p>
+    <div style="margin-top: 20px; text-align: right;">
+      <button onclick="closeFloatingFramework()" style="background: #000; color: #fff; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer;">Close</button>
+    </div>
+  `;
+
+        overlay.classList.add("show");
+        backdrop.classList.add("show");
+      }
+
+      function closeFloatingFramework() {
+        document.getElementById("frameworkOverlay").classList.remove("show");
+        document.getElementById("frameworkBackdrop").classList.remove("show");
       }
 
       // Handle search input
@@ -1247,7 +1253,12 @@
         }
       };
     </script>
-        <script src="header.js"></script>
-
+    <script src="header.js"></script>
+    <div id="frameworkOverlay" class="framework-description"></div>
+    <div
+      id="frameworkBackdrop"
+      class="backdrop-blur"
+      onclick="closeFloatingFramework()"
+    ></div>
   </body>
 </html>

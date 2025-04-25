@@ -819,3 +819,117 @@ footer {
     gap: 15px;
   }
 }
+.category-items-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative; /* <-- enables absolute positioning inside */
+}
+.framework-item {
+  width: 100%;
+  max-width: 300px; /* or whatever fixed width works */
+  position: relative; /* allows the description to float off this */
+}
+.framework-description {
+  outline: 2px solid red;
+  z-index: 1000;
+}
+.category-items {
+  overflow: visible;
+  position: relative;
+}
+.category-items-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  align-items: flex-start;
+}
+.framework-item {
+  width: 300px;
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.framework-item:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.framework-description {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 320px;
+  margin-top: 12px;
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  z-index: 20;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.framework-item.active .framework-description {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.framework-description {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90vw;
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    z-index: 1001;
+    animation: popIn 0.25s ease;
+    backdrop-filter: blur(8px);
+  }
+  
+  .backdrop-blur {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+  }
+  
+  .framework-description.show,
+  .backdrop-blur.show {
+    display: block;
+  }
+  
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+  
