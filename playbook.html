@@ -1697,5 +1697,45 @@
         }
       };
     </script>
+    <script>
+      document
+        .getElementById("strategy-session-form")
+        ?.addEventListener("submit", async function (e) {
+          e.preventDefault();
+    
+          const name = document.getElementById("fullName").value;
+          const email = document.getElementById("email").value;
+          const company = document.getElementById("company").value;
+          const phone = document.getElementById("phone").value;
+    
+          const subject = "Strategy Session Request";
+          const message = `
+            <p><strong>Company:</strong> ${company}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+          `;
+    
+          console.log("Submitting:", { name, email, subject, message });
+    
+          try {
+            const res = await fetch("/api/send", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, subject, message }),
+            });
+    
+            if (res.ok) {
+              alert("Thanks, Paul will follow up shortly.");
+              this.reset();
+              closeModal("contact-modal");
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          } catch (err) {
+            console.error("Form submission error:", err);
+            alert("Network error. Please try again later.");
+          }
+        });
+    </script>
+    
   </body>
 </html>
