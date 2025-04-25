@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><a href="${basePath}index.html#about" title="About Paul Takisaki">ABOUT</a></li>
               <li><a href="${basePath}stories.html" title="Success Stories">SUCCESS STORIES</a></li>
               <li><a href="${basePath}blogs.html" title="Insights">INSIGHTS</a></li>
-              <li><a href="${basePath}index.html#contact" title="Contact Paul Takisaki">CONTACT</a></li>
+              <li><a href="${basePath}contact.html" title="Contact Paul Takisaki">CONTACT</a></li>
             </ul>
           </nav>
         </div>

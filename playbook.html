@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Takisaki Leadership Playbook</title>
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    }
+    
+    body {
+      line-height: 1.5;
+      color: #333;
+      background-color: #f5f5f7;
+      padding: 40px 20px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    h1, h2, h3, h4 {
+      font-weight: 600;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    
+    /* Controls Section */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .view-toggle {
+      display: flex;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    
+    .view-toggle button {
+      padding: 10px 20px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    
+    .view-toggle button.active {
+      background-color: #000;
+      color: #fff;
+    }
+    
+    .search-container {
+      position: relative;
+      width: 300px;
+    }
+    
+    .search-container input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    
+    .search-container input:focus {
+      border-color: #000;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+    }
+    
+    .clear-search {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #999;
+      cursor: pointer;
+      font-size: 14px;
+      display: none;
+    }
+    
+    /* Category Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+    }
+    
+    .category-card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .category-header {
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+      border-top-width: 5px;
+      border-top-style: solid;
+    }
+    
+    .category-title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    
+    .category-icon {
+      font-size: 24px;
+      margin-right: 12px;
+    }
+    
+    .category-title h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    
+    .category-description {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .category-items {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      border-top: 1px solid #eee;
+    }
+    
+    .category-items.active {
+      max-height: 1000px;
+    }
+    
+    .category-items-inner {
+      padding: 20px;
+    }
+    
+    .framework-item {
+      padding: 10px 15px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      position: relative;
+    }
+    
+    .framework-item:hover {
+      background-color: #f5f5f7;
+    }
+    
+    .framework-item.active {
+      background-color: #f0f0f0;
+    }
+    
+    .framework-title {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .framework-description {
+      font-size: 13px;
+      color: #666;
+      font-style: italic;
+      margin-top: 6px;
+      display: none;
+    }
+    
+    .framework-item.active .framework-description {
+      display: block;
+    }
+    
+    .framework-action {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .framework-button {
+      background: none;
+      border: none;
+      color: #0070c9;
+      font-size: 12px;
+      padding: 0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    
+    .framework-button:hover {
+      text-decoration: underline;
+    }
+    
+    .lock-icon {
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+      display: inline-block;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="%23888" d="M144 144v48H304V144c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192V144C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64H80z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+    
+    .premium-tag {
+      display: inline-block;
+      background-color: #f8f5e4;
+      color: #856404;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 8px;
+      font-weight: 500;
+    }
+    
+    /* Journey Map View */
+    .journey-map {
+      display: none;
+      padding: 20px;
+      position: relative;
+    }
+    
+    .phase-legend {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    
+    .phase-item {
+      display: flex;
+      align-items: center;
+      margin: 0 10px;
+    }
+    
+    .phase-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    
+    .phase-name {
+      font-size: 14px;
+      text-transform: capitalize;
+    }
+    
+    .journey-path {
+      position: relative;
+      padding-bottom: 40px;
+    }
+    
+    .journey-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background-color: #ddd;
+      transform: translateX(-50%);
+    }
+    
+    .phase-section {
+      margin-bottom: 60px;
+      position: relative;
+    }
+    
+    .phase-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .phase-title {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 30px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    .phase-categories {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .journey-category {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+    
+    .journey-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .journey-category:nth-child(odd) {
+      transform: translateX(20px);
+    }
+    
+    .journey-category:nth-child(even) {
+      transform: translateX(-20px);
+    }
+    
+    .journey-category:nth-child(odd):hover {
+      transform: translateX(20px) translateY(-5px);
+    }
+    
+    .journey-category:nth-child(even):hover {
+      transform: translateX(-20px) translateY(-5px);
+    }
+    
+    .journey-category-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .journey-category-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      margin-right: 12px;
+      font-size: 18px;
+    }
+    
+    .journey-category-title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    
+    .journey-category-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    
+    .journey-frameworks {
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+    
+    .journey-frameworks h4 {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    
+    .journey-frameworks ul {
+      list-style: none;
+      font-size: 13px;
+      color: #666;
+    }
+    
+    .journey-frameworks li {
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .journey-frameworks li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+    }
+    
+    .journey-frameworks .more-frameworks {
+      color: #0070c9;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+    
+    .journey-frameworks .more-frameworks:hover {
+      text-decoration: underline;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      margin-top: 60px;
+      padding: 20px;
+    }
+    
+    .cta-text {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .cta-button {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+      border: none;
+      font-size: 15px;
+    }
+    
+    .cta-button.primary {
+      background-color: #000;
+      color: #fff;
+    }
+    
+    .cta-button.primary:hover {
+      background-color: #333;
+    }
+    
+    .cta-button.secondary {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+    
+    .cta-button.secondary:hover {
+      background-color: #f5f5f7;
+    }
+    
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: 300;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #999;
+    }
+    
+    .modal-title {
+      font-size: 22px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .modal-subtitle {
+      font-size: 16px;
+      margin-bottom: 25px;
+      text-align: center;
+      color: #666;
+    }
+    
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .modal-form input {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 15px;
+      width: 100%;
+    }
+    
+    .modal-form button {
+      background-color: #000;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    
+    .modal-form button:hover {
+      background-color: #333;
+    }
+    
+    .modal-note {
+      font-size: 13px;
+      color: #666;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+      }
+      
+      .search-container {
+        width: 100%;
+      }
+      
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .phase-categories {
+        grid-template-columns: 1fr;
+      }
+      
+      .journey-category:nth-child(odd),
+      .journey-category:nth-child(even),
+      .journey-category:nth-child(odd):hover,
+      .journey-category:nth-child(even):hover {
+        transform: none;
+      }
+      
+      .journey-category:hover {
+        transform: translateY(-5px);
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>The Takisaki Leadership Playbook</h1>
+    <p class="subtitle">A decade of meticulously documented leadership strategies proven to deliver exceptional results.</p>
+    
+    <div class="controls">
+      <div class="view-toggle">
+        <button class="grid-view active" onclick="toggleView('grid')">Category View</button>
+        <button class="journey-view" onclick="toggleView('journey')">Journey Map</button>
+      </div>
+      
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search frameworks...">
+        <button class="clear-search" id="clear-search">✕</button>
+      </div>
+    </div>
+    
+    <div class="category-grid" id="category-grid">
+      <!-- Categories will be dynamically inserted here -->
+    </div>
+    
+    <div class="journey-map" id="journey-map">
+      <div class="phase-legend">
+        <!-- Phase legend will be dynamically inserted here -->
+      </div>
+      
+      <div class="journey-path">
+        <div class="journey-line"></div>
+        <!-- Phase sections will be dynamically inserted here -->
+      </div>
+    </div>
+    
+    <div class="cta-section">
+      <p class="cta-text">Each framework is backed by real-world implementation and documented results.</p>
+      <div class="cta-buttons">
+        <button class="cta-button primary" onclick="showModal('contact')">Book Your Custom Strategy Session</button>
+        <button class="cta-button secondary">Download Playbook Overview</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Premium Content Modal -->
+  <div class="modal" id="premium-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('premium-modal')">&times;</button>
+      <h3 class="modal-title">Access Premium Framework</h3>
+      <p class="modal-subtitle">Unlock the complete Takisaki Leadership Playbook with detailed implementation guides and case studies.</p>
+      
+      <form class="modal-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Company" required>
+        <button type="button" onclick="closeModal('premium-modal')">Continue to Framework</button>
+      </form>
+      
+      <p class="modal-note">Already a client? <a href="#" style="color: #0070c9;">Sign in here</a></p>
+    </div>
+  </div>
+  
+  <!-- Contact/Booking Modal -->
+  <div class="modal" id="contact-modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('contact-modal')">&times;</button>
+      <h3 class="modal-title">Book Your Custom Strategy Session</h3>
+      <p class="modal-subtitle">Let's discuss how these frameworks can be tailored to your specific leadership challenges.</p>
+      
+      <form class="modal-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Company" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <button type="button" onclick="closeModal('contact-modal')">Schedule My Call</button>
+      </form>
+      
+      <p class="modal-note">I'll follow up within 24 hours to confirm your session.</p>
+    </div>
+  </div>
+
+  <script>
+    // Leadership playbook data
+    const categories = [
+      {
+        id: 'philosophy',
+        title: 'LEADERSHIP PHILOSOPHY',
+        icon: '🧠',
+        color: '#C9A0DC',
+        description: 'Your core operating system: lead without theater, let results speak.',
+        phase: 'foundation',
+        items: [
+          { title: 'The Quiet Confidence OS', description: 'Lead without theater, let results speak.' },
+          { title: 'People-First Principles', description: 'Trust, clarity, love—how you create loyalty without the stick or carrot.' },
+          { title: 'Lead with Heart, Execute with Precision', description: 'High EQ and high IQ in tandem—never soft, never sloppy.' },
+          { title: 'Playing Chess, Not Checkers', description: 'Strategic foresight. You\'re five moves ahead while others are reactionary.' },
+          { title: 'Team Recognition > Individual Glory', description: 'You win when your team wins—and they know it.' }
+        ]
+      },
+      {
+        id: 'first90',
+        title: 'THE FIRST 90 DAYS',
+        icon: '🚀',
+        color: '#FFA07A',
+        description: 'Critical strategies for successful leadership transitions.',
+        phase: 'foundation',
+        items: [
+          { title: 'Team and Org Introduction', description: 'How you position yourself on Day 1 to earn trust fast.' },
+          { title: 'The 1:1 Immersion Strategy', description: '100+ personal meetings that create a map of truth.' },
+          { title: 'Securing Early Wins', description: 'Fix what matters to them. Early proof of change.' },
+          { title: 'Meeting 100 Customers in 100 Days', description: 'Market immersion + pattern recognition = gold.' },
+          { title: 'Identifying and Cultivating Key Influencers', description: 'Win the hidden leaders and the rest will follow.' }
+        ]
+      },
+      {
+        id: 'structure',
+        title: 'STRUCTURAL TRANSFORMATION',
+        icon: '🏗️',
+        color: '#87CEFA',
+        description: 'Restructure to drive clarity and unlock breakthrough results.',
+        phase: 'transformation',
+        items: [
+          { title: 'Identifying Root Causes vs. Symptoms', description: 'Don\'t treat the fever—find the infection.' },
+          { title: 'The Four-Dimensional Decision Framework', description: 'Time, impact, alignment, and resistance—your lens.' },
+          { title: 'Breaking Silos with POD Structures', description: 'Restructure to drive clarity and unlock speed.' },
+          { title: 'From Chaos to Clarity: Simplification Strategies', description: 'Cut the noise. Clean the lanes. Focus the team.' },
+          { title: 'Strategic Alliance Building', description: 'Influence through shared outcomes.' }
+        ]
+      },
+      {
+        id: 'talent',
+        title: 'TALENT DEVELOPMENT & TEAM BUILDING',
+        icon: '🌱',
+        color: '#98FB98',
+        description: 'Systems for bringing out the best in people and teams.',
+        phase: 'transformation',
+        items: [
+          { title: 'Strength-Based Leadership', description: 'Optimize what\'s already strong instead of fixing weaknesses.' },
+          { title: 'Failure Fridays: Creating Psychological Safety', description: 'Reward effort and learning. Normalize risk.' },
+          { title: 'The Calibration Call System', description: 'Live diagnostics for performance without pressure.' },
+          { title: 'Leadership Development through Calculated Discomfort', description: 'Growth comes from the right stretch, not just praise.' },
+          { title: 'Resetting Team Dynamics Through Reorganization', description: 'Shift seats to shift culture. The team you inherit isn\'t final.' },
+          { title: 'Executive Relationship Brokering', description: 'Open doors that elevate your people.' },
+          { title: 'Deflecting Credit and Building Team Recognition', description: 'Power move: make others the hero.' }
+        ]
+      },
+      {
+        id: 'performance',
+        title: 'PERFORMANCE SYSTEMS',
+        icon: '📊',
+        color: '#FFD700',
+        description: 'Frameworks that drive measurable, consistent results.',
+        phase: 'execution',
+        items: [
+          { title: 'Visibility Drives Behavior: Real-Time Performance Tracking', description: 'What\'s seen is acted on. Build systems that spotlight the right things.' },
+          { title: 'The Five-Question Strategy Framework', description: 'Sharpen thinking through structured prompts.' },
+          { title: 'Quota Design: Fairness, Transparency, Accountability', description: 'Comp models that create belief—not burnout.' },
+          { title: 'The "Vital Few" Scorecard', description: 'Focus on what matters. Let the rest go.' },
+          { title: 'Metrics Mastery', description: 'Interpret, coach, and act on numbers with precision.' },
+          { title: 'Initiative Tracking in Action', description: 'Layered plays that proved themselves across time and teams.' }
+        ]
+      },
+      {
+        id: 'sales',
+        title: 'SALES & CUSTOMER ENGAGEMENT',
+        icon: '🤝',
+        color: '#FF6B6B',
+        description: 'Strategies for customer acquisition, retention, and growth.',
+        phase: 'execution',
+        items: [
+          { title: 'Tech Check: Consultative Approach to Prospecting', description: 'Ask better questions. Diagnose before you pitch.' },
+          { title: 'Project Domination (PDOM): Competitive Intelligence', description: 'Prospecting turned into a game—with real intelligence.' },
+          { title: 'Prospecting Maps: Location Intelligence', description: 'Field strategy meets street-level data.' },
+          { title: 'Customer Success Model: The 90-Day, 5-Touch System', description: 'Onboard with love. Retain through proactive care.' }
+        ]
+      },
+      {
+        id: 'innovation',
+        title: 'DRIVING INNOVATION',
+        icon: '💡',
+        color: '#20B2AA',
+        description: 'Methods for creating breakthrough solutions and calculated risk-taking.',
+        phase: 'growth',
+        items: [
+          { title: 'ROI-Driven Experimentation', description: 'Innovate with intent. Track your bets.' },
+          { title: 'The Playing to Win Framework: The Invisible Hand Approach', description: 'Subtle alignment beats loud mandates.' },
+          { title: 'War Gaming: Stress-Testing Strategies', description: 'Play out the risks before they play you.' },
+          { title: 'Systems-Based Problem Solving', description: 'See the machinery behind the mess.' },
+          { title: 'Calculated Risk-Taking', description: 'Courage meets logic. That\'s where breakthroughs live.' },
+          { title: 'Risk > Comfort', description: 'If you want new results, you can\'t recycle the old rules.' }
+        ]
+      },
+      {
+        id: 'communication',
+        title: 'COMMUNICATION & TRANSPARENCY',
+        icon: '🔍',
+        color: '#D8BFD8',
+        description: 'Systems for clarity, alignment, and constructive dialogue.',
+        phase: 'execution',
+        items: [
+          { title: 'The Handlebar Test: Empowerment through Trust', description: 'Let go—and watch who can ride.' },
+          { title: 'Aggressive Agreement: Constructive Conflict', description: 'Same goal, different path. Sharpen, don\'t shatter.' },
+          { title: 'Rules of Engagement (ROE): Clarity and Accountability', description: 'Boundaries that align effort without policing.' },
+          { title: 'Data Transparency: Sharing the Actual Numbers', description: 'Real metrics = real trust.' },
+          { title: 'Radical Transparency', description: 'Say what others won\'t. Lead with the truth.' },
+          { title: 'Strategic Communication', description: 'Say it simply. Say it seven ways.' },
+          { title: 'Inspirational Leadership', description: 'Speak to the heart, not just the plan.' }
+        ]
+      },
+      {
+        id: 'development',
+        title: 'LEADERSHIP DEVELOPMENT APPROACHES',
+        icon: '🎯',
+        color: '#FFA500',
+        description: 'Methodologies for developing yourself and others as leaders.',
+        phase: 'growth',
+        items: [
+          { title: 'Reflective Question Leadership', description: 'Ask, don\'t tell. Shape their thinking.' },
+          { title: 'Strategic Thinking Time', description: 'Schedule your clarity. Don\'t wait for it.' },
+          { title: 'Brain Mining', description: 'Extract wisdom from every corner.' },
+          { title: 'Initiative Tracking and Impact Measurement', description: 'Prove progress. Show cause and effect.' },
+          { title: 'Identifying and Influencing Key Players', description: 'The real power isn\'t always on the org chart.' },
+          { title: 'The Calculated Reorganization', description: 'Realign structure with your strategy.' }
+        ]
+      },
+      {
+        id: 'personal',
+        title: 'PERSONAL LEADERSHIP DISCIPLINES',
+        icon: '⚡',
+        color: '#4682B4',
+        description: 'Practices for sustainable excellence and authenticity.',
+        phase: 'mastery',
+        items: [
+          { title: 'Balancing Excellence and Well-Being', description: 'Drive results without burning out.' },
+          { title: 'The Fixer Files: Your Case Study Framework', description: 'Turn wins into repeatable plays.' },
+          { title: 'Mentorship that Multiplies', description: 'Invest in others to scale your impact.' },
+          { title: 'Leading with Authenticity', description: 'The more you, the more they follow.' }
+        ]
+      },
+      {
+        id: 'interview',
+        title: 'THE INTERVIEW OS',
+        icon: '🎤',
+        color: '#4B0082',
+        description: 'Frameworks for acing high-stakes executive interviews.',
+        phase: 'growth',
+        items: [
+          { title: 'Anchor Your 3', description: 'Shape how they remember you: 3 traits, 1 story.' },
+          { title: 'Shaping the Criteria', description: 'Influence what matters—before the interview ends.' },
+          { title: 'Stakeholder Mapping', description: 'Win over the real decision-makers, not just the loudest voices.' },
+          { title: 'Business Plans That Close', description: 'Don\'t send fluff. Send the blueprint they\'ll remember.' }
+        ]
+      },
+      {
+        id: 'transitions',
+        title: 'NAVIGATING TRANSITIONS & TURNAROUNDS',
+        icon: '🧭',
+        color: '#E74C3C',
+        description: 'Frameworks for leading through high-stakes resets and transformations.',
+        phase: 'transformation',
+        items: [
+          { title: 'Taking Over in Chaos', description: 'Stabilize first. Then energize.' },
+          { title: 'Reorg, Replace, or Reinspire?', description: 'Know what your team needs—and when to pivot.' },
+          { title: 'The Power of One High-Impact Fix', description: 'Small wins with symbolic weight = cultural shift.' },
+          { title: 'New Boss to Trusted Leader', description: 'How to earn belief early.' },
+          { title: 'Your First 100 Days (Advanced)', description: 'Not just fast wins—strategic positioning.' }
+        ]
+      },
+      {
+        id: 'mindset',
+        title: 'MINDSET ENGINEERING',
+        icon: '🔁',
+        color: '#9B59B6',
+        description: 'Techniques for unlocking mental blocks and shifting perspective.',
+        phase: 'foundation',
+        items: [
+          { title: 'The Mirror Conversation', description: 'Replace victim loops with owner logic.' },
+          { title: 'Pattern Breaking & Thought Rewiring', description: 'Show them how to see and think differently.' },
+          { title: 'Accountability Without Shame', description: 'Truth with dignity transforms faster.' },
+          { title: 'Identity Before Strategy', description: 'You can\'t build what you don\'t believe you are.' },
+          { title: 'The Confidence Engine', description: 'Create compounding belief through wins and reps.' }
+        ]
+      },
+      {
+        id: 'goals',
+        title: 'GOAL SETTING & EXECUTION',
+        icon: '🎯',
+        color: '#F1C40F',
+        description: 'Systems for driving disciplined outcomes that matter.',
+        phase: 'execution',
+        items: [
+          { title: 'The One Goal Rule', description: 'Focus creates force.' },
+          { title: 'Fire and Forget Setup', description: 'Remove friction from follow-through.' },
+          { title: 'Quarterly Planning, Tactical Flex', description: 'Set your direction. Leave room to adjust.' },
+          { title: 'The Critical Few: Master Edition', description: 'Optimize attention like a scalpel.' },
+          { title: 'Scoreboards People Actually Use', description: 'Visuals that change behavior.' }
+        ]
+      },
+      {
+        id: 'ideas',
+        title: 'IDEA OPERATING SYSTEM',
+        icon: '🧠',
+        color: '#3498DB',
+        description: 'Frameworks for shaping thinking and driving clarity.',
+        phase: 'mastery',
+        items: [
+          { title: 'Brain Mining Techniques', description: 'Get gold from the ground floor.' },
+          { title: 'Subconscious Prompting', description: 'Let your overnight mind work the problem.' },
+          { title: 'Message in 7 Ways', description: 'If they don\'t remember, it didn\'t land.' },
+          { title: 'What Did Your Peers Say?', description: 'Culture of collaboration, not escalation.' },
+          { title: 'Simple Words, Sharp Thinking', description: 'Strategy isn\'t smart until it\'s clear.' }
+        ]
+      },
+      {
+        id: 'culture',
+        title: 'CULTURE ENGINEERING',
+        icon: '🔥',
+        color: '#FF5733',
+        description: 'Systematic approaches to building loyalty-based cultures.',
+        phase: 'growth',
+        items: [
+          { title: 'Micro-Rituals that Stick', description: 'Build belonging in small moments.' },
+          { title: 'Introducing New Norms Without Pushback', description: 'Subtle changes, big buy-in.' },
+          { title: 'Celebrate What Didn\'t Work', description: 'Make risk safe. Make effort sacred.' },
+          { title: 'Language Engineering', description: 'Create culture through what you call things.' },
+          { title: 'Recognition That Hits Different', description: 'Tie celebration to shared identity.' }
+        ]
+      },
+      {
+        id: 'tools',
+        title: 'TOOLS & TEMPLATES',
+        icon: '🛠️',
+        color: '#7F8C8D',
+        description: 'Ready-to-use resources for implementing the frameworks.',
+        phase: 'mastery',
+        items: [
+          { title: '1:1 Intake Template', description: 'Map their world. Meet their reality.' },
+          { title: 'Coaching Tracker', description: 'Keep momentum visible.' },
+          { title: 'Strategic Stack Tracker', description: 'Log your initiatives with outcomes.' },
+          { title: 'Culture Pulse Survey', description: 'Get truth from the quiet corners.' },
+          { title: 'Leader Reflection Prompts', description: 'Simple questions that spark breakthrough.' },
+          { title: 'Leadership Mirror Quiz (Coming Soon)', description: 'Let them meet the version of themselves holding them back.' }
+        ]
+      },
+      {
+        id: 'intro',
+        title: 'INTRO & ORIENTATION',
+        icon: '✅',
+        color: '#4A90E2',
+        description: 'Set the tone. Define who this is for. Misfits, legacy-builders, quiet rebels.',
+        phase: 'foundation',
+        items: [
+          { title: 'Your Leadership Archetype Philosophy', description: 'Misfit → Builder → Architect → Legacy' },
+          { title: 'How to Use This Playbook', description: 'Coach yourself or others' },
+          { title: 'The Flywheel vs. Treadmill Mindset', description: 'Sustainable momentum vs. exhausting effort' },
+          { title: 'Who This is Not For', description: 'Filter out the wrong people' }
+        ]
+      }
+    ];
+    
+    const phases = {
+      foundation: { color: '#3498DB', title: 'Foundation' },
+      transformation: { color: '#9B59B6', title: 'Transformation' },
+      execution: { color: '#F1C40F', title: 'Execution' },
+      growth: { color: '#2ECC71', title: 'Growth' },
+      mastery: { color: '#E74C3C', title: 'Mastery' }
+    };
+    
+    const phaseOrder = ['foundation', 'transformation', 'execution', 'growth', 'mastery'];
+    
+    // DOM elements
+    const categoryGrid = document.getElementById('category-grid');
+    const journeyMap = document.getElementById('journey-map');
+    const searchInput = document.getElementById('search-input');
+    const clearSearch = document.getElementById('clear-search');
+    const gridViewBtn = document.querySelector('.grid-view');
+    const journeyViewBtn = document.querySelector('.journey-view');
+    
+    // Current state
+    let activeCategory = null;
+    let activeFramework = null;
+    let currentView = 'grid';
+    let filteredCategories = [...categories];
+    
+    // Initialize
+    function init() {
+      renderCategoryGrid();
+      renderJourneyMap();
+      setupEventListeners();
+    }
+    
+    // Event listeners
+    function setupEventListeners() {
+      searchInput.addEventListener('input', handleSearch);
+      clearSearch.addEventListener('click', clearSearchInput);
+    }
+    
+    // Toggle view (grid or journey map)
+    function toggleView(view) {
+      currentView = view;
+      
+      // Update active button
+      gridViewBtn.classList.toggle('active', view === 'grid');
+      journeyViewBtn.classList.toggle('active', view === 'journey');
+      
+      // Show/hide appropriate view
+      if (view === 'grid') {
+        categoryGrid.style.display = 'grid';
+        journeyMap.style.display = 'none';
+      } else {
+        categoryGrid.style.display = 'none';
+        journeyMap.style.display = 'block';
+      }
+    }
+    
+    // Render category grid
+    function renderCategoryGrid() {
+      categoryGrid.innerHTML = '';
+      
+      filteredCategories.forEach(category => {
+        const categoryCard = document.createElement('div');
+        categoryCard.className = 'category-card';
+        categoryCard.dataset.id = category.id;
+        
+        const categoryHeader = document.createElement('div');
+        categoryHeader.className = 'category-header';
+        categoryHeader.style.borderTopColor = category.color;
+        categoryHeader.addEventListener('click', () => toggleCategory(category.id));
+        
+        const categoryTitle = document.createElement('div');
+        categoryTitle.className = 'category-title';
+        
+        const categoryIcon = document.createElement('span');
+        categoryIcon.className = 'category-icon';
+        categoryIcon.textContent = category.icon;
+        
+        const title = document.createElement('h3');
+        title.textContent = category.title;
+        
+        categoryTitle.appendChild(categoryIcon);
+        categoryTitle.appendChild(title);
+        
+        const categoryDescription = document.createElement('div');
+        categoryDescription.className = 'category-description';
+        categoryDescription.textContent = category.description;
+        
+        categoryHeader.appendChild(categoryTitle);
+        categoryHeader.appendChild(categoryDescription);
+        
+        const categoryItems = document.createElement('div');
+        categoryItems.className = 'category-items';
+        categoryItems.id = `items-${category.id}`;
+        
+        const categoryItemsInner = document.createElement('div');
+        categoryItemsInner.className = 'category-items-inner';
+        
+        category.items.forEach((item, index) => {
+          const frameworkItem = document.createElement('div');
+          frameworkItem.className = 'framework-item';
+          frameworkItem.dataset.id = `${category.id}-${index}`;
+          frameworkItem.addEventListener('click', () => toggleFramework(`${category.id}-${index}`));
+          
+          const frameworkTitle = document.createElement('div');
+          frameworkTitle.className = 'framework-title';
+          frameworkTitle.textContent = item.title;
+          
+          const frameworkDescription = document.createElement('div');
+          frameworkDescription.className = 'framework-description';
+          
+          // Add the item description
+          const descriptionText = document.createElement('div');
+          descriptionText.textContent = item.description;
+          frameworkDescription.appendChild(descriptionText);
+          
+          // Add the view framework button with lock icon
+          const frameworkAction = document.createElement('div');
+          frameworkAction.className = 'framework-action';
+          
+          const frameworkButton = document.createElement('button');
+          frameworkButton.className = 'framework-button';
+          frameworkButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showModal('premium');
+          });
+          
+          const lockIcon = document.createElement('span');
+          lockIcon.className = 'lock-icon';
+          
+          const buttonText = document.createElement('span');
+          buttonText.textContent = 'View Full Framework';
+          
+          const premiumTag = document.createElement('span');
+          premiumTag.className = 'premium-tag';
+          premiumTag.textContent = 'Client Only';
+          
+          frameworkButton.appendChild(lockIcon);
+          frameworkButton.appendChild(buttonText);
+          
+          frameworkAction.appendChild(frameworkButton);
+          frameworkAction.appendChild(premiumTag);
+          
+          frameworkDescription.appendChild(frameworkAction);
+          
+          frameworkItem.appendChild(frameworkTitle);
+          frameworkItem.appendChild(frameworkDescription);
+          
+          categoryItemsInner.appendChild(frameworkItem);
+        });
+        
+        categoryItems.appendChild(categoryItemsInner);
+        
+        categoryCard.appendChild(categoryHeader);
+        categoryCard.appendChild(categoryItems);
+        
+        categoryGrid.appendChild(categoryCard);
+      });
+    }
+    
+    // Render journey map
+    function renderJourneyMap() {
+      // Create phase legend
+      const phaseLegend = document.querySelector('.phase-legend');
+      phaseLegend.innerHTML = '';
+      
+      Object.entries(phases).forEach(([phase, details]) => {
+        const phaseItem = document.createElement('div');
+        phaseItem.className = 'phase-item';
+        
+        const phaseColor = document.createElement('div');
+        phaseColor.className = 'phase-color';
+        phaseColor.style.backgroundColor = details.color;
+        
+        const phaseName = document.createElement('div');
+        phaseName.className = 'phase-name';
+        phaseName.textContent = details.title;
+        
+        phaseItem.appendChild(phaseColor);
+        phaseItem.appendChild(phaseName);
+        
+        phaseLegend.appendChild(phaseItem);
+      });
+      
+      // Create journey path
+      const journeyPath = document.querySelector('.journey-path');
+      journeyPath.innerHTML = '<div class="journey-line"></div>';
+      
+      // Group categories by phase
+      const categoriesByPhase = {};
+      phaseOrder.forEach(phase => {
+        categoriesByPhase[phase] = filteredCategories.filter(cat => cat.phase === phase);
+      });
+      
+      // Create phase sections
+      phaseOrder.forEach(phase => {
+        if (categoriesByPhase[phase].length === 0) return;
+        
+        const phaseSection = document.createElement('div');
+        phaseSection.className = 'phase-section';
+        
+        const phaseHeader = document.createElement('div');
+        phaseHeader.className = 'phase-header';
+        
+        const phaseTitle = document.createElement('div');
+        phaseTitle.className = 'phase-title';
+        phaseTitle.textContent = phases[phase].title + ' Phase';
+        phaseTitle.style.backgroundColor = phases[phase].color;
+        
+        phaseHeader.appendChild(phaseTitle);
+        
+        const phaseCategories = document.createElement('div');
+        phaseCategories.className = 'phase-categories';
+        
+        categoriesByPhase[phase].forEach(category => {
+          const journeyCategory = document.createElement('div');
+          journeyCategory.className = 'journey-category';
+          
+          const journeyCategoryHeader = document.createElement('div');
+          journeyCategoryHeader.className = 'journey-category-header';
+          
+          const journeyCategoryIcon = document.createElement('div');
+          journeyCategoryIcon.className = 'journey-category-icon';
+          journeyCategoryIcon.style.backgroundColor = category.color;
+          journeyCategoryIcon.textContent = category.icon;
+          
+          const journeyCategoryTitle = document.createElement('div');
+          journeyCategoryTitle.className = 'journey-category-title';
+          journeyCategoryTitle.textContent = category.title;
+          
+          journeyCategoryHeader.appendChild(journeyCategoryIcon);
+          journeyCategoryHeader.appendChild(journeyCategoryTitle);
+          
+          const journeyCategoryDescription = document.createElement('div');
+          journeyCategoryDescription.className = 'journey-category-description';
+          journeyCategoryDescription.textContent = category.description;
+          
+          const journeyFrameworks = document.createElement('div');
+          journeyFrameworks.className = 'journey-frameworks';
+          
+          const frameworksTitle = document.createElement('h4');
+          frameworksTitle.textContent = 'Key Frameworks:';
+          
+          const frameworksList = document.createElement('ul');
+          
+          category.items.slice(0, 3).forEach(item => {
+            const frameworkItem = document.createElement('li');
+            
+            const frameworkText = document.createElement('span');
+            frameworkText.textContent = item.title;
+            
+            const lockIcon = document.createElement('span');
+            lockIcon.className = 'lock-icon';
+            lockIcon.style.marginLeft = '5px';
+            
+            frameworkItem.appendChild(frameworkText);
+            frameworkItem.appendChild(lockIcon);
+            
+            frameworksList.appendChild(frameworkItem);
+          });
+          
+          if (category.items.length > 3) {
+            const moreFrameworks = document.createElement('li');
+            moreFrameworks.className = 'more-frameworks';
+            moreFrameworks.textContent = `+ ${category.items.length - 3} more frameworks`;
+            frameworksList.appendChild(moreFrameworks);
+          }
+          
+          journeyFrameworks.appendChild(frameworksTitle);
+          journeyFrameworks.appendChild(frameworksList);
+          
+          journeyCategory.appendChild(journeyCategoryHeader);
+          journeyCategory.appendChild(journeyCategoryDescription);
+          journeyCategory.appendChild(journeyFrameworks);
+          
+          phaseCategories.appendChild(journeyCategory);
+        });
+        
+        phaseSection.appendChild(phaseHeader);
+        phaseSection.appendChild(phaseCategories);
+        
+        journeyPath.appendChild(phaseSection);
+      });
+    }
+    
+    // Toggle category expand/collapse
+    function toggleCategory(categoryId) {
+      if (activeCategory === categoryId) {
+        // Collapse if already active
+        document.getElementById(`items-${categoryId}`).classList.remove('active');
+        activeCategory = null;
+      } else {
+        // Collapse any currently active category
+        if (activeCategory) {
+          document.getElementById(`items-${activeCategory}`).classList.remove('active');
+        }
+        
+        // Expand the clicked category
+        document.getElementById(`items-${categoryId}`).classList.add('active');
+        activeCategory = categoryId;
+      }
+    }
+    
+    // Toggle framework expand/collapse
+    function toggleFramework(frameworkId) {
+      const frameworkElements = document.querySelectorAll('.framework-item');
+      
+      if (activeFramework === frameworkId) {
+        // Collapse if already active
+        document.querySelector(`.framework-item[data-id="${frameworkId}"]`).classList.remove('active');
+        activeFramework = null;
+      } else {
+        // Collapse any currently active framework
+        frameworkElements.forEach(el => el.classList.remove('active'));
+        
+        // Expand the clicked framework
+        document.querySelector(`.framework-item[data-id="${frameworkId}"]`).classList.add('active');
+        activeFramework = frameworkId;
+      }
+    }
+    
+    // Handle search input
+    function handleSearch() {
+      const searchTerm = searchInput.value.toLowerCase().trim();
+      
+      // Show/hide clear button
+      clearSearch.style.display = searchTerm ? 'block' : 'none';
+      
+      if (!searchTerm) {
+        filteredCategories = [...categories];
+      } else {
+        filteredCategories = categories.filter(category => 
+          category.title.toLowerCase().includes(searchTerm) || 
+          category.description.toLowerCase().includes(searchTerm) ||
+          category.items.some(item => 
+            item.title.toLowerCase().includes(searchTerm) || 
+            item.description.toLowerCase().includes(searchTerm)
+          )
+        );
+      }
+      
+      renderCategoryGrid();
+      renderJourneyMap();
+    }
+    
+    // Clear search input
+    function clearSearchInput() {
+      searchInput.value = '';
+      clearSearch.style.display = 'none';
+      filteredCategories = [...categories];
+      renderCategoryGrid();
+      renderJourneyMap();
+    }
+    
+    // Show modal
+    function showModal(type) {
+      if (type === 'premium') {
+        document.getElementById('premium-modal').style.display = 'flex';
+      } else if (type === 'contact') {
+        document.getElementById('contact-modal').style.display = 'flex';
+      }
+    }
+    
+    // Close modal
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+    
+    // Initialize the app
+    init();
+    
+    // Close modals when clicking outside
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
