@@ -1,0 +1,136 @@
+/* Mobile Navigation Styles - Standalone File */
+
+/* Basic Header */
+header {
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo span {
+  color: #00e5ff;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+/* Mobile Toggle Button - Important! */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Active Navigation Styling */
+.nav-links a.active {
+  color: #00e5ff;
+}
+
+/* Critical Mobile Styles */
+@media (max-width: 767px) {
+  /* Show mobile toggle button */
+  .mobile-toggle {
+    display: block !important;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1010;
+  }
+
+  /* Hide desktop nav by default */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show nav when active class is applied */
+  .nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 20px;
+    z-index: 1000;
+  }
+
+  /* Style nav items */
+  .nav-links li {
+    margin: 0;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  /* Dropdown styles for mobile */
+  .nav-links .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .dropdown-menu.show {
+    display: block !important;
+  }
+}

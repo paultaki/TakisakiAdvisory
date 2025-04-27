@@ -1129,3 +1129,194 @@ footer {
 .mb-3 {
   margin-bottom: var(--spacing-lg);
 }
+/* Hero section styles with image size control */
+.hero {
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background-color: #121212;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .hero-content {
+    width: 45%;
+    padding-right: 20px;
+  }
+  
+  .chess-visual {
+    width: 55%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Image size control */
+  .chess-image {
+    width: 100%;
+    max-width: 650px; /* Control the maximum width */
+    height: auto;
+    object-fit: cover; /* Maintains aspect ratio */
+    border-radius: 4px;
+    /* Optional: Add a subtle shadow for depth */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Typography */
+  h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  
+  .line {
+    display: block;
+  }
+  
+  .accent {
+    color: #00e5ff;
+  }
+  
+  .hero-subtext {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+  }
+  
+  /* CTA buttons */
+  .hero-cta {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .primary {
+    background-color: #00e5ff;
+    color: #121212;
+  }
+  
+  .primary:hover {
+    background-color: #00c2d8;
+  }
+  
+  .text-link {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .text-link:hover {
+    color: #00e5ff;
+  }
+  
+  .arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .text-link:hover .arrow {
+    transform: translateX(5px);
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .chess-image {
+      max-width: 550px;
+    }
+    
+    h1 {
+      font-size: 4rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .hero-content, .chess-visual {
+      width: 100%;
+    }
+    
+    .hero-content {
+      margin-bottom: 40px;
+      padding-right: 0;
+    }
+    
+    .hero-cta {
+      justify-content: center;
+    }
+    
+    .chess-image {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 100px 0 60px;
+      height: auto;
+    }
+    
+    h1 {
+      font-size: 3rem;
+    }
+    
+    .chess-image {
+      max-width: 400px;
+    }
+    
+    .hero-subtext {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    .chess-image {
+      max-width: 300px;
+    }
+    
+    .hero-cta {
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .button {
+      width: 100%;
+    }
+  }
