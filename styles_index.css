@@ -1050,20 +1050,146 @@ body {
 
 /* Base styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    color: #000;
-  }
-  
-  .container {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section common styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Services Section */
+.services {
+  background-color: #f5f5f7;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.service-item {
+  text-align: center;
+  padding: 30px;
+}
+
+.service-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.service-item p {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Advantage Section */
+.advantage {
+  background-color: #ffffff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.advantage-item {
+  text-align: center;
+  padding: 30px;
+}
+
+.advantage-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.advantage-item p {
+  font-size: 1.1rem;
+  color: #333;
+  text-align: center;
+}
+
+/* About Section */
+.about {
+  height: 100vh;
+  background-color: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content h2 {
+  font-size: 2.2rem;
+  color: #000;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.subtext {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: center;
+}
+
+.light {
+  color: #555;
+  font-weight: 300;
+}
+/* Boxed Sections CSS */
+
+/* Common container styling */
+.container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
   
-  /* Section common styles */
+  /* Section headers */
   .section-header {
     text-align: center;
     margin-bottom: 60px;
@@ -1072,111 +1198,266 @@ body {
   .section-header h2 {
     font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    color: #1d1d1f;
   }
   
-  /* Services Section */
+  /* Services section styling */
   .services {
-    background-color: #f5f5f7;
     padding: 100px 0;
-    text-align: center;
+    background-color: #f5f5f7;
   }
   
   .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
   }
   
   .service-item {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
-    padding: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-5px);
   }
   
   .service-item h3 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
     font-weight: 600;
-    text-align: center;
+    margin-bottom: 15px;
   }
   
   .service-item p {
-    font-size: 1.1rem;
-    color: #333;
-    text-align: center;
+    color: #555;
+    line-height: 1.6;
   }
   
-  /* Advantage Section */
+  /* Advantage section styling */
   .advantage {
-    background-color: #ffffff;
     padding: 100px 0;
-    text-align: center;
+    background-color: #f5f5f7;
   }
   
   .advantage-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .advantage-item {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+  }
+  
+  .advantage-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .advantage-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  
+  .advantage-item p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .service-item, .advantage-item {
+      max-width: 90%;
+    }
+  }
+
+  \/* Boxed layout for Services and Advantage sections */
+
+  /* Common section styling */
+  .services, .advantage {
+    padding: 100px 0;
+    min-height: 100vh; /* Fill full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .services {
+    background-color: #f5f5f7;
+  }
+  
+  .advantage {
+    background-color: #fff;
+  }
+  
+  /* Section headers */
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1d1d1f;
+  }
+  
+  /* Grids for both sections */
+  .services-grid, .advantage-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
   
-  .advantage-item {
+  /* Box styling for both sections */
+  .service-item, .advantage-item {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
     text-align: center;
-    padding: 30px;
+    transition: transform 0.3s ease;
   }
   
-  .advantage-item h3 {
+  .service-item:hover, .advantage-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-item h3, .advantage-item h3 {
     font-size: 1.5rem;
-    margin-bottom: 15px;
     font-weight: 600;
-    text-align: center;
+    margin-bottom: 15px;
+    color: #1d1d1f;
   }
   
-  .advantage-item p {
-    font-size: 1.1rem;
-    color: #333;
-    text-align: center;
-  }
-  
-  /* About Section */
-  .about {
-    height: 100vh;
-    background-color: #f5f5f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .about-content h2 {
-    font-size: 2.2rem;
-    color: #000;
-    margin-bottom: 30px;
-    line-height: 1.3;
-    text-align: center;
-  }
-  
-  .subtext {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #000;
-    text-align: center;
-  }
-  
-  .light {
+  .service-item p, .advantage-item p {
     color: #555;
-    font-weight: 300;
+    line-height: 1.6;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 1100px) {
+    .services-grid, .advantage-grid {
+      gap: 20px;
+    }
+    
+    .service-item, .advantage-item {
+      max-width: 300px;
+    }
+  }
+  
+  /* Mobile styling */
+  @media (max-width: 768px) {
+    .services-grid, .advantage-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .service-item, .advantage-item {
+      max-width: 90%;
+      margin-bottom: 20px;
+    }
+    
+    .services, .advantage {
+      padding: 80px 20px;
+    }
+  }
+  /* Boxed layout for Services and Advantage sections */
+
+/* Common section styling */
+.services, .advantage {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .services {
+    background-color: #f5f5f7;
+  }
+  
+  .advantage {
+    background-color: #fff;
+  }
+  
+  /* Common grid layout for both sections */
+  .services-grid, .advantage-grid {
+    display: flex;
+    flex-direction: row; /* Force horizontal layout */
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Common box styling */
+  .service-item, .advantage-item {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-item:hover, .advantage-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-item h3, .advantage-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #1d1d1f;
+  }
+  
+  .service-item p, .advantage-item p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Mobile styling */
+  @media (max-width: 768px) {
+    .services-grid, .advantage-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .service-item, .advantage-item {
+      max-width: 90%;
+      margin-bottom: 20px;
+    }
+    
+    .services, .advantage {
+      padding: 80px 20px;
+    }
   }
