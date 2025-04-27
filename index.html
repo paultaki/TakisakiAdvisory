@@ -94,6 +94,7 @@
     <link rel="stylesheet" href="styles_index.css" />
   </head>
   <body>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="chessboard-container">
         <div class="chessboard">
@@ -102,7 +103,7 @@
       </div>
       <div class="hero-content">
         <h1>DON'T JUST PLAY THE GAME.</h1>
-        <p><span style="color: #00e5ff">REWIRE</span> IT.</p>
+        <p><span id="revealText" class="reveal-text" style="font-size: 2em;"><span style="color: #00e5ff">REWIRE</span> IT.</span></p>
       </div>
 
       <!-- Scroll indicator to hint users to scroll down -->
@@ -112,563 +113,61 @@
       </div>
     </section>
 
-    <section
-      class="tailored-tools"
-      style="padding: 200px 0; text-align: center; background-color: white"
-    >
+    <!-- Services Section (Moved Up) -->
+    <section class="services" id="services" style="padding: 100px 0; text-align: center; background-color: white">
       <div class="container">
-        <h2 style="font-size: 2rem; margin-bottom: 20px; font-weight: 600">
-          Tailored Tools. <br />Real Results.
+        <h2 style="font-size: 2.2rem; margin-bottom: 40px; font-weight: 600" class="fade-in">
+          Services
         </h2>
-        <br />
-
-        <p
-          style="
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.2rem;
-            line-height: 1.7;
-          "
-        >
-          If you're looking for a <strong>copy-paste coaching plan</strong>,
-          you're in the <strong>wrong place</strong>.<br /><br />
-          But if you want <strong>strategic clarity</strong>,
-          <strong>personal insight</strong>, and
-          <strong>custom-built tools</strong> for how you actually
-          operate—<strong>this is it</strong>.
-        </p>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-header">
-          <h2>Services</h2>
-        </div>
         <div class="services-grid">
-          <div class="service-item">
-            <h3>Executive Coaching</h3>
-            <p>For leaders ready to rise—without conforming.</p>
-          </div>
-          <div class="service-item">
-            <h3>Misfit Leadership Program</h3>
-            <p>
-              Own your truth. Transform your "disorder" into your operating
-              system.
-            </p>
-          </div>
-          <div class="service-item">
-            <h3>Strategic Consulting</h3>
-            <p>
-              Focus on the critical few metrics that actually matter.<br />
-              <em>Because not every problem deserves a slide deck.</em>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Advantage Section -->
-    <section class="advantage" id="advantage">
-      <div class="container">
-        <div class="section-header">
-          <h2>The Advantage of Being Unaligned</h2>
-        </div>
-        <div class="advantage-grid">
-          <div class="advantage-item">
-            <h3>Work Smarter</h3>
-            <p>Efficiency isn't laziness—it's evolution.</p>
-          </div>
-          <div class="advantage-item">
-            <h3>Skip the Fire Drills</h3>
-            <p>Stay hungry for what actually matters.</p>
-          </div>
-          <div class="advantage-item">
-            <h3>Delegate to Multiply</h3>
-            <p>Command respect. Release control to unlock capability.</p>
-          </div>
+          <a href="https://www.paultakisaki.com/executive_coaching.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="service-item fade-in" style="transition-delay: 0.1s;">
+              <h3>Executive Coaching</h3>
+              <p>For leaders who see beyond the horizon. We don't just improve your performance—we transform how you think about leadership itself. This isn't about fitting in; it's about standing out where it matters.</p>
+            </div>
+          </a>
+          <a href="https://www.paultakisaki.com/leader_development.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="service-item fade-in" style="transition-delay: 0.3s;">
+              <h3>Leadership Development</h3>
+              <p>What once held you back can propel you forward. We help you turn your unique perspective into your strategic advantage—the difference that makes all the difference.</p>
+            </div>
+          </a>
+          <a href="https://www.paultakisaki.com/strategic_consulting.html" style="text-decoration: none; color: inherit; display: block;">
+            <div class="service-item fade-in" style="transition-delay: 0.5s;">
+              <h3>Strategic Consulting</h3>
+              <p>Simplicity is the ultimate sophistication. We strip away the noise to focus on the vital few metrics that drive 80% of your results. Elegant solutions to complex problems.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- About Section - Full Screen -->
-    <!-- About Section - Full Screen -->
-    <section
-      class="about"
-      id="about"
-      style="
-        height: 100vh;
-        background-color: #f5f5f7;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px;
-      "
-    >
-      <div class="about-content" style="max-width: 800px; margin: 0 auto">
-        <h2
-          style="
-            font-size: 2.2rem;
-            color: #000;
-            margin-bottom: 30px;
-            line-height: 1.3;
-          "
-        >
-          Most are playing checkers.<br />
-          you're playing chess..
-        </h2>
-
-        <p
-          style="
-            font-size: 1.4rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            color: #000000;
-          "
-        >
-          But you're not just playing —
-          <strong>you're architecting the endgame.</strong>
-        </p>
-
-        <p style="font-size: 1.4rem; line-height: 1.6; color: #333333">
-          While they react, you build. You already know how this ends — because
-          you designed it that way.
-        </p>
-      </div>
-    </section>
-    <!-- Impact Section - With Extended Black Area -->
-    <section class="impact" id="impact">
-      <div class="impact-grid">
-        <div class="impact-item">
-          <div class="impact-number">1K+</div>
-          <div class="impact-content">
-            <h2>1K+</h2>
-            <p>
-              Team Members Elevated — Not managed. Not directed. Led with
-              Relentless Purpose that sparked revolutionary performance.
-            </p>
-          </div>
+    <!-- About You Section (Replacing Advantage Section) -->
+    <section class="about-you" id="about-you" style="background-color: #f5f5f7; padding: 100px 0;">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <h2 style="font-size: 2.2rem; color: #000; font-weight: 600;">About Paul</h2>
         </div>
-
-        <div class="impact-item">
-          <div class="impact-number">4x</div>
-          <div class="impact-content">
-            <h2>4x</h2>
-            <p>
-              President's Cabinet — Top 1%. Recognition not for playing by the
-              rules, but for the Grit to rewrite them in ways nobody thought
-              possible.
-            </p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 40px;">
+          <div style="flex: 1; min-width: 300px;">
+            <img src="images/headshot_bw_tight.webp" alt="Paul Takisaki" style="width: 100%; max-width: 400px; border-radius: 4px; display: block; margin: 0 auto;">
           </div>
-        </div>
-
-        <div class="impact-item">
-          <div class="impact-number">$1B+</div>
-          <div class="impact-content">
-            <h2>$1B+</h2>
-            <p>
-              Revenue Launched — Not incremental improvements. Breakthrough
-              initiatives that created entirely new value categories.
+          <div style="flex: 2; min-width: 300px;">
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;">
+              Paul Takisaki brings 20+ years of transformational leadership experience to his coaching practice. As a former Associate Vice President at Verizon, Paul led 400+ team members across multiple markets, consistently delivering record-breaking results.
             </p>
-          </div>
-        </div>
-
-        <div class="impact-item">
-          <div class="impact-number">SEVEN</div>
-          <div class="impact-content">
-            <h2>SEVEN</h2>
-            <p>
-              Markets Transformed — Personally rebuilt trust, teams, and
-              outcomes— record-breaking performance in every market led.
+            <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 20px;">
+              A 4-time President's Cabinet award winner (top 1% of leaders), Paul specializes in helping executives who don't fit the traditional mold leverage their unique perspectives as strategic advantages.
             </p>
-          </div>
-        </div>
-
-        <div class="impact-item">
-          <div class="impact-number">100+</div>
-          <div class="impact-content">
-            <h2>100+</h2>
-            <p>
-              Leaders Mentored — From frontline reps to execs. Promoted,
-              empowered, and equipped to lead boldly on their terms.
+            <p style="font-size: 1.2rem; line-height: 1.8;">
+              His signature approach combines practical experience with deep empathy, helping leaders achieve exceptional results without sacrificing authenticity.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Manifesto Section - White Background with Proper Ending -->
-    <section
-      id="misfit-manifesto"
-      style="padding: 8rem 0; background-color: #fff; color: #000"
-    >
-      <div
-        class="container"
-        style="
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-          text-align: center;
-        "
-      >
-        <h2
-          style="
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
-            text-align: center;
-            color: #000;
-          "
-        >
-          THE MISFIT MANIFESTO
-        </h2>
-        <p
-          style="
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #000;
-            text-align: center;
-          "
-        >
-          DON'T JUST PLAY THE GAME. REWIRE IT.
-        </p>
-        <hr
-          style="
-            width: 100px;
-            margin: 0 auto 4rem;
-            border-color: #00e5ff;
-            border-width: 2px;
-          "
-        />
-
-        <div style="max-width: 800px; margin: 0 auto; text-align: center">
-          <p
-            style="
-              line-height: 2.1;
-              font-size: 1.2rem;
-              text-align: center;
-              color: #333;
-              margin-bottom: 3rem;
-            "
-          >
-            This isn't a disorder. It's a different operating system.<br />
-            Labeled ADHD. Branded lazy. Turns out, you're just optimized for the
-            wrong system.<br />
-            You don't fit into most organizations. That's why you can build
-            them.
-          </p>
-
-          <h3
-            style="
-              color: #000;
-              font-size: 2rem;
-              margin: 5rem 0 2.5rem;
-              letter-spacing: 1px;
-              text-align: center;
-            "
-          >
-            THE QUIET REBEL'S CODE
-          </h3>
-
-          <div style="margin: 3rem 0; padding: 0">
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                IF IT'S BORING, IT'S BROKEN
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                You don't blame the audience—you rewrite the act.
-              </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                WORK SMARTER
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                Efficiency isn't laziness. It's evolution.
-              </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                THE CRITICAL FEW > THE TRIVIAL MANY
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                Win the top 3. Take the heat for the rest.
-              </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                DECIDE ONCE. DECIDE WELL.
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                One meaningful decision beats 100 shallow ones.
-              </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                DELEGATE TO MULTIPLY
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                Release control. Unlock capability.
-              </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                LEAD FROM THE TRENCHES
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                Breakthroughs don't come from boardrooms. They come from
-                listening to the frontlines.
-              </div>
-            </div>
-
-            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div
-                style="
-                  font-size: 1.2rem;
-                  font-weight: 600;
-                  letter-spacing: 1px;
-                  text-align: center;
-                  margin-bottom: 0.5rem;
-                  color: #000;
-                "
-              >
-                INFLUENCE > AUTHORITY
-              </div>
-              <div
-                style="
-                  font-size: 1.1rem;
-                  font-weight: 300;
-                  color: #555;
-                  text-align: center;
-                  margin-top: 0.1rem;
-                "
-              >
-                Quiet leadership. Loud results.
-              </div>
-            </div>
-          </div>
-
-          <h3
-            style="
-              color: #000;
-              font-size: 2rem;
-              margin: 5rem 0 2.5rem;
-              letter-spacing: 1px;
-              text-align: center;
-            "
-          >
-            THE TRUTH ABOUT MISFITS
-          </h3>
-
-          <p
-            style="
-              line-height: 2.1;
-              font-size: 1.2rem;
-              text-align: center;
-              color: #333;
-              margin-bottom: 2.5rem;
-            "
-          >
-            When they called you lazy, you were filtering signal from noise.<br /><br />
-            When they called you distracted, you were seeing connections they
-            couldn't.<br /><br />
-            When they called you difficult, you were refusing to accept broken
-            systems.
-          </p>
-
-          <p
-            style="
-              line-height: 2.1;
-              font-size: 1.2rem;
-              text-align: center;
-              color: #333;
-              margin-bottom: 2.5rem;
-            "
-          >
-            Most settle for fitting in. <br />You can build systems that fit
-            you.<br /><br />
-            Most optimize for compliance. <br />You can optimize for
-            breakthrough.
-          </p>
-
-          <p
-            style="
-              line-height: 2.1;
-              font-size: 1.2rem;
-              text-align: center;
-              color: #333;
-              margin-bottom: 2.5rem;
-            "
-          >
-            Don't accept the world as it is. <br />Reimagine what it could
-            be—<br /><br />
-          </p>
-
-          <h3
-            style="
-              color: #000;
-              font-size: 2rem;
-              margin: 5rem 0 2.5rem;
-              letter-spacing: 1px;
-              text-align: center;
-            "
-          >
-            THIS ISN'T AN INVITATION.<br />
-            IT'S A CHALLENGE.
-          </h3>
-
-          <p
-            style="
-              line-height: 2.1;
-              font-size: 1.2rem;
-              text-align: center;
-              color: #333;
-              margin-bottom: 2.5rem;
-            "
-          >
-            If you're done with systems that weren't built for you...<br />
-            If you're tired of dimming your light to fit in...<br />
-            If you're ready to turn your "disorder" into your advantage...
-          </p>
-
-          <p
-            style="
-              line-height: 2.1;
-              font-size: 1.2rem;
-              text-align: center;
-              color: #333;
-              font-weight: 600;
-              margin-bottom: 2.5rem;
-            "
-          >
-            Stop wasting your gifts in systems built to contain you.<br />
-            Start creating the systems worthy of who you really are.
-          </p>
-
-          <div style="margin: rem 0 6rem; text-align: center">
-            <p
-              style="
-                font-size: 1.1rem;
-                font-weight: 500;
-                color: #00aacc;
-                text-align: center;
-              "
-            >
-              —PAUL TAKISAKI
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Fix for the CTA section (Image 1) -->
+    <!-- CTA Section (Kept as is) -->
     <section
       id="cta"
       style="
@@ -687,26 +186,7 @@
           flex: 1;
         "
       >
-        <!-- Main CTA content -->
-
-        <section class="cta-identity">
-          <img
-            src="images/headshot_bw_tight.webp"
-            alt="Paul Takisaki Headshot"
-            style="width: 140px; border-radius: 100px; margin-bottom: 16px"
-          />
-          <p
-            style="
-              max-width: 600px;
-              margin: 0 auto;
-              font-size: 1rem;
-              color: rgba(255, 255, 255, 0.7);
-            "
-          >
-            Not a coach behind a whiteboard. A misfit who built systems that
-            worked — then helped others do the same.
-          </p>
-        </section>
+        <!-- Main CTA content - photo and text removed -->
 
         <div
           class="main-content"
@@ -749,7 +229,7 @@
           >
         </div>
 
-        <!-- Footer -->
+        <!-- Footer with stronger inline styles -->
         <footer
           id="contact"
           style="
@@ -757,27 +237,57 @@
             text-align: center;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.6);
+            background-color: #000;
           "
         >
-          <p>
+          <p style="margin: 5px 0; padding: 0; display: block;">
             Email:
             <a
               href="mailto:paul@paultakisaki.com"
-              style="color: #00e5ff; text-decoration: none"
+              style="
+                color: #00e5ff !important;
+                text-decoration: none !important;
+                display: inline !important;
+                background: none !important;
+                background-color: transparent !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                font-size: 0.9rem !important;
+                line-height: normal !important;
+                text-transform: none !important;
+              "
               >paul@paultakisaki.com</a
             >
             |
             <a
               href="https://www.linkedin.com/in/paultaki"
               target="_blank"
-              style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+              style="
+                color: rgba(255, 255, 255, 0.7) !important;
+                text-decoration: none !important;
+                display: inline !important;
+                background: none !important;
+                background-color: transparent !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                font-size: 0.9rem !important;
+                line-height: normal !important;
+                text-transform: none !important;
+              "
               >LinkedIn</a
             >
           </p>
-          <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+          <p style="margin: 5px 0; padding: 0; display: block;">Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
         </footer>
       </div>
     </section>
+    
     <!-- Media Queries for Responsive Adjustments -->
     <style>
       /* Desktop Specific Adjustments */
@@ -792,6 +302,10 @@
 
         #cta .footer-area {
           padding: 30px 0;
+        }
+        
+        .about-you .container {
+          padding: 0 40px;
         }
       }
 
@@ -808,6 +322,10 @@
         /* Adjust spacing between button and footer on mobile */
         #cta .main-content {
           padding-bottom: 40px;
+        }
+        
+        .about-you .container {
+          text-align: center;
         }
       }
 
@@ -834,6 +352,24 @@
             navLinks.classList.toggle("active");
           });
         }
+
+        // Animation for fade-in elements
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+        
+        fadeElements.forEach(el => {
+          observer.observe(el);
+        });
       });
     </script>
     <script src="header.js"></script>
@@ -850,27 +386,34 @@
 
         // If user has scrolled past a certain threshold, reveal the text and hide the scroll indicator
         if (scrollPosition > 20) {
-          revealText.classList.add("visible");
-          scrollIndicator.style.opacity = "0";
-          scrollIndicator.style.transition = "opacity 0.5s ease";
+          if (revealText) {
+            revealText.classList.add("visible");
+          }
+          if (scrollIndicator) {
+            scrollIndicator.style.opacity = "0";
+            scrollIndicator.style.transition = "opacity 0.5s ease";
+          }
         }
       }
 
       // Click event for scroll indicator
-      document
-        .getElementById("scrollIndicator")
-        .addEventListener("click", function () {
+      const scrollIndicator = document.getElementById("scrollIndicator");
+      if (scrollIndicator) {
+        scrollIndicator.addEventListener("click", function () {
           // Smooth scroll down a bit to trigger the reveal
           window.scrollTo({
             top: 100,
             behavior: "smooth",
           });
         });
+      }
 
       // Set a timer to automatically reveal the text after 3 seconds if no scroll happens
       setTimeout(function () {
         const revealText = document.getElementById("revealText");
-        revealText.classList.add("visible");
+        if (revealText) {
+          revealText.classList.add("visible");
+        }
       }, 3000);
 
       // Add scroll event listener
@@ -879,6 +422,5 @@
       // Initial check in case page is loaded already scrolled
       handleScroll();
     </script>
-    <script src="header.js"></script>
   </body>
 </html>

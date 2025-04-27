@@ -1,119 +1,145 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Paul Takisaki - Executive Coaching for Innovative Leaders | Leadership for Misfits</title>
-    <meta name="description" content="Leadership coaching for innovative thinkers. Transform your 'disorder' into your operating system. Executive coaching that helps you win the critical few metrics that actually matter." />
-    <meta name="keywords" content="executive coaching, leadership development, strategic consulting, misfit leadership, ADHD leadership, Paul Takisaki" />
+    <title>
+      Paul Takisaki - Executive Coaching for Innovative Leaders | Leadership for
+      Misfits
+    </title>
+    <meta
+      name="description"
+      content="Leadership coaching for innovative thinkers. Transform your 'disorder' into your operating system. Executive coaching that helps you win the critical few metrics that actually matter."
+    />
+    <meta
+      name="keywords"
+      content="executive coaching, leadership development, strategic consulting, misfit leadership, ADHD leadership, Paul Takisaki"
+    />
     <meta name="author" content="Paul Takisaki" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://paultakisaki.com/" />
-    <meta property="og:title" content="Paul Takisaki - Executive Coaching That Works" />
-    <meta property="og:description" content="Leadership coaching for innovative thinkers who don't fit the standard mold. Transform your unique perspective into your advantage." />
-    <meta property="og:image" content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg" />
-    
+    <meta
+      property="og:title"
+      content="Paul Takisaki - Executive Coaching That Works"
+    />
+    <meta
+      property="og:description"
+      content="Leadership coaching for innovative thinkers who don't fit the standard mold. Transform your unique perspective into your advantage."
+    />
+    <meta
+      property="og:image"
+      content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg"
+    />
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://paultakisaki.com/" />
-    <meta property="twitter:title" content="Paul Takisaki - Executive Coaching That Works" />
-    <meta property="twitter:description" content="Leadership coaching for innovative thinkers who don't fit the standard mold. Transform your unique perspective into your advantage." />
-    <meta property="twitter:image" content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg" />
-    
+    <meta
+      property="twitter:title"
+      content="Paul Takisaki - Executive Coaching That Works"
+    />
+    <meta
+      property="twitter:description"
+      content="Leadership coaching for innovative thinkers who don't fit the standard mold. Transform your unique perspective into your advantage."
+    />
+    <meta
+      property="twitter:image"
+      content="https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg"
+    />
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://paultakisaki.com/" />
-    
-    <link rel="stylesheet" href="styles.css">
-    
+
     <!-- Schema Markup for SEO -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Paul Takisaki Leadership Coaching",
-      "image": "https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg",
-      "description": "Executive coaching for innovative leaders who don't fit the standard mold. Transform your unique perspective into your advantage.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Gilbert",
-        "addressRegion": "AZ",
-        "addressCountry": "US"
-      },
-      "email": "paul@paultakisaki.com",
-      "url": "https://paultakisaki.com",
-      "priceRange": "$$",
-      "sameAs": [
-        "https://www.linkedin.com/in/paultakisaki"
-      ],
-      "service": [
-        {
-          "@type": "Service",
-          "name": "Executive Coaching",
-          "description": "For leaders ready to rise without conforming."
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Paul Takisaki Leadership Coaching",
+        "image": "https://paultakisaki.com/images/executive-coaching-paul-takisaki.jpg",
+        "description": "Executive coaching for innovative leaders who don't fit the standard mold. Transform your unique perspective into your advantage.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gilbert",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
         },
-        {
-          "@type": "Service",
-          "name": "Misfit Leadership Program",
-          "description": "Transform your 'disorder' into your operating system."
-        },
-        {
-          "@type": "Service",
-          "name": "Strategic Consulting",
-          "description": "Win the critical few metrics that actually matter."
-        }
-      ]
-    }
-    </script>
-   
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const faders = document.querySelectorAll(".fade-in");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
-            });
+        "email": "paul@paultakisaki.com",
+        "url": "https://paultakisaki.com",
+        "priceRange": "$$",
+        "sameAs": ["https://www.linkedin.com/in/paultakisaki"],
+        "service": [
+          {
+            "@type": "Service",
+            "name": "Executive Coaching",
+            "description": "For leaders ready to rise without conforming."
           },
-          { threshold: 0.15 }
-        );
-
-        faders.forEach((el) => {
-          el.classList.add("invisible");
-          observer.observe(el);
-        });
-
-        // Mobile menu toggle logic
-        const toggle = document.getElementById("mobile-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        if (toggle && navLinks) {
-          toggle.addEventListener("click", function () {
-            navLinks.classList.toggle("active");
-          });
-        }
-      });
+          {
+            "@type": "Service",
+            "name": "Misfit Leadership Program",
+            "description": "Transform your 'disorder' into your operating system."
+          },
+          {
+            "@type": "Service",
+            "name": "Strategic Consulting",
+            "description": "Win the critical few metrics that actually matter."
+          }
+        ]
+      }
     </script>
+    <div id="header-container"></div>
+
+    <link rel="stylesheet" href="styles_index.css" />
   </head>
   <body>
-    <!-- Header -->
-    <div id="header-container"></div>
-    
-    <!-- Hero Section -->
     <section class="hero">
+      <div class="chessboard-container">
+        <div class="chessboard">
+          <!-- Chess pieces will be added via JavaScript -->
+        </div>
+      </div>
       <div class="hero-content">
-        <h1>I DON'T JUST PLAY THE GAME.</h1>
-        <p>I <span>REWIRE</span> IT.</p>
-        <p>
-          Quiet rebel. Strategic disruptor. Built for the ones who never fit in.
+        <h1>DON'T JUST PLAY THE GAME.</h1>
+        <p><span style="color: #00e5ff">REWIRE</span> IT.</p>
+      </div>
+
+      <!-- Scroll indicator to hint users to scroll down -->
+      <div id="scrollIndicator" class="scroll-indicator">
+        <p>Scroll to see more</p>
+        <div class="arrow"></div>
+      </div>
+    </section>
+
+    <section
+      class="tailored-tools"
+      style="padding: 200px 0; text-align: center; background-color: white"
+    >
+      <div class="container">
+        <h2 style="font-size: 2rem; margin-bottom: 20px; font-weight: 600">
+          Tailored Tools. <br />Real Results.
+        </h2>
+        <br />
+
+        <p
+          style="
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+          "
+        >
+          If you're looking for a <strong>copy-paste coaching plan</strong>,
+          you're in the <strong>wrong place</strong>.<br /><br />
+          But if you want <strong>strategic clarity</strong>,
+          <strong>personal insight</strong>, and
+          <strong>custom-built tools</strong> for how you actually
+          operate—<strong>this is it</strong>.
         </p>
       </div>
     </section>
 
-    <!-- Services Section (MOVED UP) -->
     <section class="services" id="services">
       <div class="container">
         <div class="section-header">
@@ -121,21 +147,26 @@
         </div>
         <div class="services-grid">
           <div class="service-item">
-            <h3><a href="executive_coaching.html" title="Executive Coaching Services">Executive Coaching</a></h3>
-            <p>For leaders ready to rise without conforming.</p>
+            <h3>Executive Coaching</h3>
+            <p>For leaders ready to rise—without conforming.</p>
           </div>
           <div class="service-item">
-            <h3><a href="leader_development.html" title="Leadership Development Programs">Misfit Leadership Program</a></h3>
-            <p>Transform your "disorder" into your operating system.</p>
+            <h3>Misfit Leadership Program</h3>
+            <p>
+              Own your truth. Transform your "disorder" into your operating
+              system.
+            </p>
           </div>
           <div class="service-item">
-            <h3><a href="strategic_consulting.html" title="Strategic Consulting Services">Strategic Consulting</a></h3>
-            <p>Win the critical few metrics that actually matter.</p>
+            <h3>Strategic Consulting</h3>
+            <p>
+              Focus on the critical few metrics that actually matter.<br />
+              <em>Because not every problem deserves a slide deck.</em>
+            </p>
           </div>
         </div>
       </div>
     </section>
-    
     <!-- Advantage Section -->
     <section class="advantage" id="advantage">
       <div class="container">
@@ -149,362 +180,705 @@
           </div>
           <div class="advantage-item">
             <h3>Skip the Fire Drills</h3>
-            <p>Save energy for what actually matters.</p>
+            <p>Stay hungry for what actually matters.</p>
           </div>
           <div class="advantage-item">
             <h3>Delegate to Multiply</h3>
-            <p>Release control to release capability.</p>
+            <p>Command respect. Release control to unlock capability.</p>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- About Section -->
-    <section class="about" id="about">
-      <div class="about-content">
-        <h2>
-          Quiet Competitor. Culture Architect.<br />Chess Player in a Checkers
-          World.
+
+    <!-- About Section - Full Screen -->
+    <!-- About Section - Full Screen -->
+    <section
+      class="about"
+      id="about"
+      style="
+        height: 100vh;
+        background-color: #f5f5f7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+      "
+    >
+      <div class="about-content" style="max-width: 800px; margin: 0 auto">
+        <h2
+          style="
+            font-size: 2.2rem;
+            color: #000;
+            margin-bottom: 30px;
+            line-height: 1.3;
+          "
+        >
+          Most are playing checkers.<br />
+          you're playing chess..
         </h2>
-        <p>
-          Misdiagnosed. Underestimated. Turns out I was optimized for the wrong system.
-          <br />I lead best when I'm helping build the future — not maintaining the past.
+
+        <p
+          style="
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #000000;
+          "
+        >
+          But you're not just playing —
+          <strong>you're architecting the endgame.</strong>
+        </p>
+
+        <p style="font-size: 1.4rem; line-height: 1.6; color: #333333">
+          While they react, you build. You already know how this ends — because
+          you designed it that way.
         </p>
       </div>
     </section>
-
-    <!-- Impact Section - Preserving your original styling -->
-    <section class="impact" id="impact" style="padding: 140px 0; background-color: #000; color: #fff">
-      <div class="impact-grid" style="max-width: 1200px; margin: 0 auto; padding: 0 20px">
-        <div class="impact-item" style="margin-bottom: 120px; position: relative">
-          <!-- Background number with reduced opacity for better contrast -->
-          <div class="impact-number" style="font-size: 18rem; font-weight: 700; line-height: 0.8; color: rgba(255, 255, 255, 0.03); position: absolute; top: -30px; left: 0; z-index: 1; font-family: 'SF Mono', monospace;">
-            1K+
-          </div>
-
-          <!-- Foreground content with true left alignment -->
-          <div style="margin-left: 20px">
-            <h2 style="font-size: 9rem; font-weight: bold; color: white; margin-bottom: 20px; font-family: 'SF Mono', monospace; text-align: left;">
-              1K+
-            </h2>
-
-            <p style="font-size: 1.1rem; max-width: 600px; color: rgba(255, 255, 255, 0.8); font-weight: 300; text-align: left; margin-left: 0;">
-              Team Members Inspired — Not managed. Led with purpose and vision
-              that sparked revolutionary buy-in & performance.
+    <!-- Impact Section - With Extended Black Area -->
+    <section class="impact" id="impact">
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-number">1K+</div>
+          <div class="impact-content">
+            <h2>1K+</h2>
+            <p>
+              Team Members Elevated — Not managed. Not directed. Led with
+              Relentless Purpose that sparked revolutionary performance.
             </p>
           </div>
         </div>
 
-        <div class="impact-item" style="margin-bottom: 120px; position: relative">
-          <div class="impact-number" style="font-size: 18rem; font-weight: 700; line-height: 0.8; color: rgba(255, 255, 255, 0.03); position: absolute; top: -30px; left: 0; z-index: 1; font-family: 'SF Mono', monospace;">
-            4x
-          </div>
-
-          <div style="margin-left: 20px">
-            <h2 style="font-size: 9rem; font-weight: bold; color: white; margin-bottom: 20px; font-family: 'SF Mono', monospace; text-align: left;">
-              4x
-            </h2>
-
-            <p style="font-size: 1.1rem; max-width: 600px; color: rgba(255, 255, 255, 0.8); font-weight: 300; text-align: left; margin-left: 0;">
-              President's Cabinet — Top 1%. Not for playing by the rules, but
-              for rewriting them in ways nobody thought possible.
+        <div class="impact-item">
+          <div class="impact-number">4x</div>
+          <div class="impact-content">
+            <h2>4x</h2>
+            <p>
+              President's Cabinet — Top 1%. Recognition not for playing by the
+              rules, but for the Grit to rewrite them in ways nobody thought
+              possible.
             </p>
           </div>
         </div>
 
-        <div class="impact-item" style="margin-bottom: 0; position: relative">
-          <div class="impact-number" style="font-size: 18rem; font-weight: 700; line-height: 0.8; color: rgba(255, 255, 255, 0.03); position: absolute; top: -30px; left: 0; z-index: 1; font-family: 'SF Mono', monospace;">
-            $1B+
-          </div>
-
-          <div style="margin-left: 20px">
-            <h2 style="font-size: 9rem; font-weight: bold; color: white; margin-bottom: 20px; font-family: 'SF Mono', monospace; text-align: left;">
-              $1B+
-            </h2>
-
-            <p style="font-size: 1.1rem; max-width: 600px; color: rgba(255, 255, 255, 0.8); font-weight: 300; text-align: left; margin-left: 0;">
+        <div class="impact-item">
+          <div class="impact-number">$1B+</div>
+          <div class="impact-content">
+            <h2>$1B+</h2>
+            <p>
               Revenue Launched — Not incremental improvements. Breakthrough
               initiatives that created entirely new value categories.
             </p>
           </div>
         </div>
+
+        <div class="impact-item">
+          <div class="impact-number">SEVEN</div>
+          <div class="impact-content">
+            <h2>SEVEN</h2>
+            <p>
+              Markets Transformed — Personally rebuilt trust, teams, and
+              outcomes— record-breaking performance in every market led.
+            </p>
+          </div>
+        </div>
+
+        <div class="impact-item">
+          <div class="impact-number">100+</div>
+          <div class="impact-content">
+            <h2>100+</h2>
+            <p>
+              Leaders Mentored — From frontline reps to execs. Promoted,
+              empowered, and equipped to lead boldly on their terms.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Media Query for Responsive Design -->
-    <style>
-      @media (max-width: 991px) {
-        .impact-number {
-          font-size: 14rem !important;
-        }
-
-        .impact-content h2 {
-          font-size: 7rem !important;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .impact-number {
-          font-size: 10rem !important;
-          position: relative !important;
-          top: 0 !important;
-          margin-bottom: 20px !important;
-        }
-
-        .impact-content h2 {
-          font-size: 6rem !important;
-        }
-      }
-    </style>
-
-    <!-- Manifesto Section - Keeping your original styling -->
-    <section id="misfit-manifesto" class="manifesto-section fade-section" style="padding: 8rem 0; background-color: #f8f8f8">
-      <div class="container text-center">
-        <h2 class="manifesto-title fade-in" style="font-size: 3.5rem; margin-bottom: 2rem; font-weight: 700; text-align: center;">
+    <!-- Manifesto Section - White Background with Proper Ending -->
+    <section
+      id="misfit-manifesto"
+      style="padding: 8rem 0; background-color: #fff; color: #000"
+    >
+      <div
+        class="container"
+        style="
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          text-align: center;
+        "
+      >
+        <h2
+          style="
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            text-align: center;
+            color: #000;
+          "
+        >
           THE MISFIT MANIFESTO
         </h2>
-        <p class="lead fade-in" style="font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; color: #333; text-align: center;">
-          I DON'T JUST PLAY THE GAME. I REWIRE IT.
+        <p
+          style="
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #000;
+            text-align: center;
+          "
+        >
+          DON'T JUST PLAY THE GAME. REWIRE IT.
         </p>
-        <hr class="section-divider fade-in" style="width: 100px; margin: 0 auto 4rem; border-color: #00e5ff; border-width: 2px;" />
+        <hr
+          style="
+            width: 100px;
+            margin: 0 auto 4rem;
+            border-color: #00e5ff;
+            border-width: 2px;
+          "
+        />
 
-        <div class="manifesto-scroll" style="max-width: 700px; margin: 0 auto; text-align: center; padding: 0;">
-          <p class="fade-in" style="font-size: 1.3rem; margin-bottom: 3rem; line-height: 1.7; text-align: center;">
-            This is not a disorder. It's a different operating system.<br />
-            Labled ADHD. Branded lazy. Turns out I was optimized for the wrong
-            system.<br />
-            I don't fit into most organizations. That's why I build them.
+        <div style="max-width: 800px; margin: 0 auto; text-align: center">
+          <p
+            style="
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+              color: #333;
+              margin-bottom: 3rem;
+            "
+          >
+            This isn't a disorder. It's a different operating system.<br />
+            Labeled ADHD. Branded lazy. Turns out, you're just optimized for the
+            wrong system.<br />
+            You don't fit into most organizations. That's why you can build
+            them.
           </p>
 
-          <h3 class="fade-in" style="font-size: 2rem; margin: 5rem 0 2.5rem; color: #000; letter-spacing: 1px; text-align: center;">
+          <h3
+            style="
+              color: #000;
+              font-size: 2rem;
+              margin: 5rem 0 2.5rem;
+              letter-spacing: 1px;
+              text-align: center;
+            "
+          >
             THE QUIET REBEL'S CODE
           </h3>
 
-          <div class="manifesto-list" style="margin: 3rem 0; padding: 0">
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
+          <div style="margin: 3rem 0; padding: 0">
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
                 IF IT'S BORING, IT'S BROKEN
               </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
                 You don't blame the audience—you rewrite the act.
               </div>
             </div>
 
-            <div class="fade-in" style="margin-bottom: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
                 WORK SMARTER
               </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                Efficiency isn't laziness—it's evolution.
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
+                Efficiency isn't laziness. It's evolution.
               </div>
             </div>
 
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
-                SKIP THE FIRE DRILLS
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                Save energy for what actually matters.
-              </div>
-            </div>
-
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
-                DECIDE ONCE, DECIDE WELL
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                One meaningful decision > 100 shallow ones.
-              </div>
-            </div>
-
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
-                DELEGATE TO MULTIPLY
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                Release control to release capability.
-              </div>
-            </div>
-
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
-                LEAD FROM THE TRENCHES
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                Breakthrough ideas never came from corporate retreats. They came
-                from listening to the frontlines.
-              </div>
-            </div>
-
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
                 THE CRITICAL FEW > THE TRIVIAL MANY
               </div>
-              
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                Win the top 3 metrics—take the heat for the rest.
-              </div>
-            </div>
-            
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
-                RISK > COMFORT
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                I don't reward safety—I reward boldness. Because what you praise is what you multiply.<br>
-              </div>
-            </div>
-            
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
-                PASSION > PERFECTION
-              </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
-                A 90% flawed idea with full heart beats a 100% polished one
-                nobody cares about.
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
+                Win the top 3. Take the heat for the rest.
               </div>
             </div>
 
-            <div class="fade-in" style="margin-bottom: 2.5rem; margin-top: 2.5rem">
-              <div style="font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; text-align: center; margin-bottom: 0rem;">
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
+                DECIDE ONCE. DECIDE WELL.
+              </div>
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
+                One meaningful decision beats 100 shallow ones.
+              </div>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
+                DELEGATE TO MULTIPLY
+              </div>
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
+                Release control. Unlock capability.
+              </div>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
+                LEAD FROM THE TRENCHES
+              </div>
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
+                Breakthroughs don't come from boardrooms. They come from
+                listening to the frontlines.
+              </div>
+            </div>
+
+            <div style="margin-bottom: 2.5rem; margin-top: 2.5rem">
+              <div
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  color: #000;
+                "
+              >
                 INFLUENCE > AUTHORITY
               </div>
-              <div style="font-size: 1.1rem; font-weight: 300; color: #555; text-align: center; margin-top: 0.1rem;">
+              <div
+                style="
+                  font-size: 1.1rem;
+                  font-weight: 300;
+                  color: #555;
+                  text-align: center;
+                  margin-top: 0.1rem;
+                "
+              >
                 Quiet leadership. Loud results.
               </div>
             </div>
-            
-            <!-- GUT-CHECK INSERT -->
-            <div class="fade-in" style="margin-top: 4rem">
-              <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 0.2rem; color: #000; text-align: center;">
-                THE GUT-CHECKS THAT NEVER FAIL
-              </div>
-              <div style="font-size: 0.95rem; font-style: italic; color: #777; margin-bottom: 2rem; text-align: center;">
-                (Wisdom from my dad)
-              </div>
-              <div style="font-size: 1.2rem; color: #444; margin-bottom: 1.2rem; line-height: 1.8; text-align: center;">
-                If I drop this, will I get fired? If not — it can wait.
-              </div>
-              <div style="font-size: 1.2rem; color: #444; margin-bottom: 2.5rem; line-height: 1.8; text-align: center;">
-                Would I work for them? If not — don't hire them.
-              </div>
-            </div>
-            <!-- END GUT-CHECK INSERT -->
           </div>
 
-          <h3 class="fade-in" style="font-size: 2rem; margin: 5rem 0 2.5rem; color: #000; letter-spacing: 1px; text-align: center;">
+          <h3
+            style="
+              color: #000;
+              font-size: 2rem;
+              margin: 5rem 0 2.5rem;
+              letter-spacing: 1px;
+              text-align: center;
+            "
+          >
             THE TRUTH ABOUT MISFITS
           </h3>
 
-          <p class="fade-in" style="font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; text-align: center;">
-            You weren't broken—you were early.<br />
-            You weren't failing—you were filtering.<br />
-            You weren't too much—you were just built different.
+          <p
+            style="
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+              color: #333;
+              margin-bottom: 2.5rem;
+            "
+          >
+            When they called you lazy, you were filtering signal from noise.<br /><br />
+            When they called you distracted, you were seeing connections they
+            couldn't.<br /><br />
+            When they called you difficult, you were refusing to accept broken
+            systems.
           </p>
 
-          <p class="fade-in" style="font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; text-align: center;">
-            I used to want to belong.<br />
-            Now I build belonging for the ones who never did.
+          <p
+            style="
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+              color: #333;
+              margin-bottom: 2.5rem;
+            "
+          >
+            Most settle for fitting in. <br />You can build systems that fit
+            you.<br /><br />
+            Most optimize for compliance. <br />You can optimize for
+            breakthrough.
           </p>
 
-          <p class="fade-in" style="font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; text-align: center;">
-            I was called a problem.<br />
-            Now I show others they were the solution all along.
+          <p
+            style="
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+              color: #333;
+              margin-bottom: 2.5rem;
+            "
+          >
+            Don't accept the world as it is. <br />Reimagine what it could
+            be—<br /><br />
           </p>
 
-          <h3 class="fade-in" style="font-size: 2rem; margin: 5rem 0 2.5rem; color: #000; letter-spacing: 1px; text-align: center;">
-            THIS IS YOUR INVITATION
+          <h3
+            style="
+              color: #000;
+              font-size: 2rem;
+              margin: 5rem 0 2.5rem;
+              letter-spacing: 1px;
+              text-align: center;
+            "
+          >
+            THIS ISN'T AN INVITATION.<br />
+            IT'S A CHALLENGE.
           </h3>
 
-          <p class="fade-in" style="font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; text-align: center;">
+          <p
+            style="
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+              color: #333;
+              margin-bottom: 2.5rem;
+            "
+          >
             If you're done with systems that weren't built for you...<br />
             If you're tired of dimming your light to fit in...<br />
             If you're ready to turn your "disorder" into your advantage...
           </p>
 
-          <p class="fade-in" style="font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.7; text-align: center;">
-            <strong>Run your own operating system.</strong><br />
-            No titles. No permission. No backup plan.
+          <p
+            style="
+              line-height: 2.1;
+              font-size: 1.2rem;
+              text-align: center;
+              color: #333;
+              font-weight: 600;
+              margin-bottom: 2.5rem;
+            "
+          >
+            Stop wasting your gifts in systems built to contain you.<br />
+            Start creating the systems worthy of who you really are.
           </p>
 
-          <div class="cta-buttons fade-in" style="margin: 4rem 0; text-align: center">
-            <a href="#contact" class="btn" style="display: inline-block; padding: 18px 45px; background-color: #00e5ff; color: #000; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-decoration: none; font-size: 1rem;">Book a Call</a>
+          <div style="margin: rem 0 6rem; text-align: center">
+            <p
+              style="
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: #00aacc;
+                text-align: center;
+              "
+            >
+              —PAUL TAKISAKI
+            </p>
           </div>
-
-          <p class="closing-note fade-in" style="font-style: italic; font-size: 1.1rem; margin: 4rem 0 2rem; color: #666; line-height: 1.7; text-align: center;">
-            For the black sheep. The square pegs. The ones who never fit in.<br />This
-            is for them, by them—because I am, and always will be, one of them.
-          </p>
-
-          <p class="signature fade-in" style="font-size: 1.1rem; font-weight: 500; margin-bottom: 3rem; text-align: center;">
-            —PAUL TAKISAKI
-          </p>
         </div>
       </div>
     </section>
+    <!-- Fix for the CTA section (Image 1) -->
+    <section
+      id="cta"
+      style="
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 1;
+        "
+      >
+        <!-- Main CTA content -->
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const faders = document.querySelectorAll(".fade-in");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-              }
-            });
-          },
-          { threshold: 0.15 }
-        );
+        <section class="cta-identity">
+          <img
+            src="images/headshot_bw_tight.webp"
+            alt="Paul Takisaki Headshot"
+            style="width: 140px; border-radius: 100px; margin-bottom: 16px"
+          />
+          <p
+            style="
+              max-width: 600px;
+              margin: 0 auto;
+              font-size: 1rem;
+              color: rgba(255, 255, 255, 0.7);
+            "
+          >
+            Not a coach behind a whiteboard. A misfit who built systems that
+            worked — then helped others do the same.
+          </p>
+        </section>
 
-        faders.forEach((el) => {
-          el.classList.add("invisible");
-          observer.observe(el);
-        });
-      });
-    </script>
+        <div
+          class="main-content"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+            flex: 1;
+          "
+        >
+          <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem">
+            Own Your Future.<br />
+            Run Your Own<br />Operating System.
+          </h2>
+          <p
+            style="
+              font-size: 1rem;
+              color: rgba(255, 255, 255, 0.8);
+              margin-bottom: 2rem;
+            "
+          >
+            No titles. No permission. No excuses.
+          </p>
+          <a
+            href="contact.html"
+            style="
+              background-color: #00e5ff;
+              color: #000;
+              font-weight: 600;
+              padding: 14px 30px;
+              text-transform: uppercase;
+              text-decoration: none;
+              letter-spacing: 1px;
+              border-radius: 4px;
+            "
+            >Book a Call</a
+          >
+        </div>
 
+        <!-- Footer -->
+        <footer
+          id="contact"
+          style="
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+          "
+        >
+          <p>
+            Email:
+            <a
+              href="mailto:paul@paultakisaki.com"
+              style="color: #00e5ff; text-decoration: none"
+              >paul@paultakisaki.com</a
+            >
+            |
+            <a
+              href="https://www.linkedin.com/in/paultaki"
+              target="_blank"
+              style="color: rgba(255, 255, 255, 0.7); text-decoration: none"
+              >LinkedIn</a
+            >
+          </p>
+          <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+        </footer>
+      </div>
+    </section>
+    <!-- Media Queries for Responsive Adjustments -->
     <style>
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      /* Desktop Specific Adjustments */
+      @media (min-width: 768px) {
+        #cta {
+          padding-top: 120px;
+        }
+
+        #cta h2 {
+          font-size: 5rem;
+        }
+
+        #cta .footer-area {
+          padding: 30px 0;
+        }
       }
-      .visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
+
+      /* Mobile Specific Adjustments */
+      @media (max-width: 767px) {
+        #cta {
+          padding-top: 60px;
+        }
+
+        #cta h2 {
+          font-size: 3.6rem;
+        }
+
+        /* Adjust spacing between button and footer on mobile */
+        #cta .main-content {
+          padding-bottom: 40px;
+        }
       }
-      .invisible {
-        opacity: 0;
+
+      /* Very Small Screens */
+      @media (max-width: 360px) {
+        #cta h2 {
+          font-size: 3.2rem;
+        }
+
+        #cta .main-content {
+          padding-bottom: 30px;
+        }
       }
     </style>
 
-    <!-- CTA Section -->
-    <section class="cta" id="cta">
-      <div class="cta-content">
-        <h2>Run Your Own Operating System.</h2>
-        <p>No titles. No permission. No backup plan.</p>
-        <div class="cta-buttons">
-          <a class="btn btn-cta-primary" href="#contact" title="Schedule a discovery call">Book a Call</a>
-          <a class="btn btn-cta-secondary" href="#misfit-manifesto" title="Read the full Misfit Manifesto">The Manifesto</a>
-        </div>
-      </div>
-    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle logic
+        const toggle = document.getElementById("mobile-toggle");
+        const navLinks = document.querySelector(".nav-links");
 
-    <!-- Enhanced Footer -->
-    <footer id="contact">
-      <div class="footer-content">
-        <div class="contact-info">
-          <p>Email: <a href="mailto:paul@paultakisaki.com" title="Email Paul Takisaki">paul@paultakisaki.com</a></p>
-          <p>Location: Gilbert, AZ</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/paultakisaki" title="Connect with Paul on LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
-      </div>
-    </footer>
-    
+        if (toggle && navLinks) {
+          toggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+      });
+    </script>
+    <script src="header.js"></script>
+
+    <script>
+      // Function to handle scroll events
+      function handleScroll() {
+        // Get the reveal text element
+        const revealText = document.getElementById("revealText");
+        const scrollIndicator = document.getElementById("scrollIndicator");
+
+        // Get scroll position
+        const scrollPosition = window.scrollY;
+
+        // If user has scrolled past a certain threshold, reveal the text and hide the scroll indicator
+        if (scrollPosition > 20) {
+          revealText.classList.add("visible");
+          scrollIndicator.style.opacity = "0";
+          scrollIndicator.style.transition = "opacity 0.5s ease";
+        }
+      }
+
+      // Click event for scroll indicator
+      document
+        .getElementById("scrollIndicator")
+        .addEventListener("click", function () {
+          // Smooth scroll down a bit to trigger the reveal
+          window.scrollTo({
+            top: 100,
+            behavior: "smooth",
+          });
+        });
+
+      // Set a timer to automatically reveal the text after 3 seconds if no scroll happens
+      setTimeout(function () {
+        const revealText = document.getElementById("revealText");
+        revealText.classList.add("visible");
+      }, 3000);
+
+      // Add scroll event listener
+      window.addEventListener("scroll", handleScroll);
+
+      // Initial check in case page is loaded already scrolled
+      handleScroll();
+    </script>
     <script src="header.js"></script>
   </body>
 </html>

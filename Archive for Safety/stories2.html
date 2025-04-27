@@ -25,7 +25,6 @@
     <link rel="canonical" href="https://paultakisaki.com/stories.html" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="discovery-call-modal.css">
-
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -401,26 +400,34 @@
       </div>
     </section>
 
-<!-- CTA Section -->
-<section class="cta">
-  <div class="container">
-    <h2>Ready for Your Own Leadership Transformation?</h2>
-    <p>
-      Experience the leadership development coaching that brings out the best in you and your team.
-    </p>
-    <a href="https://www.paultakisaki.com/contact.html" class="journey-button">Start Your Journey</a>
-  </div>
-</section>
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2 class="fade-in">Ready for Your Own Leadership Transformation?</h2>
+        <p class="fade-in">
+          Experience the leadership development coaching that brings out the best in you and your team.
+        </p>
+        <div class="cta-buttons fade-in">
+          <a href="mailto:your@email.com" class="btn btn-accent">Book a Discovery Call</a>
 
-<!-- Footer -->
-<footer>
-  <p>
-    Email: 
-    <a href="mailto:paul@paultakisaki.com">paul@paultakisaki.com</a> | 
-    <a href="https://www.linkedin.com/in/paultaki" target="_blank">LinkedIn</a>
-  </p>
-  <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
-</footer>
+                    <a href="services.html" class="btn btn-cta-secondary" aria-label="Explore Paul Takisaki's coaching services">Explore Coaching Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer with Improved Markup -->
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="contact-info">
+          <a href="mailto:your@email.com" class="btn btn-accent">Book a Discovery Call</a>
+          <p>Location: Gilbert, AZ</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/paultaki" title="Connect with Paul on LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+      </div>
+    </footer>
     
     <script src="header.js"></script>
 
@@ -462,11 +469,30 @@
           });
         }
       });
+
+
+    </script>
+
+
+<script src="discovery-call-js.js"></script>
+
+<button class="btn btn-accent" onclick="openDiscoveryCallModal()">Book a Discovery Call</button>
+
+<div id="discoveryCallModal" style="display: none;">
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Tell me about your goals..." required></textarea>
+    <button type="submit" class="btn btn-accent">Send</button>
+  </form>
+</div>
+
+<script>
+function openDiscoveryCallModal() {
+  document.getElementById('discoveryCallModal').style.display = 'block';
+}
 </script>
 
-
-<script src="header.js"></script>
-<!-- Contact Modal -->
 
   </body>
 </html>

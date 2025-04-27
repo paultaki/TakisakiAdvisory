@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Invisible Resume | Paul Takisaki</title>
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.5;
+        color: #333;
+        background-color: #fff;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background-color: #000;
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+      }
+
+      .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .logo span {
+        color: #ccc;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links li {
+        margin: 0 0 0 30px;
+      }
+
+      .nav-links a {
+        color: #fff;
+        font-weight: 300;
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #999;
+      }
+
+      /* Mobile navigation */
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      @media (max-width: 767px) {
+        .mobile-toggle {
+          display: block;
+        }
+
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: #000;
+          padding: 0;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .nav-links li {
+          margin: 0;
+          padding: 15px 20px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 120px 0 60px;
+        text-align: center;
+        background-color: #f5f5f7;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.1;
+        letter-spacing: -0.5px;
+      }
+
+      .hero p {
+        font-size: 20px;
+        color: #666;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        font-weight: 300;
+      }
+
+      /* Article Content */
+      .article {
+        padding: 60px 0;
+      }
+
+      .article-content {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .article-content p {
+        margin-bottom: 24px;
+        font-weight: 300;
+      }
+
+      .article-content h2 {
+        font-size: 36px;
+        font-weight: 600;
+        margin: 60px 0 20px;
+        letter-spacing: -0.5px;
+      }
+
+      .article-content ul {
+        margin: 0 0 30px 20px;
+      }
+
+      .article-content li {
+        margin-bottom: 10px;
+        font-weight: 300;
+      }
+
+      .statement {
+        font-size: 30px;
+        line-height: 1.3;
+        margin: 40px 0;
+        color: #000;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      .intro-statement {
+        font-size: 24px;
+        line-height: 1.4;
+        font-weight: 300;
+        margin-bottom: 24px;
+      }
+
+      /* Principles */
+      .principles {
+        margin: 60px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .principle {
+        background-color: #f5f5f7;
+        padding: 30px;
+        border-radius: 8px;
+      }
+
+      .principle-number {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 10px;
+      }
+
+      .principle h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .principle p {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+
+      /* Quote */
+      blockquote {
+        border-left: 4px solid #000;
+        padding-left: 20px;
+        margin: 40px 0;
+        font-size: 24px;
+        line-height: 1.4;
+      }
+
+      /* Call to Action */
+      .cta {
+        background-color: #000;
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+        margin: 60px 0 0;
+      }
+
+      .cta h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .cta p {
+        font-size: 18px;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-weight: 300;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #fff;
+        color: #000;
+        padding: 15px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        transition: all 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+
+      /* Author */
+      .author {
+        display: flex;
+        align-items: center;
+        margin: 60px 0;
+        padding: 30px;
+        background-color: #f5f5f7;
+        border-radius: 8px;
+      }
+
+      .author-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 20px;
+      }
+
+      .author-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .author-info h3 {
+        font-size: 20px;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      .author-info p {
+        font-size: 16px;
+        margin-bottom: 0;
+        font-weight: 300;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f5f5f7;
+        padding: 60px 0;
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 14px;
+        color: #666;
+      }
+
+      /* Key points */
+      .key-points {
+        background-color: #000;
+        color: #fff;
+        padding: 60px 0;
+        margin: 60px 0;
+      }
+
+      .key-points h2 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .key-points-list {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .key-point {
+        margin-bottom: 30px;
+        font-weight: 300;
+      }
+
+      .key-point-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+
+      .key-point-desc {
+        font-size: 18px;
+        opacity: 0.8;
+      }
+
+      .divider {
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 40px auto;
+        width: 60px;
+      }
+
+      .self-assessment {
+        background-color: #f5f5f7;
+        padding: 40px;
+        margin: 40px 0;
+        border-radius: 8px;
+      }
+
+      .self-assessment h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      .self-assessment p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .self-assessment ul {
+        margin-left: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 36px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        .statement {
+          font-size: 24px;
+        }
+
+        .principles {
+          grid-template-columns: 1fr;
+        }
+
+        .cta h2 {
+          font-size: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Include original header structure, but with proper IDs that match what header.js might be looking for -->
+
+    <div id="header-container"></div>
+
+
+    <!-- Include Font Awesome for icons used in the header -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Include your existing header.js as a fallback -->
+    <script src="../header.js"></script>
+
+    <!-- Add additional script to ensure header styling matches the Jobs aesthetic -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Apply Jobs-inspired styling to the header
+        const header = document.getElementById("header");
+        if (header) {
+          header.style.backgroundColor = "#000";
+          header.style.padding = "15px 0";
+
+          // Fix navigation styles for Jobs aesthetic
+          const navLinks = document.querySelectorAll(".nav-links a");
+          navLinks.forEach((link) => {
+            link.style.color = "#fff";
+            link.style.fontWeight = "300";
+            link.style.textTransform = "none";
+            link.style.fontSize = "14px";
+            link.style.letterSpacing = "0";
+          });
+
+          // Ensure active link is highlighted
+          const activeLink = document.querySelector(".nav-links a.active");
+          if (activeLink) {
+            activeLink.style.color = "#999";
+          }
+        }
+      });
+    </script>
+
+    <section class="hero">
+      <div class="container">
+        <h1>The Invisible Resume</h1>
+        <p>Building a legacy that outlives your title</p>
+      </div>
+    </section>
+
+    <section class="article">
+      <div class="container">
+        <div class="article-content">
+          <p class="intro-statement">I've never lost a job I applied for.</p>
+          <p class="intro-statement">
+            Fourteen offers. Fourteen wins. Every time.
+          </p>
+
+          <p>
+            Twice, I even applied for two roles at once—and got both. Once when
+            I took the leap to Kansas. Once when I skipped a level and landed my
+            first Sr. Director role, leapfrogging the ladder.
+          </p>
+
+          <div class="statement">
+            But none of those jobs were won because of a bullet point on a
+            resume. They were won in parking lots, on sales floors, during
+            red-eye flights, or in the quiet moments where someone noticed how I
+            <em>showed up</em>, not just what I had <em>done</em>.
+          </div>
+
+          <h2>That's the invisible resume.</h2>
+
+          <p>
+            It's not the LinkedIn headline or the stack of awards. It's how you
+            treat people when there's nothing in it for you. It's the
+            consistency when no one's watching. It's the calm when the room's on
+            fire. The truth when it's not convenient. The ability to hold weight
+            others won't even touch.
+          </p>
+
+          <blockquote>Anyone can write a resume. Few live one.</blockquote>
+
+          <h2>Beyond the Bullet Points</h2>
+
+          <p>
+            I used to think the resume was everything. Titles. Numbers.
+            Promotions. So I chased them like a wolf with something to prove.
+            And I got them—twelve promotions in twenty years. President's
+            Cabinet. National roles. Big teams. Big budgets. Big outcomes.
+          </p>
+
+          <p>But the things I'm most proud of?</p>
+
+          <ul>
+            <li>
+              The rep who told me they stayed because I saw them when no one
+              else did.
+            </li>
+            <li>The teammate who said my belief in them changed their life.</li>
+            <li>
+              The grown man who cried in a 1:1 because no one had ever asked him
+              what he <em>really</em> wanted.
+            </li>
+          </ul>
+
+          <p>
+            There was even the time I flew halfway across the country to
+            interview with a Senior VP I'd never met. I was prepared for a
+            grueling interview. Instead, I sat down in that hotel conference
+            room, and his opening line was simply: "Hey nice to meet you, wanna
+            grab a glass of wine?" followed by "Is your family ready to move?"
+          </p>
+
+          <p>
+            My reputation—my invisible resume—had already done the interview for
+            me.
+          </p>
+
+          <p>
+            You won't find these moments in HR systems. But they're etched into
+            my legacy.
+          </p>
+
+          <div class="statement">
+            If you lead, you're building a resume every day—whether you know it
+            or not. It's not made of PowerPoint decks. It's made of people.
+          </div>
+
+          <p>
+            The tech VP who never forgot how I helped his team land their first
+            major deal. The admin who said I treated her with more respect than
+            her exec did. The frontline employee who now runs their own company.
+          </p>
+
+          <blockquote>That's the stuff that lasts.</blockquote>
+
+          <p>So yeah, I've got the numbers. But numbers fade. Impact echoes.</p>
+
+          <section class="key-points">
+            <div class="container">
+              <h2>What Makes an Invisible Resume</h2>
+
+              <div class="key-points-list">
+                <div class="key-point">
+                  <div class="key-point-title">Consistency Over Intensity</div>
+                  <div class="key-point-desc">
+                    It's not what you do once that builds your reputation; it's
+                    what you do repeatedly.
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="key-point">
+                  <div class="key-point-title">Show Up Where Others Don't</div>
+                  <div class="key-point-desc">
+                    Be present for the challenging moments that others avoid.
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="key-point">
+                  <div class="key-point-title">Credit Others Generously</div>
+                  <div class="key-point-desc">
+                    Give recognition freely and specifically.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <h2>Building Your Invisible Resume</h2>
+
+          <p>
+            Want to strengthen your own invisible resume? Here are six
+            principles I've found that make a difference:
+          </p>
+
+          <div class="principles">
+            <div class="principle">
+              <div class="principle-number">01</div>
+              <h3>Show Up Where Others Don't</h3>
+              <p>
+                Be present for the challenging moments that others avoid. It's
+                in the difficult conversations where trust is built most
+                powerfully.
+              </p>
+            </div>
+
+            <div class="principle">
+              <div class="principle-number">02</div>
+              <h3>Consistency Over Intensity</h3>
+              <p>
+                It's not what you do once that builds your reputation; it's what
+                you do repeatedly. Reliable leadership creates confidence.
+              </p>
+            </div>
+
+            <div class="principle">
+              <div class="principle-number">03</div>
+              <h3>Remember People's Stories</h3>
+              <p>
+                Details matter. The small personal things you remember about
+                people communicate that they matter beyond their productivity.
+              </p>
+            </div>
+
+            <div class="principle">
+              <div class="principle-number">04</div>
+              <h3>Credit Others Generously</h3>
+              <p>
+                Give recognition freely and specifically. The leaders with the
+                strongest teams are those who spotlight others' contributions.
+              </p>
+            </div>
+
+            <div class="principle">
+              <div class="principle-number">05</div>
+              <h3>Stand For Something Real</h3>
+              <p>
+                Know what you value and defend it, even when it's uncomfortable.
+                People respect leaders with clear, consistent principles.
+              </p>
+            </div>
+
+            <div class="principle">
+              <div class="principle-number">06</div>
+              <h3>Lead Your Peers, Not Just Your Team</h3>
+              <p>
+                Share what's working with colleagues, reinforce your boss's key
+                initiatives, and encourage others across the organization.
+              </p>
+            </div>
+          </div>
+
+          <h2>Your Legacy Is Showing</h2>
+
+          <p>
+            If you're reading this and you've been grinding for
+            recognition—maybe even doubting if it's worth it—I see you.
+          </p>
+
+          <p>
+            You don't need a new job to build a new legacy. You just need to
+            lead like it matters. Because it does.
+          </p>
+
+          <div class="self-assessment">
+            <h3>Your invisible resume is showing. What's on it?</h3>
+            <p>Take a moment for self-reflection:</p>
+            <ul>
+              <li>
+                What would your team say about you when you're not in the room?
+              </li>
+              <li>
+                Have you created moments of impact that never made it onto your
+                LinkedIn?
+              </li>
+              <li>Who is succeeding today because of your belief in them?</li>
+            </ul>
+            <p>
+              These answers reveal more about your leadership than any formal
+              credential.
+            </p>
+          </div>
+
+          <div class="author">
+            <div class="author-img">
+              <img src="..images/headshot.webp" alt="Paul Takisaki" />
+            </div>
+            <div class="author-info">
+              <h3>Paul Takisaki</h3>
+              <p>
+                From mall kiosk to AVP at Verizon, I built teams that broke
+                every record—and still made it home for dinner. 4x President's
+                Cabinet winner, builder of bold cultures, and believer in people
+                over process.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to build your invisible resume?</h2>
+        <p>Get more insights on leadership that makes a lasting impact.</p>
+        <a href="#" class="btn">Connect with Paul</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Paul Takisaki. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
