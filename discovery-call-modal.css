@@ -235,3 +235,51 @@
     padding: 20px;
   }
 }
+/* Testimonial styling - sized between your two examples */
+.testimonial-quote {
+  font-size: 18px;  /* Medium-sized quote text */
+  line-height: 1.6;
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 50px;  /* Keep avatar size consistent */
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.author-info h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+.author-info p {
+  font-size: 15px;
+  color: #666;
+}
+
+/* Tag styling */
+.testimonial-tag {
+  background-color: #00aacc;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Item container */
+.testimonial-item {

@@ -401,34 +401,26 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-      <div class="container">
-        <h2 class="fade-in">Ready for Your Own Leadership Transformation?</h2>
-        <p class="fade-in">
-          Experience the leadership development coaching that brings out the best in you and your team.
-        </p>
-        <div class="cta-buttons fade-in">
-            <a href="#contact" class="btn btn-primary">Apply Now</a>
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2>Ready for Your Own Leadership Transformation?</h2>
+    <p>
+      Experience the leadership development coaching that brings out the best in you and your team.
+    </p>
+    <a href="https://www.paultakisaki.com/contact.html" class="journey-button">Start Your Journey</a>
+  </div>
+</section>
 
-                    <a href="services.html" class="btn btn-cta-secondary" aria-label="Explore Paul Takisaki's coaching services">Explore Coaching Services</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer with Improved Markup -->
-    <footer id="contact">
-      <div class="footer-content">
-        <div class="contact-info">
-          <a href="mailto:your@email.com" class="btn btn-accent">Book a Discovery Call</a>
-          <p>Location: Gilbert, AZ</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/paultaki" title="Connect with Paul on LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-        <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
-      </div>
-    </footer>
+<!-- Footer -->
+<footer>
+  <p>
+    Email: 
+    <a href="mailto:paul@paultakisaki.com">paul@paultakisaki.com</a> | 
+    <a href="https://www.linkedin.com/in/paultaki" target="_blank">LinkedIn</a>
+  </p>
+  <p>Paul Takisaki | Gilbert, AZ | © 2025 Takisaki Strategy</p>
+</footer>
     
     <script src="header.js"></script>
 
@@ -470,152 +462,11 @@
           });
         }
       });
-
-
-    </script>
-
-
-<script src="discovery-call-js.js"></script>
-
-<button class="btn btn-accent" onclick="openDiscoveryCallModal()">Book a Discovery Call</button>
-
-<div id="discoveryCallModal" style="display: none;">
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required />
-    <input type="email" placeholder="Your Email" required />
-    <textarea placeholder="Tell me about your goals..." required></textarea>
-    <button type="submit" class="btn btn-accent">Send</button>
-  </form>
-</div>
-
-<script>
-function openDiscoveryCallModal() {
-  document.getElementById('discoveryCallModal').style.display = 'block';
-}
 </script>
-
-
 
 
 <script src="header.js"></script>
 <!-- Contact Modal -->
-<style>
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-  }
-  .modal-content {
-    background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    position: relative;
-  }
-  .modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #aaa;
-  }
-  .modal-form input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-  }
-  .modal-form button {
-    width: 100%;
-    padding: 12px;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  .modal-form button:hover {
-    background: #333;
-  }
-</style>
-
-<div class="modal" id="contact-modal">
-  <div class="modal-content">
-    <button class="modal-close" onclick="closeModal('contact')">
-      &times;
-    </button>
-    <h3 class="modal-title">Book Your Custom Strategy Session</h3>
-    <form class="modal-form" id="strategy-session-form">
-      <input type="text" id="fullName" placeholder="Full Name" required />
-      <input type="email" id="email" placeholder="Email Address" required />
-      <input type="text" id="company" placeholder="Company" required />
-      <input type="tel" id="phone" placeholder="Phone Number" required />
-      <button type="submit">Submit Request</button>
-    </form>
-    <p style="margin-top: 10px; font-size: 13px; color: #777">
-      Paul will follow up within 24 hours to confirm your session.
-    </p>
-  </div>
-</div>
-
-<script>
-  function showModal(id) {
-    document.getElementById(id + "-modal").style.display = "flex";
-  }
-  function closeModal(id) {
-    document.getElementById(id + "-modal").style.display = "none";
-  }
-
-  document
-    .getElementById("strategy-session-form")
-    ?.addEventListener("submit", async function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("fullName").value;
-      const email = document.getElementById("email").value;
-      const company = document.getElementById("company").value;
-      const phone = document.getElementById("phone").value;
-
-      const subject = "Leadership Development Inquiry";
-      const message = `
-  <p><strong>Company:</strong> ${company}</p>
-  <p><strong>Phone:</strong> ${phone}</p>
-`;
-
-      try {
-        const res = await fetch("/api/send", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, subject, message }),
-        });
-
-        if (res.ok) {
-          alert("Thanks, Paul will follow up shortly.");
-          this.reset();
-          closeModal("contact");
-        } else {
-          alert("Something went wrong.");
-        }
-      } catch (err) {
-        console.error("Submission failed:", err);
-        alert("Network error. Please try again.");
-      }
-    });
-</script>
 
   </body>
 </html>
