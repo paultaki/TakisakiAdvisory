@@ -3805,3 +3805,133 @@ h2 {
   max-width: 280px;
   margin: 0 auto;
 }
+/* Results Section - Improved Formatting */
+.results {
+  background-color: #121212;
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.result-box {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Number display container */
+.stat-display {
+  position: relative;
+  margin-bottom: 20px;
+  height: 100px; /* Fixed height for consistent alignment */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Base styles for all number elements */
+.stat-number-text,
+.stat-prefix-text,
+.stat-suffix-text {
+  display: inline-block;
+  font-weight: 800;
+  color: #00e5ff;
+  line-height: 1;
+}
+
+/* Primary number */
+.stat-number-text {
+  font-size: 5.5rem;
+}
+
+/* Prefix ($ symbol) */
+.stat-prefix-text {
+  font-size: 4rem;
+  position: relative;
+  margin-right: 5px;
+  top: -5px; /* Slight adjustment for proper alignment */
+}
+
+/* Suffix (B+, +, ×) */
+.stat-suffix-text {
+  font-size: 4rem;
+  position: relative;
+  margin-left: 3px;
+}
+
+/* Specific suffix alignment adjustments */
+.result-box:nth-child(1) .stat-suffix-text,
+.result-box:nth-child(4) .stat-suffix-text {
+  /* For the + symbol */
+  top: -8px;
+}
+
+.result-box:nth-child(2) .stat-suffix-text {
+  /* For the × symbol */
+  top: -4px;
+}
+
+.result-box:nth-child(3) .stat-suffix-text {
+  /* For the B+ suffix */
+  top: -5px;
+}
+
+/* Labels */
+.result-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #00e5ff;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.result-description {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 250px;
+  margin: 0 auto;
+  flex-grow: 1; /* Allow descriptions to fill remaining space */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .result-box {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .stat-number-text {
+    font-size: 4.5rem;
+  }
+  
+  .stat-prefix-text,
+  .stat-suffix-text {
+    font-size: 3.5rem;
+  }
+}

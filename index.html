@@ -622,7 +622,39 @@
 
         observer.observe(resultsSection);
       }
+
+      function animateNumbers() {
+  const numberElements = document.querySelectorAll('.stat-number-text');
+  
+  numberElements.forEach(element => {
+    const targetValue = parseInt(element.innerText, 10);
+    if (!isNaN(targetValue)) {
+      const duration = 2000; // 2 seconds
+      const start = 0;
+      const increment = targetValue / 50;
+      let current = 0;
+      
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= targetValue) {
+          element.innerText = targetValue;
+          clearInterval(timer);
+        } else {
+          element.innerText = Math.floor(current);
+        }
+      }, 40);
+    }
+  });
+}
+
+// Run when the document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Set a slight delay to ensure DOM is fully processed
+  setTimeout(animateNumbers, 500);
+});
     </script>
+
+    
 <script src="/header.js"></script>  
 </body>
 </html>
