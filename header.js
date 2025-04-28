@@ -1,200 +1,125 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Determine if we're in a subfolder
-  const pathParts = window.location.pathname.split("/");
-  const inSubfolder =
-    pathParts.length > 2 && pathParts[pathParts.length - 2] !== "";
-
-  // Set the base path prefix depending on whether we're in a subfolder
-  const basePath = inSubfolder ? "../" : "";
-
-  // Insert the header HTML
-  const headerContainer = document.getElementById("header-container");
+document.addEventListener('DOMContentLoaded', function() {
+  const headerContainer = document.getElementById('header-container');
+  
   if (headerContainer) {
-    headerContainer.innerHTML = `
+    // Get current page path
+    const currentPage = window.location.pathname;
+    
+    // Header HTML
+    const headerHTML = `
       <header>
-        <div class="header-inner">
-          <a class="logo" href="${basePath}index.html" title="Paul Takisaki - Leadership for Misfits">Paul<span>Takisaki</span></a>
-          <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle navigation menu">☰</button>
-          <nav aria-label="Main Navigation">
-            <ul class="nav-links">
-              <li><a href="${basePath}index.html" title="Home">HOME</a></li>
-              <li class="has-dropdown">
-                <a href="#" title="Services" class="dropdown-toggle">SERVICES</a>
-                <ul class="dropdown-menu">
-                  <li><a href="${basePath}executive_coaching.html" title="Executive Coaching">EXECUTIVE COACHING</a></li>
-                  <li><a href="${basePath}leader_development.html" title="Leadership Development">LEADERSHIP DEVELOPMENT</a></li>
-                  <li><a href="${basePath}strategic_consulting.html" title="Strategic Consulting">STRATEGIC CONSULTING</a></li>
-                </ul>
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">
+              <img src="images/ptlogo.webp" alt="PAUL TAKISAKI" class="logo-image">
+            </a>
+          </div>
+          
+          <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          
+          <nav class="main-nav" id="main-nav">
+            <ul>
+              <li><a href="index.html" class="${currentPage === '/index.html' || currentPage === '/' ? 'active' : ''}">Home</a></li>
+              <li><a href="playbook.html" class="${currentPage.includes('playbook') ? 'active' : ''}">Leadership Vault</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle ${currentPage.includes('services') ? 'active' : ''}">Services</a>
+                <div class="dropdown-menu">
+                  <a href="services/exec_dev.html">Executive Development</a>
+                  <a href="services/leader_development.html">Accelerator</a>
+                  <a href="services/strategic_consulting.html">Strategic Consulting</a>
+                </div>
               </li>
-              <li><a href="${basePath}playbook.html" title="LEADERSHIP VAULT">LEADERSHIP VAULT</a></li>
-              <li><a href="${basePath}index.html#about" title="About Paul Takisaki">ABOUT</a></li>
-              <li><a href="${basePath}stories.html" title="Success Stories">SUCCESS STORIES</a></li>
-              <li><a href="${basePath}blogs.html" title="Insights">INSIGHTS</a></li>
-              <li><a href="${basePath}contact.html" title="Contact Paul Takisaki">CONTACT</a></li>
+              <li><a href="impact.html" class="${currentPage.includes('impact') ? 'active' : ''}">Impact</a></li>
+              <li><a href="blogs.html" class="${currentPage.includes('blogs') ? 'active' : ''}">Blog</a></li>
+              <li><a href="about.html" class="${currentPage.includes('about') ? 'active' : ''}">About</a></li>
+              <li><a href="contact.html" class="nav-button ${currentPage.includes('contact') ? 'active' : ''}">Contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
     `;
-  }
-
-  // Ensure menu styles are properly applied
-  if (!document.getElementById("header-styles")) {
-    const styleElement = document.createElement("style");
-    styleElement.id = "header-styles";
-    styleElement.textContent = `
-      /* Dropdown Menu Styles */
-      .nav-links .has-dropdown {
-        position: relative;
-      }
-      .nav-links .dropdown-menu {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.95);
-        min-width: 200px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        z-index: 1000;
-        padding: 0;
-        list-style: none;
-      }
-      .nav-links .dropdown-menu li {
-        margin: 0;
-        padding: 0;
-        display: block;
-      }
-      .nav-links .dropdown-menu a {
-        padding: 15px 20px;
-        display: block;
-        text-align: left;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .nav-links .dropdown-menu a:hover {
-        background-color: rgba(0, 229, 255, 0.1);
-      }
-      /* Desktop hover behavior */
-      @media (min-width: 768px) {
-        .nav-links .has-dropdown:hover .dropdown-menu {
-          display: block;
-        }
-      }
-      /* Mobile styles for dropdowns */
-      @media (max-width: 767px) {
-        .nav-links .dropdown-menu {
-          position: static;
-          width: 100%;
-          box-shadow: none;
-          padding-left: 20px;
-          background-color: rgba(0, 0, 0, 0.3);
-        }
-        .dropdown-menu.show {
-          display: block !important;
-        }
-      }
-    `;
-    document.head.appendChild(styleElement);
-  }
-
-  // Configure mobile menu toggle
-  const mobileToggle = document.getElementById("mobile-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if (mobileToggle && navLinks) {
-    // Remove any existing event listeners to prevent duplicates
-    const newMobileToggle = mobileToggle.cloneNode(true);
-    mobileToggle.parentNode.replaceChild(newMobileToggle, mobileToggle);
-
-    // Add fresh event listener
-    newMobileToggle.addEventListener("click", function (e) {
-      e.stopPropagation();
-      navLinks.classList.toggle("active");
-    });
-  }
-
-  // Configure dropdown toggles
-  const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-  dropdownToggles.forEach((toggle) => {
-    // Remove any existing event listeners
-    const newToggle = toggle.cloneNode(true);
-    toggle.parentNode.replaceChild(newToggle, toggle);
-
-    // Add fresh event listener
-    newToggle.addEventListener("click", function (e) {
-      // Always prevent default to stop navigation
-      e.preventDefault();
-      e.stopPropagation();
-
-      // Find the dropdown menu
-      const dropdownMenu = this.nextElementSibling;
-
-      // Toggle the show class
-      if (dropdownMenu) {
-        // Close any other open dropdowns first
-        document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
-          if (menu !== dropdownMenu) {
-            menu.classList.remove("show");
+    
+    // Insert the header
+    headerContainer.innerHTML = headerHTML;
+    
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.getElementById('mobile-menu');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (mobileMenuToggle && mainNav) {
+      mobileMenuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+      });
+      
+      // Dropdown functionality
+      const dropdownElements = document.querySelectorAll('.dropdown');
+      
+      dropdownElements.forEach(dropdown => {
+        const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // Desktop behavior
+        dropdown.addEventListener('mouseenter', function() {
+          if (window.innerWidth > 992) {
+            dropdown.classList.add('hover');
           }
         });
-
-        // Toggle this dropdown
-        dropdownMenu.classList.toggle("show");
-      }
-    });
-  });
-
-  // Close menus when clicking outside
-  document.addEventListener("click", function (e) {
-    // Don't close if we're clicking inside the menu
-    if (e.target.closest(".nav-links")) {
-      return;
-    }
-
-    // Close all dropdowns
-    document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
-      menu.classList.remove("show");
-    });
-
-    // Close mobile menu
-    if (navLinks && navLinks.classList.contains("active")) {
-      navLinks.classList.remove("active");
-    }
-  });
-
-  // Highlight current page in navigation
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navItems = document.querySelectorAll(".nav-links > li > a");
-  navItems.forEach((item) => {
-    // Skip dropdown toggles
-    if (item.classList.contains("dropdown-toggle")) {
-      return;
-    }
-
-    const href = item.getAttribute("href");
-    // Extract page name from href (remove path and hash)
-    const hrefPage = href.split("/").pop().split("#")[0];
-
-    // Check for various matching conditions
-    if (
-      // Exact match
-      hrefPage === currentPage ||
-      // Index page variations
-      (hrefPage === "index.html" &&
-        (currentPage === "" || currentPage === "index.html")) ||
-      // Blog pages match the blogs.html link
-      (currentPage.startsWith("blog-") && hrefPage === "blogs.html") ||
-      // For pages with hash, check if the base URL matches
-      (href.includes("#") && hrefPage === currentPage)
-    ) {
-      item.classList.add("active");
-      // Also mark parent dropdown as active if this is a dropdown item
-      const parentLi = item.closest("li.has-dropdown");
-      if (parentLi) {
-        const parentLink = parentLi.querySelector("a.dropdown-toggle");
-        if (parentLink) {
-          parentLink.classList.add("active");
+        
+        dropdown.addEventListener('mouseleave', function() {
+          if (window.innerWidth > 992) {
+            dropdown.classList.remove('hover');
+          }
+        });
+        
+        // Mobile behavior
+        dropdownToggle.addEventListener('click', function(e) {
+          if (window.innerWidth <= 992) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+          }
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', function(event) {
+        if (!mainNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+          }
+          
+          // Close all dropdown menus on mobile
+          if (window.innerWidth <= 992) {
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+              dropdown.classList.remove('open');
+            });
+          }
         }
-      }
+      });
     }
-  });
+    
+    // Add scroll effect
+    window.addEventListener('scroll', function() {
+      const header = document.querySelector('header');
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 992) {
+        mainNav.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      }
+    });
+  }
 });
