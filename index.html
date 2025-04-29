@@ -22,73 +22,74 @@
     </div>
 
     <!-- Header (Sticky Navigation) -->
-  <!-- Updated Header with Improved Navigation -->
-<header class="site-header">
-  <div class="container">
-    <div class="logo">
-      <a href="index.html">PAUL <span>TAKISAKI</span></a>
-    </div>
-    <button class="menu-toggle" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown">
-          <a href="#services" class="dropdown-toggle">Services <span class="dropdown-icon">+</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="exec.html">Executive Coaching</a></li>
-            <li><a href="leader.html">The Accelerator</a></li>
-            <li><a href="strategy.html">Strategic Consulting</a></li>
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">PAUL <span>TAKISAKI</span></a>
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#services" class="dropdown-toggle">Services <span class="dropdown-icon">+</span></a>
+              <ul class="dropdown-menu">
+                <li><a href="exec.html">Executive Coaching</a></li>
+                <li><a href="leader.html">The Accelerator</a></li>
+                <li><a href="strategy.html">Strategic Consulting</a></li>
+              </ul>
+            </li>
+            <li><a href="vault.html">Vault</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
           </ul>
-        </li>
-        <li><a href="vault.html">Vault</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blogs.html">Blog</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+        </nav>
+      </div>
+    </header>
 
     <main>
-  
-<!-- 1. Updated Hero Section (No Horizontal Scroll) -->
-<section class="hero">
-  <div id="particles" class="particles"></div>
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="reveal-text">
-        <span class="line">MOST LEADERS</span>
-        <span class="line">PLAY CHECKERS</span>
-        <span class="line">WE</span>
-        <span class="line">PLAY</span>
-        <span class="line accent">CHESS.</span>
-      </h1>
-      <p class="hero-subtext reveal-text-delay">
-        Leadership coaching for those playing a different game.
-      </p>
-      <div class="hero-cta reveal-text-delay-2">
-        <a href="#services" class="button primary">SEE SERVICES</a>
-        <a href="#results" class="text-link">VIEW THE RESULTS <span class="arrow">→</span></a>
-      </div>
-    </div>
-    <div class="chess-visual">
-      <img
-        src="images/chess.webp"
-        alt="Chess and Checkers Contrast"
-        class="chess-image"
-        width="450"
-        height="450"
-      />
-    </div>
-  </div>
-</section>
+      <!-- 1. Hero Section -->
+      <section class="hero">
+        <div id="particles" class="particles"></div>
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="reveal-text">
+              <span class="line">MOST LEADERS</span>
+              <span class="line">PLAY CHECKERS</span>
+              <span class="line">WE</span>
+              <span class="line">PLAY</span>
+              <span class="line accent">CHESS.</span>
+            </h1>
+            <p class="hero-subtext reveal-text-delay">
+              Leadership coaching for those playing a different game.
+            </p>
+            <div class="hero-cta reveal-text-delay-2">
+              <a href="#services" class="button primary">SEE SERVICES</a>
+              <a href="#results" class="text-link">VIEW THE RESULTS <span class="arrow">→</span></a>
+            </div>
+          </div>
+          <div class="chess-visual">
+            <img
+              src="images/chess.webp"
+              alt="Chess and Checkers Contrast"
+              class="chess-image"
+              width="450"
+              height="450"
+            />
+          </div>
+        </div>
+        <div class="scroll-down-indicator">
+          <div class="scroll-text">Scroll to explore <span class="scroll-down-arrow">↓</span></div>
+        </div>
+      </section>
 
-      <!-- 2. Results Section with Numbers -->
+      <!-- 2. Results Section -->
       <section id="results" class="results">
         <div class="container">
           <div class="section-header">
@@ -229,60 +230,104 @@
         </div>
       </section>
 
-      <!-- 4. Recent Blog Posts -->
-     <!-- 4. Recent Blog Posts with Horizontal Scrolling -->
-     <article class="blog-card">
-      <div class="blog-image">
-        <img src="images/blog/strategy.webp" alt="Strategy that sticks" />
-      </div>
-      <div class="blog-content">
-        <span class="blog-tag">Strategy</span>
-        <h3>Strategy That Sticks: Why Most Plans Fail and How to Make Yours Actually Work</h3>
-        <p>
-          Most strategies fail for one of three reasons: The goal isn't bold enough, no one decides where not to play, and there's zero governance.
-        </p>
-        <div class="blog-meta">
-          <span class="date">April 12, 2025</span>
-          <span class="read-time">5 min read</span>
+      <!-- 4. Blog Section -->
+      <section id="blog" class="blog-section">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">Insights</div>
+            <h2>Latest Thinking</h2>
+          </div>
+          
+          <!-- This is the container that will scroll horizontally -->
+          <div class="blog-cards-container">
+            <div class="blog-grid">
+              <!-- Blog Card 1 -->
+              <article class="blog-card">
+                <div class="blog-image">
+                  <img src="images/blog/strategy.webp" alt="Strategy that sticks" />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-tag">Strategy</span>
+                  <h3>Strategy That Sticks: Why Most Plans Fail and How to Make Yours Actually Work</h3>
+                  <p>
+                    Most strategies fail for one of three reasons: The goal isn't bold enough, no one decides where not to play, and there's zero governance.
+                  </p>
+                  <div class="blog-meta">
+                    <span class="date">April 12, 2025</span>
+                    <span class="read-time">5 min read</span>
+                  </div>
+                  <a href="strategy.html" class="read-more">Read More →</a>
+                </div>
+              </article>
+
+              <!-- Blog Card 2 -->
+              <article class="blog-card">
+                <div class="blog-image">
+                  <img src="images/blog/leadership.webp" alt="Leadership focus" />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-tag">Leadership</span>
+                  <h3>The 80/20 Rule of Leadership: How to Focus on What Actually Matters</h3>
+                  <p>
+                    Most leaders waste time on low-impact activities. Here's how to identify and double-down on the 20% that drives 80% of your results.
+                  </p>
+                  <div class="blog-meta">
+                    <span class="date">April 5, 2025</span>
+                    <span class="read-time">4 min read</span>
+                  </div>
+                  <a href="leadership.html" class="read-more">Read More →</a>
+                </div>
+              </article>
+
+              <!-- Blog Card 3 -->
+              <article class="blog-card">
+                <div class="blog-image">
+                  <img src="images/blog/culture.webp" alt="Team culture" />
+                </div>
+                <div class="blog-content">
+                  <span class="blog-tag">Culture</span>
+                  <h3>Building Teams That Actually Build: The Misfit Framework for High-Performance</h3>
+                  <p>
+                    Conventional wisdom says culture is about free lunches and foosball tables. Here's why that's wrong and what actually drives performance.
+                  </p>
+                  <div class="blog-meta">
+                    <span class="date">March 28, 2025</span>
+                    <span class="read-time">6 min read</span>
+                  </div>
+                  <a href="culture.html" class="read-more">Read More →</a>
+                </div>
+              </article>
+
+              <!-- Blog Card 4 (Coming Soon) -->
+              <article class="blog-card coming-soon">
+                <div class="coming-soon-content">
+                  <h3>Coming Soon</h3>
+                  <h4>The Silent Influence: How to Lead When You're Not the Loudest Voice</h4>
+                  <span class="blog-tag">Influence</span>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- Blog navigation buttons -->
+          <div class="blog-nav-buttons">
+            <button class="blog-nav-btn blog-prev" aria-label="Previous posts">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M19 12H5M12 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button class="blog-nav-btn blog-next" aria-label="Next posts">
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="cta-center">
+            <a href="blogs.html" class="button secondary">View All Insights</a>
+          </div>
         </div>
-        <a href="strategy.html" class="read-more">Read More →</a>
-      </div>
-    </article>
-
-    <!-- Coming Soon -->
-    <article class="blog-card coming-soon">
-      <div class="coming-soon-content">
-        <h3>Coming Soon</h3>
-        <h4>The 80/20 Rule of Leadership: Focusing on What Actually Matters</h4>
-        <span class="blog-tag">Leadership</span>
-      </div>
-    </article>
-  </div>
-
-  <div class="text-center">
-    <a href="blogs.html" class="button secondary">View All Insights</a>
-  </div>
-</div>
-</section>
-    <!-- Blog navigation buttons -->
-    <div class="blog-nav-buttons">
-      <button class="blog-nav-btn blog-prev" aria-label="Previous posts">
-        <svg viewBox="0 0 24 24">
-          <path d="M19 12H5M12 19l-7-7 7-7"></path>
-        </svg>
-      </button>
-      <button class="blog-nav-btn blog-next" aria-label="Next posts">
-        <svg viewBox="0 0 24 24">
-          <path d="M5 12h14M12 5l7 7-7 7"></path>
-        </svg>
-      </button>
-    </div>
-
-    <div class="cta-center">
-      <a href="blogs.html" class="button secondary">View All Insights</a>
-    </div>
-  </div>
-</section>
+      </section>
 
       <!-- 5. About Paul Section -->
       <section id="about" class="about-section">
@@ -480,7 +525,7 @@
               standard mold.
             </p>
             <div class="footer-social">
-              <a
+              
                 href="https://www.linkedin.com/in/paultaki"
                 target="_blank"
                 rel="noopener"
