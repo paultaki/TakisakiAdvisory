@@ -466,3 +466,354 @@ function initSmoothScrolling() {
     });
   });
 }
+// Add this function to your existing script.js
+
+// Horizontal Blog Scrolling
+function initBlogScroll() {
+  const blogGrid = document.querySelector('.blog-grid');
+  const prevBtn = document.querySelector('.blog-prev');
+  const nextBtn = document.querySelector('.blog-next');
+  
+  if (!blogGrid || !prevBtn || !nextBtn) return;
+  
+  // Scroll amount (pixels)
+  const scrollAmount = 400;
+  
+  // Scroll to previous item
+  prevBtn.addEventListener('click', () => {
+    blogGrid.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+    
+    // Add haptic feedback if supported
+    if ('vibrate' in navigator) {
+      navigator.vibrate(5);
+    }
+  });
+  
+  // Scroll to next item
+  nextBtn.addEventListener('click', () => {
+    blogGrid.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+    
+    // Add haptic feedback if supported
+    if ('vibrate' in navigator) {
+      navigator.vibrate(5);
+    }
+  });
+  
+  // Show/hide scroll arrows based on scroll position
+  function updateScrollButtons() {
+    // Check if we're at the start
+    if (blogGrid.scrollLeft <= 10) {
+      prevBtn.classList.add('disabled');
+    } else {
+      prevBtn.classList.remove('disabled');
+    }
+    
+    // Check if we're at the end
+    if (blogGrid.scrollLeft >= blogGrid.scrollWidth - blogGrid.clientWidth - 10) {
+      nextBtn.classList.add('disabled');
+    } else {
+      nextBtn.classList.remove('disabled');
+    }
+  }
+  
+  // Update on scroll
+  blogGrid.addEventListener('scroll', updateScrollButtons);
+  
+  // Initial update
+  updateScrollButtons();
+  
+  // Additional visual indicator for mobile
+  let isScrolling;
+  
+  // Show scroll indicator on mobile when not scrolling
+  function checkScrollIndicator() {
+    const scrollIndicator = document.querySelector('.blog-scroll-indicators');
+    if (!scrollIndicator) return;
+    
+    // Clear timeout if already set
+    window.clearTimeout(isScrolling);
+    
+    // Hide indicator during scroll
+    scrollIndicator.style.opacity = '0';
+    
+    // Set timeout to show indicator after scrolling stops
+    isScrolling = setTimeout(() => {
+      scrollIndicator.style.opacity = '1';
+    }, 1000);
+  }
+  
+  // Add event listener for scroll
+  blogGrid.addEventListener('scroll', checkScrollIndicator);
+  
+  // Initial run
+  checkScrollIndicator();
+  
+  // Alternative scroll buttons for keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    // Only if blog grid is in viewport
+    const rect = blogGrid.getBoundingClientRect();
+    const isInViewport = (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+    
+    if (!isInViewport) return;
+    
+    // Left arrow key
+    if (e.key === 'ArrowLeft') {
+      blogGrid.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+    
+    // Right arrow key
+    if (e.key === 'ArrowRight') {
+      blogGrid.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
+
+// Don't forget to add this to your document ready function
+document.addEventListener("DOMContentLoaded", function() {
+  // (other initialization functions)
+  
+  // Add this line
+  initBlogScroll();
+});
+// Add to the initBlogScroll function
+
+// Inside the function initBlogScroll() add this:
+
+// Add the scrolled-right class when scrolled
+function updateScrollState() {
+  if (blogGrid.scrollLeft > 10) {
+    blogGrid.classList.add('scrolled-right');
+  } else {
+    blogGrid.classList.remove('scrolled-right');
+  }
+}
+
+// Update on scroll
+blogGrid.addEventListener('scroll', updateScrollState);
+
+// Initial update
+updateScrollState();
+
+// Touch events for better mobile experience
+let touchStartX = 0;
+let touchEndX = 0;
+
+blogGrid.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+}, { passive: true });
+
+blogGrid.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+  // Detect direction and distance
+  const swipeDistance = touchEndX - touchStartX;
+  const threshold = 50; // Minimum distance to be considered a swipe
+  
+  if (Math.abs(swipeDistance) < threshold) return; // Not a significant swipe
+  
+  if (swipeDistance > 0) {
+    // Swiped right
+    blogGrid.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  } else {
+    // Swiped left
+    blogGrid.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Automatically scroll to first item on mobile to show scrollability
+function showScrollability() {
+  if (window.innerWidth <= 992 && blogGrid.scrollLeft === 0) {
+    // Small initial scroll to show that content is scrollable
+    setTimeout(() => {
+      blogGrid.scrollBy({
+        left: 40,
+        behavior: 'smooth'
+      });
+      
+      // Scroll back after a brief pause
+      setTimeout(() => {
+        blogGrid.scrollBy({
+          left: -40,
+          behavior: 'smooth'
+        });
+      }, 600);
+    }, 1500);
+  }
+}
+
+// Run on page load
+showScrollability();
+
+// Enhanced Mobile Menu with Dropdown Support
+function initMobileMenu() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  const body = document.body;
+  
+  if (!menuToggle || !nav) return;
+  
+  // Create menu overlay element
+  const overlay = document.createElement('div');
+  overlay.className = 'menu-overlay';
+  body.appendChild(overlay);
+  
+  // Toggle main menu
+  menuToggle.addEventListener('click', function() {
+    menuToggle.classList.toggle('active');
+    nav.classList.toggle('active');
+    overlay.classList.toggle('active');
+    
+    // Add/remove no-scroll to body when menu is open
+    body.classList.toggle('no-scroll', nav.classList.contains('active'));
+    
+    // Close all dropdowns when toggling menu
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      dropdown.classList.remove('active');
+    });
+  });
+  
+  // Handle dropdown toggles
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      // Only prevent default on mobile
+      if (window.innerWidth <= 992) {
+        e.preventDefault();
+      }
+      
+      const parent = this.parentElement;
+      
+      // Close other dropdowns
+      if (window.innerWidth <= 992) {
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+          if (dropdown !== parent) {
+            dropdown.classList.remove('active');
+          }
+        });
+      }
+      
+      // Toggle current dropdown
+      parent.classList.toggle('active');
+    });
+  });
+  
+  // Close menu when clicking on overlay
+  overlay.addEventListener('click', function() {
+    menuToggle.classList.remove('active');
+    nav.classList.remove('active');
+    overlay.classList.remove('active');
+    body.classList.remove('no-scroll');
+  });
+  
+  // Close menu when clicking on links (except dropdown toggles)
+  const navLinks = nav.querySelectorAll('a:not(.dropdown-toggle)');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+      body.classList.remove('no-scroll');
+    });
+  });
+  
+  // Close menu on resize if window becomes desktop size
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 992) {
+      menuToggle.classList.remove('active');
+      nav.classList.remove('active');
+      overlay.classList.remove('active');
+      body.classList.remove('no-scroll');
+      
+      // Reset dropdowns on desktop
+      document.querySelectorAll('.dropdown').forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+  
+  // Add accessibility support for keyboard navigation
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('keydown', function(e) {
+      // Open dropdown on Enter or Space
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+}
+
+
+// Simple Blog Scrolling Functionality
+function initSimpleBlogScroll() {
+  const blogContainer = document.querySelector('.blog-cards-container');
+  if (!blogContainer) return;
+  
+  // Show scroll indicator on mobile
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (isTouchDevice) {
+    // Add slight initial scroll to indicate scrollability on mobile
+    setTimeout(() => {
+      blogContainer.scrollBy({
+        left: 40,
+        behavior: 'smooth'
+      });
+      
+      // Scroll back after a moment
+      setTimeout(() => {
+        blogContainer.scrollBy({
+          left: -40,
+          behavior: 'smooth'
+        });
+      }, 800);
+    }, 1500);
+  }
+  
+  // Add keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!isElementInViewport(blogContainer)) return;
+    
+    const scrollAmount = 300;
+    
+    if (e.key === 'ArrowLeft') {
+      blogContainer.scrollBy({
+        left: -scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+    
+    if (e.key === 'ArrowRight') {
+      blogContainer.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
