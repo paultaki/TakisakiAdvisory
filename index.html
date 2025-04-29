@@ -4,34 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paul Takisaki | Leadership for Those Who Think Differently</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="nav-styles.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="header-container"></div>
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PAUL <span>TAKISAKI</span></div>
+      </div>
+    </div>
+
+    <!-- Header (Sticky Navigation) -->
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">PAUL <span>TAKISAKI</span></a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
 
     <main>
       <!-- 1. Hero Section with Strategic Chess Metaphor -->
       <section class="hero">
+        <div id="particles" class="particles"></div>
         <div class="container">
           <div class="hero-content">
-            <h1>
+            <h1 class="reveal-text">
               <span class="line">MOST LEADERS</span>
-              <span class="line"> PLAY CHECKERS</span>
+              <span class="line">PLAY CHECKERS</span>
               <span class="line">WE</span>
               <span class="line">PLAY</span>
               <span class="line accent">CHESS.</span>
             </h1>
-            <p class="hero-subtext">
+            <p class="hero-subtext reveal-text-delay">
               Leadership coaching for those playing a different game.
             </p>
-            <div class="hero-cta">
+            <div class="hero-cta reveal-text-delay-2">
               <a href="#services" class="button primary">See Services</a>
               <a href="#approach" class="text-link"
                 >Learn The Approach <span class="arrow">→</span></a
@@ -39,11 +68,12 @@
             </div>
           </div>
           <div class="chess-visual">
-            <!-- Image with controlled size -->
             <img
-              src="images/chess2.webp"
+              src="images/chess.webp"
               alt="Chess and Checkers Contrast"
               class="chess-image"
+              width="450"
+              height="450"
             />
           </div>
         </div>
@@ -58,7 +88,57 @@
         </div>
       </section>
 
-      <!-- 2. Services Section - Leadership Development -->
+      <!-- 2. Approach Section (Operating System) -->
+      <section id="approach" class="operating-system">
+        <div class="container">
+          <div class="section-header">
+            <div class="section-tag">THE APPROACH</div>
+            <h2>Operating System For Unconventional Leaders</h2>
+          </div>
+
+          <div class="os-cards">
+            <div class="os-card">
+              <div class="os-number">01</div>
+              <h3>Strategic Focus</h3>
+              <p>
+                While others are scattered and reactive, we concentrate on the 
+                critical 20% that drives 80% of results. We make fewer, better 
+                moves that create outsized impact.
+              </p>
+            </div>
+
+            <div class="os-card">
+              <div class="os-number">02</div>
+              <h3>Quiet Authority</h3>
+              <p>
+                Power doesn't need to announce itself. We lead through clarity 
+                and vision, not volume and force. Results speak louder than 
+                rhetoric ever could.
+              </p>
+            </div>
+
+            <div class="os-card">
+              <div class="os-number">03</div>
+              <h3>People Development</h3>
+              <p>
+                Great leaders don't collect followers—they create more leaders. 
+                We build systems that elevate teams and create sustainable 
+                momentum beyond any individual.
+              </p>
+            </div>
+          </div>
+
+          <div class="os-footer">
+            <p>
+              These principles have transformed struggling territories into consistent 
+              Top 1% performers.
+            </p>
+            <a href="#services" class="button secondary">See How We Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Services Section -->
       <section id="services" class="services">
         <div class="container">
           <div class="section-header">
@@ -76,17 +156,15 @@
                   results.
                 </p>
                 <ul class="service-points">
-                  <li>3 audacious calls that add >$X M to P&L</li>
-                  <li>Own the room within the first 30 seconds — without overtalking.
-                  </li>
+                  <li>Make 3 audacious moves that add substantial value to P&L</li>
                   <li>
-                    Cut 70% of busywork and redirect energy to profit.
+                    Own the room within the first 30 seconds — without
+                    overtalking
                   </li>
-                  <li>Lift team engagement 15–30% — and lock in loyalty.</li>
+                  <li>Cut 70% of busywork and redirect energy to profit</li>
+                  <li>Lift team engagement 15–30% — and lock in loyalty</li>
                 </ul>
-                <a href="executive_coaching.html" class="button secondary"
-                  >SEE THE RESULTS</a
-                >
+                <a href="#contact" class="button secondary">SEE THE RESULTS</a>
               </div>
             </div>
 
@@ -100,17 +178,14 @@
                   advantage.
                 </p>
                 <ul class="service-points">
-                  <li>
-                    Get promoted 2x faster</li>
+                  <li>Get promoted 2x faster</li>
                   <li>See 6 moves ahead — and prove it in the QBR</li>
                   <li>
                     Install a personal OS that frees 10 hrs/week for strategy
                   </li>
-                  <li>Hit ≥90 % of quarterly targets, every quarter</li>
+                  <li>Hit ≥90% of quarterly targets, every quarter</li>
                 </ul>
-                <a href="leadership_development.html" class="button primary"
-                  >UNLOCK MY FAST-TRACK</a
-                >
+                <a href="#contact" class="button primary">UNLOCK MY FAST-TRACK</a>
               </div>
             </div>
 
@@ -122,82 +197,24 @@
                   critical few metrics that actually matter.
                 </p>
                 <ul class="service-points">
-                  <li>100 % exec agreement on the three metrics that matter</li>
-                  <li>15-40 % lift in output without adding headcount</li>
+                  <li>100% exec agreement on the three metrics that matter</li>
+                  <li>15-40% lift in output without adding headcount</li>
                   <li>
-                    Faster, data-backed calls that cut project cycle time 25 %
+                    Faster, data-backed calls that cut project cycle time 25%
                   </li>
                   <li>
                     A top table that models accountability and psychological
                     safety
                   </li>
                 </ul>
-                <a href="strategic_consulting.html" class="button secondary"
-                  >BUILD THE TURNAROUND</a
-                >
+                <a href="#contact" class="button secondary">BUILD THE TURNAROUND</a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 3. The Operating System Section - The Approach -->
-      <section id="operating-system" class="operating-system">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-tag">The Approach</div>
-            <h2>
-              This Isn't a
-              <span class="strikethrough">Disorder</span>.<br />It's a Different
-              Operating System.
-            </h2>
-          </div>
-
-          <div class="os-cards">
-            <div class="os-card">
-              <div class="os-number">01</div>
-              <h3>If It's Boring, It's Broken</h3>
-              <p>
-                You don't blame the audience—you rewrite the act. When they're
-                not leaning in, it's on you.
-              </p>
-            </div>
-            <div class="os-card">
-              <div class="os-number">02</div>
-              <h3>Skip the Fire Drills</h3>
-              <p>
-                Don't confuse noise for preparation. When it's real, instincts
-                kick in. Until then? Save your energy.
-              </p>
-            </div>
-            <div class="os-card">
-              <div class="os-number">03</div>
-              <h3>The Critical Few > The Trivial Many</h3>
-              <p>
-                Win the top 3 metrics. Take the heat for the rest. Focus drives
-                the results that actually matter.
-              </p>
-            </div>
-            <div class="os-card">
-              <div class="os-number">04</div>
-              <h3>Delegate to Multiply</h3>
-              <p>
-                You don't delegate to do less—you delegate so others can do
-                more. Release control to unlock capability.
-              </p>
-            </div>
-          </div>
-
-          <div class="os-footer">
-            <a href="manifesto.html" class="button secondary"
-              >Read the Full Manifesto</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. Results Section with Dramatic Numbers -->
-      <!-- Results Section -->
+      <!-- 4. Results Section with Numbers -->
       <section id="results" class="results">
         <div class="container">
           <div class="section-header">
@@ -206,7 +223,6 @@
           </div>
 
           <div class="results-grid">
-            <!-- Team Members Stat Block -->
             <div class="result-box">
               <div class="stat-container">
                 <span class="result-number">1000</span>
@@ -219,7 +235,6 @@
               </div>
             </div>
 
-            <!-- President's Cabinet Stat Block -->
             <div class="result-box">
               <div class="stat-container">
                 <span class="result-number">4</span>
@@ -232,7 +247,6 @@
               </div>
             </div>
 
-            <!-- Revenue Launched Stat Block -->
             <div class="result-box">
               <div class="stat-container">
                 <span class="result-prefix">$</span>
@@ -246,7 +260,6 @@
               </div>
             </div>
 
-            <!-- Leaders Mentored Stat Block -->
             <div class="result-box">
               <div class="stat-container">
                 <span class="result-number">100</span>
@@ -275,7 +288,7 @@
                 For 20 years at Verizon, I felt like an outlier. My approach to
                 leadership wasn't just unconventional—it ran counter to the
                 dominant culture. I built strategy and stayed focused while
-                others put in conspicuous 80-hour weeks and managed thro ugh
+                others put in conspicuous 80-hour weeks and managed through
                 force of personality.
               </p>
               <p>
@@ -292,15 +305,17 @@
             </div>
             <div class="about-image">
               <img
-                src="images/headshot_bw.webp"
+                src="images/headshot.webp"
                 alt="Paul Takisaki - Leadership Coach"
+                width="400"
+                height="500"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 6. Testimonials Section - Leaders Say -->
+      <!-- 6. Testimonials Section -->
       <section id="testimonials" class="testimonials">
         <div class="container">
           <div class="section-header">
@@ -372,7 +387,7 @@
           </div>
 
           <div class="testimonial-nav">
-            <button class="testimonial-prev">
+            <button class="testimonial-prev" aria-label="Previous testimonial">
               <span class="arrow-left"></span>
             </button>
             <div class="testimonial-indicators">
@@ -381,7 +396,7 @@
               <span class="indicator"></span>
               <span class="indicator"></span>
             </div>
-            <button class="testimonial-next">
+            <button class="testimonial-next" aria-label="Next testimonial">
               <span class="arrow-right"></span>
             </button>
           </div>
@@ -400,13 +415,15 @@
               <p>Ready to stop conforming and start transforming?</p>
               <form
                 class="contact-form"
-                action="https://www.paultakisaki.com/submit-form"
+                id="contactForm"
+                action="#"
                 method="POST"
               >
                 <div class="form-group">
                   <input
                     type="text"
                     name="name"
+                    id="name"
                     placeholder="Your Name"
                     required
                   />
@@ -415,12 +432,13 @@
                   <input
                     type="email"
                     name="email"
+                    id="email"
                     placeholder="Your Email"
                     required
                   />
                 </div>
                 <div class="form-group">
-                  <select name="service" required>
+                  <select name="service" id="service" required>
                     <option value="" disabled selected>Select Service</option>
                     <option value="executive-coaching">
                       Executive Coaching
@@ -441,12 +459,12 @@
       </section>
     </main>
 
-    <!-- 8. Footer -->
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-grid">
           <div class="footer-info">
-            <div class="footer-logo">Paul Takisaki</div>
+            <div class="footer-logo">PAUL <span>TAKISAKI</span></div>
             <p>
               Leadership coaching for innovative thinkers who don't fit the
               standard mold.
@@ -455,6 +473,7 @@
               <a
                 href="https://www.linkedin.com/in/paultaki"
                 target="_blank"
+                rel="noopener"
                 class="social-link"
                 >LinkedIn</a
               >
@@ -464,7 +483,7 @@
             <div class="footer-column">
               <h4>Navigation</h4>
               <ul>
-                <li><a href="#operating-system">Approach</a></li>
+                <li><a href="#approach">Approach</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#results">Results</a></li>
                 <li><a href="#about">About</a></li>
@@ -474,13 +493,13 @@
               <h4>Services</h4>
               <ul>
                 <li>
-                  <a href="executive_coaching.html">Executive Coaching</a>
+                  <a href="#services">Executive Coaching</a>
                 </li>
                 <li>
-                  <a href="leadership_development.html">The Accelerator</a>
+                  <a href="#services">The Accelerator</a>
                 </li>
                 <li>
-                  <a href="strategic_consulting.html">Strategic Consulting</a>
+                  <a href="#services">Strategic Consulting</a>
                 </li>
               </ul>
             </div>
@@ -497,181 +516,21 @@
       </div>
     </footer>
 
-    <script>
-      // Testimonial slider functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const slides = document.querySelectorAll(".testimonial-slide");
-        const indicators = document.querySelectorAll(".indicator");
-        const prevBtn = document.querySelector(".testimonial-prev");
-        const nextBtn = document.querySelector(".testimonial-next");
-        let currentSlide = 0;
+    <!-- Floating Action Button for Mobile -->
+    <div class="fab-container">
+      <button class="fab-button" aria-label="Quick navigation">
+        <span class="fab-icon">+</span>
+      </button>
+      <div class="fab-options">
+        <a href="#contact" class="fab-option"><span>Contact</span></a>
+        <a href="#services" class="fab-option"><span>Services</span></a>
+        <a href="#approach" class="fab-option"><span>Approach</span></a>
+      </div>
+    </div>
 
-        function showSlide(index) {
-          slides.forEach((slide) => slide.classList.remove("active"));
-          indicators.forEach((indicator) =>
-            indicator.classList.remove("active")
-          );
+    <!-- Custom cursor for desktop -->
+    <div class="cursor-follower"></div>
 
-          slides[index].classList.add("active");
-          indicators[index].classList.add("active");
-          currentSlide = index;
-        }
-
-        if (prevBtn && nextBtn) {
-          prevBtn.addEventListener("click", function () {
-            let newIndex = currentSlide - 1;
-            if (newIndex < 0) newIndex = slides.length - 1;
-            showSlide(newIndex);
-          });
-
-          nextBtn.addEventListener("click", function () {
-            let newIndex = currentSlide + 1;
-            if (newIndex >= slides.length) newIndex = 0;
-            showSlide(newIndex);
-          });
-        }
-
-        indicators.forEach((indicator, index) => {
-          indicator.addEventListener("click", function () {
-            showSlide(index);
-          });
-        });
-
-        // Initialize with first slide active
-        showSlide(0);
-      });
-
-      // Sticky header on scroll
-      window.addEventListener("scroll", function () {
-        const header = document.querySelector("header");
-        if (window.scrollY > 100) {
-          header.style.padding = "10px 0";
-          header.style.backgroundColor = "rgba(18, 18, 18, 0.95)";
-        } else {
-          header.style.padding = "20px 0";
-          header.style.backgroundColor = "rgba(18, 18, 18, 0.8)";
-        }
-      });
-
-      // Mobile menu toggle
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("nav");
-
-      if (menuToggle && nav) {
-        menuToggle.addEventListener("click", function () {
-          nav.style.display = nav.style.display === "block" ? "none" : "block";
-          this.classList.toggle("active");
-        });
-      }
-
-      // Smooth scroll for internal links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute("href");
-          if (targetId === "#") return;
-
-          const targetElement = document.querySelector(targetId);
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 80,
-              behavior: "smooth",
-            });
-
-            // Close mobile menu if open
-            if (window.innerWidth < 768 && nav.style.display === "block") {
-              nav.style.display = "none";
-              menuToggle.classList.remove("active");
-            }
-          }
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        // Simple animation for numbers
-        function animateNumber(element, target, duration) {
-          const start = 0;
-          const startTime = performance.now();
-
-          function updateNumber(currentTime) {
-            const elapsedTime = currentTime - startTime;
-            const progress = Math.min(elapsedTime / duration, 1);
-            const currentValue = Math.floor(progress * target);
-
-            element.textContent = currentValue;
-
-            if (progress < 1) {
-              requestAnimationFrame(updateNumber);
-            } else {
-              element.textContent = target;
-            }
-          }
-
-          requestAnimationFrame(updateNumber);
-        }
-
-        // Get all number elements
-        const numberElements = document.querySelectorAll(".result-number");
-
-        // Animate each number
-        numberElements.forEach((element) => {
-          const targetValue = parseInt(element.textContent, 10);
-          if (!isNaN(targetValue)) {
-            animateNumber(element, targetValue, 2000);
-          }
-        });
-      });
-
-      // Trigger number animation when results section is in view
-      const resultsSection = document.querySelector(".results");
-      if (resultsSection) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                animateNumbers();
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.3 }
-        );
-
-        observer.observe(resultsSection);
-      }
-
-      function animateNumbers() {
-        const numberElements = document.querySelectorAll(".stat-number-text");
-
-        numberElements.forEach((element) => {
-          const targetValue = parseInt(element.innerText, 10);
-          if (!isNaN(targetValue)) {
-            const duration = 2000; // 2 seconds
-            const start = 0;
-            const increment = targetValue / 50;
-            let current = 0;
-
-            const timer = setInterval(() => {
-              current += increment;
-              if (current >= targetValue) {
-                element.innerText = targetValue;
-                clearInterval(timer);
-              } else {
-                element.innerText = Math.floor(current);
-              }
-            }, 40);
-          }
-        });
-      }
-
-      // Run when the document is fully loaded
-      document.addEventListener("DOMContentLoaded", function () {
-        // Set a slight delay to ensure DOM is fully processed
-        setTimeout(animateNumbers, 500);
-      });
-    </script>
-
-    <script src="header.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
