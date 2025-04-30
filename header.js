@@ -76,9 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   currentPage.includes("services") ? "active" : ""
                 }">Services</a>
                 <div class="dropdown-menu">
-                  <a href="services/exec_dev.html">Executive Development</a>
-                  <a href="services/leader_development.html">Accelerator</a>
-                  <a href="services/strategic_consulting.html">Strategic Consulting</a>
+                  <a href="services/exec.html">Executive Development</a>
+                  <a href="services/exec_dev.html">Accelerator</a>
+                  <a href="services/strategy.html">Strategic Consulting</a>
                 </div>
               </li>
               <li><a href="impact.html" class="${
