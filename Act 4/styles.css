@@ -1278,4 +1278,59 @@
     width: 40px;
     height: 40px;
   }
+}.blog-scroll-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-scroll-wrapper article {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 300px; /* or your desired card width */
+}
+/* Blog Section Fixes (Add these to your existing styles.css) */
+.blog-section {
+  overflow-x: hidden; /* Prevent horizontal scroll from affecting the page */
+}
+
+.blog-cards-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Hide overflow from the container */
+  margin-bottom: var(--spacing-md);
+}
+
+.blog-grid {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto; /* Only the grid scrolls horizontally */
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.blog-grid::-webkit-scrollbar {
+  display: none;
+}
+
+/* Make sure blog cards work with horizontal layout */
+.blog-card {
+  flex: 0 0 auto;
+  width: 350px;
+  min-width: 300px;
+  max-width: 90vw;
+}
+
+/* Navigation button states */
+.blog-nav-btn.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }

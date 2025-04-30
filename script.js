@@ -476,8 +476,8 @@ function initBlogScroll() {
   
   if (!blogGrid || !prevBtn || !nextBtn) return;
   
-  // Scroll amount (pixels)
-  const scrollAmount = 400;
+  // Scroll amount (approximately one card width plus gap)
+  const scrollAmount = 370;
   
   // Scroll to previous item
   prevBtn.addEventListener('click', () => {
@@ -515,7 +515,8 @@ function initBlogScroll() {
     }
     
     // Check if we're at the end
-    if (blogGrid.scrollLeft >= blogGrid.scrollWidth - blogGrid.clientWidth - 10) {
+    const maxScrollLeft = blogGrid.scrollWidth - blogGrid.clientWidth - 10;
+    if (blogGrid.scrollLeft >= maxScrollLeft) {
       nextBtn.classList.add('disabled');
     } else {
       nextBtn.classList.remove('disabled');
@@ -528,62 +529,47 @@ function initBlogScroll() {
   // Initial update
   updateScrollButtons();
   
-  // Additional visual indicator for mobile
-  let isScrolling;
-  
-  // Show scroll indicator on mobile when not scrolling
-  function checkScrollIndicator() {
-    const scrollIndicator = document.querySelector('.blog-scroll-indicators');
-    if (!scrollIndicator) return;
+  // Touch events for better mobile experience
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  blogGrid.addEventListener('touchstart', e => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  blogGrid.addEventListener('touchend', e => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+    const threshold = 50; // Minimum distance to be considered a swipe
     
-    // Clear timeout if already set
-    window.clearTimeout(isScrolling);
+    if (Math.abs(swipeDistance) < threshold) return; // Not a significant swipe
     
-    // Hide indicator during scroll
-    scrollIndicator.style.opacity = '0';
-    
-    // Set timeout to show indicator after scrolling stops
-    isScrolling = setTimeout(() => {
-      scrollIndicator.style.opacity = '1';
-    }, 1000);
-  }
-  
-  // Add event listener for scroll
-  blogGrid.addEventListener('scroll', checkScrollIndicator);
-  
-  // Initial run
-  checkScrollIndicator();
-  
-  // Alternative scroll buttons for keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    // Only if blog grid is in viewport
-    const rect = blogGrid.getBoundingClientRect();
-    const isInViewport = (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-    
-    if (!isInViewport) return;
-    
-    // Left arrow key
-    if (e.key === 'ArrowLeft') {
+    if (swipeDistance > 0) {
+      // Swiped right
       blogGrid.scrollBy({
         left: -scrollAmount,
         behavior: 'smooth'
       });
-    }
-    
-    // Right arrow key
-    if (e.key === 'ArrowRight') {
+    } else {
+      // Swiped left
       blogGrid.scrollBy({
         left: scrollAmount,
         behavior: 'smooth'
       });
     }
-  });
+  }
 }
+
+// Make sure this function is called when document is ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Other initialization functions...
+  initBlogScroll();
+});
+
 
 // Don't forget to add this to your document ready function
 document.addEventListener("DOMContentLoaded", function() {
