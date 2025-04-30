@@ -1498,3 +1498,189 @@ body {
       margin: 0 auto;
   }
 }
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.section-tag {
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Horizontal scrolling services grid */
+.services-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.services-grid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 30px;
+  padding-bottom: 30px; /* Space for scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: var(--accent-color) transparent; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari/Opera */
+.services-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.services-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.services-grid::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+.service-card {
+  flex: 0 0 auto;
+  width: 500px; /* Wider cards */
+  min-width: 300px; /* Minimum width */
+  max-width: 90vw; /* Maximum width on small screens */
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  scroll-snap-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.featured {
+  border-color: var(--accent-color);
+  background-color: rgba(0, 229, 255, 0.05);
+}
+
+.featured-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom-left-radius: 12px;
+}
+
+.service-content {
+  padding: 30px;
+}
+
+.service-card h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.service-description {
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.service-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.service-points li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.service-points li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 16px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #00c0d9;
+}
+
+/* Scroll indicators */
+.scroll-indicator {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .service-card {
+      width: 85vw;
+  }
+  
+  h2 {
+      font-size: 32px;
+  }
+  
+  .service-card h3 {
+      font-size: 24px;
+  }
+  
+  .service-content {
+      padding: 25px;
+  }
+}
