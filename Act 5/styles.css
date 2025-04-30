@@ -1743,4 +1743,13 @@ h2 {
 
 .service-points li {
   margin-bottom: 8px;
+}.approach-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.approach-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }

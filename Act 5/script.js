@@ -115,3 +115,23 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(resultsSection);
   }
 });
+// Scroll-triggered animation for Approach cards
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".approach-card");
+
+  if (cards.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    cards.forEach(card => observer.observe(card));
+  }
+});

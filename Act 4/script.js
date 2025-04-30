@@ -432,21 +432,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach((card) => observer.observe(card));
 });
-  // Approach card scroll animation
+// Approach card scroll animation
+const approachCards = document.querySelectorAll(".approach-card");
+
+if (approachCards.length > 0) {
+  const approachObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          approachObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  approachCards.forEach((card) => approachObserver.observe(card));
+}
+document.addEventListener("DOMContentLoaded", function () {
   const approachCards = document.querySelectorAll(".approach-card");
 
   if (approachCards.length > 0) {
-    const approachObserver = new IntersectionObserver(
-      (entries) => {
+    console.log("Observer ready:", approachCards.length);
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
-            approachObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.3 }
     );
 
-    approachCards.forEach((card) => approachObserver.observe(card));
+    approachCards.forEach((card) => observer.observe(card));
   }
+});
