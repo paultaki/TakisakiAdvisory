@@ -4,157 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paul Takisaki | Leadership for Those Who Think Differently</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&amp;display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Page Loader -->
+    <!-- Add this to your HTML right after the opening body tag -->
     <div class="page-loader">
       <div class="loader-content">
         <div class="loader-spinner"></div>
         <div class="loader-text">PAUL <span>TAKISAKI</span></div>
       </div>
     </div>
-
-    <!-- Header (Sticky Navigation) -->
-    <header class="site-header">
-      <div class="container">
-        <div class="logo">
-          <a href="index.html">PAUL <span>TAKISAKI</span></a>
-        </div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
-              <a href="#services" class="dropdown-toggle">Services <span class="dropdown-icon">+</span></a>
-              <ul class="dropdown-menu">
-                <li><a href="exec.html">Executive Coaching</a></li>
-                <li><a href="leader.html">The Accelerator</a></li>
-                <li><a href="strategy.html">Strategic Consulting</a></li>
-              </ul>
-            </li>
-            <li><a href="vault.html">Vault</a></li>
-            <li><a href="impact.html">Impact</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="blogs.html">Blog</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    /* Page Loader */
+    <div id="header-container"></div>
 
     <main>
-      <!-- 1. Hero Section -->
+      <!-- 1. Hero Section with Strategic Chess Metaphor -->
       <section class="hero">
-        <div id="particles" class="particles"></div>
         <div class="container">
           <div class="hero-content">
-            <h1 class="reveal-text">
+            <h1>
               <span class="line">MOST LEADERS</span>
-              <span class="line">PLAY CHECKERS</span>
-              <span class="line">WE</span>
               <span class="line">PLAY</span>
+              <span class="line">CHECKERS.</span>
+              <span class="line">WE PLAY</span>
               <span class="line accent">CHESS.</span>
             </h1>
-            <p class="hero-subtext reveal-text-delay">
+            <p class="hero-subtext">
               Leadership coaching for those playing a different game.
             </p>
-            <div class="hero-cta reveal-text-delay-2">
+            <div class="hero-cta">
               <a href="#services" class="button primary">SEE SERVICES</a>
-              <a href="#results" class="text-link">VIEW THE RESULTS <span class="arrow">→</span></a>
+              <a href="#approach" class="text-link"
+                >LEARN THE APPROACH <span class="arrow">→</span></a
+              >
             </div>
           </div>
           <div class="chess-visual">
             <img
-              src="images/chess.webp"
+              src="images/chess2.webp"
               alt="Chess and Checkers Contrast"
               class="chess-image"
-              width="450"
-              height="450"
             />
           </div>
         </div>
-        <div class="scroll-down-indicator">
-          <div class="scroll-text">Scroll to explore <span class="scroll-down-arrow">↓</span></div>
-        </div>
       </section>
 
-      <!-- 2. Results Section -->
-      <section id="results" class="results">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-tag">RESULTS</div>
-            <h2>Impact That Speaks Volumes</h2>
-          </div>
-
-          <div class="results-grid">
-            <div class="result-box">
-              <div class="stat-container">
-                <span class="result-number">1000</span>
-                <span class="result-suffix">+</span>
-              </div>
-              <div class="result-label">TEAM MEMBERS<br />ELEVATED</div>
-              <div class="result-description">
-                Not managed. Not directed. Led with purpose that sparked
-                revolutionary performance.
-              </div>
-            </div>
-
-            <div class="result-box">
-              <div class="stat-container">
-                <span class="result-number">4</span>
-                <span class="result-suffix">×</span>
-              </div>
-              <div class="result-label">PRESIDENT'S<br />CABINET</div>
-              <div class="result-description">
-                Top 1%. Recognition not for playing by the rules, but for
-                rewriting them.
-              </div>
-            </div>
-
-            <div class="result-box">
-              <div class="stat-container">
-                <span class="result-prefix">$</span>
-                <span class="result-number">1</span>
-                <span class="result-suffix">B+</span>
-              </div>
-              <div class="result-label">REVENUE<br />LAUNCHED</div>
-              <div class="result-description">
-                Not incremental improvements. Breakthrough initiatives that
-                created entirely new value categories.
-              </div>
-            </div>
-
-            <div class="result-box">
-              <div class="stat-container">
-                <span class="result-number">100</span>
-                <span class="result-suffix">+</span>
-              </div>
-              <div class="result-label">LEADERS<br />MENTORED</div>
-              <div class="result-description">
-                From frontline reps to executives. Promoted, empowered, and
-                equipped to lead boldly on their terms.
-              </div>
-            </div>
-          </div>
-          
-          <div class="cta-center">
-            <a href="impact.html" class="button secondary">See Full Impact Story</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. Services Section -->
+      <!-- 2. Services Section - Leadership Development -->
       <section id="services" class="services">
         <div class="container">
           <div class="section-header">
@@ -172,15 +73,17 @@
                   results.
                 </p>
                 <ul class="service-points">
-                  <li>Make 3 audacious moves that add substantial value to P&L</li>
+                  <li>3 audacious calls that add >$X M to P&L</li>
                   <li>
                     Own the room within the first 30 seconds — without
-                    overtalking
+                    overtalking.
                   </li>
-                  <li>Cut 70% of busywork and redirect energy to profit</li>
-                  <li>Lift team engagement 15–30% — and lock in loyalty</li>
+                  <li>Cut 70% of busywork and redirect energy to profit.</li>
+                  <li>Lift team engagement 15–30% — and lock in loyalty.</li>
                 </ul>
-                <a href="exec.html" class="button secondary">LEARN MORE</a>
+                <a href="executive_coaching.html" class="button secondary"
+                  >SEE THE RESULTS</a
+                >
               </div>
             </div>
 
@@ -199,9 +102,11 @@
                   <li>
                     Install a personal OS that frees 10 hrs/week for strategy
                   </li>
-                  <li>Hit ≥90% of quarterly targets, every quarter</li>
+                  <li>Hit ≥90 % of quarterly targets, every quarter</li>
                 </ul>
-                <a href="leader.html" class="button primary">LEARN MORE</a>
+                <a href="leadership_development.html" class="button primary"
+                  >UNLOCK MY FAST-TRACK</a
+                >
               </div>
             </div>
 
@@ -213,122 +118,137 @@
                   critical few metrics that actually matter.
                 </p>
                 <ul class="service-points">
-                  <li>100% exec agreement on the three metrics that matter</li>
-                  <li>15-40% lift in output without adding headcount</li>
+                  <li>100 % exec agreement on the three metrics that matter</li>
+                  <li>15-40 % lift in output without adding headcount</li>
                   <li>
-                    Faster, data-backed calls that cut project cycle time 25%
+                    Faster, data-backed calls that cut project cycle time 25 %
                   </li>
                   <li>
                     A top table that models accountability and psychological
                     safety
                   </li>
                 </ul>
-                <a href="strategy.html" class="button secondary">LEARN MORE</a>
+                <a href="strategic_consulting.html" class="button secondary"
+                  >BUILD THE TURNAROUND</a
+                >
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 4. Blog Section -->
-      <section id="blog" class="blog-section">
+      <!-- 3. The Operating System Section - The Approach -->
+      <section id="operating-system" class="operating-system">
         <div class="container">
           <div class="section-header">
-            <div class="section-tag">Insights</div>
-            <h2>Latest Thinking</h2>
+            <div class="section-tag">The Approach</div>
+            <h2>
+              This Isn't a
+              <span class="strikethrough">Disorder</span>.<br />It's a Different
+              Operating System.
+            </h2>
           </div>
-          
-          <!-- This is the container that will scroll horizontally -->
-          <div class="blog-cards-container">
-            <div class="blog-grid">
-              <!-- Blog Card 1 -->
-              <article class="blog-card">
-                <div class="blog-image">
-                  <img src="images/blog/strategy.webp" alt="Strategy that sticks" />
-                </div>
-                <div class="blog-content">
-                  <span class="blog-tag">Strategy</span>
-                  <h3>Strategy That Sticks: Why Most Plans Fail and How to Make Yours Actually Work</h3>
-                  <p>
-                    Most strategies fail for one of three reasons: The goal isn't bold enough, no one decides where not to play, and there's zero governance.
-                  </p>
-                  <div class="blog-meta">
-                    <span class="date">April 12, 2025</span>
-                    <span class="read-time">5 min read</span>
-                  </div>
-                  <a href="strategy.html" class="read-more">Read More →</a>
-                </div>
-              </article>
 
-              <!-- Blog Card 2 -->
-              <article class="blog-card">
-                <div class="blog-image">
-                  <img src="images/blog/leadership.webp" alt="Leadership focus" />
-                </div>
-                <div class="blog-content">
-                  <span class="blog-tag">Leadership</span>
-                  <h3>The 80/20 Rule of Leadership: How to Focus on What Actually Matters</h3>
-                  <p>
-                    Most leaders waste time on low-impact activities. Here's how to identify and double-down on the 20% that drives 80% of your results.
-                  </p>
-                  <div class="blog-meta">
-                    <span class="date">April 5, 2025</span>
-                    <span class="read-time">4 min read</span>
-                  </div>
-                  <a href="leadership.html" class="read-more">Read More →</a>
-                </div>
-              </article>
-
-              <!-- Blog Card 3 -->
-              <article class="blog-card">
-                <div class="blog-image">
-                  <img src="images/blog/culture.webp" alt="Team culture" />
-                </div>
-                <div class="blog-content">
-                  <span class="blog-tag">Culture</span>
-                  <h3>Building Teams That Actually Build: The Misfit Framework for High-Performance</h3>
-                  <p>
-                    Conventional wisdom says culture is about free lunches and foosball tables. Here's why that's wrong and what actually drives performance.
-                  </p>
-                  <div class="blog-meta">
-                    <span class="date">March 28, 2025</span>
-                    <span class="read-time">6 min read</span>
-                  </div>
-                  <a href="culture.html" class="read-more">Read More →</a>
-                </div>
-              </article>
-
-              <!-- Blog Card 4 (Coming Soon) -->
-              <article class="blog-card coming-soon">
-                <div class="coming-soon-content">
-                  <h3>Coming Soon</h3>
-                  <h4>The Silent Influence: How to Lead When You're Not the Loudest Voice</h4>
-                  <span class="blog-tag">Influence</span>
-                </div>
-              </article>
+          <div class="os-cards">
+            <div class="os-card">
+              <div class="os-number">01</div>
+              <h3>If It's Boring, It's Broken</h3>
+              <p>
+                You don't blame the audience—you rewrite the act. When they're
+                not leaning in, it's on you.
+              </p>
+            </div>
+            <div class="os-card">
+              <div class="os-number">02</div>
+              <h3>Skip the Fire Drills</h3>
+              <p>
+                Don't confuse noise for preparation. When it's real, instincts
+                kick in. Until then? Save your energy.
+              </p>
+            </div>
+            <div class="os-card">
+              <div class="os-number">03</div>
+              <h3>The Critical Few > The Trivial Many</h3>
+              <p>
+                Win the top 3 metrics. Take the heat for the rest. Focus drives
+                the results that actually matter.
+              </p>
+            </div>
+            <div class="os-card">
+              <div class="os-number">04</div>
+              <h3>Delegate to Multiply</h3>
+              <p>
+                You don't delegate to do less—you delegate so others can do
+                more. Release control to unlock capability.
+              </p>
             </div>
           </div>
 
-          <!-- Blog navigation buttons -->
-          <div class="blog-nav-buttons">
-            <button class="blog-nav-btn blog-prev" aria-label="Previous posts">
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                <path d="M19 12H5M12 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button class="blog-nav-btn blog-next" aria-label="Next posts">
-              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-
-          <div class="cta-center">
-            <a href="blogs.html" class="button secondary">View All Insights</a>
+          <div class="os-footer">
+            <a href="manifesto.html" class="button secondary"
+              >Read the Full Manifesto</a
+            >
           </div>
         </div>
       </section>
 
+      <!-- Results Section -->
+      <div class="container">
+        <div class="results-grid">
+          <!-- Team Members -->
+          <div class="result-box">
+            <div class="stat-row">
+              <div class="number">237</div>
+              <div class="symbol plus">+</div>
+            </div>
+            <div class="result-label">TEAM MEMBERS<br />ELEVATED</div>
+            <div class="result-description">
+              Not managed. Not directed. Led with purpose that sparked
+              revolutionary performance.
+            </div>
+          </div>
+
+          <!-- President's Cabinet -->
+          <div class="result-box">
+            <div class="stat-row">
+              <div class="number">4</div>
+              <div class="symbol times">×</div>
+            </div>
+            <div class="result-label">PRESIDENT'S<br />CABINET</div>
+            <div class="result-description">
+              Top 1%. Recognition not for playing by the rules, but for
+              rewriting them.
+            </div>
+          </div>
+
+          <!-- Revenue Launched -->
+          <div class="result-box">
+            <div class="stat-row">
+              <div class="symbol dollar">$</div>
+              <div class="number">1</div>
+              <div class="symbol billion">B</div>
+            </div>
+            <div class="result-label">REVENUE<br />LAUNCHED</div>
+            <div class="result-description">
+              Not incremental improvements. Breakthrough initiatives that
+              created entirely new value categories.
+            </div>
+          </div>
+
+          <!-- Leaders Mentored -->
+          <div class="result-box">
+            <div class="stat-row">
+              <div class="number">100</div>
+              <div class="symbol plus">+</div>
+            </div>
+            <div class="result-label">LEADERS<br />MENTORED</div>
+            <div class="result-description">
+              From frontline reps to executives. Promoted, empowered, and
+              equipped to lead boldly on their terms.
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- 5. About Paul Section -->
       <section id="about" class="about-section">
         <div class="container">
@@ -342,7 +262,7 @@
                 For 20 years at Verizon, I felt like an outlier. My approach to
                 leadership wasn't just unconventional—it ran counter to the
                 dominant culture. I built strategy and stayed focused while
-                others put in conspicuous 80-hour weeks and managed through
+                others put in conspicuous 80-hour weeks and managed thro ugh
                 force of personality.
               </p>
               <p>
@@ -356,21 +276,18 @@
                 figure out why my teams consistently outperformed others with
                 less drama and burnout.
               </p>
-              <a href="about.html" class="button secondary">My Full Story</a>
             </div>
             <div class="about-image">
               <img
                 src="images/headshot_bw.webp"
                 alt="Paul Takisaki - Leadership Coach"
-                width="400"
-                height="500"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 6. Testimonials Section -->
+      <!-- 6. Testimonials Section - Leaders Say -->
       <section id="testimonials" class="testimonials">
         <div class="container">
           <div class="section-header">
@@ -442,7 +359,7 @@
           </div>
 
           <div class="testimonial-nav">
-            <button class="testimonial-prev" aria-label="Previous testimonial">
+            <button class="testimonial-prev">
               <span class="arrow-left"></span>
             </button>
             <div class="testimonial-indicators">
@@ -451,7 +368,7 @@
               <span class="indicator"></span>
               <span class="indicator"></span>
             </div>
-            <button class="testimonial-next" aria-label="Next testimonial">
+            <button class="testimonial-next">
               <span class="arrow-right"></span>
             </button>
           </div>
@@ -470,15 +387,13 @@
               <p>Ready to stop conforming and start transforming?</p>
               <form
                 class="contact-form"
-                id="contactForm"
-                action="#"
+                action="https://www.paultakisaki.com/submit-form"
                 method="POST"
               >
                 <div class="form-group">
                   <input
                     type="text"
                     name="name"
-                    id="name"
                     placeholder="Your Name"
                     required
                   />
@@ -487,13 +402,12 @@
                   <input
                     type="email"
                     name="email"
-                    id="email"
                     placeholder="Your Email"
                     required
                   />
                 </div>
                 <div class="form-group">
-                  <select name="service" id="service" required>
+                  <select name="service" required>
                     <option value="" disabled selected>Select Service</option>
                     <option value="executive-coaching">
                       Executive Coaching
@@ -514,21 +428,20 @@
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- 8. Footer -->
     <footer>
       <div class="container">
         <div class="footer-grid">
           <div class="footer-info">
-            <div class="footer-logo">PAUL <span>TAKISAKI</span></div>
+            <div class="footer-logo">Paul Takisaki</div>
             <p>
               Leadership coaching for innovative thinkers who don't fit the
               standard mold.
             </p>
             <div class="footer-social">
-              
+              <a
                 href="https://www.linkedin.com/in/paultaki"
                 target="_blank"
-                rel="noopener"
                 class="social-link"
                 >LinkedIn</a
               >
@@ -538,24 +451,23 @@
             <div class="footer-column">
               <h4>Navigation</h4>
               <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="vault.html">Vault</a></li>
-                <li><a href="impact.html">Impact</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="blogs.html">Blog</a></li>
+                <li><a href="#operating-system">Approach</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#about">About</a></li>
               </ul>
             </div>
             <div class="footer-column">
               <h4>Services</h4>
               <ul>
                 <li>
-                  <a href="exec.html">Executive Coaching</a>
+                  <a href="executive_coaching.html">Executive Coaching</a>
                 </li>
                 <li>
-                  <a href="leader.html">The Accelerator</a>
+                  <a href="leadership_development.html">The Accelerator</a>
                 </li>
                 <li>
-                  <a href="strategy.html">Strategic Consulting</a>
+                  <a href="strategic_consulting.html">Strategic Consulting</a>
                 </li>
               </ul>
             </div>
@@ -572,21 +484,193 @@
       </div>
     </footer>
 
-    <!-- Floating Action Button for Mobile -->
+    <script>
+      // Testimonial slider functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const indicators = document.querySelectorAll(".indicator");
+        const prevBtn = document.querySelector(".testimonial-prev");
+        const nextBtn = document.querySelector(".testimonial-next");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+          slides.forEach((slide) => slide.classList.remove("active"));
+          indicators.forEach((indicator) =>
+            indicator.classList.remove("active")
+          );
+
+          slides[index].classList.add("active");
+          indicators[index].classList.add("active");
+          currentSlide = index;
+        }
+
+        if (prevBtn && nextBtn) {
+          prevBtn.addEventListener("click", function () {
+            let newIndex = currentSlide - 1;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            showSlide(newIndex);
+          });
+
+          nextBtn.addEventListener("click", function () {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            showSlide(newIndex);
+          });
+        }
+
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", function () {
+            showSlide(index);
+          });
+        });
+
+        // Initialize with first slide active
+        showSlide(0);
+      });
+
+      // Sticky header on scroll
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.padding = "10px 0";
+          header.style.backgroundColor = "rgba(18, 18, 18, 0.95)";
+        } else {
+          header.style.padding = "20px 0";
+          header.style.backgroundColor = "rgba(18, 18, 18, 0.8)";
+        }
+      });
+
+      // Mobile menu toggle
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav");
+
+      if (menuToggle && nav) {
+        menuToggle.addEventListener("click", function () {
+          nav.style.display = nav.style.display === "block" ? "none" : "block";
+          this.classList.toggle("active");
+        });
+      }
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            if (window.innerWidth < 768 && nav.style.display === "block") {
+              nav.style.display = "none";
+              menuToggle.classList.remove("active");
+            }
+          }
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Simple animation for numbers
+        function animateNumber(element, target, duration) {
+          const start = 0;
+          const startTime = performance.now();
+
+          function updateNumber(currentTime) {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            const currentValue = Math.floor(progress * target);
+
+            element.textContent = currentValue;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateNumber);
+            } else {
+              element.textContent = target;
+            }
+          }
+
+          requestAnimationFrame(updateNumber);
+        }
+
+        // Get all number elements
+        const numberElements = document.querySelectorAll(".result-number");
+
+        // Animate each number
+        numberElements.forEach((element) => {
+          const targetValue = parseInt(element.textContent, 10);
+          if (!isNaN(targetValue)) {
+            animateNumber(element, targetValue, 2000);
+          }
+        });
+      });
+
+      // Trigger number animation when results section is in view
+      const resultsSection = document.querySelector(".results");
+      if (resultsSection) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateNumbers();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        observer.observe(resultsSection);
+      }
+
+      function animateNumbers() {
+        const numberElements = document.querySelectorAll(".stat-number-text");
+
+        numberElements.forEach((element) => {
+          const targetValue = parseInt(element.innerText, 10);
+          if (!isNaN(targetValue)) {
+            const duration = 2000; // 2 seconds
+            const start = 0;
+            const increment = targetValue / 50;
+            let current = 0;
+
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= targetValue) {
+                element.innerText = targetValue;
+                clearInterval(timer);
+              } else {
+                element.innerText = Math.floor(current);
+              }
+            }, 40);
+          }
+        });
+      }
+
+      // Run when the document is fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Set a slight delay to ensure DOM is fully processed
+        setTimeout(animateNumbers, 500);
+      });
+    </script>
+    <script src="script.js"></script>
+
+    <script src="header.js"></script>
+    <!-- Add this before the closing body tag -->
     <div class="fab-container">
-      <button class="fab-button" aria-label="Quick navigation">
+      <button class="fab-button">
         <span class="fab-icon">+</span>
       </button>
       <div class="fab-options">
         <a href="#contact" class="fab-option"><span>Contact</span></a>
         <a href="#services" class="fab-option"><span>Services</span></a>
-        <a href="#results" class="fab-option"><span>Results</span></a>
+        <a href="#operating-system" class="fab-option"><span>Approach</span></a>
       </div>
     </div>
-
-    <!-- Custom cursor for desktop -->
-    <div class="cursor-follower"></div>
-
-    <script src="script.js"></script>
   </body>
 </html>
