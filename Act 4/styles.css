@@ -1334,3 +1334,207 @@
   opacity: 0.3;
   cursor: not-allowed;
 }
+.approach-section {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.approach-section .section-header {
+  margin-bottom: 60px;
+}
+
+.approach-subtext {
+  color: #ccc;
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.approach-card {
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 30px 25px;
+  text-align: left;
+  position: relative;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.approach-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.approach-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.approach-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.approach-result {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #4ade80;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.approach-footer {
+  margin-top: 20px;
+}
+
+.approach-footer .button.primary {
+  background-color: #00e5ff;
+  color: #000;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.approach-footer .button.primary:hover {
+  background-color: #00c2d3;
+}
+.approach-section {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.approach-section .section-header {
+  margin-bottom: 60px;
+}
+
+.approach-subtext {
+  color: #ccc;
+  max-width: 700px;
+  margin: 20px auto 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto 60px;
+}
+
+.approach-card {
+  background-color: #121212;
+  border-radius: 10px;
+  padding: 30px 25px;
+  text-align: left;
+  position: relative;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.6s ease, box-shadow 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+}
+
+.approach-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.approach-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.approach-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.approach-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.approach-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+}
+
+.approach-result {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #4ade80;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.approach-footer {
+  margin-top: 20px;
+}
+
+.approach-footer .button.primary {
+  background-color: #00e5ff;
+  color: #000;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.approach-footer .button.primary:hover {
+  background-color: #00c2d3;
+}

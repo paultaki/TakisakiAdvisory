@@ -415,3 +415,38 @@ function initSmoothScrolling() {
 window.addEventListener("load", function () {
   document.body.classList.add("loaded");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".approach-card");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+});
+  // Approach card scroll animation
+  const approachCards = document.querySelectorAll(".approach-card");
+
+  if (approachCards.length > 0) {
+    const approachObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            approachObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    approachCards.forEach((card) => approachObserver.observe(card));
+  }
