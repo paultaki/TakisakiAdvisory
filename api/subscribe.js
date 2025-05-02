@@ -30,7 +30,11 @@ export default async function handler(req, res) {
 
     if (!sgRes.ok) {
       const error = await sgRes.json();
-      return res.status(500).json({ message: "SendGrid error", error });
+      console.error("SendGrid API Error:", JSON.stringify(error, null, 2));
+      return res.status(500).json({
+        message: "SendGrid error",
+        error: error,
+      });
     }
 
     return res.status(200).json({ message: "You’re on the list!" });
