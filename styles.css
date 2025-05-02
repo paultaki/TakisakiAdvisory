@@ -951,6 +951,12 @@ header .container {
   transition: var(--transition);
 }
 
+/* Fix for dropdown options with white text on white background */
+.contact-form select option {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form input:focus-visible,
