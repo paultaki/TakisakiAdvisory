@@ -1,11 +1,16 @@
 export default async function handler(req, res) {
+  console.log("=== /api/subscribe hit ===");
+
   if (req.method !== "POST") {
+    console.log("❌ Wrong method:", req.method);
     return res.status(405).json({ message: "Method Not Allowed" });
   }
 
   const { email } = req.body;
+  console.log("📨 Email received:", email);
 
   if (!email || !email.includes("@")) {
+    console.log("❌ Invalid email submitted:", email);
     return res.status(400).json({ message: "Invalid email address" });
   }
 
@@ -30,17 +35,16 @@ export default async function handler(req, res) {
 
     if (!sgRes.ok) {
       const error = await sgRes.json();
-      console.error("SendGrid API Error:", JSON.stringify(error, null, 2));
-      return res.status(500).json({
-        message: "SendGrid error",
-        error: error,
-      });
+      console.error("❌ SendGrid API Error:", JSON.stringify(error, null, 2));
+      return res.status(500).json({ message: "SendGrid error", error });
     }
 
+    console.log("✅ Email successfully added:", email);
     return res.status(200).json({ message: "You’re on the list!" });
   } catch (err) {
+    console.error("💥 UNCAUGHT ERROR:", err.message || err);
     return res
       .status(500)
-      .json({ message: "Something went wrong", error: err });
+      .json({ message: "Server error", error: err.message });
   }
 }
