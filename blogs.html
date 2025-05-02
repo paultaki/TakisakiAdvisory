@@ -583,12 +583,10 @@
         }
       }
     </style>
-        <link rel="stylesheet" href="styles.css" />
-
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div id="header-container"></div>
-
 
     <section class="page-title">
       <div class="container">
@@ -852,12 +850,20 @@
 
           // Here you would typically send the email to your server
           // For now, we'll just show an alert
-          alert(
-            `Thank you for subscribing with ${email}! You'll receive our next newsletter soon.`
-          );
-
-          // Clear the form
-          this.reset();
+          fetch("/api/subscribe", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              alert(data.message || "You’re on the list!");
+              subscribeForm.reset();
+            })
+            .catch((err) => {
+              console.error(err);
+              alert("Something went wrong. Please try again later.");
+            });
         });
       }
     </script>
