@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Paul Takisaki - Executive leadership coaching for those who think differently. Strategic clarity and transformative leadership development." />
     <title>Paul Takisaki | Leadership for Those Who Think Differently</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
@@ -13,6 +14,9 @@
     />
   </head>
   <body>
+    <!-- Skip to content link for keyboard users -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
     <!-- Add this to your HTML right after the opening body tag -->
     <div class="page-loader">
       <div class="loader-content">
@@ -22,7 +26,7 @@
     </div>
     <div id="header-container"></div>
 
-    <main>
+    <main id="main-content">
       <!-- 1. Hero Section with Strategic Chess Metaphor -->
       <section class="hero">
         <div class="container">
@@ -50,7 +54,7 @@
           <div class="chess-visual">
             <img
               src="images/chess2.webp"
-              alt="Chess and Checkers Contrast"
+              alt="Chess board representing strategic leadership thinking versus traditional approaches"
               class="chess-image"
             />
           </div>
@@ -278,7 +282,7 @@
             <div class="about-image">
               <img
                 src="images/headshot_bw.webp"
-                alt="Paul Takisaki - Leadership Coach"
+                alt="Portrait of Paul Takisaki, Executive Leadership Coach with over 20 years experience at Verizon"
               />
             </div>
           </div>
@@ -293,8 +297,8 @@
             <h2>Changed How They Lead</h2>
           </div>
 
-          <div class="testimonial-slider">
-            <div class="testimonial-slide active">
+          <div class="testimonial-slider" role="region" aria-label="Testimonial Slider">
+            <div id="testimonial-1" class="testimonial-slide active" role="tabpanel" aria-labelledby="testimonial-tab-1">
               <div class="testimonial-quote">
                 "Paul is one of the most empowering leaders that I have ever
                 worked for. I have seen him lead sales leaders, technology
@@ -308,7 +312,7 @@
               </div>
             </div>
 
-            <div class="testimonial-slide">
+            <div id="testimonial-2" class="testimonial-slide" role="tabpanel" aria-labelledby="testimonial-tab-2" hidden>
               <div class="testimonial-quote">
                 "Paul has been an invaluable leader and mentor, providing
                 guidance that deeply shaped my leadership style and professional
@@ -324,7 +328,7 @@
               </div>
             </div>
 
-            <div class="testimonial-slide">
+            <div id="testimonial-3" class="testimonial-slide" role="tabpanel" aria-labelledby="testimonial-tab-3" hidden>
               <div class="testimonial-quote">
                 "Working with Paul Takisaki has been <strong>a deeply transformative
                 experience.</strong> His compassion and unwavering focus on building from
@@ -339,7 +343,7 @@
               </div>
             </div>
 
-            <div class="testimonial-slide">
+            <div id="testimonial-4" class="testimonial-slide" role="tabpanel" aria-labelledby="testimonial-tab-4" hidden>
               <div class="testimonial-quote">
                 "I would not be the leader I am today without Paul's leadership
                 and guidance over the years. Paul's leadership development style
@@ -356,18 +360,18 @@
             </div>
           </div>
 
-          <div class="testimonial-nav">
-            <button class="testimonial-prev">
-              <span class="arrow-left"></span>
+          <div class="testimonial-nav" role="tablist" aria-label="Testimonial Controls">
+            <button class="testimonial-prev" aria-label="Previous testimonial" tabindex="0">
+              <span class="arrow-left" aria-hidden="true"></span>
             </button>
             <div class="testimonial-indicators">
-              <span class="indicator active"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
+              <button id="testimonial-tab-1" class="indicator active" role="tab" aria-selected="true" aria-controls="testimonial-1" tabindex="0"></button>
+              <button id="testimonial-tab-2" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-2" tabindex="0"></button>
+              <button id="testimonial-tab-3" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-3" tabindex="0"></button>
+              <button id="testimonial-tab-4" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-4" tabindex="0"></button>
             </div>
-            <button class="testimonial-next">
-              <span class="arrow-right"></span>
+            <button class="testimonial-next" aria-label="Next testimonial" tabindex="0">
+              <span class="arrow-right" aria-hidden="true"></span>
             </button>
           </div>
         </div>
@@ -389,23 +393,30 @@
                 method="POST"
               >
                 <div class="form-group">
+                  <label for="name" class="visually-hidden">Your Name</label>
                   <input
                     type="text"
+                    id="name"
                     name="name"
                     placeholder="Your Name"
                     required
+                    aria-required="true"
                   />
                 </div>
                 <div class="form-group">
+                  <label for="email" class="visually-hidden">Your Email</label>
                   <input
                     type="email"
+                    id="email"
                     name="email"
                     placeholder="Your Email"
                     required
+                    aria-required="true"
                   />
                 </div>
                 <div class="form-group">
-                  <select name="service" required>
+                  <label for="service" class="visually-hidden">Select Service</label>
+                  <select name="service" id="service" required aria-required="true">
                     <option value="" disabled selected>Select Service</option>
                     <option value="executive-coaching">
                       Executive Coaching
