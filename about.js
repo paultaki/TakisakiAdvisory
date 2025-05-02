@@ -1,96 +1,104 @@
+// Operating System section - See More/Less functionality
 document.addEventListener("DOMContentLoaded", function () {
-  // Framework expansion functionality
-  const expandButtons = document.querySelectorAll(".expand-btn");
+  // Initialize expanded sections to be hidden
+  const expandedSections = document.querySelectorAll(".framework-expanded");
+  expandedSections.forEach((section) => {
+    section.style.display = "none";
+  });
 
+  // Add click event listeners to all See More buttons
+  const expandButtons = document.querySelectorAll(".expand-btn");
   expandButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const card = this.closest(".framework-card");
       const expandedContent = card.querySelector(".framework-expanded");
 
       if (expandedContent.style.display === "block") {
+        // Hide content
         expandedContent.style.display = "none";
         this.textContent = "See More";
-        card.style.borderColor = "#333";
       } else {
-        // First, close any open ones
-        document.querySelectorAll(".framework-expanded").forEach((content) => {
-          content.style.display = "none";
-          content
-            .closest(".framework-card")
-            .querySelector(".expand-btn").textContent = "See More";
-          content.closest(".framework-card").style.borderColor = "#333";
-        });
-
-        // Then open this one
+        // Show content
         expandedContent.style.display = "block";
-        this.textContent = "Show Less";
-        card.style.borderColor = "var(--accent-color)";
+        this.textContent = "See Less";
       }
     });
   });
 
   // Testimonial slider functionality
+  let currentSlide = 0;
   const slides = document.querySelectorAll(".testimonial-slide");
   const indicators = document.querySelectorAll(".indicator");
-  const prevBtn = document.querySelector(".testimonial-prev");
-  const nextBtn = document.querySelector(".testimonial-next");
-  let currentSlide = 0;
+  const totalSlides = slides.length;
 
+  // Function to change slide
   function showSlide(index) {
-    slides.forEach((slide) => slide.classList.remove("active"));
-    indicators.forEach((indicator) => indicator.classList.remove("active"));
+    // Hide all slides
+    slides.forEach((slide) => {
+      slide.style.opacity = 0;
+      slide.style.visibility = "hidden";
+      slide.classList.remove("active");
+    });
 
+    // Show selected slide
+    slides[index].style.opacity = 1;
+    slides[index].style.visibility = "visible";
     slides[index].classList.add("active");
+
+    // Update indicators
+    indicators.forEach((indicator) => {
+      indicator.classList.remove("active");
+    });
+
     indicators[index].classList.add("active");
     currentSlide = index;
   }
 
-  if (prevBtn && nextBtn) {
-    prevBtn.addEventListener("click", function () {
-      let newIndex = currentSlide - 1;
-      if (newIndex < 0) newIndex = slides.length - 1;
-      showSlide(newIndex);
-    });
+  // Initialize first slide
+  showSlide(0);
 
-    nextBtn.addEventListener("click", function () {
-      let newIndex = currentSlide + 1;
-      if (newIndex >= slides.length) newIndex = 0;
-      showSlide(newIndex);
-    });
-  }
-
+  // Set up indicator clicks
   indicators.forEach((indicator, index) => {
-    indicator.addEventListener("click", function () {
+    indicator.addEventListener("click", () => {
       showSlide(index);
     });
   });
 
-  // Auto-rotate testimonials
-  let testimonialInterval = setInterval(() => {
-    let newIndex = currentSlide + 1;
-    if (newIndex >= slides.length) newIndex = 0;
-    showSlide(newIndex);
-  }, 7000);
+  // Set up auto-rotation (optional)
+  const autoRotate = setInterval(() => {
+    const nextSlide = (currentSlide + 1) % totalSlides;
+    showSlide(nextSlide);
+  }, 8000);
 
-  // Pause rotation when hovering over testimonials
+  // Pause rotation on hover (optional)
   const testimonialContainer = document.querySelector(".testimonial-slider");
   if (testimonialContainer) {
     testimonialContainer.addEventListener("mouseenter", () => {
-      clearInterval(testimonialInterval);
-    });
-
-    testimonialContainer.addEventListener("mouseleave", () => {
-      testimonialInterval = setInterval(() => {
-        let newIndex = currentSlide + 1;
-        if (newIndex >= slides.length) newIndex = 0;
-        showSlide(newIndex);
-      }, 7000);
+      clearInterval(autoRotate);
     });
   }
 
-  // Animate elements on scroll
+  // Navigation arrows (if present)
+  const prevBtn = document.querySelector(".testimonial-prev");
+  const nextBtn = document.querySelector(".testimonial-next");
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      const prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(prevSlide);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      const nextSlide = (currentSlide + 1) % totalSlides;
+      showSlide(nextSlide);
+    });
+  }
+
+  // Simple animation for sections as they scroll into view
   const animatedElements = document.querySelectorAll(
-    ".handlebar-content, .framework-card, .anti-column, .result-box"
+    ".snapshot-item, .framework-card, .impact-card"
   );
 
   const observer = new IntersectionObserver(
@@ -102,30 +110,24 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     },
-    { threshold: 0.2 }
+    {
+      threshold: 0.2,
+    }
   );
 
   animatedElements.forEach((element) => {
     element.classList.add("animate-ready");
     observer.observe(element);
   });
-
-  // Add to about.css:
-  // .animate-ready { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  // .animate-in { opacity: 1; transform: translateY(0); }
-
-  // Modify CSS for animation
-  const style = document.createElement("style");
-  style.textContent = `
-    .animate-ready { 
-      opacity: 0; 
-      transform: translateY(20px); 
-      transition: opacity 0.5s ease, transform 0.5s ease; 
-    }
-    .animate-in { 
-      opacity: 1; 
-      transform: translateY(0); 
-    }
-  `;
-  document.head.appendChild(style);
 });
+
+// Add these to your main CSS file or in a style tag
+// .animate-ready {
+//   opacity: 0;
+//   transform: translateY(20px);
+//   transition: opacity 0.5s ease, transform 0.5s ease;
+// }
+// .animate-in {
+//   opacity: 1;
+//   transform: translateY(0);
+// }

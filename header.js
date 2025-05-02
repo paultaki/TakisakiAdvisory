@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (headerContainer) {
     // Get current page path
     const currentPage = window.location.pathname;
-    const pageName = currentPage.split('/').pop() || 'index.html';
+    const pageName = currentPage.split("/").pop() || "index.html";
 
     // Header HTML - using proper path references and improved structure
     const headerHTML = `
@@ -25,20 +25,37 @@ document.addEventListener("DOMContentLoaded", function () {
           
           <nav class="main-nav" id="main-nav">
             <ul>
-              <li><a href="index.html" class="${pageName === 'index.html' || currentPage === '/' ? 'active' : ''}">Home</a></li>
-              <li><a href="playbook.html" class="${pageName === 'playbook.html' ? 'active' : ''}">Leadership Vault</a></li>
+              <li><a href="index.html" class="${
+                pageName === "index.html" || currentPage === "/" ? "active" : ""
+              }">Home</a></li>
+              <li><a href="playbook.html" class="${
+                pageName === "playbook.html" ? "active" : ""
+              }">Leadership Vault</a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle ${pageName.includes('services') || currentPage.includes('/services/') ? 'active' : ''}">Services</a>
+                <a href="#" class="dropdown-toggle ${
+                  pageName.includes("services") ||
+                  currentPage.includes("/services/")
+                    ? "active"
+                    : ""
+                }">Services</a>
                 <div class="dropdown-menu">
                   <a href="services/exec.html">Executive Development</a>
                   <a href="services/exec_dev.html">Accelerator</a>
                   <a href="services/strategy.html">Strategic Consulting</a>
                 </div>
               </li>
-              <li><a href="impact.html" class="${pageName === 'impact.html' ? 'active' : ''}">Impact</a></li>
-              <li><a href="blogs.html" class="${pageName === 'blogs.html' ? 'active' : ''}">Blog</a></li>
-              <li><a href="about.html" class="${pageName === 'about.html' ? 'active' : ''}">About</a></li>
-              <li><a href="contact.html" class="nav-button ${pageName === 'contact.html' ? 'active' : ''}">Contact</a></li>
+              <li><a href="impact.html" class="${
+                pageName === "impact.html" ? "active" : ""
+              }">Impact</a></li>
+              <li><a href="blogs.html" class="${
+                pageName === "blogs.html" ? "active" : ""
+              }">Blog</a></li>
+              <li><a href="about.html" class="${
+                pageName === "about.html" ? "active" : ""
+              }">About</a></li>
+              <li><a href="contact.html" class="nav-button ${
+                pageName === "contact.html" ? "active" : ""
+              }">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -60,12 +77,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Close mobile menu when clicking outside
       document.addEventListener("click", function (event) {
-        if (!mainNav.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+        if (
+          !mainNav.contains(event.target) &&
+          !mobileMenuToggle.contains(event.target)
+        ) {
           mobileMenuToggle.classList.remove("active");
           mainNav.classList.remove("active");
-          
+
           // Also close any open dropdowns
-          document.querySelectorAll(".dropdown.open").forEach(dropdown => {
+          document.querySelectorAll(".dropdown.open").forEach((dropdown) => {
             dropdown.classList.remove("open");
           });
         }
@@ -73,33 +93,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Dropdown functionality
       const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-      
-      dropdownToggles.forEach(toggle => {
+
+      dropdownToggles.forEach((toggle) => {
         const dropdown = toggle.parentElement;
-        
+
         // Desktop hover behavior
         if (window.innerWidth > 992) {
-          dropdown.addEventListener("mouseenter", function() {
+          dropdown.addEventListener("mouseenter", function () {
             this.classList.add("hover");
           });
-          
-          dropdown.addEventListener("mouseleave", function() {
+
+          dropdown.addEventListener("mouseleave", function () {
             this.classList.remove("hover");
           });
         }
-        
+
         // Click behavior (especially for mobile)
-        toggle.addEventListener("click", function(e) {
+        toggle.addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
-          
+
           // Close all other open dropdowns first
-          document.querySelectorAll(".dropdown.open").forEach(item => {
+          document.querySelectorAll(".dropdown.open").forEach((item) => {
             if (item !== dropdown) {
               item.classList.remove("open");
             }
           });
-          
+
           // Toggle this dropdown
           dropdown.classList.toggle("open");
         });
@@ -107,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Add scroll effect for header
-    window.addEventListener("scroll", function() {
+    window.addEventListener("scroll", function () {
       const header = document.querySelector("header");
       if (header) {
         if (window.scrollY > 20) {
@@ -119,13 +139,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Handle window resize - reset mobile menu states
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
       if (window.innerWidth > 992) {
         // Switch to desktop behavior
-        document.querySelectorAll(".dropdown").forEach(dropdown => {
+        document.querySelectorAll(".dropdown").forEach((dropdown) => {
           dropdown.classList.remove("open");
         });
-        
+
         if (mainNav && mainNav.classList.contains("active")) {
           mainNav.classList.remove("active");
           if (mobileMenuToggle) {
@@ -137,23 +157,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
         window.scrollTo({
           top: targetElement.offsetTop - 80, // Adjust for header height
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-        
+
         // Close mobile menu if open
         const mainNav = document.getElementById("main-nav");
         const mobileMenuToggle = document.getElementById("mobile-menu");
-        
+
         if (mainNav && mainNav.classList.contains("active")) {
           mainNav.classList.remove("active");
           if (mobileMenuToggle) {
@@ -163,23 +183,23 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-  
+
   // Page loader functionality (if applicable)
   const loader = document.querySelector(".page-loader");
   if (loader) {
     // Hide loader after page loads
-    setTimeout(function() {
+    setTimeout(function () {
       loader.classList.add("loaded");
-      setTimeout(function() {
+      setTimeout(function () {
         loader.style.display = "none";
       }, 500);
     }, 800);
-    
+
     // Safety timeout (max 5 seconds)
-    setTimeout(function() {
+    setTimeout(function () {
       if (!loader.classList.contains("loaded")) {
         loader.classList.add("loaded");
-        setTimeout(function() {
+        setTimeout(function () {
           loader.style.display = "none";
         }, 500);
       }

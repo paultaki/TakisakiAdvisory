@@ -389,3 +389,18 @@
     font-size: 1.7rem;
   }
 }
+.quote-icon {
+  width: 22px;
+  height: auto;
+  display: inline;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+.quote-icon.open {
+  margin-right: 6px;
+}
+
+.quote-icon.close {
+  margin-left: 6px;
+}

@@ -1524,3 +1524,34 @@ body {
 .quote-icon.close {
   margin-left: 8px;
 }
+.quote-icon {
+  width: 22px;
+  height: auto;
+  display: inline;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+.quote-icon.open {
+  margin-right: 6px;
+}
+
+.quote-icon.close {
+  margin-left: 6px;
+}
+.quote-icon {
+  width: 24px;
+  height: auto;
+  opacity: 0.75;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 6px;
+}
+
+.quote-icon.open {
+  margin-right: 6px;
+}
+
+.quote-icon.close {
+  margin-left: 6px;
+}
