@@ -1508,3 +1508,19 @@ body {
     margin: 0 auto;
   }
 }
+.quote-icon {
+  width: 28px;
+  height: auto;
+  opacity: 0.7;
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: top;
+}
+
+.quote-icon.open {
+  margin-right: 8px;
+}
+
+.quote-icon.close {
+  margin-left: 8px;
+}
