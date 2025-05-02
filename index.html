@@ -365,10 +365,10 @@
               <span class="arrow-left" aria-hidden="true"></span>
             </button>
             <div class="testimonial-indicators">
-              <button id="testimonial-tab-1" class="indicator active" role="tab" aria-selected="true" aria-controls="testimonial-1" tabindex="0"></button>
-              <button id="testimonial-tab-2" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-2" tabindex="0"></button>
-              <button id="testimonial-tab-3" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-3" tabindex="0"></button>
-              <button id="testimonial-tab-4" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-4" tabindex="0"></button>
+              <button id="testimonial-tab-1" class="indicator active" role="tab" aria-selected="true" aria-controls="testimonial-1" tabindex="0" aria-label="Testimonial 1 from Zac Lagen"></button>
+              <button id="testimonial-tab-2" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-2" tabindex="0" aria-label="Testimonial 2 from Pritesh Patel"></button>
+              <button id="testimonial-tab-3" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-3" tabindex="0" aria-label="Testimonial 3 from Emmanuel Nwoke"></button>
+              <button id="testimonial-tab-4" class="indicator" role="tab" aria-selected="false" aria-controls="testimonial-4" tabindex="0" aria-label="Testimonial 4 from Cam Vogt"></button>
             </div>
             <button class="testimonial-next" aria-label="Next testimonial" tabindex="0">
               <span class="arrow-right" aria-hidden="true"></span>
@@ -670,12 +670,12 @@
     <script src="script.js"></script>
 
     <script src="header.js"></script>
-    <!-- Add this before the closing body tag -->
+    <!-- Floating Action Button for mobile navigation -->
     <div class="fab-container">
-      <button class="fab-button">
-        <span class="fab-icon">+</span>
+      <button class="fab-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="fab-options">
+        <span class="fab-icon" aria-hidden="true">+</span>
       </button>
-      <div class="fab-options">
+      <div class="fab-options" id="fab-options" aria-hidden="true">
         <a href="#contact" class="fab-option"><span>Contact</span></a>
         <a href="#services" class="fab-option"><span>Services</span></a>
         <a href="#operating-system" class="fab-option"><span>Approach</span></a>

@@ -850,8 +850,14 @@ header .container {
   border: none;
   color: var(--text-color);
   cursor: pointer;
-  padding: 10px;
+  padding: 15px; /* Increased from 10px */
   border-radius: 50%;
+  min-width: 48px; /* Ensuring minimum touch target size */
+  min-height: 48px; /* Ensuring minimum touch target size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px; /* Added margin for spacing */
 }
 
 .testimonial-prev:focus-visible,
@@ -887,11 +893,13 @@ header .container {
   height: 12px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 5px;
+  margin: 0 8px; /* Increased from 5px for better spacing */
   transition: var(--transition);
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 12px; /* Added padding to increase tap target size */
+  background-clip: content-box; /* Keep the visual size the same */
+  box-sizing: content-box; /* Ensure padding adds to size */
 }
 
 .indicator:focus-visible {
@@ -942,19 +950,33 @@ header .container {
 .contact-form input,
 .contact-form select {
   width: 100%;
-  padding: 15px;
+  padding: 16px; /* Increased from 15px */
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid #444; /* Increased from #333 for better contrast */
   border-radius: var(--border-radius);
   color: var(--text-color);
   font-size: 1rem;
   transition: var(--transition);
+  min-height: 48px; /* Ensure minimum touch target height */
+}
+
+/* Make select dropdown more visually distinct */
+.contact-form select {
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23ffffff' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px; /* Make room for the arrow icon */
 }
 
 /* Fix for dropdown options with white text on white background */
-.contact-form select option {
+.contact-form select option,
+select option {
   background-color: var(--secondary-color);
   color: var(--text-color);
+  padding: 10px; /* Added padding for better readability */
 }
 
 .contact-form input:focus,
@@ -973,6 +995,8 @@ header .container {
 .contact-form button {
   width: 100%;
   margin-top: var(--spacing-sm);
+  min-height: 48px; /* Ensure minimum touch target height */
+  padding: 16px 30px; /* Increased padding for better tap target */
 }
 
 footer {
@@ -1124,8 +1148,8 @@ footer {
 }
 
 .fab-button {
-  width: 60px;
-  height: 60px;
+  width: 64px; /* Increased from 60px */
+  height: 64px; /* Increased from 60px */
   background-color: var(--accent-color);
   border-radius: 50%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -1137,6 +1161,7 @@ footer {
   transition: transform 0.3s ease;
   position: relative;
   z-index: 2;
+  padding: 0; /* Ensure no padding reduces tap area */
 }
 
 .fab-icon {
@@ -1167,16 +1192,19 @@ footer {
 }
 
 .fab-option {
-  margin-bottom: 15px;
+  margin-bottom: 16px; /* Increased from 15px */
   background-color: var(--primary-color);
   color: white;
   border-radius: 25px;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Increased from 10px 20px */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px; /* Increased from 14px for better readability */
   font-weight: 500;
   transition: transform 0.3s ease;
+  min-height: 48px; /* Minimum touch target height */
+  display: flex;
+  align-items: center;
 }
 
 .fab-option:hover {

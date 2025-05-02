@@ -32,16 +32,43 @@ document.addEventListener("DOMContentLoaded", function() {
   // Initialize FAB (Floating Action Button) for mobile
   const fabButton = document.querySelector('.fab-button');
   const fabContainer = document.querySelector('.fab-container');
+  const fabOptions = document.getElementById('fab-options');
   
-  if (fabButton && fabContainer) {
+  if (fabButton && fabContainer && fabOptions) {
     fabButton.addEventListener('click', function() {
-      fabContainer.classList.toggle('active');
+      const isActive = fabContainer.classList.toggle('active');
+      
+      // Update ARIA attributes
+      fabButton.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      fabOptions.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      
+      // Change the icon for visual indication
+      const fabIcon = fabButton.querySelector('.fab-icon');
+      if (fabIcon) {
+        fabIcon.textContent = isActive ? '×' : '+';
+      }
     });
     
     // Close FAB when clicking outside
     document.addEventListener('click', function(e) {
       if (!fabContainer.contains(e.target) && fabContainer.classList.contains('active')) {
         fabContainer.classList.remove('active');
+        fabButton.setAttribute('aria-expanded', 'false');
+        fabOptions.setAttribute('aria-hidden', 'true');
+        
+        // Reset the icon
+        const fabIcon = fabButton.querySelector('.fab-icon');
+        if (fabIcon) {
+          fabIcon.textContent = '+';
+        }
+      }
+    });
+    
+    // Add keyboard support
+    fabButton.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        fabButton.click();
       }
     });
   }
@@ -63,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         // Update associated tab ARIA attributes
         indicators[i].setAttribute("aria-selected", "false");
+        indicators[i].setAttribute("tabindex", "0");
       });
   
       // Update indicators
