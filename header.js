@@ -187,22 +187,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // Page loader functionality (if applicable)
   const loader = document.querySelector(".page-loader");
   if (loader) {
-    // Hide loader after page loads
+    // Hide loader after page loads - reduced timing for better responsiveness
     setTimeout(function () {
       loader.classList.add("loaded");
       setTimeout(function () {
         loader.style.display = "none";
-      }, 500);
-    }, 800);
+      }, 300);
+    }, 500);
 
-    // Safety timeout (max 5 seconds)
+    // Safety timeout (reduced from 5 seconds to 3 seconds)
     setTimeout(function () {
       if (!loader.classList.contains("loaded")) {
         loader.classList.add("loaded");
         setTimeout(function () {
           loader.style.display = "none";
-        }, 500);
+        }, 300);
       }
-    }, 5000);
+    }, 3000);
   }
 });

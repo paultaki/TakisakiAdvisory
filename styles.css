@@ -410,7 +410,7 @@ header .container {
   align-items: center;
   position: relative;
   overflow: visible;
-  padding-top: 60px;
+  padding-top: 30px; /* Reduced from 60px */
 }
 
 .hero .container {
@@ -425,8 +425,8 @@ header .container {
 .hero-content {
   width: 45%;
   padding-right: 30px;
-  padding-left: 93px;
-  margin-top: 40px;
+  padding-left: 60px; /* Reduced from 93px */
+  margin-top: 20px; /* Reduced from 40px */
   transition: none !important;
   position: static !important;
 }
@@ -1051,8 +1051,8 @@ footer {
 /* Floating Action Button */
 .fab-container {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   z-index: 999;
   display: none;
 }
@@ -1268,7 +1268,8 @@ footer {
     grid-area: content;
     z-index: 2;
     padding: 0 24px;
-    padding-top: 90px;
+    padding-top: 70px; /* Reduced from 90px */
+    width: 100%; /* Ensure full width */
   }
 
   .chess-visual {
@@ -1279,6 +1280,7 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -40%) !important;
+    width: 100%; /* Ensure full width */
   }
 
   .chess-image {
@@ -1292,11 +1294,17 @@ footer {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-bottom: 20px;
+    padding-left: 4px; /* Add slight padding at the start */
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+  
+  .services-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
   }
 
   .service-card {
-    flex: 0 0 85%;
+    flex: 0 0 80%; /* Slightly narrower to show hint of next card */
     scroll-snap-align: center;
     margin-right: 15px;
     transform: none !important;
@@ -1360,10 +1368,14 @@ footer {
 
 @media (max-width: 576px) {
   .hero {
-    padding-top: 30px;
+    padding-top: 20px; /* Reduced from 30px */
     min-height: auto;
     height: auto;
     padding-bottom: 40px;
+  }
+
+  .hero-content {
+    padding-top: 60px; /* Reduced further for small screens */
   }
 
   .hero-content h1 {
@@ -1393,11 +1405,41 @@ footer {
   .logo-image {
     height: 36px;
   }
+
+  /* Reduce section spacing for mobile */
+  section {
+    padding: var(--spacing-lg) 0; /* Reduced from spacing-xl */
+  }
+  
+  /* Improve readability of service cards on small screens */
+  .service-content {
+    padding: 24px 16px; /* Reduced from 40px (--spacing-md) */
+  }
+  
+  .service-points li {
+    padding-left: 20px; /* Reduced from 25px */
+    font-size: 0.95rem; /* Slightly smaller text */
+    line-height: 1.5; /* Better readability */
+  }
 }
 
 @media (max-width: 350px) {
   .hero-content h1 {
     font-size: 2rem !important;
+  }
+  
+  /* Further optimize for very small screens */
+  .service-content {
+    padding: 20px 12px;
+  }
+  
+  .service-card {
+    flex: 0 0 85%; /* Wider on very small screens */
+  }
+  
+  /* Tighten up list items */
+  .service-points li {
+    margin-bottom: 8px;
   }
 }
 * {

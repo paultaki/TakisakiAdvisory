@@ -29,6 +29,23 @@ document.addEventListener("DOMContentLoaded", function() {
   // Create particles if the particles container exists
   createParticles();
   
+  // Initialize FAB (Floating Action Button) for mobile
+  const fabButton = document.querySelector('.fab-button');
+  const fabContainer = document.querySelector('.fab-container');
+  
+  if (fabButton && fabContainer) {
+    fabButton.addEventListener('click', function() {
+      fabContainer.classList.toggle('active');
+    });
+    
+    // Close FAB when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!fabContainer.contains(e.target) && fabContainer.classList.contains('active')) {
+        fabContainer.classList.remove('active');
+      }
+    });
+  }
+  
   // Testimonial slider functionality
   const slides = document.querySelectorAll(".testimonial-slide");
   const indicators = document.querySelectorAll(".indicator");
