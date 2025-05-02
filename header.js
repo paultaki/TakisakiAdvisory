@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     : ""
                 }">Services</a>
                 <div class="dropdown-menu">
-                  <a href="services/exec.html">Executive Development</a>
-                  <a href="services/exec_dev.html">Accelerator</a>
-                  <a href="services/strategy.html">Strategic Consulting</a>
+                  <a href="exec.html">Executive Development</a>
+                  <a href="exec_dev.html">Accelerator</a>
+                  <a href="strategy.html">Strategic Consulting</a>
                 </div>
               </li>
               <li><a href="impact.html" class="${
