@@ -3,9 +3,85 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Transformational leadership coaching and strategic advisory services for executives and high-performing leaders who want to make a lasting impact." />
     <title>Paul Takisaki - Leadership Services</title>
-    <link rel="stylesheet" href="styles.css">
     
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Paul Takisaki - Leadership Services" />
+    <meta property="og:description" content="Transformational leadership coaching and strategic advisory services for executives and high-performing leaders who want to make a lasting impact." />
+    <meta property="og:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
+    <meta property="og:url" content="https://www.paultakisaki.com/services.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Paul Takisaki" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Paul Takisaki - Leadership Services" />
+    <meta name="twitter:description" content="Transformational leadership coaching and strategic advisory services for executives and high-performing leaders who want to make a lasting impact." />
+    <meta name="twitter:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
+    
+    <!-- Favicon Package -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#00e5ff" />
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="theme-color" content="#121212" />
+    
+    <!-- Add contact form styles -->
+    <link rel="stylesheet" href="contact.css" />
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Executive Coaching",
+      "provider": {
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "url": "https://www.paultakisaki.com"
+      },
+      "description": "Transformational leadership coaching and strategic advisory services for executives and high-performing leaders.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Breakthrough Session",
+          "description": "For leaders who feel stuck or foggy and need fast clarity.",
+          "price": "497",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "The Ascent Package",
+          "description": "For rising leaders ready to be seen, heard, and promoted.",
+          "price": "1500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Legacy Builder",
+          "description": "For execs and high performers ready to define their legacy.",
+          "price": "3500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Embedded Advisor",
+          "description": "For leaders who want ongoing access to strategic thinking.",
+          "price": "2000",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
   </head>
 
@@ -169,22 +245,77 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta" id="contact">
-      <div class="cta-content">
-        <h2 class="fade-in">READY TO BREAK THROUGH?</h2>
-        <p class="fade-in">
-          Take the first step toward the leadership impact you're capable of.
-        </p>
-        <div class="cta-buttons fade-in">
-          <a class="btn btn-cta-primary" href="mailto:paul@paultakisaki.com"
-            >Email Me</a
-          >
+    <!-- Contact Form Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="form-container">
+          <form class="contact-form" id="contact-form">
+            <div class="form-header">
+              <h2>Ready to Break Through?</h2>
+              <p>I'll respond personally within 24 hours.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="service">What are you interested in?</label>
+              <select id="service" name="service" class="form-control" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Executive Coaching">Executive Coaching</option>
+                <option value="The Accelerator">The Accelerator</option>
+                <option value="Leadership Development">Leadership Development</option>
+                <option value="Strategic Consulting">Strategic Consulting</option>
+                <option value="Embedded Advisor">Embedded Advisor</option>
+                <option value="Other">Something Else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">How can I help?</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="form-button">Send Message</button>
+          </form>
+
+          <!-- Success Message (Hidden by Default) -->
+          <div class="form-success" id="form-success">
+            <div class="check-icon">✓</div>
+            <h3>Message Sent</h3>
+            <p>
+              Thank you for reaching out. I'll be in touch shortly to continue the
+              conversation.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-   
     <!-- Footer -->
     <footer id="contact">
       <div class="footer-content">
@@ -223,6 +354,46 @@
         });
       });
     </script>
-        <script src="header.js"></script>
+    
+    <!-- Add link to Font Awesome if needed -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="script.js"></script>
+    
+    <!-- contact Form -->
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("service").value;
+          const message = document.getElementById("message").value;
+
+          try {
+            const response = await fetch("/api/send", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, subject, message }),
+            });
+
+            const responseData = await response.json().catch((e) => ({}));
+
+            if (response.ok) {
+              document.getElementById("contact-form").style.display = "none";
+              document.getElementById("form-success").style.display = "block";
+            } else {
+              alert("Something went wrong. Please try again later.");
+            }
+          } catch (err) {
+            alert("Network error. Please try again later.");
+          }
+        });
+    </script>
+    <script src="header.js"></script>
   </body>
 </html>

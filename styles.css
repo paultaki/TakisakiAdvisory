@@ -1247,6 +1247,73 @@ footer {
   transform: translateX(-5px);
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(0, 229, 255, 0.2);
+  color: #00e5ff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 99;
+  border: 1px solid #00e5ff;
+  cursor: pointer;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: rgba(0, 229, 255, 0.4);
+}
+
+/* Page Transitions */
+body {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.page-visible {
+  opacity: 1;
+}
+
+/* Form Validation Styles */
+.contact-form input.valid,
+.contact-form textarea.valid {
+  border-color: #4CAF50;
+  background-color: rgba(76, 175, 80, 0.05);
+}
+
+.contact-form input.invalid,
+.contact-form textarea.invalid {
+  border-color: #f44336;
+  background-color: rgba(244, 67, 54, 0.05);
+}
+
+.contact-form.success .form-success-message {
+  display: block;
+}
+
+.form-success-message {
+  display: none;
+  color: #4CAF50;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: rgba(76, 175, 80, 0.1);
+  border-radius: 4px;
+}
+
 /* Responsive Styles */
 @media (min-width: 1400px) {
   .hero-content h1 {

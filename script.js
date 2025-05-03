@@ -26,6 +26,114 @@ function createParticles() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+  // Page transition effect
+  setTimeout(function() {
+    document.body.classList.add('page-visible');
+  }, 50);
+
+  // Back to top button
+  const backToTopButton = document.querySelector('.back-to-top');
+  if (backToTopButton) {
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+
+    backToTopButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  // Form validation and feedback
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    const inputs = contactForm.querySelectorAll('input, textarea, select');
+    
+    inputs.forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.checkValidity()) {
+          this.classList.add('valid');
+          this.classList.remove('invalid');
+        } else {
+          this.classList.add('invalid');
+          this.classList.remove('valid');
+        }
+      });
+      
+      // Initial validation check on focus out
+      input.addEventListener('blur', function() {
+        if (this.value) {
+          if (this.checkValidity()) {
+            this.classList.add('valid');
+            this.classList.remove('invalid');
+          } else {
+            this.classList.add('invalid');
+            this.classList.remove('valid');
+          }
+        }
+      });
+    });
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Check if form is valid
+      if (contactForm.checkValidity()) {
+        // Normally we'd send the form data here via fetch
+        // This is a mock submission for demonstration
+        const formData = new FormData(contactForm);
+        
+        // Simulate form submission (would be a real fetch in production)
+        setTimeout(() => {
+          contactForm.classList.add('success');
+          contactForm.reset();
+          
+          // Reset validation classes
+          inputs.forEach(input => {
+            input.classList.remove('valid', 'invalid');
+          });
+          
+          // Reset form after some time
+          setTimeout(() => {
+            contactForm.classList.remove('success');
+          }, 5000);
+        }, 1000);
+      } else {
+        // Mark all invalid fields
+        inputs.forEach(input => {
+          if (!input.checkValidity()) {
+            input.classList.add('invalid');
+          }
+        });
+      }
+    });
+  }
+
+  // Handle page transitions for internal links
+  const internalLinks = document.querySelectorAll('a[href^="/"]:not([target="_blank"]), a[href^="./"]:not([target="_blank"]), a[href^="../"]:not([target="_blank"])');
+  internalLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Skip for anchor links
+      if (href.startsWith('#')) return;
+      
+      e.preventDefault();
+      document.body.classList.remove('page-visible');
+      
+      setTimeout(() => {
+        window.location = href;
+      }, 300);
+    });
+  });
+  
   // Create particles if the particles container exists
   createParticles();
   

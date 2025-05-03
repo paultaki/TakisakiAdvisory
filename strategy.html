@@ -3,7 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Strategic consulting services focused on what's possible tomorrow. System-level analysis, strategic frameworks, and implementation for organizational transformation." />
     <title>Strategic Consulting | Paul Takisaki</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Strategic Consulting | Paul Takisaki" />
+    <meta property="og:description" content="Strategic consulting services focused on what's possible tomorrow. System-level analysis, strategic frameworks, and implementation for organizational transformation." />
+    <meta property="og:image" content="https://www.paultakisaki.com/images/strategy_sticks.webp" />
+    <meta property="og:url" content="https://www.paultakisaki.com/strategy.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Paul Takisaki" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Strategic Consulting | Paul Takisaki" />
+    <meta name="twitter:description" content="Strategic consulting services focused on what's possible tomorrow. System-level analysis, strategic frameworks, and implementation for organizational transformation." />
+    <meta name="twitter:image" content="https://www.paultakisaki.com/images/strategy_sticks.webp" />
+    
+    <!-- Favicon Package -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#00e5ff" />
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="theme-color" content="#121212" />
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Strategic Consulting",
+      "provider": {
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "url": "https://www.paultakisaki.com"
+      },
+      "description": "Strategic consulting services focused on what's possible tomorrow. System-level analysis, strategic frameworks, and implementation for organizational transformation.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "The Rebuild",
+          "description": "Comprehensive organization audit identifying 6-figure optimization opportunities.",
+          "price": "2500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "The Deep Reset",
+          "description": "Half-day virtual intensive with custom frameworks and implementation plan.",
+          "price": "5000",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Fractional CRO Advisory",
+          "description": "Ongoing strategic partnership with guaranteed growth outcomes.",
+          "price": "8000",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "8000",
+            "priceCurrency": "USD",
+            "unitText": "MONTH"
+          }
+        }
+      ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="service-page.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -397,53 +466,70 @@
       <!-- Contact Form -->
       <section id="contact" class="contact-section">
         <div class="container">
-          <h2>Book Your Custom Strategy Session</h2>
-          <form class="contact-form" action="/api/send" method="POST">
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" required />
+          <div class="form-container">
+            <form class="contact-form" id="contact-form">
+              <div class="form-header">
+                <h2>Book Your Custom Strategy Session</h2>
+                <p>I'll respond personally within 24 hours.</p>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="service">What are you interested in?</label>
+                <select id="service" name="service" class="form-control" required>
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="The Rebuild">The Rebuild ($2,500)</option>
+                  <option value="The Deep Reset">The Deep Reset ($5,000)</option>
+                  <option value="Fractional CRO Advisory">Fractional CRO Advisory</option>
+                  <option value="Custom Solution">Custom Solution</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">How can I help?</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-control"
+                  placeholder="What's the biggest strategic challenge you're facing right now?"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="form-button">Send Message</button>
+            </form>
+
+            <!-- Success Message (Hidden by Default) -->
+            <div class="form-success" id="form-success">
+              <div class="check-icon">✓</div>
+              <h3>Message Sent</h3>
+              <p>
+                Thank you for reaching out. I'll be in touch shortly to continue the
+                conversation.
+              </p>
             </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company" required />
-            </div>
-
-
-
-            <div class="form-group">
-              <label for="service">Interested In</label>
-              <select id="service" name="service" required>
-                <option value="" selected disabled>Select a Service</option>
-                <option value="The Rebuild">The Rebuild ($2,500)</option>
-                <option value="The Deep Reset">The Deep Reset ($5,000)</option>
-                <option value="Fractional CRO Advisory">
-                  Fractional CRO Advisory
-                </option>
-                <option value="Custom Solution">Custom Solution</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Your Biggest Challenge</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="What's the biggest strategic challenge you're facing right now?"
-              ></textarea>
-            </div>
-
-            <button type="submit" class="form-submit">Submit Request</button>
-
-            <p class="form-note">
-              Paul will follow up within 24 hours to confirm your session.
-            </p>
-          </form>
+          </div>
         </div>
       </section>
     </main>
@@ -560,6 +646,41 @@
   */
     </script>
     <script src="header.js"></script>
+    <script src="script.js"></script>
+    
+    <!-- contact Form -->
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("service").value;
+          const message = document.getElementById("message").value;
+
+          try {
+            const response = await fetch("/api/send", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ name, email, subject, message }),
+            });
+
+            const responseData = await response.json().catch((e) => ({}));
+
+            if (response.ok) {
+              document.getElementById("contact-form").style.display = "none";
+              document.getElementById("form-success").style.display = "block";
+            } else {
+              alert("Something went wrong. Please try again later.");
+            }
+          } catch (err) {
+            alert("Network error. Please try again later.");
+          }
+        });
+    </script>
+    
     <script>
       // Page loader
       window.addEventListener("load", function () {
