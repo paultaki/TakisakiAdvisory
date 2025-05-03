@@ -36,6 +36,7 @@
           <div class="section-header">
             <div class="section-tag">The Strategist</div>
             <h1>I Don't Play The Game.<br />I Rewire It.</h1>
+            <div style="width: 120px; height: 8px; background: linear-gradient(90deg, #00e5ff, transparent); margin-top: 20px;"></div>
           </div>
         </div>
       </section>
@@ -59,7 +60,7 @@
                 model that became the B2B standard for one of the largest
                 enterprises in America.
               </p>
-
+              
               <div class="snapshot-grid">
                 <div class="snapshot-item">
                   <div class="snapshot-number">12</div>
@@ -86,13 +87,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="intro-image">
-              <img
-                src="images/headshot_bw.webp"
-                alt="Paul Takisaki - Leadership Strategist"
-              />
             </div>
           </div>
         </div>
@@ -626,20 +620,81 @@
       // Add responsive snapshot grid styles
       const style = document.createElement("style");
       style.textContent = `
+        .intro-grid {
+          display: grid;
+          grid-template-columns: 58% 42%;
+          gap: 50px;
+          align-items: start;
+        }
+        
+        .intro-content {
+          grid-column: 1;
+          grid-row: 1;
+        }
+        
+        .intro-image {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+          max-width: 450px;
+          width: 100%;
+          overflow: hidden;
+          margin-top: 0;
+        }
+        
+        .intro-image img {
+          width: 100%;
+          border-radius: 8px;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          height: auto;
+          display: block;
+        }
+        
         .snapshot-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(2, 1fr);
           gap: 30px;
           margin-top: 40px;
         }
         
+        @media (max-width: 992px) {
+          .intro-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .intro-content {
+            grid-column: 1;
+            grid-row: 2;
+          }
+          
+          .intro-image {
+            grid-column: 1;
+            grid-row: 1;
+            margin: 0 auto 30px;
+            max-width: 400px;
+          }
+          
+          .snapshot-grid {
+            grid-template-columns: 1fr;
+            max-width: 450px;
+            margin: 40px auto 0;
+          }
+          
+          .snapshot-item {
+            margin-bottom: 15px;
+          }
+        }
+        
         .snapshot-item {
           text-align: center;
-          padding: 20px;
+          padding: 30px 20px;
           background-color: rgba(255, 255, 255, 0.03);
           border-radius: 8px;
           border: 1px solid #333;
           transition: all 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
         
         .snapshot-item:hover {
@@ -648,23 +703,25 @@
         }
         
         .snapshot-number {
-          font-size: 2.5rem;
+          font-size: 5rem;
           font-weight: 800;
           background: linear-gradient(180deg, #ffffff 0%, #00e5ff 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           margin-bottom: 10px;
+          line-height: 1.1;
         }
         
         .snapshot-label {
-          font-size: 0.9rem;
+          font-size: 1rem;
           color: var(--accent-color);
           line-height: 1.4;
           text-transform: uppercase;
           letter-spacing: 1px;
           font-weight: 700;
           margin-bottom: 10px;
+          max-width: 90%;
         }
         
         .snapshot-description {
@@ -704,9 +761,31 @@
           }
         }
         
-        @media (max-width: 576px) {
+        @media (max-width: 992px) {
+          .intro-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .intro-content {
+            grid-column: 1;
+            grid-row: 2;
+          }
+          
+          .intro-image {
+            grid-column: 1;
+            grid-row: 1;
+            margin: 0 auto 30px;
+            max-width: 400px;
+          }
+          
           .snapshot-grid {
             grid-template-columns: 1fr;
+            max-width: 450px;
+            margin: 40px auto 0;
+          }
+          
+          .snapshot-item {
+            margin-bottom: 15px;
           }
         }
       `;

@@ -1,26 +1,28 @@
 /* About Page Specific Styles */
 .about-hero {
   background-color: #0a0a0a;
-  min-height: 40vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   position: relative;
-  padding-top: 120px;
-  padding-bottom: 60px;
+  padding-top: 150px;
+  padding-bottom: 100px;
 }
 
 .about-hero .section-header {
   text-align: left;
+  max-width: 1000px;
 }
 
 .about-hero h1 {
-  font-size: 4rem;
+  font-size: 5.5rem;
   line-height: 1.1;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background: linear-gradient(180deg, #ffffff 0%, #00e5ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  letter-spacing: -1px;
 }
 
 .about-intro {
@@ -28,11 +30,9 @@
   background-color: #121212;
 }
 
+/* Grid layout styles handled in JS */
 .intro-grid {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  gap: 60px;
-  align-items: center;
+  position: relative;
 }
 
 .intro-tagline {
@@ -59,10 +59,27 @@
   color: var(--text-secondary);
 }
 
+.intro-image {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 450px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0;
+}
+
 .intro-image img {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.snapshot-container {
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .handlebar-section {
@@ -313,7 +330,7 @@
 /* Responsive Styles */
 @media (max-width: 992px) {
   .about-hero h1 {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .intro-grid {
@@ -324,7 +341,17 @@
   .intro-image {
     order: -1;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 0 auto 30px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .intro-image img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    display: block;
   }
 
   .frameworks-grid {
@@ -339,7 +366,7 @@
 
 @media (max-width: 768px) {
   .about-hero h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 
   .intro-lead {
@@ -362,7 +389,7 @@
 
 @media (max-width: 576px) {
   .about-hero h1 {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .intro-tagline {
