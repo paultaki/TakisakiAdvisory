@@ -88,6 +88,13 @@
                 </div>
               </div>
             </div>
+
+            <div class="intro-image">
+              <img
+                src="images/headshot_bw.webp"
+                alt="Paul Takisaki - Leadership Strategist"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -648,40 +655,12 @@
           height: auto;
           display: block;
         }
-        
+
         .snapshot-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           gap: 30px;
           margin-top: 40px;
-        }
-        
-        @media (max-width: 992px) {
-          .intro-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .intro-content {
-            grid-column: 1;
-            grid-row: 2;
-          }
-          
-          .intro-image {
-            grid-column: 1;
-            grid-row: 1;
-            margin: 0 auto 30px;
-            max-width: 400px;
-          }
-          
-          .snapshot-grid {
-            grid-template-columns: 1fr;
-            max-width: 450px;
-            margin: 40px auto 0;
-          }
-          
-          .snapshot-item {
-            margin-bottom: 15px;
-          }
         }
         
         .snapshot-item {
@@ -729,38 +708,7 @@
           color: var(--text-secondary);
           line-height: 1.5;
         }
-        
-        .impact-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 30px;
-        }
-        
-        .impact-card {
-          background-color: rgba(255, 255, 255, 0.03);
-          border-radius: 8px;
-          padding: 30px;
-          border: 1px solid #333;
-          transition: all 0.3s ease;
-        }
-        
-        .impact-card:hover {
-          border-color: var(--accent-color);
-          transform: translateY(-5px);
-        }
-        
-        .impact-icon {
-          width: 60px;
-          height: 60px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 15px;
-   
-            grid-template-columns: 1fr;
-          }
-        }
-        
+
         @media (max-width: 992px) {
           .intro-grid {
             grid-template-columns: 1fr;

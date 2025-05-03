@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       /* Custom dropdown styling */
       .custom-select-wrapper {
@@ -171,16 +175,16 @@
     </style>
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo.png" alt="Paul Takisaki" />
-        </a>
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PAUL <span>TAKISAKI</span></div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+    </div>
+    
+    <div id="header-container"></div>
+    <link rel="stylesheet" href="mobile-navigation.css" />
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -742,6 +746,21 @@
             behavior: "smooth",
           });
         });
+      });
+    </script>
+    <script src="header.js"></script>
+    <script>
+      // Page loader
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".page-loader");
+        if (loader) {
+          setTimeout(function () {
+            loader.classList.add("loaded");
+            setTimeout(function () {
+              loader.style.display = "none";
+            }, 500);
+          }, 800);
+        }
       });
     </script>
   </body>

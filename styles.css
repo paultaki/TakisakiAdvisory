@@ -803,25 +803,29 @@ header .container {
   padding: 0 var(--spacing-md);
 }
 
-.testimonial-quote:before,
-.testimonial-quote:after {
-  content: '"';
-  position: absolute;
-  font-size: 4rem;
-  color: var(--accent-color);
-  opacity: 0.3;
-  line-height: 1;
+.quote-icon {
+  width: 28px;
+  height: auto;
+  opacity: 0.8;
+  display: inline;
+  vertical-align: middle;
 }
 
-.testimonial-quote:before {
-  top: -20px;
-  left: 0;
+.quote-icon.open {
+  margin-right: 6px;
+  vertical-align: top;
+  position: relative;
+  top: -5px;
 }
 
-.testimonial-quote:after {
-  bottom: -60px;
-  right: 0;
+.quote-icon.close {
+  margin-left: 6px;
+  vertical-align: bottom;
+  position: relative;
+  bottom: -5px;
 }
+
+/* Remove pseudo-element quotes since we're using images */
 
 .testimonial-author {
   text-align: center;
@@ -1016,24 +1020,56 @@ footer {
 }
 
 .footer-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: var(--spacing-sm);
 }
 
+.footer-logo-image {
+  height: 130px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.footer-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
 .footer-social {
-  margin-top: var(--spacing-md);
+  margin-top: var(--spacing-sm);
 }
 
 .social-link {
   margin-right: var(--spacing-sm);
   opacity: 0.7;
   transition: var(--transition);
+  display: inline-block;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.social-link i {
+  font-size: 2rem;
 }
 
 .social-link:hover {
   opacity: 1;
   color: var(--accent-color);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .footer-links {
