@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Page Loader -->
@@ -23,6 +27,7 @@
     </div>
 
     <div id="header-container"></div>
+    <link rel="stylesheet" href="mobile-navigation.css" />
 
     <main>
       <!-- Hero Section -->
@@ -256,7 +261,7 @@
           <div class="impact-grid">
             <div class="impact-card">
               <div class="impact-icon">
-                <img src="images/icon-target.svg" alt="Target icon" />
+                <i class="fas fa-bullseye fa-2x" style="color: #00e5ff;"></i>
               </div>
               <h3>National Quota System</h3>
               <p>
@@ -268,7 +273,7 @@
 
             <div class="impact-card">
               <div class="impact-icon">
-                <img src="images/icon-growth.svg" alt="Growth icon" />
+                <i class="fas fa-chart-line fa-2x" style="color: #00e5ff;"></i>
               </div>
               <h3>$53M+ Retention Boost</h3>
               <p>
@@ -280,7 +285,7 @@
 
             <div class="impact-card">
               <div class="impact-icon">
-                <img src="images/icon-strategy.svg" alt="Strategy icon" />
+                <i class="fas fa-tags fa-2x" style="color: #00e5ff;"></i>
               </div>
               <h3>Cupcake Tags™</h3>
               <p>
@@ -292,7 +297,7 @@
 
             <div class="impact-card">
               <div class="impact-icon">
-                <img src="images/icon-connection.svg" alt="Connection icon" />
+                <i class="fas fa-briefcase fa-2x" style="color: #00e5ff;"></i>
               </div>
               <h3>The Briefing</h3>
               <p>
@@ -304,7 +309,7 @@
 
             <div class="impact-card">
               <div class="impact-icon">
-                <img src="images/icon-transform.svg" alt="Transform icon" />
+                <i class="fas fa-football fa-2x" style="color: #00e5ff;"></i>
               </div>
               <h3>The Quarterback</h3>
               <p>
@@ -690,6 +695,10 @@
         .impact-icon {
           width: 60px;
           height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 15px;
    
             grid-template-columns: 1fr;
           }
