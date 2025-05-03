@@ -838,7 +838,15 @@
       }
     </style>
   </head>
-  <body>
+  <body class="page-visible">
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PT<span>.</span></div>
+      </div>
+    </div>
+    
     <header>
       <div class="container header-container">
         <div class="logo">
@@ -1496,6 +1504,11 @@
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script>
       // DOM Elements
       const menuToggle = document.getElementById("menuToggle");
@@ -1716,5 +1729,7 @@
       window.addEventListener("load", observeElements);
       window.addEventListener("scroll", observeElements);
     </script>
+    <script src="header.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

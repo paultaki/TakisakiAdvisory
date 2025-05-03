@@ -38,12 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
       slide.style.opacity = 0;
       slide.style.visibility = "hidden";
       slide.classList.remove("active");
+      slide.style.position = "absolute";
     });
 
     // Show selected slide
     slides[index].style.opacity = 1;
     slides[index].style.visibility = "visible";
     slides[index].classList.add("active");
+    slides[index].style.position = "relative";
 
     // Update indicators
     indicators.forEach((indicator) => {

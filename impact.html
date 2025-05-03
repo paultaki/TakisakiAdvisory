@@ -51,6 +51,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://paultakisaki.com/impact.html" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile-navigation.css" />
     <link rel="stylesheet" href="impact-page.css" />
 
     <!-- Schema.org markup for Google -->
@@ -139,7 +140,7 @@
             rgba(0, 0, 0, 0.8),
             rgba(0, 0, 0, 0.6)
           ),
-          url("images/chess-board.jpg");
+          url("images/chess-board.webp");
         background-size: cover;
         background-position: center;
         opacity: 0.3;
@@ -535,7 +536,15 @@
     </style>
   </head>
 
-  <body>
+  <body class="page-visible">
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PT<span>.</span></div>
+      </div>
+    </div>
+    
     <div id="header-container"></div>
 
     <!-- Hero Section -->
@@ -577,8 +586,6 @@
     </section>
 
     <!-- Featured Testimonial -->
-    <!-- Featured Testimonial -->
-    <!-- Featured Testimonial -->
     <section class="featured-testimonial">
       <div class="container">
         <div class="featured-inner">
@@ -610,26 +617,6 @@
         </div>
       </div>
     </section>
-
-    <!-- C-Suite Impact Testimonials -->
-<!-- Featured Testimonial -->
-<section class="featured-testimonial">
-  <div class="container">
-    <div class="featured-inner">
-      <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
-      <p class="featured-quote fade-in">
-        Working with Paul Takisaki has been a <strong>deeply transformative experience.</strong>
-        His compassion and unwavering focus on building from a place of strength made me feel truly seen and supported. As a mentor,
-        <strong>Paul leads with vulnerability—drawing from his own lived experiences</strong> to create a space of trust and openness.
-      </p>
-      <img src="images/quote_closed.webp" alt="Quote Close" class="quote-icon close" />
-      <div class="featured-author fade-in">
-        <h4>Emmanuel Nwoke</h4>
-        <p>Senior Director of Sales, Verizon</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- C-Suite Impact Testimonials -->
 <section class="testimonials">
@@ -791,5 +778,6 @@
         }
       });
     </script>
+    <script src="script.js"></script>
   </body>
 </html>

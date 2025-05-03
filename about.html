@@ -51,8 +51,9 @@
     }
     </script>
     
-    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="mobile-navigation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
@@ -64,7 +65,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body>
+  <body class="page-visible">
     <!-- Page Loader -->
     <div class="page-loader">
       <div class="loader-content">
@@ -74,7 +75,6 @@
     </div>
 
     <div id="header-container"></div>
-    <link rel="stylesheet" href="mobile-navigation.css" />
 
     <main>
       <!-- Hero Section -->
@@ -662,6 +662,7 @@
 
     <script src="header.js"></script>
     <script src="about.js"></script>
+    <script src="script.js"></script>
     <script>
       // Page loader
       window.addEventListener("load", function () {

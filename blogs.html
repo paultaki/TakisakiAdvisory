@@ -588,11 +588,20 @@
       }
     </style>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile-navigation.css" />
+    <link rel="stylesheet" href="blogs.css" />
   </head>
-  <body>
+  <body class="page-visible">
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PT<span>.</span></div>
+      </div>
+    </div>
+    
     <div id="header-container"></div>
     <script src="header.js"></script>
-    <link rel="stylesheet" href="mobile-navigation.css" />
 
     <section class="page-title">
       <div class="container">
@@ -873,5 +882,6 @@
         });
       }
     </script>
+    <script src="script.js"></script>
   </body>
 </html>
