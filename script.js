@@ -86,12 +86,39 @@ document.addEventListener("DOMContentLoaded", function() {
       
       // Check if form is valid
       if (contactForm.checkValidity()) {
-        // Normally we'd send the form data here via fetch
-        // This is a mock submission for demonstration
         const formData = new FormData(contactForm);
+        const formObject = {};
+        formData.forEach((value, key) => {
+          formObject[key] = value;
+        });
         
-        // Simulate form submission (would be a real fetch in production)
-        setTimeout(() => {
+        // Add a subject if not present
+        if (!formObject.subject) {
+          formObject.subject = 'Website Contact Form';
+        }
+        
+        // Show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        // Actually send the data to your API
+        fetch('/api/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formObject)
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Success:', data);
           contactForm.classList.add('success');
           contactForm.reset();
           
@@ -104,7 +131,16 @@ document.addEventListener("DOMContentLoaded", function() {
           setTimeout(() => {
             contactForm.classList.remove('success');
           }, 5000);
-        }, 1000);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Sorry, there was an error sending your message. Please try again later.');
+        })
+        .finally(() => {
+          // Reset button state
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        });
       } else {
         // Mark all invalid fields
         inputs.forEach(input => {
@@ -323,4 +359,174 @@ document.addEventListener("DOMContentLoaded", function() {
   
     observer.observe(resultsSection);
   }
+});
+
+
+// header.js - Apple-Inspired Navigation
+document.addEventListener("DOMContentLoaded", function () {
+  // Add scroll behavior to header
+  const header = document.querySelector('.site-header');
+  let lastScroll = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 0) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    
+    lastScroll = currentScroll;
+  });
+  
+  // Mobile menu functionality
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  
+  if (mobileMenuToggle && mainNav) {
+    mobileMenuToggle.addEventListener('click', () => {
+      const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+      mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+      mainNav.classList.toggle('active');
+      
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = !isExpanded ? 'hidden' : '';
+    });
+  }
+  
+  // Dropdown functionality
+  const dropdowns = document.querySelectorAll('.dropdown');
+  
+  dropdowns.forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const menu = dropdown.querySelector('.dropdown-menu');
+    
+    // Desktop behavior
+    dropdown.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 1024) {
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+    
+    dropdown.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 1024) {
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+    
+    // Mobile/tablet click behavior
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      
+      // Close other dropdowns
+      dropdowns.forEach(otherDropdown => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.classList.remove('open');
+          otherDropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+        }
+      });
+      
+      // Toggle this dropdown
+      dropdown.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', !isExpanded);
+    });
+  });
+  
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.dropdown')) {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('open');
+        dropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+  
+  // Handle active states
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const navLinks = document.querySelectorAll('.main-nav a');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && href.includes(currentPage)) {
+      link.classList.add('active');
+    }
+  });
+  
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        e.preventDefault();
+        
+        const headerHeight = header.offsetHeight;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        if (mainNav.classList.contains('active')) {
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          mainNav.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+    });
+  });
+  
+  // Handle resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // Reset mobile menu state on desktop
+      if (window.innerWidth > 1024) {
+        mainNav.classList.remove('active');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        
+        // Reset dropdown states
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('open');
+          dropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+        });
+      }
+    }, 150);
+  });
+  
+  // Page loader
+  const loader = document.querySelector('.page-loader');
+  if (loader) {
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.classList.add('loaded');
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 300);
+      }, 300);
+    });
+    
+    // Safety timeout
+    setTimeout(() => {
+      if (!loader.classList.contains('loaded')) {
+        loader.classList.add('loaded');
+      }
+    }, 3000);
+  }
+  
+  // Performance optimization - Add passive event listeners
+  window.addEventListener('scroll', () => {}, { passive: true });
+  window.addEventListener('touchstart', () => {}, { passive: true });
+  window.addEventListener('touchmove', () => {}, { passive: true });
 });
