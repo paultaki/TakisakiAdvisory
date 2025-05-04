@@ -68,10 +68,15 @@
     <meta name="msapplication-TileColor" content="#121212" />
     <meta name="theme-color" content="#121212" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <!-- Preload critical resources -->
+    <link rel="preload" href="images/ptlogo.webp" as="image" />
+    <link rel="preload" href="styles.css" as="style" />
+    
+    <!-- Font preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -102,8 +107,51 @@
         }
       }
     </script>
+    
+    <!-- Service structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Executive Coaching",
+        "provider": {
+          "@type": "Person",
+          "name": "Paul Takisaki"
+        },
+        "description": "For leaders ready to rise without conforming. Develop the strategic clarity and quiet authority that drives exceptional results.",
+        "offers": {
+          "@type": "Offer",
+          "price": "1500",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+    
+    <!-- Service structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "Advisory Retainer",
+        "provider": {
+          "@type": "Person",
+          "name": "Paul Takisaki"
+        },
+        "description": "For founders or senior leaders scaling complexity. Includes team strategy and systems audit.",
+        "offers": {
+          "@type": "Offer",
+          "price": "3000",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
   </head>
   <body>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+    
     <!-- Skip to content link for keyboard users -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
@@ -127,9 +175,9 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="#vault">Leadership Vault</a></li>
             <li class="dropdown">
-              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+              <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-label="Services menu">
                 Services
-                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
@@ -149,10 +197,10 @@
           </div>
         </nav>
         
-        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
+          <span class="hamburger-line" aria-hidden="true"></span>
         </button>
       </div>
     </header>
@@ -197,6 +245,7 @@
               src="images/chess2.webp"
               alt="Chess board representing strategic leadership thinking versus traditional approaches"
               class="chess-image"
+              loading="lazy"
             />
           </div>
         </div>
@@ -371,7 +420,9 @@
                   placeholder="Your Name"
                   required
                   aria-required="true"
+                  aria-describedby="name-help"
                 />
+                <span id="name-help" class="visually-hidden">Please enter your full name</span>
               </div>
               <div class="form-group">
                 <label for="email" class="visually-hidden">Your Email</label>
@@ -382,7 +433,9 @@
                   placeholder="Your Email"
                   required
                   aria-required="true"
+                  aria-describedby="email-help"
                 />
+                <span id="email-help" class="visually-hidden">Please enter your business email</span>
               </div>
               <div class="form-group">
                 <label for="message" class="visually-hidden">Message</label>
@@ -393,7 +446,9 @@
                   rows="5"
                   required
                   aria-required="true"
+                  aria-describedby="message-help"
                 ></textarea>
+                <span id="message-help" class="visually-hidden">Please describe how I can help you</span>
               </div>
               <button type="submit" class="button primary">SUBMIT</button>
               <div class="form-success-message">
@@ -410,8 +465,8 @@
 
     <!-- 8. Footer -->
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
-      <i class="fas fa-arrow-up"></i>
+    <a href="#" class="back-to-top" aria-label="Back to top of page">
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </a>
 
     <footer>
@@ -423,6 +478,7 @@
                 src="images/pt-logo-white.webp"
                 alt="Paul Takisaki Logo"
                 class="footer-logo-image"
+                loading="lazy"
               />
               <div class="footer-name">Paul Takisaki</div>
             </div>
@@ -431,21 +487,27 @@
                 href="https://www.linkedin.com/in/paultaki"
                 target="_blank"
                 class="social-link"
-                ><i class="fab fa-linkedin fa-2x"></i
+                aria-label="LinkedIn Profile"
+                rel="noopener"
+                ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
                 ><span class="sr-only">LinkedIn</span></a
               >
               <a
                 href="https://www.twitter.com"
                 target="_blank"
                 class="social-link"
-                ><i class="fab fa-twitter fa-2x"></i
+                aria-label="Twitter Profile"
+                rel="noopener"
+                ><i class="fab fa-twitter fa-2x" aria-hidden="true"></i
                 ><span class="sr-only">Twitter</span></a
               >
               <a
                 href="https://www.youtube.com"
                 target="_blank"
                 class="social-link"
-                ><i class="fab fa-youtube fa-2x"></i
+                aria-label="YouTube Channel"
+                rel="noopener"
+                ><i class="fab fa-youtube fa-2x" aria-hidden="true"></i
                 ><span class="sr-only">YouTube</span></a
               >
             </div>

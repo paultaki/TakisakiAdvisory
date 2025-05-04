@@ -31,6 +31,18 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.classList.add('page-visible');
   }, 50);
 
+  // Scroll progress indicator
+  const scrollProgress = document.querySelector('.scroll-progress');
+  if (scrollProgress) {
+    window.addEventListener('scroll', function() {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPercentage = (scrollTop / scrollHeight) * 100;
+      
+      scrollProgress.style.width = scrollPercentage + '%';
+    });
+  }
+
   // Back to top button
   const backToTopButton = document.querySelector('.back-to-top');
   if (backToTopButton) {
