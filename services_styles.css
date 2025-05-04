@@ -1,0 +1,353 @@
+/* Services Page Styles */
+
+.services-hero {
+  padding: 200px 0 100px;
+  background: linear-gradient(135deg, #000000 0%, #111111 100%);
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.services-hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.services-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Services Categories */
+.services-categories {
+  padding: 120px 0;
+}
+
+.service-category {
+  margin-bottom: 120px;
+}
+
+.service-category:last-child {
+  margin-bottom: 0;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-header h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 16px;
+}
+
+.category-description {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Service Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.service-card.featured {
+  border-color: var(--accent-color);
+  background-color: rgba(0, 229, 255, 0.05);
+}
+
+.service-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--accent-color);
+  color: #000;
+  padding: 8px 24px;
+  border-radius: 0 12px 0 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-price {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin: 32px 0 24px;
+  letter-spacing: -0.02em;
+}
+
+.service-features {
+  list-style: none;
+  margin-bottom: 32px;
+}
+
+.service-features li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 24px;
+  color: var(--text-secondary);
+}
+
+.service-features li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.service-features li.emergency:before {
+  content: "!";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff5252;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.service-features li.guarantee:before {
+  content: "✓";
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #4caf50;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* Elite Package */
+.elite-package {
+  background-color: #111111;
+  border-radius: 16px;
+  padding: 64px 32px;
+  margin-top: 120px;
+  border: 1px solid var(--accent-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.elite-package::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-color),
+    transparent
+  );
+}
+
+.elite-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.elite-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.elite-title {
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 24px;
+}
+
+.elite-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.elite-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.elite-features ul {
+  list-style: none;
+  margin-bottom: 48px;
+}
+
+.elite-features li {
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 32px;
+  font-size: 1.125rem;
+}
+
+.elite-features li:before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 20px;
+}
+
+.elite-cta {
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 120px 0;
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.contact-subtitle {
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 64px;
+  font-style: italic;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2);
+}
+
+.contact-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath fill='%23ffffff' d='M2.5 5.5l1.25 1.25L8 2.5l4.25 4.25L13.5 5.5L8 0l-5.5 5.5z' transform='translate(0 3.5)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  padding-right: 50px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-hero {
+    padding: 150px 0 80px;
+  }
+
+  .services-categories {
+    padding: 80px 0;
+  }
+
+  .service-category {
+    margin-bottom: 80px;
+  }
+
+  .category-header {
+    margin-bottom: 48px;
+  }
+
+  .service-card {
+    padding: 24px;
+  }
+
+  .elite-package {
+    padding: 48px 24px;
+  }
+}
+
+/* Dark Mode Specific Styles */
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.service-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.contact-form input::placeholder,
+.contact-form select::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}

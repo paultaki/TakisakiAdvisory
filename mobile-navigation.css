@@ -210,6 +210,15 @@ header .container {
     right: 0;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
   }
+  
+  /* Reset state for initial page load */
+  body .main-nav {
+    right: -300px !important;
+  }
+  
+  body .main-nav.active {
+    right: 0 !important;
+  }
 
   .main-nav ul {
     flex-direction: column;

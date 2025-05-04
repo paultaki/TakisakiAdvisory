@@ -112,8 +112,37 @@
         <nav class="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="playbook.html">Leadership Vault</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="#vault">Leadership Vault</a></li>
+            <li class="dropdown">
+              <button
+                class="dropdown-toggle active"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                Services
+                <svg
+                  class="dropdown-arrow"
+                  width="10"
+                  height="6"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="dropdown-menu" aria-label="Services submenu">
+                <li><a href="exec.html">Executive Development</a></li>
+                <li><a href="exec_dev.html">Accelerator</a></li>
+                <li><a href="strategy.html">Strategic Consulting</a></li>
+              </ul>
+            </li>
             <li><a href="impact.html">Impact</a></li>
             <li><a href="blogs.html">Insights</a></li>
             <li><a href="about.html">About</a></li>
@@ -197,6 +226,50 @@
             </div>
           </div>
 
+          <!-- Market Domination -->
+          <div class="service-category">
+            <div class="category-header">
+              <h2>Market Domination</h2>
+              <p class="category-description">
+                Take failing territories to #1. Create unbreakable winning
+                streaks.
+              </p>
+            </div>
+
+            <div class="service-grid">
+              <div class="service-card domination">
+                <div class="service-badge">The Turnaround</div>
+                <div class="service-price">$75,000-150,000</div>
+                <div class="service-content">
+                  <ul class="service-features">
+                    <li>6-month market transformation</li>
+                    <li>Based on $200M+ proven model</li>
+                    <li>Target: Top market position</li>
+                    <li class="guarantee">Money-back guarantee</li>
+                  </ul>
+                  <a href="#contact" class="button primary"
+                    >Begin Transformation</a
+                  >
+                </div>
+              </div>
+
+              <div class="service-card streak featured">
+                <div class="service-badge">The Streak Machine</div>
+                <div class="service-price">$200,000</div>
+                <div class="service-content">
+                  <ul class="service-features">
+                    <li>Build systems for 19+ consecutive records</li>
+                    <li>Results continue after exit</li>
+                    <li>Complete framework transfer</li>
+                    <li class="guarantee">Continuation guarantee</li>
+                  </ul>
+                  <a href="#contact" class="button primary"
+                    >Establish Dynasty</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Executive Development -->
           <div class="service-category">
@@ -242,6 +315,27 @@
             </div>
           </div>
 
+          <!-- Elite Package -->
+          <div class="elite-package">
+            <div class="elite-header">
+              <h2>Elite Package</h2>
+              <div class="elite-title">Complete Market Transformation</div>
+              <div class="elite-price">$150,000 + $20,000/month retainer</div>
+            </div>
+
+            <div class="elite-content">
+              <div class="elite-features">
+                <ul>
+                  <li>Territory turnaround + sustained dominance</li>
+                  <li>Competitive intelligence integration</li>
+                  <li>Full system transfer</li>
+                </ul>
+                <a href="#contact" class="button primary elite-cta"
+                  >Secure Elite Partnership</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -296,8 +390,11 @@
                 <option value="" disabled selected>Select Service</option>
                 <option value="crisis">Crisis Intervention</option>
                 <option value="emergency">Emergency Turnaround</option>
+                <option value="turnaround">The Turnaround</option>
+                <option value="streak">The Streak Machine</option>
                 <option value="rising">Rising Star Program</option>
                 <option value="executive">Executive Trajectory</option>
+                <option value="elite">Elite Package</option>
               </select>
               <span id="service-help" class="visually-hidden">Please select a service</span>
             </div>

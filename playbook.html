@@ -339,6 +339,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: var(--spacing-lg);
+        position: relative; /* For absolute positioning of expanded cards */
       }
 
       .category-card {
@@ -348,11 +349,21 @@
         box-shadow: var(--card-shadow);
         border: 1px solid var(--border-light);
         transition: var(--transition);
+        position: relative;
+        z-index: 1;
       }
 
-      .category-card:hover {
+      .category-card:hover:not(.expanded) {
         transform: translateY(-5px);
         border-color: rgba(0, 229, 255, 0.3);
+      }
+      
+      .category-card.expanded {
+        position: relative;
+        z-index: 5;
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        border-color: var(--accent);
       }
 
       .category-header {
@@ -398,14 +409,9 @@
       }
 
       .category-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
+        display: none; /* Hide by default */
         border-top: 1px solid var(--border-light);
-      }
-
-      .category-card.expanded .category-content {
-        max-height: 2000px; /* Arbitrary large height */
+        padding-top: 10px;
       }
 
       .frameworks-list {
@@ -424,6 +430,8 @@
 
       .framework-item:hover {
         background-color: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       }
 
       .framework-title {
@@ -444,6 +452,56 @@
         right: 16px;
         color: var(--text-secondary);
         font-size: 1rem;
+      }
+      
+      /* Framework Popup */
+      .framework-popup {
+        position: absolute;
+        top: 0;
+        left: 105%;
+        width: 320px;
+        background-color: var(--dark-card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--accent);
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+      
+      .framework-item:hover .framework-popup {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .popup-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--accent);
+      }
+      
+      .popup-description {
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      
+      .popup-details {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+      
+      /* Adjust popup position for items on the right side */
+      @media (min-width: 992px) {
+        .category-card:nth-child(2n) .framework-item .framework-popup {
+          left: auto;
+          right: 105%;
+        }
       }
 
       /* Results Section */
@@ -1002,6 +1060,13 @@
                     Fix what matters to them. Early proof of change.
                   </p>
                   <span class="lock-icon">🔒</span>
+                  <div class="framework-popup">
+                    <h5 class="popup-title">Securing Early Wins</h5>
+                    <p class="popup-description">Fix what matters to them. Early proof of change drives credibility and builds momentum for larger transformations.</p>
+                    <div class="popup-details">
+                      <strong>Key Components:</strong> Stakeholder mapping, Quick-win identification, Visible impact tracking
+                    </div>
+                  </div>
                 </div>
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1011,6 +1076,13 @@
                     Market immersion + pattern recognition = gold.
                   </p>
                   <span class="lock-icon">🔒</span>
+                  <div class="framework-popup">
+                    <h5 class="popup-title">Meeting 100 Customers in 100 Days</h5>
+                    <p class="popup-description">The most valuable market insights come from direct customer conversations. This framework provides a systematic approach to gathering customer feedback at scale.</p>
+                    <div class="popup-details">
+                      <strong>Key Components:</strong> Customer segmentation, Interview protocol, Pattern recognition methods, Action planning
+                    </div>
+                  </div>
                 </div>
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1055,6 +1127,13 @@
                     Optimize what's already strong instead of fixing weaknesses.
                   </p>
                   <span class="lock-icon">🔒</span>
+                  <div class="framework-popup">
+                    <h5 class="popup-title">Strength-Based Leadership Model</h5>
+                    <p class="popup-description">Research shows that focusing on strengths yields significantly better results than trying to fix weaknesses. This model helps leaders identify and leverage natural talents.</p>
+                    <div class="popup-details">
+                      <strong>Key Components:</strong> Strength assessment, Role optimization, Complementary team building, Performance amplification techniques
+                    </div>
+                  </div>
                 </div>
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1529,21 +1608,49 @@
         mainNav.classList.toggle("active");
       });
 
-      // Category Expansion
+      // Restore the click event for category headers
       categoryHeaders.forEach((header) => {
+        header.style.cursor = "pointer";
+        
         header.addEventListener("click", () => {
           const card = header.parentElement;
-          const isExpanded = card.classList.contains("expanded");
-
+          const content = card.querySelector(".category-content");
+          const isExpanded = content.style.display === "block";
+          
           // First close all other cards
           document.querySelectorAll(".category-card").forEach((otherCard) => {
             if (otherCard !== card) {
+              const otherContent = otherCard.querySelector(".category-content");
+              otherContent.style.display = "none";
               otherCard.classList.remove("expanded");
+              const otherIcon = otherCard.querySelector(".expand-icon");
+              if (otherIcon) {
+                otherIcon.textContent = "+";
+              }
             }
           });
-
-          // Then toggle current card
-          card.classList.toggle("expanded");
+          
+          // Toggle visibility of this card
+          if (isExpanded) {
+            content.style.display = "none";
+            card.classList.remove("expanded");
+            header.querySelector(".expand-icon").textContent = "+";
+          } else {
+            content.style.display = "block";
+            card.classList.add("expanded");
+            header.querySelector(".expand-icon").textContent = "−";
+            
+            // Scroll to make sure expanded content is visible if needed
+            setTimeout(() => {
+              const rect = card.getBoundingClientRect();
+              if (rect.bottom > window.innerHeight) {
+                window.scrollBy({
+                  top: Math.min(200, rect.bottom - window.innerHeight + 100),
+                  behavior: 'smooth'
+                });
+              }
+            }, 300);
+          }
         });
       });
 
@@ -1551,6 +1658,19 @@
       function resetSearchDisplay() {
         document.querySelectorAll(".category-card").forEach((card) => {
           card.style.display = "block";
+          
+          // Hide the content section
+          const content = card.querySelector(".category-content");
+          if (content) {
+            content.style.display = "none";
+          }
+          
+          // Reset the expand icon and remove expanded class
+          const expandIcon = card.querySelector(".expand-icon");
+          if (expandIcon) {
+            expandIcon.textContent = "+";
+          }
+          
           card.classList.remove("expanded");
 
           card.querySelectorAll(".framework-item").forEach((framework) => {
@@ -1606,8 +1726,19 @@
             // Handle visibility
             card.style.display = matchFound ? "block" : "none";
 
-            // Expand to show matches
+            // Show the content section when there's a match
             if (matchFound) {
+              const content = card.querySelector(".category-content");
+              if (content) {
+                content.style.display = "block";
+              }
+              
+              // Update the expand icon and add expanded class
+              const expandIcon = card.querySelector(".expand-icon");
+              if (expandIcon) {
+                expandIcon.textContent = "−";
+              }
+              
               card.classList.add("expanded");
             }
           });
@@ -1703,6 +1834,13 @@
           // Show access modal for locked frameworks
           accessModal.classList.add("active");
           document.body.style.overflow = "hidden";
+        });
+      });
+      
+      // Make sure popups don't trigger modal
+      document.querySelectorAll(".framework-popup").forEach(popup => {
+        popup.addEventListener("click", (e) => {
+          e.stopPropagation(); // Prevent click from reaching the framework-item
         });
       });
 

@@ -1,0 +1,14 @@
+/* Nav fix - force mobile nav to be hidden initially */
+@media (max-width: 1024px) {
+  .main-nav {
+    display: none !important;
+  }
+  
+  .main-nav.active {
+    display: flex !important;
+  }
+  
+  .mobile-menu-toggle[aria-expanded="true"] ~ .main-nav {
+    display: flex !important;
+  }
+}

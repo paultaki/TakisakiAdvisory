@@ -1,4 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Inject CSS fix for mobile navigation
+  const styleEl = document.createElement('style');
+  styleEl.innerHTML = `
+    @media (max-width: 1024px) {
+      .main-nav {
+        display: none !important;
+      }
+      
+      .main-nav.active {
+        display: flex !important;
+      }
+      
+      .mobile-menu-toggle[aria-expanded="true"] ~ .main-nav {
+        display: flex !important;
+      }
+    }
+  `;
+  document.head.appendChild(styleEl);
   // Create header content
   const headerContainer = document.getElementById("header-container");
 
@@ -9,21 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Header HTML - using proper path references and improved structure
     const headerHTML = `
-      <header>
+      <header class="site-header">
         <div class="container">
           <div class="logo">
-            <a href="index.html">
-              <img src="images/ptlogo.webp" alt="PAUL TAKISAKI" class="logo-image">
+            <a href="index.html" aria-label="Paul Takisaki Logo">
+              <img src="images/ptlogo.webp" alt="PAUL TAKISAKI" class="logo-image" height="44" width="auto">
             </a>
           </div>
           
-          <div class="menu-toggle" id="mobile-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+            <span class="hamburger-line" aria-hidden="true"></span>
+          </button>
           
-          <nav class="main-nav" id="main-nav">
+          <nav class="main-nav" aria-label="Main navigation">
             <ul>
               <li><a href="index.html" class="${
                 pageName === "index.html" || currentPage === "/" ? "active" : ""
@@ -31,32 +49,25 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><a href="playbook.html" class="${
                 pageName === "playbook.html" ? "active" : ""
               }">Leadership Vault</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle ${
-                  pageName.includes("services") ||
-                  currentPage.includes("/services/")
-                    ? "active"
-                    : ""
-                }">Services</a>
-                <div class="dropdown-menu">
-                  <a href="exec.html">Executive Development</a>
-                  <a href="exec_dev.html">Accelerator</a>
-                  <a href="strategy.html">Strategic Consulting</a>
-                </div>
-              </li>
+              <li><a href="services.html" class="${
+                pageName === "services.html" ? "active" : ""
+              }">Services</a></li>
               <li><a href="impact.html" class="${
                 pageName === "impact.html" ? "active" : ""
               }">Impact</a></li>
               <li><a href="blogs.html" class="${
                 pageName === "blogs.html" ? "active" : ""
-              }">Blog</a></li>
+              }">Insights</a></li>
               <li><a href="about.html" class="${
                 pageName === "about.html" ? "active" : ""
               }">About</a></li>
-              <li><a href="contact.html" class="nav-button ${
-                pageName === "contact.html" ? "active" : ""
-              }">Contact</a></li>
             </ul>
+            
+            <div class="nav-cta">
+              <a href="contact.html" class="contact-button ${
+                pageName === "contact.html" ? "active" : ""
+              }">Let's Talk</a>
+            </div>
           </nav>
         </div>
       </header>
@@ -66,12 +77,19 @@ document.addEventListener("DOMContentLoaded", function () {
     headerContainer.innerHTML = headerHTML;
 
     // Mobile menu toggle functionality
-    const mobileMenuToggle = document.getElementById("mobile-menu");
-    const mainNav = document.getElementById("main-nav");
+    const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
     if (mobileMenuToggle && mainNav) {
+      // Reset the mobile nav state on page load
+      mainNav.classList.remove("active"); 
+      if (mobileMenuToggle.hasAttribute("aria-expanded")) {
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+      }
+      
       mobileMenuToggle.addEventListener("click", function () {
-        this.classList.toggle("active");
+        const expanded = this.getAttribute("aria-expanded") === "true" || false;
+        this.setAttribute("aria-expanded", !expanded);
         mainNav.classList.toggle("active");
       });
 
@@ -79,50 +97,12 @@ document.addEventListener("DOMContentLoaded", function () {
       document.addEventListener("click", function (event) {
         if (
           !mainNav.contains(event.target) &&
-          !mobileMenuToggle.contains(event.target)
+          !mobileMenuToggle.contains(event.target) &&
+          mainNav.classList.contains("active")
         ) {
-          mobileMenuToggle.classList.remove("active");
+          mobileMenuToggle.setAttribute("aria-expanded", "false");
           mainNav.classList.remove("active");
-
-          // Also close any open dropdowns
-          document.querySelectorAll(".dropdown.open").forEach((dropdown) => {
-            dropdown.classList.remove("open");
-          });
         }
-      });
-
-      // Dropdown functionality
-      const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
-
-      dropdownToggles.forEach((toggle) => {
-        const dropdown = toggle.parentElement;
-
-        // Desktop hover behavior
-        if (window.innerWidth > 992) {
-          dropdown.addEventListener("mouseenter", function () {
-            this.classList.add("hover");
-          });
-
-          dropdown.addEventListener("mouseleave", function () {
-            this.classList.remove("hover");
-          });
-        }
-
-        // Click behavior (especially for mobile)
-        toggle.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-
-          // Close all other open dropdowns first
-          document.querySelectorAll(".dropdown.open").forEach((item) => {
-            if (item !== dropdown) {
-              item.classList.remove("open");
-            }
-          });
-
-          // Toggle this dropdown
-          dropdown.classList.toggle("open");
-        });
       });
     }
 
@@ -142,14 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", function () {
       if (window.innerWidth > 992) {
         // Switch to desktop behavior
-        document.querySelectorAll(".dropdown").forEach((dropdown) => {
-          dropdown.classList.remove("open");
-        });
-
         if (mainNav && mainNav.classList.contains("active")) {
           mainNav.classList.remove("active");
           if (mobileMenuToggle) {
-            mobileMenuToggle.classList.remove("active");
+            mobileMenuToggle.setAttribute("aria-expanded", "false");
           }
         }
       }
