@@ -1,6 +1,12 @@
 /* Impact Page Styles */
 .quote-icon {
-  display: none; /* Hide the images */
+  display: none !important; /* Make sure images are hidden */
+  visibility: hidden !important;
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
 }
 
 .testimonial-quote {
@@ -159,6 +165,11 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .testimonial-item:hover {
@@ -182,11 +193,19 @@
   margin-bottom: 30px;
   line-height: 1.6;
   font-size: 1.1rem;
+  text-align: center; /* Center the quote text */
+  display: block; /* Ensure block display */
+  clear: both; /* Clear any floats */
+  padding: 20px; /* Add more padding around the text */
 }
 
 .testimonial-author {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center the author info horizontally */
+  flex-direction: column; /* Stack photo and text vertically */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add margin to separate from quote */
 }
 
 .author-avatar {
@@ -195,7 +214,12 @@
   border-radius: 50%;
   background-size: cover;
   background-position: center;
-  margin-right: 15px;
+  margin: 0 auto 15px auto; /* Center and add bottom margin */
+}
+
+.author-info {
+  text-align: center; /* Center all text */
+  width: 100%; /* Take full width */
 }
 
 .author-info h4 {
