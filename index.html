@@ -256,43 +256,8 @@
     <!-- Skip to content link for keyboard users -->
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     
-    <!-- Navigation -->
-    <header class="site-header">
-      <div class="container">
-        <div class="logo">
-          <a href="index.html" aria-label="Paul Takisaki Logo">
-            <img 
-              src="images/ptlogo.webp" 
-              alt="PAUL TAKISAKI" 
-              class="logo-image"
-              height="48"
-              width="auto"
-            />
-          </a>
-        </div>
-        
-        <nav class="main-nav" aria-label="Main navigation">
-          <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="playbook.html">Leadership Vault</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="impact.html">Impact</a></li>
-            <li><a href="blogs.html">Insights</a></li>
-            <li><a href="about.html">About</a></li>
-          </ul>
-          
-          <div class="nav-cta">
-            <a href="#contact" class="contact-button">Let's Talk</a>
-          </div>
-        </nav>
-        
-        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
-          <span class="hamburger-line" aria-hidden="true"></span>
-          <span class="hamburger-line" aria-hidden="true"></span>
-          <span class="hamburger-line" aria-hidden="true"></span>
-        </button>
-      </div>
-    </header>
+    <!-- Header container for header.js -->
+    <div id="header-container"></div>
     
     <!-- Page Loader -->
     <div class="page-loader">
@@ -680,6 +645,7 @@
     </script>
   <script src="script.js"></script>
   <script src="header.js"></script>
+  <script src="menu-fix.js"></script>
   
   <script>
     // Initialize Lucide icons
