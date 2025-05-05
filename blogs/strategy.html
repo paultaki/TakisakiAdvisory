@@ -9,6 +9,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <style>
+      @media (max-width: 768px) {
+        .overlay-text {
+          max-width: 98% !important;
+          width: 98% !important;
+          font-size: 16px !important;
+          padding: 10px !important;
+          line-height: 1.2 !important;
+        }
+        
+        .image-overlay-container img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- Header -->
@@ -86,7 +103,7 @@
         </p>
         <div class="image-overlay-container">
           <img src="../images/ocean3.webp" alt="Guiding hidden currents" />
-          <div class="overlay-text">
+          <div class="overlay-text" style="max-width: 98%; width: 98%; font-size: 16px; padding: 10px; line-height: 1.2;">
             You don't steer the ship harder.<br />
             You guide the currents underneath.
           </div>
@@ -123,6 +140,23 @@
           >
         </div>
       </div>
+      
+      <!-- Newsletter Section -->
+      <section class="newsletter">
+        <div class="container">
+          <h2>Get Leadership Insights Delivered to Your Inbox</h2>
+          <p>
+            Join my newsletter for practical wisdom on leadership, team building,
+            and creating cultures that perform and endure.
+          </p>
+          <div class="form-container" style="max-width: 100%; width: 100%; padding: 0 15px; box-sizing: border-box;">
+            <form class="newsletter-form" style="width: 100%;">
+              <input type="email" placeholder="Your Email" required style="width: 100%; box-sizing: border-box; min-width: 100%;" />
+              <button type="submit" class="btn-primary" style="width: 100%; box-sizing: border-box; min-width: 100%;">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>

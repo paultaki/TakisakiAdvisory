@@ -590,6 +590,8 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mobile-navigation.css" />
     <link rel="stylesheet" href="blogs.css" />
+    <!-- Mobile Experience Enhancement -->
+    <link rel="stylesheet" href="mobile-master.css">
   </head>
   <body class="page-visible">
     <!-- Page Loader -->
@@ -602,8 +604,9 @@
     
     <div id="header-container"></div>
     <script src="header.js"></script>
+    <script src="menu-fix.js"></script>
 
-    <section class="page-title">
+    <section class="page-title scroll-reveal">
       <div class="container">
         <h1>LEADERSHIP INSIGHTS</h1>
         <p>
@@ -614,7 +617,7 @@
     </section>
 
     <div class="container">
-      <div class="blog-categories">
+      <div class="blog-categories scroll-reveal">
         <button class="category-button active">All</button>
         <button class="category-button">Leadership</button>
         <button class="category-button">Strategy</button>
@@ -622,7 +625,7 @@
         <button class="category-button">Culture</button>
       </div>
 
-      <article class="featured-post">
+      <article class="featured-post scroll-reveal">
         <div class="featured-post-image">
           <img
             src="images/unscalable.webp"
@@ -660,7 +663,7 @@
       </article>
 
       <div class="blog-grid">
-        <article class="blog-card">
+        <article class="blog-card scroll-reveal">
           <div class="card-image">
             <img
               src="images/resume.webp"
@@ -693,7 +696,7 @@
           </div>
         </article>
 
-        <article class="blog-card">
+        <article class="blog-card scroll-reveal">
           <div class="card-image">
             <img
               src="images/strategy_sticks.webp"
@@ -726,7 +729,7 @@
           </div>
         </article>
 
-        <div class="blog-card coming-soon-card">
+        <div class="blog-card coming-soon-card scroll-reveal">
           <div class="coming-soon-content">
             <h3>Coming Soon</h3>
             <p>
@@ -736,7 +739,7 @@
           </div>
         </div>
 
-        <div class="blog-card coming-soon-card">
+        <div class="blog-card coming-soon-card scroll-reveal">
           <div class="coming-soon-content">
             <h3>Coming Soon</h3>
             <p>
@@ -749,7 +752,7 @@
       </div>
     </div>
 
-    <section class="subscribe">
+    <section class="subscribe scroll-reveal">
       <div class="container">
         <h2>Get Leadership Insights Delivered to Your Inbox</h2>
         <p>
@@ -766,7 +769,7 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-info">
+          <div class="footer-info scroll-reveal">
             <div class="footer-logo">Paul Takisaki</div>
             <p>
               Leadership coaching for innovative thinkers who don't fit the
@@ -782,7 +785,7 @@
             </div>
           </div>
           <div class="footer-links">
-            <div class="footer-column">
+            <div class="footer-column scroll-reveal">
               <h4>Navigation</h4>
               <ul>
                 <li><a href="index.html">Home</a></li>
@@ -791,7 +794,7 @@
                 <li><a href="blogs.html">Blog</a></li>
               </ul>
             </div>
-            <div class="footer-column">
+            <div class="footer-column scroll-reveal">
               <h4>Services</h4>
               <ul>
                 <li>
@@ -803,7 +806,7 @@
                 </li>
               </ul>
             </div>
-            <div class="footer-column">
+            <div class="footer-column scroll-reveal">
               <h4>Contact</h4>
               <p>Email: paul@paultakisaki.com</p>
               <p>Location: Gilbert, AZ</p>
@@ -883,5 +886,6 @@
       }
     </script>
     <script src="script.js"></script>
+    <script src="mobile-experience.js"></script>
   </body>
 </html>

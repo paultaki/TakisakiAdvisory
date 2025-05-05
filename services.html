@@ -78,6 +78,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    
+    <!-- Mobile Experience Enhancement -->
+    <link rel="stylesheet" href="mobile-master.css">
+    <script src="mobile-experience.js" defer></script>
   </head>
   <body>
     <!-- Scroll progress indicator -->
@@ -141,27 +145,27 @@
       <!-- Hero Section -->
       <section class="services-hero">
         <div class="container">
-          <h1>Behind-the-Scenes Transformation</h1>
-          <p class="services-subtitle">
+          <h1 class="scroll-reveal">Behind-the-Scenes Transformation</h1>
+          <p class="services-subtitle scroll-reveal">
             Direct C-suite advisory. Zero public footprint. Guaranteed results.
           </p>
         </div>
       </section>
 
       <!-- Services Categories -->
-      <section class="services-categories">
+      <section class="services-categories scroll-reveal">
         <div class="container">
           <!-- Revenue Rescue Operations -->
-          <div class="service-category">
-            <div class="category-header">
+          <div class="service-category scroll-reveal">
+            <div class="category-header scroll-reveal">
               <h2>Revenue Rescue Operations</h2>
               <p class="category-description">
                 When revenue is bleeding, we stop it fast.
               </p>
             </div>
 
-            <div class="service-grid">
-              <div class="service-card crisis">
+            <div class="service-grid scroll-reveal">
+              <div class="service-card crisis scroll-reveal">
                 <div class="service-badge">Crisis Intervention</div>
                 <div class="service-price">$15,000/month</div>
                 <div class="service-content">
@@ -179,7 +183,7 @@
                 </div>
               </div>
 
-              <div class="service-card emergency">
+              <div class="service-card emergency scroll-reveal">
                 <div class="service-badge">Emergency Turnaround</div>
                 <div class="service-price">$30,000 flat fee</div>
                 <div class="service-content">
@@ -199,16 +203,16 @@
 
 
           <!-- Executive Development -->
-          <div class="service-category">
-            <div class="category-header">
+          <div class="service-category scroll-reveal">
+            <div class="category-header scroll-reveal">
               <h2>Executive Development</h2>
               <p class="category-description">
                 Build invisible resumes. Land impossible roles.
               </p>
             </div>
 
-            <div class="service-grid">
-              <div class="service-card rising">
+            <div class="service-grid scroll-reveal">
+              <div class="service-card rising scroll-reveal">
                 <div class="service-badge">Rising Star Program</div>
                 <div class="service-price">$5,000/month</div>
                 <div class="service-content">
@@ -224,7 +228,7 @@
                 </div>
               </div>
 
-              <div class="service-card executive">
+              <div class="service-card executive scroll-reveal">
                 <div class="service-badge">Executive Trajectory</div>
                 <div class="service-price">$10,000/month</div>
                 <div class="service-content">
@@ -246,15 +250,15 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="contact-section">
+      <section id="contact" class="contact-section scroll-reveal">
         <div class="container">
-          <h2>Schedule Your Confidential Strategy Session</h2>
-          <p class="contact-subtitle">
+          <h2 class="scroll-reveal">Schedule Your Confidential Strategy Session</h2>
+          <p class="contact-subtitle scroll-reveal">
             All consultations are private. No public acknowledgment.
           </p>
 
           <form
-            class="contact-form"
+            class="contact-form scroll-reveal"
             action="/api/send"
             method="POST"
           >
@@ -335,7 +339,7 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-info">
+          <div class="footer-info scroll-reveal">
             <div class="footer-logo">
               <img
                 src="images/pt-logo-white.webp"
@@ -354,7 +358,7 @@
               >
             </div>
           </div>
-          <div class="footer-links">
+          <div class="footer-links scroll-reveal">
             <div class="footer-column">
               <h4>Navigation</h4>
               <ul>
@@ -371,7 +375,7 @@
             </div>
           </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom scroll-reveal">
           <p>&copy; 2025 Paul Takisaki. All rights reserved.</p>
         </div>
       </div>

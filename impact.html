@@ -53,6 +53,8 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="mobile-navigation.css" />
     <link rel="stylesheet" href="impact-page.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
@@ -534,6 +536,8 @@
         }
       }
     </style>
+    <!-- Mobile Experience Enhancement -->
+    <link rel="stylesheet" href="mobile-master.css">
   </head>
 
   <body class="page-visible">
@@ -546,13 +550,15 @@
     </div>
     
     <div id="header-container"></div>
+    <script src="header.js"></script>
+    <script src="menu-fix.js"></script>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero scroll-reveal">
       <div class="container">
         <div class="hero-content">
-          <h1>Measurable Leadership Impact</h1>
-          <p>
+          <h1 class="scroll-reveal">Measurable Leadership Impact</h1>
+          <p class="scroll-reveal">
             See how Paul Takisaki's chess-player approach transforms careers and
             organizations through the eyes of those who experienced it
             firsthand.
@@ -562,22 +568,22 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats">
+    <section class="stats scroll-reveal">
       <div class="container">
         <div class="stats-grid">
-          <div class="stat-item fade-in">
+          <div class="stat-item fade-in scroll-reveal">
             <div class="stat-number">20+</div>
             <div class="stat-label">Years of Leadership Experience</div>
           </div>
-          <div class="stat-item fade-in">
+          <div class="stat-item fade-in scroll-reveal">
             <div class="stat-number">1,000+</div>
             <div class="stat-label">Leaders Mentored & Coached</div>
           </div>
-          <div class="stat-item fade-in">
+          <div class="stat-item fade-in scroll-reveal">
             <div class="stat-number">4×</div>
             <div class="stat-label">President's Cabinet Winner</div>
           </div>
-          <div class="stat-item fade-in">
+          <div class="stat-item fade-in scroll-reveal">
             <div class="stat-number">$1B+</div>
             <div class="stat-label">Revenue Impact Generated</div>
           </div>
@@ -586,15 +592,10 @@
     </section>
 
     <!-- Featured Testimonial -->
-    <section class="featured-testimonial">
+    <section class="featured-testimonial scroll-reveal">
       <div class="container">
         <div class="featured-inner">
-          <img
-            src="images/quote_open.webp"
-            alt="Quote Open"
-            class="quote-icon open"
-          />
-          <p class="featured-quote fade-in">
+          <p class="featured-quote fade-in scroll-reveal">
             Working with Paul Takisaki has been a
             <strong>deeply transformative experience.</strong>
             His compassion and unwavering focus on building from a place of
@@ -605,32 +606,27 @@
             >
             to create a space of trust and openness.
           </p>
-          <img
-            src="images/quote_closed.webp"
-            alt="Quote Close"
-            class="quote-icon close"
-          />
-          <div class="featured-author fade-in">
+          <div class="featured-author fade-in scroll-reveal">
             <h4>Emmanuel Nwoke</h4>
-            <p>Senior Director of Sales, Verizon</p>
+            <p>Senior Director of Sales, Fortune 50 Company</p>
           </div>
         </div>
       </div>
     </section>
 
 <!-- C-Suite Impact Testimonials -->
-<section class="testimonials">
+<section class="testimonials scroll-reveal">
   <div class="container">
     <div class="testimonials-header">
-      <h2 class="fade-in">C-Suite & Executive Impact</h2>
-      <p class="fade-in">
+      <h2 class="fade-in scroll-reveal">C-Suite & Executive Impact</h2>
+      <p class="fade-in scroll-reveal">
         Hear from senior leaders about Paul's lasting influence on both
         business results and organizational culture.
       </p>
     </div>
 
     <div class="testimonials-grid">
-      <div class="testimonial-item fade-in">
+      <div class="testimonial-item fade-in scroll-reveal">
         <div class="testimonial-tag">C-Suite</div>
         <div class="testimonial-quote">
           <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
@@ -646,7 +642,7 @@
         </div>
       </div>
 
-      <div class="testimonial-item fade-in">
+      <div class="testimonial-item fade-in scroll-reveal">
         <div class="testimonial-tag">VP Level</div>
         <div class="testimonial-quote">
           <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
@@ -662,7 +658,7 @@
         </div>
       </div>
 
-      <div class="testimonial-item fade-in">
+      <div class="testimonial-item fade-in scroll-reveal">
         <div class="testimonial-tag">VP Level</div>
         <div class="testimonial-quote">
           <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
@@ -683,28 +679,32 @@
 
 
     <!-- Video Tribute Section -->
-    <section class="video-testimonial">
+    <section class="video-testimonial scroll-reveal">
       <div class="container">
-        <h2 class="fade-in">The Executive Farewell Tribute</h2>
-        <p class="fade-in">
+        <h2 class="fade-in scroll-reveal">The Executive Farewell Tribute</h2>
+        <p class="fade-in scroll-reveal">
           Created by peers, employees, and executives to celebrate Paul's impact
           during 20 years of transformational leadership at Verizon.
         </p>
 
         <div
-          class="video-container fade-in"
+          class="fade-in scroll-reveal"
           style="max-width: 640px; margin: 0 auto"
         >
           <a
             href="https://www.youtube.com/watch?v=wz5J6VMhT20"
             target="_blank"
             aria-label="Watch Paul Takisaki's farewell video tribute"
+            style="display: block;"
           >
             <img
               src="images/paul_effect.webp"
               alt="Paul Takisaki Farewell Video Tribute from Verizon Executives"
               width="640"
               height="360"
+              style="width: 100%; height: auto; border-radius: 8px; transition: transform 0.3s ease; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);"
+              onmouseover="this.style.transform='scale(1.02)'"
+              onmouseout="this.style.transform='scale(1)'"
             />
           </a>
         </div>
@@ -712,14 +712,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta scroll-reveal">
       <div class="container">
-        <h2 class="fade-in">Ready for Your Own Leadership Transformation?</h2>
-        <p class="fade-in">
+        <h2 class="fade-in scroll-reveal">Ready for Your Own Leadership Transformation?</h2>
+        <p class="fade-in scroll-reveal">
           Experience the leadership development approach that has transformed
           careers and organizations.
         </p>
-        <a href="/contact.html" class="journey-button fade-in"
+        <a href="/contact.html" class="journey-button fade-in scroll-reveal"
           >Start Your Journey</a
         >
       </div>
@@ -769,7 +769,7 @@
         });
 
         // Video play tracking for analytics
-        const videoLink = document.querySelector(".video-container a");
+        const videoLink = document.querySelector("[aria-label='Watch Paul Takisaki\'s farewell video tribute']");
         if (videoLink) {
           videoLink.addEventListener("click", function (e) {
             // If you have analytics, you can track video clicks here
@@ -779,5 +779,11 @@
       });
     </script>
     <script src="script.js"></script>
+    <script src="mobile-experience.js"></script>
+    
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
   </body>
 </html>

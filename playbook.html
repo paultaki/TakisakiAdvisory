@@ -4,6 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Takisaki Leadership Playbook - Leadership Frameworks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="mobile-master.css" />
+    <!-- Custom styles to fix menu button position -->
+    <style>
+      /* Fix mobile menu toggle position */
+      @media (max-width: 992px) {
+        .mobile-menu-toggle {
+          order: 3; /* Ensures it comes after the logo and before nav */
+          position: relative !important;
+          right: 0 !important;
+          left: auto !important;
+          margin-left: auto;
+          align-self: center !important; /* Center vertically */
+          margin-top: 0 !important; /* Reset any top margin */
+          margin-bottom: 0 !important; /* Reset any bottom margin */
+          height: 44px !important; /* Match logo height */
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        /* Completely override header structure and positioning for proper alignment */
+        header, .site-header {
+          padding: 0 !important; 
+          height: 90px !important;
+          display: flex !important;
+          align-items: center !important;
+          padding-top: calc(var(--spacing-sm) + env(safe-area-inset-top, 0px)) !important;
+        }
+        
+        /* Additional fixes for iOS */
+        @supports (-webkit-touch-callout: none) {
+          header, .site-header {
+            padding-top: calc(var(--spacing-sm) + 20px + env(safe-area-inset-top, 0px)) !important;
+          }
+        }
+        
+        /* Additional space for logo on mobile */
+        .logo {
+          margin-top: 0 !important; /* Reset margin */
+          align-self: center !important; /* Center vertically */
+        }
+        
+        /* Further adjustments for site-header */
+        .site-header {
+          padding-top: 25px !important;
+          min-height: 90px !important;
+          display: flex !important;
+          align-items: center !important;
+        }
+        
+        /* Force header container alignment */
+        .site-header .container {
+          display: flex !important;
+          align-items: center !important;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        
+        .header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 10px; /* Add padding to the top of the header container */
+          padding-bottom: 10px; /* Add padding to the bottom for balance */
+        }
+        
+        .logo {
+          order: 1;
+        }
+        
+        .main-nav {
+          order: 2;
+        }
+      }
+    </style>
     <style>
       /* Core Variables */
       :root {
@@ -47,7 +126,7 @@
         line-height: 1.6;
         font-size: 16px;
         overflow-x: hidden;
-        padding-top: 80px; /* For fixed header */
+        padding-top: 110px; /* Further increased padding for fixed header */
       }
 
       .container {
@@ -108,8 +187,9 @@
         background-color: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(10px);
         z-index: 1000;
-        padding: var(--spacing-sm) 0;
+        padding: calc(var(--spacing-sm) + 5px) 0; /* Increase vertical padding */
         border-bottom: 1px solid var(--border-light);
+        min-height: 70px; /* Ensure minimum height */
       }
 
       .header-container {
@@ -121,6 +201,28 @@
       .logo {
         display: flex;
         align-items: center;
+        margin-top: 5px; /* Add margin to push logo down a bit */
+      }
+      
+      .logo-image {
+        max-height: 44px; /* Control logo image height */
+        width: auto;
+        display: block; /* Ensure proper display */
+        margin: 0 !important; /* Reset all margins */
+        position: relative !important; /* Ensure relative positioning */
+        vertical-align: middle !important; /* Align vertically */
+      }
+      
+      /* Target the logo link */
+      .logo a {
+        display: flex !important;
+        align-items: center !important;
+        height: 44px !important;
+      }
+      
+      /* Ensure the text is aligned */
+      .logo span, .logo img {
+        vertical-align: middle !important;
       }
 
       .logo a {
@@ -198,6 +300,8 @@
       .hero {
         background-color: var(--dark-surface);
         padding: var(--spacing-xl) 0;
+        padding-top: calc(var(--spacing-xl) + 40px); /* Extra padding at the top */
+        margin-top: 20px; /* Additional margin to create more space */
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -224,6 +328,7 @@
         z-index: 2;
         max-width: 800px;
         margin: 0 auto;
+        padding-top: 20px; /* Additional top padding for more space */
       }
 
       .hero h1 {
@@ -746,6 +851,48 @@
         font-size: 0.9rem;
       }
 
+      /* List View Styles */
+      .categories-grid.list-view {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      
+      .categories-grid.list-view .category-card {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .categories-grid.list-view .category-header {
+        display: flex;
+        align-items: center;
+        padding: 16px 24px;
+      }
+      
+      .categories-grid.list-view .category-icon {
+        margin-right: 16px;
+        margin-bottom: 0;
+        font-size: 1.8rem;
+      }
+      
+      .categories-grid.list-view .category-title {
+        margin-bottom: 4px;
+        margin-right: 16px;
+      }
+      
+      .categories-grid.list-view .category-description {
+        flex: 1;
+      }
+      
+      .categories-grid.list-view .category-content {
+        border-top: 1px solid var(--border-light);
+      }
+      
+      .categories-grid.list-view .frameworks-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+      }
+      
       /* Responsive Styles */
       @media (max-width: 992px) {
         .categories-grid {
@@ -754,6 +901,10 @@
 
         .results-grid {
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        .categories-grid.list-view .frameworks-list {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -905,40 +1056,17 @@
       </div>
     </div>
     
-    <header>
-      <div class="container header-container">
-        <div class="logo">
-          <a href="index.html">PAUL <span>TAKISAKI</span></a>
-        </div>
-
-        <div class="menu-toggle" id="menuToggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <nav id="mainNav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li>
-              <a href="playbook.html" class="active">Leadership Playbook</a>
-            </li>
-            <li><a href="blogs.html">Insights</a></li>
-            <li><a href="contact.html" class="nav-button">Connect</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <!-- Header container for header.js -->
+    <div id="header-container"></div>
 
     <section class="hero">
-      <div class="container hero-content">
+      <div class="container hero-content scroll-reveal">
         <h1 class="fade-in">
           THE TAKISAKI <span class="accent">LEADERSHIP PLAYBOOK</span>
         </h1>
         <p class="fade-in delay-1">
-          A meticulously documented collection of proven leadership frameworks,
-          built from two decades of rigorous testing, measurement, and
+          A meticulously documented collection of proven leadership frameworks.
+          Built from two decades of rigorous testing, measurement, and
           record-breaking results across multiple industries and organizations.
         </p>
       </div>
@@ -968,17 +1096,17 @@
       <div class="container">
         <div class="categories-grid" id="categoriesGrid">
           <!-- Leadership Philosophy Card -->
-          <div class="category-card fade-in">
-            <div class="category-header" data-category="philosophy">
+          <div class="category-card fade-in accordion-item">
+            <div class="category-header accordion-header scroll-reveal" data-category="philosophy" aria-expanded="false">
               <span class="category-icon">🧠</span>
               <h3 class="category-title">LEADERSHIP PHILOSOPHY</h3>
               <p class="category-description">
                 Your core operating system: lead without theater, let results
                 speak.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">The Quiet Confidence OS</h4>
@@ -1027,16 +1155,16 @@
           </div>
 
           <!-- First 90 Days Card -->
-          <div class="category-card fade-in delay-1">
-            <div class="category-header" data-category="first90">
+          <div class="category-card fade-in delay-1 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="first90" aria-expanded="false">
               <span class="category-icon">🚀</span>
               <h3 class="category-title">THE FIRST 90 DAYS</h3>
               <p class="category-description">
                 Critical strategies for successful leadership transitions.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1108,16 +1236,16 @@
           </div>
 
           <!-- Talent Development Card -->
-          <div class="category-card fade-in delay-2">
-            <div class="category-header" data-category="talent">
+          <div class="category-card fade-in delay-2 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="talent" aria-expanded="false">
               <span class="category-icon">🌱</span>
               <h3 class="category-title">TALENT DEVELOPMENT & TEAM BUILDING</h3>
               <p class="category-description">
                 Systems for bringing out the best in people and teams.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1192,17 +1320,17 @@
           </div>
 
           <!-- Transformational Frameworks Card -->
-          <div class="category-card fade-in delay-3">
-            <div class="category-header" data-category="transformation">
+          <div class="category-card fade-in delay-3 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="transformation" aria-expanded="false">
               <span class="category-icon">🏗️</span>
               <h3 class="category-title">TRANSFORMATIONAL FRAMEWORKS</h3>
               <p class="category-description">
                 Systems that drive structural change and breakthrough
                 performance.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1265,20 +1393,20 @@
           </div>
 
           <!-- Sales & Customer Engagement Card -->
-          <div class="category-card fade-in">
-            <div class="category-header" data-category="sales">
+          <div class="category-card fade-in accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="sales" aria-expanded="false">
               <span class="category-icon">🤝</span>
               <h3 class="category-title">SALES & CUSTOMER ENGAGEMENT</h3>
               <p class="category-description">
                 Strategies for customer acquisition, retention, and growth.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">
-                    Tech Check Initiative: Reimagining B2B Prospecting
+                    Tech Check Initiative: Reimagining B2B Client Acquisition
                   </h4>
                   <p class="framework-description">
                     Provide value before asking for business.
@@ -1287,7 +1415,7 @@
                 </div>
                 <div class="framework-item">
                   <h4 class="framework-title">
-                    Project Domination (PDOM): Competitive Intelligence
+                    Garbage in Garbage out: How to improve your customer intelligence
                   </h4>
                   <p class="framework-description">
                     Turn intelligence gathering into a competitive advantage.
@@ -1296,7 +1424,7 @@
                 </div>
                 <div class="framework-item">
                   <h4 class="framework-title">
-                    Prospecting Maps: Location Intelligence
+                    Client Acquisition Maps: Location Intelligence
                   </h4>
                   <p class="framework-description">
                     Remove friction from the territory management process.
@@ -1326,16 +1454,16 @@
           </div>
 
           <!-- Communication & Transparency Card -->
-          <div class="category-card fade-in delay-1">
-            <div class="category-header" data-category="communication">
+          <div class="category-card fade-in delay-1 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="communication" aria-expanded="false">
               <span class="category-icon">🔍</span>
               <h3 class="category-title">COMMUNICATION & TRANSPARENCY</h3>
               <p class="category-description">
                 Systems for clarity, alignment, and constructive dialogue.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1384,8 +1512,8 @@
           </div>
 
           <!-- Professional Growth Card -->
-          <div class="category-card fade-in delay-2">
-            <div class="category-header" data-category="growth">
+          <div class="category-card fade-in delay-2 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="growth" aria-expanded="false">
               <span class="category-icon">⚡</span>
               <h3 class="category-title">
                 PROFESSIONAL GROWTH & PERSONAL LEADERSHIP
@@ -1393,9 +1521,9 @@
               <p class="category-description">
                 Practices for sustainable excellence and authenticity.
               </p>
-              <span class="expand-icon">+</span>
+              <span class="expand-icon accordion-icon">+</span>
             </div>
-            <div class="category-content">
+            <div class="category-content accordion-content">
               <div class="frameworks-list">
                 <div class="framework-item">
                   <h4 class="framework-title">
@@ -1446,24 +1574,24 @@
     </section>
 
     <section class="results-section">
-      <div class="container">
-        <h2 class="results-title">PROVEN RESULTS</h2>
+      <div class="container scroll-reveal">
+        <h2 class="results-title scroll-reveal">PROVEN RESULTS</h2>
         <p>
           These frameworks aren't theoretical—they've been meticulously tested
           and proven across multiple organizations.
         </p>
 
         <div class="results-grid">
-          <div class="result-card fade-in">
+          <div class="result-card fade-in scroll-reveal">
             <div class="result-number">19×</div>
-            <h3 class="result-label">INCREASE IN PROSPECT CONVERSION</h3>
+            <h3 class="result-label">INCREASE IN CLIENT ACQUISITION</h3>
             <p class="result-description">
               Through the Initiative's consultative approach to
-              prospecting
+              client engagement
             </p>
           </div>
 
-          <div class="result-card fade-in delay-1">
+          <div class="result-card fade-in delay-1 scroll-reveal">
             <div class="result-number">72%</div>
             <h3 class="result-label">HIGHER LAUNCH SUCCESS</h3>
             <p class="result-description">
@@ -1472,7 +1600,7 @@
             </p>
           </div>
 
-          <div class="result-card fade-in delay-2">
+          <div class="result-card fade-in delay-2 scroll-reveal">
             <div class="result-number">50%</div>
             <h3 class="result-label">REDUCTION IN CUSTOMER CHURN</h3>
             <p class="result-description">
@@ -1480,7 +1608,7 @@
             </p>
           </div>
 
-          <div class="result-card fade-in delay-3">
+          <div class="result-card fade-in delay-3 scroll-reveal">
             <div class="result-number">14/14</div>
             <h3 class="result-label">JOB INTERVIEWS TO OFFERS</h3>
             <p class="result-description">
@@ -1492,13 +1620,13 @@
     </section>
 
     <section class="cta-section">
-      <div class="container cta-content">
-        <h2>READY TO TRANSFORM YOUR LEADERSHIP?</h2>
+      <div class="container cta-content scroll-reveal">
+        <h2 class="scroll-reveal">READY TO TRANSFORM YOUR LEADERSHIP?</h2>
         <p>
           Unlock the full Takisaki Leadership Playbook with detailed frameworks,
           implementation guides, and case studies.
         </p>
-        <div class="cta-buttons">
+        <div class="cta-buttons scroll-reveal">
           <a href="#" class="cta-button" id="requestAccessBtn"
             >Request Access</a
           >
@@ -1869,5 +1997,6 @@
     </script>
     <script src="header.js"></script>
     <script src="script.js"></script>
+    <script src="mobile-experience.js" defer></script>
   </body>
 </html>

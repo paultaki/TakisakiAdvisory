@@ -1,17 +1,52 @@
 /* Impact Page Styles */
 .quote-icon {
-  width: 30px;
-  height: auto;
-  display: inline-block;
-  margin: 0 10px;
+  display: none; /* Hide the images */
 }
 
-.quote-icon.open {
-  transform: translateY(-10px);
+.testimonial-quote {
+  position: relative;
+  padding: 0 10px;
 }
 
-.quote-icon.close {
-  transform: rotate(180deg) translateY(-10px);
+.testimonial-quote::before {
+  content: '"';
+  color: var(--accent-color);
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.25em;
+  margin-right: 0.1em;
+}
+
+.testimonial-quote::after {
+  content: '"';
+  color: var(--accent-color);
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+.featured-quote {
+  position: relative;
+  padding: 0 10px;
+}
+
+.featured-quote::before {
+  content: '"';
+  color: var(--accent-color);
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.25em;
+  margin-right: 0.1em;
+}
+
+.featured-quote::after {
+  content: '"';
+  color: var(--accent-color);
+  font-size: 1.5em;
+  line-height: 0;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
 }
 
 /* Stats section */
@@ -192,26 +227,7 @@
   margin: 0 auto 40px;
 }
 
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.video-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.video-container:hover img {
-  transform: scale(1.02);
-}
+/* Video container styles moved inline */
 
 /* CTA section */
 .cta {
