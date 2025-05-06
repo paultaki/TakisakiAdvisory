@@ -1,141 +1,444 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Paul Takisaki - Fortune 50 leader turned executive coach with 20 years of leadership experience. Learn about my strategic approach to leadership." />
+    <meta
+      name="description"
+      content="Paul Takisaki - Fortune 50 leader turned executive coach with 20 years of leadership experience. Learn about my strategic approach to leadership."
+    />
     <title>About Paul Takisaki | Strategic Leadership</title>
-    
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="About Paul Takisaki | Strategic Leadership" />
-    <meta property="og:description" content="Fortune 50 leader turned executive coach with 20 years of leadership experience. Learn about my strategic approach to leadership." />
-    <meta property="og:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
+    <meta
+      property="og:title"
+      content="About Paul Takisaki | Strategic Leadership"
+    />
+    <meta
+      property="og:description"
+      content="Fortune 50 leader turned executive coach with 20 years of leadership experience. Learn about my strategic approach to leadership."
+    />
+    <meta
+      property="og:image"
+      content="https://www.paultakisaki.com/images/headshot_bw.webp"
+    />
     <meta property="og:url" content="https://www.paultakisaki.com/about.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Paul Takisaki" />
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="About Paul Takisaki | Strategic Leadership" />
-    <meta name="twitter:description" content="Fortune 50 leader turned executive coach with 20 years of leadership experience. Learn about my strategic approach to leadership." />
-    <meta name="twitter:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
-    
+    <meta
+      name="twitter:title"
+      content="About Paul Takisaki | Strategic Leadership"
+    />
+    <meta
+      name="twitter:description"
+      content="Fortune 50 leader turned executive coach with 20 years of leadership experience. Learn about my strategic approach to leadership."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.paultakisaki.com/images/headshot_bw.webp"
+    />
+
     <!-- Favicon Package -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180x180.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/favicon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/images/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#00e5ff" />
+    <link
+      rel="mask-icon"
+      href="/images/safari-pinned-tab.svg"
+      color="#00e5ff"
+    />
     <meta name="msapplication-TileColor" content="#121212" />
     <meta name="theme-color" content="#121212" />
-    
+
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Paul Takisaki",
-      "url": "https://www.paultakisaki.com",
-      "image": "https://www.paultakisaki.com/images/headshot_bw.webp",
-      "jobTitle": "Executive Leadership Coach",
-      "description": "Fortune 50 leader turned executive coach with 20 years of leadership experience transforming organizations and elevating leaders.",
-      "sameAs": ["https://www.linkedin.com/in/paultaki"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Gilbert",
-        "addressRegion": "AZ",
-        "addressCountry": "US"
-      },
-      "alumniOf": "Verizon",
-      "knowsAbout": ["Executive Coaching", "Strategic Leadership", "Team Development", "Organizational Transformation"]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "url": "https://www.paultakisaki.com",
+        "image": "https://www.paultakisaki.com/images/headshot_bw.webp",
+        "jobTitle": "Executive Leadership Coach",
+        "description": "Fortune 50 leader turned executive coach with 20 years of leadership experience transforming organizations and elevating leaders.",
+        "sameAs": ["https://www.linkedin.com/in/paultaki"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Gilbert",
+          "addressRegion": "AZ",
+          "addressCountry": "US"
+        },
+        "alumniOf": "Verizon",
+        "knowsAbout": [
+          "Executive Coaching",
+          "Strategic Leadership",
+          "Team Development",
+          "Organizational Transformation"
+        ]
+      }
     </script>
-    
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="mobile-navigation.css">
-    <link rel="stylesheet" href="nav-fix.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com/" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="images/ptlogo.webp" as="image" />
+
+    <!-- Mobile Experience Enhancement -->
+    <script src="mobile-experience.js" defer></script>
+
+    <!-- Font preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    
-    <!-- Mobile Experience Enhancement -->
-    <link rel="stylesheet" href="mobile-master.css">
+
+    <!-- Phosphor Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css"
+      rel="stylesheet"
+    />
+    <!-- Backup Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              accent: "#00e5ff",
+              primary: "#000000",
+              secondary: "#121212",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0", transform: "translateY(10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideUp: {
+                "0%": { transform: "translateY(20px)", opacity: "0" },
+                "100%": { transform: "translateY(0)", opacity: "1" },
+              },
+              pulse: {
+                "0%, 100%": { opacity: "1" },
+                "50%": { opacity: "0.8" },
+              },
+              glowPulse: {
+                "0%, 100%": { boxShadow: "0 0 5px rgba(0, 229, 255, 0.3)" },
+                "50%": { boxShadow: "0 0 20px rgba(0, 229, 255, 0.6)" },
+              },
+              shimmer: {
+                "0%": { backgroundPosition: "-1000px 0" },
+                "100%": { backgroundPosition: "1000px 0" },
+              },
+            },
+            animation: {
+              fadeIn: "fadeIn 0.6s ease-out forwards",
+              slideUp: "slideUp 0.8s ease-out forwards",
+              pulse: "pulse 3s ease-in-out infinite",
+              glowPulse: "glowPulse 3s ease-in-out infinite",
+              shimmer: "shimmer 3s infinite linear",
+            },
+            backgroundImage: {
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+            },
+            boxShadow: {
+              glow: "0 0 15px rgba(0, 229, 255, 0.5)",
+              subtle:
+                "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+              card: "0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1)",
+              "inner-accent": "inset 0 0 0 1px rgba(0, 229, 255, 0.15)",
+            },
+            transitionTimingFunction: {
+              premium: "cubic-bezier(0.16, 1, 0.3, 1)",
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+    <style>
+      /* Section fade-in animations */
+      .section-fade-in > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .scrolled.section-fade-in > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scrolled.section-fade-in > *:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .scrolled.section-fade-in > *:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .scrolled.section-fade-in > *:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .scrolled.section-fade-in > *:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      .scrolled.section-fade-in > *:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+
+      /* Premium card hover effects */
+      .premium-card {
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .premium-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+          0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 229, 255, 0.3);
+      }
+
+      .premium-card:hover .card-accent-bar {
+        width: 100%;
+      }
+
+      .premium-card .card-accent-bar {
+        width: 50px;
+        transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      /* Text animation effects for hero */
+      .animate-text-line {
+        overflow: hidden;
+      }
+
+      .animate-text-line span {
+        display: block;
+        opacity: 0;
+        transform: translateY(35px);
+        animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      @keyframes textReveal {
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-text-line:nth-child(1) span {
+        animation-delay: 0.1s;
+      }
+      .animate-text-line:nth-child(2) span {
+        animation-delay: 0.2s;
+      }
+      .animate-text-line:nth-child(3) span {
+        animation-delay: 0.3s;
+      }
+      .animate-text-line:nth-child(4) span {
+        animation-delay: 0.4s;
+      }
+      .animate-text-line:nth-child(5) span {
+        animation-delay: 0.5s;
+      }
+
+      /* Framework card toggle */
+      .framework-expanded {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .framework-expanded.expanded {
+        max-height: 500px;
+      }
+
+      /* Testimonial carousel */
+      .testimonial-slide {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+      }
+
+      .testimonial-slide.active {
+        opacity: 1;
+        position: relative;
+        pointer-events: auto;
+      }
+    </style>
   </head>
-  <body class="page-visible">
+  <body class="bg-black text-white font-sans antialiased overflow-x-hidden">
     <!-- Scroll progress indicator -->
-    <div class="scroll-progress" aria-hidden="true"></div>
-    
+    <div
+      id="scroll-progress"
+      class="fixed top-0 left-0 h-1 bg-gradient-to-r from-accent/70 via-accent to-accent/70 w-0 z-[9999] transition-all duration-100 ease-linear"
+    ></div>
+
+    <!-- Skip to content link for accessibility -->
+    <a
+      class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:p-4 focus:bg-accent focus:text-black focus:font-bold"
+      href="#main-content"
+      >Skip to main content</a
+    >
+
+    <!-- Header container for header.js -->
+    <div id="header-container"></div>
+
     <!-- Page Loader -->
-    <div class="page-loader">
-      <div class="loader-content">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">PAUL <span>TAKISAKI</span></div>
+    <div
+      class="page-loader fixed inset-0 bg-black flex items-center justify-center z-[100] transition-opacity duration-500"
+    >
+      <div class="text-center">
+        <div
+          class="w-16 h-16 border-4 border-white/10 border-t-accent rounded-full animate-spin mb-6"
+        ></div>
+        <div class="text-2xl font-bold tracking-wider">
+          PAUL <span class="text-accent">TAKISAKI</span>
+        </div>
       </div>
     </div>
 
-    <div id="header-container"></div>
-    <script src="header.js"></script>
-    <script src="menu-fix.js"></script>
-
-    <main>
+    <main id="main-content" class="pt-20">
       <!-- Hero Section -->
-      <section class="about-hero scroll-reveal" style="position: relative; overflow: hidden;">
-        <!-- Background accent element -->
-        <div style="position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(0, 229, 255, 0) 70%); top: -250px; right: -150px; border-radius: 50%; z-index: 1;"></div>
-        
-        <div class="container" style="position: relative; z-index: 2;">
-          <div class="section-header scroll-reveal">
-            <div class="section-tag" style="color: #00e5ff; font-weight: 600; letter-spacing: 2px;">FORMER FORTUNE 50 EXECUTIVE</div>
-            <h1 style="font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.1; margin: 25px 0; letter-spacing: -1px;">I Don't Play The Game.<br />I <span style="color: #00e5ff; position: relative;">Rewire</span> It.</h1>
-            <div style="width: 120px; height: 8px; background: linear-gradient(90deg, #00e5ff, transparent); margin-top: 20px;"></div>
-            <p style="font-size: 1.2rem; max-width: 650px; margin-top: 20px; opacity: 0.9;">
-              20+ years of transforming underperforming organizations into industry leaders through strategic clarity and systematic execution.
-            </p>
+      <section
+        class="relative min-h-[70vh] flex items-center py-20 sm:py-28 bg-gradient-to-br from-primary to-secondary overflow-hidden"
+      >
+        <!-- Background accent elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div
+            class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-radial from-accent/5 to-transparent blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-radial from-accent/3 to-transparent blur-3xl"
+          ></div>
+
+          <!-- Subtle grid pattern overlay -->
+          <div
+            class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.4)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"
+          ></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div
+            class="inline-block mb-4 opacity-0 animate-[fadeIn_0.6s_ease-out_forwards]"
+          >
+            <span
+              class="text-accent text-sm font-semibold tracking-wider uppercase"
+              >FORMER FORTUNE 50 EXECUTIVE</span
+            >
+          </div>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight"
+          >
+            <div class="animate-text-line">
+              <span>I Don't Play The Game.</span>
+            </div>
+            <div class="animate-text-line">
+              <span
+                >I <span class="text-accent relative">Rewire</span> It.</span
+              >
+            </div>
+          </h1>
+
+          <div
+            class="h-1 w-32 bg-gradient-to-r from-accent to-transparent mt-4 mb-8 opacity-0 animate-[fadeIn_0.8s_ease-out_0.4s_forwards]"
+          ></div>
+
+          <p
+            class="text-xl md:text-2xl text-gray-300 max-w-3xl opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]"
+          >
+            20+ years of transforming underperforming organizations into
+            industry leaders through strategic clarity and systematic execution.
+          </p>
+        </div>
+      </section>
+
+      <!-- Credibility Banner -->
+      <section
+        class="py-12 bg-gradient-to-r from-accent/5 to-transparent relative"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="bg-black/40 backdrop-blur-sm border-l-4 border-accent rounded-lg p-8 shadow-lg section-fade-in"
+          >
+            <h2 class="text-2xl font-bold mb-6">
+              Fortune 50 Executive & Performance Architect
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="flex flex-col">
+                <div class="text-2xl font-bold text-accent">20+ Years</div>
+                <div class="text-white/70">Leadership Experience</div>
+              </div>
+
+              <div class="flex flex-col">
+                <div class="text-2xl font-bold text-accent">450+ Team</div>
+                <div class="text-white/70">National Organization</div>
+              </div>
+
+              <div class="flex flex-col">
+                <div class="text-2xl font-bold text-accent">Top 1%</div>
+                <div class="text-white/70">Performance Recognition</div>
+              </div>
+
+              <div class="flex flex-col">
+                <div class="text-2xl font-bold text-accent">$1B+</div>
+                <div class="text-white/70">Revenue Impact</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Who I Am Section -->
-      <section class="about-intro scroll-reveal">
-        <div class="container">
-          <!-- Credibility Banner - Highly visible summary -->
-          <div class="credibility-banner scroll-reveal" style="background: linear-gradient(90deg, rgba(0, 229, 255, 0.1), rgba(0, 229, 255, 0.02)); padding: 20px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #00e5ff;">
-            <h2 style="margin-bottom: 10px; font-size: 1.6rem; color: #fff;">Fortune 50 Executive & Performance Architect</h2>
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
-              <div style="flex: 1; min-width: 150px;">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #00e5ff;">20+ Years</div>
-                <div style="font-size: 0.9rem;">Leadership Experience</div>
+      <!-- Introduction Section -->
+      <section class="py-24 bg-primary relative section-fade-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
+            <div class="lg:col-span-3">
+              <div class="mb-6">
+                <span
+                  class="text-accent text-sm font-semibold tracking-wider uppercase"
+                  >The Quiet Strategist</span
+                >
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">
+                  I transform organizations, break records, and co-elevate those
+                  around me.
+                </h2>
               </div>
-              <div style="flex: 1; min-width: 150px;">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #00e5ff;">450+ Team</div>
-                <div style="font-size: 0.9rem;">National Organization</div>
-              </div>
-              <div style="flex: 1; min-width: 150px;">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #00e5ff;">Top 1%</div>
-                <div style="font-size: 0.9rem;">Performance Recognition</div>
-              </div>
-              <div style="flex: 1; min-width: 150px;">
-                <div style="font-weight: bold; font-size: 1.1rem; color: #00e5ff;">$1B+</div>
-                <div style="font-size: 0.9rem;">Revenue Impact</div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="intro-grid">
-            <div class="intro-content scroll-reveal">
-              <div class="intro-tagline">The Quiet Strategist.</div>
-              <div class="intro-lead" style="font-size: 1.4rem; font-weight: 600; margin-bottom: 20px;">
-                I transform organizations, break records, and co-elevate those around me.
-              </div>
-              <p class="career-path">
+
+              <p class="text-lg text-gray-300 mb-10 leading-relaxed">
                 After 20 years climbing from a mall kiosk to a senior leader in
                 Fortune 50, I walked away at the top of my game, not because I
                 was done, but because I was just getting started. I transformed
@@ -144,331 +447,580 @@
                 model that became the B2B standard for one of the largest
                 enterprises in America.
               </p>
-              
-              <div class="snapshot-grid" style="margin-top: 30px; gap: 25px;">
-                <div class="snapshot-item scroll-reveal" style="background: rgba(0, 229, 255, 0.05); padding: 20px; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 30px rgba(0, 229, 255, 0.15)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-                  <div class="snapshot-number" style="font-size: 2.5rem; font-weight: 800; color: #00e5ff;">12</div>
-                  <div class="snapshot-label" style="font-weight: 600; margin: 5px 0;">Promotions in 20 Years</div>
-                  <div class="snapshot-description" style="font-size: 0.9rem; opacity: 0.8;">
-                    Consistent recognition for results that matter, not just time served.
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div
+                  class="premium-card bg-black/40 backdrop-blur-sm rounded-xl overflow-hidden p-8 border border-white/10 shadow-card relative group transition-all"
+                >
+                  <!-- Top accent line that expands on hover -->
+                  <div
+                    class="absolute top-0 left-0 h-1 w-1/5 bg-accent card-accent-bar transition-all"
+                  ></div>
+
+                  <div
+                    class="text-4xl md:text-5xl font-extrabold text-accent mb-3"
+                  >
+                    12
                   </div>
+                  <h3 class="text-xl font-bold mb-2">Promotions in 20 Years</h3>
+                  <p class="text-white/70 text-sm">
+                    Consistent recognition for results that matter, not just
+                    time served.
+                  </p>
                 </div>
-                <div class="snapshot-item scroll-reveal" style="background: rgba(0, 229, 255, 0.05); padding: 20px; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 30px rgba(0, 229, 255, 0.15)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-                  <div class="snapshot-number" style="font-size: 2.5rem; font-weight: 800; color: #00e5ff;">4×</div>
-                  <div class="snapshot-label" style="font-weight: 600; margin: 5px 0;">President's Cabinet</div>
-                  <div class="snapshot-description" style="font-size: 0.9rem; opacity: 0.8;">
+
+                <div
+                  class="premium-card bg-black/40 backdrop-blur-sm rounded-xl overflow-hidden p-8 border border-white/10 shadow-card relative group transition-all"
+                >
+                  <!-- Top accent line that expands on hover -->
+                  <div
+                    class="absolute top-0 left-0 h-1 w-1/5 bg-accent card-accent-bar transition-all"
+                  ></div>
+
+                  <div
+                    class="text-4xl md:text-5xl font-extrabold text-accent mb-3"
+                  >
+                    4×
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">President's Cabinet</h3>
+                  <p class="text-white/70 text-sm">
                     Top 1% nationally. Recognition not for playing by the rules,
                     but for rewriting them.
-                  </div>
+                  </p>
                 </div>
-                <div class="snapshot-item scroll-reveal" style="background: rgba(0, 229, 255, 0.05); padding: 20px; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 30px rgba(0, 229, 255, 0.15)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-                  <div class="snapshot-number" style="font-size: 2.5rem; font-weight: 800; color: #00e5ff;">450+</div>
-                  <div class="snapshot-label" style="font-weight: 600; margin: 5px 0;">Person Leadership Team</div>
-                  <div class="snapshot-description" style="font-size: 0.9rem; opacity: 0.8;">
-                    Built and led national technical sales organizations that delivered consistent results.
+
+                <div
+                  class="premium-card bg-black/40 backdrop-blur-sm rounded-xl overflow-hidden p-8 border border-white/10 shadow-card relative group transition-all"
+                >
+                  <!-- Top accent line that expands on hover -->
+                  <div
+                    class="absolute top-0 left-0 h-1 w-1/5 bg-accent card-accent-bar transition-all"
+                  ></div>
+
+                  <div
+                    class="text-4xl md:text-5xl font-extrabold text-accent mb-3"
+                  >
+                    450+
                   </div>
+                  <h3 class="text-xl font-bold mb-2">Person Leadership Team</h3>
+                  <p class="text-white/70 text-sm">
+                    Built and led national technical sales organizations that
+                    delivered consistent results.
+                  </p>
                 </div>
-                <div class="snapshot-item scroll-reveal" style="background: rgba(0, 229, 255, 0.05); padding: 20px; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 30px rgba(0, 229, 255, 0.15)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-                  <div class="snapshot-number" style="font-size: 2.5rem; font-weight: 800; color: #00e5ff;">$1B+</div>
-                  <div class="snapshot-label" style="font-weight: 600; margin: 5px 0;">Revenue Impact</div>
-                  <div class="snapshot-description" style="font-size: 0.9rem; opacity: 0.8;">
+
+                <div
+                  class="premium-card bg-black/40 backdrop-blur-sm rounded-xl overflow-hidden p-8 border border-white/10 shadow-card relative group transition-all"
+                >
+                  <!-- Top accent line that expands on hover -->
+                  <div
+                    class="absolute top-0 left-0 h-1 w-1/5 bg-accent card-accent-bar transition-all"
+                  ></div>
+
+                  <div
+                    class="text-4xl md:text-5xl font-extrabold text-accent mb-3"
+                  >
+                    $1B+
+                  </div>
+                  <h3 class="text-xl font-bold mb-2">Revenue Impact</h3>
+                  <p class="text-white/70 text-sm">
                     Not incremental improvements. Breakthrough initiatives that
                     created entirely new value categories.
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
 
-            <div class="intro-image scroll-reveal">
-              <img
-                src="images/headshot_bw.webp"
-                alt="Paul Takisaki - Leadership Strategist"
-              />
+            <div class="lg:col-span-2 relative">
+              <div
+                class="premium-card rounded-xl overflow-hidden bg-gradient-to-b from-black/60 to-black/40 border border-white/10 shadow-card transition-all"
+              >
+                <div class="relative overflow-hidden">
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"
+                  ></div>
+                  <img
+                    src="images/headshot_bw.webp"
+                    alt="Paul Takisaki - Leadership Strategist"
+                    class="w-full h-auto transform transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+
+                <div class="p-6 border-t border-white/5">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold">Paul Takisaki</h3>
+                      <p class="text-accent">Executive Leadership Coach</p>
+                    </div>
+                    <a
+                      href="https://www.linkedin.com/in/paultakisaki"
+                      target="_blank"
+                      rel="noopener"
+                      class="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent hover:bg-accent hover:text-black transition-colors"
+                    >
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Operating System Section -->
-      <section class="frameworks-section scroll-reveal" style="background: linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(0, 0, 0, 0.99) 100%); padding: 80px 0; margin: 50px 0; position: relative; overflow: hidden;">
+      <section
+        class="py-24 bg-gradient-to-br from-secondary to-black relative overflow-hidden section-fade-in"
+      >
         <!-- Background accents -->
-        <div style="position: absolute; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, rgba(0, 229, 255, 0) 70%); top: -200px; right: -200px; border-radius: 50%;"></div>
-        <div style="position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 229, 255, 0.05) 0%, rgba(0, 229, 255, 0) 70%); bottom: -200px; left: -150px; border-radius: 50%;"></div>
-        
-        <div class="container" style="position: relative; z-index: 2;">
-          <div style="text-align: center; margin-bottom: 50px;">
-            <h2 class="scroll-reveal" style="font-size: 2.5rem; margin-bottom: 15px; color: #fff;">The Takisaki OS</h2>
-            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; opacity: 0.8;">Six core leadership principles that drive my approach and results</p>
+        <div
+          class="absolute w-[600px] h-[600px] bg-gradient-radial from-accent/8 to-transparent top-[-200px] right-[-200px] rounded-full"
+        ></div>
+        <div
+          class="absolute w-[400px] h-[400px] bg-gradient-radial from-accent/5 to-transparent bottom-[-200px] left-[-150px] rounded-full"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2"
+              >Leadership Philosophy</span
+            >
+            <h2 class="text-4xl sm:text-5xl font-bold mb-4">The Takisaki OS</h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+              Six core leadership principles that drive my approach and results
+            </p>
           </div>
 
-          <div class="frameworks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; position: relative;">
-            
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Card 1 -->
-            <div class="framework-card scroll-reveal" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)';">
-              <!-- Card accent -->
-              <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, #00e5ff, rgba(0, 229, 255, 0.3));"></div>
-              
-              <div class="framework-number" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, #00e5ff, rgba(0, 229, 255, 0.5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.9;">01</div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #fff;">Quiet Confidence</h3>
-              <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; line-height: 1.5;">
-                Results, not noise. Presence, not pressure. The loudest voice
-                rarely has the most impact.
-              </p>
-              <button class="expand-btn" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See More</button>
-              <div class="framework-expanded" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 15px;">
-                  Leadership isn't about dominating rooms—it's about creating an
-                  environment where everyone else can shine. I've built teams
-                  that outperformed those led by charismatic, high-energy
-                  leaders because my approach focuses on clarity and purpose
-                  rather than personality and theater.
+            <div
+              class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden border border-white/10 shadow-card relative group"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div class="p-8">
+                <div
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/50 mb-6"
+                >
+                  01
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Quiet Confidence</h3>
+                <p class="text-gray-300 mb-6">
+                  Results, not noise. Presence, not pressure. The loudest voice
+                  rarely has the most impact.
                 </p>
-                <p style="color: rgba(255, 255, 255, 0.7);">
-                  When leaders operate with quiet confidence, they create space
-                  for diverse voices and perspectives. The team grows stronger
-                  because they're solving problems together rather than waiting
-                  for directives from the top.
-                </p>
+
+                <button
+                  class="expand-btn px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded border border-accent/30 hover:bg-accent/20 transition-all"
+                  data-target="expanded-1"
+                >
+                  See More
+                </button>
+
+                <div
+                  id="expanded-1"
+                  class="framework-expanded mt-6 pt-6 border-t border-white/10"
+                >
+                  <p class="text-white/70 mb-4">
+                    Leadership isn't about dominating rooms—it's about creating
+                    an environment where everyone else can shine. I've built
+                    teams that outperformed those led by charismatic,
+                    high-energy leaders because my approach focuses on clarity
+                    and purpose rather than personality and theater.
+                  </p>
+                  <p class="text-white/70">
+                    When leaders operate with quiet confidence, they create
+                    space for diverse voices and perspectives. The team grows
+                    stronger because they're solving problems together rather
+                    than waiting for directives from the top.
+                  </p>
+                </div>
               </div>
             </div>
-            
+
             <!-- Card 2 -->
-            <div class="framework-card scroll-reveal" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)';">
-              <!-- Card accent -->
-              <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, #00e5ff, rgba(0, 229, 255, 0.3));"></div>
-              
-              <div class="framework-number" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, #00e5ff, rgba(0, 229, 255, 0.5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.9;">02</div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #fff;">Red Team Thinking</h3>
-              <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; line-height: 1.5;">
-                I find the cracks before the collapse. Success isn't just about
-                having a good plan—it's about stress-testing it.
-              </p>
-              <button class="expand-btn" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See More</button>
-              <div class="framework-expanded" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 15px;">
-                  Every leader wants to believe their strategy is bulletproof.
-                  But in a complex, fast-changing world, the greatest risk comes
-                  from our blind spots. That's why I systematically challenge
-                  every major plan before it launches.
+            <div
+              class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden border border-white/10 shadow-card relative group"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div class="p-8">
+                <div
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/50 mb-6"
+                >
+                  02
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Red Team Thinking</h3>
+                <p class="text-gray-300 mb-6">
+                  I find the cracks before the collapse. Success isn't just
+                  about having a good plan—it's about stress-testing it.
                 </p>
-                <p style="color: rgba(255, 255, 255, 0.7);">
-                  This isn't about finding fault—it's about finding resilience.
-                  When we deliberately seek out weaknesses, we build solutions
-                  that can withstand real-world pressures and competitive
-                  threats.
-                </p>
+
+                <button
+                  class="expand-btn px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded border border-accent/30 hover:bg-accent/20 transition-all"
+                  data-target="expanded-2"
+                >
+                  See More
+                </button>
+
+                <div
+                  id="expanded-2"
+                  class="framework-expanded mt-6 pt-6 border-t border-white/10"
+                >
+                  <p class="text-white/70 mb-4">
+                    Every leader wants to believe their strategy is bulletproof.
+                    But in a complex, fast-changing world, the greatest risk
+                    comes from our blind spots. That's why I systematically
+                    challenge every major plan before it launches.
+                  </p>
+                  <p class="text-white/70">
+                    This isn't about finding fault—it's about finding
+                    resilience. When we deliberately seek out weaknesses, we
+                    build solutions that can withstand real-world pressures and
+                    competitive threats.
+                  </p>
+                </div>
               </div>
             </div>
-            
+
             <!-- Card 3 -->
-            <div class="framework-card scroll-reveal" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)';">
-              <!-- Card accent -->
-              <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, #00e5ff, rgba(0, 229, 255, 0.3));"></div>
-              
-              <div class="framework-number" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, #00e5ff, rgba(0, 229, 255, 0.5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.9;">03</div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #fff;">The Handlebar Test</h3>
-              <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; line-height: 1.5;">
-                Let go early, so your team can fly. True leadership begins the
-                moment you stop steering everything.
-              </p>
-              <button class="expand-btn" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See More</button>
-              <div class="framework-expanded" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 15px;">
-                  Remember learning to ride a bike? That terrifying moment when
-                  you first let go of the handlebars? Leadership requires the
-                  same leap of faith. The best leaders don't manage every
-                  detail—they build systems, provide clarity, then trust their
-                  people to execute.
+            <div
+              class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden border border-white/10 shadow-card relative group"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div class="p-8">
+                <div
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/50 mb-6"
+                >
+                  03
+                </div>
+                <h3 class="text-2xl font-bold mb-3">The Handlebar Test</h3>
+                <p class="text-gray-300 mb-6">
+                  Let go early, so your team can fly. True leadership begins the
+                  moment you stop steering everything.
                 </p>
-                <p style="color: rgba(255, 255, 255, 0.7);">
-                  This approach doesn't just scale better—it produces more
-                  innovative solutions and more engaged teams. When people own
-                  their work completely, they bring their full creativity and
-                  commitment.
-                </p>
+
+                <button
+                  class="expand-btn px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded border border-accent/30 hover:bg-accent/20 transition-all"
+                  data-target="expanded-3"
+                >
+                  See More
+                </button>
+
+                <div
+                  id="expanded-3"
+                  class="framework-expanded mt-6 pt-6 border-t border-white/10"
+                >
+                  <p class="text-white/70 mb-4">
+                    Remember learning to ride a bike? That terrifying moment
+                    when you first let go of the handlebars? Leadership requires
+                    the same leap of faith. The best leaders don't manage every
+                    detail—they build systems, provide clarity, then trust their
+                    people to execute.
+                  </p>
+                  <p class="text-white/70">
+                    This approach doesn't just scale better—it produces more
+                    innovative solutions and more engaged teams. When people own
+                    their work completely, they bring their full creativity and
+                    commitment.
+                  </p>
+                </div>
               </div>
             </div>
-            
+
             <!-- Card 4 -->
-            <div class="framework-card scroll-reveal" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)';">
-              <!-- Card accent -->
-              <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, #00e5ff, rgba(0, 229, 255, 0.3));"></div>
-              
-              <div class="framework-number" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, #00e5ff, rgba(0, 229, 255, 0.5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.9;">04</div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #fff;">Critical Few Over Trivial Many</h3>
-              <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; line-height: 1.5;">
-                Ruthless prioritization. If everything is important, nothing is.
-                I focus on the 20% that drives 80% of results.
-              </p>
-              <button class="expand-btn" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See More</button>
-              <div class="framework-expanded" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 15px;">
-                  Most organizations drown in priorities. They track dozens of
-                  metrics, launch countless initiatives, and wonder why nothing
-                  moves substantially. I've built my career on identifying the
-                  critical few priorities that truly drive business value.
+            <div
+              class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden border border-white/10 shadow-card relative group"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div class="p-8">
+                <div
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/50 mb-6"
+                >
+                  04
+                </div>
+                <h3 class="text-2xl font-bold mb-3">
+                  Critical Few Over Trivial Many
+                </h3>
+                <p class="text-gray-300 mb-6">
+                  Ruthless prioritization. If everything is important, nothing
+                  is. I focus on the 20% that drives 80% of results.
                 </p>
-                <p style="color: rgba(255, 255, 255, 0.7);">
-                  This isn't about ignoring responsibilities—it's about
-                  strategic focus. When teams understand what really matters,
-                  they make better decisions, allocate resources more
-                  effectively, and deliver breakthrough results.
-                </p>
+
+                <button
+                  class="expand-btn px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded border border-accent/30 hover:bg-accent/20 transition-all"
+                  data-target="expanded-4"
+                >
+                  See More
+                </button>
+
+                <div
+                  id="expanded-4"
+                  class="framework-expanded mt-6 pt-6 border-t border-white/10"
+                >
+                  <p class="text-white/70 mb-4">
+                    Most organizations drown in priorities. They track dozens of
+                    metrics, launch countless initiatives, and wonder why
+                    nothing moves substantially. I've built my career on
+                    identifying the critical few priorities that truly drive
+                    business value.
+                  </p>
+                  <p class="text-white/70">
+                    This isn't about ignoring responsibilities—it's about
+                    strategic focus. When teams understand what really matters,
+                    they make better decisions, allocate resources more
+                    effectively, and deliver breakthrough results.
+                  </p>
+                </div>
               </div>
             </div>
-            
+
             <!-- Card 5 -->
-            <div class="framework-card scroll-reveal" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)';">
-              <!-- Card accent -->
-              <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, #00e5ff, rgba(0, 229, 255, 0.3));"></div>
-              
-              <div class="framework-number" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, #00e5ff, rgba(0, 229, 255, 0.5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.9;">05</div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #fff;">Strength-Based Design</h3>
-              <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; line-height: 1.5;">
-                Align to energy, not just resume. Great teams are built on
-                passion and natural talent, not just experience.
-              </p>
-              <button class="expand-btn" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See More</button>
-              <div class="framework-expanded" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 15px;">
-                  Traditional organizations spend enormous resources trying to
-                  "fix" weaknesses. I take the opposite approach—I design teams
-                  around strengths, creating roles that allow people to spend
-                  most of their time in areas where they naturally excel.
+            <div
+              class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden border border-white/10 shadow-card relative group"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div class="p-8">
+                <div
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/50 mb-6"
+                >
+                  05
+                </div>
+                <h3 class="text-2xl font-bold mb-3">Strength-Based Design</h3>
+                <p class="text-gray-300 mb-6">
+                  Align to energy, not just resume. Great teams are built on
+                  passion and natural talent, not just experience.
                 </p>
-                <p style="color: rgba(255, 255, 255, 0.7);">
-                  This isn't just feel-good leadership—it's practical business
-                  strategy. When people work primarily from their strengths,
-                  they deliver higher quality work, learn faster, and stay
-                  engaged longer.
-                </p>
+
+                <button
+                  class="expand-btn px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded border border-accent/30 hover:bg-accent/20 transition-all"
+                  data-target="expanded-5"
+                >
+                  See More
+                </button>
+
+                <div
+                  id="expanded-5"
+                  class="framework-expanded mt-6 pt-6 border-t border-white/10"
+                >
+                  <p class="text-white/70 mb-4">
+                    Traditional organizations spend enormous resources trying to
+                    "fix" weaknesses. I take the opposite approach—I design
+                    teams around strengths, creating roles that allow people to
+                    spend most of their time in areas where they naturally
+                    excel.
+                  </p>
+                  <p class="text-white/70">
+                    This isn't just feel-good leadership—it's practical business
+                    strategy. When people work primarily from their strengths,
+                    they deliver higher quality work, learn faster, and stay
+                    engaged longer.
+                  </p>
+                </div>
               </div>
             </div>
-            
+
             <!-- Card 6 -->
-            <div class="framework-card scroll-reveal" style="background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%); border-radius: 12px; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; overflow: hidden; backdrop-filter: blur(5px);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.4)';" onmouseout="this.style.transform='';this.style.boxShadow='0 10px 30px rgba(0, 0, 0, 0.3)';">
-              <!-- Card accent -->
-              <div style="position: absolute; top: 0; left: 0; width: 5px; height: 100%; background: linear-gradient(to bottom, #00e5ff, rgba(0, 229, 255, 0.3));"></div>
-              
-              <div class="framework-number" style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, #00e5ff, rgba(0, 229, 255, 0.5)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.9;">06</div>
-              <h3 style="font-size: 1.6rem; margin-bottom: 15px; color: #fff;">The Flywheel Philosophy</h3>
-              <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 20px; line-height: 1.5;">
-                Build momentum-gathering systems, not constant-effort
-                approaches. Leadership that lasts doesn't require heroics.
-              </p>
-              <button class="expand-btn" style="background: rgba(0, 229, 255, 0.1); color: #00e5ff; border: 1px solid rgba(0, 229, 255, 0.3); padding: 8px 15px; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">See More</button>
-              <div class="framework-expanded" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 15px;">
-                  Most leaders build treadmills—they push hard every day just to
-                  maintain position. I build flywheels—systems that initially
-                  require significant effort but eventually generate their own
-                  momentum.
+            <div
+              class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden border border-white/10 shadow-card relative group"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div class="p-8">
+                <div
+                  class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/50 mb-6"
+                >
+                  06
+                </div>
+                <h3 class="text-2xl font-bold mb-3">The Flywheel Philosophy</h3>
+                <p class="text-gray-300 mb-6">
+                  Build momentum-gathering systems, not constant-effort
+                  approaches. Leadership that lasts doesn't require heroics.
                 </p>
-                <p style="color: rgba(255, 255, 255, 0.7);">
-                  This approach creates sustainable performance that doesn't
-                  depend on a single leader's presence or energy. The best
-                  measure of leadership isn't what happens when you're in the
-                  room—it's what happens when you're not.
-                </p>
+
+                <button
+                  class="expand-btn px-4 py-2 bg-accent/10 text-accent text-sm font-semibold rounded border border-accent/30 hover:bg-accent/20 transition-all"
+                  data-target="expanded-6"
+                >
+                  See More
+                </button>
+
+                <div
+                  id="expanded-6"
+                  class="framework-expanded mt-6 pt-6 border-t border-white/10"
+                >
+                  <p class="text-white/70 mb-4">
+                    Most leaders build treadmills—they push hard every day just
+                    to maintain position. I build flywheels—systems that
+                    initially require significant effort but eventually generate
+                    their own momentum.
+                  </p>
+                  <p class="text-white/70">
+                    This approach creates sustainable performance that doesn't
+                    depend on a single leader's presence or energy. The best
+                    measure of leadership isn't what happens when you're in the
+                    room—it's what happens when you're not.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      <!-- Adding JavaScript to handle expand/collapse for the new buttons -->
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelectorAll('.expand-btn').forEach(button => {
-            button.addEventListener('click', function() {
-              const card = this.closest('.framework-card');
-              const content = card.querySelector('.framework-expanded');
-              
-              if (content.style.display === 'none' || content.style.display === '') {
-                content.style.display = 'block';
-                this.textContent = 'See Less';
-              } else {
-                content.style.display = 'none';
-                this.textContent = 'See More';
-              }
-            });
-          });
-        });
-      </script>
 
       <!-- Results Section -->
-      <section class="impact-section scroll-reveal" style="position: relative; padding: 60px 0;">
+      <section class="py-24 bg-black relative overflow-hidden section-fade-in">
         <!-- Background accent -->
-        <div style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background: linear-gradient(135deg, rgba(0, 229, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%); z-index: 0;"></div>
-        
-        <div class="container" style="position: relative; z-index: 1;">
-          <div style="text-align: center; margin-bottom: 40px;">
-            <h2 class="scroll-reveal" style="font-size: 2.4rem; margin-bottom: 15px;">Real Impact. Measurable Results.</h2>
-            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; opacity: 0.8;">Systems I've designed and implemented that are still generating results today.</p>
+        <div
+          class="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent"
+        ></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-16">
+            <span
+              class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2"
+              >Proven Systems</span
+            >
+            <h2 class="text-4xl sm:text-5xl font-bold mb-4">
+              Real Impact. Measurable Results.
+            </h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+              Systems I've designed and implemented that are still generating
+              results today
+            </p>
           </div>
 
-          <div class="impact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-            <div class="impact-card scroll-reveal" style="background: rgba(0, 229, 255, 0.03); border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0, 229, 255, 0.1)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-              <div class="impact-icon" style="margin-bottom: 20px; display: inline-block; background: rgba(0, 229, 255, 0.1); padding: 15px; border-radius: 50%;">
-                <i class="fas fa-bullseye fa-2x" style="color: #00e5ff;"></i>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div
+              class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden border border-white/10 shadow-card p-8 relative"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div
+                class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6"
+              >
+                <i data-lucide="target" class="w-8 h-8"></i>
               </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">National Quota System</h3>
-              <div style="color: #00e5ff; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">Enterprise-Wide Adoption</div>
-              <p style="opacity: 0.8;">
-                Built locally. Adopted nationally. <strong>Still in use today.</strong> Ended a decade
-                of internal fairness complaints by balancing territory
+
+              <h3 class="text-xl font-bold mb-2">National Quota System</h3>
+              <div class="text-accent font-semibold mb-4">
+                Enterprise-Wide Adoption
+              </div>
+              <p class="text-white/70">
+                Built locally. Adopted nationally.
+                <span class="font-semibold">Still in use today.</span> Ended a
+                decade of internal fairness complaints by balancing territory
                 potential, customer base, and historical performance.
               </p>
             </div>
 
-            <div class="impact-card scroll-reveal" style="background: rgba(0, 229, 255, 0.03); border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0, 229, 255, 0.1)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-              <div class="impact-icon" style="margin-bottom: 20px; display: inline-block; background: rgba(0, 229, 255, 0.1); padding: 15px; border-radius: 50%;">
-                <i class="fas fa-chart-line fa-2x" style="color: #00e5ff;"></i>
+            <div
+              class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden border border-white/10 shadow-card p-8 relative"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div
+                class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6"
+              >
+                <i data-lucide="trending-up" class="w-8 h-8"></i>
               </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Customer Success Program</h3>
-              <div style="color: #00e5ff; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">$53M+ Revenue Retention</div>
-              <p style="opacity: 0.8;">
+
+              <h3 class="text-xl font-bold mb-2">Customer Success Program</h3>
+              <div class="text-accent font-semibold mb-4">
+                $53M+ Revenue Retention
+              </div>
+              <p class="text-white/70">
                 Launched the first B2B Customer Success team. Customers who
-                onboarded through this system <strong>churned 50% less</strong>, preserving
+                onboarded through this system
+                <span class="font-semibold">churned 50% less</span>, preserving
                 millions in revenue that would have otherwise evaporated.
               </p>
             </div>
 
-            <div class="impact-card scroll-reveal" style="background: rgba(0, 229, 255, 0.03); border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0, 229, 255, 0.1)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-              <div class="impact-icon" style="margin-bottom: 20px; display: inline-block; background: rgba(0, 229, 255, 0.1); padding: 15px; border-radius: 50%;">
-                <i class="fas fa-tags fa-2x" style="color: #00e5ff;"></i>
+            <div
+              class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden border border-white/10 shadow-card p-8 relative"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div
+                class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6"
+              >
+                <i data-lucide="tag" class="w-8 h-8"></i>
               </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">Cupcake Tags™ System</h3>
-              <div style="color: #00e5ff; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">10× ROI on Implementation</div>
-              <p style="opacity: 0.8;">
+
+              <h3 class="text-xl font-bold mb-2">Cupcake Tags™ System</h3>
+              <div class="text-accent font-semibold mb-4">
+                10× ROI on Implementation
+              </div>
+              <p class="text-white/70">
                 Embedded competitive intelligence in the frontline.
-                <strong>Rewired how teams hunted and closed deals</strong> through systematic
-                data collection and strategic insights.
+                <span class="font-semibold"
+                  >Rewired how teams hunted and closed deals</span
+                >
+                through systematic data collection and strategic insights.
               </p>
             </div>
 
-            <div class="impact-card scroll-reveal" style="background: rgba(0, 229, 255, 0.03); border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0, 229, 255, 0.1)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-              <div class="impact-icon" style="margin-bottom: 20px; display: inline-block; background: rgba(0, 229, 255, 0.1); padding: 15px; border-radius: 50%;">
-                <i class="fas fa-briefcase fa-2x" style="color: #00e5ff;"></i>
+            <div
+              class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden border border-white/10 shadow-card p-8 relative"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div
+                class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6"
+              >
+                <i data-lucide="presentation" class="w-8 h-8"></i>
               </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">The Briefing Method</h3>
-              <div style="color: #00e5ff; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">19× Conversion Improvement</div>
-              <p style="opacity: 0.8;">
-                <strong>Transformed cold-call outreach</strong> into executive briefings by leading with value 
-                and consultation rather than product pitches. Now standard practice across sales teams.
+
+              <h3 class="text-xl font-bold mb-2">The Briefing Method</h3>
+              <div class="text-accent font-semibold mb-4">
+                19× Conversion Improvement
+              </div>
+              <p class="text-white/70">
+                <span class="font-semibold"
+                  >Transformed cold-call outreach</span
+                >
+                into executive briefings by leading with value and consultation
+                rather than product pitches. Now standard practice across sales
+                teams.
               </p>
             </div>
 
-            <div class="impact-card scroll-reveal" style="background: rgba(0, 229, 255, 0.03); border-radius: 12px; padding: 30px; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 10px 30px rgba(0, 229, 255, 0.1)';" onmouseout="this.style.transform='';this.style.boxShadow='';">
-              <div class="impact-icon" style="margin-bottom: 20px; display: inline-block; background: rgba(0, 229, 255, 0.1); padding: 15px; border-radius: 50%;">
-                <i class="fas fa-football fa-2x" style="color: #00e5ff;"></i>
+            <div
+              class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden border border-white/10 shadow-card p-8 relative"
+            >
+              <!-- Top accent bar that expands on hover -->
+              <div class="h-1 bg-accent card-accent-bar"></div>
+
+              <div
+                class="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6"
+              >
+                <i data-lucide="hexagon" class="w-8 h-8"></i>
               </div>
-              <h3 style="font-size: 1.4rem; margin-bottom: 15px;">The Quarterback System</h3>
-              <div style="color: #00e5ff; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px;">1M+ Product Activations</div>
-              <p style="opacity: 0.8;">
-                <strong>Drove massive adoption</strong> through cross-functional alignment
-                and POD-based support structures. Simplified complex initiatives
-                into clear, actionable systems.
+
+              <h3 class="text-xl font-bold mb-2">The Quarterback System</h3>
+              <div class="text-accent font-semibold mb-4">
+                1M+ Product Activations
+              </div>
+              <p class="text-white/70">
+                <span class="font-semibold">Drove massive adoption</span>
+                through cross-functional alignment and POD-based support
+                structures. Simplified complex initiatives into clear,
+                actionable systems.
               </p>
             </div>
           </div>
@@ -476,42 +1028,142 @@
       </section>
 
       <!-- Who I Serve Section -->
-      <section class="anti-consultant scroll-reveal">
-        <div class="container">
-          <div class="anti-content scroll-reveal">
-            <h2 class="scroll-reveal">Who I Serve Now</h2>
+      <section
+        class="py-24 bg-gradient-to-br from-secondary to-black relative overflow-hidden section-fade-in"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span
+                class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2"
+                >Who I Serve Now</span
+              >
+              <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                Leadership for Those Who Think Differently
+              </h2>
 
-            <div class="anti-grid">
-              <div class="anti-column scroll-reveal">
-                <h3>If You're:</h3>
-                <ul>
-                  <li class="scroll-reveal">A <strong>CEO</strong> scaling into chaos</li>
-                  <li class="scroll-reveal">
-                    A <strong>Founder</strong> with systems that don't scale
-                  </li>
-                  <li class="scroll-reveal">
-                    A <strong>Leader</strong> ready to shift from fire drills to
-                    flywheels
-                  </li>
-                  <li class="scroll-reveal">
-                    An <strong>Emerging Executive</strong> hungry for their next
-                    promotion
-                  </li>
-                </ul>
-                <p class="anti-description scroll-reveal">
+              <div class="space-y-10">
+                <div>
+                  <h3 class="text-xl font-bold mb-4">If You're:</h3>
+                  <ul class="space-y-4">
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >A <strong>CEO</strong> scaling into chaos</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >A <strong>Founder</strong> with systems that don't
+                        scale</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >A <strong>Leader</strong> ready to shift from fire
+                        drills to flywheels</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >An <strong>Emerging Executive</strong> hungry for their
+                        next promotion</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 class="text-xl font-bold mb-4">Services:</h3>
+                  <ul class="space-y-4">
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >Executive Strategy & Coaching</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg">Fractional CRO</span>
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >Red Teaming for Strategic Initiatives</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <div
+                        class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-1.5"
+                      >
+                        <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                      </div>
+                      <span class="ml-3 text-lg"
+                        >Culture Design & Team Reorg</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <p class="text-xl text-gray-300">
                   I'll help you rewire your operating model to build what
                   outlasts you.
                 </p>
               </div>
+            </div>
 
-              <div class="anti-column scroll-reveal">
-                <h3>Services:</h3>
-                <ul>
-                  <li class="scroll-reveal">Executive Strategy & Coaching</li>
-                  <li class="scroll-reveal">Fractional CRO</li>
-                  <li class="scroll-reveal">Red Teaming for Strategic Initiatives</li>
-                  <li class="scroll-reveal">Culture Design & Team Reorg</li>
-                </ul>
+            <div class="relative">
+              <div
+                class="absolute -inset-0.5 bg-gradient-to-r from-accent/20 to-accent/5 rounded-2xl blur-sm"
+              ></div>
+              <div
+                class="relative bg-black/50 backdrop-blur-sm p-8 rounded-xl border border-white/10 shadow-card"
+              >
+                <blockquote class="text-xl italic leading-relaxed">
+                  <span class="text-6xl text-accent block opacity-30">"</span>
+                  <p class="my-6">
+                    Paul held a title several steps above mine but always
+                    treated me as a peer... Selfless leaders can be hard to
+                    find.
+                  </p>
+                  <footer class="text-right">
+                    <span class="font-semibold">Ben Prather</span><br />
+                    <span class="text-white/60 text-sm"
+                      >Associate Director, Fortune 50 Company</span
+                    >
+                  </footer>
+                </blockquote>
               </div>
             </div>
           </div>
@@ -519,157 +1171,206 @@
       </section>
 
       <!-- Testimonials Section -->
-      <section class="testimonials-section" style="background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0, 0, 0, 0.4)), url('images/exec_meeting.webp') no-repeat center center; background-size: cover; padding: 60px 0; margin: 60px 0;">
-        <div class="container">
-          <h2 class="scroll-reveal" style="text-align: center; margin-bottom: 40px; font-size: 2rem;">What Leaders Say</h2>
-          
-          <div class="testimonial-slider">
+      <section
+        class="py-24 bg-black relative section-fade-in"
+        style="
+          background: linear-gradient(
+              to right,
+              rgba(0, 0, 0, 0.8),
+              rgba(0, 0, 0, 0.5)
+            ),
+            url('images/exec_meeting.webp') no-repeat center center;
+          background-size: cover;
+        "
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center mb-12">
+            <span
+              class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2"
+              >Testimonials</span
+            >
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+              What Leaders Say
+            </h2>
+          </div>
+
+          <div class="testimonial-slider relative max-w-3xl mx-auto">
             <div class="testimonial-slide active">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "Paul Takisaki is a legend."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Aparna Khurjekar</div>
-                <div class="author-title">Chief Revenue Officer, Fortune 50 Company</div>
-              </div>
-            </div>
-            
-            <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "You are a Verizon legend and have made an incredible impact on so many of us."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Emily Pivonka</div>
-                <div class="author-title">Senior Director of Sales, Fortune 50 Company</div>
+              <div
+                class="bg-black/60 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-card text-center"
+              >
+                <div class="text-4xl text-accent opacity-50 mb-4">"</div>
+                <p class="text-2xl font-light italic mb-8">
+                  Paul Takisaki is a legend.
+                </p>
+                <div class="flex items-center justify-center">
+                  <div>
+                    <div class="font-semibold">Aparna Khurjekar</div>
+                    <div class="text-white/60 text-sm">
+                      Chief Revenue Officer, Fortune 50 Company
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          
+
             <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "From the first time I met you, Paul, you always made me feel like I was heard… For that, I'll be forever grateful."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Brad Rowsey</div>
-                <div class="author-title">Director of Sales Engineering, Fortune 50 Company</div>
+              <div
+                class="bg-black/60 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-card text-center"
+              >
+                <div class="text-4xl text-accent opacity-50 mb-4">"</div>
+                <p class="text-2xl font-light italic mb-8">
+                  You are a Verizon legend and have made an incredible impact on
+                  so many of us.
+                </p>
+                <div class="flex items-center justify-center">
+                  <div>
+                    <div class="font-semibold">Emily Pivonka</div>
+                    <div class="text-white/60 text-sm">
+                      Senior Director of Sales, Fortune 50 Company
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          
+
             <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "Extraordinary is the word I would use to describe you… You bring out the best in those around you."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Shannon Burge</div>
-                <div class="author-title">Director of Customer Success, Fortune 50 Company</div>
+              <div
+                class="bg-black/60 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-card text-center"
+              >
+                <div class="text-4xl text-accent opacity-50 mb-4">"</div>
+                <p class="text-2xl font-light italic mb-8">
+                  From the first time I met you, Paul, you always made me feel
+                  like I was heard... For that, I'll be forever grateful.
+                </p>
+                <div class="flex items-center justify-center">
+                  <div>
+                    <div class="font-semibold">Brad Rowsey</div>
+                    <div class="text-white/60 text-sm">
+                      Director of Sales Engineering, Fortune 50 Company
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          
+
             <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "You helped me become the authentic leader I am now and encouraged me to have my voice heard… Thank you for believing in me."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Joy Lunger</div>
-                <div class="author-title">Director Tech Sales, Fortune 50 Company</div>
+              <div
+                class="bg-black/60 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-card text-center"
+              >
+                <div class="text-4xl text-accent opacity-50 mb-4">"</div>
+                <p class="text-2xl font-light italic mb-8">
+                  Extraordinary is the word I would use to describe you... You
+                  bring out the best in those around you.
+                </p>
+                <div class="flex items-center justify-center">
+                  <div>
+                    <div class="font-semibold">Shannon Burge</div>
+                    <div class="text-white/60 text-sm">
+                      Director of Customer Success, Fortune 50 Company
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          
+
             <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "You made a huge impact on my business. I know I can look back and see the things I've learned from you."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Dave Hickey</div>
-                <div class="author-title">Vice President of Sales, Fortune 50 Company</div>
-              </div>
-            </div>
-          
-            <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "Paul held a title several steps above mine but always treated me as a peer… Selfless leaders can be hard to find."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Ben Prather</div>
-                <div class="author-title">Associate Director, Fortune 50 Company</div>
-              </div>
-            </div>
-          
-            <div class="testimonial-slide">
-              <div class="testimonial-quote">
-                <span class="quote-open"></span>
-                "Paul is one of the most empowering leaders I've ever worked for. He drives his leaders through a creative, business-first, and transparent mindset."
-                <span class="quote-close"></span>
-              </div>
-              <div class="testimonial-author">
-                <div class="author-name">Zac Lagen</div>
-                <div class="author-title">Senior Director, Verizon</div>
+              <div
+                class="bg-black/60 backdrop-blur-sm rounded-xl p-8 border border-white/10 shadow-card text-center"
+              >
+                <div class="text-4xl text-accent opacity-50 mb-4">"</div>
+                <p class="text-2xl font-light italic mb-8">
+                  You helped me become the authentic leader I am now and
+                  encouraged me to have my voice heard... Thank you for
+                  believing in me.
+                </p>
+                <div class="flex items-center justify-center">
+                  <div>
+                    <div class="font-semibold">Joy Lunger</div>
+                    <div class="text-white/60 text-sm">
+                      Director Tech Sales, Fortune 50 Company
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          
-          <div class="testimonial-nav">
-            <button class="testimonial-prev">
-              <span class="arrow-left"></span>
+
+          <div class="flex justify-center mt-10 gap-4">
+            <button
+              class="testimonial-prev w-10 h-10 rounded-full bg-black/40 border border-white/10 flex items-center justify-center text-white hover:bg-accent/20 transition-all"
+            >
+              <i data-lucide="chevron-left" class="w-5 h-5"></i>
             </button>
-            <div class="testimonial-indicators">
-              <span class="indicator active"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
-              <span class="indicator"></span>
+
+            <div class="testimonial-indicators flex gap-2 items-center">
+              <span
+                class="indicator w-3 h-3 rounded-full bg-white/20 active:bg-accent cursor-pointer transition-all active"
+              ></span>
+              <span
+                class="indicator w-3 h-3 rounded-full bg-white/20 hover:bg-accent cursor-pointer transition-all"
+              ></span>
+              <span
+                class="indicator w-3 h-3 rounded-full bg-white/20 hover:bg-accent cursor-pointer transition-all"
+              ></span>
+              <span
+                class="indicator w-3 h-3 rounded-full bg-white/20 hover:bg-accent cursor-pointer transition-all"
+              ></span>
+              <span
+                class="indicator w-3 h-3 rounded-full bg-white/20 hover:bg-accent cursor-pointer transition-all"
+              ></span>
             </div>
-            <button class="testimonial-next">
-              <span class="arrow-right"></span>
+
+            <button
+              class="testimonial-next w-10 h-10 rounded-full bg-black/40 border border-white/10 flex items-center justify-center text-white hover:bg-accent/20 transition-all"
+            >
+              <i data-lucide="chevron-right" class="w-5 h-5"></i>
             </button>
           </div>
         </div>
       </section>
-      
 
-      <!-- The Why Section -->
-      <section class="handlebar-section scroll-reveal">
-        <div class="container">
-          <div class="handlebar-content scroll-reveal">
-            <h2 class="scroll-reveal">Legacy Over Ladder</h2>
-            <div class="handlebar-story scroll-reveal">
-              <p>
-                I didn't leave because I was done—I left because I was ready to
-                build something new. Something that blends performance with
-                purpose. Strategy with soul.
-              </p>
-              <p>
-                Throughout my career, I often felt like an outsider. My approach
-                to leadership wasn't just unconventional—it ran counter to the
-                dominant culture. I built strategy and stayed focused and quiet.
-                I wasn't paying attention to the 80% of noise that consumed my
-                peers' attention.
-              </p>
-              <p>
-                This approach made me an enigma. Executives couldn't quite
-                figure out why my teams consistently outperformed others with
-                less drama and burnout.
-              </p>
-              <p>
-                I realized I was building something most of them weren't: a
-                flywheel.
-              </p>
+      <!-- Legacy Section -->
+      <section
+        class="py-24 bg-primary relative overflow-hidden section-fade-in"
+      >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span
+                class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2"
+                >Philosophy</span
+              >
+              <h2 class="text-3xl sm:text-4xl font-bold mb-6">
+                Legacy Over Ladder
+              </h2>
+
+              <div class="space-y-6 text-lg text-gray-300">
+                <p>
+                  I didn't leave because I was done—I left because I was ready
+                  to build something new. Something that blends performance with
+                  purpose. Strategy with soul.
+                </p>
+                <p>
+                  Throughout my career, I often felt like an outsider. My
+                  approach to leadership wasn't just unconventional—it ran
+                  counter to the dominant culture. I built strategy and stayed
+                  focused and quiet. I wasn't paying attention to the 80% of
+                  noise that consumed my peers' attention.
+                </p>
+                <p>
+                  This approach made me an enigma. Executives couldn't quite
+                  figure out why my teams consistently outperformed others with
+                  less drama and burnout.
+                </p>
+                <p>
+                  I realized I was building something most of them weren't: a
+                  flywheel.
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-6 text-lg text-gray-300">
               <p>
                 While many of my peers jumped on the treadmill—sprinting from
                 day one, pushing performance through force and adrenaline—I was
@@ -686,7 +1387,7 @@
                 running without me. I had worked myself out of the job—by
                 design.
               </p>
-              <p>
+              <p class="text-xl font-semibold text-white">
                 Leadership isn't about control. It's about clarity, love, and
                 leaving systems behind that keep winning long after you're gone.
               </p>
@@ -696,314 +1397,320 @@
       </section>
 
       <!-- CTA Section -->
-      <section class="about-cta scroll-reveal">
-        <div class="container">
-          <div class="cta-content scroll-reveal">
-            <h2>Ready to build something that outlasts both of us?</h2>
-            <p>
-              Let's create systems that transform your organization and leave a
-              legacy of sustainable success.
-            </p>
-            <a href="contact.html" class="button primary">Let's Talk</a>
-          </div>
+      <section
+        class="py-24 bg-gradient-to-br from-black to-secondary relative overflow-hidden"
+      >
+        <!-- Background elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/3 blur-3xl"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent/3 blur-3xl"
+          ></div>
+        </div>
+
+        <div
+          class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10"
+        >
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+            Ready to build something that outlasts both of us?
+          </h2>
+          <p class="text-xl text-gray-300 mb-10">
+            Let's create systems that transform your organization and leave a
+            legacy of sustainable success.
+          </p>
+
+          <a
+            href="contact.html"
+            class="inline-block bg-accent text-black font-bold py-4 px-10 rounded-lg shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-105 text-lg uppercase tracking-wide"
+          >
+            Let's Talk
+          </a>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
     <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top">
-      <i class="fas fa-arrow-up"></i>
+    <a
+      href="#"
+      class="back-to-top fixed bottom-6 right-6 bg-accent/20 text-accent w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent hover:text-black z-50"
+      aria-label="Back to top of page"
+    >
+      <i data-lucide="chevron-up"></i>
     </a>
-    
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-info scroll-reveal">
-            <div class="footer-logo">Paul Takisaki</div>
-            <p>
-              Leadership coaching for strategic outliers who redraw the
-              curve rather than following it.
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+          <div class="footer-info">
+            <div class="text-2xl font-bold mb-4 flex items-center">
+              <span class="text-accent">PAUL</span>
+              <span class="ml-2">TAKISAKI</span>
+            </div>
+
+            <p class="text-gray-400 mb-6 text-base max-w-md leading-relaxed">
+              Leadership coaching for strategic outliers who redraw the curve
+              rather than following it.
             </p>
+
             <div class="footer-social">
               <a
-                href="https://www.linkedin.com/in/paultakisaki"
-                target="_blank"
-                class="social-link"
                 aria-label="LinkedIn Profile"
+                class="inline-flex items-center justify-center w-10 h-10 bg-accent/10 rounded-full text-accent hover:bg-accent hover:text-black transition-colors"
+                href="https://www.linkedin.com/in/paultakisaki"
                 rel="noopener"
-                ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
-                ><span class="sr-only">LinkedIn</span></a
+                target="_blank"
               >
+                <i class="fab fa-linkedin"></i>
+              </a>
             </div>
           </div>
-          <div class="footer-links">
-            <div class="footer-column scroll-reveal">
-              <h4>Navigation</h4>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="playbook.html">Leadership Vault</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="impact.html">Impact</a></li>
-                <li><a href="blogs.html">Insights</a></li>
-                <li><a href="about.html">About</a></li>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="space-y-4">
+              <h4
+                class="text-lg font-bold border-b border-white/20 pb-2 mb-3 text-accent"
+              >
+                Navigation
+              </h4>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    href="index.html"
+                    class="text-gray-400 hover:text-white transition-colors inline-block"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="playbook.html"
+                    class="text-gray-400 hover:text-white transition-colors inline-block"
+                    >Leadership Vault</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="services.html"
+                    class="text-gray-400 hover:text-white transition-colors inline-block"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="impact.html"
+                    class="text-gray-400 hover:text-white transition-colors inline-block"
+                    >Impact</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="blogs.html"
+                    class="text-gray-400 hover:text-white transition-colors inline-block"
+                    >Insights</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="about.html"
+                    class="text-gray-400 hover:text-white transition-colors inline-block"
+                    >About</a
+                  >
+                </li>
               </ul>
             </div>
-            <div class="footer-column scroll-reveal">
-              <h4>Services</h4>
-              <ul>
-                <li><a href="services.html#crisis">Executive Strategy</a></li>
-                <li><a href="services.html#executive">Leadership Development</a></li>
-                <li><a href="services.html#emergency">Strategic Consulting</a></li>
-              </ul>
-            </div>
-            <div class="footer-column scroll-reveal">
-              <h4>Contact</h4>
-              <p>Email: paul@paultakisaki.com</p>
-              <p>Location: Gilbert, AZ</p>
+
+            <div class="space-y-4">
+              <h4
+                class="text-lg font-bold border-b border-white/20 pb-2 mb-3 text-accent"
+              >
+                Contact
+              </h4>
+              <p class="text-gray-400 flex items-start gap-3">
+                <i class="far fa-envelope mt-1 text-accent"></i>
+                <span>paul@paultakisaki.com</span>
+              </p>
+              <p class="text-gray-400 flex items-start gap-3">
+                <i class="fas fa-map-marker-alt mt-1 text-accent"></i>
+                <span>Gilbert, AZ</span>
+              </p>
             </div>
           </div>
         </div>
-        <div class="footer-bottom scroll-reveal">
-          <p>&copy; 2025 Paul Takisaki. All rights reserved.</p>
+
+        <div
+          class="text-center text-sm text-gray-500 pt-6 border-t border-white/10"
+        >
+          <p>© 2025 Paul Takisaki. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
-    <script src="mobile-experience.js"></script>
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="header_tailwind.js"></script>
     <script>
-      // Page loader
-      window.addEventListener("load", function () {
-        const loader = document.querySelector(".page-loader");
-        if (loader) {
-          setTimeout(function () {
-            loader.classList.add("loaded");
-            setTimeout(function () {
-              loader.style.display = "none";
-            }, 500);
-          }, 800);
+      // Initialize Lucide icons
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof lucide !== "undefined") {
+          lucide.createIcons();
         }
       });
 
-      // Add responsive snapshot grid styles
-      const style = document.createElement("style");
-      style.textContent = `
-        .intro-grid {
-          display: grid;
-          grid-template-columns: 58% 42%;
-          gap: 50px;
-          align-items: start;
+      // Page loader
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          const loader = document.querySelector(".page-loader");
+          if (loader) {
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.style.display = "none";
+            }, 500);
+          }
+        }, 800);
+      });
+
+      // Scroll progress indicator
+      function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        const progressBar = document.getElementById("scroll-progress");
+        if (progressBar) {
+          progressBar.style.width = progress + "%";
         }
-        
-        .intro-content {
-          grid-column: 1;
-          grid-row: 1;
+      }
+
+      // Back to top button visibility
+      function updateBackToTopButton() {
+        const scrollTop = window.scrollY;
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        if (backToTopButton) {
+          if (scrollTop > 300) {
+            backToTopButton.classList.remove("opacity-0", "invisible");
+            backToTopButton.classList.add("opacity-100", "visible");
+          } else {
+            backToTopButton.classList.add("opacity-0", "invisible");
+            backToTopButton.classList.remove("opacity-100", "visible");
+          }
         }
-        
-        .intro-image {
-          grid-column: 2;
-          grid-row: 1 / span 2;
-          max-width: 450px;
-          width: 100%;
-          overflow: hidden;
-          margin-top: 0;
-        }
-        
-        .intro-image img {
-          width: 100%;
-          border-radius: 8px;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-          height: auto;
-          display: block;
+      }
+
+      // Scroll animations
+      function handleScrollAnimations() {
+        const sections = document.querySelectorAll(".section-fade-in");
+
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (sectionTop < windowHeight * 0.75) {
+            section.classList.add("scrolled");
+          }
+        });
+      }
+
+      // Handle scroll event for all scroll-related functionality
+      function handleScroll() {
+        updateScrollProgress();
+        updateBackToTopButton();
+        handleScrollAnimations();
+      }
+
+      // Add event listener
+      window.addEventListener("scroll", handleScroll, { passive: true });
+
+      // Initialize on load
+      document.addEventListener("DOMContentLoaded", function () {
+        handleScroll();
+
+        // Add click handler for back to top button
+        const backToTopButton = document.querySelector(".back-to-top");
+        if (backToTopButton) {
+          backToTopButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
         }
 
-        .snapshot-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 30px;
-          margin-top: 40px;
-        }
-        
-        .snapshot-item {
-          text-align: center;
-          padding: 30px 20px;
-          background-color: rgba(255, 255, 255, 0.03);
-          border-radius: 8px;
-          border: 1px solid #333;
-          transition: all 0.3s ease;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        
-        .snapshot-item:hover {
-          border-color: var(--accent-color);
-          transform: translateY(-5px);
-        }
-        
-        .snapshot-number {
-          font-size: 5rem;
-          font-weight: 800;
-          background: linear-gradient(180deg, #ffffff 0%, #00e5ff 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin-bottom: 10px;
-          line-height: 1.1;
-        }
-        
-        .snapshot-label {
-          font-size: 1rem;
-          color: var(--accent-color);
-          line-height: 1.4;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-          font-weight: 700;
-          margin-bottom: 10px;
-          max-width: 90%;
-        }
-        
-        .snapshot-description {
-          font-size: 0.85rem;
-          color: var(--text-secondary);
-          line-height: 1.5;
-        }
+        // Framework card expand/collapse functionality
+        const expandBtns = document.querySelectorAll(".expand-btn");
+        expandBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target");
+            const content = document.getElementById(targetId);
 
-        /* Testimonial Carousel Fixes */
-        .testimonial-slider {
-          position: relative;
-          max-width: 800px;
-          margin: 0 auto;
-          min-height: 200px;
-          padding: 20px 0;
-          display: block !important;
-        }
-        
-        .testimonial-slide {
-          display: none;
-          text-align: center;
-          margin: 0 auto;
-          max-width: 700px;
-        }
-        
-        .testimonial-slide.active {
-          display: block;
-        }
+            if (content.classList.contains("expanded")) {
+              content.classList.remove("expanded");
+              this.textContent = "See More";
+            } else {
+              content.classList.add("expanded");
+              this.textContent = "See Less";
+            }
+          });
+        });
 
-        @media (max-width: 992px) {
-          .intro-grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .intro-content {
-            grid-column: 1;
-            grid-row: 2;
-          }
-          
-          .intro-image {
-            grid-column: 1;
-            grid-row: 1;
-            margin: 0 auto 30px;
-            max-width: 400px;
-          }
-          
-          .snapshot-grid {
-            grid-template-columns: 1fr;
-            max-width: 450px;
-            margin: 40px auto 0;
-          }
-          
-          .snapshot-item {
-            margin-bottom: 15px;
-          }
-        }
-      `;
-      document.head.appendChild(style);
-
-      // Testimonial slider functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        // Variables
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const indicators = document.querySelectorAll('.indicator');
-        const prevBtn = document.querySelector('.testimonial-prev');
-        const nextBtn = document.querySelector('.testimonial-next');
+        // Testimonial slider
+        const slides = document.querySelectorAll(".testimonial-slide");
+        const indicators = document.querySelectorAll(".indicator");
+        const prevBtn = document.querySelector(".testimonial-prev");
+        const nextBtn = document.querySelector(".testimonial-next");
         let currentSlide = 0;
-        const totalSlides = slides.length;
-        
-        // Initialize first slide
+
         function showSlide(index) {
-          // Hide all slides
-          slides.forEach(slide => {
-            slide.classList.remove('active');
-          });
-          
-          // Show the selected slide
-          slides[index].classList.add('active');
-          
-          // Update indicators
-          indicators.forEach(indicator => {
-            indicator.classList.remove('active');
-          });
-          indicators[index].classList.add('active');
-          
-          // Update current slide index
+          slides.forEach((slide) => slide.classList.remove("active"));
+          slides[index].classList.add("active");
+
+          indicators.forEach((indicator) =>
+            indicator.classList.remove("active")
+          );
+          indicators[index].classList.add("active");
+
           currentSlide = index;
         }
-        
-        // Next slide
-        if (nextBtn) {
-          nextBtn.addEventListener('click', function() {
-            let nextIndex = currentSlide + 1;
-            if (nextIndex >= totalSlides) {
-              nextIndex = 0;
-            }
-            showSlide(nextIndex);
+
+        if (indicators.length > 0) {
+          indicators.forEach((indicator, index) => {
+            indicator.addEventListener("click", () => showSlide(index));
           });
         }
-        
-        // Previous slide
+
         if (prevBtn) {
-          prevBtn.addEventListener('click', function() {
+          prevBtn.addEventListener("click", () => {
             let prevIndex = currentSlide - 1;
-            if (prevIndex < 0) {
-              prevIndex = totalSlides - 1;
-            }
+            if (prevIndex < 0) prevIndex = slides.length - 1;
             showSlide(prevIndex);
           });
         }
-        
-        // Click on indicators
-        indicators.forEach((indicator, index) => {
-          indicator.addEventListener('click', function() {
-            showSlide(index);
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= slides.length) nextIndex = 0;
+            showSlide(nextIndex);
           });
-        });
-        
-        // Auto-rotation (optional)
-        let interval = setInterval(function() {
-          let nextIndex = (currentSlide + 1) % totalSlides;
+        }
+
+        // Auto-rotate testimonials
+        let slideInterval = setInterval(() => {
+          let nextIndex = (currentSlide + 1) % slides.length;
           showSlide(nextIndex);
         }, 7000);
-        
-        // Pause auto-rotation on hover (optional)
-        const sliderContainer = document.querySelector('.testimonial-slider');
-        if (sliderContainer) {
-          sliderContainer.addEventListener('mouseenter', function() {
-            clearInterval(interval);
-          });
-          
-          sliderContainer.addEventListener('mouseleave', function() {
-            interval = setInterval(function() {
-              let nextIndex = (currentSlide + 1) % totalSlides;
+
+        // Pause rotation on hover
+        const slider = document.querySelector(".testimonial-slider");
+        if (slider) {
+          slider.addEventListener("mouseenter", () =>
+            clearInterval(slideInterval)
+          );
+          slider.addEventListener("mouseleave", () => {
+            slideInterval = setInterval(() => {
+              let nextIndex = (currentSlide + 1) % slides.length;
               showSlide(nextIndex);
             }, 7000);
           });
         }
-        
-        // Initialize
-        showSlide(0);
       });
     </script>
   </body>

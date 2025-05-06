@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Takisaki Leadership Playbook - Leadership Frameworks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="mobile-master.css" />
+    <!-- Custom styles to fix menu button position -->
+    <style>
+      /* Fix mobile menu toggle position */
+      @media (max-width: 992px) {
+        .mobile-menu-toggle {
+          order: 3; /* Ensures it comes after the logo and before nav */
+          position: relative !important;
+          right: 0 !important;
+          left: auto !important;
+          margin-left: auto;
+          align-self: center !important; /* Center vertically */
+          margin-top: 0 !important; /* Reset any top margin */
+          margin-bottom: 0 !important; /* Reset any bottom margin */
+          height: 44px !important; /* Match logo height */
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        /* Completely override header structure and positioning for proper alignment */
+        header, .site-header {
+          padding: 0 !important; 
+          height: 90px !important;
+          display: flex !important;
+          align-items: center !important;
+          padding-top: calc(var(--spacing-sm) + env(safe-area-inset-top, 0px)) !important;
+        }
+        
+        /* Additional fixes for iOS */
+        @supports (-webkit-touch-callout: none) {
+          header, .site-header {
+            padding-top: calc(var(--spacing-sm) + 20px + env(safe-area-inset-top, 0px)) !important;
+          }
+        }
+        
+        /* Additional space for logo on mobile */
+        .logo {
+          margin-top: 0 !important; /* Reset margin */
+          align-self: center !important; /* Center vertically */
+        }
+        
+        /* Further adjustments for site-header */
+        .site-header {
+          padding-top: 25px !important;
+          min-height: 90px !important;
+          display: flex !important;
+          align-items: center !important;
+        }
+        
+        /* Force header container alignment */
+        .site-header .container {
+          display: flex !important;
+          align-items: center !important;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        
+        .header-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 10px; /* Add padding to the top of the header container */
+          padding-bottom: 10px; /* Add padding to the bottom for balance */
+        }
+        
+        .logo {
+          order: 1;
+        }
+        
+        .main-nav {
+          order: 2;
+        }
+      }
+    </style>
+    <style>
+      /* Core Variables */
+      :root {
+        --dark-bg: #0a0a0a;
+        --dark-surface: #121212;
+        --dark-card: #181818;
+        --dark-card-hover: #202020;
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --accent: #00e5ff;
+        --accent-dark: #00b8cc;
+        --danger: #ff4d4d;
+        --success: #4caf50;
+        --border-light: rgba(255, 255, 255, 0.1);
+        --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        --transition: all 0.3s ease;
+        --radius: 8px;
+        --spacing-xs: 8px;
+        --spacing-sm: 16px;
+        --spacing-md: 24px;
+        --spacing-lg: 40px;
+        --spacing-xl: 60px;
+      }
+
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--dark-bg);
+        color: var(--text-primary);
+        line-height: 1.6;
+        font-size: 16px;
+        overflow-x: hidden;
+        padding-top: 110px; /* Further increased padding for fixed header */
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-md);
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        letter-spacing: -0.03em;
+        font-weight: 800;
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        font-size: clamp(1.4rem, 3vw, 1.8rem);
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-md);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+
+      a:hover {
+        opacity: 0.8;
+      }
+
+      /* Header & Navigation */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: calc(var(--spacing-sm) + 5px) 0; /* Increase vertical padding */
+        border-bottom: 1px solid var(--border-light);
+        min-height: 70px; /* Ensure minimum height */
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-top: 5px; /* Add margin to push logo down a bit */
+      }
+      
+      .logo-image {
+        max-height: 44px; /* Control logo image height */
+        width: auto;
+        display: block; /* Ensure proper display */
+        margin: 0 !important; /* Reset all margins */
+        position: relative !important; /* Ensure relative positioning */
+        vertical-align: middle !important; /* Align vertically */
+      }
+      
+      /* Target the logo link */
+      .logo a {
+        display: flex !important;
+        align-items: center !important;
+        height: 44px !important;
+      }
+      
+      /* Ensure the text is aligned */
+      .logo span, .logo img {
+        vertical-align: middle !important;
+      }
+
+      .logo a {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-primary);
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav li {
+        margin-left: var(--spacing-md);
+      }
+
+      nav a {
+        color: var(--text-primary);
+        font-weight: 500;
+        position: relative;
+      }
+
+      nav a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -6px;
+        left: 0;
+        background-color: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover::after,
+      nav a.active::after {
+        width: 100%;
+      }
+
+      .nav-button {
+        background-color: var(--accent);
+        color: var(--dark-bg);
+        padding: 8px 16px;
+        border-radius: var(--radius);
+        font-weight: 600;
+      }
+
+      .nav-button:hover {
+        background-color: var(--accent-dark);
+        color: var(--dark-bg);
+        opacity: 1;
+      }
+
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-primary);
+        transition: var(--transition);
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: var(--dark-surface);
+        padding: var(--spacing-xl) 0;
+        padding-top: calc(var(--spacing-xl) + 40px); /* Extra padding at the top */
+        margin-top: 20px; /* Additional margin to create more space */
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(
+          circle at 20% 30%,
+          rgba(0, 229, 255, 0.15) 0%,
+          transparent 70%
+        );
+        opacity: 0.6;
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-top: 20px; /* Additional top padding for more space */
+      }
+
+      .hero h1 {
+        margin-bottom: var(--spacing-md);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: var(--spacing-lg);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .accent {
+        color: var(--accent);
+      }
+
+      /* Search & Control Section */
+      .controls-section {
+        background-color: var(--dark-surface);
+        padding: var(--spacing-md) 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .controls-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--spacing-md);
+      }
+
+      .search-container {
+        position: relative;
+        flex: 1;
+        max-width: 500px;
+      }
+
+      .search-input {
+        width: 100%;
+        padding: 12px 16px;
+        padding-left: 40px;
+        background-color: var(--dark-card);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius);
+        color: var(--text-primary);
+        font-size: 0.9rem;
+        transition: var(--transition);
+      }
+
+      .search-input:focus {
+        outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+      }
+
+      .search-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+      }
+
+      .clear-search {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        display: none;
+        font-size: 1.2rem;
+      }
+
+      .clear-search:hover {
+        color: var(--text-primary);
+      }
+
+      .view-toggle {
+        display: flex;
+        background-color: var(--dark-card);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .view-toggle button {
+        padding: 12px 16px;
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .view-toggle button.active {
+        background-color: var(--accent);
+        color: var(--dark-bg);
+      }
+
+      /* Playbook Grid */
+      .playbook-grid {
+        padding: var(--spacing-xl) 0;
+        background-color: var(--dark-bg);
+      }
+
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: var(--spacing-lg);
+        position: relative; /* For absolute positioning of expanded cards */
+      }
+
+      .category-card {
+        background-color: var(--dark-card);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        border: 1px solid var(--border-light);
+        transition: var(--transition);
+        position: relative;
+        z-index: 1;
+      }
+
+      .category-card:hover:not(.expanded) {
+        transform: translateY(-5px);
+        border-color: rgba(0, 229, 255, 0.3);
+      }
+      
+      .category-card.expanded {
+        position: relative;
+        z-index: 5;
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        border-color: var(--accent);
+      }
+
+      .category-header {
+        padding: 24px;
+        border-top: 4px solid var(--accent);
+        position: relative;
+        cursor: pointer;
+      }
+
+      .category-icon {
+        font-size: 2.5rem;
+        margin-bottom: var(--spacing-sm);
+        display: block;
+      }
+
+      .category-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-xs);
+        font-weight: 700;
+      }
+
+      .category-description {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 0;
+      }
+
+      .expand-icon {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        transition: var(--transition);
+      }
+
+      .category-card.expanded .expand-icon {
+        transform: rotate(45deg);
+      }
+
+      .category-content {
+        display: none; /* Hide by default */
+        border-top: 1px solid var(--border-light);
+        padding-top: 10px;
+      }
+
+      .frameworks-list {
+        padding: 24px;
+      }
+
+      .framework-item {
+        padding: 16px;
+        background-color: rgba(255, 255, 255, 0.03);
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .framework-item:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .framework-title {
+        font-weight: 600;
+        margin-bottom: 8px;
+        padding-right: 24px;
+      }
+
+      .framework-description {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      .lock-icon {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        color: var(--text-secondary);
+        font-size: 1rem;
+      }
+      
+      /* Framework Popup */
+      .framework-popup {
+        position: absolute;
+        top: 0;
+        left: 105%;
+        width: 320px;
+        background-color: var(--dark-card);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--accent);
+        z-index: 10;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+      
+      .framework-item:hover .framework-popup {
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .popup-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--accent);
+      }
+      
+      .popup-description {
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+      
+      .popup-details {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+      
+      /* Adjust popup position for items on the right side */
+      @media (min-width: 992px) {
+        .category-card:nth-child(2n) .framework-item .framework-popup {
+          left: auto;
+          right: 105%;
+        }
+      }
+
+      /* Results Section */
+      .results-section {
+        background-color: var(--dark-surface);
+        padding: var(--spacing-xl) 0;
+        text-align: center;
+      }
+
+      .results-title {
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-lg);
+      }
+
+      .result-card {
+        background-color: var(--dark-card);
+        padding: var(--spacing-lg);
+        border-radius: var(--radius);
+        transition: var(--transition);
+        box-shadow: var(--card-shadow);
+        border: 1px solid var(--border-light);
+      }
+
+      .result-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(0, 229, 255, 0.3);
+      }
+
+      .result-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .result-label {
+        font-weight: 600;
+        margin-bottom: var(--spacing-xs);
+      }
+
+      .result-description {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        padding: var(--spacing-xl) 0;
+        text-align: center;
+        background-color: var(--dark-bg);
+      }
+
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: var(--accent);
+        color: var(--dark-bg);
+        padding: 14px 28px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        margin-top: var(--spacing-md);
+        border: 2px solid var(--accent);
+        transition: var(--transition);
+      }
+
+      .cta-button:hover {
+        background-color: transparent;
+        color: var(--accent);
+        opacity: 1;
+      }
+
+      .cta-secondary {
+        background-color: transparent;
+        color: var(--text-primary);
+        border: 2px solid var(--text-primary);
+        margin-left: var(--spacing-sm);
+      }
+
+      .cta-secondary:hover {
+        background-color: var(--text-primary);
+        color: var(--dark-bg);
+        border-color: var(--text-primary);
+      }
+
+      /* Modal */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal.active {
+        display: flex;
+        opacity: 1;
+      }
+
+      .modal-content {
+        background-color: var(--dark-card);
+        border-radius: var(--radius);
+        max-width: 500px;
+        width: 100%;
+        padding: var(--spacing-lg);
+        position: relative;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-light);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+
+      .modal.active .modal-content {
+        transform: translateY(0);
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .modal-title {
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-md);
+        text-align: center;
+      }
+
+      .modal-subtitle {
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-lg);
+        text-align: center;
+      }
+
+      .form-group {
+        margin-bottom: var(--spacing-md);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 16px;
+        background-color: var(--dark-bg);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius);
+        color: var(--text-primary);
+        font-size: 0.95rem;
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      .form-button {
+        width: 100%;
+        background-color: var(--accent);
+        color: var(--dark-bg);
+        border: none;
+        padding: 14px;
+        border-radius: var(--radius);
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        margin-top: var(--spacing-md);
+      }
+
+      .form-button:hover {
+        background-color: var(--accent-dark);
+      }
+
+      .form-note {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-top: var(--spacing-md);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark-surface);
+        padding: var(--spacing-lg) 0;
+        border-top: 1px solid var(--border-light);
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--spacing-lg);
+      }
+
+      .contact-info {
+        max-width: 300px;
+      }
+
+      .contact-info p {
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .social-links {
+        margin-top: var(--spacing-sm);
+      }
+
+      .social-links a {
+        color: var(--text-secondary);
+        margin-right: var(--spacing-md);
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        color: var(--accent);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: var(--spacing-lg);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      /* List View Styles */
+      .categories-grid.list-view {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      
+      .categories-grid.list-view .category-card {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .categories-grid.list-view .category-header {
+        display: flex;
+        align-items: center;
+        padding: 16px 24px;
+      }
+      
+      .categories-grid.list-view .category-icon {
+        margin-right: 16px;
+        margin-bottom: 0;
+        font-size: 1.8rem;
+      }
+      
+      .categories-grid.list-view .category-title {
+        margin-bottom: 4px;
+        margin-right: 16px;
+      }
+      
+      .categories-grid.list-view .category-description {
+        flex: 1;
+      }
+      
+      .categories-grid.list-view .category-content {
+        border-top: 1px solid var(--border-light);
+      }
+      
+      .categories-grid.list-view .frameworks-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 16px;
+      }
+      
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .categories-grid {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .results-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        .categories-grid.list-view .frameworks-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding-top: 70px;
+        }
+
+        .header-container {
+          padding: 0 var(--spacing-sm);
+        }
+
+        nav {
+          position: fixed;
+          top: 70px;
+          left: 0;
+          width: 100%;
+          background-color: var(--dark-surface);
+          padding: var(--spacing-md);
+          border-bottom: 1px solid var(--border-light);
+          transform: translateY(-100%);
+          opacity: 0;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+          z-index: 990;
+        }
+
+        nav.active {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        nav ul {
+          flex-direction: column;
+        }
+
+        nav li {
+          margin: var(--spacing-xs) 0;
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 6px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -6px);
+        }
+
+        .controls-container {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search-container {
+          max-width: 100%;
+        }
+
+        .view-toggle {
+          align-self: center;
+        }
+
+        .categories-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .results-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .result-card {
+          padding: var(--spacing-md);
+        }
+
+        .cta-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-sm);
+          align-items: center;
+        }
+
+        .cta-secondary {
+          margin-left: 0;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: var(--spacing-md);
+        }
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(0, 229, 255, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+        }
+      }
+    </style>
+  </head>
+  <body class="page-visible">
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+    
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PT<span>.</span></div>
+      </div>
+    </div>
+    
+    <!-- Header container for header.js -->
+    <div id="header-container"></div>
+
+    <section class="hero">
+      <div class="container hero-content scroll-reveal">
+        <h1 class="fade-in">
+          THE TAKISAKI <span class="accent">LEADERSHIP PLAYBOOK</span>
+        </h1>
+        <p class="fade-in delay-1">
+          A meticulously engineered playbook for strategic outliers based on 
+          <span style="color: var(--accent);">pattern recognition</span>, 
+          <span style="color: var(--accent);">playbook engineering</span>, and 
+          <span style="color: var(--accent);">quiet power</span>. 
+          Built from two decades of rigorous testing and record-breaking results.
+        </p>
+      </div>
+    </section>
+
+    <section class="controls-section">
+      <div class="container controls-container">
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            id="searchInput"
+            placeholder="Search frameworks, topics, or challenges..."
+          />
+          <button class="clear-search" id="clearSearch">×</button>
+        </div>
+
+        <div class="view-toggle">
+          <button class="active" id="gridViewBtn">Category View</button>
+          <button id="listViewBtn">List View</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="playbook-grid">
+      <div class="container">
+        <div class="categories-grid" id="categoriesGrid">
+          <!-- Leadership Philosophy Card -->
+          <div class="category-card fade-in accordion-item">
+            <div class="category-header accordion-header scroll-reveal" data-category="philosophy" aria-expanded="false">
+              <span class="category-icon">🧠</span>
+              <h3 class="category-title">LEADERSHIP PHILOSOPHY</h3>
+              <p class="category-description">
+                Your core operating system: lead without theater, let results
+                speak.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">The Quiet Confidence OS</h4>
+                  <p class="framework-description">
+                    Lead without theater, let results speak.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">The 80/20 Rule in Leadership</h4>
+                  <p class="framework-description">
+                    Focus on the vital few priorities rather than the trivial
+                    many.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Playing Chess, Not Checkers</h4>
+                  <p class="framework-description">
+                    Strategic foresight. You're five moves ahead while others
+                    are reactionary.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    The Critical Few vs. The Trivial Many
+                  </h4>
+                  <p class="framework-description">
+                    Success comes from identifying and executing on the vital
+                    few priorities.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Team Recognition > Individual Glory
+                  </h4>
+                  <p class="framework-description">
+                    You win when your team wins—and they know it.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- First 90 Days Card -->
+          <div class="category-card fade-in delay-1 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="first90" aria-expanded="false">
+              <span class="category-icon">🚀</span>
+              <h3 class="category-title">THE FIRST 90 DAYS</h3>
+              <p class="category-description">
+                Critical strategies for successful leadership transitions.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Team and Org Introduction Strategy
+                  </h4>
+                  <p class="framework-description">
+                    How you position yourself on Day 1 to earn trust fast.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">The 1:1 Immersion Strategy</h4>
+                  <p class="framework-description">
+                    100+ personal meetings that create a map of truth.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Securing Early Wins</h4>
+                  <p class="framework-description">
+                    Fix what matters to them. Early proof of change.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                  <div class="framework-popup">
+                    <h5 class="popup-title">Securing Early Wins</h5>
+                    <p class="popup-description">Fix what matters to them. Early proof of change drives credibility and builds momentum for larger transformations.</p>
+                    <div class="popup-details">
+                      <strong>Key Components:</strong> Stakeholder mapping, Quick-win identification, Visible impact tracking
+                    </div>
+                  </div>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Meeting 100 Customers in 100 Days
+                  </h4>
+                  <p class="framework-description">
+                    Market immersion + pattern recognition = gold.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                  <div class="framework-popup">
+                    <h5 class="popup-title">Meeting 100 Customers in 100 Days</h5>
+                    <p class="popup-description">The most valuable market insights come from direct customer conversations. This framework provides a systematic approach to gathering customer feedback at scale.</p>
+                    <div class="popup-details">
+                      <strong>Key Components:</strong> Customer segmentation, Interview protocol, Pattern recognition methods, Action planning
+                    </div>
+                  </div>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Identifying and Cultivating Key Influencers
+                  </h4>
+                  <p class="framework-description">
+                    Win the hidden leaders and the rest will follow.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Creating a Culture of Collaboration
+                  </h4>
+                  <p class="framework-description">
+                    Collaboration creates results that competition alone never
+                    can.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Talent Development Card -->
+          <div class="category-card fade-in delay-2 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="talent" aria-expanded="false">
+              <span class="category-icon">🌱</span>
+              <h3 class="category-title">TALENT DEVELOPMENT & TEAM BUILDING</h3>
+              <p class="category-description">
+                Systems for bringing out the best in people and teams.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Strength-Based Leadership Model
+                  </h4>
+                  <p class="framework-description">
+                    Optimize what's already strong instead of fixing weaknesses.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                  <div class="framework-popup">
+                    <h5 class="popup-title">Strength-Based Leadership Model</h5>
+                    <p class="popup-description">Research shows that focusing on strengths yields significantly better results than trying to fix weaknesses. This model helps leaders identify and leverage natural talents.</p>
+                    <div class="popup-details">
+                      <strong>Key Components:</strong> Strength assessment, Role optimization, Complementary team building, Performance amplification techniques
+                    </div>
+                  </div>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Building High-Performing Teams
+                  </h4>
+                  <p class="framework-description">
+                    The right mix of talents, properly aligned, outperforms any
+                    collection of individual stars.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Leadership Development through Calculated Discomfort
+                  </h4>
+                  <p class="framework-description">
+                    Growth comes from the right stretch, not just praise.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Overcoming Imposter Syndrome</h4>
+                  <p class="framework-description">
+                    Practical strategies for authentic confidence and leadership
+                    presence.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">The Calibration Call System</h4>
+                  <p class="framework-description">
+                    Live diagnostics for performance without pressure.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Failure Fridays: Creating Psychological Safety
+                  </h4>
+                  <p class="framework-description">
+                    Reward effort and learning. Normalize risk.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Aggressive Agreement: Constructive Conflict
+                  </h4>
+                  <p class="framework-description">
+                    Same goal, different path. Sharpen, don't shatter.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transformational Frameworks Card -->
+          <div class="category-card fade-in delay-3 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="transformation" aria-expanded="false">
+              <span class="category-icon">🏗️</span>
+              <h3 class="category-title">TRANSFORMATIONAL FRAMEWORKS</h3>
+              <p class="category-description">
+                Systems that drive structural change and breakthrough
+                performance.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Breaking Silos with POD Structures
+                  </h4>
+                  <p class="framework-description">
+                    Align structure with customer needs rather than internal
+                    convenience.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Strategic ROI-Driven Initiatives
+                  </h4>
+                  <p class="framework-description">
+                    Bold ideas need rigorous business cases.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    The Five-Question Strategy Framework
+                  </h4>
+                  <p class="framework-description">
+                    Strategy should fit on a single page and be understood by
+                    everyone.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    War Gaming: Stress-Testing Strategies
+                  </h4>
+                  <p class="framework-description">
+                    Break your strategy in the lab, not in the market.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Initiative Tracking System</h4>
+                  <p class="framework-description">
+                    Track everything systematically to build organizational
+                    memory and accountability.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Quota Design & Compensation Transformation
+                  </h4>
+                  <p class="framework-description">
+                    Balance fairness, business needs, and motivational
+                    psychology.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sales & Customer Engagement Card -->
+          <div class="category-card fade-in accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="sales" aria-expanded="false">
+              <span class="category-icon">🤝</span>
+              <h3 class="category-title">SALES & CUSTOMER ENGAGEMENT</h3>
+              <p class="category-description">
+                Strategies for customer acquisition, retention, and growth.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Tech Check Initiative: Reimagining B2B Client Acquisition
+                  </h4>
+                  <p class="framework-description">
+                    Provide value before asking for business.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Garbage in Garbage out: How to improve your customer intelligence
+                  </h4>
+                  <p class="framework-description">
+                    Turn intelligence gathering into a competitive advantage.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Client Acquisition Maps: Location Intelligence
+                  </h4>
+                  <p class="framework-description">
+                    Remove friction from the territory management process.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Customer Success Model: The 90-Day, 5-Touch System
+                  </h4>
+                  <p class="framework-description">
+                    The first 90 days determine the long-term customer
+                    relationship.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">AI-Powered Sales Intelligence</h4>
+                  <p class="framework-description">
+                    Remove friction from knowledge access to empower frontline
+                    effectiveness.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Communication & Transparency Card -->
+          <div class="category-card fade-in delay-1 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="communication" aria-expanded="false">
+              <span class="category-icon">🔍</span>
+              <h3 class="category-title">COMMUNICATION & TRANSPARENCY</h3>
+              <p class="category-description">
+                Systems for clarity, alignment, and constructive dialogue.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    The Handlebar Test: Empowerment through Trust
+                  </h4>
+                  <p class="framework-description">Let go. Let others fly.</p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Rules of Engagement (ROE): Clarity and Accountability
+                  </h4>
+                  <p class="framework-description">
+                    Clarity eliminates politics and confusion.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Data Transparency: Sharing the Numbers
+                  </h4>
+                  <p class="framework-description">
+                    If data exists, share it—even when it feels risky.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Strategic Communication Frameworks
+                  </h4>
+                  <p class="framework-description">
+                    Match your communication approach to your strategic
+                    objective.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Message Management</h4>
+                  <p class="framework-description">
+                    How you communicate is as important as what you communicate.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Growth Card -->
+          <div class="category-card fade-in delay-2 accordion-item scroll-reveal">
+            <div class="category-header accordion-header scroll-reveal" data-category="growth" aria-expanded="false">
+              <span class="category-icon">⚡</span>
+              <h3 class="category-title">
+                PROFESSIONAL GROWTH & PERSONAL LEADERSHIP
+              </h3>
+              <p class="category-description">
+                Practices for sustainable excellence and authenticity.
+              </p>
+              <span class="expand-icon accordion-icon">+</span>
+            </div>
+            <div class="category-content accordion-content">
+              <div class="frameworks-list">
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Balancing Excellence and Well-Being
+                  </h4>
+                  <p class="framework-description">
+                    Drive results without burning out.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    The Fixer Files: Case Study Framework
+                  </h4>
+                  <p class="framework-description">
+                    Turn wins into repeatable plays.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Career Navigation Strategies</h4>
+                  <p class="framework-description">
+                    Intentional positioning for advancement opportunities.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">Mentorship that Multiplies</h4>
+                  <p class="framework-description">
+                    Your greatest contribution may be the leaders you develop.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+                <div class="framework-item">
+                  <h4 class="framework-title">
+                    Interviewing and Job Advancement Strategies
+                  </h4>
+                  <p class="framework-description">
+                    Position yourself for consistent career progression.
+                  </p>
+                  <span class="lock-icon">🔒</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="container scroll-reveal">
+        <h2 class="results-title scroll-reveal">PROVEN RESULTS</h2>
+        <p>
+          These frameworks aren't theoretical—they've been meticulously tested
+          and proven across multiple organizations.
+        </p>
+
+        <div class="results-grid">
+          <div class="result-card fade-in scroll-reveal">
+            <div class="result-number">19×</div>
+            <h3 class="result-label">INCREASE IN CLIENT ACQUISITION</h3>
+            <p class="result-description">
+              Through the Initiative's consultative approach to
+              client engagement
+            </p>
+          </div>
+
+          <div class="result-card fade-in delay-1 scroll-reveal">
+            <div class="result-number">72%</div>
+            <h3 class="result-label">HIGHER LAUNCH SUCCESS</h3>
+            <p class="result-description">
+              For strategies that underwent War Gaming stress-testing before
+              launch
+            </p>
+          </div>
+
+          <div class="result-card fade-in delay-2 scroll-reveal">
+            <div class="result-number">50%</div>
+            <h3 class="result-label">REDUCTION IN CUSTOMER CHURN</h3>
+            <p class="result-description">
+              Using the 90-Day, 5-Touch Customer Success System
+            </p>
+          </div>
+
+          <div class="result-card fade-in delay-3 scroll-reveal">
+            <div class="result-number">14/14</div>
+            <h3 class="result-label">JOB INTERVIEWS TO OFFERS</h3>
+            <p class="result-description">
+              Using the Career Navigation and Interview OS frameworks
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container cta-content scroll-reveal">
+        <h2 class="scroll-reveal">READY TO TRANSFORM YOUR LEADERSHIP?</h2>
+        <p>
+          Unlock the full Takisaki Leadership Playbook with detailed frameworks,
+          implementation guides, and case studies.
+        </p>
+        <div class="cta-buttons scroll-reveal">
+          <a href="#" class="cta-button" id="requestAccessBtn"
+            >Request Access</a
+          >
+          <a href="contact.html" class="cta-button cta-secondary"
+            >Schedule a Strategy Session</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for Client Access Request -->
+    <div class="modal" id="accessModal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModalBtn">&times;</button>
+        <h3 class="modal-title">Request Playbook Access</h3>
+        <p class="modal-subtitle">
+          Enter your information to request access to the complete Takisaki
+          Leadership Playbook.
+        </p>
+
+        <form id="accessForm">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Company / Organization"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Current Role"
+            />
+          </div>
+
+          <button type="submit" class="form-button">Submit Request</button>
+          <p class="form-note">
+            Paul will personally review your request and follow up within 48
+            hours.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-info scroll-reveal">
+            <div class="footer-logo">Paul Takisaki</div>
+            <p>
+              Leadership coaching for strategic outliers who redraw the
+              curve rather than following it.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.linkedin.com/in/paultakisaki"
+                target="_blank"
+                class="social-link"
+                aria-label="LinkedIn Profile"
+                rel="noopener"
+                ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
+                ><span class="sr-only">LinkedIn</span></a
+              >
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column scroll-reveal">
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playbook.html">Leadership Vault</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="blogs.html">Insights</a></li>
+                <li><a href="about.html">About</a></li>
+              </ul>
+            </div>
+            <div class="footer-column scroll-reveal">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="services.html#crisis">Executive Strategy</a></li>
+                <li><a href="services.html#executive">Leadership Development</a></li>
+                <li><a href="services.html#emergency">Strategic Consulting</a></li>
+              </ul>
+            </div>
+            <div class="footer-column scroll-reveal">
+              <h4>Contact</h4>
+              <p>Email: paul@paultakisaki.com</p>
+              <p>Location: Gilbert, AZ</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom scroll-reveal">
+          <p>&copy; 2025 Paul Takisaki. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+      // DOM Elements
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+      const searchInput = document.getElementById("searchInput");
+      const clearSearch = document.getElementById("clearSearch");
+      const gridViewBtn = document.getElementById("gridViewBtn");
+      const listViewBtn = document.getElementById("listViewBtn");
+      const categoryHeaders = document.querySelectorAll(".category-header");
+      const requestAccessBtn = document.getElementById("requestAccessBtn");
+      const accessModal = document.getElementById("accessModal");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const accessForm = document.getElementById("accessForm");
+
+      // Mobile Menu Toggle
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        mainNav.classList.toggle("active");
+      });
+
+      // Restore the click event for category headers
+      categoryHeaders.forEach((header) => {
+        header.style.cursor = "pointer";
+        
+        header.addEventListener("click", () => {
+          const card = header.parentElement;
+          const content = card.querySelector(".category-content");
+          const isExpanded = content.style.display === "block";
+          
+          // First close all other cards
+          document.querySelectorAll(".category-card").forEach((otherCard) => {
+            if (otherCard !== card) {
+              const otherContent = otherCard.querySelector(".category-content");
+              otherContent.style.display = "none";
+              otherCard.classList.remove("expanded");
+              const otherIcon = otherCard.querySelector(".expand-icon");
+              if (otherIcon) {
+                otherIcon.textContent = "+";
+              }
+            }
+          });
+          
+          // Toggle visibility of this card
+          if (isExpanded) {
+            content.style.display = "none";
+            card.classList.remove("expanded");
+            header.querySelector(".expand-icon").textContent = "+";
+          } else {
+            content.style.display = "block";
+            card.classList.add("expanded");
+            header.querySelector(".expand-icon").textContent = "−";
+            
+            // Scroll to make sure expanded content is visible if needed
+            setTimeout(() => {
+              const rect = card.getBoundingClientRect();
+              if (rect.bottom > window.innerHeight) {
+                window.scrollBy({
+                  top: Math.min(200, rect.bottom - window.innerHeight + 100),
+                  behavior: 'smooth'
+                });
+              }
+            }, 300);
+          }
+        });
+      });
+
+      // Helper function to reset search display state
+      function resetSearchDisplay() {
+        document.querySelectorAll(".category-card").forEach((card) => {
+          card.style.display = "block";
+          
+          // Hide the content section
+          const content = card.querySelector(".category-content");
+          if (content) {
+            content.style.display = "none";
+          }
+          
+          // Reset the expand icon and remove expanded class
+          const expandIcon = card.querySelector(".expand-icon");
+          if (expandIcon) {
+            expandIcon.textContent = "+";
+          }
+          
+          card.classList.remove("expanded");
+
+          card.querySelectorAll(".framework-item").forEach((framework) => {
+            framework.style.display = "block";
+            framework.style.backgroundColor = "";
+          });
+        });
+      }
+
+      // Search Functionality
+      searchInput.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+
+        // Toggle clear button
+        clearSearch.style.display = searchTerm ? "block" : "none";
+
+        if (searchTerm) {
+          document.querySelectorAll(".category-card").forEach((card) => {
+            const categoryTitle = card
+              .querySelector(".category-title")
+              .textContent.toLowerCase();
+            const categoryDesc = card
+              .querySelector(".category-description")
+              .textContent.toLowerCase();
+
+            // Check category match
+            let matchFound =
+              categoryTitle.includes(searchTerm) ||
+              categoryDesc.includes(searchTerm);
+
+            // Check frameworks
+            const frameworks = Array.from(
+              card.querySelectorAll(".framework-item")
+            );
+            frameworks.forEach((framework) => {
+              const title = framework
+                .querySelector(".framework-title")
+                .textContent.toLowerCase();
+              const desc = framework
+                .querySelector(".framework-description")
+                .textContent.toLowerCase();
+
+              if (title.includes(searchTerm) || desc.includes(searchTerm)) {
+                matchFound = true;
+                framework.style.display = "block";
+                framework.style.backgroundColor = "rgba(0, 229, 255, 0.1)";
+              } else {
+                framework.style.display = "block"; // Keep visible if category matches
+                framework.style.backgroundColor = "";
+              }
+            });
+
+            // Handle visibility
+            card.style.display = matchFound ? "block" : "none";
+
+            // Show the content section when there's a match
+            if (matchFound) {
+              const content = card.querySelector(".category-content");
+              if (content) {
+                content.style.display = "block";
+              }
+              
+              // Update the expand icon and add expanded class
+              const expandIcon = card.querySelector(".expand-icon");
+              if (expandIcon) {
+                expandIcon.textContent = "−";
+              }
+              
+              card.classList.add("expanded");
+            }
+          });
+        } else {
+          resetSearchDisplay();
+        }
+      });
+
+      // Clear search button functionality
+      clearSearch.addEventListener("click", () => {
+        searchInput.value = "";
+        clearSearch.style.display = "none";
+        resetSearchDisplay();
+        searchInput.focus();
+      });
+
+      // View Toggle
+      // View Toggle
+      gridViewBtn.addEventListener("click", () => {
+        gridViewBtn.classList.add("active");
+        listViewBtn.classList.remove("active");
+        document.getElementById("categoriesGrid").classList.remove("list-view");
+      });
+
+      listViewBtn.addEventListener("click", () => {
+        listViewBtn.classList.add("active");
+        gridViewBtn.classList.remove("active");
+        document.getElementById("categoriesGrid").classList.add("list-view");
+      });
+
+      // Modal Functionality
+      requestAccessBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        accessModal.classList.add("active");
+        document.body.style.overflow = "hidden"; // Correct property
+      });
+
+      // Close modal
+      closeModalBtn.addEventListener("click", () => {
+        accessModal.classList.remove("active");
+        document.body.style.overflow = ""; // Reset to default
+      });
+
+      // Close modal if clicking outside
+      window.addEventListener("click", (e) => {
+        if (e.target === accessModal) {
+          accessModal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // Form Submission
+      accessForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Simulate form submission
+        const submitBtn = accessForm.querySelector(".form-button");
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = "Submitting...";
+        submitBtn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() => {
+          submitBtn.textContent = "Request Submitted!";
+
+          // Show success message
+          const formNote = accessForm.querySelector(".form-note");
+          formNote.textContent =
+            "Your request has been submitted successfully. Paul will contact you shortly.";
+
+          // Reset form after delay
+          setTimeout(() => {
+            accessModal.classList.remove("active");
+            document.body.style.overflow = "";
+
+            // Reset form for next use
+            setTimeout(() => {
+              accessForm.reset();
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              formNote.textContent =
+                "Paul will personally review your request and follow up within 48 hours.";
+            }, 500);
+          }, 2000);
+        }, 1500);
+      });
+
+      // Framework Item Clicks
+      // Framework Item Clicks
+      document.querySelectorAll(".framework-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          // Show access modal for locked frameworks
+          accessModal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        });
+      });
+      
+      // Make sure popups don't trigger modal
+      document.querySelectorAll(".framework-popup").forEach(popup => {
+        popup.addEventListener("click", (e) => {
+          e.stopPropagation(); // Prevent click from reaching the framework-item
+        });
+      });
+
+      // Scroll animations for results section
+      const observeElements = () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        document.querySelectorAll(".fade-in:not(.visible)").forEach((el) => {
+          observer.observe(el);
+        });
+      };
+
+      // Initialize
+      window.addEventListener("load", observeElements);
+      window.addEventListener("scroll", observeElements);
+    </script>
+    <script src="header.js"></script>
+    <script src="script.js"></script>
+    <script src="mobile-experience.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Leadership Impact & Transformations | Paul Takisaki</title>
+    <meta
+      name="description"
+      content="See the real impact of Paul Takisaki's leadership methodology on executives and organizations. Discover how his unique approach transforms careers and delivers measurable results."
+    />
+    <meta
+      name="keywords"
+      content="leadership impact, executive transformation, Paul Takisaki, leadership results, success stories"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://paultakisaki.com/impact.html" />
+    <meta
+      property="og:title"
+      content="Leadership Impact & Transformations | Paul Takisaki"
+    />
+    <meta
+      property="og:description"
+      content="Real results from executives and leaders whose careers were transformed through Paul Takisaki's chess-player approach to leadership."
+    />
+    <meta
+      property="og:image"
+      content="https://paultakisaki.com/images/leadership-impact.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://paultakisaki.com/impact.html"
+    />
+    <meta
+      property="twitter:title"
+      content="Leadership Impact & Transformations | Paul Takisaki"
+    />
+    <meta
+      property="twitter:description"
+      content="Real results from executives and leaders whose careers were transformed through Paul Takisaki's chess-player approach to leadership."
+    />
+    <meta
+      property="twitter:image"
+      content="https://paultakisaki.com/images/leadership-impact.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://paultakisaki.com/impact.html" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile-navigation.css" />
+    <link rel="stylesheet" href="impact-page.css" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Leadership Impact & Transformations | Paul Takisaki",
+        "description": "See the real impact of Paul Takisaki's leadership methodology on executives and organizations. Discover how his unique approach transforms careers and delivers measurable results.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Paul Takisaki Leadership",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://paultakisaki.com/images/logo.png"
+          }
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Emmanuel Nwoke"
+                },
+                "reviewBody": "Working with Paul Takisaki has been a deeply transformative experience. His compassion and unwavering focus on building from a place of strength made me feel truly seen and supported."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "Review",
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "author": {
+                  "@type": "Person",
+                  "name": "Aparna Khurjekar"
+                },
+                "reviewBody": "You've had an indelible mark on the business markets with all that you've done in the field and with the TSO team, always with a smile."
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <style>
+      /* Custom styles for the Impact page */
+      :root {
+        --accent-color: #00e5ff;
+        --dark-bg: #121212;
+        --card-bg: rgba(255, 255, 255, 0.05);
+        --text-light: rgba(255, 255, 255, 0.7);
+      }
+
+      .hero {
+        height: 60vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        background-color: var(--dark-bg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            to bottom right,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url("images/chess-board.webp");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-light);
+        margin-bottom: 30px;
+      }
+
+      /* Stats section */
+      .stats {
+        padding: 80px 0;
+        background-color: #0c0c0c;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 30px;
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--accent-color);
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 1rem;
+        color: var(--text-light);
+      }
+
+      /* Featured testimonial */
+      .featured-testimonial {
+        padding: 100px 0;
+        background-color: var(--dark-bg);
+      }
+
+      .featured-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 40px;
+        background-color: rgba(0, 229, 255, 0.05);
+        border-radius: 12px;
+        position: relative;
+        text-align: center;
+      }
+
+      .featured-quote-mark {
+        position: absolute;
+        font-size: 120px;
+        color: rgba(0, 229, 255, 0.1);
+        line-height: 1;
+      }
+
+      .featured-quote-mark.left {
+        top: 20px;
+        left: 20px;
+      }
+
+      .featured-quote-mark.right {
+        bottom: 20px;
+        right: 20px;
+        transform: rotate(180deg);
+      }
+
+      .featured-quote {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+
+      .featured-author h4 {
+        font-size: 1.25rem;
+        margin-bottom: 5px;
+        color: var(--accent-color);
+      }
+
+      .featured-author p {
+        color: var(--text-light);
+      }
+
+      /* Testimonials sections */
+      .testimonials {
+        padding: 80px 0;
+        background-color: #0c0c0c;
+      }
+
+      .testimonials:nth-child(even) {
+        background-color: var(--dark-bg);
+      }
+
+      .testimonials-header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 60px;
+        padding: 0 20px;
+      }
+
+      .testimonials-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .testimonials-header p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .testimonial-item {
+        background-color: var(--card-bg);
+        border-radius: 8px;
+        padding: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .testimonial-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .testimonial-tag {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--accent-color);
+        color: #000;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 5px 15px;
+        border-bottom-left-radius: 8px;
+      }
+
+      .testimonial-quote {
+        margin-bottom: 30px;
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+        margin-right: 15px;
+      }
+
+      .author-info h4 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+      }
+
+      .author-info p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+      }
+
+      /* Video section */
+      .video-testimonial {
+        padding: 100px 0;
+        background-color: var(--dark-bg);
+        text-align: center;
+      }
+
+      .video-testimonial h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .video-testimonial p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto 40px;
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .video-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .video-container:hover img {
+        transform: scale(1.02);
+      }
+
+      /* CTA section */
+      .cta {
+        padding: 100px 0;
+        text-align: center;
+        background-color: #0c0c0c;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta p {
+        color: var(--text-light);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      .journey-button {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: #000;
+        padding: 15px 30px;
+        border-radius: 4px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .journey-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 229, 255, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        padding: 40px 0;
+        text-align: center;
+        background-color: #080808;
+      }
+
+      footer p {
+        color: var(--text-light);
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+
+      footer a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      /* Animation classes */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .featured-quote {
+          font-size: 1.3rem;
+        }
+
+        .testimonials-header h2,
+        .video-testimonial h2,
+        .cta h2 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: auto;
+          padding: 100px 0;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .featured-inner {
+          padding: 40px 20px;
+        }
+
+        .featured-quote-mark {
+          font-size: 80px;
+        }
+
+        .featured-quote {
+          font-size: 1.1rem;
+        }
+
+        .testimonials-header h2,
+        .video-testimonial h2,
+        .cta h2 {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .stats,
+        .testimonials,
+        .featured-testimonial,
+        .video-testimonial,
+        .cta {
+          padding: 60px 0;
+        }
+
+        .featured-quote-mark {
+          font-size: 60px;
+        }
+      }
+    </style>
+    <!-- Mobile Experience Enhancement -->
+    <link rel="stylesheet" href="mobile-master.css">
+  </head>
+
+  <body class="page-visible">
+    <!-- Page Loader -->
+    <div class="page-loader">
+      <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">PT<span>.</span></div>
+      </div>
+    </div>
+    
+    <div class="scroll-progress" aria-hidden="true"></div>
+    
+    <div id="header-container"></div>
+    <script src="header.js"></script>
+    <script src="menu-fix.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero scroll-reveal">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="scroll-reveal">Measurable Leadership Impact</h1>
+          <p class="scroll-reveal">
+            See how Paul Takisaki's chess-player approach transforms careers and
+            organizations through the eyes of those who experienced it
+            firsthand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats scroll-reveal">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item fade-in scroll-reveal">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Years of Leadership Experience</div>
+          </div>
+          <div class="stat-item fade-in scroll-reveal">
+            <div class="stat-number">1,000+</div>
+            <div class="stat-label">Leaders Mentored & Coached</div>
+          </div>
+          <div class="stat-item fade-in scroll-reveal">
+            <div class="stat-number">4×</div>
+            <div class="stat-label">President's Cabinet Winner</div>
+          </div>
+          <div class="stat-item fade-in scroll-reveal">
+            <div class="stat-number">$1B+</div>
+            <div class="stat-label">Revenue Impact Generated</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Testimonial -->
+    <section class="featured-testimonial scroll-reveal">
+      <div class="container">
+        <div class="featured-inner">
+          <p class="featured-quote fade-in scroll-reveal">
+            Working with Paul Takisaki has been a
+            <strong>deeply transformative experience.</strong>
+            His compassion and unwavering focus on building from a place of
+            strength made me feel truly seen and supported. As a mentor,
+            <strong
+              >Paul leads with vulnerability—drawing from his own lived
+              experiences</strong
+            >
+            to create a space of trust and openness.
+          </p>
+          <div class="featured-author fade-in scroll-reveal">
+            <h4>Emmanuel Nwoke</h4>
+            <p>Senior Director of Sales, Fortune 50 Company</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- C-Suite Impact Testimonials -->
+<section class="testimonials scroll-reveal">
+  <div class="container">
+    <div class="testimonials-header">
+      <h2 class="fade-in scroll-reveal">C-Suite & Executive Impact</h2>
+      <p class="fade-in scroll-reveal">
+        Hear from senior leaders about Paul's lasting influence on both
+        business results and organizational culture.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-item fade-in scroll-reveal">
+        <div class="testimonial-tag">C-Suite</div>
+        <div class="testimonial-quote">
+          <!-- Hide quotes with CSS -->
+          <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
+          You've had <strong>an indelible mark on the business markets</strong> with all that you've done in the field and with the TSO team, always with a smile. <strong>I'm going to personally miss working with you.</strong>
+          <img src="images/quote_closed.webp" alt="Quote Close" class="quote-icon close" />
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background-image: url('images/aparna.webp')"></div>
+          <div class="author-info">
+            <h4>Aparna Khurjekar</h4>
+            <p>Chief Revenue Officer, Verizon</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-item fade-in scroll-reveal">
+        <div class="testimonial-tag">VP Level</div>
+        <div class="testimonial-quote">
+          <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
+          Paul brings a <strong>calm, thoughtful, and empowering leadership style.</strong> He has a remarkable ability to <strong>analyze complex data and translate it into actionable strategies</strong> that <strong>drive results.</strong>
+          <img src="images/quote_closed.webp" alt="Quote Close" class="quote-icon close" />
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background-image: url('images/caralis.webp')"></div>
+          <div class="author-info">
+            <h4>Mike Caralis</h4>
+            <p>Vice President, Advanced Solutions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-item fade-in scroll-reveal">
+        <div class="testimonial-tag">VP Level</div>
+        <div class="testimonial-quote">
+          <img src="images/quote_open.webp" alt="Quote Open" class="quote-icon open" />
+          It was great that we got a chance to mostly work together because <strong>competing against you was never fun.</strong> You'll always be the guy who <strong>knows playing to win better than anybody else.</strong>
+          <img src="images/quote_closed.webp" alt="Quote Close" class="quote-icon close" />
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background-image: url('images/shank.webp')"></div>
+          <div class="author-info">
+            <h4>Chris Shank</h4>
+            <p>Vice President, Verizon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Video Tribute Section -->
+    <section class="video-testimonial scroll-reveal">
+      <div class="container">
+        <h2 class="fade-in scroll-reveal">The Executive Farewell Tribute</h2>
+        <p class="fade-in scroll-reveal">
+          Created by peers, employees, and executives to celebrate Paul's impact
+          during 20 years of transformational leadership at Verizon.
+        </p>
+
+        <div
+          class="fade-in scroll-reveal"
+          style="max-width: 640px; margin: 0 auto"
+        >
+          <a
+            href="https://www.youtube.com/watch?v=wz5J6VMhT20"
+            target="_blank"
+            aria-label="Watch Paul Takisaki's farewell video tribute"
+            style="display: block;"
+          >
+            <img
+              src="images/paul_effect.webp"
+              alt="Paul Takisaki Farewell Video Tribute from Verizon Executives"
+              width="640"
+              height="360"
+              style="width: 100%; height: auto; border-radius: 8px; transition: transform 0.3s ease; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);"
+              onmouseover="this.style.transform='scale(1.02)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta scroll-reveal">
+      <div class="container">
+        <h2 class="fade-in scroll-reveal">Ready for Your Own Leadership Transformation?</h2>
+        <p class="fade-in scroll-reveal">
+          Experience the leadership development approach that has transformed
+          careers and organizations.
+        </p>
+        <a href="/contact.html" class="journey-button fade-in scroll-reveal"
+          >Start Your Journey</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-info scroll-reveal">
+            <div class="footer-logo">Paul Takisaki</div>
+            <p>
+              Leadership coaching for strategic outliers who redraw the
+              curve rather than following it.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.linkedin.com/in/paultakisaki"
+                target="_blank"
+                class="social-link"
+                aria-label="LinkedIn Profile"
+                rel="noopener"
+                ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
+                ><span class="sr-only">LinkedIn</span></a
+              >
+            </div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column scroll-reveal">
+              <h4>Navigation</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playbook.html">Leadership Vault</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="impact.html">Impact</a></li>
+                <li><a href="blogs.html">Insights</a></li>
+                <li><a href="about.html">About</a></li>
+              </ul>
+            </div>
+            <div class="footer-column scroll-reveal">
+              <h4>Services</h4>
+              <ul>
+                <li><a href="services.html#crisis">Executive Strategy</a></li>
+                <li><a href="services.html#executive">Leadership Development</a></li>
+                <li><a href="services.html#emergency">Strategic Consulting</a></li>
+              </ul>
+            </div>
+            <div class="footer-column scroll-reveal">
+              <h4>Contact</h4>
+              <p>Email: paul@paultakisaki.com</p>
+              <p>Location: Gilbert, AZ</p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom scroll-reveal">
+          <p>&copy; 2025 Paul Takisaki. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="header.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile menu toggle
+        const toggle = document.getElementById("mobile-toggle");
+        const navLinks = document.querySelector(".nav-links");
+
+        if (toggle && navLinks) {
+          toggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+        }
+
+        // Intersection Observer for fade-in effects
+        const faders = document.querySelectorAll(".fade-in");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        faders.forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Video play tracking for analytics
+        const videoLink = document.querySelector("[aria-label='Watch Paul Takisaki\'s farewell video tribute']");
+        if (videoLink) {
+          videoLink.addEventListener("click", function (e) {
+            // If you have analytics, you can track video clicks here
+            console.log("Video play button clicked");
+          });
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+    <script src="mobile-experience.js"></script>
+    
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
