@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // Data for the rotating value props
   const valueProps = [
     {
-      text: "Transform strategic thinking with <span class='relative inline-block text-accent'><span>pattern recognition</span><span class='absolute bottom-0 left-0 w-full h-px bg-accent/30'></span></span>",
+      text: "<span class='text-accent'>Pattern recognition</span> transforms organizations where others see chaos.",
       stat: "19×",
       label: "client acquisition increase"
     },
     {
-      text: "Build resilient teams through <span class='relative inline-block text-accent'><span>system engineering</span><span class='absolute bottom-0 left-0 w-full h-px bg-accent/30'></span></span>",
+      text: "Success comes from <span class='text-accent'>system engineering</span> that builds resilient teams.",
       stat: "72%",
       label: "higher launch success"
     },
     {
-      text: "Lead with authentic <span class='relative inline-block text-accent'><span>quiet power</span><span class='absolute bottom-0 left-0 w-full h-px bg-accent/30'></span></span> that inspires",
+      text: "Strategic outliers lead with authentic <span class='text-accent'>quiet power</span> that inspires results.",
       stat: "50%",
       label: "reduction in customer churn"
     }
@@ -45,10 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
       // Update the next index
       currentIndex = (currentIndex + 1) % valueProps.length;
       
-      // Update content
-      valuePropElement.innerHTML = "A meticulously engineered system for strategic outliers based on " + 
-                                  valueProps[currentIndex].text + 
-                                  ".";
+      // Update content with simplified text
+      valuePropElement.innerHTML = valueProps[currentIndex].text;
       
       statNumberElement.textContent = valueProps[currentIndex].stat;
       statLabelElement.textContent = valueProps[currentIndex].label;
