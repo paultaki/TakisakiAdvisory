@@ -111,24 +111,54 @@
             pulse: {
               '0%, 100%': { opacity: '1' },
               '50%': { opacity: '0.8' }
+            },
+            glowPulse: {
+              '0%, 100%': { boxShadow: '0 0 5px rgba(0, 229, 255, 0.3)' },
+              '50%': { boxShadow: '0 0 20px rgba(0, 229, 255, 0.6)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-1000px 0' },
+              '100%': { backgroundPosition: '1000px 0' }
             }
           },
           animation: {
             fadeIn: 'fadeIn 0.6s ease-out forwards',
             slideUp: 'slideUp 0.8s ease-out forwards',
-            pulse: 'pulse 3s ease-in-out infinite'
+            pulse: 'pulse 3s ease-in-out infinite',
+            glowPulse: 'glowPulse 3s ease-in-out infinite',
+            shimmer: 'shimmer 3s infinite linear'
           },
           boxShadow: {
             'glow': '0 0 15px rgba(0, 229, 255, 0.5)',
             'subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
             'card': '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+            'inner-accent': 'inset 0 0 0 1px rgba(0, 229, 255, 0.15)',
           },
+          transitionTimingFunction: {
+            'premium': 'cubic-bezier(0.16, 1, 0.3, 1)'
+          }
         }
       },
       plugins: [],
     }
     </script>
     <style>
+      /* Text animation effects for hero */
+      .animate-text-line {
+        overflow: hidden;
+      }
+      
+      .animate-text-line span {
+        display: block;
+        opacity: 0;
+        transform: translateY(35px);
+        animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      @keyframes textReveal {
+        100% { opacity: 1; transform: translateY(0); }
+      }
+    
       /* Section fade-in animations */
       .section-fade-in > * {
         opacity: 0;
@@ -147,12 +177,82 @@
       .scrolled.section-fade-in > *:nth-child(4) { transition-delay: 0.4s; }
       .scrolled.section-fade-in > *:nth-child(5) { transition-delay: 0.5s; }
 
+      /* Premium card hover effects */
+      .premium-card {
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .premium-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 229, 255, 0.3);
+      }
+      
+      .premium-card:hover .card-accent-bar {
+        width: 100%;
+      }
+      
+      .premium-card .card-accent-bar {
+        width: 50px;
+        transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
       /* Form select custom styling */
       select {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white'%3E%3Cpath d='M8 11.5l-5-5L4.5 5 8 8.5 11.5 5 13 6.5l-5 5z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: right 20px center;
         appearance: none;
+      }
+      
+      /* Price tag shimmer effect */
+      .price-tag {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .price-tag::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+                  rgba(255, 255, 255, 0) 0%, 
+                  rgba(255, 255, 255, 0.05) 50%, 
+                  rgba(255, 255, 255, 0) 100%);
+        background-size: 200% 100%;
+        animation: shimmer 3s infinite linear;
+      }
+      
+      /* Premium CTA button */
+      .premium-btn {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .premium-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .premium-btn:hover::before {
+        left: 100%;
+      }
+      
+      .premium-btn:hover {
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.5);
+        transform: translateY(-2px);
       }
 
       /* Accessibility */
@@ -167,11 +267,34 @@
         white-space: nowrap;
         border: 0;
       }
+      
+      /* Inputs and form elements premium styling */
+      .premium-input {
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .premium-input:focus {
+        border-color: rgba(0, 229, 255, 0.5);
+        box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+        background: rgba(0, 0, 0, 0.8);
+      }
+      
+      /* Hide scrollbar but allow scrolling */
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
     </style>
 </head>
 <body class="bg-black text-white font-sans antialiased overflow-x-hidden">
     <!-- Scroll progress indicator -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-accent w-0 z-[9999] transition-all duration-100 ease-linear"></div>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-accent via-accent/80 to-accent w-0 z-[9999] transition-all duration-100 ease-linear"></div>
     
     <!-- Skip to content link for accessibility -->
     <a class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:p-4 focus:bg-accent focus:text-black focus:font-bold" href="#main-content">Skip to main content</a>
@@ -191,258 +314,415 @@
 
     <main id="main-content" class="pt-20">
         <!-- Hero Section -->
-        <section class="relative min-h-[60vh] flex items-center py-20 sm:py-28 bg-gradient-to-br from-primary to-secondary">
-            <!-- Background geometric patterns -->
-            <div class="absolute inset-0 overflow-hidden opacity-10">
-                <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-accent/20 blur-3xl"></div>
-                <div class="absolute bottom-20 right-10 w-64 h-64 rounded-full bg-accent/10 blur-3xl"></div>
-                <div class="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-accent/5 blur-2xl"></div>
+        <section class="relative min-h-[70vh] flex items-center py-20 sm:py-28 bg-gradient-to-br from-primary to-secondary overflow-hidden">
+            <!-- Accent gradient background -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-accent/3 blur-3xl"></div>
+                <div class="absolute -bottom-20 -left-20 w-96 h-96 rounded-full bg-accent/3 blur-3xl"></div>
+                <div class="absolute top-1/3 left-1/3 w-64 h-64 rounded-full bg-accent/2 blur-2xl"></div>
+                
+                <!-- Subtle grid pattern overlay -->
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.4)_2px,transparent_2px),linear-gradient(90deg,rgba(0,0,0,0.4)_2px,transparent_2px)] bg-[size:40px_40px] opacity-20"></div>
             </div>
             
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 opacity-0 animate-[fadeIn_0.8s_ease-out_forwards]">
+                <span class="inline-block text-accent font-semibold tracking-wider uppercase mb-3 opacity-0 animate-[fadeIn_0.6s_ease-out_forwards]">Elite Services</span>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight opacity-0 animate-[fadeIn_0.8s_ease-out_0.2s_forwards]">
                     Behind-the-Scenes Transformation
                 </h1>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards]">
+                
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_0.4s_forwards] mb-8">
                     Direct C-suite advisory. Zero public footprint. Guaranteed results.
                 </p>
+                
+                <div class="inline-flex opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+                    <a href="#contact" class="premium-btn bg-accent text-black font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 uppercase tracking-wide text-sm sm:text-base relative overflow-hidden group">
+                        <span class="relative z-10">Schedule Confidential Consultation</span>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Services Categories -->
-        <section class="py-24 bg-primary section-fade-in">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section class="py-24 bg-primary relative section-fade-in">
+            <!-- Subtle background pattern -->
+            <div class="absolute inset-0 bg-[radial-gradient(rgba(0,229,255,0.08)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <!-- Executive Development -->
-                <div class="mb-24">
-                    <div class="text-center mb-16">
-                        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Executive Development</h2>
+                <div class="mb-28">
+                    <div class="text-center mb-20">
+                        <span class="inline-block text-accent font-semibold tracking-wider uppercase mb-2">Leadership Excellence</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
+                            Executive Development
+                            <div class="absolute left-0 bottom-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
+                        </h2>
                         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
                             Build invisible resumes. Land impossible roles.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl mx-auto">
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-lg">
-                            <div class="text-accent text-xl font-bold mb-2">Rising Star Program</div>
-                            <div class="text-3xl font-bold mb-8">$5,000/month</div>
-                            <ul class="space-y-3 mb-10">
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>1:1 career acceleration</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Interview mastery (14/14 success rate)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Personal brand (private only)</span>
-                                </li>
-                                <li class="flex items-start text-accent font-semibold">
-                                    <span class="mr-2">•</span>
-                                    <span>24/7 opportunity support</span>
-                                </li>
-                            </ul>
-                            <a href="#contact" class="block w-full py-3 px-6 bg-accent text-black font-semibold uppercase text-center rounded transition-all hover:shadow-glow hover:bg-cyan-300">
-                                Accelerate Trajectory
-                            </a>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                        <div class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden shadow-card group">
+                            <!-- Top accent line that expands on hover -->
+                            <div class="h-1 bg-accent card-accent-bar transition-all duration-500"></div>
+                            
+                            <div class="px-8 pt-10 pb-6">
+                                <div class="flex items-end justify-between mb-8">
+                                    <div>
+                                        <div class="text-accent text-lg font-bold mb-1">Rising Star Program</div>
+                                        <div class="price-tag text-3xl font-bold">$5,000<span class="text-xl text-white/60">/month</span></div>
+                                    </div>
+                                    <div class="bg-accent/10 h-12 w-12 rounded-full flex items-center justify-center text-accent transition-all duration-300 group-hover:scale-110">
+                                        <i data-lucide="rocket" class="w-6 h-6"></i>
+                                    </div>
+                                </div>
+                                
+                                <ul class="space-y-5 mb-10">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">1:1 career acceleration</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Interview mastery (14/14 success rate)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Personal brand (private only)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3 text-accent font-semibold">24/7 opportunity support</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="px-8 pb-8">
+                                <a href="#contact" class="premium-btn block w-full py-4 bg-accent text-black font-bold uppercase text-center rounded-lg transition-all group-hover:shadow-glow">
+                                    Accelerate Trajectory
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-lg">
-                            <div class="text-accent text-xl font-bold mb-2">Executive Trajectory</div>
-                            <div class="text-3xl font-bold mb-8">$10,000/month</div>
-                            <ul class="space-y-3 mb-10">
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>C-suite preparation</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Board positioning strategy</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Confidential mentorship</span>
-                                </li>
-                                <li class="flex items-start text-accent font-semibold">
-                                    <span class="mr-2">•</span>
-                                    <span>Direct decision-maker access</span>
-                                </li>
-                            </ul>
-                            <a href="#contact" class="block w-full py-3 px-6 bg-accent text-black font-semibold uppercase text-center rounded transition-all hover:shadow-glow hover:bg-cyan-300">
-                                Ascend to Executive
-                            </a>
+                        <div class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden shadow-card group">
+                            <!-- Top accent line that expands on hover -->
+                            <div class="h-1 bg-accent card-accent-bar transition-all duration-500"></div>
+                            
+                            <div class="px-8 pt-10 pb-6">
+                                <div class="flex items-end justify-between mb-8">
+                                    <div>
+                                        <div class="text-accent text-lg font-bold mb-1">Executive Trajectory</div>
+                                        <div class="price-tag text-3xl font-bold">$10,000<span class="text-xl text-white/60">/month</span></div>
+                                    </div>
+                                    <div class="bg-accent/10 h-12 w-12 rounded-full flex items-center justify-center text-accent transition-all duration-300 group-hover:scale-110">
+                                        <i data-lucide="crown" class="w-6 h-6"></i>
+                                    </div>
+                                </div>
+                                
+                                <ul class="space-y-5 mb-10">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">C-suite preparation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Board positioning strategy</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Confidential mentorship</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3 text-accent font-semibold">Direct decision-maker access</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="px-8 pb-8">
+                                <a href="#contact" class="premium-btn block w-full py-4 bg-accent text-black font-bold uppercase text-center rounded-lg transition-all group-hover:shadow-glow">
+                                    Ascend to Executive
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Revenue Rescue Operations -->
                 <div>
-                    <div class="text-center mb-16">
-                        <h2 class="text-3xl sm:text-4xl font-bold mb-4">Revenue Rescue Operations</h2>
+                    <div class="text-center mb-20">
+                        <span class="inline-block text-accent font-semibold tracking-wider uppercase mb-2">Strategic Intervention</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold mb-4 relative inline-block">
+                            Revenue Rescue Operations
+                            <div class="absolute left-0 bottom-0 w-full h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent"></div>
+                        </h2>
                         <p class="text-xl text-gray-400 max-w-3xl mx-auto">
                             When revenue is bleeding, we stop it fast.
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 max-w-5xl mx-auto">
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-lg">
-                            <div class="text-accent text-xl font-bold mb-2">Crisis Intervention</div>
-                            <div class="text-3xl font-bold mb-8">$15,000/month</div>
-                            <ul class="space-y-3 mb-10">
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Fix broken sales immediately</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>4 hours direct CEO consultation</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Month-to-month flexibility</span>
-                                </li>
-                                <li class="flex items-start text-accent font-semibold">
-                                    <span class="mr-2">•</span>
-                                    <span>Emergency response within 24 hours</span>
-                                </li>
-                            </ul>
-                            <a href="#contact" class="block w-full py-3 px-6 bg-accent text-black font-semibold uppercase text-center rounded transition-all hover:shadow-glow hover:bg-cyan-300">
-                                Engage Crisis Team
-                            </a>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                        <div class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden shadow-card group">
+                            <!-- Top accent line that expands on hover -->
+                            <div class="h-1 bg-accent card-accent-bar transition-all duration-500"></div>
+                            
+                            <div class="px-8 pt-10 pb-6">
+                                <div class="flex items-end justify-between mb-8">
+                                    <div>
+                                        <div class="text-accent text-lg font-bold mb-1">Crisis Intervention</div>
+                                        <div class="price-tag text-3xl font-bold">$15,000<span class="text-xl text-white/60">/month</span></div>
+                                    </div>
+                                    <div class="bg-accent/10 h-12 w-12 rounded-full flex items-center justify-center text-accent transition-all duration-300 group-hover:scale-110">
+                                        <i data-lucide="siren" class="w-6 h-6"></i>
+                                    </div>
+                                </div>
+                                
+                                <ul class="space-y-5 mb-10">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Fix broken sales immediately</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">4 hours direct CEO consultation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Month-to-month flexibility</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3 text-accent font-semibold">Emergency response within 24 hours</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="px-8 pb-8">
+                                <a href="#contact" class="premium-btn block w-full py-4 bg-accent text-black font-bold uppercase text-center rounded-lg transition-all group-hover:shadow-glow">
+                                    Engage Crisis Team
+                                </a>
+                            </div>
                         </div>
 
-                        <div class="bg-white/5 border border-white/10 rounded-xl p-8 lg:p-10 transition-all duration-300 hover:-translate-y-2 hover:border-accent/30 hover:shadow-lg">
-                            <div class="text-accent text-xl font-bold mb-2">Emergency Turnaround</div>
-                            <div class="text-3xl font-bold mb-8">$30,000 flat fee</div>
-                            <ul class="space-y-3 mb-10">
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>30-day intensive system overhaul</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>Guaranteed revenue impact in 60 days</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <span class="text-accent mr-2">•</span>
-                                    <span>CEO-only engagement</span>
-                                </li>
-                                <li class="flex items-start text-accent font-semibold">
-                                    <span class="mr-2">•</span>
-                                    <span>Results or full refund</span>
-                                </li>
-                            </ul>
-                            <a href="#contact" class="block w-full py-3 px-6 bg-accent text-black font-semibold uppercase text-center rounded transition-all hover:shadow-glow hover:bg-cyan-300">
-                                Initiate Turnaround
-                            </a>
+                        <div class="premium-card bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden shadow-card group">
+                            <!-- Top accent line that expands on hover -->
+                            <div class="h-1 bg-accent card-accent-bar transition-all duration-500"></div>
+                            
+                            <div class="px-8 pt-10 pb-6">
+                                <div class="flex items-end justify-between mb-8">
+                                    <div>
+                                        <div class="text-accent text-lg font-bold mb-1">Emergency Turnaround</div>
+                                        <div class="price-tag text-3xl font-bold">$30,000<span class="text-xl text-white/60"> flat fee</span></div>
+                                    </div>
+                                    <div class="bg-accent/10 h-12 w-12 rounded-full flex items-center justify-center text-accent transition-all duration-300 group-hover:scale-110">
+                                        <i data-lucide="badge-alert" class="w-6 h-6"></i>
+                                    </div>
+                                </div>
+                                
+                                <ul class="space-y-5 mb-10">
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">30-day intensive system overhaul</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">Guaranteed revenue impact in 60 days</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3">CEO-only engagement</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center mt-0.5">
+                                            <i data-lucide="check" class="w-3 h-3 text-accent"></i>
+                                        </div>
+                                        <span class="ml-3 text-accent font-semibold">Results or full refund</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="px-8 pb-8">
+                                <a href="#contact" class="premium-btn block w-full py-4 bg-accent text-black font-bold uppercase text-center rounded-lg transition-all group-hover:shadow-glow">
+                                    Initiate Turnaround
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Client Quote Section -->
+        <section class="py-16 bg-secondary relative overflow-hidden">
+            <div class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.4)_1px,transparent_1px)] bg-[size:60px_60px] opacity-20"></div>
+            
+            <div class="max-w-4xl mx-auto px-6 relative z-10">
+                <blockquote class="text-center">
+                    <div class="text-6xl text-accent opacity-30 mb-6">"</div>
+                    <p class="text-2xl md:text-3xl font-light italic text-white/90 leading-relaxed mb-8">
+                        After 12 months working with Paul, we've increased profitability by 28% while reducing our executive turnover to zero.
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent mr-3">
+                            <i data-lucide="user" class="w-6 h-6"></i>
+                        </div>
+                        <div class="text-left">
+                            <p class="font-semibold">Chief Revenue Officer</p>
+                            <p class="text-sm text-white/60">Fortune 100 Technology Company</p>
+                        </div>
+                    </div>
+                </blockquote>
+            </div>
+        </section>
+
         <!-- Contact Section -->
-        <section id="contact" class="py-24 bg-secondary section-fade-in">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
+        <section id="contact" class="py-24 bg-primary relative section-fade-in">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/40"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,229,255,0.03),transparent_70%)]"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <span class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2">Strict Confidentiality</span>
                     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Schedule Your Confidential Strategy Session</h2>
                     <p class="text-xl text-gray-400 max-w-2xl mx-auto">
                         All consultations are private. No public acknowledgment.
                     </p>
                 </div>
 
-                <div class="max-w-xl mx-auto bg-black/40 p-8 rounded-xl border border-white/5 shadow-card">
-                    <form action="/api/send" method="POST" class="space-y-6">
-                        <div>
-                            <label for="contact-name" class="sr-only">Your Name</label>
-                            <input 
-                                type="text" 
-                                id="contact-name" 
-                                name="name" 
-                                placeholder="Your Name" 
-                                required
-                                aria-required="true"
-                                aria-describedby="name-help"
-                                class="w-full p-4 bg-black/60 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-all"
-                            />
-                            <span id="name-help" class="sr-only">Please enter your full name</span>
-                        </div>
+                <div class="max-w-xl mx-auto">
+                    <div class="bg-gradient-to-b from-black/80 to-black/60 p-8 lg:p-10 rounded-xl border border-white/5 shadow-card relative overflow-hidden">
+                        <!-- Subtle accent corner flare -->
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-accent/5 rounded-bl-full"></div>
                         
-                        <div>
-                            <label for="contact-email" class="sr-only">Your Email</label>
-                            <input 
-                                type="email" 
-                                id="contact-email" 
-                                name="email" 
-                                placeholder="Executive Email" 
-                                required
-                                aria-required="true"
-                                aria-describedby="email-help"
-                                class="w-full p-4 bg-black/60 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-all"
-                            />
-                            <span id="email-help" class="sr-only">Please enter your business email</span>
-                        </div>
-                        
-                        <div>
-                            <label for="contact-service" class="sr-only">Service</label>
-                            <select 
-                                name="service" 
-                                id="contact-service" 
-                                required
-                                aria-required="true"
-                                aria-describedby="service-help"
-                                class="w-full p-4 bg-black/60 border border-white/10 rounded-lg text-white focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-all"
-                            >
-                                <option value="" disabled selected class="bg-gray-900">Select Service</option>
-                                <option value="rising" class="bg-gray-900">Rising Star Program</option>
-                                <option value="executive" class="bg-gray-900">Executive Trajectory</option>
-                                <option value="crisis" class="bg-gray-900">Crisis Intervention</option>
-                                <option value="emergency" class="bg-gray-900">Emergency Turnaround</option>
-                            </select>
-                            <span id="service-help" class="sr-only">Please select a service</span>
-                        </div>
-                        
-                        <div>
-                            <label for="contact-message" class="sr-only">Message</label>
-                            <textarea
-                                id="contact-message"
-                                name="message"
-                                placeholder="Confidential Message"
-                                rows="5"
-                                required
-                                aria-required="true"
-                                aria-describedby="message-help"
-                                class="w-full p-4 bg-black/60 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-all resize-y"
-                            ></textarea>
-                            <span id="message-help" class="sr-only">Please describe how we can help you</span>
-                        </div>
-                        
-                        <button 
-                            type="submit"
-                            class="w-full py-4 px-6 bg-accent text-black font-bold rounded-lg hover:shadow-glow transition-all text-lg tracking-wide"
-                        >
-                            Submit Confidential Request
-                        </button>
-                        
-                        <div class="hidden bg-green-800/20 border border-green-400/30 p-4 rounded-lg form-success-message">
-                            <p class="text-green-300 text-center">
-                                Thank you! Your confidential request has been submitted. I'll get back to you shortly.
-                            </p>
-                        </div>
-                    </form>
+                        <form action="/api/send" method="POST" class="space-y-6 relative">
+                            <div>
+                                <label for="contact-name" class="block text-sm font-medium text-white/80 mb-2">Full Name</label>
+                                <input 
+                                    type="text" 
+                                    id="contact-name" 
+                                    name="name" 
+                                    placeholder="Your Name" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="name-help"
+                                    class="premium-input w-full p-4 rounded-lg text-white placeholder-gray-500 focus:outline-none"
+                                />
+                                <span id="name-help" class="sr-only">Please enter your full name</span>
+                            </div>
+                            
+                            <div>
+                                <label for="contact-email" class="block text-sm font-medium text-white/80 mb-2">Executive Email</label>
+                                <input 
+                                    type="email" 
+                                    id="contact-email" 
+                                    name="email" 
+                                    placeholder="name@company.com" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="email-help"
+                                    class="premium-input w-full p-4 rounded-lg text-white placeholder-gray-500 focus:outline-none"
+                                />
+                                <span id="email-help" class="sr-only">Please enter your business email</span>
+                            </div>
+                            
+                            <div>
+                                <label for="contact-service" class="block text-sm font-medium text-white/80 mb-2">Service of Interest</label>
+                                <select 
+                                    name="service" 
+                                    id="contact-service" 
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="service-help"
+                                    class="premium-input w-full p-4 rounded-lg text-white focus:outline-none cursor-pointer"
+                                >
+                                    <option value="" disabled selected class="bg-gray-900">Select Service</option>
+                                    <option value="rising" class="bg-gray-900">Rising Star Program</option>
+                                    <option value="executive" class="bg-gray-900">Executive Trajectory</option>
+                                    <option value="crisis" class="bg-gray-900">Crisis Intervention</option>
+                                    <option value="emergency" class="bg-gray-900">Emergency Turnaround</option>
+                                </select>
+                                <span id="service-help" class="sr-only">Please select a service</span>
+                            </div>
+                            
+                            <div>
+                                <label for="contact-message" class="block text-sm font-medium text-white/80 mb-2">Confidential Message</label>
+                                <textarea
+                                    id="contact-message"
+                                    name="message"
+                                    placeholder="Describe your situation briefly..."
+                                    rows="5"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="message-help"
+                                    class="premium-input w-full p-4 rounded-lg text-white placeholder-gray-500 focus:outline-none resize-y"
+                                ></textarea>
+                                <span id="message-help" class="sr-only">Please describe how we can help you</span>
+                            </div>
+                            
+                            <div class="pt-2">
+                                <button 
+                                    type="submit"
+                                    class="premium-btn w-full py-4 px-6 bg-accent text-black font-bold rounded-lg transition-all text-lg tracking-wide uppercase"
+                                >
+                                    Submit Confidential Request
+                                </button>
+                            </div>
+                            
+                            <div class="hidden bg-green-800/20 border border-green-400/30 p-4 rounded-lg form-success-message">
+                                <p class="text-green-300 text-center">
+                                    Thank you! Your confidential request has been submitted. I'll get back to you shortly.
+                                </p>
+                            </div>
+                            
+                            <div class="text-center text-sm text-white/40 mt-6">
+                                All communications are encrypted and confidential
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Back to Top Button -->
-    <a aria-label="Back to top of page" class="back-to-top fixed bottom-6 right-6 bg-accent/20 text-accent w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent hover:text-black z-50" href="#">
-        <i aria-hidden="true" class="fas fa-arrow-up text-lg"></i>
+    <a aria-label="Back to top of page" class="back-to-top fixed bottom-6 right-6 bg-accent/20 text-accent w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent hover:text-black z-50 group" href="#">
+        <i aria-hidden="true" class="fas fa-arrow-up text-lg group-hover:animate-pulse"></i>
     </a>
 
     <!-- Footer -->
-    <footer class="bg-black text-white pt-16 pb-8">
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
                 <div class="footer-info">
@@ -588,11 +868,28 @@
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
                     
+                    // Validate form fields
+                    let isValid = true;
+                    const requiredFields = form.querySelectorAll('[required]');
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            field.classList.add('border-red-500');
+                            isValid = false;
+                        } else {
+                            field.classList.remove('border-red-500');
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        return;
+                    }
+                    
                     // Disable submit button and show loading state
                     const submitButton = this.querySelector('button[type="submit"]');
                     const originalText = submitButton.textContent;
                     submitButton.disabled = true;
-                    submitButton.textContent = 'Sending...';
+                    submitButton.innerHTML = '<span class="inline-block animate-pulse">Sending...</span>';
                     
                     // Simulate form submission (replace with actual API call)
                     setTimeout(function() {
@@ -603,13 +900,15 @@
                         }
                         
                         // Reset button
-                        submitButton.textContent = 'Message Sent';
+                        submitButton.innerHTML = 'Message Sent';
+                        submitButton.classList.add('bg-green-500');
                         
                         // Reset form after a delay
                         setTimeout(function() {
                             form.reset();
                             submitButton.disabled = false;
-                            submitButton.textContent = originalText;
+                            submitButton.innerHTML = originalText;
+                            submitButton.classList.remove('bg-green-500');
                             
                             // Hide success message after some time
                             if (successMessage) {
@@ -619,6 +918,22 @@
                             }
                         }, 2000);
                     }, 1500);
+                });
+                
+                // Live validation on form fields
+                const inputFields = form.querySelectorAll('input, textarea, select');
+                inputFields.forEach(field => {
+                    field.addEventListener('focus', function() {
+                        this.classList.remove('border-red-500');
+                    });
+                    
+                    field.addEventListener('blur', function() {
+                        if (this.hasAttribute('required') && !this.value.trim()) {
+                            this.classList.add('border-red-500');
+                        } else {
+                            this.classList.remove('border-red-500');
+                        }
+                    });
                 });
             }
         });
