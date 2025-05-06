@@ -354,92 +354,9 @@
       >Skip to main content</a
     >
 
-    <!-- Header/navigation -->
-    <header
-      class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md z-50 transition-all duration-300 border-b border-white/5"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20"
-      >
-        <a
-          href="/"
-          class="text-2xl font-bold text-white flex items-center space-x-2 hover:opacity-90 transition"
-        >
-          <span class="text-accent">PAUL</span>
-          <span>TAKISAKI</span>
-        </a>
-
-        <!-- Mobile menu toggle -->
-        <button
-          id="mobile-menu-toggle"
-          class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
-          aria-label="Toggle menu"
-        >
-          <span class="w-6 h-0.5 bg-white transition-all"></span>
-          <span class="w-6 h-0.5 bg-white transition-all"></span>
-          <span class="w-6 h-0.5 bg-white transition-all"></span>
-        </button>
-
-        <!-- Desktop navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#" class="header-nav-link text-white/90 hover:text-accent"
-            >Home</a
-          >
-          <a
-            href="takisaki-os.html"
-            class="header-nav-link text-white/90 hover:text-accent"
-            >Takisaki OS</a
-          >
-          <a
-            href="impact.html"
-            class="header-nav-link text-white/90 hover:text-accent"
-            >Impact</a
-          >
-          <a
-            href="insights.html"
-            class="header-nav-link text-white/90 hover:text-accent"
-            >Insights</a
-          >
-          <a href="about.html" class="header-nav-link text-white/90 hover:text-accent"
-            >About</a
-          >
-          <a
-            href="contact.html"
-            class="py-2.5 px-5 bg-accent text-black font-semibold rounded-md hover:shadow-glow transition-all cta-button"
-            >Let's Talk</a
-          >
-        </nav>
-      </div>
-
-      <!-- Mobile menu (hidden by default) -->
-      <div
-        id="mobile-menu"
-        class="hidden px-4 py-6 bg-black/95 border-t border-white/5 md:hidden"
-      >
-        <nav class="flex flex-col space-y-4">
-          <a href="index.html" class="py-2 text-white/90 border-b border-white/10"
-            >Home</a
-          >
-          <a href="takisaki-os.html" class="py-2 text-white/90 border-b border-white/10"
-            >Takisaki OS</a
-          >
-          <a href="impact.html" class="py-2 text-white/90 border-b border-white/10"
-            >Impact</a
-          >
-          <a href="insights.html" class="py-2 text-white/90 border-b border-white/10"
-            >Insights</a
-          >
-          <a href="about.html" class="py-2 text-white/90 border-b border-white/10"
-            >About</a
-          >
-          <a
-            href="contact.html"
-            class="mt-4 py-3 bg-accent text-black font-semibold rounded-md text-center"
-            >Let's Talk</a
-          >
-        </nav>
-      </div>
-    </header>
+    <!-- Header container for header.js -->
+    <div id="header-container"></div>
+    <script src="header_tailwind.js"></script>
 
     <!-- Page Loader -->
     <div
@@ -536,15 +453,12 @@
             </div>
           </div>
 
-          <div class="chess-visual hidden md:block relative">
-            <div
-              class="absolute -inset-0.5 bg-gradient-to-r from-accent/20 to-accent/5 rounded-2xl blur-sm"
-            ></div>
+          <div class="chess-visual hidden md:block">
             <img
               alt="Chess piece representing strategic leadership"
-              class="relative w-full h-auto object-cover shadow-2xl rounded-lg transform hover:scale-[1.02] transition-all duration-700"
+              class="w-full h-auto transform hover:scale-[1.02] transition-all duration-700"
               loading="lazy"
-              src="images/chess2.webp"
+              src="images/outlier.png"
             />
           </div>
         </div>
@@ -1472,18 +1386,7 @@
         }
       }
 
-      // Mobile menu toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        if (mobileMenuToggle && mobileMenu) {
-          mobileMenuToggle.addEventListener("click", function () {
-            mobileMenu.classList.toggle("hidden");
-            mobileMenuToggle.classList.toggle("active");
-          });
-        }
-      });
+      // Mobile menu handled by header_tailwind.js
 
       // Back to top button visibility
       function updateBackToTopButton() {
