@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           
           <!-- Hamburger menu for mobile - aligned to far right -->
           <div class="pr-4 lg:pr-8">
-            <button class="lg:hidden flex flex-col justify-center items-center z-50 transition-all duration-300 ease-in-out" id="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+            <button class="lg:hidden flex flex-col justify-center items-center z-[101] transition-all duration-300 ease-in-out" id="mobile-menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
               <span class="block w-8 h-0.5 bg-white mb-2 transform transition-all duration-300" aria-hidden="true" id="hamburger-top"></span>
               <span class="block w-8 h-0.5 bg-white mb-2 transition-all duration-300" aria-hidden="true" id="hamburger-middle"></span>
               <span class="block w-8 h-0.5 bg-white transform transition-all duration-300" aria-hidden="true" id="hamburger-bottom"></span>
@@ -35,17 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><a href="index.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
                 pageName === "index.html" || currentPage === "/" ? "text-accent border-accent" : "text-white"
               }">Home</a></li>
-              <li><a href="playbook.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
-                pageName === "playbook.html" ? "text-accent border-accent" : "text-white"
-              }">Leadership Vault</a></li>
-              <li><a href="services.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
-                pageName === "services.html" ? "text-accent border-accent" : "text-white"
-              }">Services</a></li>
+              <li><a href="takisaki_os.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
+                pageName === "takisaki_os.html" || pageName === "playbook.html" ? "text-accent border-accent" : "text-white"
+              }">Takisaki OS</a></li>
               <li><a href="impact.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
                 pageName === "impact.html" ? "text-accent border-accent" : "text-white"
               }">Impact</a></li>
-              <li><a href="blogs.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
-                pageName === "blogs.html" ? "text-accent border-accent" : "text-white"
+              <li><a href="insights.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
+                pageName === "insights.html" || pageName === "blogs.html" ? "text-accent border-accent" : "text-white"
               }">Insights</a></li>
               <li><a href="about.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
                 pageName === "about.html" ? "text-accent border-accent" : "text-white"
@@ -61,31 +58,33 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         
         <!-- Mobile Navigation Overlay - Fixed positioning with higher z-index -->
-        <div class="fixed inset-0 bg-black bg-opacity-95 z-[100] lg:hidden hidden" id="mobile-nav-overlay">
-          <nav class="flex flex-col items-center justify-center h-full space-y-6 py-8">
-            <ul class="flex flex-col items-center space-y-6">
-              <li><a href="index.html" class="text-xl tracking-wide hover:text-accent transition ${
+        <div class="fixed inset-0 bg-black bg-opacity-95 z-[100] lg:hidden hidden flex-col justify-center items-center" id="mobile-nav-overlay">
+          <!-- Close button at top right -->
+          <div class="absolute top-6 right-6 w-10 h-10 rounded-full flex justify-center items-center bg-white/10 cursor-pointer hover:bg-white/20 transition-all" id="mobile-close-btn">
+            <span class="text-2xl font-bold text-white">&times;</span>
+          </div>
+          
+          <nav class="flex flex-col items-center justify-center h-full space-y-8">
+            <ul class="flex flex-col items-center space-y-8">
+              <li><a href="index.html" class="text-2xl tracking-wide hover:text-accent transition ${
                 pageName === "index.html" || currentPage === "/" ? "text-accent" : "text-white"
               }">Home</a></li>
-              <li><a href="playbook.html" class="text-xl tracking-wide hover:text-accent transition ${
-                pageName === "playbook.html" ? "text-accent" : "text-white"
-              }">Leadership Vault</a></li>
-              <li><a href="services.html" class="text-xl tracking-wide hover:text-accent transition ${
-                pageName === "services.html" ? "text-accent" : "text-white"
-              }">Services</a></li>
-              <li><a href="impact.html" class="text-xl tracking-wide hover:text-accent transition ${
+              <li><a href="takisaki_os.html" class="text-2xl tracking-wide hover:text-accent transition ${
+                pageName === "takisaki_os.html" || pageName === "playbook.html" ? "text-accent" : "text-white"
+              }">Takisaki OS</a></li>
+              <li><a href="impact.html" class="text-2xl tracking-wide hover:text-accent transition ${
                 pageName === "impact.html" ? "text-accent" : "text-white"
               }">Impact</a></li>
-              <li><a href="blogs.html" class="text-xl tracking-wide hover:text-accent transition ${
-                pageName === "blogs.html" ? "text-accent" : "text-white"
+              <li><a href="insights.html" class="text-2xl tracking-wide hover:text-accent transition ${
+                pageName === "insights.html" || pageName === "blogs.html" ? "text-accent" : "text-white"
               }">Insights</a></li>
-              <li><a href="about.html" class="text-xl tracking-wide hover:text-accent transition ${
+              <li><a href="about.html" class="text-2xl tracking-wide hover:text-accent transition ${
                 pageName === "about.html" ? "text-accent" : "text-white"
               }">About</a></li>
             </ul>
             
-            <div class="mt-6">
-              <a href="contact.html" class="bg-accent text-black px-6 py-3 rounded text-lg font-semibold hover:bg-cyan-300 transition ${
+            <div class="mt-8">
+              <a href="contact.html" class="bg-accent text-black px-8 py-4 rounded-lg text-xl font-semibold hover:bg-cyan-300 transition ${
                 pageName === "contact.html" ? "bg-cyan-300" : ""
               }">Let's Talk</a>
             </div>
@@ -104,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Setting up mobile menu...");
       const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
       const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
+      const mobileCloseBtn = document.getElementById("mobile-close-btn");
       
       console.log("Menu toggle:", mobileMenuToggle);
       console.log("Nav overlay:", mobileNavOverlay);
@@ -137,21 +137,11 @@ document.addEventListener("DOMContentLoaded", function () {
         
         if (expanded) {
           // Close menu
-          this.setAttribute("aria-expanded", "false");
-          mobileNavOverlay.style.display = 'none';
-          document.body.style.overflow = "";
-          
-          // Reset hamburger to original state
-          if (topBar) topBar.style.transform = '';
-          if (middleBar) middleBar.style.opacity = '1';
-          if (bottomBar) bottomBar.style.transform = '';
+          closeMenu();
         } else {
           // Open menu
           this.setAttribute("aria-expanded", "true");
           mobileNavOverlay.style.display = 'flex';
-          mobileNavOverlay.style.flexDirection = 'column';
-          mobileNavOverlay.style.justifyContent = 'center';
-          mobileNavOverlay.style.alignItems = 'center';
           document.body.style.overflow = "hidden";
           
           // Transform hamburger to X
@@ -160,6 +150,11 @@ document.addEventListener("DOMContentLoaded", function () {
           if (bottomBar) bottomBar.style.transform = 'translateY(-10px) rotate(-45deg)';
         }
       });
+      
+      // Close button functionality
+      if (mobileCloseBtn) {
+        mobileCloseBtn.addEventListener("click", closeMenu);
+      }
       
       // Helper function to close menu and reset hamburger
       function closeMenu() {
@@ -193,22 +188,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
       
+      // Add escape key handling
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && mobileNavOverlay && mobileNavOverlay.style.display === 'flex') {
+          closeMenu();
+        }
+      });
+      
       console.log("Mobile menu setup complete");
     }
     
-    // Wait for DOM content loaded before setting up the menu
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log("DOM loaded, setting up mobile menu");
-      
-      // Run the setup function
-      setupMobileMenu();
-      
-      // Also run it after a delay to ensure everything is loaded
-      setTimeout(setupMobileMenu, 1000);
-    });
+    // Run the setup function
+    setupMobileMenu();
     
-    // Also run it directly (as a fallback)
-    setTimeout(setupMobileMenu, 1500);
+    // Also run it after a delay to ensure everything is loaded
+    setTimeout(setupMobileMenu, 1000);
 
     // Add scroll effect for header
     function handleHeaderScroll() {
