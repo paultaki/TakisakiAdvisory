@@ -372,90 +372,112 @@
 
     <main class="pt-20">
       <!-- Hero Section -->
-      <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Takisaki OS - Animated Hero</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            accent: "#00e5ff",
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'float-slow': 'float 8s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-10px)' },
-            }
-          },
-        },
-      },
-    };
-  </script>
-</head>
-<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
-  <section class="relative py-20 md:py-32 bg-gradient-to-br from-black to-[#121212] overflow-hidden">
-    <!-- Background elements -->
-    <div class="absolute inset-0 overflow-hidden opacity-10">
-      <div class="absolute top-0 right-0 w-full h-full opacity-5"></div>
-      <div class="absolute w-[600px] h-[600px] bg-gradient-radial from-accent/10 to-transparent top-[-150px] right-[-150px] rounded-full z-0"></div>
-      <div class="absolute w-[400px] h-[400px] bg-gradient-radial from-accent/5 to-transparent bottom-[-100px] left-[-100px] rounded-full z-0"></div>
-    </div>
+      <section
+        class="relative py-20 md:py-32 bg-gradient-to-br from-primary to-secondary overflow-hidden"
+      >
+        <!-- Background elements -->
+        <div class="absolute inset-0 overflow-hidden opacity-10">
+          <div
+            class="absolute top-0 right-0 w-full h-full bg-noise-pattern opacity-5"
+          ></div>
+          <div
+            class="absolute w-[600px] h-[600px] bg-gradient-radial from-accent/10 to-transparent top-[-150px] right-[-150px] rounded-full z-0"
+          ></div>
+          <div
+            class="absolute w-[400px] h-[400px] bg-gradient-radial from-accent/5 to-transparent bottom-[-100px] left-[-100px] rounded-full z-0"
+          ></div>
 
-    <!-- Floating elements -->
-    <div class="absolute top-1/4 right-1/4 w-24 h-24 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-xl animate-float"></div>
-    <div class="absolute bottom-1/3 left-1/3 w-16 h-16 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-xl animate-float-slow"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="inline-block mb-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-        <span class="text-sm font-medium tracking-wide text-white/80">STRATEGIC LEADERSHIP SYSTEM</span>
-      </div>
-
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
-        <span>THE TAKISAKI </span>
-        <span class="text-accent">OPERATING SYSTEM</span>
-      </h1>
-
-      <div class="mb-10">
-        <p id="valueProp" class="text-xl text-gray-300 max-w-3xl mx-auto transition-opacity duration-500 ease-in-out opacity-100">
-          A meticulously engineered system for strategic outliers based on
-          <span id="highlightText" class="relative inline-block text-accent">
-            <span id="highlightWord">pattern recognition</span>
-            <span class="absolute bottom-0 left-0 w-full h-px bg-accent/30"></span>
-          </span>,
-          system engineering, and quiet power.
-        </p>
-
-        <div id="statDisplay" class="mt-8 flex justify-center items-center transition-opacity duration-500 ease-in-out opacity-100">
-          <div class="bg-black/40 rounded-xl p-6 shadow-lg border border-white/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent/20 group w-36 md:w-48 h-28 md:h-36 flex flex-col items-center justify-center">
-            <div id="statNumber" class="text-4xl md:text-5xl font-extrabold text-accent mb-2">19×</div>
-            <p id="statLabel" class="text-gray-400 text-sm">client acquisition increase</p>
+          <!-- Code pattern in background -->
+          <div
+            class="absolute top-1/4 left-1/4 opacity-20 text-[10px] leading-tight text-accent font-mono whitespace-nowrap"
+          >
+            <div>function initLeadership() {</div>
+            <div>&nbsp;&nbsp;const vision = defineVision();</div>
+            <div>&nbsp;&nbsp;const team = buildTeam(vision);</div>
+            <div>
+              &nbsp;&nbsp;const strategy = createStrategy(vision, team);
+            </div>
+            <div>&nbsp;&nbsp;return executeWithExcellence(strategy);</div>
+            <div>}</div>
           </div>
         </div>
-      </div>
 
-      <div class="opacity-100 animate-[fadeIn_0.8s_ease-out_0.8s_forwards] mt-28">
-        <a href="#categories" class="inline-flex items-center gap-2 bg-accent text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-accent/50 transition-all duration-300 group">
-          <span>Explore the OS</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
+        <!-- Floating elements -->
+        <div
+          class="absolute top-1/4 right-1/4 w-24 h-24 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-xl floating"
+        ></div>
+        <div
+          class="absolute bottom-1/3 left-1/3 w-16 h-16 bg-gradient-radial from-accent/10 to-transparent rounded-full blur-xl floating-slow"
+        ></div>
 
-  <script src="hero-animation.js"></script>
-</body>
-</html>
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center"
+        >
+          <div
+            class="inline-block mb-3 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
+          >
+            <span class="text-sm font-medium tracking-wide text-white/80"
+              >STRATEGIC LEADERSHIP SYSTEM</span
+            >
+          </div>
+
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight animate-chars"
+            id="heroTitle"
+          >
+            <span>THE TAKISAKI </span
+            ><span class="text-accent">OPERATING SYSTEM</span>
+          </h1>
+
+          <p
+            class="text-xl text-gray-300 max-w-3xl mx-auto mb-10 opacity-0 animate-[fadeIn_0.8s_ease-out_0.6s_forwards]"
+          >
+            A meticulously engineered system for strategic outliers based on
+            <span class="relative inline-block">
+              <span class="text-accent">pattern recognition</span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-px bg-accent/30"
+              ></span> </span
+            >,
+            <span class="relative inline-block">
+              <span class="text-accent">system engineering</span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-px bg-accent/30"
+              ></span> </span
+            >, and
+            <span class="relative inline-block">
+              <span class="text-accent">quiet power</span>
+              <span
+                class="absolute bottom-0 left-0 w-full h-px bg-accent/30"
+              ></span> </span
+            >. Built from two decades of rigorous testing and record-breaking
+            results.
+          </p>
+
+          <div class="opacity-0 animate-[fadeIn_0.8s_ease-out_0.8s_forwards]">
+            <a
+              href="#categories"
+              class="premium-btn inline-flex items-center gap-2 bg-accent text-black font-semibold py-3 px-8 rounded-lg shadow-lg hover:shadow-glow transition-all duration-300 group"
+            >
+              <span>Explore the OS</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 transition-transform group-hover:translate-y-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- Controls Section -->
       <section
