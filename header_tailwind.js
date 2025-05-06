@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><a href="index.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
                 pageName === "index.html" || currentPage === "/" ? "text-accent border-accent" : "text-white"
               }">Home</a></li>
-              <li><a href="takisaki_os.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
-                pageName === "takisaki_os.html" || pageName === "playbook.html" ? "text-accent border-accent" : "text-white"
+              <li><a href="takisaki-os.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
+                pageName === "takisaki-os.html" || pageName === "takisaki_os.html" || pageName === "playbook.html" ? "text-accent border-accent" : "text-white"
               }">Takisaki OS</a></li>
               <li><a href="impact.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
                 pageName === "impact.html" ? "text-accent border-accent" : "text-white"
@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <li><a href="index.html" class="text-2xl tracking-wide hover:text-accent transition ${
                 pageName === "index.html" || currentPage === "/" ? "text-accent" : "text-white"
               }">Home</a></li>
-              <li><a href="takisaki_os.html" class="text-2xl tracking-wide hover:text-accent transition ${
-                pageName === "takisaki_os.html" || pageName === "playbook.html" ? "text-accent" : "text-white"
+              <li><a href="takisaki-os.html" class="text-2xl tracking-wide hover:text-accent transition ${
+                pageName === "takisaki-os.html" || pageName === "takisaki_os.html" || pageName === "playbook.html" ? "text-accent" : "text-white"
               }">Takisaki OS</a></li>
               <li><a href="impact.html" class="text-2xl tracking-wide hover:text-accent transition ${
                 pageName === "impact.html" ? "text-accent" : "text-white"
