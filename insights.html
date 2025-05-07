@@ -21,11 +21,11 @@
     <meta name="twitter:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
     
     <!-- Favicon Package -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180x180.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#00e5ff" />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
     <meta name="msapplication-TileColor" content="#121212" />
     <meta name="theme-color" content="#121212" />
     
@@ -561,10 +561,12 @@
                         </p>
                     </div>
                     
-                    <form class="max-w-xl mx-auto">
+                    <form id="newsletter-form" class="max-w-xl mx-auto">
                         <div class="flex flex-col md:flex-row gap-4">
                             <input 
                                 type="email" 
+                                id="newsletter-email"
+                                name="email"
                                 placeholder="Your Email" 
                                 required 
                                 class="flex-1 px-4 py-3 rounded-lg text-black bg-white focus:outline-none focus:ring-2 focus:ring-accent" 
@@ -752,13 +754,13 @@
             });
             
             // Form submission handler
-            const subscribeForm = document.querySelector('form');
+            const subscribeForm = document.getElementById('newsletter-form');
             if (subscribeForm) {
-                subscribeForm.addEventListener('submit', function(e) {
+                subscribeForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     
                     // Get the email
-                    const emailInput = this.querySelector('input[type="email"]');
+                    const emailInput = document.getElementById('newsletter-email');
                     const email = emailInput.value;
                     
                     // Simple validation
@@ -773,22 +775,38 @@
                     submitButton.disabled = true;
                     submitButton.innerHTML = 'Subscribing...';
                     
-                    // Simulate API call
-                    setTimeout(() => {
-                        // Success state
-                        submitButton.innerHTML = 'Subscribed!';
-                        submitButton.classList.add('bg-green-500');
+                    try {
+                        // Actual API call to your subscribe endpoint
+                        const response = await fetch('/api/subscribe', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email })
+                        });
                         
-                        // Reset form
-                        emailInput.value = '';
-                        
+                        if (response.ok) {
+                            // Success state
+                            submitButton.innerHTML = 'Subscribed!';
+                            submitButton.classList.add('bg-green-500');
+                            
+                            // Reset form
+                            emailInput.value = '';
+                        } else {
+                            throw new Error('Subscription failed');
+                        }
+                    } catch (err) {
+                        console.error('Error subscribing to newsletter:', err);
+                        alert('Failed to subscribe. Please try again later.');
+                        submitButton.innerHTML = originalText;
+                    } finally {
                         // Reset button after delay
                         setTimeout(() => {
                             submitButton.innerHTML = originalText;
                             submitButton.disabled = false;
                             submitButton.classList.remove('bg-green-500');
                         }, 2000);
-                    }, 1500);
+                    }
                 });
             }
         });

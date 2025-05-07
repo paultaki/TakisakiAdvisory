@@ -39,29 +39,11 @@
       name="twitter:image"
     />
     <!-- Favicon Package -->
-    <link
-      href="/images/favicon-180x180.png"
-      rel="apple-touch-icon"
-      sizes="180x180"
-    />
-    <link
-      href="/images/favicon-32x32.png"
-      rel="icon"
-      sizes="32x32"
-      type="image/png"
-    />
-    <link
-      href="/images/favicon-16x16.png"
-      rel="icon"
-      sizes="16x16"
-      type="image/png"
-    />
-    <link href="/site.webmanifest" rel="manifest" />
-    <link
-      color="#00e5ff"
-      href="/images/safari-pinned-tab.svg"
-      rel="mask-icon"
-    />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
     <meta content="#121212" name="msapplication-TileColor" />
     <meta content="#121212" name="theme-color" />
     <!-- Preload critical resources -->
@@ -391,9 +373,19 @@
         </div>
 
         <div
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10"
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10"
         >
-          <div class="text-white space-y-8 text-center md:text-left">
+          <!-- Image appears first on mobile, second on desktop -->
+          <div class="chess-visual order-first md:order-last mb-8 md:mb-0">
+            <img
+              alt="Chess piece representing strategic leadership"
+              class="w-full h-auto transform hover:scale-[1.02] transition-all duration-700 max-w-xs mx-auto md:max-w-full"
+              loading="lazy"
+              src="images/outlier.png"
+            />
+          </div>
+
+          <div class="text-white space-y-8 text-center md:text-left order-last md:order-first">
             <h1
               class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none space-y-3"
             >
@@ -408,7 +400,7 @@
             </h1>
 
             <p
-              class="text-lg md:text-xl text-gray-300 max-w-xl animate-fadeIn"
+              class="text-lg md:text-xl text-gray-300 max-w-xl mx-auto md:mx-0 animate-fadeIn"
               style="animation-delay: 1.2s; opacity: 0"
             >
               From Outlier to Fortune 50. Now Your Secret Weapon in Strategic
@@ -417,7 +409,7 @@
 
             <div
               id="hero-cta"
-              class="mt-8 flex flex-col sm:flex-row gap-6 animate-fadeIn"
+              class="mt-8 flex flex-col sm:flex-row gap-6 animate-fadeIn justify-center md:justify-start"
               style="animation-delay: 1.5s; opacity: 0"
             >
               <a
@@ -451,15 +443,6 @@
                 </svg>
               </a>
             </div>
-          </div>
-
-          <div class="chess-visual">
-            <img
-              alt="Chess piece representing strategic leadership"
-              class="w-full h-auto transform hover:scale-[1.02] transition-all duration-700"
-              loading="lazy"
-              src="images/outlier.webp"
-            />
           </div>
         </div>
       </section>

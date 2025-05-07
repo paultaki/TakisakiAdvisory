@@ -45,29 +45,11 @@
     />
 
     <!-- Favicon Package -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/favicon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="/images/safari-pinned-tab.svg"
-      color="#00e5ff"
-    />
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
     <meta name="msapplication-TileColor" content="#121212" />
     <meta name="theme-color" content="#121212" />
 
@@ -82,6 +64,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Mobile Experience Enhancement -->
     <script src="mobile-experience.js" defer></script>
@@ -370,6 +355,14 @@
     <!-- Header container for header.js -->
     <div id="header-container"></div>
     <script src="header_tailwind.js"></script>
+    <script>
+      // Initialize Lucide icons immediately
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof lucide !== "undefined") {
+          lucide.createIcons();
+        }
+      });
+    </script>
 
     <main class="pt-20">
       <!-- Hero Section -->
@@ -420,8 +413,8 @@
         <span class="text-sm font-medium tracking-wide text-white/80">STRATEGIC LEADERSHIP SYSTEM</span>
       </div>
 
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight">
-        <span>THE TAKISAKI </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight flex flex-col items-center">
+        <span>THE TAKISAKI</span>
         <span class="text-accent">OPERATING SYSTEM</span>
       </h1>
 
