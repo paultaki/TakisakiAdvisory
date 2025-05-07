@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OUTLIER - Strategic Leadership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "outlier-cyan": "#00FFFF",
+              "dark-gray": "#121212",
+            },
+            fontFamily: {
+              sans: ["Helvetica", "Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .horizontal-scroll::-webkit-scrollbar {
+        display: none;
+      }
+
+      .horizontal-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-in;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white font-sans">
+    <!-- Mobile Menu (Hidden by default) -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out"
+    >
+      <div
+        class="flex flex-col items-center justify-center h-full space-y-8 text-2xl"
+      >
+        <a
+          href="#hero"
+          class="hover:text-outlier-cyan transition"
+          onclick="closeMenu()"
+          >Home</a
+        >
+        <a
+          href="#proof"
+          class="hover:text-outlier-cyan transition"
+          onclick="closeMenu()"
+          >Proof</a
+        >
+        <a
+          href="#testimonials"
+          class="hover:text-outlier-cyan transition"
+          onclick="closeMenu()"
+          >Testimonials</a
+        >
+        <a
+          href="#method"
+          class="hover:text-outlier-cyan transition"
+          onclick="closeMenu()"
+          >The Takisaki Method</a
+        >
+        <a
+          href="#action"
+          class="hover:text-outlier-cyan transition"
+          onclick="closeMenu()"
+          >Take Action</a
+        >
+        <button
+          onclick="closeMenu()"
+          class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition"
+        >
+          Close Menu
+        </button>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header
+      class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
+    >
+      <div class="flex items-center">
+        <a href="#hero" class="text-2xl font-bold tracking-wider">
+          <span class="text-outlier-cyan">OUT</span>LIER
+        </a>
+      </div>
+      <button
+        id="menu-toggle"
+        class="text-outlier-cyan focus:outline-none"
+        onclick="toggleMenu()"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="min-h-screen pt-24 px-6 flex flex-col justify-between"
+      >
+        <div class="pt-16">
+          <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+            <div class="mb-2">With</div>
+            <div class="mb-2">Precision.</div>
+            <div class="mb-2">Rebuild</div>
+            <div class="mb-2">Your</div>
+            <div class="mb-2">System.</div>
+            <div class="mb-2">Deliver</div>
+            <div class="mb-2">Elite</div>
+            <div>Results.</div>
+          </h1>
+          <p class="text-gray-400 mt-6 text-xl max-w-lg">
+            From Outlier to Fortune 50. Now Your Secret Weapon in Strategic
+            Leadership.
+          </p>
+          <a
+            href="#action"
+            class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition"
+          >
+            BOOK YOUR STRATEGY CALL
+          </a>
+        </div>
+        <div class="mb-12 flex justify-center mt-12">
+          <img
+            src="/api/placeholder/400/400"
+            alt="Geometric Unicorn"
+            class="w-64 h-64 object-contain"
+          />
+        </div>
+      </section>
+
+      <!-- Proof Section -->
+      <section id="proof" class="py-16 px-6">
+        <h2 class="text-4xl font-bold mb-4 text-outlier-cyan">
+          PROVEN TRACK RECORD
+        </h2>
+        <p class="text-3xl font-bold mb-12">No Fluff. Real Results.</p>
+
+        <div class="relative">
+          <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <!-- Stat Card 1 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="text-5xl font-bold mb-2">4×</div>
+              <div class="text-xl text-outlier-cyan mb-1">
+                President's Cabinet
+              </div>
+              <div class="text-gray-400">Top 1% of organization</div>
+            </div>
+
+            <!-- Stat Card 2 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="text-5xl font-bold mb-2">14-14</div>
+              <div class="text-xl text-outlier-cyan mb-1">
+                Interview Success
+              </div>
+              <div class="text-gray-400">100% offer rate</div>
+            </div>
+
+            <!-- Stat Card 3 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="text-5xl font-bold mb-2">6+ Years</div>
+              <div class="text-xl text-outlier-cyan mb-1">Quota Model</div>
+              <div class="text-gray-400">National implementation</div>
+            </div>
+
+            <!-- Stat Card 4 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="text-5xl font-bold mb-2">12</div>
+              <div class="text-xl text-outlier-cyan mb-1">Promotions</div>
+              <div class="text-gray-400">In 20 year career</div>
+            </div>
+          </div>
+
+          <!-- Scroll indicators -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-16 px-6">
+        <div class="relative">
+          <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <!-- Testimonial 1 -->
+            <div
+              class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan"
+            >
+              <p class="italic mb-4 text-lg">
+                "Paul doesn't just coach—he empowers."
+              </p>
+              <div class="font-bold text-outlier-cyan">Emmanuel Nwoke</div>
+              <div class="text-gray-400">Sr. Director, Verizon</div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div
+              class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan"
+            >
+              <p class="italic mb-4 text-lg">
+                "You've had an indelible mark on the business."
+              </p>
+              <div class="font-bold text-outlier-cyan">Aparna</div>
+              <div class="text-gray-400">Chief Revenue Officer, Verizon</div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div
+              class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan"
+            >
+              <p class="italic mb-4 text-lg">
+                "I would not be the leader I am today without Paul."
+              </p>
+              <div class="font-bold text-outlier-cyan">Cam Vogt</div>
+              <div class="text-gray-400">Senior Director, Verizon</div>
+            </div>
+          </div>
+
+          <!-- Scroll indicators -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Method Section -->
+      <section id="method" class="py-16 px-6">
+        <h2 class="text-4xl font-bold mb-4 text-outlier-cyan">
+          THE TAKISAKI METHOD
+        </h2>
+        <p class="text-3xl font-bold mb-12">Your Playbook, Not Theirs.</p>
+
+        <div class="relative">
+          <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <!-- Method Card 1 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="flex justify-center mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8 text-outlier-cyan"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-center mb-2">
+                Discover Your Strengths
+              </h3>
+              <p class="text-gray-400 text-center">
+                Identity-led diagnosis that uncovers your unique leadership
+                advantage
+              </p>
+            </div>
+
+            <!-- Method Card 2 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="flex justify-center mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8 text-outlier-cyan"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-center mb-2">
+                Rewire the System
+              </h3>
+              <p class="text-gray-400 text-center">
+                Leadership strategies tailored to your reality, not a one-size
+                template
+              </p>
+            </div>
+
+            <!-- Method Card 3 -->
+            <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+              <div class="flex justify-center mb-6">
+                <div
+                  class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-8 w-8 text-outlier-cyan"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-center mb-2">
+                Lead at Legacy Level
+              </h3>
+              <p class="text-gray-400 text-center">
+                Sustainable execution built on clarity that delivers elite
+                results
+              </p>
+            </div>
+          </div>
+
+          <!-- Scroll indicators -->
+          <div class="flex justify-center mt-6 space-x-2">
+            <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+            <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="mt-16 max-w-2xl mx-auto">
+          <svg
+            class="h-8 w-8 text-outlier-cyan mb-4"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+            />
+          </svg>
+          <p class="text-xl italic mb-6">
+            "After 20 years of quietly outperforming louder leaders, I
+            reverse-engineered what actually works. It's not a script—it's a
+            custom operating system designed around who you are."
+          </p>
+        </div>
+      </section>
+
+      <!-- Action Section -->
+      <section
+        id="action"
+        class="py-16 px-6 flex flex-col items-center text-center"
+      >
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Your Next Chapter <br />
+          Starts With One <br />
+          Honest <br />
+          Conversation.
+        </h2>
+
+        <a
+          href="#"
+          class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md"
+        >
+          LET'S TALK
+        </a>
+
+        <p class="text-gray-400 mt-4">No sales pitch. Just clarity.</p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800">
+      <div class="flex justify-center mb-8">
+        <div class="text-2xl font-bold tracking-wider">
+          <span class="text-outlier-cyan">OUT</span>LIER
+        </div>
+      </div>
+      <p class="text-center text-gray-500">
+        © 2025 Paul Takisaki. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        if (menu.classList.contains("translate-y-full")) {
+          menu.classList.remove("translate-y-full");
+          menu.classList.add("translate-y-0", "animate-fadeIn");
+        } else {
+          closeMenu();
+        }
+      }
+
+      function closeMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.remove("translate-y-0");
+        menu.classList.add("translate-y-full");
+      }
+
+      // Handle scroll indicators for horizontal scrolling
+      document.addEventListener("DOMContentLoaded", function () {
+        const scrollContainers =
+          document.querySelectorAll(".horizontal-scroll");
+
+        scrollContainers.forEach((container, containerIndex) => {
+          container.addEventListener("scroll", function () {
+            updateScrollIndicators(container, containerIndex);
+          });
+
+          // Initial update
+          updateScrollIndicators(container, containerIndex);
+        });
+
+        function updateScrollIndicators(container, containerIndex) {
+          const indicators = document.querySelectorAll(
+            ".flex.justify-center.mt-6.space-x-2"
+          )[containerIndex];
+          const scrollPercentage =
+            container.scrollLeft /
+            (container.scrollWidth - container.clientWidth);
+          const indicatorCount = indicators.children.length;
+
+          let activeIndex = Math.floor(scrollPercentage * indicatorCount);
+          if (activeIndex >= indicatorCount) activeIndex = indicatorCount - 1;
+
+          Array.from(indicators.children).forEach((indicator, i) => {
+            if (i === activeIndex) {
+              indicator.classList.remove("bg-gray-500");
+              indicator.classList.add("bg-outlier-cyan");
+            } else {
+              indicator.classList.remove("bg-outlier-cyan");
+              indicator.classList.add("bg-gray-500");
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
