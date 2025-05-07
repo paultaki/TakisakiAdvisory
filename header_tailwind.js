@@ -157,14 +157,16 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       
       // Helper function to close menu and reset hamburger
-      function closeMenu() {
+      window.closeMenu = function closeMenu() {
         // Get hamburger elements
         const topBar = document.getElementById('hamburger-top');
         const middleBar = document.getElementById('hamburger-middle');
         const bottomBar = document.getElementById('hamburger-bottom');
+        const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+        const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
         
-        mobileMenuToggle.setAttribute("aria-expanded", "false");
-        mobileNavOverlay.style.display = 'none';
+        if (mobileMenuToggle) mobileMenuToggle.setAttribute("aria-expanded", "false");
+        if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
         document.body.style.overflow = "";
         
         // Reset hamburger to original state
@@ -172,6 +174,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (middleBar) middleBar.style.opacity = '1';
         if (bottomBar) bottomBar.style.transform = '';
       }
+      
+      // Local reference to window.closeMenu
+      const closeMenu = window.closeMenu;
       
       // Close menu when clicking any link in the mobile nav
       const mobileNavLinks = mobileNavOverlay.querySelectorAll("a");

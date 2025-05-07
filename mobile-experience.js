@@ -51,17 +51,57 @@ document.addEventListener("DOMContentLoaded", function() {
   // We're leaving this completely disabled to avoid conflicts with header.js
   // Only adding animation delay to nav items for visual enhancement
   
-  // Safely try to add animation delay to each navigation item
+  // We'll help initialize the mobile menu to make sure it works correctly
   setTimeout(() => {
     try {
-      const navItems = document.querySelectorAll('.main-nav ul li');
-      navItems.forEach((item, index) => {
-        item.style.setProperty('--item-index', index);
-      });
+      // Make sure mobile menu toggle works
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
+      
+      if (mobileMenuToggle && mobileNavOverlay && !mobileMenuToggle._hasEventListener) {
+        console.log("Mobile-experience.js: Ensuring mobile menu works");
+        
+        // Mark it so we don't attach multiple listeners
+        mobileMenuToggle._hasEventListener = true;
+        
+        mobileMenuToggle.addEventListener("click", function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const expanded = this.getAttribute("aria-expanded") === "true";
+          
+          // Get hamburger elements
+          const topBar = document.getElementById('hamburger-top');
+          const middleBar = document.getElementById('hamburger-middle');
+          const bottomBar = document.getElementById('hamburger-bottom');
+          
+          if (expanded) {
+            // Close menu
+            mobileNavOverlay.style.display = 'none';
+            mobileMenuToggle.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+            
+            // Reset hamburger to original state
+            if (topBar) topBar.style.transform = '';
+            if (middleBar) middleBar.style.opacity = '1';
+            if (bottomBar) bottomBar.style.transform = '';
+          } else {
+            // Open menu
+            mobileNavOverlay.style.display = 'flex';
+            mobileMenuToggle.setAttribute("aria-expanded", "true");
+            document.body.style.overflow = "hidden";
+            
+            // Transform hamburger to X
+            if (topBar) topBar.style.transform = 'translateY(10px) rotate(45deg)';
+            if (middleBar) middleBar.style.opacity = '0';
+            if (bottomBar) bottomBar.style.transform = 'translateY(-10px) rotate(-45deg)';
+          }
+        });
+      }
     } catch(e) {
-      console.log('Could not set animation delay on nav items');
+      console.log('Could not enhance mobile menu', e);
     }
-  }, 1000); // Wait for header.js to finish
+  }, 1500); // Wait for header.js to finish
   
   // ===== Scroll Animations =====
   // Detect elements to animate on scroll
@@ -251,10 +291,23 @@ document.addEventListener("DOMContentLoaded", function() {
   
   // Close mobile menu on swipe left
   document.addEventListener('swipe-left', () => {
-    if (mainNav && mainNav.classList.contains('active')) {
+    const mobileNavOverlay = document.getElementById("mobile-nav-overlay");
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    
+    if (mobileNavOverlay && mobileMenuToggle && 
+        mobileNavOverlay.style.display === 'flex') {
       mobileMenuToggle.setAttribute('aria-expanded', 'false');
-      mainNav.classList.remove('active');
+      mobileNavOverlay.style.display = 'none';
       document.body.style.overflow = '';
+      
+      // Reset hamburger to original state
+      const topBar = document.getElementById('hamburger-top');
+      const middleBar = document.getElementById('hamburger-middle');
+      const bottomBar = document.getElementById('hamburger-bottom');
+      
+      if (topBar) topBar.style.transform = '';
+      if (middleBar) middleBar.style.opacity = '1';
+      if (bottomBar) bottomBar.style.transform = '';
     }
   });
   
@@ -272,11 +325,10 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Make sure all interactive elements have accessible names
-  const buttons = document.querySelectorAll('button:not([aria-label]):not([aria-labelledby])');
+  const buttons = document.querySelectorAll('button:not([aria-label]):not([aria-labelledby]):not(#mobile-menu-toggle):not(#mobile-close-btn)');
   buttons.forEach(button => {
     if (!button.textContent.trim()) {
-      const buttonType = button.classList.contains('mobile-menu-toggle') ? 'Menu' : 'Button';
-      button.setAttribute('aria-label', buttonType);
+      button.setAttribute('aria-label', 'Button');
     }
   });
   
