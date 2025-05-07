@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Outlier Leadership: Brilliant Moments</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      :root {
+        --primary: #000000;
+        --accent: #0047FF;
+        --text: #ffffff;
+        --muted: #a0a0a0;
+        --card: #111111;
+      }
+
+      body {
+        background-color: var(--primary);
+        color: var(--text);
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, sans-serif;
+      }
+
+      .bg-accent {
+        background-color: var(--accent);
+      }
+
+      .text-accent {
+        color: var(--accent);
+      }
+
+      .border-accent {
+        border-color: var(--accent);
+      }
+
+      .unicorn-header {
+        height: 550px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .unicorn-image {
+        position: absolute;
+        bottom: -50px;
+        right: 10%;
+        height: 500px;
+        z-index: 0;
+        filter: drop-shadow(0 0 20px rgba(0, 71, 255, 0.5));
+      }
+
+      .geometric-icon {
+        position: absolute;
+        opacity: 0.07;
+        z-index: 0;
+      }
+
+      .vertical-timeline-line {
+        position: absolute;
+        left: 16.5%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: var(--accent);
+        z-index: 0;
+      }
+
+      .highlight {
+        color: var(--accent);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+          0 0 15px rgba(0, 71, 255, 0.3);
+      }
+
+      .impact-bar {
+        height: 4px;
+        background: var(--accent);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      .slide-in-right {
+        animation: slideInRight 0.5s forwards;
+      }
+
+      @keyframes slideInRight {
+        from {
+          transform: translateX(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .appear {
+        animation: appear 0.5s forwards;
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Geometric Background Icons -->
+    <div class="geometric-icon" style="top: 10%; left: 5%; width: 600px; height: 600px;">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5L95 50L50 95L5 50L50 5Z" stroke="#0047FF" stroke-width="2" />
+      </svg>
+    </div>
+    <div class="geometric-icon" style="top: 60%; right: 5%; width: 800px; height: 800px;">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10L90 50L50 90L10 50L50 10Z" stroke="#0047FF" stroke-width="2" />
+      </svg>
+    </div>
+
+    <!-- Hero Section with Unicorn -->
+    <header class="unicorn-header relative flex items-center">
+      <img
+        src="../images/outlier.webp"
+        alt="Outlier Unicorn"
+        class="unicorn-image"
+      />
+      <div class="container mx-auto px-6 py-12 relative z-10">
+        <div class="max-w-xl">
+          <h1 class="text-6xl font-bold mb-2 floating">
+            <span class="highlight">OUT</span>STANDING<br />
+            <span class="highlight">LI</span>MITS BROK<span class="highlight"
+              >ER</span
+            >
+          </h1>
+          <h2 class="text-4xl font-light mb-6">Brilliant Leadership Moments</h2>
+          <p class="text-xl text-gray-300 mb-8">
+            Explore the journey that redefined what's possible through
+            innovation, team building, and record-breaking results.
+          </p>
+          <div class="flex space-x-4">
+            <button
+              id="explore-btn"
+              class="bg-accent text-white px-8 py-3 rounded-none font-medium hover:bg-blue-700 transition-all"
+            >
+              Explore Timeline
+            </button>
+            <button
+              class="border border-accent text-white px-8 py-3 rounded-none font-medium hover:bg-blue-900 hover:bg-opacity-30 transition-all"
+            >
+              Learn Our Approach
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 relative">
+      <!-- Impact Stats -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-8 flex items-center">
+          <span class="highlight mr-2">|</span>
+          Measurable Impact
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="text-3xl font-bold mb-1 highlight">50%</div>
+            <div class="text-gray-400">Churn Reduction</div>
+          </div>
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="text-3xl font-bold mb-1 highlight">$14M+</div>
+            <div class="text-gray-400">Revenue Protected</div>
+          </div>
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="text-3xl font-bold mb-1 highlight">2,040</div>
+            <div class="text-gray-400">Hours Saved Monthly</div>
+          </div>
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="text-3xl font-bold mb-1 highlight">+28%</div>
+            <div class="text-gray-400">Quota Attainment</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline Controls -->
+      <section class="mb-8">
+        <div
+          class="flex flex-wrap justify-between items-center bg-card rounded-none p-4 mb-6"
+        >
+          <div class="flex items-center space-x-3 mb-2 md:mb-0">
+            <button
+              id="timeline-view"
+              class="view-toggle-btn active px-3 py-1.5 rounded-none text-sm font-medium transition-all bg-accent"
+            >
+              Timeline View
+            </button>
+            <button
+              id="card-view"
+              class="view-toggle-btn px-3 py-1.5 rounded-none text-sm font-medium transition-all bg-gray-900"
+            >
+              Card View
+            </button>
+          </div>
+
+          <div class="flex items-center space-x-3">
+            <span class="text-gray-400">Sort by:</span>
+            <button
+              id="sort-chrono"
+              class="px-3 py-1.5 rounded-none text-sm font-medium transition-all bg-accent text-white"
+            >
+              Chronological
+            </button>
+            <button
+              id="sort-impact"
+              class="px-3 py-1.5 rounded-none text-sm font-medium transition-all bg-gray-900"
+            >
+              Impact
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2 mb-10">
+          <button
+            class="category-btn active px-4 py-2 rounded-none text-sm font-medium bg-accent text-white transition-all"
+          >
+            All Moments
+          </button>
+          <button
+            class="category-btn px-4 py-2 rounded-none text-sm font-medium bg-card transition-all"
+          >
+            Leadership Innovations
+          </button>
+          <button
+            class="category-btn px-4 py-2 rounded-none text-sm font-medium bg-card transition-all"
+          >
+            Team Building
+          </button>
+          <button
+            class="category-btn px-4 py-2 rounded-none text-sm font-medium bg-card transition-all"
+          >
+            Business Results
+          </button>
+          <button
+            class="category-btn px-4 py-2 rounded-none text-sm font-medium bg-card transition-all"
+          >
+            System Transformations
+          </button>
+        </div>
+      </section>
+
+      <!-- Timeline View -->
+      <section id="timeline-view-content" class="mb-12 relative">
+        <!-- Vertical Timeline Line -->
+        <div class="vertical-timeline-line"></div>
+        
+        <!-- Timeline Item 1 -->
+        <div class="mb-10 slide-in-right">
+          <div class="flex gap-6">
+            <div
+              class="flex-shrink-0 w-20 text-right text-lg font-bold text-accent pt-1"
+            >
+              ~2017
+            </div>
+            <div
+              class="flex-grow bg-card rounded-none p-6 transform transition-all duration-300 card-hover relative"
+            >
+              <!-- Impact Bar -->
+              <div class="impact-bar"></div>
+              
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-bold text-xl">
+                  Customer Success Team Creation
+                </h3>
+              </div>
+
+              <p class="text-gray-300 mb-4">
+                Built Verizon's first B2B Customer Success Team from concept to
+                implementation, reducing churn by 50% and preserving $14M in
+                first-year revenue.
+              </p>
+
+              <div class="mb-4 grid grid-cols-2 gap-3">
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-sm font-medium text-gray-400">
+                    Churn Reduction
+                  </div>
+                  <div class="text-lg font-semibold text-accent">50%</div>
+                </div>
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-sm font-medium text-gray-400">
+                    Revenue Protected
+                  </div>
+                  <div class="text-lg font-semibold text-accent">$14M+</div>
+                </div>
+              </div>
+
+              <button
+                class="text-accent hover:text-blue-300 text-sm font-medium transition-colors flex items-center"
+              >
+                Show Full Story
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="mb-10 slide-in-right" style="animation-delay: 0.15s">
+          <div class="flex gap-6">
+            <div
+              class="flex-shrink-0 w-20 text-right text-lg font-bold text-accent pt-1"
+            >
+              ~2016
+            </div>
+            <div
+              class="flex-grow bg-card rounded-none p-6 transform transition-all duration-300 card-hover relative"
+            >
+              <!-- Impact Bar -->
+              <div class="impact-bar"></div>
+              
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-bold text-xl">Quota Model Transformation</h3>
+              </div>
+
+              <p class="text-gray-300 mb-4">
+                Developed a revolutionary four-dimensional quota model that
+                balanced fairness, business needs, and motivational psychology.
+                The model was so successful it became the standard nationwide.
+              </p>
+
+              <div class="mb-4 grid grid-cols-2 gap-3">
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-sm font-medium text-gray-400">
+                    Performance Increase
+                  </div>
+                  <div class="text-lg font-semibold text-accent">+31%</div>
+                </div>
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-sm font-medium text-gray-400">
+                    Team Satisfaction
+                  </div>
+                  <div class="text-lg font-semibold text-accent">+45%</div>
+                </div>
+              </div>
+
+              <button
+                class="text-accent hover:text-blue-300 text-sm font-medium transition-colors flex items-center"
+              >
+                Show Full Story
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3 -->
+        <div class="mb-6 slide-in-right" style="animation-delay: 0.3s">
+          <div class="flex gap-6">
+            <div
+              class="flex-shrink-0 w-20 text-right text-lg font-bold text-accent pt-1"
+            >
+              ~2022
+            </div>
+            <div
+              class="flex-grow bg-card rounded-none p-6 transform transition-all duration-300 card-hover relative"
+            >
+              <!-- Impact Bar -->
+              <div class="impact-bar"></div>
+              
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="font-bold text-xl">Record-Breaking Growth</h3>
+              </div>
+
+              <p class="text-gray-300 mb-4">
+                Led team to 19 consecutive months of record-breaking
+                year-over-year growth while maintaining healthy work-life
+                balance.
+              </p>
+
+              <div class="mb-4 grid grid-cols-2 gap-3">
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-sm font-medium text-gray-400">
+                    Growth Streak
+                  </div>
+                  <div class="text-lg font-semibold text-accent">
+                    19 months
+                  </div>
+                </div>
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-sm font-medium text-gray-400">
+                    YoY Growth
+                  </div>
+                  <div class="text-lg font-semibold text-accent">
+                    24% avg
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="text-accent hover:text-blue-300 text-sm font-medium transition-colors flex items-center"
+              >
+                Show Full Story
+                <svg
+                  class="w-4 h-4 ml-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-10 space-x-2">
+          <button
+            class="page-btn active w-8 h-8 flex items-center justify-center text-sm font-medium bg-accent text-white"
+          >
+            1
+          </button>
+          <button
+            class="page-btn w-8 h-8 flex items-center justify-center text-sm font-medium bg-card"
+          >
+            2
+          </button>
+          <button
+            class="page-btn w-8 h-8 flex items-center justify-center text-sm font-medium bg-card"
+          >
+            3
+          </button>
+          <button
+            class="page-btn w-8 h-8 flex items-center justify-center text-sm font-medium bg-card"
+          >
+            4
+          </button>
+        </div>
+      </section>
+
+      <!-- Card View (Hidden by default) -->
+      <section id="card-view-content" class="mb-12 hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-card rounded-none overflow-hidden transform transition-all duration-300 card-hover relative"
+          >
+            <!-- Impact Bar -->
+            <div class="impact-bar"></div>
+            
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div class="text-lg font-bold text-accent">~2017</div>
+              </div>
+
+              <h3 class="font-bold text-xl mb-2">
+                Customer Success Team Creation
+              </h3>
+              <p class="text-gray-300 mb-4 text-sm">
+                Built Verizon's first B2B Customer Success Team from concept to
+                implementation, reducing churn by 50% and preserving $14M in
+                first-year revenue.
+              </p>
+
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-xs font-medium text-gray-400">
+                    Churn Reduction
+                  </div>
+                  <div class="text-base font-semibold text-accent">50%</div>
+                </div>
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-xs font-medium text-gray-400">
+                    Revenue Protected
+                  </div>
+                  <div class="text-base font-semibold text-accent">
+                    $14M+
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="w-full py-2 border border-accent text-white rounded-none hover:bg-blue-900 hover:bg-opacity-30 transition-all text-sm font-medium"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-card rounded-none overflow-hidden transform transition-all duration-300 card-hover relative"
+          >
+            <!-- Impact Bar -->
+            <div class="impact-bar"></div>
+            
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div class="text-lg font-bold text-accent">~2016</div>
+              </div>
+
+              <h3 class="font-bold text-xl mb-2">Quota Model Transformation</h3>
+              <p class="text-gray-300 mb-4 text-sm">
+                Developed a revolutionary four-dimensional quota model that
+                balanced fairness, business needs, and motivational psychology.
+                The model was so successful it became the standard nationwide.
+              </p>
+
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-xs font-medium text-gray-400">
+                    Performance Increase
+                  </div>
+                  <div class="text-base font-semibold text-accent">
+                    +31%
+                  </div>
+                </div>
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-xs font-medium text-gray-400">
+                    Team Satisfaction
+                  </div>
+                  <div class="text-base font-semibold text-accent">
+                    +45%
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="w-full py-2 border border-accent text-white rounded-none hover:bg-blue-900 hover:bg-opacity-30 transition-all text-sm font-medium"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-card rounded-none overflow-hidden transform transition-all duration-300 card-hover relative"
+          >
+            <!-- Impact Bar -->
+            <div class="impact-bar"></div>
+            
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <div class="text-lg font-bold text-accent">~2022</div>
+              </div>
+
+              <h3 class="font-bold text-xl mb-2">Record-Breaking Growth</h3>
+              <p class="text-gray-300 mb-4 text-sm">
+                Led team to 19 consecutive months of record-breaking
+                year-over-year growth while maintaining healthy work-life
+                balance.
+              </p>
+
+              <div class="grid grid-cols-2 gap-2 mb-4">
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-xs font-medium text-gray-400">
+                    Growth Streak
+                  </div>
+                  <div class="text-base font-semibold text-accent">
+                    19 months
+                  </div>
+                </div>
+                <div
+                  class="bg-black bg-opacity-50 rounded-none p-2 text-center"
+                >
+                  <div class="text-xs font-medium text-gray-400">
+                    YoY Growth
+                  </div>
+                  <div class="text-base font-semibold text-accent">
+                    24% avg
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="w-full py-2 border border-accent text-white rounded-none hover:bg-blue-900 hover:bg-opacity-30 transition-all text-sm font-medium"
+              >
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination (Card View) -->
+        <div class="flex justify-center mt-10 space-x-2">
+          <button
+            class="page-btn active w-8 h-8 flex items-center justify-center text-sm font-medium bg-accent text-white"
+          >
+            1
+          </button>
+          <button
+            class="page-btn w-8 h-8 flex items-center justify-center text-sm font-medium bg-card"
+          >
+            2
+          </button>
+          <button
+            class="page-btn w-8 h-8 flex items-center justify-center text-sm font-medium bg-card"
+          >
+            3
+          </button>
+          <button
+            class="page-btn w-8 h-8 flex items-center justify-center text-sm font-medium bg-card"
+          >
+            4
+          </button>
+        </div>
+      </section>
+
+      <!-- Leadership Principles -->
+      <section class="my-16">
+        <h2 class="text-2xl font-bold mb-8 flex items-center">
+          <span class="highlight mr-2">|</span>
+          Leadership Principles
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="flex gap-4 items-start">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-accent rounded-none flex items-center justify-center text-white font-medium"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">80/20 Focus</h3>
+                <p class="text-gray-300">
+                  Ruthlessly prioritizing the vital few initiatives that drive
+                  80% of results, ensuring maximum impact with minimal wasted
+                  effort.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="flex gap-4 items-start">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-accent rounded-none flex items-center justify-center text-white font-medium"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">Strength-Based Teams</h3>
+                <p class="text-gray-300">
+                  Designing teams around individual strengths rather than trying
+                  to fix weaknesses, placing people where their natural talents
+                  create maximum value.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="flex gap-4 items-start">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-accent rounded-none flex items-center justify-center text-white font-medium"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">Trust & Delegation</h3>
+                <p class="text-gray-300">
+                  Empowering teams by "letting go of the handlebars" and
+                  trusting their expertise, providing guidance on the
+                  destination while allowing flexibility in the journey.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-card rounded-none p-6 transform transition-all duration-300 card-hover"
+          >
+            <div class="flex gap-4 items-start">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-accent rounded-none flex items-center justify-center text-white font-medium"
+              >
+                4
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-2">ROI-Driven Decisions</h3>
+                <p class="text-gray-300">
+                  Ensuring every initiative has measurable return on investment
+                  and tracking results, maintaining a disciplined focus on
+                  business impact over activity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black py-12 border-t border-accent">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h2 class="text-2xl font-bold mb-2">
+              <span class="highlight">OUT</span>LIER
+            </h2>
+            <p class="text-gray-400">
+              Breaking barriers. Redefining leadership.
+            </p>
+          </div>
+
+          <div class="flex space-x-6">
+            <a
+              href="#"
+              class="text-accent hover:text-blue-300 transition-colors"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-accent hover:text-blue-300 transition-colors"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-accent hover:text-blue-300 transition-colors"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-900 mt-8 pt-8 text-center text-gray-500 text-sm"
+        >
+          © 2025 Outlier Leadership. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle between timeline and card views
+      document
+        .getElementById("timeline-view")
+        .addEventListener("click", function () {
+          document
+            .getElementById("timeline-view-content")
+            .classList.remove("hidden");
+          document.getElementById("card-view-content").classList.add("hidden");
+
+          document.getElementById("timeline-view").classList.add("bg-accent");
+          document.getElementById("card-view").classList.remove("bg-accent");
+          document.getElementById("card-view").classList.add("bg-gray-900");
+        });
+
+      document
+        .getElementById("card-view")
+        .addEventListener("click", function () {
+          document
+            .getElementById("card-view-content")
+            .classList.remove("hidden");
+          document
+            .getElementById("timeline-view-content")
+            .classList.add("hidden");
+
+          document.getElementById("card-view").classList.add("bg-accent");
+          document.getElementById("timeline-view").classList.remove("bg-accent");
+          document.getElementById("timeline-view").classList.add("bg-gray-900");
+        });
+
+      // Explore button scrolls to timeline
+      document
+        .getElementById("explore-btn")
+        .addEventListener("click", function () {
+          document.getElementById("timeline-view-content").scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+
+      // Category buttons
+      const categoryBtns = document.querySelectorAll(".category-btn");
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          categoryBtns.forEach((b) => {
+            b.classList.remove("active", "bg-accent", "text-white");
+            b.classList.add("bg-card");
+          });
+
+          this.classList.add("active", "bg-accent", "text-white");
+          this.classList.remove("bg-card");
+        });
+      });
+
+      // Sort buttons
+      document
+        .getElementById("sort-chrono")
+        .addEventListener("click", function () {
+          this.classList.add("bg-accent", "text-white");
+          this.classList.remove("bg-gray-900");
+
+          document
+            .getElementById("sort-impact")
+            .classList.remove("bg-accent", "text-white");
+          document.getElementById("sort-impact").classList.add("bg-gray-900");
+        });
+
+      document
+        .getElementById("sort-impact")
+        .addEventListener("click", function () {
+          this.classList.add("bg-accent", "text-white");
+          this.classList.remove("bg-gray-900");
+
+          document
+            .getElementById("sort-chrono")
+            .classList.remove("bg-accent", "text-white");
+          document.getElementById("sort-chrono").classList.add("bg-gray-900");
+        });
+
+      // Page buttons
+      const pageBtns = document.querySelectorAll(".page-btn");
+      pageBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          pageBtns.forEach((b) => {
+            b.classList.remove("active", "bg-accent", "text-white");
+            b.classList.add("bg-card");
+          });
+
+          this.classList.add("active", "bg-accent", "text-white");
+          this.classList.remove("bg-card");
+        });
+      });
+    </script>
+  </body>
+</html>
