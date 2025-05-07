@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future24 - Brilliant Moments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+            'slide-up': 'slideUp 1s ease-out forwards',
+            'slide-right': 'slideRight 1s ease-out forwards',
+            'slide-left': 'slideLeft 1s ease-out forwards',
+            'fade-in': 'fadeIn 1.5s ease-out forwards',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 5px rgba(66, 153, 225, 0.5)' },
+              '100%': { boxShadow: '0 0 20px rgba(66, 153, 225, 0.8)' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(50px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            slideRight: {
+              '0%': { transform: 'translateX(-50px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            slideLeft: {
+              '0%': { transform: 'translateX(50px)', opacity: '0' },
+              '100%': { transform: 'translateX(0)', opacity: '1' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #60A5FA;
+      top: calc(50% - 7.5px);
+      left: -37.5px;
+      box-shadow: 0 0 0 6px rgba(96, 165, 250, 0.2);
+    }
+    
+    .timeline-dot-right::before {
+      left: auto;
+      right: -37.5px;
+    }
+
+    .stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle var(--duration) ease-in-out infinite;
+      opacity: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: var(--opacity); }
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+  <!-- Stars background -->
+  <div class="stars" id="stars"></div>
+
+  <div class="relative bg-gradient-to-b from-blue-900 via-indigo-900 to-purple-900 min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <!-- Animated gradient orb -->
+    <div class="absolute top-1/4 -left-40 w-80 h-80 bg-gradient-radial from-blue-400/20 to-transparent rounded-full animate-pulse-slow"></div>
+    <div class="absolute bottom-1/4 -right-40 w-80 h-80 bg-gradient-radial from-purple-400/20 to-transparent rounded-full animate-pulse-slow" style="animation-delay: 2s;"></div>
+    
+    <div class="max-w-6xl mx-auto relative">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-center animate-fade-in">
+        Brilliant Moments in <span class="text-blue-300">Future24</span>
+      </h1>
+      
+      <p class="text-xl mb-20 text-center text-blue-200 max-w-3xl mx-auto animate-fade-in opacity-0" style="animation-delay: 0.3s;">
+        Explore the key milestones that have shaped our journey from concept to reality.
+      </p>
+      
+      <div class="relative">
+        <!-- Vertical timeline line -->
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-400 to-purple-400 rounded animate-glow"></div>
+        
+        <!-- Timeline events -->
+        <div class="space-y-28">
+          <!-- Event 1 -->
+          <div class="relative opacity-0 animate-slide-up" style="animation-delay: 0.5s;">
+            <!-- Year marker -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 -top-8 z-10">
+              <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white text-xl font-bold rounded-full w-20 h-20 flex items-center justify-center shadow-xl animate-float border-2 border-blue-300/30">
+                2021
+              </div>
+            </div>
+            
+            <!-- Content box -->
+            <div class="glass rounded-xl p-6 shadow-xl max-w-md mx-auto md:mx-0 md:ml-auto md:mr-[55%] relative timeline-dot transform transition-all duration-300 hover:scale-105 hover:shadow-blue-500/20 hover:shadow-lg">
+              <h3 class="text-2xl font-bold text-blue-300 mb-2">Project Inception</h3>
+              <p class="text-blue-100">The initial idea for Future24 was conceptualized, focusing on innovative solutions for tomorrow's challenges.</p>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="relative opacity-0 animate-slide-up" style="animation-delay: 0.8s;">
+            <!-- Year marker -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 -top-8 z-10">
+              <div class="bg-gradient-to-br from-blue-500 to-indigo-600 text-white text-xl font-bold rounded-full w-20 h-20 flex items-center justify-center shadow-xl animate-float border-2 border-blue-300/30" style="animation-delay: 1.5s;">
+                2022
+              </div>
+            </div>
+            
+            <!-- Content box -->
+            <div class="glass rounded-xl p-6 shadow-xl max-w-md mx-auto md:mx-0 md:mr-auto md:ml-[55%] relative timeline-dot timeline-dot-right transform transition-all duration-300 hover:scale-105 hover:shadow-indigo-500/20 hover:shadow-lg">
+              <h3 class="text-2xl font-bold text-indigo-300 mb-2">Team Formation</h3>
+              <p class="text-blue-100">A diverse team of experts came together, bringing unique perspectives and skills to turn the vision into reality.</p>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="relative opacity-0 animate-slide-up" style="animation-delay: 1.1s;">
+            <!-- Year marker -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 -top-8 z-10">
+              <div class="bg-gradient-to-br from-indigo-500 to-purple-600 text-white text-xl font-bold rounded-full w-20 h-20 flex items-center justify-center shadow-xl animate-float border-2 border-indigo-300/30" style="animation-delay: 3s;">
+                2023
+              </div>
+            </div>
+            
+            <!-- Content box -->
+            <div class="glass rounded-xl p-6 shadow-xl max-w-md mx-auto md:mx-0 md:ml-auto md:mr-[55%] relative timeline-dot transform transition-all duration-300 hover:scale-105 hover:shadow-purple-500/20 hover:shadow-lg">
+              <h3 class="text-2xl font-bold text-purple-300 mb-2">Breakthrough Innovation</h3>
+              <p class="text-blue-100">After months of research and development, the core technology behind Future24 was successfully demonstrated.</p>
+            </div>
+          </div>
+
+          <!-- Event 4 -->
+          <div class="relative opacity-0 animate-slide-up" style="animation-delay: 1.4s;">
+            <!-- Year marker -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 -top-8 z-10">
+              <div class="bg-gradient-to-br from-purple-500 to-pink-600 text-white text-xl font-bold rounded-full w-20 h-20 flex items-center justify-center shadow-xl animate-float border-2 border-purple-300/30" style="animation-delay: 4.5s;">
+                2024
+              </div>
+            </div>
+            
+            <!-- Content box -->
+            <div class="glass rounded-xl p-6 shadow-xl max-w-md mx-auto md:mx-0 md:mr-auto md:ml-[55%] relative timeline-dot timeline-dot-right transform transition-all duration-300 hover:scale-105 hover:shadow-pink-500/20 hover:shadow-lg">
+              <h3 class="text-2xl font-bold text-pink-300 mb-2">Global Launch</h3>
+              <p class="text-blue-100">Future24 officially launched worldwide, introducing cutting-edge solutions to users across the globe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-24 text-center opacity-0 animate-fade-in" style="animation-delay: 1.7s;">
+        <button class="glass bg-blue-500 bg-opacity-50 hover:bg-blue-600 hover:bg-opacity-50 text-white font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 shadow-lg">
+          Join Our Journey
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Create twinkling stars
+    const starsContainer = document.getElementById('stars');
+    const starCount = 200;
+    
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      
+      // Random positioning
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      
+      // Random size
+      const size = Math.random() * 3 + 1;
+      
+      // Random animation duration and delay
+      const duration = Math.random() * 5 + 3;
+      const delay = Math.random() * 5;
+      const opacity = Math.random() * 0.7 + 0.3;
+      
+      star.style.left = `${x}%`;
+      star.style.top = `${y}%`;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.setProperty('--duration', `${duration}s`);
+      star.style.setProperty('--opacity', opacity);
+      star.style.animationDelay = `${delay}s`;
+      
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
