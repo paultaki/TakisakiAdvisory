@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 pageName === "impact.html" ? "text-accent border-accent" : "text-white"
               }">Impact</a></li>
               <li><a href="insights.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
-                pageName === "insights.html" || pageName === "blogs.html" ? "text-accent border-accent" : "text-white"
+                pageName === "insights.html" ? "text-accent border-accent" : "text-white"
               }">Insights</a></li>
               <li><a href="about.html" class="text-base font-bold tracking-wide hover:text-accent transition py-2 border-b border-transparent hover:border-accent ${
                 pageName === "about.html" ? "text-accent border-accent" : "text-white"
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 pageName === "impact.html" ? "text-accent" : "text-white"
               }">Impact</a></li>
               <li><a href="insights.html" class="text-2xl tracking-wide hover:text-accent transition ${
-                pageName === "insights.html" || pageName === "blogs.html" ? "text-accent" : "text-white"
+                pageName === "insights.html" ? "text-accent" : "text-white"
               }">Insights</a></li>
               <li><a href="about.html" class="text-2xl tracking-wide hover:text-accent transition ${
                 pageName === "about.html" ? "text-accent" : "text-white"
