@@ -1,827 +1,547 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Paul Takisaki - Executive leadership coaching for those who think differently. Strategic clarity and transformative leadership development."
-    />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUTLIER - Strategic Leadership</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'outlier-cyan': '#00FFFF',
+                        'dark-gray': '#121212',
+                    },
+                    fontFamily: {
+                        'sans': ['Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-      @media (max-width: 768px) {
-        .contact-form-container {
-          width: 100% !important;
-          max-width: 100% !important;
-        }
-        .contact-form {
-          width: 100% !important;
-        }
-        .form-group input,
-        .form-group textarea {
-          width: 100% !important;
-          box-sizing: border-box !important;
-        }
-      }
-    </style>
-    <title>Paul Takisaki | Leadership for Those Who Think Differently</title>
-
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="Paul Takisaki | Leadership for Those Who Think Differently"
-    />
-    <meta
-      property="og:description"
-      content="Executive leadership coaching for those who think differently. Strategic clarity and transformative leadership development."
-    />
-    <meta
-      property="og:image"
-      content="https://www.paultakisaki.com/images/paul-og-image.jpg"
-    />
-    <meta property="og:url" content="https://www.paultakisaki.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Paul Takisaki" />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Paul Takisaki | Leadership for Those Who Think Differently"
-    />
-    <meta
-      name="twitter:description"
-      content="Executive leadership coaching for those who think differently. Strategic clarity and transformative leadership development."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.paultakisaki.com/images/paul-og-image.jpg"
-    />
-
-    <!-- Favicon Package -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/favicon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="/images/safari-pinned-tab.svg"
-      color="#00e5ff"
-    />
-    <meta name="msapplication-TileColor" content="#121212" />
-    <meta name="theme-color" content="#121212" />
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Preload critical resources -->
-    <link rel="preload" href="images/ptlogo.webp" as="image" />
-    <link rel="preload" href="styles.css" as="style" />
-    <link rel="stylesheet" href="styles.css" />
-    
-    <!-- Mobile Experience Enhancement -->
-    <link rel="stylesheet" href="mobile-master.css">
-    <script src="mobile-experience.js" defer></script>
-    
-    <style>
-      /* Sticky CTA Styles */
-      .hero-cta {
-        transition: opacity 0.3s ease, transform 0.3s ease;
-      }
-      
-      /* Style for button before it becomes sticky */
-      .button.primary {
-        transition: all 0.3s ease;
-      }
-      
-      /* When the container becomes sticky */
-      .hero-cta.sticky {
-        position: fixed;
-        top: 70px; /* Match the header height */
-        left: 0;
-        width: 100%;
-        z-index: 900;
-        background-color: rgba(18, 18, 18, 0.95);
-        padding: 15px 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-      
-      /* Hide the secondary link when sticky */
-      .hero-cta.sticky .text-link {
-        display: none;
-      }
-      
-      /* Button style when sticky */
-      .hero-cta.sticky .button.primary {
-        margin: 0;
-        background-color: #00e5ff; /* Brighter color when sticky */
-        color: #000;
-        box-shadow: 0 0 10px rgba(0, 229, 255, 0.4); /* Subtle glow effect */
-        transform: scale(1.02); /* Slightly larger */
-        transition: all 0.3s ease;
-      }
-      
-      /* Hover effect for sticky button */
-      .hero-cta.sticky .button.primary:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
-      }
-      
-      @media (max-width: 992px) {
-        .hero-cta.sticky {
-          top: 60px; /* Adjust for smaller header on medium screens */
+        html {
+            scroll-behavior: smooth;
         }
         
-        .hero-cta.sticky .button.primary {
-          font-size: 15px;
-          padding: 10px 20px;
-        }
-      }
-      
-      @media (max-width: 768px) {
-        .hero-cta.sticky {
-          top: 50px; /* Adjust for even smaller header on small screens */
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
         }
         
-        .hero-cta.sticky .button.primary {
-          font-size: 14px;
-          padding: 8px 16px;
+        .horizontal-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
-      }
-      
-      @media (max-width: 480px) {
-        .hero-cta.sticky .button.primary {
-          font-size: 12px;
-          padding: 6px 12px;
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-      }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in;
+        }
     </style>
-    
-    <!-- Font preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- Phosphor Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css" />
-    <!-- Backup Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Paul Takisaki",
-        "url": "https://www.paultakisaki.com",
-        "image": "https://www.paultakisaki.com/images/headshot_bw.webp",
-        "jobTitle": "Executive Leadership Coach",
-        "description": "Executive leadership coaching for those who think differently. Strategic clarity and transformative leadership development.",
-        "sameAs": ["https://www.linkedin.com/in/paultaki"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Gilbert",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "offers": {
-          "@type": "Offer",
-          "name": "Executive Coaching",
-          "description": "For leaders ready to rise without conforming. Develop the strategic clarity and quiet authority that drives exceptional results."
-        }
-      }
-    </script>
-    
-    <!-- Service structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Executive Coaching",
-        "provider": {
-          "@type": "Person",
-          "name": "Paul Takisaki"
-        },
-        "description": "For leaders ready to rise without conforming. Develop the strategic clarity and quiet authority that drives exceptional results.",
-        "offers": {
-          "@type": "Offer",
-          "price": "1500",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    </script>
-    
-    <!-- Service structured data -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Advisory Retainer",
-        "provider": {
-          "@type": "Person",
-          "name": "Paul Takisaki"
-        },
-        "description": "For founders or senior leaders scaling complexity. Includes team strategy and systems audit.",
-        "offers": {
-          "@type": "Offer",
-          "price": "3000",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Scroll progress indicator -->
-    <div class="scroll-progress" aria-hidden="true"></div>
-    
-    <!-- Skip to content link for keyboard users -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
-    
-    <!-- Header container for header.js -->
-    <div id="header-container"></div>
-    
-    <!-- Page Loader -->
-    <div class="page-loader">
-      <div class="loader-content">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">PAUL <span>TAKISAKI</span></div>
-      </div>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+            <a href="#hero" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+            <a href="#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+            <a href="#testimonials" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Testimonials</a>
+            <a href="#method" class="hover:text-outlier-cyan transition" onclick="closeMenu()">The Takisaki Method</a>
+            <a href="#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Take Action</a>
+            <button onclick="closeMenu()" class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition">
+                Close Menu
+            </button>
+        </div>
     </div>
 
-    <main id="main-content">
-      <!-- 1. Hero Section: First 7 Seconds -->
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>
-              <span class="line">With</span>
-              <span class="line">Precision.</span>
-              <span class="line">Rebuild</span>
-              <span class="line">Your</span>
-              <span class="line">System.</span>
-              <span class="line">Deliver</span>
-              <span class="line">Elite</span>
-              <span class="line">Results.</span>
-            </h1>
-            <p class="hero-subtext">
-              From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership.
-            </p>
-            <div class="hero-cta" id="hero-cta">
-              <a href="#contact" class="button primary" id="cta-button"
-                >BOOK YOUR STRATEGY ACCELERATOR CALL</a
-              >
-              <a href="#vault" class="text-link ghost-style"
-                >DOWNLOAD: 5 BREAKTHROUGH SHIFTS FORTUNE 50 LEADERS USE TO WIN</a
-              >
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur">
+        <div class="flex items-center">
+            <a href="#hero" class="text-2xl font-bold tracking-wider">
+                <span class="text-outlier-cyan">OUT</span>LIER
+            </a>
+        </div>
+        <button id="menu-toggle" class="text-outlier-cyan focus:outline-none" onclick="toggleMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen pt-24 px-6 flex flex-col justify-between">
+            <div class="pt-16 flex flex-col md:flex-row items-center">
+                <div class="md:w-3/5">
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                        <div class="mb-2">With</div>
+                        <div class="mb-2">Precision.</div>
+                        <div class="mb-2">Rebuild</div>
+                        <div class="mb-2">Your</div>
+                        <div class="mb-2">System.</div>
+                        <div class="mb-2">Deliver</div>
+                        <div class="mb-2">Elite</div>
+                        <div>Results.</div>
+                    </h1>
+                    <p class="text-gray-400 mt-6 text-xl max-w-lg">
+                        From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership.
+                    </p>
+                    <button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition">
+                        BOOK YOUR STRATEGY CALL
+                    </button>
+                </div>
+                <div class="md:w-2/5 flex justify-center mt-12 md:mt-0">
+                    <img src="/api/placeholder/400/400" alt="Geometric Unicorn" class="w-40 h-40 md:w-48 md:h-48 object-contain" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Proof Section -->
+        <section id="proof" class="py-16 px-6">
+            <h2 class="text-4xl font-bold mb-4 text-outlier-cyan">PROVEN TRACK RECORD</h2>
+            <p class="text-3xl font-bold mb-12">No Fluff. Real Results.</p>
+            
+            <div class="relative">
+                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+                    <!-- Stat Card 1 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="text-5xl font-bold mb-2">4×</div>
+                        <div class="text-xl text-outlier-cyan mb-1">President's Cabinet</div>
+                        <div class="text-gray-400">Top 1% of organization</div>
+                    </div>
+                    
+                    <!-- Stat Card 2 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="text-5xl font-bold mb-2">14-14</div>
+                        <div class="text-xl text-outlier-cyan mb-1">Interview Success</div>
+                        <div class="text-gray-400">100% offer rate</div>
+                    </div>
+                    
+                    <!-- Stat Card 3 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="text-5xl font-bold mb-2">6+ Years</div>
+                        <div class="text-xl text-outlier-cyan mb-1">Quota Model</div>
+                        <div class="text-gray-400">National implementation</div>
+                    </div>
+                    
+                    <!-- Stat Card 4 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="text-5xl font-bold mb-2">12</div>
+                        <div class="text-xl text-outlier-cyan mb-1">Promotions</div>
+                        <div class="text-gray-400">In 20 year career</div>
+                    </div>
+                </div>
+                
+                <!-- Scroll indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 px-6">
+            <div class="relative">
+                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+                    <!-- Testimonial 1 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                        <p class="italic mb-4 text-lg">"Paul doesn't just coach—he empowers."</p>
+                        <div class="font-bold text-outlier-cyan">Emmanuel Nwoke</div>
+                        <div class="text-gray-400">Sr. Director, Verizon</div>
+                    </div>
+                    
+                    <!-- Testimonial 2 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                        <p class="italic mb-4 text-lg">"You've had an indelible mark on the business."</p>
+                        <div class="font-bold text-outlier-cyan">Aparna</div>
+                        <div class="text-gray-400">Chief Revenue Officer, Verizon</div>
+                    </div>
+                    
+                    <!-- Testimonial 3 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                        <p class="italic mb-4 text-lg">"I would not be the leader I am today without Paul."</p>
+                        <div class="font-bold text-outlier-cyan">Cam Vogt</div>
+                        <div class="text-gray-400">Senior Director, Verizon</div>
+                    </div>
+                </div>
+                
+                <!-- Scroll indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section id="services" class="py-16 px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-xl text-outlier-cyan mb-4">ELITE SERVICES</h2>
+                <h3 class="text-4xl font-bold mb-4">Behind-the-Scenes Transformation</h3>
+                <p class="text-gray-400">Direct C-suite advisory. Zero public footprint. Guaranteed results.</p>
             </div>
             
-            <!-- No duplicate sticky button needed with this approach -->
-          </div>
-          <div class="chess-visual">
-            <img
-              src="images/chess2.webp"
-              alt="Chess board representing strategic leadership thinking versus traditional approaches"
-              class="chess-image"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-      <!-- 2. Proof It Works Section (Social Proof / Trust Section) -->
-      <section id="proof" class="proof">
-        <div class="container">
-          <div class="section-header">
-            <h2>No Fluff. Real Results.</h2>
-          </div>
-
-          <div class="success-badges">
-            <div class="badge scroll-reveal">
-              <div class="badge-icon">
-                <i data-lucide="award" style="color: #00e5ff;"></i>
-              </div>
-              <div class="badge-text">4× Annual President's Cabinet Winner. Top 1%.</div>
+            <div class="text-center mb-12">
+                <h2 class="text-xl text-outlier-cyan mb-4">LEADERSHIP EXCELLENCE</h2>
+                <h3 class="text-3xl font-bold mb-4">Executive Development</h3>
+                <p class="text-gray-400 mb-8">Build invisible resumes. Land impossible roles.</p>
             </div>
-            <div class="badge scroll-reveal">
-              <div class="badge-icon">
-                <i data-lucide="check-circle" style="color: #00e5ff;"></i>
-              </div>
-              <div class="badge-text">14-for-14 Interview Offers</div>
+            
+            <div class="relative">
+                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+                    <!-- Service Card 1 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <h3 class="text-xl font-bold">Rising Star Program</h3>
+                        </div>
+                        <div class="text-3xl font-bold mb-4">$5,000<span class="text-gray-400 text-lg">/month</span></div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>1:1 career acceleration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Interview mastery (14/14 success rate)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Personal brand (private only)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>24/7 opportunity support</span>
+                            </li>
+                        </ul>
+                        <button onclick="openContactModal()" class="w-full py-3 mt-6 border border-outlier-cyan text-outlier-cyan font-medium rounded hover:bg-outlier-cyan hover:text-black transition">
+                            ACCELERATE TRAJECTORY
+                        </button>
+                    </div>
+                    
+                    <!-- Service Card 2 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            <h3 class="text-xl font-bold">Executive Trajectory</h3>
+                        </div>
+                        <div class="text-3xl font-bold mb-4">$10,000<span class="text-gray-400 text-lg">/month</span></div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>C-suite preparation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Board positioning strategy</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Confidential mentorship</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Direct decision-maker access</span>
+                            </li>
+                        </ul>
+                        <button onclick="openContactModal()" class="w-full py-3 mt-6 border border-outlier-cyan text-outlier-cyan font-medium rounded hover:bg-outlier-cyan hover:text-black transition">
+                            ASCEND TO EXECUTIVE
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Scroll indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                </div>
             </div>
-            <div class="badge scroll-reveal">
-              <div class="badge-icon">
-                <i data-lucide="bar-chart-2" style="color: #00e5ff;"></i>
-              </div>
-              <div class="badge-text">
-                Built National Quota Model (6+ years in use)
-              </div>
+            
+            <!-- Revenue Rescue Section -->
+            <div class="text-center mt-20 mb-12">
+                <h2 class="text-xl text-outlier-cyan mb-4">STRATEGIC INTERVENTION</h2>
+                <h3 class="text-3xl font-bold mb-4">Revenue Rescue Operations</h3>
+                <p class="text-gray-400 mb-8">When revenue is bleeding, we stop it fast.</p>
             </div>
-            <div class="badge scroll-reveal">
-              <div class="badge-icon">
-                <i data-lucide="trending-up" style="color: #00e5ff;"></i>
-              </div>
-              <div class="badge-text">12 Promotions in 20 Years</div>
+            
+            <div class="relative">
+                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+                    <!-- Service Card 3 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                            <h3 class="text-xl font-bold">Crisis Intervention</h3>
+                        </div>
+                        <div class="text-3xl font-bold mb-4">$15,000<span class="text-gray-400 text-lg">/month</span></div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Fix broken sales immediately</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>4-hour direct CEO consultation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Month-to-month flexibility</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Emergency response within 24 hours</span>
+                            </li>
+                        </ul>
+                        <button onclick="openContactModal()" class="w-full py-3 mt-6 border border-outlier-cyan text-outlier-cyan font-medium rounded hover:bg-outlier-cyan hover:text-black transition">
+                            ENGAGE CRISIS TEAM
+                        </button>
+                    </div>
+                    
+                    <!-- Service Card 4 -->
+                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                        <div class="flex items-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <h3 class="text-xl font-bold">Emergency Turnaround</h3>
+                        </div>
+                        <div class="text-3xl font-bold mb-4">$30,000<span class="text-gray-400 text-lg">/flat fee</span></div>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>30-day intensive system overhaul</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Guaranteed revenue impact in 90 days</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>CEO-only engagement</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Results or full refund</span>
+                            </li>
+                        </ul>
+                        <button onclick="openContactModal()" class="w-full py-3 mt-6 border border-outlier-cyan text-outlier-cyan font-medium rounded hover:bg-outlier-cyan hover:text-black transition">
+                            INITIATE TURNAROUND
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Scroll indicators -->
+                <div class="flex justify-center mt-6 space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
+                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
+                </div>
             </div>
-          </div>
-
-          <div class="mini-testimonials">
-            <div class="mini-testimonial scroll-reveal">
-              <p>Paul doesn't just coach—he empowers.</p>
-              <span>— Emmanuel Nwoke, Sr. Director, Verizon</span>
-            </div>
-            <div class="mini-testimonial scroll-reveal">
-              <p>You've had an indelible mark on the business.</p>
-              <span>— Aparna, Chief Revenue Officer, Verizon</span>
-            </div>
-            <div class="mini-testimonial scroll-reveal">
-              <p>I would not be the leader I am today without Paul.</p>
-              <span>— Cam Vogt, Senior Director, Verizon</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3. The Takisaki System™ Section -->
-      <section id="system" class="system">
-        <div class="container">
-          <div class="section-header">
-            <h2>Your Playbook, Not Theirs.</h2>
-          </div>
-
-          <div class="system-infographic">
-            <div class="system-step scroll-reveal">
-              <div class="step-number">
-                <i data-lucide="search" style="color: #00e5ff;"></i>
-              </div>
-              <h3>Discover Your Strengths</h3>
-              <p>Identity-led diagnosis</p>
-              <div class="step-arrow"><i data-lucide="chevron-right" style="color: #00e5ff;"></i></div>
-            </div>
-            <div class="system-step scroll-reveal">
-              <div class="step-number">
-                <i data-lucide="settings" style="color: #00e5ff;"></i>
-              </div>
-              <h3>Rewire the System</h3>
-              <p>Leadership strategies tailored to your reality</p>
-              <div class="step-arrow"><i data-lucide="chevron-right" style="color: #00e5ff;"></i></div>
-            </div>
-            <div class="system-step scroll-reveal">
-              <div class="step-number">
-                <i data-lucide="flag" style="color: #00e5ff;"></i>
-              </div>
-              <h3>Lead at Legacy Level</h3>
-              <p>Sustainable execution, built on clarity</p>
-            </div>
-          </div>
-
-          <p class="system-blurb">
-            "After 20 years of quietly outperforming louder leaders, I
-            reverse-engineered what actually works. It's not a script—it's a
-            custom operating system designed around who you are."
-          </p>
-        </div>
-      </section>
-
-      <!-- 4. Vault Preview Section -->
-      <section id="vault" class="vault">
-        <div class="container">
-          <div class="section-header">
-            <h2>Inside The Leadership Vault</h2>
-          </div>
-
-          <div class="vault-cards">
-            <div class="vault-card scroll-reveal">
-              <div class="vault-icon">🔍</div>
-              <h3>Case Study</h3>
-              <p>"Turning Attrition into 19 Months of Growth"</p>
-            </div>
-            <div class="vault-card scroll-reveal">
-              <div class="vault-icon">🎯</div>
-              <h3>Framework</h3>
-              <p>"The 80/20 Identity Map"</p>
-            </div>
-            <div class="vault-card scroll-reveal">
-              <div class="vault-icon">⚔️</div>
-              <h3>Lesson</h3>
-              <p>"When to Burn the Org Chart"</p>
-            </div>
-          </div>
-
-          <div class="vault-cta">
-            <a href="playbook.html" class="button primary">EXPLORE THE VAULT</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 5. Work With Me Section -->
-      <section id="work" class="work-with-me">
-        <div class="container">
-          <div class="section-header">
-            <h2>How I Work With Leaders Like You</h2>
-          </div>
-
-          <div class="work-grid">
-            <div class="work-card scroll-reveal">
-              <h3>1:1 Executive Coaching</h3>
-              <p>For high-performers ready to break through</p>
-              <ul class="work-features">
-                <li>Biweekly calls + strategy reviews</li>
-                <li>Email & Voxer access</li>
-                <li>Starts at $1,500/month</li>
-              </ul>
-              <a href="#contact" class="button primary">APPLY FOR COACHING</a>
-            </div>
-
-            <div class="work-card scroll-reveal">
-              <h3>Advisory Retainer</h3>
-              <p>For founders or senior leaders scaling complexity</p>
-              <ul class="work-features">
-                <li>Includes team strategy + systems audit</li>
-                <li>Starts at $3,000/month</li>
-              </ul>
-              <a href="#contact" class="button primary">BOOK DISCOVERY CALL</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. Final CTA (Reinforced) -->
-      <section id="final-cta" class="final-cta">
-        <div class="container">
-          <h2>Your Next Chapter Starts With One Honest Conversation.</h2>
-          <a href="#contact" class="button primary">LET'S TALK</a>
-          <p class="trust-tagline">No sales pitch. Just clarity.</p>
-        </div>
-      </section>
-
-      <!-- 7. Contact Section -->
-      <section id="contact" class="contact">
-        <!-- Mobile Contact Redirect -->
-        <div id="mobile-redirect" style="display: none; text-align: center; padding: 30px 20px;">
-          <h2 style="margin-bottom: 20px;">Let's Talk</h2>
-          <p style="margin-bottom: 30px;">Our mobile contact form provides a better experience on your device.</p>
-          <a href="mobile-contact.html" style="display: inline-block; padding: 15px 30px; background-color: #00e5ff; color: #000; text-decoration: none; border-radius: 8px; font-weight: bold;">OPEN MOBILE FORM</a>
-        </div>
-        
-        <!-- Desktop Contact Form -->
-        <div class="container desktop-form">
-          <div class="contact-form-container">
-            <form
-              class="contact-form enhanced-form"
-              action="/api/send"
-              method="POST"
-              style="width: 100% !important; max-width: 100% !important;"
-            >
-              <div class="form-group">
-                <label for="name" class="visually-hidden">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your Name"
-                  required
-                  aria-required="true"
-                  aria-describedby="name-help"
-                />
-                <span id="name-help" class="visually-hidden">Please enter your full name</span>
-              </div>
-              <div class="form-group">
-                <label for="email" class="visually-hidden">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your Email"
-                  required
-                  aria-required="true"
-                  aria-describedby="email-help"
-                />
-                <span id="email-help" class="visually-hidden">Please enter your business email</span>
-              </div>
-              <div class="form-group" style="width: 100% !important; margin: 0 !important; padding: 0 !important; max-width: 100% !important;">
-                <label for="message" class="visually-hidden">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Message"
-                  rows="5"
-                  required
-                  aria-required="true"
-                  aria-describedby="message-help"
-                  style="width: 100% !important; max-width: 100% !important; min-width: 100% !important; box-sizing: border-box !important; display: block !important;"
-                ></textarea>
-                <span id="message-help" class="visually-hidden">Please describe how I can help you</span>
-              </div>
-              <button type="submit" class="button primary">SUBMIT</button>
-              <div class="form-success-message">
-                <p>
-                  Thank you! Your message has been sent successfully. I'll get
-                  back to you shortly.
+            
+            <!-- Testimonial Quote -->
+            <div class="mt-20 max-w-2xl mx-auto text-center">
+                <svg class="h-8 w-8 text-outlier-cyan mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p class="text-xl italic mb-6">
+                    "After 12 months working with Paul, we've increased profitability by 28% while reducing our executive turnover to zero."
                 </p>
-              </div>
-            </form>
-          </div>
-        </div>
+                <div class="flex items-center justify-center mt-4">
+                    <div class="w-10 h-10 bg-gray-700 rounded-full mr-4"></div>
+                    <div class="text-left">
+                        <div class="font-bold text-outlier-cyan">Chief Revenue Officer</div>
+                        <div class="text-gray-400 text-sm">Fortune 500 Technology Company</div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
-        <script>
-          // Function to handle mobile/desktop display
-          function handleDeviceDisplay() {
-            var desktopForm = document.querySelector('.desktop-form');
-            var mobileRedirect = document.getElementById('mobile-redirect');
+        <!-- Action Section -->
+        <section id="action" class="py-16 px-6 flex flex-col items-center text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                Your Next Chapter <br>
+                Starts With One <br>
+                Honest <br>
+                Conversation.
+            </h2>
             
-            if (window.innerWidth <= 768) {
-              if (desktopForm) desktopForm.style.display = 'none';
-              if (mobileRedirect) mobileRedirect.style.display = 'block';
-            } else {
-              if (desktopForm) desktopForm.style.display = 'block';
-              if (mobileRedirect) mobileRedirect.style.display = 'none';
-            }
-          }
-          
-          // Run immediately
-          handleDeviceDisplay();
-          
-          // Also run on page load to be safe
-          document.addEventListener('DOMContentLoaded', handleDeviceDisplay);
-          
-          // Run on window resize
-          window.addEventListener('resize', handleDeviceDisplay);
-        </script>
-      </section>
+            <button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md">
+                LET'S TALK
+            </button>
+            
+            <p class="text-gray-400 mt-4">No sales pitch. Just clarity.</p>
+        </section>
     </main>
-
-    <!-- 8. Footer -->
-    <!-- Back to Top Button -->
-    <a href="#" class="back-to-top" aria-label="Back to top of page">
-      <i class="fas fa-arrow-up" aria-hidden="true"></i>
-    </a>
-
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-info scroll-reveal">
-            <div class="footer-logo">Paul Takisaki</div>
-            <p>
-              Leadership coaching for strategic outliers who redraw the
-              curve rather than following it.
-            </p>
-            <div class="footer-social">
-              <a
-                href="https://www.linkedin.com/in/paultakisaki"
-                target="_blank"
-                class="social-link"
-                aria-label="LinkedIn Profile"
-                rel="noopener"
-                ><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i
-                ><span class="sr-only">LinkedIn</span></a
-              >
-            </div>
-          </div>
-          <div class="footer-links">
-            <div class="footer-column scroll-reveal">
-              <h4>Navigation</h4>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="playbook.html">Leadership Vault</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="impact.html">Impact</a></li>
-                <li><a href="blogs.html">Insights</a></li>
-                <li><a href="about.html">About</a></li>
-              </ul>
-            </div>
-            <div class="footer-column scroll-reveal">
-              <h4>Services</h4>
-              <ul>
-                <li><a href="services.html#crisis">Executive Strategy</a></li>
-                <li><a href="services.html#executive">Leadership Development</a></li>
-                <li><a href="services.html#emergency">Strategic Consulting</a></li>
-              </ul>
-            </div>
-            <div class="footer-column scroll-reveal">
-              <h4>Contact</h4>
-              <p>Email: paul@paultakisaki.com</p>
-              <p>Location: Gilbert, AZ</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom scroll-reveal">
-          <p>&copy; 2025 Paul Takisaki. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      // Placeholder for script.js, header.js, and any interactive elements
-    </script>
-  <script src="script.js"></script>
-  <script src="header.js"></script>
-  <script src="menu-fix.js"></script>
-  
-  <script>
-    // Initialize Lucide icons
-    lucide.createIcons();
     
-    // Improved Sticky CTA Implementation
-    document.addEventListener('DOMContentLoaded', function() {
-      const heroCta = document.getElementById('hero-cta');
-      const ctaButton = document.getElementById('cta-button');
-      let originalPosition = 0;
-      let isSticky = false;
-      let isTransitioning = false;
-      let smallScreen = window.innerWidth < 480;
-      let originalText = ctaButton.textContent;
-      let buttonRect;
-      
-      // Get the header height
-      const header = document.querySelector('.site-header');
-      let headerHeight = header ? header.offsetHeight : 70;
-      
-      // Calculate the initial position and dimensions
-      function calculatePositions() {
-        // Get position relative to the document
-        const rect = heroCta.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Save the original position
-        originalPosition = rect.top + scrollTop;
-        
-        // Get button dimensions for transitions
-        buttonRect = ctaButton.getBoundingClientRect();
-        
-        // Check if we're on a small screen
-        smallScreen = window.innerWidth < 480;
-      }
-      
-      // Initialize after everything is loaded
-      window.addEventListener('load', function() {
-        calculatePositions();
-        handleScroll(); // Check initial position
-      });
-      
-      // Also calculate after DOM content loaded
-      calculatePositions();
-      
-      // Create a placeholder to prevent content jump
-      const placeholder = document.createElement('div');
-      placeholder.style.display = 'none';
-      heroCta.parentNode.insertBefore(placeholder, heroCta.nextSibling);
-      
-      // Update positions on resize (debounced)
-      let resizeTimer;
-      window.addEventListener('resize', function() {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function() {
-          // Reset if currently sticky
-          if (isSticky) {
-            resetToOriginal();
-          }
-          
-          // Update calculations
-          headerHeight = header ? header.offsetHeight : 70;
-          calculatePositions();
-          handleScroll();
-        }, 250);
-      });
-      
-      // Reset to original state with a smooth transition
-      function resetToOriginal() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        
-        // Keep track of original sticky button's position
-        const stickyButtonRect = ctaButton.getBoundingClientRect();
-        
-        // Reset button text immediately in case it was changed for small screens
-        ctaButton.textContent = originalText;
-        
-        // Create a clone of the button in its sticky position
-        const buttonClone = ctaButton.cloneNode(true);
-        buttonClone.style.position = 'fixed';
-        buttonClone.style.top = stickyButtonRect.top + 'px';
-        buttonClone.style.left = stickyButtonRect.left + 'px';
-        buttonClone.style.width = stickyButtonRect.width + 'px';
-        buttonClone.style.height = stickyButtonRect.height + 'px';
-        buttonClone.style.zIndex = '899';
-        buttonClone.style.transition = 'opacity 0.3s ease';
-        buttonClone.className = 'button primary'; // Apply same class
-        
-        // Add clone to body
-        document.body.appendChild(buttonClone);
-        
-        // Remove sticky class from real button immediately
-        heroCta.classList.remove('sticky');
-        
-        // Keep the placeholder until animation completes
-        setTimeout(function() {
-          // Fade out the clone
-          buttonClone.style.opacity = '0';
-          
-          // Remove clone after fade completes
-          setTimeout(function() {
-            document.body.removeChild(buttonClone);
-            placeholder.style.display = 'none';
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center transform scale-0 opacity-0 transition-all duration-300 ease-in-out">
+        <div class="bg-dark-gray w-full max-w-md m-4 p-6 rounded shadow-lg">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Let's Connect</h3>
+                <button onclick="closeContactModal()" class="text-gray-400 hover:text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
             
-            // Complete the transition
-            isSticky = false;
-            isTransitioning = false;
-          }, 300);
-        }, 50);
-      }
-      
-      // Make sticky with smooth transition - clone approach for seamless transition
-      function makeSticky() {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        
-        // Create placeholder to prevent content jump
-        placeholder.style.height = heroCta.offsetHeight + 'px';
-        placeholder.style.display = 'block';
-        
-        // Create a temporary visual clone of the button at its current position
-        // This creates the illusion that the button stays in place while the sticky version appears
-        const buttonClone = ctaButton.cloneNode(true);
-        const buttonRect = ctaButton.getBoundingClientRect();
-        
-        // Position the clone at the exact same spot as the original
-        buttonClone.style.position = 'fixed';
-        buttonClone.style.top = buttonRect.top + 'px';
-        buttonClone.style.left = buttonRect.left + 'px';
-        buttonClone.style.width = buttonRect.width + 'px';
-        buttonClone.style.height = buttonRect.height + 'px';
-        buttonClone.style.zIndex = '899'; // Just below the sticky button
-        buttonClone.style.transition = 'opacity 0.2s ease';
-        
-        // Add the clone to the body
-        document.body.appendChild(buttonClone);
-        
-        // Apply sticky class to the real button immediately
-        heroCta.classList.add('sticky');
-        
-        // Adjust text for small screens if needed
-        if (smallScreen) {
-          ctaButton.textContent = "BOOK CALL";
+            <form id="contact-form" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-gray-400 mb-1">Name</label>
+                    <input type="text" id="name" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-gray-400 mb-1">Email</label>
+                    <input type="email" id="email" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
+                </div>
+                
+                <div>
+                    <label for="company" class="block text-gray-400 mb-1">Company/Position</label>
+                    <input type="text" id="company" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none">
+                </div>
+                
+                <div>
+                    <label for="message" class="block text-gray-400 mb-1">Message (Optional)</label>
+                    <textarea id="message" rows="3" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-outlier-cyan text-black font-bold py-3 rounded hover:bg-opacity-80 transition">
+                    SUBMIT
+                </button>
+            </form>
+            
+            <p class="text-gray-400 text-center mt-4 text-sm">No sales pitch. Just clarity on your next steps.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-gray-800">
+        <div class="flex justify-center mb-8">
+            <div class="text-2xl font-bold tracking-wider">
+                <span class="text-outlier-cyan">OUT</span>LIER
+            </div>
+        </div>
+        <p class="text-center text-gray-500">© 2025 Paul Takisaki. All rights reserved.</p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('translate-y-full')) {
+                menu.classList.remove('translate-y-full');
+                menu.classList.add('translate-y-0', 'animate-fadeIn');
+            } else {
+                closeMenu();
+            }
         }
         
-        // Fade out the clone after a short delay
-        setTimeout(function() {
-          buttonClone.style.opacity = '0';
-          
-          // Remove clone after fade completes
-          setTimeout(function() {
-            document.body.removeChild(buttonClone);
-          }, 200);
-        }, 50);
-        
-        // Mark as completed
-        setTimeout(function() {
-          isSticky = true;
-          isTransitioning = false;
-        }, 250);
-      }
-      
-      // Handle scroll events
-      function handleScroll() {
-        const scrollY = window.scrollY || window.pageYOffset;
-        
-        // Calculate the button's current position relative to the viewport
-        const buttonTop = originalPosition - scrollY;
-        const buttonBottom = buttonTop + (buttonRect ? buttonRect.height : 50);
-        
-        // Determine when the button is about to leave the viewport
-        // We want to make it sticky right before it would go behind the header
-        const triggerPoint = headerHeight + 10; // Just a bit below the header
-        
-        // Make it sticky when top of button approaches header
-        if (!isSticky && !isTransitioning && buttonTop <= triggerPoint) {
-          makeSticky();
-        } 
-        // Put it back in flow when scrolled back up past original position minus a buffer
-        else if (isSticky && scrollY < originalPosition - (headerHeight * 2)) {
-          resetToOriginal();
+        function closeMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.remove('translate-y-0');
+            menu.classList.add('translate-y-full');
         }
-      }
-      
-      // Attach scroll handler (passive for performance)
-      window.addEventListener('scroll', handleScroll, { passive: true });
-    });
-  </script>
+        
+        function openContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.remove('scale-0', 'opacity-0');
+            modal.classList.add('scale-100', 'opacity-100');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.remove('scale-100', 'opacity-100');
+            modal.classList.add('scale-0', 'opacity-0');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Form submission (placeholder)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would normally handle the form submission via AJAX
+            alert('Form submitted! In a real implementation, this would send your information to Outlier.');
+            closeContactModal();
+        });
+        
+        // Handle scroll indicators for horizontal scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollContainers = document.querySelectorAll('.horizontal-scroll');
+            
+            scrollContainers.forEach((container, containerIndex) => {
+                container.addEventListener('scroll', function() {
+                    updateScrollIndicators(container, containerIndex);
+                });
+                
+                // Initial update
+                updateScrollIndicators(container, containerIndex);
+            });
+            
+            function updateScrollIndicators(container, containerIndex) {
+                const indicators = document.querySelectorAll('.flex.justify-center.mt-6.space-x-2')[containerIndex];
+                const scrollPercentage = container.scrollLeft / (container.scrollWidth - container.clientWidth);
+                const indicatorCount = indicators.children.length;
+                
+                let activeIndex = Math.floor(scrollPercentage * indicatorCount);
+                if (activeIndex >= indicatorCount) activeIndex = indicatorCount - 1;
+                
+                Array.from(indicators.children).forEach((indicator, i) => {
+                    if (i === activeIndex) {
+                        indicator.classList.remove('bg-gray-500');
+                        indicator.classList.add('bg-outlier-cyan');
+                    } else {
+                        indicator.classList.remove('bg-outlier-cyan');
+                        indicator.classList.add('bg-gray-500');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
