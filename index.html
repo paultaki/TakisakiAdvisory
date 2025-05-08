@@ -1,395 +1,983 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUTLIER - Strategic Leadership</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'outlier-cyan': '#00FFFF',
-                        'dark-gray': '#121212',
-                    },
-                    fontFamily: {
-                        'sans': ['Helvetica', 'Arial', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StratusAI - Enterprise Competitive Intelligence Platform</title>
+    <!-- Using CDN for now - replace with the above when you've built your CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .horizontal-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .horizontal-scroll {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .animate-fadeIn {
-            animation: fadeIn 0.3s ease-in;
-        }
+      /* Base styles */
+      body {
+        font-family: 'Inter', sans-serif;
+        scroll-behavior: smooth;
+      }
+      
+      h1, h2, h3, .brand-text {
+        font-family: 'Playfair Display', serif;
+      }
+      
+      /* Enhanced gradients and effects */
+      .hero-gradient {
+        background-image: 
+          linear-gradient(125deg, rgba(26, 32, 44, 0.95) 0%, 
+                                  rgba(45, 55, 72, 0.9) 25%, 
+                                  rgba(49, 130, 206, 0.85) 70%, 
+                                  rgba(49, 130, 206, 0.7) 100%),
+          url('https://images.unsplash.com/photo-1639322537504-6427a16b0a28?ixlib=rb-1.2.1&auto=format&fit=crop&w=1932&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 60%, #4299e1 100%);
+      }
+      
+      .gradient-text {
+        background: linear-gradient(90deg, #4299e1 0%, #2b6cb0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+      
+      .testimonial-card {
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      
+      .testimonial-card::before {
+        content: """;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+        font-size: 120px;
+        color: rgba(66, 153, 225, 0.1);
+        font-family: 'Playfair Display', serif;
+      }
+      
+      .custom-shadow {
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1),
+                    0 10px 20px -5px rgba(0, 0, 0, 0.05);
+      }
+      
+      .feature-card {
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        border-top: 4px solid transparent;
+      }
+      
+      .feature-card:hover {
+        transform: translateY(-15px);
+        border-top: 4px solid #4299e1;
+      }
+      
+      .hover-scale {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .hover-scale:hover {
+        transform: scale(1.03);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+      
+      .pricing-card {
+        transition: all 0.3s ease;
+      }
+      
+      .pricing-card:hover {
+        transform: translateY(-10px);
+      }
+      
+      .featured-pricing {
+        position: relative;
+        z-index: 10;
+      }
+      
+      .featured-pricing::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        background: linear-gradient(135deg, #4299e1 0%, #2b6cb0 100%);
+        border-radius: 16px;
+        z-index: -1;
+        opacity: 0.1;
+      }
+      
+      .featured-label {
+        position: absolute;
+        top: -12px;
+        right: 30px;
+        background: linear-gradient(90deg, #4299e1 0%, #2b6cb0 100%);
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 10px rgba(43, 108, 176, 0.3);
+      }
+      
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px dashed rgba(255, 255, 255, 0.2);
+      }
+      
+      .particle {
+        position: absolute;
+        height: 6px;
+        width: 6px;
+        background-color: #4299e1;
+        border-radius: 50%;
+        filter: blur(1px);
+        animation: orbit 15s linear infinite;
+      }
+      
+      @keyframes orbit {
+        0% { transform: rotate(0deg) translateX(var(--radius)) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg); }
+      }
+      
+      .animated-gradient-bg {
+        background: linear-gradient(-45deg, #1a365d, #2b6cb0, #4299e1, #63b3ed);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+      }
+      
+      @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      .customer-logos img {
+        filter: grayscale(100%);
+        opacity: 0.5;
+        transition: all 0.5s ease;
+      }
+      
+      .customer-logos img:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+        transform: scale(1.05);
+      }
+      
+      .btn-primary {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(90deg, #4299e1 0%, #2b6cb0 100%);
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      
+      .btn-primary::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #2b6cb0 0%, #4299e1 100%);
+        z-index: -1;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+      
+      .btn-primary:hover::after {
+        opacity: 1;
+      }
+      
+      .btn-secondary {
+        position: relative;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .scroll-indicator {
+        animation: scrollDown 2s ease-in-out infinite;
+      }
+      
+      @keyframes scrollDown {
+        0% { transform: translateY(0); opacity: 0.8; }
+        50% { transform: translateY(10px); opacity: 0.4; }
+        100% { transform: translateY(0); opacity: 0.8; }
+      }
+      
+      .highlight-number {
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, #4299e1 0%, #2b6cb0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
     </style>
-</head>
-<body class="bg-black text-white font-sans">
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out">
-        <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
-            <a href="#hero" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
-            <a href="#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
-            <a href="#testimonials" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Testimonials</a>
-            <a href="#method" class="hover:text-outlier-cyan transition" onclick="closeMenu()">The Takisaki Method</a>
-            <a href="#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Take Action</a>
-            <button onclick="closeMenu()" class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition">
-                Close Menu
-            </button>
+  </head>
+  <body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Announcement Bar -->
+    <div class="animated-gradient-bg text-white text-center py-3 text-sm relative overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <p class="font-medium tracking-wide">
+          ✨ Introducing the CompIntel Engine™ 3.0 –
+          <a href="#" class="inline-flex items-center underline font-semibold ml-1 group">
+            Join the waitlist for early access
+            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+        </p>
+      </div>
+      <!-- Animated background particles -->
+      <div class="absolute inset-0 overflow-hidden opacity-20">
+        <div class="orbit" style="width: 300px; height: 300px; top: 50%; left: 20%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 150px;"></div>
         </div>
+        <div class="orbit" style="width: 200px; height: 200px; top: 30%; left: 70%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 100px;"></div>
+        </div>
+        <div class="orbit" style="width: 150px; height: 150px; top: 80%; left: 50%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 75px;"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Header -->
-    <header class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur">
-        <div class="flex items-center">
-            <a href="#hero" class="text-2xl font-bold tracking-wider">
-                <span class="text-outlier-cyan">OUT</span>LIER
-            </a>
-        </div>
-        <button id="menu-toggle" class="text-outlier-cyan focus:outline-none" onclick="toggleMenu()">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <span class="text-2xl font-bold brand-text">StratusAI</span>
+            </div>
+            <nav class="hidden md:ml-10 md:flex space-x-8">
+              <a href="#" class="text-gray-600 hover:text-blue-800 font-medium inline-flex items-center transition-all duration-200 hover:translate-y-[-2px]">
+                <span>Platform</span>
+                <span class="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-blue-800 font-medium inline-flex items-center transition-all duration-200 hover:translate-y-[-2px]">
+                <span>Solutions</span>
+                <span class="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-blue-800 font-medium inline-flex items-center transition-all duration-200 hover:translate-y-[-2px]">
+                <span>Resources</span>
+                <span class="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-blue-800 font-medium inline-flex items-center transition-all duration-200 hover:translate-y-[-2px]">
+                <span>Pricing</span>
+                <span class="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+              <a href="#" class="text-gray-600 hover:text-blue-800 font-medium inline-flex items-center transition-all duration-200 hover:translate-y-[-2px]">
+                <span>About Us</span>
+                <span class="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+              </a>
+            </nav>
+          </div>
+          <div class="flex items-center">
+            <a href="#" class="text-gray-600 hover:text-blue-800 mx-4 hidden md:block transition duration-200 hover:-translate-y-1">Log In</a>
+            <a href="#" class="btn-primary text-white px-5 py-2.5 rounded-md font-medium transition">Get Started</a>
+            <button type="button" class="md:hidden ml-3 text-gray-600">
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        </button>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="min-h-screen pt-24 px-6 flex flex-col justify-between">
-            <div class="pt-16 flex flex-col md:flex-row items-center">
-                <div class="md:w-3/5">
-                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                        <div class="mb-2">With</div>
-                        <div class="mb-2">Precision.</div>
-                        <div class="mb-2">Rebuild</div>
-                        <div class="mb-2">Your</div>
-                        <div class="mb-2">System.</div>
-                        <div class="mb-2">Deliver</div>
-                        <div class="mb-2">Elite</div>
-                        <div>Results.</div>
-                    </h1>
-                    <p class="text-gray-400 mt-6 text-xl max-w-lg">
-                        From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership.
-                    </p>
-                    <button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition">
-                        BOOK YOUR STRATEGY CALL
-                    </button>
-                </div>
-                <div class="md:w-2/5 flex justify-center mt-12 md:mt-0">
-                    <img src="/api/placeholder/400/400" alt="Geometric Unicorn" class="w-40 h-40 md:w-48 md:h-48 object-contain" />
-                </div>
-            </div>
-        </section>
-
-        <!-- Proof Section -->
-        <section id="proof" class="py-16 px-6">
-            <h2 class="text-4xl font-bold mb-4 text-outlier-cyan">PROVEN TRACK RECORD</h2>
-            <p class="text-3xl font-bold mb-12">No Fluff. Real Results.</p>
-            
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
-                    <!-- Stat Card 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
-                        <div class="text-5xl font-bold mb-2">4×</div>
-                        <div class="text-xl text-outlier-cyan mb-1">President's Cabinet</div>
-                        <div class="text-gray-400">Top 1% of organization</div>
-                    </div>
-                    
-                    <!-- Stat Card 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
-                        <div class="text-5xl font-bold mb-2">14-14</div>
-                        <div class="text-xl text-outlier-cyan mb-1">Interview Success</div>
-                        <div class="text-gray-400">100% offer rate</div>
-                    </div>
-                    
-                    <!-- Stat Card 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
-                        <div class="text-5xl font-bold mb-2">6+ Years</div>
-                        <div class="text-xl text-outlier-cyan mb-1">Quota Model</div>
-                        <div class="text-gray-400">National implementation</div>
-                    </div>
-                    
-                    <!-- Stat Card 4 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
-                        <div class="text-5xl font-bold mb-2">12</div>
-                        <div class="text-xl text-outlier-cyan mb-1">Promotions</div>
-                        <div class="text-gray-400">In 20 year career</div>
-                    </div>
-                </div>
-                
-                <!-- Scroll indicators -->
-                <div class="flex justify-center mt-6 space-x-2">
-                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-16 px-6">
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
-                    <!-- Testimonial 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
-                        <p class="italic mb-4 text-lg">"Paul doesn't just coach—he empowers."</p>
-                        <div class="font-bold text-outlier-cyan">Emmanuel Nwoke</div>
-                        <div class="text-gray-400">Sr. Director, Verizon</div>
-                    </div>
-                    
-                    <!-- Testimonial 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
-                        <p class="italic mb-4 text-lg">"You've had an indelible mark on the business."</p>
-                        <div class="font-bold text-outlier-cyan">Aparna</div>
-                        <div class="text-gray-400">Chief Revenue Officer, Verizon</div>
-                    </div>
-                    
-                    <!-- Testimonial 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
-                        <p class="italic mb-4 text-lg">"I would not be the leader I am today without Paul."</p>
-                        <div class="font-bold text-outlier-cyan">Cam Vogt</div>
-                        <div class="text-gray-400">Senior Director, Verizon</div>
-                    </div>
-                </div>
-                
-                <!-- Scroll indicators -->
-                <div class="flex justify-center mt-6 space-x-2">
-                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Method Section -->
-        <section id="method" class="py-16 px-6">
-            <h2 class="text-4xl font-bold mb-4 text-outlier-cyan">THE TAKISAKI METHOD</h2>
-            <p class="text-3xl font-bold mb-12">Your Playbook, Not Theirs.</p>
-            
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
-                    <!-- Method Card 1 -->
-                    <div class="flex-shrink-0 w-72 bg-dark-gray p-6 rounded">
-                        <div class="flex justify-center mb-6">
-                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-outlier-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Discover Your Strengths</h3>
-                        <p class="text-gray-400 text-center">Identity-led diagnosis that uncovers your unique leadership advantage</p>
-                    </div>
-                    
-                    <!-- Method Card 2 -->
-                    <div class="flex-shrink-0 w-72 bg-dark-gray p-6 rounded">
-                        <div class="flex justify-center mb-6">
-                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-outlier-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Rewire the System</h3>
-                        <p class="text-gray-400 text-center">Leadership strategies tailored to your reality, not a one-size template</p>
-                    </div>
-                    
-                    <!-- Method Card 3 -->
-                    <div class="flex-shrink-0 w-72 bg-dark-gray p-6 rounded">
-                        <div class="flex justify-center mb-6">
-                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-outlier-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
-                                </svg>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Lead at Legacy Level</h3>
-                        <p class="text-gray-400 text-center">Sustainable execution built on clarity that delivers elite results</p>
-                    </div>
-                </div>
-                
-                <!-- Scroll indicators -->
-                <div class="flex justify-center mt-6 space-x-2">
-                    <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
-                </div>
-            </div>
-            
-            <!-- Quote -->
-            <div class="mt-16 max-w-2xl mx-auto">
-                <svg class="h-8 w-8 text-outlier-cyan mb-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <p class="text-xl italic mb-6">
-                    "After 20 years of quietly outperforming louder leaders, I reverse-engineered what actually works. It's not a script—it's a custom operating system designed around who you are."
-                </p>
-            </div>
-        </section>
-        
-        <!-- Action Section -->
-        <section id="action" class="py-16 px-6 flex flex-col items-center text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                Your Next Chapter <br>
-                Starts With One <br>
-                Honest <br>
-                Conversation.
-            </h2>
-            
-            <button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md">
-                LET'S TALK
-            </button>
-            
-            <p class="text-gray-400 mt-4">No sales pitch. Just clarity.</p>
-        </section>
-    </main>
-    
-    <!-- Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center transform scale-0 opacity-0 transition-all duration-300 ease-in-out">
-        <div class="bg-dark-gray w-full max-w-md m-4 p-6 rounded shadow-lg">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Let's Connect</h3>
-                <button onclick="closeContactModal()" class="text-gray-400 hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            
-            <form id="contact-form" class="space-y-4">
-                <div>
-                    <label for="name" class="block text-gray-400 mb-1">Name</label>
-                    <input type="text" id="name" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
-                </div>
-                
-                <div>
-                    <label for="email" class="block text-gray-400 mb-1">Email</label>
-                    <input type="email" id="email" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
-                </div>
-                
-                <div>
-                    <label for="company" class="block text-gray-400 mb-1">Company/Position</label>
-                    <input type="text" id="company" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none">
-                </div>
-                
-                <div>
-                    <label for="message" class="block text-gray-400 mb-1">Message (Optional)</label>
-                    <textarea id="message" rows="3" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none"></textarea>
-                </div>
-                
-                <button type="submit" class="w-full bg-outlier-cyan text-black font-bold py-3 rounded hover:bg-opacity-80 transition">
-                    SUBMIT
-                </button>
-            </form>
-            
-            <p class="text-gray-400 text-center mt-4 text-sm">No sales pitch. Just clarity on your next steps.</p>
+    <!-- Hero Section -->
+    <section class="pt-20 pb-32 hero-gradient text-white relative overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <h1 class="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            Discover the Invisible.<br />
+            <span class="text-blue-300">Decide with Confidence.</span>
+          </h1>
+          <p class="text-xl md:text-2xl mb-12 opacity-90 leading-relaxed max-w-3xl mx-auto">
+            Transform scattered market signals into your strategic advantage with intelligence 
+            <span class="relative inline-block">
+              <span class="relative z-10">only StratusAI</span>
+              <span class="absolute bottom-0 left-0 w-full h-2 bg-blue-400 opacity-40"></span>
+            </span> 
+            can reveal.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="#" class="btn-secondary text-white px-8 py-4 rounded-md font-semibold text-lg">
+              <span class="mr-2">✨</span>Get Free Analysis
+            </a>
+            <a href="#" class="btn-primary text-white px-8 py-4 rounded-md font-semibold text-lg">
+              <span class="mr-2">▶️</span>Schedule Demo
+            </a>
+          </div>
         </div>
-    </div>
+      </div>
+
+      <div class="mt-20 mx-auto max-w-6xl px-4 relative" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-card rounded-xl p-6 relative">
+          <div class="floating">
+            <img
+              src="images/dash.png"
+              alt="CompIntel Engine™ Dashboard"
+              class="rounded-lg shadow-2xl w-full"
+            />
+          </div>
+          
+          <!-- Animated highlights for dashboard -->
+          <div class="absolute top-1/4 left-1/4 w-16 h-16 rounded-full bg-blue-500 opacity-30 animate-ping" style="animation-duration: 3s;"></div>
+          <div class="absolute bottom-1/3 right-1/3 w-12 h-12 rounded-full bg-purple-500 opacity-20 animate-ping" style="animation-duration: 4s;"></div>
+        </div>
+      </div>
+      
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center opacity-80">
+        <p class="text-sm mb-2 font-light tracking-widest uppercase">Scroll to explore</p>
+        <div class="scroll-indicator w-8 h-8 mx-auto">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+      
+      <!-- Background particles -->
+      <div class="absolute inset-0 overflow-hidden opacity-20">
+        <div class="orbit" style="width: 600px; height: 600px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 300px;"></div>
+        </div>
+        <div class="orbit" style="width: 400px; height: 400px; top: 40%; left: 60%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 200px;"></div>
+        </div>
+        <div class="orbit" style="width: 300px; height: 300px; top: 70%; left: 30%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 150px;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Statistics -->
+    <section class="py-16 bg-white relative">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+              <div class="highlight-number">87%</div>
+              <p class="text-lg font-medium text-gray-700">Decision-making confidence increase reported by our clients</p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+              <div class="highlight-number">3.2x</div>
+              <p class="text-lg font-medium text-gray-700">Average ROI within 6 months of implementation</p>
+            </div>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+              <div class="highlight-number">28%</div>
+              <p class="text-lg font-medium text-gray-700">Market share growth in targeted segments</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl font-semibold text-gray-800 mb-3">
+            Trusted by Industry Leaders Worldwide
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Join the hundreds of forward-thinking organizations using our platform to transform data into strategic advantage.
+          </p>
+        </div>
+        <div
+          class="customer-logos grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-items-center"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <img
+            src="images/500a.png"
+            alt="Fortune 500 Company"
+            class="h-10"
+          />
+          <img
+            src="images/500d.png"
+            alt="Fortune 500 Company"
+            class="h-10"
+          />
+          <img
+            src="images/500e.png"
+            alt="Fortune 500 Company"
+            class="h-10"
+          />
+          <img
+            src="images/500f.png"
+            alt="Fortune 500 Company"
+            class="h-10"
+          />
+          <img
+            src="images/500g.png"
+            alt="Fortune 500 Company"
+            class="h-10"
+          />
+          <img
+            src="images/500y.png"
+            alt="Fortune 500 Company"
+            class="h-10"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 bg-white relative overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-3xl mx-auto text-center mb-20" data-aos="fade-up">
+          <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Our Approach</span>
+          <h2 class="mt-2 text-4xl font-bold text-gray-900 leading-tight">
+            Transforming Signals Into<br />Confident Decisions
+          </h2>
+          <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+            Our proprietary AI system doesn't just analyze data—it uncovers the hidden patterns and opportunities your competitors can't see.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12">
+          <div class="feature-card bg-white rounded-xl p-8 custom-shadow" data-aos="fade-up" data-aos-delay="0">
+            <div class="h-14 w-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+              <i class="fas fa-database text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Multi-Source Intelligence Fusion
+            </h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Our AI gathers signals from thousands of sources—including exclusive channels invisible to traditional tools—creating a comprehensive competitive landscape.
+            </p>
+          </div>
+
+          <div class="feature-card bg-white rounded-xl p-8 custom-shadow" data-aos="fade-up" data-aos-delay="100">
+            <div class="h-14 w-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+              <i class="fas fa-brain text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Opportunity Gap Recognition
+            </h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Proprietary algorithms identify market spaces your competitors haven't discovered yet, revealing actionable strategies others simply can't see.
+            </p>
+          </div>
+
+          <div class="feature-card bg-white rounded-xl p-8 custom-shadow" data-aos="fade-up" data-aos-delay="200">
+            <div class="h-14 w-14 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+              <i class="fas fa-chart-line text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4">
+              Future-Forward Modeling
+            </h3>
+            <p class="text-gray-600 text-lg leading-relaxed">
+              Our predictive engine doesn't just show today's landscape—it reveals tomorrow's moves before they happen, giving you critical time to position strategically.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background decorations -->
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-50 opacity-70 transform skew-x-12 translate-x-1/3 z-0"></div>
+      <div class="absolute bottom-0 left-0 w-1/4 h-1/2 bg-blue-50 opacity-70 transform -skew-x-12 -translate-x-1/3 z-0"></div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="py-24 bg-gray-50 relative">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+          <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Success Stories</span>
+          <h2 class="mt-2 text-4xl font-bold text-gray-900 leading-tight">
+            Real Transformations.<br />Real Results.
+          </h2>
+          <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+            Hear from organizations that discovered hidden opportunities and transformed their market position with StratusAI.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="testimonial-card bg-white rounded-xl p-10 custom-shadow" data-aos="fade-up" data-aos-delay="0">
+            <div class="flex items-center mb-8">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <span class="text-blue-800 font-bold text-xl">F</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-800">
+                  Leading Financial Services Provider
+                </h3>
+                <p class="text-blue-600 font-medium">Market Expansion Strategy</p>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 mb-8 text-xl italic leading-relaxed">
+              "The Opportunity Gap Matrix revealed three underserved segments our internal analysis completely missed. We've since captured 28% market share in these verticals, driving $14.2M in new annual revenue."
+            </blockquote>
+            <div class="flex items-center">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=96&h=96&q=80" alt="CFO portrait" class="w-12 h-12 rounded-full mr-4 object-cover"/>
+              <div>
+                <p class="font-medium text-gray-900">Michael Davidson</p>
+                <p class="text-sm text-gray-600">Chief Strategy Officer</p>
+              </div>
+            </div>
+            <a href="#" class="mt-6 inline-flex items-center text-blue-600 font-medium group">
+              <span>Read Their Full Story</span>
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+          </div>
+
+          <div class="testimonial-card bg-white rounded-xl p-10 custom-shadow" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center mb-8">
+              <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                <span class="text-blue-800 font-bold text-xl">T</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-gray-800">Global Technology Leader</h3>
+                <p class="text-blue-600 font-medium">Acquisition Strategy</p>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 mb-8 text-xl italic leading-relaxed">
+              "StratusAI's Predictive Market Model identified three acquisition targets before they appeared on anyone's radar. We completed two acquisitions, each at 15% below fair market value, adding $83M to our valuation."
+            </blockquote>
+            <div class="flex items-center">
+              <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=96&h=96&q=80" alt="CEO portrait" class="w-12 h-12 rounded-full mr-4 object-cover"/>
+              <div>
+                <p class="font-medium text-gray-900">Sarah Zhang</p>
+                <p class="text-sm text-gray-600">VP of Corporate Development</p>
+              </div>
+            </div>
+            <a href="#" class="mt-6 inline-flex items-center text-blue-600 font-medium group">
+              <span>Read Their Full Story</span>
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background decoration -->
+      <div class="absolute bottom-0 right-0 w-1/2 h-64 bg-gradient-to-t from-blue-50 to-transparent opacity-70"></div>
+    </section>
+
+    <!-- Product Tiers -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto text-center mb-20" data-aos="fade-up">
+          <span class="text-blue-600 font-semibold text-sm uppercase tracking-wider">Pricing</span>
+          <h2 class="mt-2 text-4xl font-bold text-gray-900 leading-tight">
+            Find Your Strategic Edge
+          </h2>
+          <p class="mt-6 text-xl text-gray-600 leading-relaxed">
+            Choose the intelligence tier that aligns with your organization's goals—from essential insights to enterprise-grade competitive intelligence.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="pricing-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="0">
+            <div class="p-8 border-b border-gray-100">
+              <h3 class="text-2xl font-semibold mb-2">Essential</h3>
+              <p class="text-gray-600 mb-6">Basic competitive analysis</p>
+              <div class="flex items-baseline">
+                <span class="text-5xl font-bold text-gray-900">Free</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-5">
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Basic Competitive Matrix</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Service Comparison</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Standard Ratings Analysis</span>
+                </li>
+                <li class="flex items-start text-gray-400">
+                  <svg class="h-5 w-5 text-gray-300 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Advanced Intelligence Reports</span>
+                </li>
+              </ul>
+              <div class="mt-10">
+                <a href="#" class="block w-full text-center bg-gray-100 text-blue-800 px-4 py-4 rounded-md font-semibold hover:bg-gray-200 transition text-lg">
+                  Get Started Free
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-card featured-pricing bg-white rounded-xl overflow-hidden shadow-xl transform scale-105 z-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="featured-label">MOST POPULAR</div>
+            <div class="p-8 gradient-bg text-white">
+              <h3 class="text-2xl font-semibold mb-2">Professional</h3>
+              <p class="text-blue-100 mb-6">Advanced business intelligence</p>
+              <div class="flex items-baseline">
+                <span class="text-5xl font-bold">$499</span>
+                <span class="ml-2 text-blue-200">/month</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-5">
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Everything in Essential</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Business Intelligence Report</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Opportunity Gap Analysis</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Quarterly Industry Reports</span>
+                </li>
+              </ul>
+              <div class="mt-10">
+                <a href="#" class="block w-full text-center btn-primary text-white px-4 py-4 rounded-md font-semibold text-lg">
+                  Start 14-Day Trial
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-card bg-white rounded-xl overflow-hidden shadow-lg" data-aos="fade-up" data-aos-delay="200">
+            <div class="p-8 border-b border-gray-100">
+              <h3 class="text-2xl font-semibold mb-2">Enterprise</h3>
+              <p class="text-gray-600 mb-6">Full CompIntel Engine™ access</p>
+              <div class="flex items-baseline">
+                <span class="text-5xl font-bold text-gray-900">Custom</span>
+              </div>
+            </div>
+            <div class="p-8">
+              <ul class="space-y-5">
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Everything in Professional</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">CompIntel Engine™ Full Access</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Predictive Market Modeling</span>
+                </li>
+                <li class="flex items-start">
+                  <svg class="h-5 w-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-lg">Dedicated Industry Analyst</span>
+                </li>
+              </ul>
+              <div class="mt-10">
+                <a href="#" class="block w-full text-center bg-gray-100 text-blue-800 px-4 py-4 rounded-md font-semibold hover:bg-gray-200 transition text-lg">
+                  Contact Sales
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 animated-gradient-bg text-white relative overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-8 leading-tight">
+            Ready to See What Your<br />Competitors Can't?
+          </h2>
+          <p class="text-xl mb-12 opacity-90 leading-relaxed">
+            Join the thousands of forward-thinking organizations using StratusAI to transform market signals into their strategic advantage.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="#" class="btn-secondary text-white px-8 py-4 rounded-md font-semibold text-lg">
+              <span class="mr-2">✨</span>Get Free Analysis
+            </a>
+            <a href="#" class="bg-white text-blue-800 px-8 py-4 rounded-md font-semibold text-lg transition duration-300 hover:bg-blue-50 hover:shadow-lg">
+              <span class="mr-2">▶️</span>Schedule Demo
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background particles -->
+      <div class="absolute inset-0 overflow-hidden opacity-30">
+        <div class="orbit" style="width: 600px; height: 600px; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 300px;"></div>
+        </div>
+        <div class="orbit" style="width: 400px; height: 400px; top: 40%; left: 60%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 200px;"></div>
+        </div>
+        <div class="orbit" style="width: 300px; height: 300px; top: 70%; left: 30%; transform: translate(-50%, -50%);">
+          <div class="particle" style="--radius: 150px;"></div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-gray-800">
-        <div class="flex justify-center mb-8">
-            <div class="text-2xl font-bold tracking-wider">
-                <span class="text-outlier-cyan">OUT</span>LIER
+    <footer class="bg-gray-900 text-gray-400 py-16">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div>
+            <span class="text-2xl font-bold text-white mb-6 block brand-text">StratusAI</span>
+            <p class="mb-6 text-lg leading-relaxed">
+              The next generation of AI-powered competitive intelligence for forward-thinking organizations.
+            </p>
+            <div class="flex space-x-5">
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fab fa-twitter fa-lg"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
             </div>
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-6">Platform</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">CompIntel Engine™</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Opportunity Gap Matrix</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Predictive Modeling</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Market Valuation</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-6">Resources</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Case Studies</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Whitepapers</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Webinars</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold text-lg mb-6">Company</h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Careers</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors text-base">Investors</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <p class="text-center text-gray-500">© 2025 Paul Takisaki. All rights reserved.</p>
+
+        <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p>© 2025 StratusAI Inc. All rights reserved.</p>
+          <div class="flex space-x-8 mt-4 md:mt-0">
+            <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" class="hover:text-white transition-colors">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
     </footer>
-    
-    <!-- Scripts -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('translate-y-full')) {
-                menu.classList.remove('translate-y-full');
-                menu.classList.add('translate-y-0', 'animate-fadeIn');
-            } else {
-                closeMenu();
-            }
-        }
-        
-        function closeMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.remove('translate-y-0');
-            menu.classList.add('translate-y-full');
-        }
-        
-        function openContactModal() {
-            const modal = document.getElementById('contact-modal');
-            modal.classList.remove('scale-0', 'opacity-0');
-            modal.classList.add('scale-100', 'opacity-100');
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeContactModal() {
-            const modal = document.getElementById('contact-modal');
-            modal.classList.remove('scale-100', 'opacity-100');
-            modal.classList.add('scale-0', 'opacity-0');
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Form submission (placeholder)
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true
+      });
+      
+      document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
             e.preventDefault();
-            // Here you would normally handle the form submission via AJAX
-            alert('Form submitted! In a real implementation, this would send your information to Outlier.');
-            closeContactModal();
-        });
-        
-        // Handle scroll indicators for horizontal scrolling
-        document.addEventListener('DOMContentLoaded', function() {
-            const scrollContainers = document.querySelectorAll('.horizontal-scroll');
-            
-            scrollContainers.forEach((container, containerIndex) => {
-                container.addEventListener('scroll', function() {
-                    updateScrollIndicators(container, containerIndex);
-                });
-                
-                // Initial update
-                updateScrollIndicators(container, containerIndex);
-            });
-            
-            function updateScrollIndicators(container, containerIndex) {
-                const indicators = document.querySelectorAll('.flex.justify-center.mt-6.space-x-2')[containerIndex];
-                const scrollPercentage = container.scrollLeft / (container.scrollWidth - container.clientWidth);
-                const indicatorCount = indicators.children.length;
-                
-                let activeIndex = Math.floor(scrollPercentage * indicatorCount);
-                if (activeIndex >= indicatorCount) activeIndex = indicatorCount - 1;
-                
-                Array.from(indicators.children).forEach((indicator, i) => {
-                    if (i === activeIndex) {
-                        indicator.classList.remove('bg-gray-500');
-                        indicator.classList.add('bg-outlier-cyan');
-                    } else {
-                        indicator.classList.remove('bg-outlier-cyan');
-                        indicator.classList.add('bg-gray-500');
-                    }
-                });
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 100,
+                behavior: "smooth",
+              });
             }
+          });
         });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector("button.md\\:hidden");
+        const mobileMenu = document.createElement("div");
+        mobileMenu.className =
+          "md:hidden bg-white shadow-lg rounded-lg absolute right-4 top-16 z-50 w-64 py-3 hidden";
+        mobileMenu.innerHTML = `
+                <a href="#" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">Platform</a>
+                <a href="#" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">Solutions</a>
+                <a href="#" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">Resources</a>
+                <a href="#" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">Pricing</a>
+                <a href="#" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">About Us</a>
+                <div class="border-t border-gray-100 my-2"></div>
+                <a href="#" class="block px-5 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-800 transition">Log In</a>
+            `;
+
+        document.querySelector("header").appendChild(mobileMenu);
+
+        mobileMenuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !mobileMenuButton.contains(e.target) &&
+            !mobileMenu.contains(e.target)
+          ) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+
+        // Sticky header enhancement
+        const header = document.querySelector("header");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) {
+            header.classList.add("shadow-md");
+          } else {
+            header.classList.remove("shadow-md");
+          }
+        });
+
+        // Demo button interactions
+        const demoButtons = document.querySelectorAll('.btn-primary, a[href="#"].gradient-bg');
+        demoButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const originalText = this.innerHTML;
+            this.innerHTML = '<span class="inline-block animate-spin mr-2">⚙️</span> Processing...';
+            this.classList.add("opacity-75");
+
+            setTimeout(() => {
+              this.innerHTML = originalText;
+              this.classList.remove("opacity-75");
+
+              // Show success message
+              const successMessage = document.createElement("div");
+              successMessage.className =
+                "fixed top-4 right-4 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded shadow-xl z-50 animate-fadeIn";
+              successMessage.innerHTML = `
+                <div class="flex items-center">
+                    <div class="py-1">
+                        <svg class="h-6 w-6 text-green-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="font-bold">Success!</p>
+                        <p class="text-sm">Our team will contact you shortly.</p>
+                    </div>
+                </div>
+              `;
+              document.body.appendChild(successMessage);
+
+              setTimeout(() => {
+                successMessage.classList.add('animate-fadeOut');
+                setTimeout(() => {
+                  successMessage.remove();
+                }, 500);
+              }, 3000);
+            }, 1500);
+          });
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
