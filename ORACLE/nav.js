@@ -1435,5 +1435,6 @@ class OrbitalNavigation {
         // const orbitalNav = new OrbitalNavigation(container);
         
         export default OrbitalNavigation;
-
-        
+    }}
+)
+    }});
