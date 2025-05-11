@@ -441,6 +441,7 @@
                   ></textarea>
                 </div>
 
+
                 <div class="pt-4">
                   <button
                     type="submit"
@@ -689,41 +690,69 @@
           });
         }
 
-        // Form submission
+        // Check for success parameter in URL to show success message
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('success')) {
+          document.getElementById("contact-form-container").style.display = "none";
+          const successMessage = document.getElementById("form-success");
+          successMessage.style.display = "block";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        // Form submission with SendGrid API
         const contactForm = document.getElementById("contact-form");
         if (contactForm) {
           contactForm.addEventListener("submit", async function (e) {
             e.preventDefault();
 
+            // Disable the submit button to prevent multiple submissions
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+            // Get form data
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
-            const subject = document.getElementById("service").value;
+            const service = document.getElementById("service").value;
             const message = document.getElementById("message").value;
 
             try {
-              // Disable the submit button to prevent multiple submissions
-              const submitButton = this.querySelector('button[type="submit"]');
-              submitButton.disabled = true;
-              submitButton.textContent = "Sending...";
+              // Console logging for debugging
+              console.log("Submitting contact form data:", { name, email, service, message });
 
-              // Simulate API call (replace with actual API call)
-              // const response = await fetch('/api/send', {
-              //     method: 'POST',
-              //     headers: { 'Content-Type': 'application/json' },
-              //     body: JSON.stringify({ name, email, subject, message }),
-              // });
+              // Submit the form to SendGrid API endpoint
+              const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  name,
+                  email,
+                  subject: service || "Contact Form Submission",
+                  message
+                })
+              });
 
-              // Simulate successful response
-              await new Promise((resolve) => setTimeout(resolve, 1500));
-
-              // Show success message
-              document.getElementById("contact-form-container").style.display =
-                "none";
-              const successMessage = document.getElementById("form-success");
-              successMessage.style.display = "block";
+              if (response.ok) {
+                // Show success message
+                document.getElementById("contact-form-container").style.display = "none";
+                const successMessage = document.getElementById("form-success");
+                successMessage.style.display = "block";
+              } else {
+                // Handle error
+                const data = await response.json();
+                throw new Error(data.error || "Form submission failed");
+              }
             } catch (err) {
-              // Handle error
-              alert("Something went wrong. Please try again later.");
+              // Handle error with more detailed logging
+              console.error("Form submission error:", err);
+
+              // Show more detailed error message for debugging
+              alert("Form submission error. Please try again or contact Paul directly at paul@paultakisaki.com");
+
+              // Additional console logging to help with debugging
+              console.log("Form data that failed:", { name, email, service, message });
 
               // Re-enable submit button
               submitButton.disabled = false;

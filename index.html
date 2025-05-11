@@ -408,24 +408,25 @@
             <form id="contact-form" class="space-y-4">
                 <div>
                     <label for="name" class="block text-gray-400 mb-1">Name</label>
-                    <input type="text" id="name" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
+                    <input type="text" id="name" name="name" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
                 </div>
-                
+
                 <div>
                     <label for="email" class="block text-gray-400 mb-1">Email</label>
-                    <input type="email" id="email" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
+                    <input type="email" id="email" name="email" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none" required>
                 </div>
-                
+
                 <div>
                     <label for="company" class="block text-gray-400 mb-1">Company/Position</label>
-                    <input type="text" id="company" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none">
+                    <input type="text" id="company" name="company" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none">
                 </div>
-                
+
                 <div>
                     <label for="message" class="block text-gray-400 mb-1">Message (Optional)</label>
-                    <textarea id="message" rows="3" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none"></textarea>
+                    <textarea id="message" name="message" rows="3" class="w-full bg-black border border-gray-700 p-3 rounded focus:border-outlier-cyan focus:outline-none"></textarea>
                 </div>
-                
+
+
                 <button type="submit" class="w-full bg-outlier-cyan text-black font-bold py-3 rounded hover:bg-opacity-80 transition">
                     SUBMIT
                 </button>
@@ -445,6 +446,14 @@
     
     <!-- Scripts -->
     <script>
+        // Check for success parameter on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                alert('Thank you for your message! Paul will be in touch soon.');
+            }
+        });
+
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('translate-y-full')) {
@@ -475,12 +484,74 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Form submission (placeholder)
+        // Form submission with SendGrid API
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would normally handle the form submission via AJAX
-            alert('Form submitted! In a real implementation, this would send your information to Outlier.');
-            closeContactModal();
+
+            // Disable the submit button to prevent multiple submissions
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = "SENDING...";
+
+            // Get form data
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const company = document.getElementById("company").value;
+            const message = document.getElementById("message").value;
+
+            // Add console logging to help debug
+            console.log("Submitting form data:", { name, email, company, message });
+
+            // Submit the form to SendGrid API endpoint
+            fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                    subject: "Contact Form Submission"
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Clear the form
+                    this.reset();
+
+                    // Show success message
+                    alert('Message sent successfully! Paul will be in touch soon.');
+
+                    // Close modal
+                    closeContactModal();
+                } else {
+                    // Get error data
+                    return response.json().then(data => {
+                        throw new Error(data.error || "Form submission failed");
+                    });
+                }
+            })
+            .catch(error => {
+                // Handle error with more detailed logging
+                console.error("Form submission error:", error);
+
+                // Show more detailed error message for debugging
+                alert("Form submission error. Please try again or contact Paul directly at paul@paultakisaki.com");
+
+                // Additional console logging to help with debugging
+                console.log("Form data that failed:", {
+                    name,
+                    email,
+                    company,
+                    message
+                });
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = "SUBMIT";
+            });
         });
     </script>
 </body>
