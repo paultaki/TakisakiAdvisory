@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <!-- Logo aligned to far left -->
           <div class="pl-4 lg:pl-8">
             <a href="index.html" aria-label="Paul Takisaki Logo" class="block">
-              <img src="images/ptlogo.webp" alt="PAUL TAKISAKI" class="h-12 w-auto object-contain" style="aspect-ratio: 5/1; object-fit: contain; max-width: none;" height="48">
+              <img src="images/logo-shadow.png" alt="PAUL TAKISAKI" class="h-12 w-auto object-contain" style="aspect-ratio: 5/1; object-fit: contain; max-width: none;" height="48">
             </a>
           </div>
           

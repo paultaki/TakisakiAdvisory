@@ -42,7 +42,7 @@ function initNavigation() {
   logo.setAttribute('aria-label', 'Paul Takisaki');
   
   const logoImg = document.createElement('img');
-  logoImg.src = 'images/ptlogo.webp';
+  logoImg.src = 'images/logo-shadow.png';
   logoImg.alt = 'PAUL TAKISAKI';
   logoImg.width = 'auto';
   logoImg.height = '32';
