@@ -30,7 +30,7 @@ app.post('/api/send-email', async (req, res) => {
     // Construct the email
     const msg = {
       to: 'paul@paultakisaki.com', // Your email address
-      from: 'noreply@paultakisaki.com', // Must be a verified sender in SendGrid
+      from: 'paul@paultakisaki.com', // Must be a verified sender in SendGrid
       subject: `${subject} from ${name}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
