@@ -29,53 +29,24 @@
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        .horizontal-scroll::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .horizontal-scroll {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        
+        /* Custom animation that can't be handled by Tailwind */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         .animate-fadeIn {
             animation: fadeIn 0.3s ease-in;
         }
-        
-        /* Improved spacing consistency */
-        section {
-            padding: 6rem 2rem;
+
+        /* Hide scrollbar but maintain functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
-        
-        .service-card {
-            padding: 2rem;
-            width: 22rem;
-        }
-        
-        /* Typography refinements */
-        h1 {
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        /* Button consistency */
-        .btn-primary {
-            padding: 1rem 2rem;
-            font-size: 1rem;
-            letter-spacing: 0.05em;
-        }
-        
-        footer {
-            padding: 5rem 2rem 3rem;
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 
@@ -133,16 +104,16 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center">
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+        <section id="hero" class="min-h-screen flex items-center py-24 px-8">
+            <div class="max-w-6xl mx-auto w-full px-4 flex flex-col md:flex-row items-center">
                 <div class="md:w-3/5 md:pr-12">
-                    <h1 class="text-5xl md:text-7xl font-bold">
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter">
                         Precision Systems.<br>Elite Results.
                     </h1>
                     <p class="text-gray-400 mt-8 mb-10 text-xl max-w-lg leading-relaxed">
                         From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership.
                     </p>
-                    <button onclick="openContactModal()" class="btn-primary inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition">
+                    <button onclick="openContactModal()" class="inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-base tracking-wider">
                         BOOK YOUR STRATEGY CALL
                     </button>
                 </div>
@@ -153,36 +124,36 @@
         </section>
 
         <!-- Proof Section -->
-        <section id="proof">
-            <div class="max-w-6xl mx-auto">
+        <section id="proof" class="py-24 px-8">
+            <div class="max-w-6xl mx-auto w-full px-4">
                 <h2 class="text-3xl font-bold mb-3 text-outlier-cyan tracking-wide">PROVEN TRACK RECORD</h2>
                 <p class="text-4xl font-bold mb-16">No Fluff. Real Results.</p>
             
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <div class="relative max-w-full">
+                <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-center md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4">
                     <!-- Stat Card 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">4×</div>
                         <div class="text-xl text-outlier-cyan mb-1">President's Cabinet</div>
                         <div class="text-gray-400">Top 1% of organization</div>
                     </div>
                     
                     <!-- Stat Card 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">14-14</div>
                         <div class="text-xl text-outlier-cyan mb-1">Interview Success</div>
                         <div class="text-gray-400">100% offer rate</div>
                     </div>
                     
                     <!-- Stat Card 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">6+ Years</div>
                         <div class="text-xl text-outlier-cyan mb-1">Quota Model</div>
                         <div class="text-gray-400">National implementation</div>
                     </div>
                     
                     <!-- Stat Card 4 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">12</div>
                         <div class="text-xl text-outlier-cyan mb-1">Promotions</div>
                         <div class="text-gray-400">In 20 year career</div>
@@ -200,27 +171,27 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section id="testimonials">
-            <div class="max-w-6xl mx-auto">
+        <section id="testimonials" class="py-24 px-8">
+            <div class="max-w-6xl mx-auto w-full px-4">
                 <h2 class="text-3xl font-bold mb-16 text-outlier-cyan tracking-wide">CLIENT IMPACT</h2>
-                <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+                <div class="relative max-w-full">
+                <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-center md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4">
                     <!-- Testimonial 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
                         <p class="italic mb-4 text-lg">"Paul Takisaki doesn't just coach—he empowers."</p>
                         <div class="font-bold text-outlier-cyan">Emmanuel Nwoke</div>
                         <div class="text-gray-400">Sr. Director, Verizon</div>
                     </div>
                     
                     <!-- Testimonial 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
                         <p class="italic mb-4 text-lg">"You've had an indelible mark on the business."</p>
                         <div class="font-bold text-outlier-cyan">Aparna</div>
                         <div class="text-gray-400">Chief Revenue Officer, Verizon</div>
                     </div>
                     
                     <!-- Testimonial 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
                         <p class="italic mb-4 text-lg">"I would not be the leader I am today without Paul."</p>
                         <div class="font-bold text-outlier-cyan">Cam Vogt</div>
                         <div class="text-gray-400">Senior Director, Verizon</div>
@@ -237,8 +208,8 @@
         </section>
         
         <!-- Services Section -->
-        <section id="services">
-            <div class="max-w-6xl mx-auto">
+        <section id="services" class="py-24 px-8">
+            <div class="max-w-6xl mx-auto w-full px-4">
                 <div class="text-center mb-16">
                     <h2 class="text-3xl text-outlier-cyan mb-3 tracking-wide">ELITE SERVICES</h2>
                     <h3 class="text-4xl font-bold mb-6">Behind-the-Scenes Transformation</h3>
@@ -247,10 +218,10 @@
                     <p class="text-gray-300 mb-12 max-w-2xl mx-auto">Build invisible resumes. Land impossible roles.</p>
                 </div>
             
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <div class="relative max-w-full">
+                <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-center md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4">
                     <!-- Service Card 1 -->
-                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
+                    <div class="flex-shrink-0 bg-medium-gray rounded shadow-lg p-8 w-[22rem] max-w-full mx-auto md:mx-4">
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -291,7 +262,7 @@
                     </div>
                     
                     <!-- Service Card 2 -->
-                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
+                    <div class="flex-shrink-0 bg-medium-gray rounded shadow-lg p-8 w-[22rem] max-w-full mx-auto md:mx-4">
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -341,54 +312,15 @@
             <!-- Revenue Rescue Section -->
             <div class="text-center mt-32 mb-16">
                 <h2 class="text-3xl text-outlier-cyan mb-3 tracking-wide">STRATEGIC INTERVENTION</h2>
-                <h3 class="text-4xl font-bold mb-6">Revenue Rescue Operations</h3>
-                <p class="text-gray-300 mb-12 text-xl max-w-2xl mx-auto">When revenue is bleeding, we stop it fast.</p>
+                <h3 class="text-4xl font-bold mb-6">Revenue Rescue Operation</h3>
+                <p class="text-gray-300 mb-12 text-xl max-w-2xl mx-auto">When revenue is at risk, we act decisively.</p>
             </div>
             
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
-                    <!-- Service Card 3 -->
-                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
-                        <div class="flex items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                            <h3 class="text-xl font-bold">Crisis Intervention</h3>
-                        </div>
-                        <div class="text-3xl font-bold mb-4">$15,000<span class="text-gray-400 text-lg">/month</span></div>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Fix broken sales immediately</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>4-hour direct CEO consultation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Month-to-month flexibility</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Emergency response within 24 hours</span>
-                            </li>
-                        </ul>
-                        <button onclick="openContactModal()" class="w-full py-3 mt-6 border border-outlier-cyan text-outlier-cyan font-medium rounded hover:bg-outlier-cyan hover:text-black transition">
-                            ENGAGE CRISIS TEAM
-                        </button>
-                    </div>
+            <div class="relative max-w-full">
+                <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-center md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4">
                     
-                    <!-- Service Card 4 -->
-                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
+                    <!-- Service Card -->
+                    <div class="flex-shrink-0 bg-medium-gray rounded shadow-lg p-8 w-[22rem] max-w-full mx-auto md:mx-4">
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -427,11 +359,10 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Scroll indicators -->
                 <div class="flex justify-center mt-6 space-x-2">
                     <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
                 </div>
             </div>
             
@@ -458,13 +389,13 @@
         </section>
         
         <!-- Action Section -->
-        <section id="action" class="flex flex-col items-center text-center">
+        <section id="action" class="flex flex-col items-center text-center py-24 px-8">
             <div class="max-w-2xl mx-auto">
                 <h2 class="text-4xl md:text-6xl font-bold mb-12 leading-tight">
                     Your Next Chapter<br>Starts With One<br>Honest Conversation
                 </h2>
                 
-                <button onclick="openContactModal()" class="btn-primary mt-8 inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md text-lg">
+                <button onclick="openContactModal()" class="mt-8 inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md text-lg tracking-wider">
                     LET'S TALK
                 </button>
                 
@@ -516,7 +447,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t border-gray-800">
+    <footer class="border-t border-gray-800 py-20 pb-12 px-8">
         <div class="max-w-6xl mx-auto">
             <div class="flex justify-center mb-10">
                 <div class="text-3xl font-bold tracking-wider">

@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OUTLIER - Strategic Leadership</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<title>Paul Takisaki | Executive Coach & AI Strategist</title>
+<meta name="description" content="Official site of Paul Takisaki — former Verizon executive turned executive coach, AI entrepreneur, and legacy builder helping high-performers find clarity and impact.">
+
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <script src="https://cdn.tailwindcss.com/"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -12,6 +19,7 @@
                     colors: {
                         'outlier-cyan': '#00FFFF',
                         'dark-gray': '#121212',
+                        'medium-gray': '#232323',
                     },
                     fontFamily: {
                         'sans': ['Helvetica', 'Arial', 'sans-serif'],
@@ -32,6 +40,15 @@
         .horizontal-scroll {
             -ms-overflow-style: none;
             scrollbar-width: none;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        @media (min-width: 768px) {
+            .horizontal-scroll {
+                overflow-x: visible;
+                padding-bottom: 2rem;
+            }
         }
         
         @keyframes fadeIn {
@@ -42,7 +59,82 @@
         .animate-fadeIn {
             animation: fadeIn 0.3s ease-in;
         }
+        
+        /* Improved spacing consistency */
+        section {
+            padding: 6rem 2rem;
+        }
+        
+        .service-card {
+            padding: 2rem;
+            width: 22rem;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .service-card {
+                margin: 1rem;
+            }
+        }
+
+        /* Prevent horizontal overflow */
+        .max-w-6xl {
+            max-width: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Center cards on desktop */
+        @media (min-width: 768px) {
+            .horizontal-scroll {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+        
+        /* Typography refinements */
+        h1 {
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Button consistency */
+        .btn-primary {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+        }
+        
+        footer {
+            padding: 5rem 2rem 3rem;
+        }
     </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Paul Takisaki",
+  "url": "https://www.paultakisaki.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/paultaki",
+    "https://medium.com/@paul_31198",
+    "https://deepsignalos.com/",
+    "https://www.crunchbase.com/person/paul-takisaki-bc76"
+    "https://thefinalsloadout.com/"
+  ],
+  "jobTitle": "Executive Coach, AI Strategist",
+  "alumniOf": "Bellevue University",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Takisaki Strategy"
+  }
+}
+</script>
+
 </head>
 <body class="bg-black text-white font-sans">
     <!-- Mobile Menu (Hidden by default) -->
@@ -75,62 +167,56 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen pt-24 px-6 flex flex-col justify-between">
-            <div class="pt-16 flex flex-col md:flex-row items-center">
-                <div class="md:w-3/5">
-                    <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-                        <div class="mb-2">With</div>
-                        <div class="mb-2">Precision.</div>
-                        <div class="mb-2">Rebuild</div>
-                        <div class="mb-2">Your</div>
-                        <div class="mb-2">System.</div>
-                        <div class="mb-2">Deliver</div>
-                        <div class="mb-2">Elite</div>
-                        <div>Results.</div>
+        <section id="hero" class="min-h-screen flex items-center">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+                <div class="md:w-3/5 md:pr-12">
+                    <h1 class="text-5xl md:text-7xl font-bold">
+                        Precision Systems.<br>Elite Results.
                     </h1>
-                    <p class="text-gray-400 mt-6 text-xl max-w-lg">
+                    <p class="text-gray-400 mt-8 mb-10 text-xl max-w-lg leading-relaxed">
                         From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership.
                     </p>
-                    <button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition">
+                    <button onclick="openContactModal()" class="btn-primary inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition">
                         BOOK YOUR STRATEGY CALL
                     </button>
                 </div>
                 <div class="md:w-2/5 flex justify-center mt-12 md:mt-0">
-                    <img src="/api/placeholder/400/400" alt="Geometric Unicorn" class="w-40 h-40 md:w-48 md:h-48 object-contain" />
+                    <img src="images/unicorn-matte.png" alt="Geometric Unicorn" class="w-48 h-48 md:w-64 md:h-64 object-contain" />
                 </div>
             </div>
         </section>
 
         <!-- Proof Section -->
-        <section id="proof" class="py-16 px-6">
-            <h2 class="text-4xl font-bold mb-4 text-outlier-cyan">PROVEN TRACK RECORD</h2>
-            <p class="text-3xl font-bold mb-12">No Fluff. Real Results.</p>
+        <section id="proof">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-3 text-outlier-cyan tracking-wide">PROVEN TRACK RECORD</h2>
+                <p class="text-4xl font-bold mb-16">No Fluff. Real Results.</p>
             
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <div class="relative max-w-full">
+                <div class="horizontal-scroll flex space-x-4 pb-8 mx-auto justify-center md:justify-center">
                     <!-- Stat Card 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">4×</div>
                         <div class="text-xl text-outlier-cyan mb-1">President's Cabinet</div>
                         <div class="text-gray-400">Top 1% of organization</div>
                     </div>
                     
                     <!-- Stat Card 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">14-14</div>
                         <div class="text-xl text-outlier-cyan mb-1">Interview Success</div>
                         <div class="text-gray-400">100% offer rate</div>
                     </div>
                     
                     <!-- Stat Card 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">6+ Years</div>
                         <div class="text-xl text-outlier-cyan mb-1">Quota Model</div>
                         <div class="text-gray-400">National implementation</div>
                     </div>
                     
                     <!-- Stat Card 4 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded">
                         <div class="text-5xl font-bold mb-2">12</div>
                         <div class="text-xl text-outlier-cyan mb-1">Promotions</div>
                         <div class="text-gray-400">In 20 year career</div>
@@ -148,25 +234,27 @@
         </section>
         
         <!-- Testimonials Section -->
-        <section id="testimonials" class="py-16 px-6">
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+        <section id="testimonials">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold mb-16 text-outlier-cyan tracking-wide">CLIENT IMPACT</h2>
+                <div class="relative max-w-full">
+                <div class="horizontal-scroll flex space-x-4 pb-8 mx-auto justify-center md:justify-center">
                     <!-- Testimonial 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
-                        <p class="italic mb-4 text-lg">"Paul doesn't just coach—he empowers."</p>
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                        <p class="italic mb-4 text-lg">"Paul Takisaki doesn't just coach—he empowers."</p>
                         <div class="font-bold text-outlier-cyan">Emmanuel Nwoke</div>
                         <div class="text-gray-400">Sr. Director, Verizon</div>
                     </div>
                     
                     <!-- Testimonial 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
                         <p class="italic mb-4 text-lg">"You've had an indelible mark on the business."</p>
                         <div class="font-bold text-outlier-cyan">Aparna</div>
                         <div class="text-gray-400">Chief Revenue Officer, Verizon</div>
                     </div>
                     
                     <!-- Testimonial 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
+                    <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
                         <p class="italic mb-4 text-lg">"I would not be the leader I am today without Paul."</p>
                         <div class="font-bold text-outlier-cyan">Cam Vogt</div>
                         <div class="text-gray-400">Senior Director, Verizon</div>
@@ -183,29 +271,27 @@
         </section>
         
         <!-- Services Section -->
-        <section id="services" class="py-16 px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-xl text-outlier-cyan mb-4">ELITE SERVICES</h2>
-                <h3 class="text-4xl font-bold mb-4">Behind-the-Scenes Transformation</h3>
-                <p class="text-gray-400">Direct C-suite advisory. Zero public footprint. Guaranteed results.</p>
-            </div>
+        <section id="services">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl text-outlier-cyan mb-3 tracking-wide">ELITE SERVICES</h2>
+                    <h3 class="text-4xl font-bold mb-6">Behind-the-Scenes Transformation</h3>
+                    <p class="text-gray-300 mb-16 text-xl max-w-3xl mx-auto">Direct C-suite advisory. Zero public footprint. Guaranteed results.</p>
+                    <h4 class="text-2xl font-bold mb-4">Executive Development Programs</h4>
+                    <p class="text-gray-300 mb-12 max-w-2xl mx-auto">Build invisible resumes. Land impossible roles.</p>
+                </div>
             
-            <div class="text-center mb-12">
-                <h2 class="text-xl text-outlier-cyan mb-4">LEADERSHIP EXCELLENCE</h2>
-                <h3 class="text-3xl font-bold mb-4">Executive Development</h3>
-                <p class="text-gray-400 mb-8">Build invisible resumes. Land impossible roles.</p>
-            </div>
-            
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
+            <div class="relative max-w-full">
+                <div class="horizontal-scroll flex space-x-4 pb-8 mx-auto justify-center md:justify-center">
                     <!-- Service Card 1 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                             <h3 class="text-xl font-bold">Rising Star Program</h3>
                         </div>
+                        <p class="text-lg text-gray-300 mb-4">Accelerate your leadership trajectory with proven Fortune 50 strategies.</p>
                         <div class="text-3xl font-bold mb-4">$5,000<span class="text-gray-400 text-lg">/month</span></div>
                         <ul class="space-y-3">
                             <li class="flex items-start">
@@ -239,7 +325,7 @@
                     </div>
                     
                     <!-- Service Card 2 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -287,56 +373,17 @@
             </div>
             
             <!-- Revenue Rescue Section -->
-            <div class="text-center mt-20 mb-12">
-                <h2 class="text-xl text-outlier-cyan mb-4">STRATEGIC INTERVENTION</h2>
-                <h3 class="text-3xl font-bold mb-4">Revenue Rescue Operations</h3>
-                <p class="text-gray-400 mb-8">When revenue is bleeding, we stop it fast.</p>
+            <div class="text-center mt-32 mb-16">
+                <h2 class="text-3xl text-outlier-cyan mb-3 tracking-wide">STRATEGIC INTERVENTION</h2>
+                <h3 class="text-4xl font-bold mb-6">Revenue Rescue Operation</h3>
+                <p class="text-gray-300 mb-12 text-xl max-w-2xl mx-auto">When revenue is at risk, we act decisively.</p>
             </div>
             
-            <div class="relative">
-                <div class="horizontal-scroll flex overflow-x-auto space-x-4 pb-8">
-                    <!-- Service Card 3 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
-                        <div class="flex items-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                            <h3 class="text-xl font-bold">Crisis Intervention</h3>
-                        </div>
-                        <div class="text-3xl font-bold mb-4">$15,000<span class="text-gray-400 text-lg">/month</span></div>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Fix broken sales immediately</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>4-hour direct CEO consultation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Month-to-month flexibility</span>
-                            </li>
-                            <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-outlier-cyan mr-2 mt-1 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                </svg>
-                                <span>Emergency response within 24 hours</span>
-                            </li>
-                        </ul>
-                        <button onclick="openContactModal()" class="w-full py-3 mt-6 border border-outlier-cyan text-outlier-cyan font-medium rounded hover:bg-outlier-cyan hover:text-black transition">
-                            ENGAGE CRISIS TEAM
-                        </button>
-                    </div>
+            <div class="relative max-w-full">
+                <div class="horizontal-scroll flex space-x-4 pb-8 mx-auto justify-center md:justify-center">
                     
-                    <!-- Service Card 4 -->
-                    <div class="flex-shrink-0 w-80 bg-dark-gray p-6 rounded">
+                    <!-- Service Card -->
+                    <div class="service-card flex-shrink-0 bg-medium-gray rounded shadow-lg">
                         <div class="flex items-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-outlier-cyan mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -375,52 +422,54 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Scroll indicators -->
                 <div class="flex justify-center mt-6 space-x-2">
                     <div class="w-2 h-2 rounded-full bg-outlier-cyan"></div>
-                    <div class="w-2 h-2 rounded-full bg-gray-500"></div>
                 </div>
             </div>
             
             <!-- Testimonial Quote -->
-            <div class="mt-20 max-w-2xl mx-auto text-center">
-                <svg class="h-8 w-8 text-outlier-cyan mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <p class="text-xl italic mb-6">
-                    "After 12 months working with Paul, we've increased profitability by 28% while reducing our executive turnover to zero."
+            <div class="mt-32 max-w-3xl mx-auto text-center bg-medium-gray rounded-lg py-12 px-8 shadow-lg">
+                <div class="mb-8 flex flex-row items-center justify-center space-x-2">
+                    <img src="images/quote_open.webp" alt="Opening quote" class="h-8 w-8" />
+                </div>
+                <p class="text-2xl italic mb-4 leading-relaxed">
+                    "After 12 months working with Paul Takisaki, we've increased profitability by 28% while reducing our executive turnover to zero."
                 </p>
+                <div class="mb-6 flex flex-row items-center justify-center space-x-2">
+                    <img src="images/quote_closed.webp" alt="Closing quote" class="h-8 w-8" />
+                </div>
                 <div class="flex items-center justify-center mt-4">
-                    <div class="w-10 h-10 bg-gray-700 rounded-full mr-4"></div>
+                    <div class="w-12 h-12 bg-gray-700 rounded-full mr-4"></div>
                     <div class="text-left">
-                        <div class="font-bold text-outlier-cyan">Chief Revenue Officer</div>
-                        <div class="text-gray-400 text-sm">Fortune 500 Technology Company</div>
+                        <div class="font-bold text-outlier-cyan text-lg">Chief Revenue Officer</div>
+                        <div class="text-gray-300 text-base">Fortune 500 Technology Company</div>
                     </div>
                 </div>
             </div>
+        </div>
         </section>
         
         <!-- Action Section -->
-        <section id="action" class="py-16 px-6 flex flex-col items-center text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                Your Next Chapter <br>
-                Starts With One <br>
-                Honest <br>
-                Conversation.
-            </h2>
-            
-            <button onclick="openContactModal()" class="mt-8 inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md">
-                LET'S TALK
-            </button>
-            
-            <p class="text-gray-400 mt-4">No sales pitch. Just clarity.</p>
+        <section id="action" class="flex flex-col items-center text-center">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 leading-tight">
+                    Your Next Chapter<br>Starts With One<br>Honest Conversation
+                </h2>
+                
+                <button onclick="openContactModal()" class="btn-primary mt-8 inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition w-full max-w-md text-lg">
+                    LET'S TALK
+                </button>
+                
+                <p class="text-gray-300 mt-6 text-lg">No sales pitch. Just clarity.</p>
+            </div>
         </section>
     </main>
     
     <!-- Contact Modal -->
-    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center transform scale-0 opacity-0 transition-all duration-300 ease-in-out">
-        <div class="bg-dark-gray w-full max-w-md m-4 p-6 rounded shadow-lg">
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transform scale-0 opacity-0 transition-all duration-300 ease-in-out">
+        <div class="bg-medium-gray w-full max-w-md m-4 p-8 rounded-lg shadow-xl">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-2xl font-bold">Let's Connect</h3>
                 <button onclick="closeContactModal()" class="text-gray-400 hover:text-white">
@@ -461,13 +510,15 @@
     </div>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-gray-800">
-        <div class="flex justify-center mb-8">
-            <div class="text-2xl font-bold tracking-wider">
-                <span class="text-outlier-cyan">OUT</span>LIER
+    <footer class="border-t border-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-center mb-10">
+                <div class="text-3xl font-bold tracking-wider">
+                    <span class="text-outlier-cyan">OUT</span>LIER
+                </div>
             </div>
+            <p class="text-center text-gray-400 text-lg">© 2025 Paul Takisaki. All rights reserved.</p>
         </div>
-        <p class="text-center text-gray-500">© 2025 Paul Takisaki. All rights reserved.</p>
     </footer>
     
     <!-- Scripts -->
@@ -544,4 +595,5 @@
         });
     </script>
 </body>
+
 </html>
