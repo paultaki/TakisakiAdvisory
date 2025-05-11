@@ -721,7 +721,7 @@
               console.log("Submitting contact form data:", { name, email, service, message });
 
               // Submit the form to SendGrid API endpoint
-              const response = await fetch('/api/send-email', {
+              const response = await fetch('https://paultakisaki.com/api/send-email', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
