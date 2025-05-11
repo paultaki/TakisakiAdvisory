@@ -529,7 +529,7 @@
             console.log("Submitting form data:", { name, email, company, message });
 
             // Submit the form to SendGrid API endpoint
-            fetch('https://paultakisaki.com/api/send-email', {
+            fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -537,6 +537,7 @@
                 body: JSON.stringify({
                     name,
                     email,
+                    company,
                     message,
                     subject: "Contact Form Submission"
                 })

@@ -20,7 +20,7 @@ export default async function handler(req, res) {
   try {
     await sendgrid.send({
       to: "paul@paultakisaki.com",
-      from: "noreply@paultakisaki.com", // This must be a verified sender in SendGrid
+      from: "paul@paultakisaki.com", // This must be a verified sender in SendGrid
       subject: `${subject} from ${name}`,
       html: `
         <p><strong>Name:</strong> ${name}</p>
