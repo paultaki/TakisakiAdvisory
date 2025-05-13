@@ -3,44 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Invisible Resume | Leadership Insights | Paul Takisaki</title>
+    <title>Turning the Ship Fast | Leadership Insights | Paul Takisaki</title>
     <meta
       name="description"
-      content="Your real resume isn't on paper. It's in every quiet moment you've ever shown up. Building a legacy that outlives your title."
+      content="The hidden architecture of culture change. Everyone says culture change takes years. They're wrong. It only takes years when you move the wrong way — or move the wrong people."
     />
 
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="The Invisible Resume | Paul Takisaki" />
+    <meta property="og:title" content="Turning the Ship Fast | Paul Takisaki" />
     <meta
       property="og:description"
-      content="Your real resume isn't on paper. It's in every quiet moment you've ever shown up. Building a legacy that outlives your title."
+      content="The hidden architecture of culture change. Everyone says culture change takes years. They're wrong. It only takes years when you move the wrong way — or move the wrong people."
     />
     <meta
       property="og:image"
-      content="https://www.paultakisaki.com/images/paul-takisaki-resume.webp"
+      content="https://www.paultakisaki.com/images/ocean3.webp"
     />
     <meta
       property="og:url"
-      content="https://www.paultakisaki.com/articles/invisible-resume.html"
+      content="https://www.paultakisaki.com/articles/turning-the-ship-fast.html"
     />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Paul Takisaki" />
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="The Invisible Resume | Paul Takisaki" />
+    <meta
+      name="twitter:title"
+      content="Turning the Ship Fast | Paul Takisaki"
+    />
     <meta
       name="twitter:description"
-      content="Your real resume isn't on paper. It's in every quiet moment you've ever shown up. Building a legacy that outlives your title."
+      content="The hidden architecture of culture change. Everyone says culture change takes years. They're wrong. It only takes years when you move the wrong way — or move the wrong people."
     />
     <meta
       name="twitter:image"
-      content="https://www.paultakisaki.com/images/paul-takisaki-resume.webp"
+      content="https://www.paultakisaki.com/images/ocean3.webp"
     />
 
     <link rel="icon" href="../favicon.ico" />
     <link rel="manifest" href="../site.webmanifest" />
     <script src="https://cdn.tailwindcss.com/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -51,7 +57,8 @@
               "medium-gray": "#232323",
             },
             fontFamily: {
-              sans: ["Helvetica", "Arial", "sans-serif"],
+              sans: ["Inter", "Helvetica", "Arial", "sans-serif"],
+              serif: ["Open Sans", "Georgia", "serif"],
             },
             typography: {
               DEFAULT: {
@@ -156,24 +163,28 @@
 
       /* Article styling */
       .article-content h2 {
-        font-size: 1.875rem;
+        font-size: 2rem;
         font-weight: 700;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
         color: white;
+        letter-spacing: -0.025em;
       }
 
       .article-content h3 {
         font-size: 1.5rem;
-        font-weight: 700;
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
+        font-weight: 600;
+        margin-top: 2.25rem;
+        margin-bottom: 1rem;
         color: white;
+        letter-spacing: -0.015em;
       }
 
       .article-content p {
-        margin-bottom: 1.5rem;
-        line-height: 1.75;
+        margin-bottom: 1.75rem;
+        line-height: 1.8;
+        font-size: 1.125rem;
+        letter-spacing: 0.01em;
       }
 
       .article-content ul,
@@ -248,6 +259,7 @@
         border-top: 1px solid #374151;
       }
 
+      /* Table of Contents */
       .toc {
         background-color: #000000;
         border-radius: 0.5rem;
@@ -284,10 +296,10 @@
 
       /* Author box */
       .author-box {
-        background-color: #121212;
+        background-color: #000000;
         border-radius: 0.5rem;
         padding: 1.5rem;
-        border: 1px solid #2d3748;
+        border: 1px solid #1a1a1a;
         margin: 3rem 0;
       }
 
@@ -303,28 +315,57 @@
       }
 
       .highlight-box {
-        background-color: rgba(0, 255, 255, 0.1);
+        background-color: rgba(0, 255, 255, 0.05);
         border-radius: 0.5rem;
-        padding: 1.2rem 1.5rem;
-        margin: 2rem 0;
-        border: 1px solid rgba(0, 255, 255, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 2rem;
+        margin: 2.5rem 0;
+        border: 1px solid rgba(0, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       }
 
       .key-quote {
-        font-size: 1.5rem;
+        font-size: 2rem;
         line-height: 1.4;
-        font-weight: 600;
+        font-weight: 700;
         text-align: center;
-        color: white;
+        letter-spacing: -0.02em;
+        margin: 3rem 0;
+        padding: 1.5rem;
+        border-top: 1px solid rgba(0, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+      }
+
+      /* Image overlay styling */
+      .image-overlay-container {
+        position: relative;
         margin: 2rem 0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .image-overlay-container img {
+        width: 100%;
+        display: block;
+        border-radius: 0.5rem;
+      }
+
+      .overlay-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 1.5rem;
+        backdrop-filter: blur(4px);
+        text-align: center;
+        font-weight: 500;
+        line-height: 1.6;
       }
     </style>
   </head>
 
-  <body class="bg-black text-white font-sans custom-scrollbar">
+  <body class="bg-black text-gray-200 font-sans custom-scrollbar">
     <!-- Scroll Progress Bar -->
     <div class="progress-bar" id="scrollProgressBar"></div>
 
@@ -445,15 +486,15 @@
           <span
             class="inline-block px-3 py-1 text-xs font-semibold bg-outlier-cyan bg-opacity-20 text-outlier-cyan rounded-full mb-6"
           >
-            Leadership
+            Culture Change
           </span>
           <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 max-w-4xl">
-            <span class="text-outlier-cyan">The Invisible Resume</span>
+            <span class="text-outlier-cyan">TURNING THE SHIP FAST</span>
           </h1>
           <div
             class="flex items-center justify-center text-gray-300 text-sm mt-2"
           >
-            <span>Building a legacy that outlives your title</span>
+            <span>The Hidden Architecture of Culture Change</span>
           </div>
         </div>
       </div>
@@ -464,8 +505,7 @@
           <p
             class="text-xl md:text-2xl text-outlier-cyan font-bold leading-relaxed"
           >
-            Your real resume isn't on paper. It's in every quiet moment you've
-            ever shown up.
+            Everyone says culture change takes years. They're wrong.
           </p>
 
           <div class="flex items-center mt-12">
@@ -489,178 +529,112 @@
           <div class="toc-title">Table of Contents</div>
           <ul class="toc-list">
             <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#the-myth-of-mandate">The Myth of Mandate</a></li>
             <li>
-              <a href="#beyond-bullet-points">Beyond the Bullet Points</a>
+              <a href="#unspoken-principle"
+                >The Unspoken Principle Behind the Fastest Shifts</a
+              >
             </li>
             <li>
-              <a href="#invisible-resume">What Makes an Invisible Resume?</a>
+              <a href="#the-approach">The Approach I Won't Share Publicly</a>
             </li>
-            <li><a href="#final-reflection">Final Reflection</a></li>
+            <li><a href="#final-thought">Final Thought</a></li>
           </ul>
         </div>
 
         <!-- Article Content -->
         <article class="article-content">
-          <section id="introduction">
-            <p>I've never lost a job I applied for.</p>
-            <p>Fourteen offers. Fourteen wins. Every time.</p>
-            <p>
-              Twice, I even applied for two roles at once — and got both. Once
-              when I took the leap to Kansas. Once when I skipped a level and
-              landed my first Sr. Director role, leapfrogging the ladder.
+          <section id="introduction" class="mt-8">
+            <p class="text-xl font-semibold text-white">
+              Everyone says culture change takes years.
+              <span class="text-outlier-cyan">They're wrong.</span>
             </p>
             <p>
-              But none of those jobs were won because of a bullet point on a
-              resume.
-            </p>
-            <p>
-              They were won in parking lots, on sales floors, during red-eye
-              flights, or in the quiet moments where someone noticed how I
-              <em>showed up</em>, not just what I had <em>done</em>.
+              It only takes years when you move the wrong way — or move the
+              wrong people.
             </p>
 
-            <div class="key-quote">That's the invisible resume.</div>
+            <p>
+              There's a different way. A way that feels almost invisible — until the ship is already turning.
+            </p>
+          </section>
 
-            <div class="my-8 flex justify-center">
+          <section id="the-myth-of-mandate">
+            <h2>The Myth of Mandate</h2>
+            <p>
+              You can launch new strategies. You can send the emails, run
+              the webinars, update the org charts.
+            </p>
+            <p>
+              But people don't move because they're told to. They move
+              because the tide underneath them shifts.
+            </p>
+            <p class="font-medium text-white">
+              And by the time most leaders notice, it's already too late to
+              control it.
+            </p>
+          </section>
+
+          <section id="unspoken-principle">
+            <h2>The Unspoken Principle Behind the Fastest Shifts</h2>
+            <p>
+              Years ago, without knowing the theory behind it, I stumbled
+              onto a principle used by the most persuasive systems in the world
+              — advertising, grassroots movements, even revolutions.
+            </p>
+            <p>
+              It wasn't about pushing louder. It was about pulling
+              smarter. About understanding who truly carries the trust —
+              not by title, but by quiet authority.
+            </p>
+            <p class="font-medium">
+              Once you know how to recognize those undercurrents, and once
+              you know how to align them the right way, culture moves
+              itself.
+            </p>
+
+            <div class="image-overlay-container">
               <img
-                src="images/paul-takisaki-resume.webp"
-                alt="The Invisible Resume"
-                class="w-full max-w-2xl rounded-lg shadow-lg"
+                src="../images/ocean3.webp"
+                alt="Guiding hidden currents"
+                class="w-full"
+                onerror="this.onerror=null; this.src='https://placehold.co/1200x600/121212/00FFFF?text=Ocean+Currents';"
               />
+              <div class="overlay-text">
+                You don't steer the ship harder.<br />
+                You guide the currents underneath.
+              </div>
             </div>
-
-            <p>It's not the LinkedIn headline or the stack of awards.</p>
-            <p>It's how you treat people when there's nothing in it for you.</p>
-            <p>It's the consistency when no one's watching.</p>
-            <p>It's the calm when the room's on fire.</p>
-            <p>The truth when it's not convenient.</p>
-            <p>The ability to hold weight others won't even touch.</p>
-
-            <blockquote>
-              Anyone can write a resume. <strong>Few live one.</strong>
-            </blockquote>
           </section>
 
-          <section id="beyond-bullet-points">
-            <h2>Beyond the Bullet Points</h2>
-            <p>I chased titles. Numbers. Promotions.</p>
+          <section id="the-approach">
+            <h2>The Approach I Won't Share Publicly</h2>
             <p>
-              And I got them — twelve promotions in twenty years. President's
-              Cabinet. National roles. Big teams. Big budgets. Big outcomes.
+              There's a method. A system. One refined through years of
+              watching, testing, and sometimes failing.
             </p>
-            <p>But the things I'm most proud of?</p>
-
-            <ul>
-              <li>
-                The rep who stayed because I saw them when no one else did.
-              </li>
-              <li>
-                The teammate who said my belief in them changed their life.
-              </li>
-              <li>
-                The quiet leader who finally found her voice because someone
-                showed her how much it mattered.
-              </li>
-            </ul>
-
-            <p>
-              One time, I flew halfway across the country to interview with a
-              Senior VP I'd never met.
-            </p>
-            <p>I spent days obsessing over that interview.</p>
-            <p>
-              I built a full business plan. Rehearsed my answers. Ironed my
-              shirt three times. Paced the floor of my cramped San Francisco
-              hotel room, practicing lines in front of the mirror.
+            <p class="text-white">
+              I won't map it here. Not because it's complicated — but
+              because it's too powerful to hand out casually.
             </p>
             <p>
-              Turns out, the real work had been done long before I ever booked
-              the flight.
-            </p>
-            <p>
-              When I sat down, the SVP smiled and said,
-              <em
-                >"Hey, nice to meet you. Wanna grab a glass of wine? Is your
-                family ready to move?"</em
-              >
-            </p>
-
-            <div class="highlight-box">
-              <p class="text-xl font-bold text-center text-outlier-cyan m-0">
-                My invisible resume had already done the interview for me.
-              </p>
-            </div>
-
-            <p>
-              You won't find these moments in HR systems. But they're etched
-              into legacy.
-            </p>
-            <p>
-              <em>Impact echoes longer than any job title ever will.</em>
+              And frankly, even if I did, few would recognize it in time to
+              use it.
             </p>
           </section>
 
-          <section id="invisible-resume">
-            <h2>What Makes an Invisible Resume?</h2>
+          <section id="final-thought">
+            <h2>Final Thought</h2>
             <p>
-              Over two decades and hundreds of leadership conversations, I found
-              six patterns that quietly build reputations that outlast roles.
+              Change the surface, and you get obedience. Change the
+              undercurrent, and you create conviction.
             </p>
-            <p>It's not the loud moments that promote you.</p>
-            <p class="font-bold">It's the quiet ones no one's watching.</p>
-
-            <ul>
-              <li>It's showing up where others won't.</li>
-              <li>It's consistency when others fade.</li>
-              <li>
-                It's standing for something real, even when it's uncomfortable.
-              </li>
-              <li>
-                It's quietly delivering the results others only talk about.
-              </li>
-              <li>
-                It's sharing your best ideas freely, instead of hoarding them
-                for yourself.
-              </li>
-              <li>
-                It's having the courage to give honest feedback others shy away
-                from.
-              </li>
-            </ul>
-
-            <blockquote>
-              Most people are unintentionally building their invisible resume.
-              <br />
-              The smart ones? They build it on purpose.
-            </blockquote>
-
-            <p>Because the legacy you're building?</p>
-            <p>It's already happening.</p>
-            <p>Make it intentional.</p>
-          </section>
-
-          <section id="final-reflection">
-            <h2>Final Reflection</h2>
-            <p>Your invisible resume is showing.</p>
-            <p>What's on it?</p>
-
-            <ul>
-              <li>
-                What would your team say about you when you're not in the room?
-              </li>
-              <li>
-                Have you created moments of impact that never made it onto your
-                LinkedIn?
-              </li>
-              <li>Who is succeeding today because of your belief in them?</li>
-            </ul>
-
-            <p>
-              The real resume isn't a file. It's the fingerprints you leave on
-              people.
+            <p class="text-white font-medium">
+              Most leaders shout from the deck. The few who move the deep
+              waters? They don't command ships.
             </p>
 
-            <div class="key-quote">Start building one that lasts.</div>
+            <div class="key-quote text-outlier-cyan">They change oceans.</div>
           </section>
         </article>
 
@@ -671,7 +645,7 @@
             <a
               href="javascript:void(0)"
               onclick="shareTwitter()"
-              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              class="p-3 bg-black rounded-full hover:bg-gray-900 transition-colors border border-gray-800"
               aria-label="Share on Twitter"
             >
               <svg
@@ -688,7 +662,7 @@
             <a
               href="javascript:void(0)"
               onclick="shareLinkedIn()"
-              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              class="p-3 bg-black rounded-full hover:bg-gray-900 transition-colors border border-gray-800"
               aria-label="Share on LinkedIn"
             >
               <svg
@@ -705,7 +679,7 @@
             <a
               href="javascript:void(0)"
               onclick="shareFacebook()"
-              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              class="p-3 bg-black rounded-full hover:bg-gray-900 transition-colors border border-gray-800"
               aria-label="Share on Facebook"
             >
               <svg
@@ -722,7 +696,7 @@
             <a
               href="javascript:void(0)"
               onclick="copyLink()"
-              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              class="p-3 bg-black rounded-full hover:bg-gray-900 transition-colors border border-gray-800"
               aria-label="Copy link"
             >
               <svg
@@ -741,6 +715,16 @@
               </svg>
             </a>
           </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="my-12 text-center">
+          <a
+            href="../index.html#action"
+            class="inline-block px-10 py-4 bg-outlier-cyan text-black font-bold rounded hover:bg-opacity-80 transition"
+          >
+            BOOK A DISCOVERY CALL
+          </a>
         </div>
 
         <!-- Author box -->
@@ -804,60 +788,59 @@
           <h3 class="text-2xl font-bold mb-6">Related Articles</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Related Article 1 -->
-            <a href="strategy.html" class="group">
+            <a href="invisible-resume.html" class="group">
               <div
                 class="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-900 hover:border-outlier-cyan transition-colors"
               >
                 <div class="h-48 overflow-hidden">
                   <img
-                    src="images/paul-takisaki-strategy.webp"
-                    alt="Strategic Failure Field Notes"
+                    src="images/paul-takisaki-resume.webp"
+                    alt="The Invisible Resume"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Strategic+Failure';"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
                   />
-                </div>
-                <div class="p-6">
-                  <div class="text-outlier-cyan text-sm font-semibold mb-2">
-                    Strategy
-                  </div>
-                  <h4
-                    class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
-                  >
-                    Strategic Failure Field Notes
-                  </h4>
-                  <p class="text-gray-400 text-sm">
-                    April 4, 2025 • 5 min read
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Coming Soon Article -->
-            <a href="unscalable.html" class="group">
-              <div
-                class="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-900 relative"
-              >
-                <div class="h-48 overflow-hidden brightness-50">
-                  <img
-                    src="images/unscalable.webp"
-                    alt="The Unscalable Advantage"
-                    class="w-full h-full object-cover"
-                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Unscalable+Advantage';"
-                  />
-                </div>
-                <div
-                  class="absolute top-4 right-4 bg-outlier-cyan text-black px-3 py-1 rounded-full text-xs font-bold"
-                >
-                  COMING SOON
                 </div>
                 <div class="p-6">
                   <div class="text-outlier-cyan text-sm font-semibold mb-2">
                     Leadership
                   </div>
-                  <h4 class="text-lg font-bold mb-2">
+                  <h4
+                    class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
+                  >
+                    The Invisible Resume
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    March 22, 2025 • 5 min read
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Related Article 2 -->
+            <a href="unscalable.html" class="group">
+              <div
+                class="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-900 hover:border-outlier-cyan transition-colors"
+              >
+                <div class="h-48 overflow-hidden">
+                  <img
+                    src="images/unscalable.webp"
+                    alt="The Unscalable Advantage"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Unscalable+Advantage';"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="text-outlier-cyan text-sm font-semibold mb-2">
+                    Leadership
+                  </div>
+                  <h4
+                    class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
+                  >
                     The Unscalable Advantage
                   </h4>
-                  <p class="text-gray-400 text-sm">Coming May 2025</p>
+                  <p class="text-gray-400 text-sm">
+                    April 10, 2025 • 6 min read
+                  </p>
                 </div>
               </div>
             </a>
@@ -868,10 +851,11 @@
         <div class="bg-black rounded-lg p-8 my-12 border border-gray-900">
           <div class="text-center mb-6">
             <h3 class="text-2xl font-bold mb-2">
-              Want more insights like this?
+              Get Leadership Insights Delivered
             </h3>
             <p class="text-gray-300">
-              Subscribe to my newsletter for exclusive leadership content.
+              Join my newsletter for practical wisdom on leadership, team
+              building, and creating cultures that perform and endure.
             </p>
           </div>
 
