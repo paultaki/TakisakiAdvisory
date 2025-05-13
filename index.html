@@ -9,7 +9,7 @@
 
     <link rel="icon" href="favicon.ico">
     <link rel="manifest" href="site.webmanifest">
-    <script src="https://cdn.tailwindcss.com/" defer></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -18,7 +18,7 @@
                         'outlier-cyan': '#00FFFF',
                         'dark-gray': '#121212',
                         'medium-gray': '#232323',
-                    }, 
+                    },
                     fontFamily: {
                         'sans': ['Helvetica', 'Arial', 'sans-serif'],
                     }
@@ -27,22 +27,6 @@
         }
     </script>
     <style>
-        /* Critical CSS for hero heading - ensures fast rendering */
-        #hero h1 {
-            visibility: visible !important;
-            font-family: Helvetica, Arial, sans-serif;
-            font-weight: 700;
-            font-size: 3rem; /* text-5xl equivalent */
-            line-height: 1.1; /* leading-tight equivalent */
-            letter-spacing: -0.025em; /* tracking-tighter equivalent */
-            will-change: auto;
-        }
-        @media (min-width: 768px) {
-            #hero h1 {
-                font-size: 4.5rem; /* md:text-7xl equivalent */
-            }
-        }
-        
         /* Custom animation that can't be handled by Tailwind */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -197,7 +181,7 @@
         <section id="hero" class="h-screen flex items-center py-24 px-8">
             <div class="max-w-6xl mx-auto w-full px-4">
                 <div class="flex flex-col text-center">
-                    <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter" style="font-display: swap;">
+                    <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter">
                         Precision Systems.<br>Elite Results.
                     </h1>
                     <p class="text-gray-400 mt-8 mb-10 text-xl leading-relaxed mx-auto max-w-lg">
@@ -229,34 +213,34 @@
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <div class="text-7xl font-bold mb-3 text-outlier-cyan">4×</div>
                         <div class="text-2xl text-white mb-2 font-semibold">President's Cabinet</div>
-                        <div class="text-gray-400 text-base">Top 1% of organization</div>
+                        <div class="text-gray-400 text-base">Top 1% across 3 territories</div>
                     </div>
                     
                     <!-- Stat Card 2 -->
                     <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">14-14</div>
-                        <div class="text-2xl text-white mb-2 font-semibold">Interview Success</div>
-                        <div class="text-gray-400 text-base">100% offer rate</div>
+                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">1,000+</div>
+                        <div class="text-2xl text-white mb-2 font-semibold">Team Members Led</div>
+                        <div class="text-gray-400 text-base">Across multiple departments</div>
                     </div>
                     
                     <!-- Stat Card 3 -->
                     <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">6+ Years</div>
-                        <div class="text-2xl text-white mb-2 font-semibold">Quota Model</div>
-                        <div class="text-gray-400 text-base">National implementation</div>
+                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">19</div>
+                        <div class="text-2xl text-white mb-2 font-semibold">Record-Breaking Months</div>
+                        <div class="text-gray-400 text-base">Consecutive performance streak</div>
                     </div>
                     
                     <!-- Stat Card 4 -->
                     <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
                         <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">12</div>
-                        <div class="text-2xl text-white mb-2 font-semibold">Promotions</div>
-                        <div class="text-gray-400 text-base">In 20 year career</div>
+                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">100+</div>
+                        <div class="text-2xl text-white mb-2 font-semibold">Leaders Developed</div>
+                        <div class="text-gray-400 text-base">Through direct mentorship</div>
                     </div>
                 </div>
                 
