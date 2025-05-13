@@ -40,6 +40,9 @@
 
     <link rel="icon" href="../favicon.ico" />
     <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com/"></script>
     <script>
       tailwind.config = {
@@ -51,7 +54,7 @@
               "medium-gray": "#232323",
             },
             fontFamily: {
-              sans: ["Helvetica", "Arial", "sans-serif"],
+              sans: ["Inter", "Roboto", "Open Sans", "Helvetica", "Arial", "sans-serif"],
             },
             typography: {
               DEFAULT: {
@@ -156,30 +159,44 @@
 
       /* Article styling */
       .article-content h2 {
-        font-size: 1.875rem;
+        font-size: 2rem;
         font-weight: 700;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
         color: white;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: -0.01em;
       }
 
       .article-content h3 {
         font-size: 1.5rem;
         font-weight: 700;
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
+        margin-top: 1.75rem;
+        margin-bottom: 1rem;
         color: white;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: -0.01em;
       }
 
       .article-content p {
         margin-bottom: 1.5rem;
-        line-height: 1.75;
+        line-height: 1.8;
+        font-size: 1.125rem;
+        font-family: 'Open Sans', sans-serif;
+        color: #e5e7eb;
+        max-width: 70ch;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .article-content ul,
       .article-content ol {
         margin-bottom: 1.5rem;
         margin-left: 1.5rem;
+        max-width: 65ch;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
       }
 
       .article-content ul {
@@ -191,7 +208,11 @@
       }
 
       .article-content li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+        font-size: 1.125rem;
+        font-family: 'Open Sans', sans-serif;
+        color: #e5e7eb;
       }
 
       .article-content a {
@@ -206,17 +227,27 @@
 
       .article-content blockquote {
         border-left: 4px solid #00ffff;
-        padding-left: 1rem;
+        padding-left: 1.5rem;
+        padding-right: 1rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
         font-style: italic;
-        margin: 1.5rem 0;
-        color: #d1d5db;
+        margin: 2rem auto;
+        color: #f3f4f6;
+        background-color: rgba(0, 255, 255, 0.05);
+        border-radius: 0 0.25rem 0.25rem 0;
+        max-width: 65ch;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.125rem;
+        line-height: 1.8;
       }
 
       .article-content img {
         max-width: 100%;
         height: auto;
-        margin: 2rem 0;
+        margin: 2.5rem auto;
         border-radius: 0.5rem;
+        display: block;
       }
 
       .article-content code {
@@ -305,18 +336,27 @@
       .highlight-box {
         background-color: rgba(0, 255, 255, 0.1);
         border-radius: 0.5rem;
-        padding: 1.5rem;
+        padding: 1.2rem 1.5rem;
         margin: 2rem 0;
         border: 1px solid rgba(0, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .key-quote {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         line-height: 1.4;
-        font-weight: 600;
+        font-weight: 700;
         text-align: center;
         color: white;
-        margin: 2rem 0;
+        margin: 2.5rem auto;
+        max-width: 30ch;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: -0.01em;
+        padding: 1rem;
+        border-top: 2px solid rgba(0, 255, 255, 0.3);
+        border-bottom: 2px solid rgba(0, 255, 255, 0.3);
       }
     </style>
   </head>
@@ -363,7 +403,7 @@
           >About</a
         >
         <a
-          href="../insights.html"
+          href="Insights.html"
           class="hover:text-outlier-cyan transition"
           onclick="closeMenu()"
           >Insights</a
@@ -402,7 +442,7 @@
           >About</a
         >
         <a
-          href="../insights.html"
+          href="Insights.html"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Insights</a
         >
@@ -518,6 +558,14 @@
 
             <div class="key-quote">That's the invisible resume.</div>
 
+            <div class="my-8 flex justify-center">
+              <img
+                src="images/paul-takisaki-resume.webp"
+                alt="The Invisible Resume"
+                class="w-full max-w-2xl rounded-lg shadow-lg"
+              />
+            </div>
+
             <p>It's not the LinkedIn headline or the stack of awards.</p>
             <p>It's how you treat people when there's nothing in it for you.</p>
             <p>It's the consistency when no one's watching.</p>
@@ -575,7 +623,7 @@
             </p>
 
             <div class="highlight-box">
-              <p class="text-xl font-bold text-center text-outlier-cyan mb-0">
+              <p class="text-xl font-bold text-center text-outlier-cyan m-0">
                 My invisible resume had already done the interview for me.
               </p>
             </div>
@@ -793,13 +841,13 @@
           <h3 class="text-2xl font-bold mb-6">Related Articles</h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <!-- Related Article 1 -->
-            <a href="../articles/strategic-failure.html" class="group">
+            <a href="strategy.html" class="group">
               <div
                 class="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-900 hover:border-outlier-cyan transition-colors"
               >
                 <div class="h-48 overflow-hidden">
                   <img
-                    src="../images/strategic-failure.jpg"
+                    src="images/paul-takisaki-strategy.webp"
                     alt="Strategic Failure Field Notes"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Strategic+Failure';"
@@ -822,13 +870,13 @@
             </a>
 
             <!-- Coming Soon Article -->
-            <a href="#" class="group cursor-not-allowed">
+            <a href="unscalable.html" class="group">
               <div
                 class="bg-black rounded-lg overflow-hidden shadow-lg border border-gray-900 relative"
               >
                 <div class="h-48 overflow-hidden brightness-50">
                   <img
-                    src="../images/one-on-ones.jpg"
+                    src="images/unscalable.webp"
                     alt="The Unscalable Advantage"
                     class="w-full h-full object-cover"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Unscalable+Advantage';"
