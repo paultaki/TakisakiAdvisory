@@ -3,14 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Paul Takisaki | Executive Coach & Leadership Strategist</title>
+    <title>Strategic Failure: Field Notes | Leadership Insights | Paul Takisaki</title>
     <meta
       name="description"
-      content="Learn about Paul Takisaki's journey from Fortune 50 executive to executive coach, his proven track record, and his unique approach to leadership development."
+      content="Discover what most executives miss about strategy implementation and why it's stalling their growth - insights from a Fortune 50 veteran."
     />
 
-    <link rel="icon" href="favicon.ico" />
-    <link rel="manifest" href="site.webmanifest" />
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Strategic Failure: Field Notes | Paul Takisaki" />
+    <meta
+      property="og:description"
+      content="Discover what most executives miss about strategy implementation and why it's stalling their growth - insights from a Fortune 50 veteran."
+    />
+    <meta
+      property="og:image"
+      content="https://www.paultakisaki.com/insights/images/paul-takisaki-strategyu.webp"
+    />
+    <meta
+      property="og:url"
+      content="https://www.paultakisaki.com/articles/strategic-failure.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Paul Takisaki" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Strategic Failure: Field Notes | Paul Takisaki" />
+    <meta
+      name="twitter:description"
+      content="Discover what most executives miss about strategy implementation and why it's stalling their growth - insights from a Fortune 50 veteran."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.paultakisaki.com/insights/images/paul-takisaki-strategyu.webp"
+    />
+
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="manifest" href="../site.webmanifest" />
     <script src="https://cdn.tailwindcss.com/"></script>
     <script>
       tailwind.config = {
@@ -23,6 +52,35 @@
             },
             fontFamily: {
               sans: ["Helvetica", "Arial", "sans-serif"],
+            },
+            typography: {
+              DEFAULT: {
+                css: {
+                  color: "#f3f4f6",
+                  "h1, h2, h3, h4": {
+                    color: "#ffffff",
+                  },
+                  a: {
+                    color: "#00FFFF",
+                  },
+                  strong: {
+                    color: "#ffffff",
+                  },
+                  hr: {
+                    borderColor: "#4b5563",
+                  },
+                  blockquote: {
+                    color: "#d1d5db",
+                    borderLeftColor: "#00FFFF",
+                  },
+                  code: {
+                    color: "#00FFFF",
+                  },
+                  pre: {
+                    backgroundColor: "#121212",
+                  },
+                },
+              },
             },
           },
         },
@@ -50,7 +108,7 @@
         top: 0;
         left: 0;
         height: 4px;
-        background: #00ffff; /* outlier-cyan */
+        background: #00FFFF; /* outlier-cyan */
         width: 0%;
         z-index: 100;
         transition: width 0.05s ease;
@@ -66,11 +124,11 @@
         height: 50px;
         border-radius: 50%;
         background-color: rgba(0, 0, 0, 0.7);
-        border: 2px solid #00ffff;
-        color: #00ffff;
+        border: 2px solid #00FFFF;
+        color: #00FFFF;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-center;
         text-decoration: none;
         opacity: 0;
         pointer-events: none;
@@ -94,6 +152,143 @@
       .back-to-top svg {
         width: 24px;
         height: 24px;
+      }
+
+      /* Article styling */
+      .article-content h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: white;
+      }
+
+      .article-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+        color: white;
+      }
+
+      .article-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.75;
+      }
+
+      .article-content ul, .article-content ol {
+        margin-bottom: 1.5rem;
+        margin-left: 1.5rem;
+      }
+
+      .article-content ul {
+        list-style-type: disc;
+      }
+
+      .article-content ol {
+        list-style-type: decimal;
+      }
+
+      .article-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      .article-content a {
+        color: #00FFFF;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+
+      .article-content a:hover {
+        text-decoration: underline;
+      }
+
+      .article-content blockquote {
+        border-left: 4px solid #00FFFF;
+        padding-left: 1rem;
+        font-style: italic;
+        margin: 1.5rem 0;
+        color: #d1d5db;
+      }
+
+      .article-content img {
+        max-width: 100%;
+        height: auto;
+        margin: 2rem 0;
+        border-radius: 0.5rem;
+      }
+
+      .article-content code {
+        font-family: monospace;
+        background-color: #1e1e1e;
+        padding: 0.2rem 0.4rem;
+        border-radius: 0.25rem;
+        font-size: 0.875rem;
+        color: #00FFFF;
+      }
+
+      .article-content pre {
+        background-color: #1e1e1e;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      .article-content pre code {
+        background-color: transparent;
+        padding: 0;
+        color: #e5e7eb;
+      }
+
+      .article-content hr {
+        margin: 2rem 0;
+        border: 0;
+        border-top: 1px solid #374151;
+      }
+
+      /* Table of Contents */
+      .toc {
+        background-color: #121212;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        border: 1px solid #2d3748;
+        margin-bottom: 2rem;
+      }
+
+      .toc-title {
+        font-weight: 700;
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+        color: white;
+      }
+
+      .toc-list {
+        list-style-type: none;
+        margin-left: 0;
+      }
+
+      .toc-list li {
+        margin-bottom: 0.5rem;
+      }
+
+      .toc-list a {
+        color: #d1d5db;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .toc-list a:hover {
+        color: #00FFFF;
+      }
+
+      /* Author box */
+      .author-box {
+        background-color: #121212;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        border: 1px solid #2d3748;
+        margin: 3rem 0;
       }
     </style>
   </head>
@@ -128,43 +323,22 @@
         class="flex flex-col items-center justify-center h-full space-y-8 text-2xl"
       >
         <a
-          href="index.html"
+          href="../index.html"
           class="hover:text-outlier-cyan transition"
           onclick="closeMenu()"
           >Home</a
         >
-        <a href="#about" class="text-outlier-cyan" onclick="closeMenu()"
+        <a
+          href="../about.html"
+          class="hover:text-outlier-cyan transition"
+          onclick="closeMenu()"
           >About</a
         >
         <a
-          href="insights/Insights.html"
+          href="Insights.html"
           class="hover:text-outlier-cyan transition"
           onclick="closeMenu()"
           >Insights</a
-        >
-        <a
-          href="index.html#proof"
-          class="hover:text-outlier-cyan transition"
-          onclick="closeMenu()"
-          >Proof</a
-        >
-        <a
-          href="#impact"
-          class="hover:text-outlier-cyan transition"
-          onclick="closeMenu()"
-          >Impact</a
-        >
-        <a
-          href="index.html#coaching"
-          class="hover:text-outlier-cyan transition"
-          onclick="closeMenu()"
-          >Coaching</a
-        >
-        <a
-          href="index.html#action"
-          class="hover:text-outlier-cyan transition"
-          onclick="closeMenu()"
-          >Contact</a
         >
         <button
           onclick="closeMenu()"
@@ -180,9 +354,9 @@
       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
     >
       <div class="flex items-center">
-        <a href="index.html">
+        <a href="../index.html">
           <img
-            src="images/logo-shadow.png"
+            src="../images/logo-shadow.png"
             alt="Paul Takisaki Logo"
             class="h-8"
           />
@@ -190,35 +364,19 @@
       </div>
       <nav class="hidden md:flex space-x-8">
         <a
-          href="index.html"
+          href="../index.html"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Home</a
         >
-        <a href="#about" class="text-outlier-cyan">About</a>
         <a
-          href="insights/Insights.html"
+          href="../about.html"
+          class="text-gray-300 hover:text-outlier-cyan transition"
+          >About</a
+        >
+        <a
+          href="Insights.html"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Insights</a
-        >
-        <a
-          href="index.html#proof"
-          class="text-gray-300 hover:text-outlier-cyan transition"
-          >Proof</a
-        >
-        <a
-          href="#impact"
-          class="text-gray-300 hover:text-outlier-cyan transition"
-          >Impact</a
-        >
-        <a
-          href="index.html#coaching"
-          class="text-gray-300 hover:text-outlier-cyan transition"
-          >Coaching</a
-        >
-        <a
-          href="index.html#action"
-          class="text-gray-300 hover:text-outlier-cyan transition"
-          >Contact</a
         >
       </nav>
       <button
@@ -243,352 +401,476 @@
       </button>
     </header>
 
-    <main class="pt-20">
-      <!-- Hero Section -->
-      <section class="py-32 px-8" id="about">
-        <div class="max-w-5xl mx-auto">
+    <main class="pt-24 pb-16">
+      <!-- Article Header -->
+      <div class="w-full h-64 md:h-96 relative">
+        <!-- Hero image -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10"
+        ></div>
+        <img
+          src="../insights/images/paul-takisaki-strategyu.webp"
+          alt="Strategic Failure: A visual metaphor of strategy collapse"
+          class="w-full h-full object-cover object-center"
+          onerror="this.onerror=null; this.src='https://placehold.co/1200x600/121212/00FFFF?text=Strategy+Implementation';"
+        />
+
+        <!-- Overlay content -->
+        <div
+          class="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4"
+        >
+          <span
+            class="inline-block px-3 py-1 text-xs font-semibold bg-outlier-cyan bg-opacity-20 text-outlier-cyan rounded-full mb-4"
+          >
+            Leadership
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 max-w-4xl">
+            What Most Executives Miss About Strategy
+          </h1>
+          <div class="flex items-center justify-center text-gray-300 text-sm">
+            <span>May 14, 2025</span>
+            <span class="mx-2">•</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 mt-12">
+        <!-- Article intro and author -->
+        <div class="mb-12">
+          <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            Everyone talks strategy. Almost no one turns it into traction. The gap between strategic vision and operational reality isn't just frustrating—it's the silent killer of organizational momentum.
+          </p>
+
+          <div class="flex items-center mt-8">
+            <img
+              src="../images/headshot.webp"
+              alt="Paul Takisaki"
+              class="w-12 h-12 rounded-full mr-4 object-cover"
+              onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+            />
+            <div>
+              <div class="font-bold">Paul Takisaki</div>
+              <div class="text-gray-400 text-sm">
+                Executive Coach & AI Strategist
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Table of Contents -->
+        <div class="toc">
+          <div class="toc-title">Table of Contents</div>
+          <ul class="toc-list">
+            <li><a href="#strategy-reality">The Strategy Reality Gap</a></li>
+            <li><a href="#why-strategies-fail">Why Most Strategies Fail</a></li>
+            <li><a href="#case-study">Case Study: Fortune 50 Transformation</a></li>
+            <li><a href="#engineering-motion">The Solution: Engineering Motion</a></li>
+            <li><a href="#actionable-steps">Actionable Implementation Steps</a></li>
+          </ul>
+        </div>
+
+        <!-- Article Content -->
+        <article class="article-content">
+          <h2 id="strategy-reality">The Strategy Reality Gap</h2>
+          <p>
+            In the middle of a national strategy session, I watched an executive present a brilliant idea — only to watch it collapse three weeks later. The idea wasn't the problem. Everything beneath it was.
+          </p>
+          <p>
+            I'm not here to sell you buzzwords or theoretical frameworks that look good on PowerPoint but fall apart in practice. What I offer comes from leading 12 go-to-market strategy rollouts in a hyper-competitive industry. Eleven hit their targets on the first try. The 12th stumbled — then drove 19 consecutive record-breaking months after identifying and fixing the underlying system failures.
+          </p>
+          <p>
+            Strategy isn't theory. It's motion. And motion requires more than just direction—it needs a comprehensive system of execution.
+          </p>
+
+          <blockquote>
+            "A strategy without implementation is just a hallucination dressed in business casual."
+          </blockquote>
+
+          <h2 id="why-strategies-fail">Why Most Strategies Fail: The Fatal Disconnects</h2>
+          
+          <h3>1. The Vision-Velocity Confusion</h3>
+          <p>
+            Leaders often mistake a clear vision for organizational velocity. A compelling vision statement is merely the starting point—not the engine. Without ground-level adoption and operational integration, even the most brilliant strategic vision becomes nothing more than corporate poetry.
+          </p>
+          <p>
+            The reality test is simple: If your frontline team members can't recite your strategic priorities without referencing a slide deck, you don't have a strategy—you have a script that isn't being internalized where it matters most.
+          </p>
+
+          <h3>2. The Isolation Problem: Boardroom Echo Chambers</h3>
+          <p>
+            Strategies designed in isolation and rolled out like PR campaigns breed mistrust, resistance, and ultimately missed targets. The most effective strategies incorporate input from those who will implement them before they're finalized.
+          </p>
+          <p>
+            My approach always includes testing alignment from the ground up before anything launches. This means gathering critical feedback from frontline managers and team leads who understand the operational realities that executives often miss.
+          </p>
+
+          <h3>3. The Time Horizon Mismatch</h3>
+          <p>
+            Great leaders synchronize three critical time horizons: the next 6 weeks (immediate execution), 6 months (mid-range adaptation), and 24 months (strategic positioning). Most organizations only plan effectively for one of these horizons, creating temporal blind spots that undermine strategic momentum.
+          </p>
+          <p>
+            When these time horizons aren't aligned, teams develop execution whiplash—constantly shifting priorities without understanding how today's actions connect to longer-term objectives.
+          </p>
+
+          <h2 id="case-study">Case Study: Fortune 50 Transformation</h2>
+          <p>
+            When I restructured a Fortune 50 telecom leader's B2B quota model, the challenge wasn't just designing a better compensation structure—it was creating a system where timing, territory alignment, trust-building, and team behavior all worked in concert.
+          </p>
+          <p>
+            The initial resistance was significant. Territory managers saw the new approach as threatening their autonomy. Sales leaders worried about short-term disruption. Finance questioned the model's sustainability.
+          </p>
+          <p>
+            What made the difference was addressing the ecosystem, not just the metrics. We:
+          </p>
+
+          <ul>
+            <li>Created transparent modeling that allowed team members to test scenarios before implementation</li>
+            <li>Established clear connections between daily activities and quarterly outcomes</li>
+            <li>Built cross-functional accountability for territory support</li>
+            <li>Implemented graduated adoption with early wins highlighted</li>
+          </ul>
+
+          <p>
+            The result wasn't just improved performance—it was a system that scaled nationally and lasted over six years in a corporate culture notorious for killing initiatives within 18 months. The difference? We engineered motion, not just direction.
+          </p>
+
+          <h2 id="engineering-motion">The Solution: Engineering Motion, Not Just Direction</h2>
+          <p>
+            Strategic success requires engineering organizational motion—a comprehensive approach that builds momentum through three critical alignments:
+          </p>
+
+          <h3>1. Alignment of People</h3>
+          <p>
+            Beyond communicating vision, this means creating true psychological ownership at every level. It requires leaders who can translate strategic objectives into meaningful context for each team and role. When people understand not just what to do but why it matters in the larger picture, resistance transforms into momentum.
+          </p>
+
+          <h3>2. Streamlining Process Pathways</h3>
+          <p>
+            Most process breakdowns happen at transition points between teams or systems. Effective strategy implementation requires mapping and optimizing these handoffs, reducing friction, and creating accountability for smooth transitions. The goal isn't adding more processes—it's removing obstacles to flow.
+          </p>
+
+          <h3>3. Synchronizing Time Horizons</h3>
+          <p>
+            When immediate actions visibly connect to medium and long-term outcomes, teams develop strategic patience. This means creating visible linkages between daily priorities and quarter/annual objectives, ensuring that team members understand how today's focus builds tomorrow's capabilities.
+          </p>
+
+          <h2 id="actionable-steps">Actionable Implementation Steps</h2>
+          <p>
+            To transform your strategic approach from concept to momentum:
+          </p>
+
+          <ol>
+            <li><strong>Map your strategy ecosystem</strong> - Identify all stakeholders, processes, and systems that will be impacted by your strategic initiative</li>
+            <li><strong>Create visibility mechanisms</strong> - Establish clear dashboards that show progress across all three time horizons (6 weeks, 6 months, 24 months)</li>
+            <li><strong>Build adoption pathways</strong> - Design graduated implementation steps that create early wins and build confidence</li>
+            <li><strong>Establish feedback loops</strong> - Create structured channels for ground-level input that can refine the strategy in real-time</li>
+            <li><strong>Identify transition points</strong> - Map all handoffs between teams and build specific accountability for these critical junctures</li>
+          </ol>
+
           <div
-            class="flex flex-col md:flex-row items-center md:items-start gap-12"
+            class="bg-dark-gray p-6 rounded-lg my-8 border-l-4 border-outlier-cyan"
           >
-            <!-- Headshot with responsive design and styling -->
-            <div
-              class="w-full md:w-1/3 flex justify-center md:justify-start order-2 md:order-1"
+            <h4 class="text-lg font-bold mb-2">Implementation Insight</h4>
+            <p class="m-0">
+              The most reliable predictor of strategic success isn't the quality of your plan—it's the clarity of your implementation system. Stop polishing the story. Start engineering the system.
+            </p>
+          </div>
+
+          <h2 id="conclusion">Moving Forward</h2>
+          <p>
+            Strategy without implementation is just wishful thinking dressed in business terminology. True strategic leadership means building systems that translate vision into coordinated motion—where every level of the organization understands not just the destination, but their specific role in the journey.
+          </p>
+          <p>
+            The organizations that consistently outperform their competitors aren't those with the most elegant strategies—they're the ones that have mastered the art and science of turning strategic intent into operational reality.
+          </p>
+          <p>
+            It's time to stop treating strategy as an intellectual exercise and start engineering it as a system of coordinated motion.
+          </p>
+        </article>
+
+        <!-- Share buttons -->
+        <div class="mt-12 mb-8">
+          <div class="text-lg font-bold mb-4">Share this article</div>
+          <div class="flex space-x-4">
+            <a
+              href="javascript:void(0)"
+              onclick="shareTwitter()"
+              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              aria-label="Share on Twitter"
             >
-              <div class="relative">
-                <!-- Main image with border effect -->
-                <div
-                  class="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-lg border-2 border-outlier-cyan relative"
+              <svg
+                class="w-5 h-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                />
+              </svg>
+            </a>
+            <a
+              href="javascript:void(0)"
+              onclick="shareLinkedIn()"
+              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              aria-label="Share on LinkedIn"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+            <a
+              href="javascript:void(0)"
+              onclick="shareFacebook()"
+              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              aria-label="Share on Facebook"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+            <a
+              href="javascript:void(0)"
+              onclick="copyLink()"
+              class="p-3 bg-dark-gray rounded-full hover:bg-gray-700 transition-colors"
+              aria-label="Copy link"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Author box -->
+        <div
+          class="author-box flex flex-col md:flex-row items-center md:items-start gap-6 my-12"
+        >
+          <img
+            src="../images/headshot.webp"
+            alt="Paul Takisaki"
+            class="w-24 h-24 rounded-full object-cover"
+            onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+          />
+          <div>
+            <h3 class="text-xl font-bold mb-2">Paul Takisaki</h3>
+            <p class="text-gray-300 mb-4">
+              Executive Coach & AI Strategist. Former Fortune 50
+              executive who turned three underperforming territories to #1,
+              breaking sales records for 19 consecutive months.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="https://www.linkedin.com/in/paultaki"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-outlier-cyan hover:text-white transition-colors"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <img
-                    src="images/headshot.webp"
-                    alt="Paul Takisaki"
-                    class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                   />
-                  <!-- Cyan accent overlay in corner -->
-                  <div
-                    class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-outlier-cyan to-transparent opacity-30"
-                  ></div>
-                </div>
-                <!-- Decorative element -->
-                <div
-                  class="absolute -bottom-3 -right-3 w-full h-full border-2 border-outlier-cyan rounded-lg z-[-1]"
-                ></div>
-              </div>
-            </div>
-
-            <!-- Text content -->
-            <div class="w-full md:w-2/3 order-1 md:order-2">
-              <h1
-                class="text-6xl md:text-7xl font-bold leading-tight tracking-tighter mb-6"
+                </svg>
+              </a>
+              <a
+                href="https://medium.com/@paul_31198"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-outlier-cyan hover:text-white transition-colors"
               >
-                About <span class="text-outlier-cyan">Paul</span>
-              </h1>
-              <div class="h-1 w-24 bg-outlier-cyan mb-12"></div>
-              <h2 class="text-3xl md:text-4xl font-bold text-gray-300 mb-8">
-                Unlocking Your Leadership Fire
-              </h2>
-              <p class="text-xl leading-relaxed text-gray-300">
-                I turn potential into performance, empowering executives to lead
-                with clarity, confidence, and heart. Over 20 years in a Fortune
-                50 telecom leader, I've transformed markets, built unmatched
-                cultures, and mentored dozens to exceed their dreams. My
-                coaching unlocks your edge to rise, not just climb.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Proven Track Record Section -->
-      <section class="py-24 px-8 bg-dark-gray">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-outlier-cyan tracking-wide">
-            PROVEN TRACK RECORD
-          </h2>
-          <p class="text-xl text-gray-300 mb-12">
-            My results reflect my leadership:
-          </p>
-
-          <div class="space-y-8">
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                Won all 14 roles I applied for, leaping from frontline manager
-                to Senior Director, leading 185 people across 7 states in sales
-                and operations.
-              </p>
-            </div>
-
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                Turned three underperforming territories (Mid-West, Pacific
-                Northwest and Southwest) to #1, breaking PNW's sales records for
-                19 consecutive months and earning the annual President's Cabinet
-                (top 1%) four times.
-              </p>
-            </div>
-
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                As Associate Vice President, led a national technical sales
-                team, launching Fixed Wireless Access—the company's
-                fastest-growing product, and built a customer success team that
-                cut churn by 50%, protecting $53M in revenue.
-              </p>
-            </div>
-
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                Hired a diverse team of 35, creating the company's best culture,
-                with 100% perfect customer survey scores and 2,000 rep hours
-                saved monthly.
-              </p>
-            </div>
-
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                Restructured organizations, streamlined processes, and designed
-                a quota model adopted enterprise-wide, still in use 7+ years
-                later, while growing subscribers 22% ($200M in revenue) in 2
-                years.
-              </p>
-            </div>
-
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                Started at the frontlines and rose to report to the CRO after 12
-                promotions and 6 relocations.
-              </p>
-            </div>
-
-            <div class="flex">
-              <div class="text-outlier-cyan mr-4 mt-1">•</div>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                Mentored dozens to senior roles, many achieving what they once
-                thought impossible.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- The Paul Effect Section -->
-      <section class="py-24 px-8 bg-black" id="impact">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-outlier-cyan tracking-wide">
-            THE PAUL EFFECT
-          </h2>
-
-          <div class="flex flex-col md:flex-row items-center gap-10">
-            <!-- YouTube video embed - responsive design -->
-            <div class="w-full md:w-1/2 relative">
-              <div
-                class="aspect-video bg-medium-gray rounded-lg overflow-hidden border border-outlier-cyan"
-              >
-                <iframe
-                  class="w-full h-full absolute top-0 left-0"
-                  src="https://www.youtube.com/watch?v=nQ0aCsZXQYg"
-                  title="The Paul Effect: Stories of Impact"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                </iframe>
+                  <path
+                    d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.92a.376.376 0 0 0-.143.362v9.067a.376.376 0 0 0 .143.361l1.257 1.234v.271h-6.322v-.27l1.302-1.265c.128-.128.128-.165.128-.36V8.99l-3.62 9.195h-.49L6.69 8.99v6.163a.85.85 0 0 0 .233.707l1.694 2.054v.271H3.815v-.27L5.51 15.86a.82.82 0 0 0 .218-.707V8.027a.624.624 0 0 0-.203-.527L4.019 5.686v-.27h4.674l3.613 7.923 3.176-7.924h4.456v.271z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related articles -->
+        <div class="my-12">
+          <h3 class="text-2xl font-bold mb-6">Related Articles</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Related Article 1 -->
+            <a href="../articles/article-slug-1.html" class="group">
+              <div
+                class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 hover:border-outlier-cyan transition-colors"
+              >
+                <div class="h-48 overflow-hidden">
+                  <img
+                    src="../images/related-article-1.jpg"
+                    alt="Related Article Title 1"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Related+Article';"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="text-outlier-cyan text-sm font-semibold mb-2">
+                    Leadership
+                  </div>
+                  <h4
+                    class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
+                  >
+                    The Execution Gap: Why Smart Teams Fail
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    April 8, 2025 • 4 min read
+                  </p>
+                </div>
               </div>
-            </div>
+            </a>
 
-            <!-- Text content -->
-            <div class="w-full md:w-1/2">
-              <h3 class="text-2xl font-bold mb-6">
-                <span class="text-outlier-cyan">I didn't just lead teams.</span>
-                I changed them.
-              </h3>
-              <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                After 20 years at Verizon, I earned 12 promotions, multiple
-                President's Cabinet awards, and the trust of senior leaders—from
-                the CRO to VPs across the business.
-              </p>
-              <p class="text-lg text-gray-300 leading-relaxed">
-                This 3-minute highlight reel—from a longer farewell video—shows
-                how I built trust, culture, and performance that lasts.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section class="py-24 px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-3xl font-bold mb-16 text-center">What Peers Say</h2>
-
-          <div class="space-y-8">
-            <blockquote class="border-l-4 border-outlier-cyan pl-6 py-4">
-              <p class="text-xl italic text-gray-300 mb-4">
-                "Paul's leadership was pivotal in growing our business. He
-                translates data into strategies that drive results."
-              </p>
-              <cite class="text-outlier-cyan font-bold"
-                >— Vice President, Fortune 50 telecom leader</cite
+            <!-- Related Article 2 -->
+            <a href="../articles/article-slug-2.html" class="group">
+              <div
+                class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 hover:border-outlier-cyan transition-colors"
               >
-            </blockquote>
+                <div class="h-48 overflow-hidden">
+                  <img
+                    src="../images/related-article-2.jpg"
+                    alt="Related Article Title 2"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Related+Article';"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="text-outlier-cyan text-sm font-semibold mb-2">
+                    AI Strategy
+                  </div>
+                  <h4
+                    class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
+                  >
+                    Building AI-Ready Teams: Beyond the Hype
+                  </h4>
+                  <p class="text-gray-400 text-sm">
+                    March 20, 2025 • 5 min read
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
 
-            <blockquote class="border-l-4 border-outlier-cyan pl-6 py-4">
-              <p class="text-xl italic text-gray-300 mb-4">
-                "Paul saw potential in me I didn't know I had. His energy pushed
-                our teams to heights we didn't think attainable."
-              </p>
-              <cite class="text-outlier-cyan font-bold"
-                >— Senior Director, Fortune 50 telecom leader</cite
+        <!-- Newsletter -->
+        <div class="bg-dark-gray rounded-lg p-8 my-12 border border-gray-800">
+          <div class="text-center mb-6">
+            <h3 class="text-2xl font-bold mb-2">
+              Want more insights like this?
+            </h3>
+            <p class="text-gray-300">
+              Subscribe to my newsletter for exclusive leadership content.
+            </p>
+          </div>
+
+          <form class="max-w-md mx-auto">
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="flex-1 px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:border-outlier-cyan"
+                required
+              />
+              <button
+                type="submit"
+                class="px-6 py-3 bg-outlier-cyan text-black font-bold rounded-lg hover:bg-opacity-80 transition whitespace-nowrap"
               >
-            </blockquote>
-
-            <blockquote class="border-l-4 border-outlier-cyan pl-6 py-4">
-              <p class="text-xl italic text-gray-300 mb-4">
-                "Paul's compassion and focus on strengths made me feel truly
-                seen, guiding me with heart and clarity."
-              </p>
-              <cite class="text-outlier-cyan font-bold"
-                >— Senior Director, Fortune 50 telecom leader</cite
-              >
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <!-- My Story Section -->
-      <section class="py-24 px-8 bg-medium-gray">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-outlier-cyan tracking-wide">
-            MY STORY
-          </h2>
-          <div class="prose prose-lg prose-invert max-w-none">
-            <p class="text-lg text-gray-300 leading-relaxed mb-6">
-              I started leading 12 people, far from the C-suite. Winning 14 job
-              offers, I defied expectations. In Seattle, I turned a failing
-              territory to #1, breaking records for 19 months. I repeated this
-              in Phoenix and a third market.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed mb-6">
-              Nationally, I launched a record-breaking product and built a
-              35-person team with a culture so strong they loved their jobs and
-              earned perfect customer scores. After 20 years and 12 promotions,
-              I left to empower leaders full-time, driven by a passion for
-              legacy and impact. Now, I coach executives to find their fire,
-              handle interviews with confidence, and deliver transformative
-              results, using tools that fueled my rise.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed font-bold">
-              Now, I coach executives to find their fire, using tools that
-              fueled my rise.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Philosophy Section -->
-      <section class="py-24 px-8">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-outlier-cyan tracking-wide">
-            MY PHILOSOPHY
-          </h2>
-          <div class="mb-12">
-            <p class="text-lg text-gray-300 leading-relaxed mb-8">
-              Leadership starts with love—seeing people as they are and
-              believing in who they can become. My coaching uses 100+
-              proprietary tools, playbooks, and frameworks, tailored to your
-              strengths that I developed over 2 decades. I challenge you to own
-              your path, strategize with precision, and lead with heart—because
-              growth happens when you're empowered, not managed.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-4">
-                Strengths-First
-              </h3>
-              <p class="text-gray-300">Amplify what makes you exceptional.</p>
+                Subscribe
+              </button>
             </div>
-
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-4">
-                Heart-Led Strategy
-              </h3>
-              <p class="text-gray-300">
-                Blend emotional intelligence with tactical execution.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-4">No Excuses</h3>
-              <p class="text-gray-300">
-                Own your journey; I'll help you pave it.
-              </p>
-            </div>
-
-            <div>
-              <h3 class="text-2xl font-bold text-white mb-4">
-                Relentless Belief
-              </h3>
-              <p class="text-gray-300">
-                I'll see your potential, even when you don't.
-              </p>
-            </div>
-          </div>
+            <p class="text-center text-xs text-gray-500 mt-3">
+              I respect your privacy. Unsubscribe at any time.
+            </p>
+          </form>
         </div>
-      </section>
-
-      <!-- The Human Side Section -->
-      <section class="py-24 px-8 bg-dark-gray">
-        <div class="max-w-5xl mx-auto">
-          <h2 class="text-4xl font-bold mb-12 text-outlier-cyan tracking-wide">
-            THE HUMAN SIDE
-          </h2>
-          <p class="text-lg text-gray-300 leading-relaxed">
-            Outside coaching, I'm a dad of three, juggling parenthood's chaos
-            with faith, dry wit, and strong coffee. From school drop-offs to
-            quiet evenings, I'm driven by purpose and the people I love.
-          </p>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="py-32 px-8 text-center">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-            Take the Next Step
-          </h2>
-          <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-            Ready to unlock your leadership potential? Book a free Clarity Call
-            to build your path to extraordinary results.
-          </p>
-          <a
-            href="index.html#action"
-            class="inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-lg tracking-wider"
-          >
-            BOOK YOUR CLARITY CALL
-          </a>
-        </div>
-      </section>
+      </div>
     </main>
 
     <!-- Footer -->
     <footer
       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
     >
-      <a href="index.html">
+      <a href="../index.html">
         <img
-          src="images/logo-shadow.png"
+          src="../images/logo-shadow.png"
           alt="Takisaki Strategy Logo"
           class="h-10 mb-2 opacity-80"
         />
       </a>
+      <div class="flex space-x-6 my-4">
+        <!-- LinkedIn -->
+        <a
+          href="https://www.linkedin.com/in/paultaki"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-400 hover:text-outlier-cyan transition"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            />
+          </svg>
+        </a>
+        <!-- Medium -->
+        <a
+          href="https://medium.com/@paul_31198"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Medium Profile"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 text-gray-400 hover:text-outlier-cyan transition"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M0 0v24h24V0H0zm19.938 5.686L18.651 6.92a.376.376 0 0 0-.143.362v9.067a.376.376 0 0 0 .143.361l1.257 1.234v.271h-6.322v-.27l1.302-1.265c.128-.128.128-.165.128-.36V8.99l-3.62 9.195h-.49L6.69 8.99v6.163a.85.85 0 0 0 .233.707l1.694 2.054v.271H3.815v-.27L5.51 15.86a.82.82 0 0 0 .218-.707V8.027a.624.624 0 0 0-.203-.527L4.019 5.686v-.27h4.674l3.613 7.923 3.176-7.924h4.456v.271z"
+            />
+          </svg>
+        </a>
+      </div>
       <p class="text-center">Takisaki Strategy | © 2025 Paul Takisaki</p>
     </footer>
 
@@ -670,6 +952,40 @@
           closeMenu();
         }
       });
+
+      // Social sharing functions
+      function shareTwitter() {
+        const title = document.title;
+        const url = window.location.href;
+        const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+          title
+        )}&url=${encodeURIComponent(url)}`;
+        window.open(twitterUrl, "_blank");
+      }
+
+      function shareLinkedIn() {
+        const title = document.title;
+        const url = window.location.href;
+        const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+          url
+        )}`;
+        window.open(linkedInUrl, "_blank");
+      }
+
+      function shareFacebook() {
+        const url = window.location.href;
+        const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+          url
+        )}`;
+        window.open(facebookUrl, "_blank");
+      }
+
+      function copyLink() {
+        const url = window.location.href;
+        navigator.clipboard.writeText(url).then(function () {
+          alert("Link copied to clipboard!");
+        });
+      }
     </script>
   </body>
 </html>
