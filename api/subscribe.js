@@ -34,32 +34,125 @@ module.exports = async (req, res) => {
   const { email } = req.body;
   if (!email) return res.status(400).json({ error: 'Email is required' });
 
-  const subscribersPath = path.join(process.cwd(), 'data', 'subscribers.json');
-
-  let subscribers = [];
-  if (fs.existsSync(subscribersPath)) {
-    subscribers = JSON.parse(fs.readFileSync(subscribersPath, 'utf8'));
+  // Check for Vercel environment
+  const isVercel = process.env.VERCEL === '1' || process.env.VERCEL === 'true';
+  console.log('Environment:', isVercel ? 'Vercel' : 'Local server');
+  
+  // Used to track if the email is already subscribed
+  let alreadySubscribed = false;
+  
+  // Only perform file operations if NOT in Vercel environment
+  if (!isVercel) {
+    try {
+      const subscribersPath = path.join(process.cwd(), 'data', 'subscribers.json');
+      
+      let subscribers = [];
+      if (fs.existsSync(subscribersPath)) {
+        subscribers = JSON.parse(fs.readFileSync(subscribersPath, 'utf8'));
+      }
+      
+      // Check if already subscribed
+      alreadySubscribed = subscribers.some(s => s.email.toLowerCase() === email.toLowerCase());
+      
+      if (alreadySubscribed) {
+        console.log(`Email ${email} is already subscribed (from file system)`);
+      } else {
+        // Add to local file
+        subscribers.push({ email, date: new Date().toISOString() });
+        fs.mkdirSync(path.dirname(subscribersPath), { recursive: true });
+        fs.writeFileSync(subscribersPath, JSON.stringify(subscribers, null, 2));
+        console.log(`Email ${email} saved to local file system`);
+      }
+    } catch (fsError) {
+      // Log file system error but continue with SendGrid
+      console.error('File system error (non-critical):', fsError);
+    }
+  } else {
+    console.log('Skipping file operations in Vercel environment');
   }
-
-  if (subscribers.some(s => s.email.toLowerCase() === email.toLowerCase())) {
+  
+  // If we already know the email is subscribed, return early
+  if (alreadySubscribed) {
     return res.status(200).json({ message: 'Already subscribed!' });
   }
 
-  subscribers.push({ email, date: new Date().toISOString() });
-  fs.mkdirSync(path.dirname(subscribersPath), { recursive: true });
-  fs.writeFileSync(subscribersPath, JSON.stringify(subscribers, null, 2));
-
   // ✅ Add to SendGrid contact list and send confirmation email
   try {
-    // First, save the email to our file system (this already happens above)
     console.log(`Processing subscription for: ${email}`);
     
     let sendgridSuccess = false;
     let contactAddedToList = false;
     let errorDetails = null;
+    let isExistingContact = false;
     
-    // Step 1: Try to add the contact to the SendGrid list
+    // First check if the contact already exists in SendGrid list
     if (listId && apiKey) {
+      try {
+        // Check if the email already exists in the list
+        console.log(`Checking if ${email} exists in SendGrid`);
+        
+        // Use Search Contacts endpoint to check if email exists
+        // This endpoint is more reliable for checking contacts
+        const searchRequest = {
+          url: `/v3/marketing/contacts/search`,
+          method: 'POST',
+          body: {
+            query: `email LIKE '${email.toLowerCase()}'`
+          }
+        };
+        
+        const [searchResponse, searchResults] = await client.request(searchRequest);
+        
+        if (searchResponse.statusCode >= 200 && searchResponse.statusCode < 300) {
+          if (searchResults && 
+              searchResults.contact_count && 
+              searchResults.contact_count > 0) {
+            
+            console.log(`Email ${email} already exists in SendGrid (${searchResults.contact_count} matches)`);
+            isExistingContact = true;
+            contactAddedToList = true; // No need to add it again
+            
+            // Check if already in the specific list
+            let inTargetList = false;
+            
+            if (searchResults.result && searchResults.result.length > 0) {
+              const firstMatch = searchResults.result[0];
+              if (firstMatch.list_ids && firstMatch.list_ids.includes(listId)) {
+                inTargetList = true;
+                console.log(`Email is already in the target list: ${listId}`);
+              }
+            }
+            
+            // If not in the target list, add it
+            if (!inTargetList) {
+              console.log(`Adding existing contact to list: ${listId}`);
+              
+              const addToListRequest = {
+                url: `/v3/marketing/lists/${listId}/contacts`,
+                method: 'POST',
+                body: {
+                  contact_ids: searchResults.result.map(r => r.id)
+                }
+              };
+              
+              await client.request(addToListRequest);
+              console.log('Added existing contact to list successfully');
+            }
+            
+            // Return early - already subscribed
+            return res.status(200).json({ message: 'Already subscribed!' });
+          } else {
+            console.log(`Email ${email} not found in SendGrid, will add as new contact`);
+          }
+        }
+      } catch (searchError) {
+        console.error('Error searching for existing contact:', searchError);
+        // Continue with adding the contact even if search failed
+      }
+    }
+    
+    // Step 1: Add the contact to the SendGrid list if not already in it
+    if (!isExistingContact && listId && apiKey) {
       try {
         console.log(`Attempting to add ${email} to SendGrid list: ${listId}`);
         
@@ -71,7 +164,8 @@ module.exports = async (req, res) => {
               email: email,
               custom_fields: {
                 // You can add custom fields here if needed
-                // e.g., w1: 'Signed up via website'
+                e1: 'Website Signup', // Example custom field
+                e2: new Date().toISOString().split('T')[0] // Signup date
               }
             }
           ]
@@ -103,7 +197,7 @@ module.exports = async (req, res) => {
           code: listError.code || 'UNKNOWN' 
         };
       }
-    } else {
+    } else if (!listId || !apiKey) {
       console.warn('Skipping adding to list - missing configuration');
     }
     
