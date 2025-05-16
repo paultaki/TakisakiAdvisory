@@ -72,10 +72,11 @@ module.exports = async (req, res) => {
     // Continue to next step even if email fails
   }
 
-  // ✅ Add to SendGrid Contacts (exact fix here)
+  // ✅ Fixed version of your SendGrid contacts API call clearly:
   try {
     console.log('Adding to SendGrid contacts...');
     const contactData = {
+      list_ids: ['d5603f64-f104-4f93-92e1-02dee4c974e9'], // clearly your exact list ID
       contacts: [{ email }]
     };
 
@@ -86,7 +87,7 @@ module.exports = async (req, res) => {
     };
 
     const [response, body] = await client.request(request);
-    console.log(`Successfully added ${email} to SendGrid contacts. Status: ${response.statusCode}`);
+    console.log(`Successfully added ${email} to SendGrid contacts.`);
     contactSuccess = true;
   } catch (contactError) {
     console.error('Error adding to contacts:', contactError);
