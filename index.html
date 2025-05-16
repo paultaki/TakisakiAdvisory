@@ -10,7 +10,7 @@
 
     <link rel="icon" href="favicon.ico">
     <link rel="manifest" href="site.webmanifest">
-    <script src="https://cdn.tailwindcss.com/" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -28,6 +28,57 @@
         }
     </script>
     <style>
+        /* Enhance mobile scrolling experience */
+        @media (max-width: 767px) {
+            html {
+                -webkit-overflow-scrolling: touch;
+                scroll-padding-top: 80px;
+            }
+            
+            .no-scrollbar {
+                -webkit-overflow-scrolling: touch;
+                scroll-snap-type: x proximity;
+            }
+            
+            .no-scrollbar > div {
+                scroll-snap-align: center;
+            }
+        }
+        
+        /* Immediate color definitions to prevent FOUC */
+        .text-outlier-cyan, 
+        .hover\:text-outlier-cyan:hover,
+        span.text-outlier-cyan,
+        svg.text-outlier-cyan {
+            color: #00FFFF !important;
+        }
+        
+        .bg-outlier-cyan,
+        .hover\:bg-outlier-cyan:hover,
+        button.bg-outlier-cyan {
+            background-color: #00FFFF !important;
+        }
+        
+        .border-outlier-cyan {
+            border-color: #00FFFF !important;
+        }
+        
+        .bg-dark-gray {
+            background-color: #121212 !important;
+        }
+        
+        .bg-medium-gray {
+            background-color: #232323 !important;
+        }
+        
+        /* Fix for method section icons */
+        #method .w-20 svg {
+            display: block !important;
+            visibility: visible !important;
+            color: #00FFFF !important;
+            stroke: #00FFFF !important;
+        }
+        
         /* Custom animation that can't be handled by Tailwind */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -255,7 +306,7 @@
 
         <!-- Unicorn Transition Section -->
         <section class="h-screen flex items-center justify-center">
-            <img src="images/unicorn-matte.png" alt="Geometric Unicorn" class="w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] object-contain" loading="lazy" />
+            <img src="images/unicorn-matte2.png" alt="Geometric Unicorn" class="w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] object-contain" loading="lazy" />
         </section>
 
         <!-- Proof Section -->
@@ -265,7 +316,7 @@
                 <p class="text-5xl font-bold mb-20 text-center">No Fluff. Real Results.</p>
             
             <div class="relative max-w-full">
-                <div class="no-scrollbar flex space-x-6 pb-8 mx-auto justify-center md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-6">
+                <div class="no-scrollbar flex space-x-6 pb-8 mx-auto justify-start md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-6 pl-[calc(50%-40vw)] pr-5 md:pl-0 md:pr-0">
                     <!-- Stat Card 1 -->
                     <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
                         <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
@@ -301,11 +352,41 @@
                         <div class="text-2xl text-white mb-2 font-semibold">Leaders Developed</div>
                         <div class="text-gray-400 text-base">Through direct mentorship</div>
                     </div>
+                    
+                    <!-- Stat Card 5 -->
+                    <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">$220M</div>
+                        <div class="text-2xl text-white mb-2 font-semibold">Incremental Revenue</div>
+                        <div class="text-gray-400 text-base">22% subscriber growth in 2 years</div>
+                    </div>
+                    
+                    <!-- Stat Card 6 -->
+                    <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">4</div>
+                        <div class="text-2xl text-white mb-2 font-semibold">Markets Transformed</div>
+                        <div class="text-gray-400 text-base">From bottom 20% to #1</div>
+                    </div>
+                    
+                    <!-- Stat Card 7 -->
+                    <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
+                        <div class="absolute inset-0 bg-gradient-to-br from-outlier-cyan opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-outlier-cyan to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="text-7xl font-bold mb-3 text-outlier-cyan">14/14</div>
+                        <div class="text-2xl text-white mb-2 font-semibold">Perfect Record</div>
+                        <div class="text-gray-400 text-base">14 interviews, 14 job offers in 20 years</div>
+                    </div>
                 </div>
                 
                 <!-- Scroll indicators -->
                 <div class="flex justify-center mt-8 space-x-3 md:hidden">
                     <div class="w-3 h-3 rounded-full bg-outlier-cyan"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-gray-500"></div>
                     <div class="w-3 h-3 rounded-full bg-gray-500"></div>
                     <div class="w-3 h-3 rounded-full bg-gray-500"></div>
                     <div class="w-3 h-3 rounded-full bg-gray-500"></div>
@@ -318,7 +399,7 @@
             <div class="max-w-6xl mx-auto w-full px-4">
                 <h2 class="text-3xl font-bold mb-16 text-outlier-cyan tracking-wide">CLIENT IMPACT</h2>
                 <div class="relative max-w-full">
-                    <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-center md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4">
+                    <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-start md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4 pl-[calc(50%-40vw)] pr-5 md:pl-0 md:pr-0">
                         <!-- Testimonial 1 -->
                         <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
                             <p class="italic mb-4 text-lg">"Paul has been an instrumental part of my leadership development over the years. He helped me increase my overall confidence, improve my executive presence, and develop into a more effective communicator and leader. I would not be the leader I am today without Paul's guidance."</p>
@@ -386,9 +467,9 @@
                     <!-- Method Card 1 -->
                     <div class="text-center p-6">
                         <div class="w-20 h-20 bg-outlier-cyan bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="M21 21l-4.35-4.35"></path>
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="stroke: #00FFFF; fill: none;">
+                                <circle cx="11" cy="11" r="8" stroke-width="2"></circle>
+                                <path d="M21 21l-4.35-4.35" stroke-width="2" stroke-linecap="round"></path>
                             </svg>
                         </div>
                         <h4 class="text-xl font-bold mb-3">Discover Your Strengths</h4>
@@ -398,9 +479,9 @@
                     <!-- Method Card 2 -->
                     <div class="text-center p-6">
                         <div class="w-20 h-20 bg-outlier-cyan bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="stroke: #00FFFF; fill: none;">
+                                <circle cx="12" cy="12" r="3" stroke-width="2"></circle>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                             </svg>
                         </div>
                         <h4 class="text-xl font-bold mb-3">Rewire the System</h4>
@@ -410,9 +491,9 @@
                     <!-- Method Card 3 -->
                     <div class="text-center p-6">
                         <div class="w-20 h-20 bg-outlier-cyan bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
-                                <line x1="4" y1="22" x2="4" y2="15"></line>
+                            <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="stroke: #00FFFF; fill: none;">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <line x1="4" y1="22" x2="4" y2="15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
                             </svg>
                         </div>
                         <h4 class="text-xl font-bold mb-3">Lead at Legacy Level</h4>
@@ -422,11 +503,12 @@
                 
                 <!-- Quote -->
                 <div class="max-w-4xl mx-auto text-center relative">
-                    <div class="text-3xl font-bold mb-8 text-outlier-cyan absolute -top-4 -left-4">"</div>
-                    <p class="text-2xl italic leading-relaxed mb-8 px-10">
+                    <div class="text-3xl font-bold mb-8 text-outlier-cyan absolute -top-2 -left-2">"</div>
+                    <p class="text-2xl italic leading-relaxed mb-3 px-8">
                         After 20 years of quietly outperforming louder leaders, I reverse-engineered what actually works. It's not a script—it's a custom operating system designed around who you are.
                     </p>
-                    <div class="text-3xl font-bold text-outlier-cyan absolute -bottom-4 -right-4">"</div>
+                    <p class="text-lg font-bold text-outlier-cyan mb-8">- Paul Takisaki</p>
+                    <div class="text-3xl font-bold text-outlier-cyan absolute -bottom-2 -right-2">"</div>
                 </div>
             </div>
         </section>
@@ -594,7 +676,95 @@
 
             // Initialize scroll progress bar
             initScrollProgressBar();
+            
+            // Force style refresh
+            refreshStyles();
+            
+            // Initialize scroll indicators
+            initHorizontalScrollIndicators();
         });
+        
+        // Update scroll indicators based on visible cards
+        function initHorizontalScrollIndicators() {
+            const scrollContainers = document.querySelectorAll('.no-scrollbar');
+            
+            scrollContainers.forEach((container, containerIndex) => {
+                const cards = container.querySelectorAll('.group, .flex-shrink-0');
+                const indicators = container.parentElement.querySelector('.flex.justify-center')?.children;
+                
+                if (!cards.length || !indicators || cards.length != indicators.length) return;
+                
+                // Set first indicator as active by default
+                indicators[0].classList.add('bg-outlier-cyan');
+                indicators[0].classList.remove('bg-gray-500');
+                
+                container.addEventListener('scroll', function() {
+                    // Determine which card is most visible
+                    const containerLeft = container.scrollLeft;
+                    const containerWidth = container.clientWidth;
+                    const containerCenter = containerLeft + (containerWidth / 2);
+                    
+                    let closestCard = null;
+                    let closestDistance = Infinity;
+                    let closestIndex = 0;
+                    
+                    cards.forEach((card, index) => {
+                        const cardLeft = card.offsetLeft;
+                        const cardWidth = card.offsetWidth;
+                        const cardCenter = cardLeft + (cardWidth / 2);
+                        const distance = Math.abs(cardCenter - containerCenter);
+                        
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closestCard = card;
+                            closestIndex = index;
+                        }
+                    });
+                    
+                    // Update indicators
+                    if (closestCard) {
+                        for (let i = 0; i < indicators.length; i++) {
+                            if (i === closestIndex) {
+                                indicators[i].classList.add('bg-outlier-cyan');
+                                indicators[i].classList.remove('bg-gray-500');
+                            } else {
+                                indicators[i].classList.add('bg-gray-500');
+                                indicators[i].classList.remove('bg-outlier-cyan');
+                            }
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Make sure all Tailwind styles are properly applied
+        function refreshStyles() {
+            // Force a style refresh by adding and removing a class
+            document.body.classList.add('force-refresh');
+            setTimeout(() => {
+                document.body.classList.remove('force-refresh');
+            }, 10);
+            
+            // Check if critical elements have styles
+            ensureCriticalStyles();
+        }
+        
+        // Ensure critical elements have the right styling
+        function ensureCriticalStyles() {
+            // Make sure the hero name has the right color
+            const heroName = document.querySelector('.text-outlier-cyan');
+            if (heroName && window.getComputedStyle(heroName).color !== 'rgb(0, 255, 255)') {
+                heroName.style.color = '#00FFFF';
+            }
+            
+            // Make sure all buttons have the right background
+            const buttons = document.querySelectorAll('.bg-outlier-cyan');
+            buttons.forEach(button => {
+                if (window.getComputedStyle(button).backgroundColor !== 'rgb(0, 255, 255)') {
+                    button.style.backgroundColor = '#00FFFF';
+                }
+            });
+        }
 
         // Scroll Progress Bar
         function initScrollProgressBar() {
