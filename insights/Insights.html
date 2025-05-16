@@ -815,6 +815,78 @@
           closeMenu();
         }
       });
+
+      // Find newsletter form and add ID
+      document.addEventListener('DOMContentLoaded', function() {
+        const newsletterForm = document.querySelector('.newsletter-card form, form.space-y-4');
+        if (newsletterForm) {
+          newsletterForm.id = 'newsletter-form';
+          
+          // Add ID to email input
+          const emailInput = newsletterForm.querySelector('input[type="email"]');
+          if (emailInput) {
+            emailInput.id = 'newsletter-email';
+            emailInput.name = 'email';
+          }
+          
+          // Add event listener for form submission
+          newsletterForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Get the email
+            let emailInput = document.getElementById('newsletter-email');
+            if (!emailInput) {
+              emailInput = newsletterForm.querySelector('input[type="email"]');
+            }
+            
+            const email = emailInput.value;
+            
+            // Simple validation
+            if (!email) {
+              alert('Please enter your email address.');
+              return;
+            }
+            
+            // Disable the button and show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent.trim();
+            submitButton.disabled = true;
+            submitButton.textContent = 'Subscribing...';
+            
+            try {
+              // API call to our subscribe endpoint
+              const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email })
+              });
+              
+              if (response.ok) {
+                // Success state
+                submitButton.textContent = 'Subscribed!';
+                
+                // Reset form
+                emailInput.value = '';
+              } else {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Subscription failed');
+              }
+            } catch (err) {
+              console.error('Error subscribing to newsletter:', err);
+              alert(err.message || 'Failed to subscribe. Please try again later.');
+              submitButton.textContent = originalText;
+            } finally {
+              // Reset button after delay
+              setTimeout(() => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+              }, 2000);
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>

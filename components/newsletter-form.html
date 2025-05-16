@@ -1,0 +1,92 @@
+<!-- Newsletter Form Component -->
+<div class="bg-dark-gray rounded-lg p-8 my-12 border border-gray-800">
+  <div class="text-center mb-6">
+    <h3 class="text-2xl font-bold mb-2">
+      Want more insights like this?
+    </h3>
+    <p class="text-gray-300">
+      Subscribe to my newsletter for exclusive leadership content.
+    </p>
+  </div>
+
+  <form id="newsletter-form" class="max-w-md mx-auto">
+    <div class="flex flex-col sm:flex-row gap-3">
+      <input
+        type="email"
+        id="newsletter-email"
+        name="email"
+        placeholder="Your email"
+        class="flex-1 px-4 py-3 bg-black border border-gray-800 rounded-lg focus:outline-none focus:border-outlier-cyan"
+        required
+      />
+      <button
+        type="submit"
+        class="px-6 py-3 bg-outlier-cyan text-black font-bold rounded-lg hover:bg-opacity-80 transition whitespace-nowrap"
+      >
+        Subscribe
+      </button>
+    </div>
+    <p class="text-center text-xs text-gray-500 mt-3">
+      I respect your privacy. Unsubscribe at any time.
+    </p>
+  </form>
+</div>
+
+<!-- Script to handle form submission -->
+<script>
+// Newsletter form submission handler
+const subscribeForm = document.getElementById('newsletter-form');
+if (subscribeForm) {
+  subscribeForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get the email
+    const emailInput = document.getElementById('newsletter-email');
+    const email = emailInput.value;
+    
+    // Simple validation
+    if (!email) {
+      alert('Please enter your email address.');
+      return;
+    }
+    
+    // Disable the button and show loading state
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent.trim();
+    submitButton.disabled = true;
+    submitButton.textContent = 'Subscribing...';
+    
+    try {
+      // API call to our subscribe endpoint
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email })
+      });
+      
+      if (response.ok) {
+        // Success state
+        submitButton.textContent = 'Subscribed!';
+        
+        // Reset form
+        emailInput.value = '';
+      } else {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Subscription failed');
+      }
+    } catch (err) {
+      console.error('Error subscribing to newsletter:', err);
+      alert(err.message || 'Failed to subscribe. Please try again later.');
+      submitButton.textContent = originalText;
+    } finally {
+      // Reset button after delay
+      setTimeout(() => {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+      }, 2000);
+    }
+  });
+}
+</script>

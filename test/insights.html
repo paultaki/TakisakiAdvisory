@@ -776,7 +776,7 @@
                     submitButton.innerHTML = 'Subscribing...';
                     
                     try {
-                        // Actual API call to your subscribe endpoint
+                        // API call to our subscribe endpoint
                         const response = await fetch('/api/subscribe', {
                             method: 'POST',
                             headers: {
@@ -793,11 +793,12 @@
                             // Reset form
                             emailInput.value = '';
                         } else {
-                            throw new Error('Subscription failed');
+                            const errorData = await response.json();
+                            throw new Error(errorData.error || 'Subscription failed');
                         }
                     } catch (err) {
                         console.error('Error subscribing to newsletter:', err);
-                        alert('Failed to subscribe. Please try again later.');
+                        alert(err.message || 'Failed to subscribe. Please try again later.');
                         submitButton.innerHTML = originalText;
                     } finally {
                         // Reset button after delay
