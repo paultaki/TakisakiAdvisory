@@ -366,7 +366,7 @@
           </h2>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Article Card 1: Authentic Leadership -->
+            <!-- Article Card 1: Authentic Leadership (Coming Soon) -->
             <div
               class="blog-card bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 relative flex flex-col"
             >
@@ -374,12 +374,21 @@
                 class="absolute top-0 left-0 h-1 bg-outlier-cyan w-1/4 card-accent-bar"
               ></div>
 
-              <img
-                src="images/authentic.webp"
-                alt="Servant Leadership in Action"
-                class="w-full h-52 object-cover object-center"
-                onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Authentic+Leadership';"
-              />
+              <!-- Coming Soon Badge -->
+              <div class="absolute top-4 right-4 bg-outlier-cyan text-black px-3 py-1 rounded-full text-xs font-bold z-10">
+                COMING SOON
+              </div>
+
+              <!-- Dimmed image with overlay -->
+              <div class="relative">
+                <div class="absolute inset-0 bg-black bg-opacity-50 z-[1]"></div>
+                <img
+                  src="images/authentic.webp"
+                  alt="Servant Leadership in Action"
+                  class="w-full h-52 object-cover object-center"
+                  onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Authentic+Leadership';"
+                />
+              </div>
 
               <div class="p-6 flex-1 flex flex-col">
                 <div class="flex items-center justify-between mb-3">
@@ -388,27 +397,23 @@
                   >
                     Leadership
                   </span>
-                  <span class="text-gray-400 text-sm">May 15, 2025</span>
+                  <span class="text-gray-400 text-sm">Coming Soon</span>
                 </div>
 
                 <h3 class="text-xl font-bold mb-3">
-                  <a
-                    href="authentic-leadership.html"
-                    class="hover:text-outlier-cyan transition-colors"
-                  >
+                  <span class="cursor-default text-gray-300">
                     Authentic Leadership in Action
-                  </a>
+                  </span>
                 </h3>
 
-                <p class="text-gray-300 mb-6 flex-grow">
+                <p class="text-gray-400 mb-6 flex-grow">
                   Real leadership isn't about titles—it's about authenticity and impact. Learn how genuine connection builds trust and drives extraordinary results.
                 </p>
 
-                <a
-                  href="authentic-leadership.html"
-                  class="inline-flex items-center text-outlier-cyan font-semibold hover:underline mt-auto"
+                <span
+                  class="inline-flex items-center text-gray-500 font-semibold mt-auto cursor-not-allowed"
                 >
-                  Read Article
+                  Coming Soon
                   <svg
                     class="w-4 h-4 ml-2"
                     xmlns="http://www.w3.org/2000/svg"
@@ -421,7 +426,7 @@
                       clip-rule="evenodd"
                     />
                   </svg>
-                </a>
+                </span>
               </div>
             </div>
             
