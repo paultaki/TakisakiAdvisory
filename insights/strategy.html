@@ -288,6 +288,22 @@
         border: 1px solid #2d3748;
         margin: 3rem 0;
       }
+      
+      /* Mobile card scrolling styles */
+      .no-scrollbar {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .no-scrollbar > div {
+        scroll-snap-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .no-scrollbar {
+          scroll-snap-type: none;
+        }
+      }
     </style>
   </head>
 
@@ -472,6 +488,10 @@
         <article class="article-content">
           <h2 id="strategy-reality">The Strategy Reality Gap</h2>
           <p>
+            Think of your great strategy as a perfectly made race car. The engineering is flawless, the design cutting-edge—but the wheels fall off while it's racing. This is the reality most executives face: brilliant plans that disintegrate during execution.
+          </p>
+
+          <p>
             I'm not interested in buzzwords or theoretical frameworks that look great on slides but fall apart in reality. My insights come from personally leading twelve major strategy rollouts in a fiercely competitive environment. Eleven succeeded immediately. The twelfth initially stumbled but eventually broke records for nineteen straight months once we fixed the execution issues.
           </p>
           <p>
@@ -499,7 +519,7 @@
             Effective leaders align three crucial timelines: immediate (6 weeks), mid-range (6 months), and long-term (24 months). Most organizations plan well for only one of these, creating blind spots that destroy momentum.
           </p>
           <p>
-            Misaligned timelines cause teams to constantly shift priorities without understanding how today's work connects to future goals.
+            Misaligned timelines cause teams to constantly shift priorities without understanding how today's work connects to future goals. This creates the momentum death cycle—where initiatives start strong but invariably fade when the next quarterly priority arrives.
           </p>
 
           <h2 id="case-study">Real-Life Example: Fortune 50 Transformation</h2>
@@ -529,19 +549,19 @@
             True strategic success comes from creating coordinated organizational movement across three key areas:
           </p>
 
-          <h3>1. People Alignment</h3>
+          <h3>1. Translation Mechanisms</h3>
           <p>
-            Go beyond communication—build genuine ownership at every level. Leaders must translate strategic objectives into personal relevance for every team and role.
+            Your strategy needs built-in translators—not just between layers of management but between functional silos. When Marketing speaks Marketing and Sales speaks Sales, the strategy fragments at the boundaries. Go beyond communication—build genuine ownership at every level.
           </p>
 
-          <h3>2. Process Streamlining</h3>
+          <h3>2. Timing Synchronization</h3>
           <p>
-            Most process breakdowns happen at transition points. Effective strategy execution requires identifying and optimizing these transitions to reduce friction. The goal isn't adding more steps; it's removing barriers.
+            High-performing strategies have what I call "timing integrity"—where short, medium and long-term action cycles reinforce rather than compete with each other. Clearly connect immediate tasks to medium and long-term outcomes.
           </p>
 
-          <h3>3. Timeline Synchronization</h3>
+          <h3>3. System Over Story</h3>
           <p>
-            Clearly connect immediate tasks to medium and long-term outcomes. This connection builds team confidence and patience, making sure everyone understands how daily actions contribute to larger goals.
+            When strategy is only a narrative, it's vulnerable to competing stories. When it's a system with feedback loops, measurement touchpoints, and adaptive protocols—it becomes self-sustaining. Most process breakdowns happen at transition points; effective execution requires identifying and optimizing these transitions.
           </p>
 
           <h2 id="actionable-steps">Practical Steps to Get Moving</h2>
@@ -562,7 +582,7 @@
           >
             <h4 class="text-lg font-bold mb-2">Implementation Insight</h4>
             <p class="m-0">
-              The most reliable predictor of strategic success isn't the quality of your plan—it's the clarity of your implementation system. A few deeper insights stay in my back pocket—they're the difference makers.
+              The most reliable predictor of strategic success isn't the quality of your plan—it's the clarity of your implementation system. A few deeper insights stay in my back pocket—they're the difference makers I share with my coaching clients.
             </p>
           </div>
 
@@ -716,65 +736,79 @@
         <!-- Related articles -->
         <div class="my-12">
           <h3 class="text-2xl font-bold mb-6">Related Articles</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Related Article 1: The Invisible Resume -->
-            <a href="invisible-resume.html" class="group">
-              <div
-                class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 hover:border-outlier-cyan transition-colors"
-              >
-                <div class="h-48 overflow-hidden">
-                  <img
-                    src="images/paul-takisaki-resume.webp"
-                    alt="The Invisible Resume"
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
-                  />
-                </div>
-                <div class="p-6">
-                  <div class="text-outlier-cyan text-sm font-semibold mb-2">
-                    Leadership
-                  </div>
-                  <h4
-                    class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
-                  >
-                    The Invisible Resume
-                  </h4>
-                  <p class="text-gray-400 text-sm">
-                    March 22, 2025 • 5 min read
-                  </p>
-                </div>
-              </div>
-            </a>
-
-            <!-- Related Article 2: The Unscalable Advantage (Coming Soon) -->
-            <a href="unscalable.html" class="group">
-              <div
-                class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 relative"
-              >
-                <div class="h-48 overflow-hidden brightness-50">
-                  <img
-                    src="images/unscalable.webp"
-                    alt="The Unscalable Advantage"
-                    class="w-full h-full object-cover"
-                    onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Unscalable+Advantage';"
-                  />
-                </div>
+          <div class="relative max-w-full">
+            <div class="no-scrollbar flex space-x-6 pb-8 mx-auto justify-start md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-6 pl-[calc(50%-40vw)] pr-5 md:pl-0 md:pr-0">
+              <!-- Related Article 1: The Invisible Resume -->
+              <a href="invisible-resume.html" class="group flex-shrink-0 w-80 max-w-[80vw]">
                 <div
-                  class="absolute top-4 right-4 bg-outlier-cyan text-black px-3 py-1 rounded-full text-xs font-bold"
+                  class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 hover:border-outlier-cyan transition-colors"
                 >
-                  COMING SOON
-                </div>
-                <div class="p-6">
-                  <div class="text-outlier-cyan text-sm font-semibold mb-2">
-                    Leadership
+                  <div class="h-48 overflow-hidden">
+                    <img
+                      src="images/paul-takisaki-resume.webp"
+                      alt="The Invisible Resume"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
+                    />
                   </div>
-                  <h4 class="text-lg font-bold mb-2">
-                    The Unscalable Advantage
-                  </h4>
-                  <p class="text-gray-400 text-sm">May 2025 • 6 min read</p>
+                  <div class="p-6">
+                    <div class="text-outlier-cyan text-sm font-semibold mb-2">
+                      Leadership
+                    </div>
+                    <h4
+                      class="text-lg font-bold mb-2 group-hover:text-outlier-cyan transition-colors"
+                    >
+                      The Invisible Resume
+                    </h4>
+                    <p class="text-gray-400 text-sm">
+                      March 22, 2025 • 5 min read
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+
+              <!-- Related Article 2: The Unscalable Advantage (Coming Soon) -->
+              <a href="unscalable.html" class="group flex-shrink-0 w-80 max-w-[80vw]">
+                <div
+                  class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 relative"
+                >
+                  <div class="h-48 overflow-hidden brightness-50">
+                    <img
+                      src="images/unscalable.webp"
+                      alt="The Unscalable Advantage"
+                      class="w-full h-full object-cover"
+                      onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Unscalable+Advantage';"
+                    />
+                  </div>
+                  <div
+                    class="absolute top-4 right-4 bg-outlier-cyan text-black px-3 py-1 rounded-full text-xs font-bold"
+                  >
+                    COMING SOON
+                  </div>
+                  <div class="p-6">
+                    <div class="text-outlier-cyan text-sm font-semibold mb-2">
+                      Leadership
+                    </div>
+                    <h4 class="text-lg font-bold mb-2">
+                      The Unscalable Advantage
+                    </h4>
+                    <p class="text-gray-400 text-sm">May 2025 • 6 min read</p>
+                  </div>
+                </div>
+              </a>
+              
+              <!-- Related Article 3: Placeholder for Mobile Scrolling -->
+              <a href="#" class="group md:hidden flex-shrink-0 w-80 max-w-[80vw] opacity-0 pointer-events-none">
+                <div class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800">
+                  <div class="h-48 overflow-hidden"></div>
+                  <div class="p-6">
+                    <div class="text-outlier-cyan text-sm font-semibold mb-2"></div>
+                    <h4 class="text-lg font-bold mb-2"></h4>
+                    <p class="text-gray-400 text-sm"></p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
