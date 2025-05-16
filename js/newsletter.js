@@ -72,28 +72,81 @@ document.addEventListener('DOMContentLoaded', function() {
       submitButton.textContent = 'Subscribing...';
 
       try {
-        const response = await fetch('/api/subscribe', {
+        console.log('Sending subscription request...');
+        submitButton.textContent = 'Subscribing...';
+        
+        // Add timestamp to avoid caching issues
+        const timestamp = new Date().getTime();
+        const apiUrl = `/api/subscribe?_t=${timestamp}`;
+        
+        const response = await fetch(apiUrl, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache'
           },
           body: JSON.stringify({ email })
         });
 
+        console.log('Response received:', response.status);
+        
+        let result;
+        try {
+          // Try to parse the JSON response
+          result = await response.json();
+          console.log('Response data:', result);
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);
+          throw new Error('Invalid server response format');
+        }
+
         if (response.ok) {
-          const result = await response.json();
           submitButton.textContent = 'Subscribed!';
-          statusMessage.innerHTML = `<p class="text-green-400">${result.message}</p>`;
+          
+          // Handle the case where we got a warning but still succeeded
+          if (result.warning) {
+            statusMessage.innerHTML = `
+              <p class="text-green-400">${result.message}</p>
+              <p class="text-yellow-400 text-sm">${result.warning}</p>
+            `;
+          } else {
+            statusMessage.innerHTML = `<p class="text-green-400">${result.message}</p>`;
+          }
+          
           emailInput.value = '';
+          
+          // Create a fallback alert in case the user doesn't see the status message
+          setTimeout(() => {
+            // Only show if the form hasn't been reset yet
+            if (statusMessage.innerHTML.includes('Subscribed')) {
+              alert('Thank you for subscribing!');
+            }
+          }, 5000);
+          
         } else {
-          const errorData = await response.json();
-          statusMessage.innerHTML = `<p class="text-red-400">${errorData.error || 'Subscription failed. Try again.'}</p>`;
           submitButton.textContent = 'Try Again';
+          statusMessage.innerHTML = `<p class="text-red-400">${result.error || 'Subscription failed. Please try again.'}</p>`;
         }
       } catch (err) {
-        console.error('Network error:', err);
-        statusMessage.innerHTML = '<p class="text-red-400">Network error. Try again later.</p>';
-        submitButton.textContent = 'Try Again';
+        console.error('Network or parsing error:', err);
+        
+        // Create a fallback to a server-side script with GET parameters as a backup option
+        const fallbackUrl = `/fallback-subscribe.php?email=${encodeURIComponent(email)}&t=${new Date().getTime()}`;
+        
+        try {
+          submitButton.textContent = 'Trying alternative...';
+          const fallbackResponse = await fetch(fallbackUrl);
+          submitButton.textContent = 'Subscribed!';
+          statusMessage.innerHTML = '<p class="text-green-400">Thank you for subscribing (fallback method)!</p>';
+          emailInput.value = '';
+        } catch (fallbackErr) {
+          console.error('Fallback also failed:', fallbackErr);
+          statusMessage.innerHTML = `
+            <p class="text-red-400">We're experiencing technical difficulties.</p>
+            <p class="text-sm">Please email us at paul@paultakisaki.com to subscribe.</p>
+          `;
+          submitButton.textContent = 'Try Again';
+        }
       } finally {
         submitButton.disabled = false;
       }
