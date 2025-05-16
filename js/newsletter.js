@@ -48,27 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add form submission handler
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
+
       const email = emailInput.value.trim();
-      
-      // Email validation
-      if (!email) {
-        alert('Please enter your email address.');
-        emailInput.focus();
-        return;
-      }
-      
-      if (!isValidEmail(email)) {
+
+      if (!email || !isValidEmail(email)) {
         alert('Please enter a valid email address.');
         emailInput.focus();
         return;
       }
-      
-      // Disable form and show loading state
-      const originalText = submitButton.textContent.trim();
-      setFormSubmitting(form, true);
-      submitButton.textContent = 'Subscribing...';
-      
+
       // Create a status message element if it doesn't exist
       let statusMessage = form.querySelector('.subscription-status');
       if (!statusMessage) {
@@ -79,88 +67,35 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Clear any previous status messages
       statusMessage.innerHTML = '';
-      
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Subscribing...';
+
       try {
-        console.log(`Submitting email: ${email}`);
-        
-        // Temporary hard-coded success for testing
-        // This simulates a successful API response until the server is properly configured
-        submitButton.textContent = 'Subscribed!';
-        submitButton.classList.add('bg-green-500');
-        statusMessage.innerHTML = '<p class="text-green-400">Thank you for subscribing!</p>';
-        emailInput.value = '';
-        
-        // Comment out actual API call for now - will uncomment when API is working
-        /*
-        // Submit the form data
         const response = await fetch('/api/subscribe', {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({ email })
         });
-        
-        console.log(`API response status: ${response.status}`);
-        
-        // Check if response exists and is OK
-        if (response && response.ok) {
-          // Success handling
+
+        if (response.ok) {
+          const result = await response.json();
           submitButton.textContent = 'Subscribed!';
-          submitButton.classList.add('bg-green-500');
-          statusMessage.innerHTML = '<p class="text-green-400">Thank you for subscribing!</p>';
+          statusMessage.innerHTML = `<p class="text-green-400">${result.message}</p>`;
           emailInput.value = '';
         } else {
-          // Error handling with fallback
-          let errorMessage = 'Subscription failed. Please try again later.';
-          
-          // Only attempt to parse JSON if we have a response
-          if (response) {
-            try {
-              // First check if the response is JSON
-              const contentType = response.headers.get('content-type');
-              if (contentType && contentType.includes('application/json')) {
-                const errorData = await response.json();
-                if (errorData && errorData.error) {
-                  errorMessage = errorData.error;
-                }
-              } else {
-                // Not JSON, try to get text
-                const textResponse = await response.text();
-                console.error('Non-JSON response:', textResponse);
-              }
-            } catch (jsonError) {
-              console.error('Error parsing response:', jsonError);
-            }
-          }
-          
+          const errorData = await response.json();
+          statusMessage.innerHTML = `<p class="text-red-400">${errorData.error || 'Subscription failed. Try again.'}</p>`;
           submitButton.textContent = 'Try Again';
-          statusMessage.innerHTML = `<p class="text-red-400">${errorMessage}</p>`;
-          console.error(`Error: ${errorMessage}`);
         }
-        */
       } catch (err) {
-        // Network or other error
-        console.error('Error submitting form:', err);
+        console.error('Network error:', err);
+        statusMessage.innerHTML = '<p class="text-red-400">Network error. Try again later.</p>';
         submitButton.textContent = 'Try Again';
-        statusMessage.innerHTML = '<p class="text-red-400">Network error. Please try again later.</p>';
       } finally {
-        // Re-enable form after a delay
-        setTimeout(() => {
-          setFormSubmitting(form, false);
-          
-          // Only reset button if it's not a success
-          if (!statusMessage.innerHTML.includes('Thank you for subscribing')) {
-            submitButton.textContent = originalText;
-            submitButton.classList.remove('bg-green-500');
-          } else {
-            // Keep the success state longer
-            setTimeout(() => {
-              submitButton.textContent = originalText;
-              submitButton.classList.remove('bg-green-500');
-            }, 3000);
-          }
-        }, 1000);
+        submitButton.disabled = false;
       }
     });
   });
