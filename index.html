@@ -2,6 +2,15 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+    <!-- Initialize dataLayer -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+        'pageType': 'home',
+        'pageTitle': 'Paul Takisaki | Strategic Leadership for Outliers'
+    });
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -851,6 +860,16 @@
             modal.classList.remove('scale-0', 'opacity-0');
             modal.classList.add('scale-100', 'opacity-100');
             document.body.style.overflow = 'hidden';
+            
+            // Send dataLayer event for contact modal open
+            if (window.dataLayer) {
+                dataLayer.push({
+                    'event': 'contact_modal_open',
+                    'eventCategory': 'Engagement',
+                    'eventAction': 'Open Contact Modal',
+                    'eventLabel': document.title
+                });
+            }
         }
         
         function closeContactModal() {
@@ -868,6 +887,24 @@
             const submitButton = this.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = "SENDING...";
+            
+            // Track form submission in dataLayer
+            if (window.dataLayer) {
+                const name = document.getElementById("name").value;
+                const email = document.getElementById("email").value;
+                const company = document.getElementById("company").value;
+                
+                dataLayer.push({
+                    'event': 'form_submission',
+                    'eventCategory': 'Lead Generation',
+                    'eventAction': 'Contact Form Submit',
+                    'eventLabel': email,
+                    'formData': {
+                        'name': name,
+                        'company': company ? company : 'Not provided'
+                    }
+                });
+            }
 
             // Get form data
             const name = document.getElementById("name").value;
@@ -894,6 +931,16 @@
             })
             .then(response => {
                 if (response.ok) {
+                    // Track successful form submission
+                    if (window.dataLayer) {
+                        dataLayer.push({
+                            'event': 'form_submission_success',
+                            'eventCategory': 'Lead Generation',
+                            'eventAction': 'Contact Form Success',
+                            'eventLabel': email
+                        });
+                    }
+                    
                     // Clear the form
                     this.reset();
 
@@ -910,6 +957,16 @@
                 }
             })
             .catch(error => {
+                // Track form submission error
+                if (window.dataLayer) {
+                    dataLayer.push({
+                        'event': 'form_submission_error',
+                        'eventCategory': 'Lead Generation',
+                        'eventAction': 'Contact Form Error',
+                        'eventLabel': error.message || 'Unknown error'
+                    });
+                }
+                
                 // Handle error with more detailed logging
                 console.error("Form submission error:", error);
 

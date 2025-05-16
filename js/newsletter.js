@@ -103,6 +103,16 @@ document.addEventListener('DOMContentLoaded', function() {
         if (response.ok) {
           submitButton.textContent = 'Subscribed!';
           
+          // Track newsletter subscription in dataLayer
+          if (window.dataLayer) {
+            dataLayer.push({
+              'event': 'newsletter_subscribe',
+              'eventCategory': 'Lead Generation',
+              'eventAction': 'Newsletter Signup',
+              'eventLabel': email
+            });
+          }
+          
           // Handle the case where we got a warning but still succeeded
           if (result.warning) {
             statusMessage.innerHTML = `
@@ -129,6 +139,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       } catch (err) {
         console.error('Network or parsing error:', err);
+        
+        // Track newsletter error in dataLayer
+        if (window.dataLayer) {
+          dataLayer.push({
+            'event': 'newsletter_subscribe_error',
+            'eventCategory': 'Lead Generation',
+            'eventAction': 'Newsletter Signup Error',
+            'eventLabel': err.message || 'Network error'
+          });
+        }
         
         // Check if we're on Vercel 
         const isVercelDeployment = window.location.hostname === 'www.paultakisaki.com' || 

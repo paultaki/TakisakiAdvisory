@@ -1,0 +1,407 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script>```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takisaki 90-Day Leadership Accelerator</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    body { font-family: 'Lora', serif; color: #1a2a44; background: #f8f9fa; margin: 0; padding: 20px; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; }
+    .header { text-align: center; margin-bottom: 20px; }
+    .header img { width: 150px; }
+    h1 { color: #d4a017; text-align: center; }
+    h2 { color: #1a2a44; cursor: pointer; }
+    .section { display: none; margin-bottom: 20px; }
+    .section.active { display: block; }
+    .quote { font-style: italic; color: #d4a017; margin: 10px 0; }
+    .visual { text-align: center; margin: 20px 0; }
+    .template { background: #f1f1f1; padding: 10px; border-radius: 4px; margin: 10px 0; }
+    .search-bar { margin: 20px 0; }
+    .quiz { background: #e9ecef; padding: 15px; border-radius: 4px; margin-bottom: 20px; }
+    .feedback-form { background: #e9ecef; padding: 15px; border-radius: 4px; }
+    .feedback-form label { display: block; margin: 10px 0 5px; }
+    .feedback-form input, .feedback-form select, .feedback-form textarea { width: 100%; padding: 5px; }
+    .feedback-form button { background: #1a2a44; color: white; padding: 10px; border: none; border-radius: 4px; cursor: pointer; }
+    .feedback-form button:hover { background: #d4a017; }
+    nav { position: fixed; left: 20px; top: 20px; background: #1a2a44; color: white; padding: 10px; border-radius: 4px; }
+    nav a { color: white; text-decoration: none; display: block; margin: 5px 0; }
+    nav a:hover { color: #d4a017; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#principles">Principles</a>
+    <a href="#quick-start">Quick Start</a>
+    <a href="#phase1">Phase 1</a>
+    <a href="#phase2">Phase 2</a>
+    <a href="#phase3">Phase 3</a>
+    <a href="#phase4">Phase 4</a>
+    <a href="#pitfalls">Pitfalls</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#large-orgs">Large Orgs</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#testing-checklist">Testing Checklist</a>
+    <a href="#feedback">Feedback</a>
+  </nav>
+  <div class="container">
+    <div class="header">
+      <img src="/logo.png" alt="Takisaki Strategy Vault Logo">
+      <p style="font-family: 'Montserrat', sans-serif; color: #1a2a44;">Takisaki Strategy Vault</p>
+    </div>
+    <h1>Takisaki 90-Day Leadership Accelerator</h1>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search (e.g., strengths, wins)" onkeyup="searchContent()">
+    </div>
+    <div class="quiz">
+      <p><strong>Team Challenge?</strong> Select one:</p>
+      <select onchange="showRecommendation(this.value)">
+        <option value="">Choose...</option>
+        <option value="disengagement">Disengagement</option>
+        <option value="resistance">Resistance to Change</option>
+        <option value="complexity">Overwhelm/Complexity</option>
+      </select>
+      <p id="recommendation"></p>
+    </div>
+
+    <h2 id="overview" onclick="toggleSection('overview-content')">Overview</h2>
+    <div id="overview-content" class="section active">
+      <p>The first 90 days are your proving ground. Built from Paul Takisaki’s 20-year Fortune 50 playbook, this tool empowers you to inspire trust, secure buy-in, and set a transformative trajectory. Centered on <strong>strength-based mapping</strong>, it unlocks team potential, proven in turnarounds: 27% growth in the Pacific Northwest, 37% revenue in the Desert Team. Executable in 10 hours/week.</p>
+      <p class="quote">"Unlock your team’s hidden power in 90 days." – Paul Takisaki</p>
+    </div>
+
+    <h2 id="principles" onclick="toggleSection('principles-content')">Core Principles</h2>
+    <div id="principles-content" class="section">
+      <ul>
+        <li><strong>Immersion</strong>: Uncover truth and strengths. <span class="quote">"Never trust the first version."</span></li>
+        <li><strong>Visibility</strong>: Show up where work happens. <span class="quote">"I sit where conversations start."</span></li>
+        <li><strong>Early Wins</strong>: Fix pain points fast. <span class="quote">"Fix it in 30 days, they’ll follow."</span></li>
+        <li><strong>Strengths Focus</strong>: Amplify talents. <span class="quote">"Unleash what’s world-class."</span></li>
+        <li><strong>Prioritization</strong>: Focus on vital metrics. <span class="quote">"Win the must-haves."</span></li>
+      </ul>
+    </div>
+
+    <h2 id="quick-start" onclick="toggleSection('quick-start-content')">Quick Start Guide</h2>
+    <div id="quick-start-content" class="section">
+      <p><strong>Time</strong>: 10 hours/week for 90 days.</p>
+      <ul>
+        <li><strong>Prepare (1 hr)</strong>: Review, download templates.</li>
+        <li><strong>Weeks 1–2 (5 hrs)</strong>: Share story, 1:1s, map strengths.</li>
+        <li><strong>Weeks 3–4 (5 hrs)</strong>: Diagnose, meet customers, select metrics.</li>
+        <li><strong>Weeks 5–8 (5 hrs)</strong>: Implement wins, start calibration calls.</li>
+        <li><strong>Weeks 9–12 (5 hrs)</strong>: Communicate vision, track progress.</li>
+        <li><strong>Track</strong>: Use Strength Mapping Tracker, Vital Few Scorecard.</li>
+        <li><strong>Feedback</strong>: See Feedback section below.</li>
+      </ul>
+    </div>
+
+    <h2 id="phase1" onclick="toggleSection('phase1-content')">Phase 1: Human Introduction (Weeks 1–2)</h2>
+    <div id="phase1-content" class="section">
+      <p><strong>Objective</strong>: Build trust through vulnerability, strengths.</p>
+      <h3>Task: Authentic Introduction</h3>
+      <p><strong>Why</strong>: Teams follow stories.</p>
+      <ul>
+        <li>Share struggle (e.g., mall kiosk) with photos.</li>
+        <li>Admit limits: “I’m here for your strengths.”</li>
+        <li>Express: “I joined to build on your talents.”</li>
+      </ul>
+      <p><strong>Script</strong>: <em>“I’m Paul, a father who started door-to-door, doubting I’d make it. Leadership is unlocking your strengths. What’s your story?”</em></p>
+      <h3>Task: Frontline 1:1 Immersion</h3>
+      <p><strong>Why</strong>: Uncover talents.</p>
+      <ul>
+        <li><strong>Small Teams</strong>: Meet all (20-min).</li>
+        <li><strong>Large Teams</strong>: Stratified (25% each: high-potentials, random, problem areas, self-nominated).</li>
+        <li>Ask (use 1:1 Conversation Script):
+          <ul>
+            <li>What energizes you? (Strengths)</li>
+            <li>What are you best at? (Strengths)</li>
+            <li>What would you do more? (Strengths)</li>
+            <li>What’s working?</li>
+            <li>What would you change?</li>
+            <li>What’s your approach? (Reflective)</li>
+          </ul>
+        </li>
+        <li>Thank: “Your strengths shape our win.”</li>
+      </ul>
+      <h3>Tool: 1:1 Conversation Script Template</h3>
+      <div class="template">
+        <p>Word: Intro, strength questions, insight questions, close.</p>
+        <p><a href="/downloads/1-1-script.docx">Download</a></p>
+      </div>
+      <h3>Tool: Strength Mapping Tracker</h3>
+      <div class="template">
+        <p>Excel: Name, role, strengths, pain points, influencers, realignments.</p>
+        <p><a href="/downloads/strength-tracker.xlsx">Download</a> | <a href="https://docs.google.com/spreadsheets/d/12345">Preview</a></p>
+      </div>
+    </div>
+
+    <h2 id="phase2" onclick="toggleSection('phase2-content')">Phase 2: Intelligence Gathering (Weeks 3–4)</h2>
+    <div id="phase2-content" class="section">
+      <p><strong>Objective</strong>: Diagnose, map strengths, prioritize metrics.</p>
+      <h3>Task: Diagnose Territory</h3>
+      <p><strong>Why</strong>: Tailor moves.</p>
+      <ul>
+        <li>Assess: Turnaround, Growth, Stability, Startup.</li>
+        <li>Tools: 12–24 months data, 1:1 strengths, “Will I get fired?” for 3–5 metrics.</li>
+      </ul>
+      <h3>Task: Meet 10–20 Customers</h3>
+      <p><strong>Why</strong>: Align insights.</p>
+      <ul>
+        <li>Ask: What’s working? Change?</li>
+        <li>Debrief: “What’s one change?”</li>
+      </ul>
+      <h3>Task: Engage Influencers</h3>
+      <p><strong>Why</strong>: Amplify vision.</p>
+      <ul>
+        <li>Identify via 1:1s.</li>
+        <li>Ask: “What am I missing?”</li>
+      </ul>
+      <h3>Task: Triangulate Truth</h3>
+      <p><strong>Why</strong>: Align priorities.</p>
+      <ul>
+        <li>Compare: “Reporting frustrates reps. Your take?”</li>
+      </ul>
+      <h3>Tool: Leadership Assessment Template</h3>
+      <div class="template">
+        <p>Word: Strengths, metrics, bottlenecks.</p>
+        <p><a href="/downloads/assessment.docx">Download</a></p>
+      </div>
+      <div class="visual">
+        <img src="/images/strength-map.png" alt="Strength Map" width="400">
+        <p>5 roles, strengths, shifts.</p>
+      </div>
+    </div>
+
+    <h2 id="phase3" onclick="toggleSection('phase3-content')">Phase 3: Early Win (Weeks 5–8)</h2>
+    <div id="phase3-content" class="section">
+      <p><strong>Objective</strong>: Deliver strength-based wins.</p>
+      <h3>Task: Secure Visible Wins</h3>
+      <p><strong>Why</strong>: Prove strengths.</p>
+      <ul>
+        <li>Pick 2–3: Solvable, impactful.</li>
+        <li>Prioritize: Realignments, simplification.</li>
+        <li>Announce: “You said X, Y’s strength fixed it.”</li>
+      </ul>
+      <h3>Task: Hero Request</h3>
+      <p><strong>Why</strong>: Solve “no.”</p>
+      <ul>
+        <li>Find request, pitch gatekeepers.</li>
+      </ul>
+      <h3>Task: Pilot Calibration Calls</h3>
+      <p><strong>Why</strong>: Share wins.</p>
+      <ul>
+        <li>30-min: Highlights, “One insight?”</li>
+      </ul>
+      <h3>Tool: Win Progress Tracker</h3>
+      <div class="template">
+        <p>Excel: Win, type, impact.</p>
+        <p><a href="/downloads/win-tracker.xlsx">Download</a></p>
+      </div>
+    </div>
+
+    <h2 id="phase4" onclick="toggleSection('phase4-content')">Phase 4: Strategic Direction (Weeks 9–12)</h2>
+    <div id="phase4-content" class="section">
+      <p><strong>Objective</strong>: Inspire vision.</p>
+      <h3>Task: Develop and Communicate Vision</h3>
+      <p><strong>Why</strong>: Root in strengths.</p>
+      <ul>
+        <li>Five Questions: Aspiration, Play, Win, Capabilities, Systems.</li>
+        <li>Vital Few Scorecard: “3 metrics.”</li>
+        <li>7 ways: All-hands, 1:1s, map, email, huddles, stories, doc.</li>
+        <li>3 notes: “Your strength shaped this.”</li>
+      </ul>
+      <h3>Task: Establish Implementation</h3>
+      <p><strong>Why</strong>: Ownership.</p>
+      <ul>
+        <li>Strength-based roles.</li>
+        <li>Check-ins, track metrics.</li>
+      </ul>
+      <h3>Task: All-Hands Reveal</h3>
+      <p><strong>Why</strong>: Show strengths.</p>
+      <ul>
+        <li>Quote: “One said, ‘I’m best at Z.’ Realigned.”</li>
+        <li>End: “Our plan, your strengths.”</li>
+      </ul>
+      <h3>Tool: Vital Few Scorecard</h3>
+      <div class="template">
+        <p>Excel: 3–5 metrics, status.</p>
+        <p><a href="/downloads/scorecard.xlsx">Download</a></p>
+      </div>
+      <div class="visual">
+        <img src="/images/pacific-infographic.png" alt="Pacific Northwest" width="400">
+        <p>27% growth via strengths.</p>
+      </div>
+    </div>
+
+    <h2 id="pitfalls" onclick="toggleSection('pitfalls-content')">Pitfalls to Avoid</h2>
+    <div id="pitfalls-content" class="section">
+      <ul>
+        <li><strong>Overload</strong>: Focus strengths.</li>
+        <li><strong>Rushing</strong>: Map first.</li>
+        <li><strong>Defensiveness</strong>: Ask: “Your take?”</li>
+        <li><strong>Overpromising</strong>: Be clear.</li>
+        <li><strong>Ignoring Strengths</strong>: Realign.</li>
+      </ul>
+    </div>
+
+    <h2 id="metrics" onclick="toggleSection('metrics-content')">Success Metrics</h2>
+    <div id="metrics-content" class="section">
+      <ul>
+        <li>80%+ 1:1 completion.</li>
+        <li>10–20 customer meetings.</li>
+        <li>2–3 wins (1+ strength-based).</li>
+        <li>Vision, 70%+ clarity.</li>
+        <li>3–5 influencers.</li>
+        <li>Metrics tracked.</li>
+        <li>1+ realignment.</li>
+      </ul>
+    </div>
+
+    <h2 id="large-orgs" onclick="toggleSection('large-orgs-content')">For Large Organizations</h2>
+    <div id="large-orgs-content" class="section">
+      <ul>
+        <li><strong>Scale 1:1s</strong>: Quarterly rotation.</li>
+        <li><strong>Travel</strong>: Desks, lunches.</li>
+        <li><strong>Visible</strong>: Videos, AMAs.</li>
+        <li><strong>Track</strong>: Strength maps.</li>
+      </ul>
+    </div>
+
+    <h2 id="case-studies" onclick="toggleSection('case-studies-content')">Case Studies</h2>
+    <div id="case-studies-content" class="section">
+      <h3>Pacific Northwest Turnaround</h3>
+      <p><strong>Challenge</strong>: Dysfunctional team, 7 quarters missed.</p>
+      <p><strong>Solution</strong>: 1:1 strengths, realignments (e.g., marketing to intelligence).</p>
+      <p><strong>Results</strong>: 27% growth, top 10% engagement.</p>
+      <h3>Desert Team Transformation</h3>
+      <p><strong>Challenge</strong>: Low morale, siloed.</p>
+      <p><strong>Solution</strong>: Strengths, 3 metrics.</p>
+      <p><strong>Results</strong>: 37% revenue, 96% customer adds.</p>
+    </div>
+
+    <h2 id="testing-checklist" onclick="toggleSection('testing-checklist-content')">Testing Checklist</h2>
+    <div id="testing-checklist-content" class="section">
+      <p><strong>Before Testing</strong>:</p>
+      <ul>
+        <li>Review Quick Start Guide and Phases 1–4.</li>
+        <li>Download templates (paultakisaki.com/downloads).</li>
+        <li>Schedule 1:1s for Week 1 (use 1:1 Conversation Script).</li>
+      </ul>
+      <p><strong>During Testing</strong>:</p>
+      <ul>
+        <li>Conduct 1:1s, map strengths (Phase 1).</li>
+        <li>Diagnose team, meet customers, select metrics (Phase 2).</li>
+        <li>Implement 2–3 wins, start calibration calls (Phase 3).</li>
+        <li>Communicate vision, track progress (Phase 4).</li>
+        <li>Note challenges: Did strength mapping impact buy-in?</li>
+      </ul>
+      <p><strong>After Testing</strong>:</p>
+      <ul>
+        <li>Complete feedback form below.</li>
+      </ul>
+    </div>
+
+    <h2 id="feedback" onclick="toggleSection('feedback-content')">Feedback for Testing</h2>
+    <div id="feedback-content" class="section">
+      <p>Your feedback shapes this tool’s future. Complete the form below or visit <a href="paultakisaki.com/feedback">paultakisaki.com/feedback</a>.</p>
+      <div class="feedback-form">
+        <label for="q1">1. Strength-based mapping impact on buy-in? (1–5)</label>
+        <select id="q1" name="q1">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label for="q2">2. Tasks and tools clear/actionable? (1–5)</label>
+        <select id="q2" name="q2">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label for="q3">3. Addressed challenges (disengagement, complexity)? (1–5)</label>
+        <select id="q3" name="q3">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <label for="q4">4. Improvement for legacy/tech teams?</label>
+        <textarea id="q4" name="q4" rows="3"></textarea>
+        <label for="q5">5. Preferred format: PDF or webpage? Why?</label>
+        <textarea id="q5" name="q5" rows="3"></textarea>
+        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+    function searchContent() {
+      let input = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.section').forEach(s => {
+        s.style.display = s.textContent.toLowerCase().includes(input) ? 'block' : 'none';
+      });
+    }
+    function showRecommendation(value) {
+      let rec = '';
+      if (value === 'disengagement') rec = 'Focus on strength-based role realignments in Phase 3.';
+      if (value === 'resistance') rec = 'Map strengths in Phase 1 to build trust.';
+      if (value === 'complexity') rec = 'Simplify processes in Phase 3.';
+      document.getElementById('recommendation').textContent = rec;
+    }
+    function submitFeedback() {
+      alert('Thank you for your feedback! It has been submitted.');
+      // In Squarespace, replace with form submission to paultakisaki.com/feedback (e.g., link to Google Form or Squarespace Form Block).
+    }
+  </script>
+</body>
+</html>
+```
