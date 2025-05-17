@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90-Day Leadership Accelerator | Paul Takisaki</title>
+    <meta name="description" content="Transform your leadership in 90 days with Paul Takisaki's strength-based approach that delivers measurable results and builds high-performing teams.">
+    <link rel="canonical" href="https://www.paultakisaki.com/leadership-accelerator" />
+    
+    <style>
+        /* Custom styling to match your site */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #00FFFF; /* outlier-cyan */
+            width: 0%;
+            z-index: 100;
+            transition: width 0.05s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00FFFF;
+            color: #00FFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 99;
+            cursor: pointer;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+        }
+        
+        /* Section styling */
+        .section-card {
+            background: #121212;
+            border: 1px solid #232323;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-card:hover {
+            border-color: #00FFFF;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        .section-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: #00FFFF;
+            transition: width 0.3s ease;
+        }
+        
+        .section-card:hover::before {
+            width: 100%;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #00FFFF;
+            border-left: 3px solid #00FFFF;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #232323;
+        }
+        
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: #999;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        .tab-button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #00FFFF;
+            transition: width 0.3s ease;
+        }
+        
+        .tab-button:hover, .tab-button.active {
+            color: #fff;
+        }
+        
+        .tab-button.active::after {
+            width: 100%;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Template box styling */
+        .template-box {
+            background: #1a1a1a;
+            border: 1px solid #2d2d2d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #00FFFF;
+            color: #000 !important;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: rgba(0, 255, 255, 0.8);
+        }
+        
+        /* Timeline styling */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #232323;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00FFFF;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            color: #00FFFF;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white font-sans">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="scrollProgressBar"></div>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <main class="pt-24 pb-16 px-8">
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto mb-16">
+            <div class="flex flex-col items-center text-center">
+                <span class="inline-block px-3 py-1 text-xs font-semibold bg-outlier-cyan bg-opacity-20 text-outlier-cyan rounded-full mb-6">
+                    STRATEGIC LEADERSHIP
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-tighter mb-6">
+                    <span class="text-outlier-cyan">90-Day</span> Leadership Accelerator
+                </h1>
+                <div class="h-1 w-24 bg-outlier-cyan mb-8 mx-auto"></div>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                    Transform your team with a proven system built from 20 years of elite leadership experience. Not theory—real results that delivered 27% growth and top-tier engagement.
+                </p>
+                <a href="#contact" class="inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-base tracking-wider">
+                    GET THE ACCELERATOR
+                </a>
+            </div>
+        </section>
+        
+        <!-- Feature Image -->
+        <div class="max-w-4xl mx-auto mb-20">
+            <img src="images/first-90-days-clock.jpg" alt="First 90 Days Leadership Clock" class="w-full h-auto rounded-lg shadow-lg">
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="max-w-6xl mx-auto mb-16">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="showTab('overview')">Overview</button>
+                <button class="tab-button" onclick="showTab('phases')">The 4 Phases</button>
+                <button class="tab-button" onclick="showTab('tools')">Tools & Templates</button>
+                <button class="tab-button" onclick="showTab('results')">Results</button>
+                <button class="tab-button" onclick="showTab('faq')">FAQ</button>
+            </div>
+            
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <div class="section-card">
+                    <h2 class="text-3xl font-bold mb-6 text-outlier-cyan">The First 90 Days Define Everything</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        The first 90 days are your proving ground. Built from my 20-year Fortune 50 playbook, this tool empowers you to inspire trust, secure buy-in, and set a transformative trajectory. Centered on <strong>strength-based mapping</strong>, it unlocks team potential, proven in turnarounds: 27% growth in the Pacific Northwest, 37% revenue in the Desert Team.
+                    </p>
+                    
+                    <h3 class="text-2xl font-bold mb-4">Core Principles That Drive Results</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <div class="font-bold text-outlier-cyan mb-2">Immersion</div>
+                            <p class="text-gray-300">Uncover truth and strengths. <span class="italic">"Never trust the first version."</span></p>
+                        </div>
+                        <div>
+                            <div class="font-bold text-outlier-cyan mb-2">Visibility</div>
+                            <p class="text-gray-300">Show up where work happens. <span class="italic">"I sit where conversations start."</span></p>
+                        </div>
+                        <div>
+                            <div class="font-bold text-outlier-cyan mb-2">Early Wins</div>
+                            <p class="text-gray-300">Fix pain points fast. <span class="italic">"Fix it in 30 days, they'll follow."</span></p>
+                        </div>
+                        <div>
+                            <div class="font-bold text-outlier-cyan mb-2">Strengths Focus</div>
+                            <p class="text-gray-300">Amplify talents. <span class="italic">"Unleash what's world-class."</span></p>
+                        </div>
+                    </div>
+                    
+                    <blockquote class="quote">
+                        "Unlock your team's hidden power in 90 days. When you map their strengths, they'll outperform their own expectations." – Paul Takisaki
+                    </blockquote>
+                    
+                    <h3 class="text-2xl font-bold mb-4">What You'll Get</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li>• Complete 90-day leadership roadmap (4 phases, 10 hours/week)</li>
+                        <li>• 5 proprietary templates (Strength Mapping, Vital Few Scorecard)</li>
+                        <li>• 1:1 conversation scripts that unlock hidden potential</li>
+                        <li>• Early win identification framework</li>
+                        <li>• Case studies: Pacific Northwest turnaround, Desert Team transformation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Phases Tab -->
+            <div id="phases" class="tab-content">
+                <div class="section-card">
+                    <h2 class="text-3xl font-bold mb-6 text-outlier-cyan">The 4-Phase Leadership Method</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        This is no abstract theory. It's a system built from 20 years in the Fortune 50 arena, honed in transformations that delivered 27% growth and top-tier engagement. The system requires just 10 hours/week for 90 days.
+                    </p>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-title">Phase 1: Human Introduction (Weeks 1-2)</div>
+                            <p class="mb-3">Build trust through vulnerability and strengths-focused engagement.</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Authentic story introduction (with struggle, not just wins)</li>
+                                <li>• 1:1 strength-finding conversations with structured scripts</li> 
+                                <li>• Strength mapping using proprietary tracker</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-title">Phase 2: Intelligence Gathering (Weeks 3-4)</div>
+                            <p class="mb-3">Diagnose, map strengths, prioritize metrics that matter.</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Territorial diagnosis (turnaround, growth, stability, startup)</li>
+                                <li>• Meet 10-20 customers with structured listening</li>
+                                <li>• Identify and engage key influencers</li>
+                                <li>• Triangulate truth: "Is this actually the problem?"</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-title">Phase 3: Early Win (Weeks 5-8)</div>
+                            <p class="mb-3">Deliver strength-based wins that build momentum.</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Secure 2-3 visible wins based on team strengths</li>
+                                <li>• Implement "Hero Request" to overcome resistance</li>
+                                <li>• Start calibration calls to build momentum</li>
+                                <li>• Track wins using progress template</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-title">Phase 4: Strategic Direction (Weeks 9-12)</div>
+                            <p class="mb-3">Inspire vision rooted in team strengths.</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• Craft vision based on 5 strategic questions</li>
+                                <li>• Create Vital Few Scorecard (3-5 key metrics)</li>
+                                <li>• Communicate vision through 7 different channels</li>
+                                <li>• Host strength-focused all-hands reveal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="template-box">
+                        <h4 class="text-xl font-bold mb-2">Quick Start Implementation</h4>
+                        <p class="mb-4">Built for busy leaders, the entire system requires just 10 hours per week.</p>
+                        <ul class="space-y-2 text-gray-300">
+                            <li>• <strong>Prepare</strong>: 1 hour (review materials, download templates)</li>
+                            <li>• <strong>Weeks 1-2</strong>: 5 hours (story sharing, 1:1s, mapping)</li>
+                            <li>• <strong>Weeks 3-4</strong>: 5 hours (diagnosis, customer meetings)</li>
+                            <li>• <strong>Weeks 5-8</strong>: 5 hours (win implementation, calibration)</li>
+                            <li>• <strong>Weeks 9-12</strong>: 5 hours (vision communication, tracking)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools Tab -->
+            <div id="tools" class="tab-content">
+                <div class="section-card">
+                    <h2 class="text-3xl font-bold mb-6 text-outlier-cyan">Tools & Templates</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        Get the same proprietary tools I used to deliver record-breaking results in three different markets. These templates make implementation simple and straightforward.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div class="template-box">
+                            <h4 class="text-xl font-bold mb-2 text-outlier-cyan">1:1 Conversation Script</h4>
+                            <p class="mb-4">Unlock hidden strengths with the exact questions that reveal what energizes your team.</p>
+                            <ul class="space-y-2 text-gray-400 mb-4">
+                                <li>• Authentic introduction framework</li>
+                                <li>• Strength-finding questions</li>
+                                <li>• Insight-gathering structure</li>
+                                <li>• Trust-building close</li>
+                            </ul>
+                            <a href="#contact" class="cta-button">GET THE TEMPLATE</a>
+                        </div>
+                        
+                        <div class="template-box">
+                            <h4 class="text-xl font-bold mb-2 text-outlier-cyan">Strength Mapping Tracker</h4>
+                            <p class="mb-4">Map every team member's strengths and align roles for maximum impact.</p>
+                            <ul class="space-y-2 text-gray-400 mb-4">
+                                <li>• Name, role, identified strengths</li>
+                                <li>• Pain points and opportunities</li>
+                                <li>• Influencer identification</li>
+                                <li>• Potential realignments</li>
+                            </ul>
+                            <a href="#contact" class="cta-button">GET THE TRACKER</a>
+                        </div>
+                        
+                        <div class="template-box">
+                            <h4 class="text-xl font-bold mb-2 text-outlier-cyan">Leadership Assessment Template</h4>
+                            <p class="mb-4">Diagnose your team's current state with precision.</p>
+                            <ul class="space-y-2 text-gray-400 mb-4">
+                                <li>• Team strengths analysis</li>
+                                <li>• Critical metrics identification</li>
+                                <li>• Process bottlenecks</li>
+                                <li>• Territory classification</li>
+                            </ul>
+                            <a href="#contact" class="cta-button">GET THE ASSESSMENT</a>
+                        </div>
+                        
+                        <div class="template-box">
+                            <h4 class="text-xl font-bold mb-2 text-outlier-cyan">Win Progress Tracker</h4>
+                            <p class="mb-4">Track early wins and show the direct impact of your leadership.</p>
+                            <ul class="space-y-2 text-gray-400 mb-4">
+                                <li>• Win description and category</li>
+                                <li>• Strength alignment</li>
+                                <li>• Measurable impact</li>
+                                <li>• Timeline and status</li>
+                            </ul>
+                            <a href="#contact" class="cta-button">GET THE TRACKER</a>
+                        </div>
+                        
+                        <div class="template-box">
+                            <h4 class="text-xl font-bold mb-2 text-outlier-cyan">Vital Few Scorecard</h4>
+                            <p class="mb-4">Focus your team on the 3-5 metrics that truly drive success.</p>
+                            <ul class="space-y-2 text-gray-400 mb-4">
+                                <li>• Critical success metrics</li>
+                                <li>• Status indicators</li>
+                                <li>• Progress visualization</li>
+                                <li>• Accountability assignments</li>
+                            </ul>
+                            <a href="#contact" class="cta-button">GET THE SCORECARD</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Results Tab -->
+            <div id="results" class="tab-content">
+                <div class="section-card">
+                    <h2 class="text-3xl font-bold mb-6 text-outlier-cyan">Proven Results</h2>
+                    <p class="text-lg text-gray-300 mb-8">
+                        This isn't theory. These are real transformations I led using the exact system you'll get in the 90-Day Leadership Accelerator.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-dark-gray p-8 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-4">Pacific Northwest Turnaround</h3>
+                            <div class="mb-4">
+                                <div class="font-bold text-outlier-cyan">Challenge:</div>
+                                <p class="text-gray-300">Dysfunctional team, 7 consecutive quarters of missed targets, low morale.</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="font-bold text-outlier-cyan">Solution:</div>
+                                <p class="text-gray-300">Applied strength mapping, realigned 5 key roles (e.g., marketing specialist to intelligence analyst), implemented calibration calls.</p>
+                            </div>
+                            <div>
+                                <div class="font-bold text-outlier-cyan">Results:</div>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• 27% growth in 12 months</li>
+                                    <li>• #1 in region for 19 consecutive months</li>
+                                    <li>• Top 10% engagement scores nationally</li>
+                                    <li>• President's Cabinet award (top 1%)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-dark-gray p-8 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-4">Desert Team Transformation</h3>
+                            <div class="mb-4">
+                                <div class="font-bold text-outlier-cyan">Challenge:</div>
+                                <p class="text-gray-300">Low morale, siloed departments, stagnant growth.</p>
+                            </div>
+                            <div class="mb-4">
+                                <div class="font-bold text-outlier-cyan">Solution:</div>
+                                <p class="text-gray-300">Mapped strengths, focused on 3 core metrics, implemented early win strategy fixing key customer pain points.</p>
+                            </div>
+                            <div>
+                                <div class="font-bold text-outlier-cyan">Results:</div>
+                                <ul class="space-y-2 text-gray-300">
+                                    <li>• 37% revenue increase in first year</li>
+                                    <li>• 96% customer acquisition target exceeded</li>
+                                    <li>• Created 4 promotion-ready leaders</li>
+                                    <li>• Built company's strongest culture scores</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold mb-4">Success Metrics</h3>
+                    <p class="mb-6">When properly implemented, the 90-Day Leadership Accelerator delivers:</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+                        <div class="text-center p-6 bg-black border border-gray-800 rounded-lg">
+                            <div class="text-5xl font-bold text-outlier-cyan mb-2">80%+</div>
+                            <div class="text-lg">1:1 strength conversations completed</div>
+                        </div>
+                        <div class="text-center p-6 bg-black border border-gray-800 rounded-lg">
+                            <div class="text-5xl font-bold text-outlier-cyan mb-2">2-3</div>
+                            <div class="text-lg">Early wins delivered (min. 1 strength-based)</div>
+                        </div>
+                        <div class="text-center p-6 bg-black border border-gray-800 rounded-lg">
+                            <div class="text-5xl font-bold text-outlier-cyan mb-2">70%+</div>
+                            <div class="text-lg">Vision clarity and buy-in</div>
+                        </div>
+                    </div>
+                    
+                    <blockquote class="quote">
+                        "After 20 years of quietly outperforming louder leaders, I reverse-engineered what actually works. It's not a script—it's a custom operating system designed around who you are." – Paul Takisaki
+                    </blockquote>
+                </div>
+            </div>
+            
+            <!-- FAQ Tab -->
+            <div id="faq" class="tab-content">
+                <div class="section-card">
+                    <h2 class="text-3xl font-bold mb-6 text-outlier-cyan">Frequently Asked Questions</h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">How much time does this require?</h3>
+                            <p class="text-gray-300">The system is designed for busy leaders, requiring approximately 10 hours per week over 90 days. The templates streamline implementation, making the time investment highly efficient.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Does this work for different team sizes?</h3>
+                            <p class="text-gray-300">Yes. For small teams (under 20), you can meet with everyone. For larger organizations, use the stratified approach in the system: 25% high-potential, 25% random sampling, 25% from problem areas, and 25% self-nominated. The system scales from small teams to 500+ person organizations.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">What if my team has low engagement?</h3>
+                            <p class="text-gray-300">The strength-based approach is particularly effective for disengaged teams. By focusing on what people are naturally good at and realigning roles accordingly, you'll see motivation increase naturally. The 'Early Win' phase specifically targets engagement through visible improvements.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">How is this different from other leadership programs?</h3>
+                            <p class="text-gray-300">Most leadership programs focus on theory or leader behaviors. The 90-Day Accelerator centers on uncovering and deploying team strengths through a structured, practical system. It's built from real-world success in multiple turnaround scenarios, not academic theory.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">What if I'm inheriting a turnaround situation?</h3>
+                            <p class="text-gray-300">This system was built specifically for turnarounds. The diagnostic phase helps you identify which stage your team is in, and the templates adapt accordingly. The Pacific Northwest case study demonstrates how to apply this in a challenging turnaround scenario.</p>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Do I need to wait until I'm new to a role?</h3>
+                            <p class="text-gray-300">No. While designed for leadership transitions, this system works equally well for established leaders looking to transform team performance. Simply adjust the timeline for the introduction phase if your team already knows you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact/CTA Section -->
+        <section id="contact" class="max-w-4xl mx-auto py-16 text-center">
+            <h2 class="text-4xl font-bold mb-8">Ready to Transform Your Leadership?</h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Get the complete 90-Day Leadership Accelerator system, including all templates and implementation guides.
+            </p>
+            <button onclick="openContactModal()" class="inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-lg tracking-wider">
+                GET STARTED
+            </button>
+            <p class="mt-4 text-gray-400">Limited availability. Serious leaders only.</p>
+        </section>
+    </main>
+
+    <script>
+        // Show/hide tabs
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Activate selected button
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Progress bar and back-to-top functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBar = document.getElementById('scrollProgressBar');
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            const scrollThreshold = 300;
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPercentage = (scrollTop / scrollHeight) * 100;
+                
+                progressBar.style.width = scrollPercentage + '%';
+                
+                if (scrollTop > scrollThreshold) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+        });
+        
+        // Contact modal functionality (would integrate with your existing modal)
+        function openContactModal() {
+            // This would trigger your existing contact modal
+            alert("This would open your contact modal. Integration with your existing modal system would be required.");
+        }
+    </script>
+</body>
+</html>

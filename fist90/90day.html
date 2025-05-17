@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90-Day Leadership Accelerator | Paul Takisaki</title>
+    <meta name="description" content="Transform your team with a proven system built from 20 years of elite leadership experience. Not theory—real results that delivered 27% growth and top-tier engagement.">
+    <link rel="canonical" href="https://www.paultakisaki.com/leadership-accelerator" />
+    
+    <style>
+        /* Core styling to match your site */
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            color: white;
+            background: black;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding-top: 60px;
+            padding-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .header-tag {
+            color: #00FFFF;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #00FFFF;
+            color: black;
+            font-weight: bold;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button:hover {
+            background-color: rgba(0, 255, 255, 0.8);
+        }
+        
+        .featured-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+        
+        /* Tabs styling */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #999;
+            position: relative;
+        }
+        
+        .tab.active {
+            color: white;
+        }
+        
+        .tab-indicator {
+            height: 3px;
+            background: #00FFFF;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            display: none;
+        }
+        
+        .tab.active .tab-indicator {
+            display: block;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        /* Tool cards */
+        .tool-card {
+            background: #121212;
+            border: 1px solid #333;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .tool-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .tool-card p {
+            margin-bottom: 15px;
+        }
+        
+        .tool-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .tool-card li {
+            margin-bottom: 8px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .tool-card li::before {
+            content: "•";
+            color: #00FFFF;
+            position: absolute;
+            left: 0;
+        }
+        
+        .template-button {
+            display: inline-block;
+            background: #00FFFF;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .template-button:hover {
+            background-color: rgba(0, 255, 255, 0.8);
+        }
+        
+        /* CTA section */
+        .cta-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .start-button {
+            display: inline-block;
+            background: transparent;
+            color: black;
+            font-weight: normal;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            text-decoration: none;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 2px solid #00FFFF;
+            color: #00FFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            z-index: 99;
+            cursor: pointer;
+        }
+        
+        .back-to-top svg {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-tag">STRATEGIC LEADERSHIP</div>
+            <h1>90-Day Leadership Accelerator</h1>
+            <p>Transform your team with a proven system built from 20 years of elite leadership experience. Not theory—real results that delivered 27% growth and top-tier engagement.</p>
+            <a href="#cta" class="cta-button">GET THE ACCELERATOR</a>
+            <img src="images/first-90-days-clock.jpg" alt="First 90 Days Leadership Clock" class="featured-image">
+        </header>
+        
+        <!-- Tabs navigation -->
+        <div class="tabs">
+            <div class="tab" onclick="showTab('overview')">
+                Overview
+                <div class="tab-indicator"></div>
+            </div>
+            <div class="tab" onclick="showTab('phases')">
+                The 4 Phases
+                <div class="tab-indicator"></div>
+            </div>
+            <div class="tab active" onclick="showTab('tools')">
+                Tools & Templates
+                <div class="tab-indicator"></div>
+            </div>
+            <div class="tab" onclick="showTab('results')">
+                Results
+                <div class="tab-indicator"></div>
+            </div>
+            <div class="tab" onclick="showTab('faq')">
+                FAQ
+                <div class="tab-indicator"></div>
+            </div>
+        </div>
+        
+        <!-- Tab contents -->
+        <div id="overview" class="tab-content active">
+            <h2>Overview content would go here</h2>
+            <p>This tab would contain an overview of the 90-Day Leadership Accelerator...</p>
+        </div>
+        
+        <div id="phases" class="tab-content">
+            <h2>The 4 Phases content would go here</h2>
+            <p>This tab would contain details about each phase of the program...</p>
+        </div>
+        
+        <div id="tools" class="tab-content active">
+            <h2>Tools & Templates</h2>
+            <p>Get the same proprietary tools I used to build three different market-leading teams. These templates make implementation simple and straightforward.</p>
+            
+            <div class="tool-card">
+                <h3>1:1 Conversation Script</h3>
+                <p>Unlock hidden strengths with the exact questions that reveal what energizes your team.</p>
+                <ul>
+                    <li>Authentic introduction framework</li>
+                    <li>Strength-finding questions</li>
+                    <li>Insight-gathering structure</li>
+                    <li>Trust-building close</li>
+                </ul>
+                <a href="#cta" class="template-button">GET THE TEMPLATE</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Strength Mapping Tracker</h3>
+                <p>Map every team member's strengths and align roles for maximum impact.</p>
+                <ul>
+                    <li>Name, role, identified strengths</li>
+                    <li>Pain points and opportunities</li>
+                    <li>Influencer identification</li>
+                    <li>Potential realignments</li>
+                </ul>
+                <a href="#cta" class="template-button">GET THE TRACKER</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Leadership Assessment Template</h3>
+                <p>Diagnose your team's current state with precision.</p>
+                <ul>
+                    <li>Team strengths analysis</li>
+                    <li>Critical metrics identification</li>
+                    <li>Process bottlenecks</li>
+                    <li>Territory classification</li>
+                </ul>
+                <a href="#cta" class="template-button">GET THE ASSESSMENT</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Win Progress Tracker</h3>
+                <p>Track early wins and show the direct impact of your leadership.</p>
+                <ul>
+                    <li>Win description and category</li>
+                    <li>Strength alignment</li>
+                    <li>Measurable impact</li>
+                    <li>Timeline and status</li>
+                </ul>
+                <a href="#cta" class="template-button">GET THE TRACKER</a>
+            </div>
+            
+            <div class="tool-card">
+                <h3>Vital Few Scorecard</h3>
+                <p>Focus your team on the 3-5 metrics that truly drive success.</p>
+                <ul>
+                    <li>Critical success metrics</li>
+                    <li>Status indicators</li>
+                    <li>Progress visualization</li>
+                    <li>Accountability assignments</li>
+                </ul>
+                <a href="#cta" class="template-button">GET THE SCORECARD</a>
+            </div>
+        </div>
+        
+        <div id="results" class="tab-content">
+            <h2>Results content would go here</h2>
+            <p>This tab would contain case studies and success metrics...</p>
+        </div>
+        
+        <div id="faq" class="tab-content">
+            <h2>FAQ content would go here</h2>
+            <p>This tab would contain frequently asked questions and answers...</p>
+        </div>
+        
+        <!-- CTA Section -->
+        <div id="cta" class="cta-section">
+            <h2>Ready to Transform Your Leadership?</h2>
+            <p>Get the complete 90-Day Leadership Accelerator system, including all templates and implementation guides.</p>
+            <button class="cta-button">GET STARTED</button>
+            <p class="limited-text">Limited availability. Serious leaders only.</p>
+        </div>
+    </div>
+    
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </a>
+    
+    <script>
+        // Tab switching functionality
+        function showTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Deactivate all tab buttons
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            
+            // Activate selected tab button
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
