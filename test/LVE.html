@@ -57,14 +57,30 @@
 
         .format-card {
             transition: all 0.3s ease;
-            filter: blur(3px);
             height: 100%;
+            /* Remove blur by default on mobile */
+            filter: blur(0px);
         }
 
-        .format-card:hover {
-            filter: blur(0px);
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+        /* Apply blur effect only on larger screens */
+        @media (min-width: 768px) {
+            .format-card {
+                filter: blur(3px);
+            }
+
+            .format-card:hover {
+                filter: blur(0px);
+                transform: scale(1.05);
+                box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            }
+        }
+
+        /* Keep hover effect for mobile but without the blur transition */
+        @media (max-width: 767px) {
+            .format-card:hover {
+                transform: scale(1.03);
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+            }
         }
 
         .progress-bar {
@@ -309,7 +325,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Category 1 -->
                 <div class="vault-card p-6 rounded-lg border border-outlier-cyan relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-xs font-bold py-1 px-2">14 ASSETS</div>
+                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-base md:text-lg font-bold py-1 px-3">14 ASSETS</div>
                     <h3 class="text-xl font-bold mb-3">Leadership Philosophy</h3>
                     <p class="text-gray-300 mb-4">Foundational systems for quiet confidence, strategic balance, and precision execution.</p>
                     <div class="flex items-center text-outlier-cyan">
@@ -324,7 +340,7 @@
                 
                 <!-- Category 2 -->
                 <div class="vault-card p-6 rounded-lg border border-outlier-cyan relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-xs font-bold py-1 px-2">17 ASSETS</div>
+                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-base md:text-lg font-bold py-1 px-3">17 ASSETS</div>
                     <h3 class="text-xl font-bold mb-3">First 90 Days</h3>
                     <p class="text-gray-300 mb-4">Proven blueprint for rapid immersion, early wins, and customer-centered leadership.</p>
                     <div class="flex items-center text-outlier-cyan">
@@ -339,7 +355,7 @@
                 
                 <!-- Category 3 -->
                 <div class="vault-card p-6 rounded-lg border border-outlier-cyan relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-xs font-bold py-1 px-2">19 ASSETS</div>
+                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-base md:text-lg font-bold py-1 px-3">19 ASSETS</div>
                     <h3 class="text-xl font-bold mb-3">Talent Systems</h3>
                     <p class="text-gray-300 mb-4">High-performing team architectures with psychological safety and deliberate growth.</p>
                     <div class="flex items-center text-outlier-cyan">
@@ -354,7 +370,7 @@
                 
                 <!-- Category 4 -->
                 <div class="vault-card p-6 rounded-lg border border-outlier-cyan relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-xs font-bold py-1 px-2">15 ASSETS</div>
+                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-base md:text-lg font-bold py-1 px-3">15 ASSETS</div>
                     <h3 class="text-xl font-bold mb-3">Frameworks & Playbooks</h3>
                     <p class="text-gray-300 mb-4">Battle-tested strategic frameworks for silos destruction and ROI-driven execution.</p>
                     <div class="flex items-center text-outlier-cyan">
@@ -369,7 +385,7 @@
                 
                 <!-- Category 5 -->
                 <div class="vault-card p-6 rounded-lg border border-outlier-cyan relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-xs font-bold py-1 px-2">16 ASSETS</div>
+                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-base md:text-lg font-bold py-1 px-3">16 ASSETS</div>
                     <h3 class="text-xl font-bold mb-3">Sales & Strategy</h3>
                     <p class="text-gray-300 mb-4">Innovative intelligence systems for market domination and customer success.</p>
                     <div class="flex items-center text-outlier-cyan">
@@ -384,7 +400,7 @@
                 
                 <!-- Category 6 -->
                 <div class="vault-card p-6 rounded-lg border border-outlier-cyan relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-xs font-bold py-1 px-2">10 ASSETS</div>
+                    <div class="absolute top-0 right-0 bg-outlier-cyan text-black text-base md:text-lg font-bold py-1 px-3">10 ASSETS</div>
                     <h3 class="text-xl font-bold mb-3">Communication Mastery</h3>
                     <p class="text-gray-300 mb-4">Trust-building transparency frameworks and strategic message management.</p>
                     <div class="flex items-center text-outlier-cyan">
@@ -410,17 +426,17 @@
                 <div class="format-card bg-medium-gray rounded-lg border border-outlier-cyan flex flex-col overflow-hidden relative">
                     <div class="h-40 bg-gradient-to-b from-gray-700 to-gray-900 p-4">
                         <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 2px var(--outlier-cyan))">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                             </svg>
                         </div>
                     </div>
                     <div class="p-4 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Infographics</h3>
-                        <p class="text-gray-400 text-sm">Visual frameworks for rapid comprehension and executive alignment.</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Infographics</h3>
+                        <p class="text-gray-400 text-base">Visual frameworks for rapid comprehension and executive alignment.</p>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition duration-300">
-                        <div class="text-outlier-cyan font-bold text-xl">LOCKED</div>
+                        <div class="text-outlier-cyan font-bold text-xl md:text-2xl glow-text">LOCKED</div>
                     </div>
                 </div>
                 
@@ -428,17 +444,17 @@
                 <div class="format-card bg-medium-gray rounded-lg border border-outlier-cyan flex flex-col overflow-hidden relative">
                     <div class="h-40 bg-gradient-to-b from-gray-700 to-gray-900 p-4">
                         <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 2px var(--outlier-cyan))">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
                         </div>
                     </div>
                     <div class="p-4 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Dashboards</h3>
-                        <p class="text-gray-400 text-sm">Interactive systems that drive accountability and transparency.</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Dashboards</h3>
+                        <p class="text-gray-400 text-base">Interactive systems that drive accountability and transparency.</p>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition duration-300">
-                        <div class="text-outlier-cyan font-bold text-xl">LOCKED</div>
+                        <div class="text-outlier-cyan font-bold text-xl md:text-2xl glow-text">LOCKED</div>
                     </div>
                 </div>
                 
@@ -446,17 +462,17 @@
                 <div class="format-card bg-medium-gray rounded-lg border border-outlier-cyan flex flex-col overflow-hidden relative">
                     <div class="h-40 bg-gradient-to-b from-gray-700 to-gray-900 p-4">
                         <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 2px var(--outlier-cyan))">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
                             </svg>
                         </div>
                     </div>
                     <div class="p-4 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Templates</h3>
-                        <p class="text-gray-400 text-sm">Ready-to-deploy systems for immediate operational impact.</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Templates</h3>
+                        <p class="text-gray-400 text-base">Ready-to-deploy systems for immediate operational impact.</p>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition duration-300">
-                        <div class="text-outlier-cyan font-bold text-xl">LOCKED</div>
+                        <div class="text-outlier-cyan font-bold text-xl md:text-2xl glow-text">LOCKED</div>
                     </div>
                 </div>
                 
@@ -464,17 +480,17 @@
                 <div class="format-card bg-medium-gray rounded-lg border border-outlier-cyan flex flex-col overflow-hidden relative">
                     <div class="h-40 bg-gradient-to-b from-gray-700 to-gray-900 p-4">
                         <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 2px var(--outlier-cyan))">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
                         </div>
                     </div>
                     <div class="p-4 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Case Studies</h3>
-                        <p class="text-gray-400 text-sm">Real-world implementations from Fortune 50 transformations.</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Case Studies</h3>
+                        <p class="text-gray-400 text-base">Real-world implementations from Fortune 50 transformations.</p>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition duration-300">
-                        <div class="text-outlier-cyan font-bold text-xl">LOCKED</div>
+                        <div class="text-outlier-cyan font-bold text-xl md:text-2xl glow-text">LOCKED</div>
                     </div>
                 </div>
                 
@@ -482,17 +498,17 @@
                 <div class="format-card bg-medium-gray rounded-lg border border-outlier-cyan flex flex-col overflow-hidden relative">
                     <div class="h-40 bg-gradient-to-b from-gray-700 to-gray-900 p-4">
                         <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 2px var(--outlier-cyan))">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                             </svg>
                         </div>
                     </div>
                     <div class="p-4 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Mini Courses</h3>
-                        <p class="text-gray-400 text-sm">Comprehensive learning systems for accelerated execution.</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Mini Courses</h3>
+                        <p class="text-gray-400 text-base">Comprehensive learning systems for accelerated execution.</p>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition duration-300">
-                        <div class="text-outlier-cyan font-bold text-xl">LOCKED</div>
+                        <div class="text-outlier-cyan font-bold text-xl md:text-2xl glow-text">LOCKED</div>
                     </div>
                 </div>
                 
@@ -500,17 +516,17 @@
                 <div class="format-card bg-medium-gray rounded-lg border border-outlier-cyan flex flex-col overflow-hidden relative">
                     <div class="h-40 bg-gradient-to-b from-gray-700 to-gray-900 p-4">
                         <div class="w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
-                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-16 h-16 text-outlier-cyan" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 2px var(--outlier-cyan))">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                             </svg>
                         </div>
                     </div>
                     <div class="p-4 flex-grow">
-                        <h3 class="text-xl font-bold mb-2">Workshops</h3>
-                        <p class="text-gray-400 text-sm">Team transformation sessions for cultural elevation.</p>
+                        <h3 class="text-xl md:text-2xl font-bold mb-2">Workshops</h3>
+                        <p class="text-gray-400 text-base">Team transformation sessions for cultural elevation.</p>
                     </div>
                     <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition duration-300">
-                        <div class="text-outlier-cyan font-bold text-xl">LOCKED</div>
+                        <div class="text-outlier-cyan font-bold text-xl md:text-2xl glow-text">LOCKED</div>
                     </div>
                 </div>
             </div>
