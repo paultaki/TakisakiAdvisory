@@ -11,6 +11,35 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Force www and HTTPS redirects
+app.use((req, res, next) => {
+  // Skip for localhost development
+  if (req.hostname === 'localhost' || req.hostname.startsWith('127.0.0.1')) {
+    return next();
+  }
+
+  // Check if protocol is HTTP (when behind a proxy, req.secure should be checked)
+  const isHttps = req.secure || req.headers['x-forwarded-proto'] === 'https';
+  
+  // Normalize host without port
+  const host = req.hostname;
+
+  // Redirect non-www to www and HTTP to HTTPS
+  if (!host.startsWith('www.') || !isHttps) {
+    const newHost = host.startsWith('www.') ? host : `www.${host}`;
+    const newUrl = `https://${newHost}${req.originalUrl}`;
+    return res.redirect(301, newUrl);
+  }
+
+  // Handle index.html redirects to canonical path
+  if (req.path.endsWith('/index.html')) {
+    const canonicalPath = req.path.replace('/index.html', '/');
+    return res.redirect(301, canonicalPath);
+  }
+  
+  next();
+});
+
 // Static files
 app.use(express.static(path.join(__dirname, '/')));
 
@@ -36,6 +65,15 @@ app.post('/api/send-email', async (req, res) => {
     console.error('Error handling email send:', error);
     return res.status(500).json({ error: 'Server error sending email' });
   }
+});
+
+// Set up specific redirects for 404 pages
+app.get('/blogs/index.html', (req, res) => {
+  res.redirect(301, '/insights/Insights.html');
+});
+
+app.get('/services/exec_dev.html', (req, res) => {
+  res.redirect(301, '/leadership-accelerator.html');
 });
 
 // Serve index.html for root path

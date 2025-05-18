@@ -4,27 +4,55 @@
   <url>
     <loc>https://www.paultakisaki.com/</loc>
     <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://www.paultakisaki.com/about.html</loc>
     <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
     <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
 
   <url>
     <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
   <url>
     <loc>https://www.paultakisaki.com/insights/boring-is-broken.html</loc>
     <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
   </url>
 
+  <url>
+    <loc>https://www.paultakisaki.com/insights/authentic-leadership.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/insights/strategy.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/leadership-accelerator.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
 </urlset>
