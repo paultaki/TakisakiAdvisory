@@ -26,13 +26,7 @@
   </url>
 
   <url>
-    <loc>https://www.paultakisaki.com/insights/boring-is-broken.html</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.paultakisaki.com/insights/authentic-leadership.html</loc>
+    <loc>https://www.paultakisaki.com/insights/boring.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
@@ -40,18 +34,6 @@
   <url>
     <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
     <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.paultakisaki.com/insights/strategy.html</loc>
-    <priority>0.6</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://www.paultakisaki.com/leadership-accelerator.html</loc>
-    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
