@@ -149,7 +149,7 @@
         color: #00FFFF;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-center;
         text-decoration: none;
         opacity: 0;
         pointer-events: none;
@@ -182,8 +182,6 @@
         margin-top: 2rem;
         margin-bottom: 1rem;
         color: white;
-        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-        padding-bottom: 0.5rem;
       }
 
       .article-content h3 {
@@ -192,23 +190,10 @@
         margin-top: 1.5rem;
         margin-bottom: 0.75rem;
         color: white;
-        position: relative;
-        padding-left: 1rem;
-      }
-      
-      .article-content h3::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.25rem;
-        bottom: 0.25rem;
-        width: 4px;
-        background: #00FFFF;
-        border-radius: 2px;
       }
 
       .article-content p {
-        margin-bottom: 1.2rem;
+        margin-bottom: 1.5rem;
         line-height: 1.8;
         letter-spacing: 0.01em;
       }
@@ -291,8 +276,6 @@
         padding: 1.5rem;
         border: 1px solid #2d3748;
         margin-bottom: 2rem;
-        position: sticky;
-        top: 100px;
       }
 
       .toc-title {
@@ -309,20 +292,6 @@
 
       .toc-list li {
         margin-bottom: 0.5rem;
-        position: relative;
-        padding-left: 1.25rem;
-      }
-      
-      .toc-list li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 6px;
-        height: 6px;
-        background: #00FFFF;
-        border-radius: 50%;
       }
 
       .toc-list a {
@@ -365,207 +334,6 @@
         font-size: 1rem;
         color: #d1d5db;
         font-weight: normal;
-      }
-      
-      /* NEW STYLES */
-      
-      /* Section divider */
-      .section-divider {
-        display: flex;
-        align-items: center;
-        margin: 3rem 0;
-        color: #4b5563;
-      }
-
-      .section-divider::before,
-      .section-divider::after {
-        content: "";
-        flex: 1;
-        border-bottom: 1px dashed rgba(75, 85, 99, 0.6);
-      }
-
-      .section-divider svg {
-        margin: 0 1rem;
-        color: #00FFFF;
-      }
-      
-      /* Enhanced pull quotes */
-      .enhanced-quote {
-        font-size: 1.5rem;
-        line-height: 1.4;
-        font-style: italic;
-        border-left: 4px solid #00FFFF;
-        margin: 2.5rem 0;
-        padding: 1rem 0 1rem 2rem;
-        position: relative;
-        max-width: 85%;
-      }
-
-      .enhanced-quote::before {
-        content: """;
-        position: absolute;
-        top: -20px;
-        left: 20px;
-        font-size: 3rem;
-        color: rgba(0, 255, 255, 0.2);
-        font-family: Georgia, serif;
-      }
-
-      .enhanced-quote-right {
-        margin-left: 15%;
-        border-left: 0;
-        border-right: 4px solid #00FFFF;
-        padding: 1rem 2rem 1rem 0;
-        text-align: right;
-      }
-      
-      .enhanced-quote-right::before {
-        left: auto;
-        right: 20px;
-      }
-
-      /* Insight callout */
-      .insight-callout {
-        background: rgba(0, 255, 255, 0.05);
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin: 2rem 0;
-        position: relative;
-      }
-
-      .insight-callout::before {
-        content: "Key Insight";
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        background: #000;
-        color: #00FFFF;
-        padding: 0 10px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-      
-      /* Key takeaways section */
-      .key-takeaways {
-        background-color: rgba(0, 0, 0, 0.7);
-        border: 1px solid rgba(0, 255, 255, 0.3);
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin: 2rem 0;
-        position: relative;
-      }
-      
-      .key-takeaways-title {
-        position: absolute;
-        top: -12px;
-        left: 20px;
-        background: #000;
-        color: white;
-        padding: 0 10px;
-        font-size: 0.95rem;
-        font-weight: 600;
-      }
-      
-      .key-takeaways-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      
-      .key-takeaways-list li {
-        position: relative;
-        padding-left: 1.5rem;
-        margin-bottom: 0.75rem;
-      }
-      
-      .key-takeaways-list li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.5rem;
-        width: 8px;
-        height: 8px;
-        background: #00FFFF;
-        border-radius: 50%;
-      }
-      
-      /* Text highlight */
-      .text-highlight {
-        display: inline;
-        background-image: linear-gradient(transparent 60%, rgba(0, 255, 255, 0.2) 40%);
-        padding: 0 0.1rem;
-      }
-      
-      /* Step process */
-      .step-process {
-        counter-reset: step;
-        margin: 2rem 0;
-      }
-      
-      .step-item {
-        position: relative;
-        padding-left: 3rem;
-        margin-bottom: 1.5rem;
-      }
-      
-      .step-item::before {
-        counter-increment: step;
-        content: counter(step);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 2rem;
-        height: 2rem;
-        background: rgba(0, 255, 255, 0.1);
-        border: 1px solid #00FFFF;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: #00FFFF;
-      }
-      
-      /* Asymmetrical layout */
-      .content-left {
-        margin-right: 20%;
-      }
-      
-      .content-right {
-        margin-left: 20%;
-      }
-      
-      /* Background section alternating */
-      .alt-section {
-        background-color: rgba(0, 0, 0, 0.3);
-        margin: 2rem -1.5rem;
-        padding: 2rem 1.5rem;
-      }
-      
-      @media (max-width: 768px) {
-        .content-left, .content-right {
-          margin-left: 0;
-          margin-right: 0;
-        }
-        
-        .enhanced-quote-right {
-          margin-left: 0;
-          text-align: left;
-          border-right: 0;
-          border-left: 4px solid #00FFFF;
-          padding: 1rem 0 1rem 2rem;
-        }
-        
-        .enhanced-quote-right::before {
-          left: 20px;
-          right: auto;
-        }
-        
-        .alt-section {
-          margin: 2rem -1rem;
-          padding: 2rem 1rem;
-        }
       }
     </style>
   </head>
@@ -716,7 +484,7 @@
 
       <div class="max-w-3xl mx-auto px-4 sm:px-6 mt-12">
         <!-- Article intro and author -->
-        <div class="mb-8">
+        <div class="mb-12">
           <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
             Ever witnessed someone panic on a flight after realizing they boarded the wrong plane? That's exactly what happened when I took over a technical B2B sales team—except 70% of my staff stood up in panic, and it was entirely by design.
           </p>
@@ -736,288 +504,183 @@
             </div>
           </div>
         </div>
-        
-        <!-- Key Takeaways -->
-        <div class="key-takeaways">
-          <div class="key-takeaways-title">Quick Takeaways</div>
-          <ul class="key-takeaways-list">
-            <li>A clear destination allows team members to self-select into or out of roles</li>
-            <li>Technical teams often focus on specs instead of value propositions</li>
-            <li>Sales excellence requires consultative selling, not just product knowledge</li>
-            <li>Systematic process beats individual brilliance for sustainable growth</li>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+          <div class="toc-title">Table of Contents</div>
+          <ul class="toc-list">
+            <li><a href="#in-flight-realization">The In-Flight Realization</a></li>
+            <li><a href="#course-correction">The Course Correction</a></li>
+            <li><a href="#flight-plan">The New Flight Plan</a></li>
+            <li><a href="#executing-strategy">Executing the Strategy</a></li>
+            <li><a href="#results">The Results Speak</a></li>
+            <li><a href="#crucial-lesson">The Crucial Lesson</a></li>
           </ul>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-8 mt-8">
-          <!-- Table of Contents -->
-          <div class="md:w-1/3">
-            <div class="toc md:sticky md:top-24">
-              <div class="toc-title">Navigate the Story</div>
-              <ul class="toc-list">
-                <li><a href="#in-flight-realization">The In-Flight Realization</a></li>
-                <li><a href="#course-correction">The Course Correction</a></li>
-                <li><a href="#flight-plan">The New Flight Plan</a></li>
-                <li><a href="#executing-strategy">Executing the Strategy</a></li>
-                <li><a href="#results">The Results Speak</a></li>
-                <li><a href="#crucial-lesson">The Crucial Lesson</a></li>
-              </ul>
+        <!-- Article Content -->
+        <article class="article-content">
+          <h2 id="in-flight-realization">The In-Flight Realization</h2>
+          <p>
+            The team I inherited was technically proficient—IT backgrounds with intimate knowledge of gigahertz, megabytes, and network protocols. They could recite every antenna spec and technical minutiae flawlessly, <strong>putting customers to sleep</strong> rather than solving problems. Sales were plummeting for a clear reason: this commissioned team didn't know how to sell.
+          </p>
+          
+          <figure class="my-8">
+            <img src="images/wrongplane2.webp" alt="Technical specialists focused on specs instead of solutions" class="w-full h-auto rounded-lg shadow-lg" />
+            <figcaption class="text-center text-gray-400 mt-2 italic">Masters of specifications. Lost on destination.</figcaption>
+          </figure>
+          
+          <div class="mb-8"></div>
+          
+          <blockquote class="mt-6">
+            "Sales were in the slumps, and it didn't take long to realize why: instead of assisting B2B sales reps to push our more cutting-edge technical solutions, they were acting like the rep's personal Google when they needed a spec sheet."
+          </blockquote>
+
+          <h2 id="course-correction">The Course Correction</h2>
+          <p>
+            Instead of functioning as glorified Google searches for product specifications, what they needed to do was:
+          </p>
+          <ul>
+            <li>Lead customer meetings from the front</li>
+            <li>Uncover pain points through strategic questioning</li>
+            <li>Connect value propositions directly to business challenges</li>
+            <li>Drive toward asking for the sale</li>
+            <li>Model this process so reps could replicate it independently</li>
+          </ul>
+
+          <p>
+            So I changed our destination. Over the metaphorical intercom, I announced: <em>"We will be experts in the value proposition of our tech solutions that meet identified and targeted business needs and drive a clear ROI."</em>
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              I asked how they thought we would accomplish this. The response?
+            </p>
+            <p class="text-2xl font-bold mb-1 text-center">Crickets.</p>
+            <p class="text-xl italic text-gray-300 text-center mb-0">They were clueless, and I had to redraw the map.</p>
+          </div>
+          
+          <h2 id="flight-plan">The New Flight Plan</h2>
+          <p>
+            I broke it down word by word:
+          </p>
+          <ol>
+            <li><strong>Experts in value proposition</strong> - Understanding customer pain points through questioning</li>
+            <li><strong>Demonstrating solutions</strong> - Showing precisely how we solve specific issues</li>
+            <li><strong>Driving ROI</strong> - Articulating clear business value in financial terms</li>
+          </ol>
+          
+          <p class="text-xl font-bold text-outlier-cyan mt-6 mb-2">
+            When it clicked...this was the face of 70% of my team that day.
+          </p>
+          
+          <figure class="my-8 flex flex-col items-center">
+            <img src="images/wrongplane3.webp" alt="Team members realizing they're on the wrong plane" class="w-3/4 h-auto rounded-lg shadow-lg" />
+            <figcaption class="text-center text-gray-400 mt-2 italic">"Wait, we're not here to be technical encyclopedias?"</figcaption>
+          </figure>
+          
+          <div class="mb-10"></div>
+          
+          <p>
+            Technical knowledge would take a back seat until we mastered the sales process completely—becoming the gold standard in consultative selling.
+          </p>
+          
+          <p>
+            That's when 70% realized they had boarded the wrong plane. Most returned to operational IT roles where they could focus on their technical strengths. They were happier, and we quickly filled positions with people aligned to our new direction.
+          </p>
+          
+          <h2 id="executing-strategy">Executing the Strategy</h2>
+          <p>
+            The transformation wasn't overnight but followed a systematic approach with clear phases.
+          </p>
+          
+          <h3 class="text-xl font-bold mt-8 mb-4 text-white">Training Overhaul</h3>
+          <p>
+            We invested weeks in targeted sales training, completely rebuilding how the team approached customer interactions. Sessions focused on questioning techniques, value articulation, and objection handling, skills previously underdeveloped or non-existent.
+          </p>
+          
+          <h3 class="text-xl font-bold mt-8 mb-4 text-white">Practice Makes Perfect</h3>
+          <p>
+            Role-playing was our secret weapon. We conducted sales certifications with difficult customer scenarios and scored proficiency and improvement. This built confidence and muscle memory.
+          </p>
+          
+          <h3 class="text-xl font-bold mt-8 mb-4 text-white">Meeting Discipline</h3>
+          <div class="bg-dark-gray p-6 rounded-lg border border-gray-800 mb-8">
+            <p class="mb-4">Every customer interaction followed our simple framework:</p>
+            <p class="mb-2"><span class="text-outlier-cyan font-bold">Pre-meeting</span>: 30-minute strategy session to clarify goals, assign roles, and anticipate objections</p>
+            <p class="mb-2"><span class="text-outlier-cyan font-bold">Execution</span>: Following our proven agenda template, designed to uncover needs before presenting solutions</p>
+            <p class="mb-0"><span class="text-outlier-cyan font-bold">Post-meeting</span>: Immediate debrief to document lessons and improve future interactions</p>
+          </div>
+          
+          <h3 class="text-xl font-bold mt-8 mb-4 text-white">Content Standardization</h3>
+          <p>
+            We built a library of structured content, including presentations, demos, ROI calculators, and case studies. This ensured consistent messaging and quality regardless of which team member was leading.
+          </p>
+
+          <h2 id="results">The Results Speak</h2>
+          <div class="flex flex-col md:flex-row gap-8 items-center my-8">
+            <div class="flex-1">
+              <div class="space-y-6">
+                <div>
+                  <div class="key-stat">250%</div>
+                  <div class="key-stat-label">YoY growth in year one</div>
+                </div>
+                
+                <div>
+                  <div class="key-stat">550%</div>
+                  <div class="key-stat-label">Second year additional growth</div>
+                </div>
+              </div>
+              
+              <p class="mt-6">
+                Within a year, we became the gold standard for sales excellence, outperforming even the B2B reps we supported. My team members were poached for leadership roles, with several reaching senior positions in the Fortune 50 tech giant.
+              </p>
+              <p>
+                Our clear mission didn't just fix our team, it created a talent pipeline that influenced the broader organization's culture and established a systematic approach to sales excellence that outlasted any individual contributor.
+              </p>
+            </div>
+            
+            <div class="flex-1">
+              <figure>
+                <img
+                  src="images/results.webp"
+                  alt="Chart showing dramatic revenue growth"
+                  class="rounded-lg shadow-lg"
+                />
+                <figcaption class="text-center text-gray-400 mt-3 italic">
+                  Revenue Growth Year-over-Year (2023-2025)
+                </figcaption>
+              </figure>
             </div>
           </div>
 
-          <!-- Article Content -->
-          <div class="md:w-2/3">
-            <article class="article-content">
-              <h2 id="in-flight-realization">The In-Flight Realization</h2>
-              <p>
-                The team I inherited was technically proficient—IT backgrounds with intimate knowledge of gigahertz, megabytes, and network protocols. They could recite every antenna spec and technical minutiae flawlessly.
-              </p>
-              
-              <p>
-                Instead of solving problems, they were <span class="text-highlight">putting customers to sleep</span>. Sales were plummeting for a clear reason: this commissioned team didn't know how to sell.
-              </p>
-              
-              <figure class="my-8">
-                <img src="images/wrongplane2.webp" alt="Technical specialists focused on specs instead of solutions" class="w-full h-auto rounded-lg shadow-lg" />
-                <figcaption class="text-center text-gray-400 mt-2 italic">Masters of specifications. Lost on destination.</figcaption>
-              </figure>
-              
-              <div class="content-left">
-                <div class="enhanced-quote">
-                  Sales were in the slumps, and it didn't take long to realize why: instead of assisting B2B sales reps to push our more cutting-edge technical solutions, they were acting like the rep's personal Google when they needed a spec sheet.
-                </div>
-              </div>
-
-              <div class="section-divider">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </div>
-
-              <h2 id="course-correction">The Course Correction</h2>
-              <p>
-                Instead of functioning as glorified Google searches for product specifications, what they needed to do was:
-              </p>
-              
-              <ul class="space-y-3">
-                <li><span class="text-outlier-cyan font-semibold">→</span> Lead customer meetings from the front</li>
-                <li><span class="text-outlier-cyan font-semibold">→</span> Uncover pain points through strategic questioning</li>
-                <li><span class="text-outlier-cyan font-semibold">→</span> Connect value propositions directly to business challenges</li>
-                <li><span class="text-outlier-cyan font-semibold">→</span> Drive toward asking for the sale</li>
-                <li><span class="text-outlier-cyan font-semibold">→</span> Model this process so reps could replicate it independently</li>
-              </ul>
-
-              <p>
-                So I changed our destination. Over the metaphorical intercom, I announced:
-              </p>
-              
-              <div class="bg-dark-gray p-6 rounded-lg border-l-4 border-outlier-cyan my-6">
-                <p class="text-xl italic text-center mb-0">
-                  "We will be experts in the value proposition of our tech solutions that meet identified and targeted business needs and drive a clear ROI."
-                </p>
-              </div>
-              
-              <div class="highlight-box">
-                <p>
-                  I asked how they thought we would accomplish this. The response?
-                </p>
-                <p class="text-2xl font-bold mb-1 text-center">Crickets.</p>
-                <p class="text-xl italic text-gray-300 text-center mb-0">They were clueless, and I had to redraw the map.</p>
-              </div>
-              
-              <div class="section-divider">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </div>
-              
-              <h2 id="flight-plan">The New Flight Plan</h2>
-              <div class="content-right">
-                <p>
-                  I broke it down word by word into a clear framework they could understand:
-                </p>
-              </div>
-              
-              <div class="step-process">
-                <div class="step-item">
-                  <h4 class="text-lg font-bold mb-1">Experts in value proposition</h4>
-                  <p class="m-0">Understanding customer pain points through questioning</p>
-                </div>
-                
-                <div class="step-item">
-                  <h4 class="text-lg font-bold mb-1">Demonstrating solutions</h4>
-                  <p class="m-0">Showing precisely how we solve specific issues</p>
-                </div>
-                
-                <div class="step-item">
-                  <h4 class="text-lg font-bold mb-1">Driving ROI</h4>
-                  <p class="m-0">Articulating clear business value in financial terms</p>
-                </div>
-              </div>
-              
-              <p class="text-xl font-bold text-outlier-cyan mt-6 mb-2">
-                When it clicked...this was the face of 70% of my team that day.
-              </p>
-              
-              <figure class="my-8 flex flex-col items-center">
-                <img src="images/wrongplane3.webp" alt="Team members realizing they're on the wrong plane" class="w-3/4 h-auto rounded-lg shadow-lg" />
-                <figcaption class="text-center text-gray-400 mt-2 italic">"Wait, we're not here to be technical encyclopedias?"</figcaption>
-              </figure>
-              
-              <div class="content-left">
-                <p>
-                  Technical knowledge would take a back seat until we mastered the sales process completely—becoming the gold standard in consultative selling.
-                </p>
-              </div>
-              
-              <div class="insight-callout">
-                <p class="mb-0">
-                  That's when 70% realized they had boarded the wrong plane. Most returned to operational IT roles where they could focus on their technical strengths. They were happier, and we quickly filled positions with people aligned to our new direction.
-                </p>
-              </div>
-              
-              <div class="section-divider">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </div>
-              
-              <h2 id="executing-strategy">Executing the Strategy</h2>
-              <p>
-                The transformation wasn't overnight but followed a systematic approach with clear phases.
-              </p>
-              
-              <div class="alt-section">
-                <h3 class="text-xl font-bold mb-4 text-white">Training Overhaul</h3>
-                <p>
-                  We invested weeks in targeted sales training, completely rebuilding how the team approached customer interactions.
-                </p>
-                
-                <p>
-                  Sessions focused on questioning techniques, value articulation, and objection handling—skills previously underdeveloped or non-existent.
-                </p>
-              </div>
-              
-              <div>
-                <h3 class="text-xl font-bold mt-8 mb-4 text-white">Practice Makes Perfect</h3>
-                <div class="content-right">
-                  <p>
-                    Role-playing was our secret weapon. We conducted sales certifications with difficult customer scenarios and scored proficiency and improvement.
-                  </p>
-                  
-                  <p>
-                    This built confidence and muscle memory for high-stakes client interactions.
-                  </p>
-                </div>
-              </div>
-              
-              <div class="alt-section">
-                <h3 class="text-xl font-bold mb-4 text-white">Meeting Discipline</h3>
-                <div class="bg-dark-gray p-6 rounded-lg border border-gray-800 mb-4">
-                  <p class="mb-4">Every customer interaction followed our simple framework:</p>
-                  <p class="mb-2"><span class="text-outlier-cyan font-bold">Pre-meeting</span>: 30-minute strategy session to clarify goals, assign roles, and anticipate objections</p>
-                  <p class="mb-2"><span class="text-outlier-cyan font-bold">Execution</span>: Following our proven agenda template, designed to uncover needs before presenting solutions</p>
-                  <p class="mb-0"><span class="text-outlier-cyan font-bold">Post-meeting</span>: Immediate debrief to document lessons and improve future interactions</p>
-                </div>
-              </div>
-              
-              <div>
-                <h3 class="text-xl font-bold mt-8 mb-4 text-white">Content Standardization</h3>
-                <p>
-                  We built a library of structured content, including presentations, demos, ROI calculators, and case studies.
-                </p>
-                
-                <p>
-                  This ensured consistent messaging and quality regardless of which team member was leading.
-                </p>
-              </div>
-
-              <div class="section-divider">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </div>
-
-              <h2 id="results">The Results Speak</h2>
-              <div class="flex flex-col md:flex-row gap-8 items-center my-8">
-                <div class="flex-1">
-                  <div class="space-y-6">
-                    <div class="transform hover:scale-105 transition-transform duration-300">
-                      <div class="key-stat">250%</div>
-                      <div class="key-stat-label">YoY growth in year one</div>
-                    </div>
-                    
-                    <div class="transform hover:scale-105 transition-transform duration-300">
-                      <div class="key-stat">550%</div>
-                      <div class="key-stat-label">Second year additional growth</div>
-                    </div>
-                  </div>
-                  
-                  <p class="mt-6">
-                    Within a year, we became the gold standard for sales excellence, outperforming even the B2B reps we supported.
-                  </p>
-                  
-                  <p>
-                    My team members were poached for leadership roles, with several reaching senior positions in the Fortune 50 tech giant.
-                  </p>
-                </div>
-                
-                <div class="flex-1">
-                  <figure>
-                    <img
-                      src="images/results.webp"
-                      alt="Chart showing dramatic revenue growth"
-                      class="rounded-lg shadow-lg"
-                    />
-                    <figcaption class="text-center text-gray-400 mt-3 italic">
-                      Revenue Growth Year-over-Year (2023-2025)
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              
-              <div class="content-left">
-                <p>
-                  Our clear mission didn't just fix our team, it created a talent pipeline that influenced the broader organization's culture and established a systematic approach to sales excellence that outlasted any individual contributor.
-                </p>
-              </div>
-
-              <div class="section-divider">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                </svg>
-              </div>
-
-              <h2 id="crucial-lesson">The Crucial Lesson</h2>
-              <p>
-                Customers don't buy because a device has seven serial ports or the latest processor. <strong>They buy to solve problems or access opportunities</strong> previously unavailable.
-              </p>
-              
-              <div class="content-right">
-                <div class="enhanced-quote enhanced-quote-right">
-                  An unclear direction leaves your team expecting a Florida beach when you're climbing Everest.
-                </div>
-              </div>
-              
-              <p>
-                Had I tried to transform the 70% who needed to leave through other means, the change would have been too slow and created unnecessary resentment.
-              </p>
-              
-              <div class="py-8 px-6 my-10 bg-dark-gray bg-opacity-50 border-l-4 border-outlier-cyan rounded-r-lg text-center transform hover:translate-y-[-5px] transition-transform duration-300">
-                <p class="text-xl text-gray-300 italic mb-0">"They didn't need more training. They needed a destination."</p>
-              </div>
-              
-              <div class="insight-callout">
-                <h4 class="text-lg font-bold mb-2">The Key Takeaway</h4>
-                <p class="m-0">
-                  This became my first lesson in the power of a clear mission statement: When everyone understands the destination, those who belong will stay, and those who don't will find their right plane.
-                </p>
-              </div>
-            </article>
+          <h2 id="crucial-lesson">The Crucial Lesson</h2>
+          <p>
+            Customers don't buy because a device has seven serial ports or the latest processor. <strong>They buy to solve problems or access opportunities</strong> previously unavailable.
+          </p>
+          
+          <blockquote>
+            "An unclear direction leaves your team expecting a Florida beach when you're climbing Everest."
+          </blockquote>
+          
+          <p>
+            Had I tried to transform the 70% who needed to leave through other means, the change would have been too slow and created unnecessary resentment.
+          </p>
+          
+          <div class="py-8 px-6 my-10 bg-dark-gray bg-opacity-50 border-l-4 border-outlier-cyan rounded-r-lg text-center">
+            <p class="text-xl text-gray-300 italic mb-0">"They didn't need more training. They needed a destination."</p>
           </div>
-        </div>
+          
+          <div class="bg-dark-gray p-6 rounded-lg my-8 border-l-4 border-outlier-cyan">
+            <h4 class="text-lg font-bold mb-2">The Key Takeaway</h4>
+            <p class="m-0">
+              This became my first lesson in the power of a clear mission statement: When everyone understands the destination, those who belong will stay, and those who don't will find their right plane.
+            </p>
+          </div>
+        </article>
 
         <!-- Call to Action -->
-        <div class="bg-dark-gray p-8 rounded-lg my-12 border border-outlier-cyan shadow-lg transform hover:translate-y-[-5px] hover:shadow-xl transition duration-300">
+        <div class="bg-dark-gray p-8 rounded-lg my-12 border border-outlier-cyan shadow-lg">
           <h3 class="text-2xl font-bold mb-4 text-white">Want help getting your team off the wrong plane?</h3>
           <p class="text-gray-300 mb-6">I coach high-performers ready to lead differently.</p>
           <a href="https://www.paultakisaki.com/#action" class="inline-block px-6 py-3 bg-outlier-cyan text-black font-bold rounded-lg hover:bg-opacity-80 transition-colors">
@@ -1106,7 +769,7 @@
 
         <!-- Author box -->
         <div
-          class="author-box flex flex-col md:flex-row items-center md:items-start gap-6 my-12 transform hover:translate-y-[-5px] transition duration-300"
+          class="author-box flex flex-col md:flex-row items-center md:items-start gap-6 my-12"
         >
           <img
             src="../images/headshot.webp"
@@ -1167,7 +830,7 @@
             <!-- Related Article 1 -->
             <a href="invisible-resume.html" class="group">
               <div
-                class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 hover:border-outlier-cyan transition-colors hover:translate-y-[-5px] transform transition duration-300"
+                class="bg-dark-gray rounded-lg overflow-hidden shadow-lg border border-gray-800 hover:border-outlier-cyan transition-colors"
               >
                 <div class="h-48 overflow-hidden">
                   <img
@@ -1230,7 +893,7 @@
         </div>
 
         <!-- Newsletter -->
-        <div class="bg-dark-gray rounded-lg p-8 my-12 border border-gray-800 hover:border-outlier-cyan transition-colors">
+        <div class="bg-dark-gray rounded-lg p-8 my-12 border border-gray-800">
           <div class="text-center mb-6">
             <h3 class="text-2xl font-bold mb-2">
               Want more insights like this?
