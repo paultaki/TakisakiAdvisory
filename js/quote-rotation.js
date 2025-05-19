@@ -8,31 +8,37 @@ const quotes = [
     {
         text: "His coaching sharpened my business acumen and equipped me to lead with clarity and purpose.",
         author: "Pritesh",
+        title: "Director, Verizon",
         category: "Leadership development"
     },
     {
         text: "He helped me increase my confidence and improve my executive presence as a leader.",
         author: "Cam",
+        title: "Sr. Director, Verizon",
         category: "Leadership development"
     },
     {
         text: "Paul's leadership was pivotal in growing our Fixed Wireless Access business.",
         author: "Mike",
+        title: "Vice President, Fortune 50",
         category: "Strategic impact"
     },
     {
         text: "He drives best-in-class results through a creative, transparent, and business-first mindset.",
         author: "Zac",
+        title: "Director, Verizon",
         category: "Strategic impact"
     },
     {
         text: "Paul's compassion and focus on strengths helped me navigate my career with newfound confidence.",
         author: "Emmanuel",
+        title: "Sr. Director, Verizon",
         category: "Personal approach"
     },
     {
         text: "His rare ability to provide undivided attention in one-on-one conversations is truly impressive.",
         author: "Ben",
+        title: "Sr. Director, Verizon",
         category: "Personal approach"
     }
 ];
@@ -199,9 +205,9 @@ class QuoteRotation {
         
         // After fade out, update content and fade back in
         setTimeout(() => {
-            // Update text and author
+            // Update text and author with title
             this.quoteText.textContent = quotes[index].text;
-            this.quoteAuthor.textContent = `— ${quotes[index].author}`;
+            this.quoteAuthor.textContent = `— ${quotes[index].author}, ${quotes[index].title}`;
             
             // Update active dot
             const dots = this.navigationDots.querySelectorAll('.quote-dot');
