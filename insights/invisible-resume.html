@@ -93,6 +93,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/quote-rotation.css">
     <script src="https://cdn.tailwindcss.com/"></script>
     <script>
       tailwind.config = {
@@ -801,15 +802,6 @@
               </p>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4 p-6 bg-black rounded-lg border border-gray-800 mb-8">
-              <p class="text-lg mb-0">
-                Explore more:
-              </p>
-              <div class="flex gap-4">
-                <a href="/about.html" class="px-5 py-3 bg-outlier-cyan text-black font-bold rounded-lg hover:bg-opacity-80 transition-colors">My Journey</a>
-                <a href="boring-is-broken.html" class="px-5 py-3 border border-outlier-cyan text-outlier-cyan font-bold rounded-lg hover:bg-outlier-cyan hover:text-black transition-colors">Strategic Insights</a>
-              </div>
-            </div>
 
             <div class="key-quote text-3xl md:text-4xl font-bold">
               Start crafting a legacy worth remembering.
@@ -1095,6 +1087,10 @@
           class="h-[50px] mb-2 opacity-80"
         />
       </a>
+      
+      <!-- Quote Rotation Container -->
+      <div id="quote-rotation-container" class="quote-rotation-container my-4 max-w-3xl mx-auto px-4"></div>
+      
       <div class="flex space-x-6 my-4">
         <!-- LinkedIn -->
         <a
@@ -1251,5 +1247,8 @@
 
       // Newsletter form is now handled by newsletter.js script
     </script>
+    
+    <!-- Quote Rotation -->
+    <script src="/js/quote-rotation.js"></script>
   </body>
 </html>
