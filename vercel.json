@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/articles/strategic-failure.html",
+      "destination": "/insights/strategy.html",
+      "permanent": true
+    },
+    {
+      "source": "/insights/wrong-plane-right-destination",
+      "destination": "/insights/wrong-plane.html",
+      "permanent": true
+    },
+    {
+      "source": "/leadership-accelerator",
+      "destination": "/leadership-accelerator.html",
+      "permanent": true
+    }
+  ]
+}

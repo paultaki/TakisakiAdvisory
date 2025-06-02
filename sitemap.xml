@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- Main Pages -->
   <url>
     <loc>https://www.paultakisaki.com/</loc>
     <priority>1.0</priority>
@@ -9,10 +10,23 @@
 
   <url>
     <loc>https://www.paultakisaki.com/about.html</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
 
+  <url>
+    <loc>https://www.paultakisaki.com/leadership-accelerator.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Insights Pages -->
   <url>
     <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
     <priority>0.7</priority>
@@ -35,6 +49,55 @@
     <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/insights/strategy.html</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/ai-sales.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/cst.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/customer-success.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/pdom.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/quota.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/tech-check.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://www.paultakisaki.com/resume/case-studies/tso-reporting.html</loc>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
   </url>
 
 </urlset>

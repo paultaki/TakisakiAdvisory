@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/articles/strategic-failure.html"
+  to = "/insights/strategy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/insights/wrong-plane-right-destination"
+  to = "/insights/wrong-plane.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/leadership-accelerator"
+  to = "/leadership-accelerator.html"
+  status = 301
+  force = true
