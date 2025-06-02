@@ -1,4 +1,10 @@
 [[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/articles/strategic-failure.html"
   to = "/insights/strategy.html"
   status = 301

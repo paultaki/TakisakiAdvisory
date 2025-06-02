@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
       "source": "/articles/strategic-failure.html",
       "destination": "/insights/strategy.html",
       "permanent": true
