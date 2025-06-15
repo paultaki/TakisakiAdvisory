@@ -1,3 +1,37 @@
+# Enforce canonical domain (www)
+[[redirects]]
+  from = "https://paultakisaki.com/*"
+  to = "https://www.paultakisaki.com/:splat"
+  status = 301
+  force = true
+
+# Enforce HTTPS
+[[redirects]]
+  from = "http://www.paultakisaki.com/*"
+  to = "https://www.paultakisaki.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://paultakisaki.com/*"
+  to = "https://www.paultakisaki.com/:splat"
+  status = 301
+  force = true
+
+# Remove index.html from URLs
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*/index.html"
+  to = "/:splat/"
+  status = 301
+  force = true
+
+# Existing redirects
 [[redirects]]
   from = "/about"
   to = "/about.html"
@@ -21,3 +55,18 @@
   to = "/leadership-accelerator.html"
   status = 301
   force = true
+
+# Redirect old blog paths that might be indexed
+[[redirects]]
+  from = "/blogs/index.html"
+  to = "/insights/Insights.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blogs/*"
+  to = "/insights/:splat"
+  status = 301
+  force = true
+
+# >> CONFIRMED <<

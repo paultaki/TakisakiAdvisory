@@ -1,3 +1,17 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(ls:*)",
+      "Bash(sed:*)",
+      "Bash(python3:*)",
+      "Bash(for file in cst.html customer-success.html pdom.html quota.html)",
+      "Bash(do sed -i 's|href=\"\"case-studies.html\"\"|href=\"\"/resume/\"\"|g' \"$file\")",
+      "Bash(done)",
+      "Bash(do sed -i 's|case-studies\\.html|/resume/|g' \"$file\")"
+    ]
+  },
   "enableAllProjectMcpServers": false
 }

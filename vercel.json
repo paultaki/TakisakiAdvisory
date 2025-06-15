@@ -1,6 +1,16 @@
 {
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)/index.html",
+      "destination": "/$1/",
+      "permanent": true
+    },
+    {
       "source": "/about",
       "destination": "/about.html",
       "permanent": true
@@ -19,6 +29,29 @@
       "source": "/leadership-accelerator",
       "destination": "/leadership-accelerator.html",
       "permanent": true
+    },
+    {
+      "source": "/blogs/index.html",
+      "destination": "/insights/Insights.html",
+      "permanent": true
+    },
+    {
+      "source": "/blogs/(.*)",
+      "destination": "/insights/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "paultakisaki.com"
+        }
+      ],
+      "destination": "https://www.paultakisaki.com/$1"
     }
   ]
 }
+# >> CONFIRMED <<

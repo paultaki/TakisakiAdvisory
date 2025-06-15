@@ -1,0 +1,1209 @@
+diff --git a/.claude/settings.local.json b/.claude/settings.local.json
+index e8f289d..afd0d1b 100644
+--- a/.claude/settings.local.json
++++ b/.claude/settings.local.json
+@@ -1,3 +1,17 @@
+ {
++  "permissions": {
++    "allow": [
++      "Bash(find:*)",
++      "Bash(grep:*)",
++      "Bash(rg:*)",
++      "Bash(ls:*)",
++      "Bash(sed:*)",
++      "Bash(python3:*)",
++      "Bash(for file in cst.html customer-success.html pdom.html quota.html)",
++      "Bash(do sed -i 's|href=\"\"case-studies.html\"\"|href=\"\"/resume/\"\"|g' \"$file\")",
++      "Bash(done)",
++      "Bash(do sed -i 's|case-studies\\.html|/resume/|g' \"$file\")"
++    ]
++  },
+   "enableAllProjectMcpServers": false
+ }
+\ No newline at end of file
+diff --git a/about.html b/about.html
+index 41d6896..c6206fc 100644
+--- a/about.html
++++ b/about.html
+@@ -72,10 +72,11 @@
+     
+     <link rel="icon" href="favicon.ico" />
+     <link rel="manifest" href="site.webmanifest" />
+-    <!-- Google Fonts - Inter -->
++    <!-- Font Preloading for Performance -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
++    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
++    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+     <link rel="stylesheet" href="/css/quote-rotation.css">
+     <script src="https://cdn.tailwindcss.com/"></script>
+     <script>
+@@ -183,13 +184,13 @@
+     <!-- Mobile Menu Overlay -->
+     <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
+         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+-            <a href="index.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
++            <a href="/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+             <a href="#about" class="text-outlier-cyan" onclick="closeMenu()">About</a>
+-            <a href="insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+-            <a href="index.html#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
++            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
++            <a href="/#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+             <a href="#impact" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Impact</a>
+-            <a href="index.html#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
+-            <a href="index.html#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
++            <a href="/#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
++            <a href="/#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
+             <button onclick="closeMenu()" class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition">
+                 Close Menu
+             </button>
+@@ -201,9 +202,9 @@
+       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
+     >
+       <div class="flex items-center">
+-        <a href="index.html">
++        <a href="/">
+           <img
+-            src="images/logo-shadow.png"
++            src="/images/logo-shadow.png"
+             alt="Paul Takisaki Logo"
+             class="h-8"
+           />
+@@ -211,18 +212,18 @@
+       </div>
+       <nav class="hidden md:flex space-x-8">
+         <a
+-          href="index.html"
++          href="/"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Home</a
+         >
+         <a href="#about" class="text-outlier-cyan">About</a>
+         <a
+-          href="insights/Insights.html"
++          href="/insights/Insights.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Insights</a
+         >
+         <a
+-          href="index.html#proof"
++          href="/#proof"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Proof</a
+         >
+@@ -232,12 +233,12 @@
+           >Impact</a
+         >
+         <a
+-          href="index.html#coaching"
++          href="/#coaching"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Coaching</a
+         >
+         <a
+-          href="index.html#action"
++          href="/#action"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Contact</a
+         >
+@@ -275,7 +276,7 @@
+                 <!-- Main image with border effect -->
+                 <div class="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-lg border-2 border-outlier-cyan relative">
+                   <img
+-                    src="images/headshot-square.webp"
++                    src="/images/headshot-square.webp"
+                     alt="Paul Takisaki"
+                     class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+                   />
+@@ -571,7 +572,7 @@
+             to build your path to extraordinary results.
+           </p>
+           <a
+-            href="index.html#action"
++            href="/#action"
+             class="inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-lg tracking-wider"
+           >
+             BOOK YOUR CLARITY CALL
+@@ -584,7 +585,7 @@
+     <footer
+       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
+     >
+-      <a href="index.html">
++      <a href="/">
+         <img
+           src="images/logo-shadow.png"
+           alt="Takisaki Strategy Logo"
+@@ -672,7 +673,7 @@
+         });
+     </script>
+     
+-    <!-- Quote Rotation -->
+-    <script src="/js/quote-rotation.js"></script>
++    <!-- Quote Rotation - Deferred for Performance -->
++    <script src="/js/quote-rotation.js" defer></script>
+   </body>
+ </html>
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 427f3bf..cc36f64 100644
+--- a/index.html
++++ b/index.html
+@@ -72,10 +72,11 @@
+ 
+     <link rel="icon" href="favicon.ico">
+     <link rel="manifest" href="site.webmanifest">
+-    <!-- Google Fonts - Inter -->
++    <!-- Font Preloading for Performance -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
++    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
++    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+     <link rel="stylesheet" href="/css/styles.css">
+     <link rel="stylesheet" href="/css/quote-rotation.css">
+ 
+@@ -180,8 +181,8 @@
+     <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out">
+         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+             <a href="#hero" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+-            <a href="about.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">About</a>
+-            <a href="insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
++            <a href="/about.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">About</a>
++            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+             <a href="#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+             <a href="#testimonials" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Testimonials</a>
+             <a href="#method" class="hover:text-outlier-cyan transition" onclick="closeMenu()">The Takisaki Method</a>
+@@ -197,14 +198,14 @@
+     <header class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur">
+         <div class="flex items-center">
+             <a href="#hero">
+-                <img src="images/logo-shadow.png" alt="Paul Takisaki Logo" class="h-8">
++                <img src="/images/logo-shadow.png" alt="Paul Takisaki Logo" class="h-8">
+             </a>
+         </div>
+         <!-- Desktop Navigation -->
+         <nav class="hidden md:flex space-x-8">
+             <a href="#hero" class="text-gray-300 hover:text-outlier-cyan transition">Home</a>
+-            <a href="about.html" class="text-gray-300 hover:text-outlier-cyan transition">About</a>
+-            <a href="insights/Insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
++            <a href="/about.html" class="text-gray-300 hover:text-outlier-cyan transition">About</a>
++            <a href="/insights/Insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
+             <a href="#proof" class="text-gray-300 hover:text-outlier-cyan transition">Proof</a>
+             <a href="#testimonials" class="text-gray-300 hover:text-outlier-cyan transition">Testimonials</a>
+             <a href="#method" class="text-gray-300 hover:text-outlier-cyan transition">Method</a>
+@@ -227,7 +228,7 @@
+                         <span class="text-outlier-cyan">Paul Takisaki</span><br>Precision Systems. Elite Results.
+                     </h1>
+                     <p class="text-gray-400 mt-8 mb-10 text-xl leading-relaxed mx-auto max-w-lg">
+-                        From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership. <a href="about.html" class="text-outlier-cyan hover:underline">Learn my story</a>.
++                        From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership. <a href="/about.html" class="text-outlier-cyan hover:underline">Learn my story</a>.
+                     </p>
+                     <button onclick="openContactModal()" class="inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-base tracking-wider mx-auto">
+                         BOOK YOUR STRATEGY CALL
+@@ -439,7 +440,7 @@
+         <section id="coaching" class="py-24 px-8 text-white">
+             <div class="max-w-6xl mx-auto px-4">
+                 <h2 class="text-center text-3xl text-outlier-cyan mb-3 tracking-wide">PRIVATE COACHING</h2>
+-                <p class="text-center text-gray-300 text-lg mb-16">Choose the right level of support for your journey. View my <a href="resume/" class="text-outlier-cyan hover:underline">complete resume</a> or try the <a href="leadership-accelerator.html" class="text-outlier-cyan hover:underline">Leadership Accelerator</a>.</p>
++                <p class="text-center text-gray-300 text-lg mb-16">Choose the right level of support for your journey. View my <a href="/resume/" class="text-outlier-cyan hover:underline">complete resume</a> or try the <a href="/leadership-accelerator.html" class="text-outlier-cyan hover:underline">Leadership Accelerator</a>.</p>
+                 
+                 <div class="grid md:grid-cols-3 gap-8">
+                     <!-- Unstuck to Unstoppable Program -->
+@@ -574,8 +575,8 @@
+ 
+     <!-- Footer -->
+     <footer class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center">
+-        <a href="index.html">
+-            <img src="images/logo-shadow.png" alt="Takisaki Strategy Logo" class="h-[50px] mb-2 opacity-80" />
++        <a href="/">
++            <img src="/images/logo-shadow.png" alt="Takisaki Strategy Logo" class="h-[50px] mb-2 opacity-80" />
+         </a>
+         
+         <!-- Quote Rotation Container -->
+@@ -585,15 +586,9 @@
+         <div class="text-center mb-6">
+             <p class="text-gray-500 mb-3">More Resources:</p>
+             <div class="flex flex-wrap justify-center gap-4 text-sm">
+-                <a href="insights/invisible-resume.html" class="text-gray-400 hover:text-outlier-cyan transition">Invisible Resume</a>
+-                <a href="insights/boring.html" class="text-gray-400 hover:text-outlier-cyan transition">Boring Strategy</a>
+-                <a href="insights/wrong-plane.html" class="text-gray-400 hover:text-outlier-cyan transition">Wrong Plane</a>
+-                <a href="insights/strategy.html" class="text-gray-400 hover:text-outlier-cyan transition">Strategy Framework</a>
+-            </div>
+-            <div class="flex flex-wrap justify-center gap-4 text-sm mt-2">
+-                <a href="resume/case-studies/ai-sales.html" class="text-gray-400 hover:text-outlier-cyan transition">AI Sales Case Study</a>
+-                <a href="resume/case-studies/customer-success.html" class="text-gray-400 hover:text-outlier-cyan transition">Customer Success</a>
+-                <a href="resume/case-studies/tech-check.html" class="text-gray-400 hover:text-outlier-cyan transition">Tech Check</a>
++                <a href="/insights/invisible-resume.html" class="text-gray-400 hover:text-outlier-cyan transition">Invisible Resume</a>
++                <a href="/insights/boring.html" class="text-gray-400 hover:text-outlier-cyan transition">Boring Strategy</a>
++                <a href="/insights/wrong-plane.html" class="text-gray-400 hover:text-outlier-cyan transition">Wrong Plane</a>
+             </div>
+         </div>
+         
+@@ -917,8 +912,8 @@
+         });
+     </script>
+     
+-    <!-- Quote Rotation -->
+-    <script src="/js/quote-rotation.js"></script>
++    <!-- Quote Rotation - Deferred for Performance -->
++    <script src="/js/quote-rotation.js" defer></script>
+ </body>
+ 
+ </html>
+\ No newline at end of file
+diff --git a/insights/Insights.html b/insights/Insights.html
+index 6c1b1cc..41051c1 100644
+--- a/insights/Insights.html
++++ b/insights/Insights.html
+@@ -55,8 +55,8 @@
+     />
+     <link rel="canonical" href="https://www.paultakisaki.com/insights/Insights.html" />
+     
+-    <link rel="icon" href="favicon.ico" />
+-    <link rel="manifest" href="site.webmanifest" />
++    <link rel="icon" href="/favicon.ico" />
++    <link rel="manifest" href="/site.webmanifest" />
+     <!-- Google Fonts - Inter -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@ -151,7 +151,7 @@
+     </style>
+     
+     <!-- Newsletter Script -->
+-    <script src="../js/newsletter.js"></script>
++    <script src="/js/newsletter.js"></script>
+     
+     <style>
+       .blog-card {
+@@ -245,7 +245,7 @@
+           onclick="closeMenu()"
+           >About</a
+         >
+-        <a href="Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
++        <a href="/insights/Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
+           >Insights</a
+         >
+         <button
+@@ -264,7 +264,7 @@
+       <div class="flex items-center">
+         <a href="/">
+           <img
+-            src="images/logo-shadow.png"
++            src="/images/logo-shadow.png"
+             alt="Paul Takisaki Logo"
+             class="h-8"
+           />
+@@ -281,7 +281,7 @@
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >About</a
+         >
+-        <a href="Insights.html" class="text-outlier-cyan">Insights</a>
++        <a href="/insights/Insights.html" class="text-outlier-cyan">Insights</a>
+       </nav>
+       <button
+         id="menu-toggle"
+@@ -376,7 +376,7 @@
+               <!-- Image Column -->
+               <div class="lg:w-1/2">
+                 <img
+-                  src="images/broken.webp"
++                  src="/insights/images/broken.webp"
+                   alt="If It's Boring, It's Broken"
+                   class="w-full h-full object-cover object-center"
+                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Broken+Clock';"
+@@ -438,7 +438,7 @@
+               ></div>
+ 
+               <img
+-                src="images/wrongplane.webp"
++                src="/insights/images/wrongplane.webp"
+                 alt="Wrong Plane, Right Destination"
+                 class="w-full h-52 object-cover object-center"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Wrong+Plane';"
+@@ -497,7 +497,7 @@
+               ></div>
+ 
+               <img
+-                src="images/paul-takisaki-resume.webp"
++                src="/insights/images/paul-takisaki-resume.webp"
+                 alt="The Invisible Resume"
+                 class="w-full h-52 object-cover object-center"
+                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Invisible+Resume';"
+@@ -736,7 +736,7 @@
+     >
+       <a href="/">
+         <img
+-          src="images/logo-shadow.png"
++          src="/images/logo-shadow.png"
+           alt="Takisaki Strategy Logo"
+           class="h-10 mb-2 opacity-80"
+         />
+diff --git a/insights/boring.html b/insights/boring.html
+index ac98f09..60cbe05 100644
+--- a/insights/boring.html
++++ b/insights/boring.html
+@@ -46,9 +46,7 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="robots" content="index, follow" />
+-    <title>
+-      If It's Boring, It's Broken | Leadership Insights | Paul Takisaki
+-    </title>
++    <title>If It's Boring, It's Broken | Paul Takisaki</title>
+     <meta
+       name="description"
+       content="When you're in charge, you hold people's energy, attention, and belief that this matters. If you waste that? You're not just boring. You're broken."
+@@ -93,8 +91,8 @@
+       content="https://www.paultakisaki.com/insights/images/broken.webp"
+     />
+ 
+-    <link rel="icon" href="../favicon.ico" />
+-    <link rel="manifest" href="../site.webmanifest" />
++    <link rel="icon" href="/favicon.ico" />
++    <link rel="manifest" href="/site.webmanifest" />
+     <!-- Google Fonts - Inter -->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+@@ -105,7 +103,7 @@
+     <script src="https://cdn.tailwindcss.com/"></script>
+ 
+     <!-- Newsletter Script -->
+-    <script src="../js/newsletter.js"></script>
++    <script src="/js/newsletter.js"></script>
+     <script>
+       tailwind.config = {
+         theme: {
+@@ -345,13 +343,13 @@
+         class="flex flex-col items-center justify-center h-full space-y-8 text-2xl"
+       >
+         <a
+-          href="../index.html"
++          href="/"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Home</a
+         >
+         <a
+-          href="../about.html"
++          href="/about.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >About</a
+@@ -376,9 +374,9 @@
+       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
+     >
+       <div class="flex items-center">
+-        <a href="../index.html">
++        <a href="/">
+           <img
+-            src="../images/logo-shadow.png"
++            src="/images/logo-shadow.png"
+             alt="Paul Takisaki Logo"
+             class="h-8"
+           />
+@@ -386,12 +384,12 @@
+       </div>
+       <nav class="hidden md:flex space-x-8">
+         <a
+-          href="../index.html"
++          href="/"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Home</a
+         >
+         <a
+-          href="../about.html"
++          href="/about.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >About</a
+         >
+@@ -431,7 +429,7 @@
+           class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10"
+         ></div>
+         <img
+-          src="images/broken.webp"
++          src="/insights/images/broken.webp"
+           alt="If It's Boring, It's Broken"
+           class="w-full h-full object-cover object-center"
+           onerror="this.onerror=null; this.src='https://placehold.co/1200x600/121212/00FFFF?text=Broken+Clock';"
+@@ -466,7 +464,7 @@
+ 
+           <div class="flex items-center mt-8">
+             <img
+-              src="../images/headshot.webp"
++              src="/images/headshot.webp"
+               alt="Paul Takisaki"
+               class="w-12 h-12 rounded-full mr-4 object-cover"
+               onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+@@ -532,7 +530,7 @@
+           </p>
+ 
+           <img
+-            src="images/notebook.webp"
++            src="/insights/images/notebook.webp"
+             alt="Blank notebook after a week of meetings"
+             class="my-8 rounded-lg shadow-lg"
+           />
+@@ -591,7 +589,7 @@
+           </p>
+ 
+           <img
+-            src="images/quantum.webp"
++            src="/insights/images/quantum.webp"
+             alt="Quantum computer visualization"
+             class="my-8 rounded-lg shadow-lg"
+           />
+@@ -619,7 +617,7 @@
+           </p>
+ 
+           <img
+-            src="images/mag.png"
++            src="/insights/images/mag.png"
+             alt="Magnifying glass focusing on what matters"
+             class="my-8 rounded-lg shadow-lg"
+           />
+@@ -747,7 +745,7 @@
+           class="flex flex-col md:flex-row items-center md:items-start gap-6 my-12 bg-dark-gray rounded-lg p-8 border border-gray-800"
+         >
+           <img
+-            src="../images/headshot.webp"
++            src="/images/headshot.webp"
+             alt="Paul Takisaki"
+             class="w-24 h-24 rounded-full object-cover"
+             onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+@@ -809,7 +807,7 @@
+               >
+                 <div class="h-48 overflow-hidden">
+                   <img
+-                    src="images/wrongplane.webp"
++                    src="/insights/images/wrongplane.webp"
+                     alt="Wrong Plane, Right Destination"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Wrong+Plane';"
+@@ -836,7 +834,7 @@
+               >
+                 <div class="h-48 overflow-hidden">
+                   <img
+-                    src="images/paul-takisaki-resume.webp"
++                    src="/insights/images/paul-takisaki-resume.webp"
+                     alt="The Invisible Resume"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
+@@ -898,9 +896,9 @@
+     <footer
+       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
+     >
+-      <a href="../index.html">
++      <a href="/">
+         <img
+-          src="../images/logo-shadow.png"
++          src="/images/logo-shadow.png"
+           alt="Takisaki Strategy Logo"
+           class="h-10 mb-2 opacity-80"
+         />
+diff --git a/insights/invisible-resume.html b/insights/invisible-resume.html
+index a77ab3b..54ae0fd 100644
+--- a/insights/invisible-resume.html
++++ b/insights/invisible-resume.html
+@@ -30,9 +30,7 @@
+     
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <title>
+-      Build Your Invisible Resume | Leadership Strategies by Paul Takisaki
+-    </title>
++    <title>Build Your Invisible Resume | Paul Takisaki</title>
+     <meta
+       name="description"
+       content="Your true resume isn't on LinkedIn—it's built in the moments no one sees. Discover how to build a legacy beyond your job title."
+@@ -76,7 +74,7 @@
+     <meta name="robots" content="index, follow" />
+ 
+     <link rel="icon" href="../favicon.ico" />
+-    <link rel="manifest" href="../site.webmanifest" />
++    <link rel="manifest" href="/site.webmanifest" />
+     
+     <!-- Newsletter Script -->
+     <script src="../js/newsletter.js"></script>
+diff --git a/insights/strategy.html b/insights/strategy.html
+index af707ad..e398b76 100644
+--- a/insights/strategy.html
++++ b/insights/strategy.html
+@@ -20,7 +20,7 @@
+     
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-    <title>Strategic Failure: Field Notes | Leadership Insights | Paul Takisaki</title>
++    <title>Strategic Failure: Field Notes | Paul Takisaki</title>
+     <meta
+       name="description"
+       content="Everyone talks about strategy, but almost no one knows how to turn it into real-world results. Learn why strategies fail and how to fix them."
+@@ -54,8 +54,8 @@
+       content="https://www.paultakisaki.com/insights/images/paul-takisaki-strategy.webp"
+     />
+ 
+-    <link rel="icon" href="../favicon.ico" />
+-    <link rel="manifest" href="../site.webmanifest" />
++    <link rel="icon" href="/favicon.ico" />
++    <link rel="manifest" href="/site.webmanifest" />
+     <script src="https://cdn.tailwindcss.com/"></script>
+     <script>
+       tailwind.config = {
+@@ -355,13 +355,13 @@
+         class="flex flex-col items-center justify-center h-full space-y-8 text-2xl"
+       >
+         <a
+-          href="../index.html"
++          href="/"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Home</a
+         >
+         <a
+-          href="../about.html"
++          href="/about.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >About</a
+@@ -386,9 +386,9 @@
+       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
+     >
+       <div class="flex items-center">
+-        <a href="../index.html">
++        <a href="/">
+           <img
+-            src="../images/logo-shadow.png"
++            src="/images/logo-shadow.png"
+             alt="Paul Takisaki Logo"
+             class="h-8"
+           />
+@@ -396,12 +396,12 @@
+       </div>
+       <nav class="hidden md:flex space-x-8">
+         <a
+-          href="../index.html"
++          href="/"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Home</a
+         >
+         <a
+-          href="../about.html"
++          href="/about.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >About</a
+         >
+@@ -441,7 +441,7 @@
+           class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10"
+         ></div>
+         <img
+-          src="../insights/images/paul-takisaki-strategy.webp"
++          src="/insights/images/paul-takisaki-strategy.webp"
+           alt="Strategic Failure: A visual metaphor of strategy collapse"
+           class="w-full h-full object-cover object-center"
+           onerror="this.onerror=null; this.src='https://placehold.co/1200x600/121212/00FFFF?text=Strategy+Implementation';"
+@@ -476,7 +476,7 @@
+ 
+           <div class="flex items-center mt-8">
+             <img
+-              src="../images/headshot.webp"
++              src="/images/headshot.webp"
+               alt="Paul Takisaki"
+               class="w-12 h-12 rounded-full mr-4 object-cover"
+               onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+@@ -700,7 +700,7 @@
+           class="author-box flex flex-col md:flex-row items-center md:items-start gap-6 my-12"
+         >
+           <img
+-            src="../images/headshot.webp"
++            src="/images/headshot.webp"
+             alt="Paul Takisaki"
+             class="w-24 h-24 rounded-full object-cover"
+             onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+@@ -763,7 +763,7 @@
+                 >
+                   <div class="h-48 overflow-hidden">
+                     <img
+-                      src="images/paul-takisaki-resume.webp"
++                      src="/insights/images/paul-takisaki-resume.webp"
+                       alt="The Invisible Resume"
+                       class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                       onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
+@@ -792,7 +792,7 @@
+                 >
+                   <div class="h-48 overflow-hidden brightness-50">
+                     <img
+-                      src="images/unscalable.webp"
++                      src="/insights/images/unscalable.webp"
+                       alt="The Unscalable Advantage"
+                       class="w-full h-full object-cover"
+                       onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Unscalable+Advantage';"
+@@ -868,9 +868,9 @@
+     <footer
+       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
+     >
+-      <a href="../index.html">
++      <a href="/">
+         <img
+-          src="../images/logo-shadow.png"
++          src="/images/logo-shadow.png"
+           alt="Takisaki Strategy Logo"
+           class="h-10 mb-2 opacity-80"
+         />
+@@ -917,7 +917,7 @@
+     </footer>
+ 
+     <!-- Newsletter Script -->
+-    <script src="../js/newsletter.js"></script>
++    <script src="/js/newsletter.js"></script>
+     
+     <!-- Scripts -->
+     <script>
+diff --git a/insights/wrong-plane.html b/insights/wrong-plane.html
+index 53af4d5..6c3d5a4 100644
+--- a/insights/wrong-plane.html
++++ b/insights/wrong-plane.html
+@@ -31,10 +31,10 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="robots" content="index, follow" />
+-    <title>Wrong Plane, Right Destination: How to Redirect a Misaligned Team | Paul Takisaki</title>
++    <title>Wrong Plane, Right Destination | Paul Takisaki</title>
+     <meta
+       name="description"
+-      content="How I transformed a technical B2B sales team by changing our destination and growing sales by 550% year-over-year. Learn how to redirect a misaligned team using leadership strategy and consultative selling."
++      content="Paul Takisaki shares leadership lessons from boarding the wrong plane at age 10 – discover how unexpected detours can lead to the right destination."
+     />
+     <meta name="keywords" content="leadership strategy, team alignment, consultative selling, sales transformation, leadership coaching, team direction"/>
+ 
+@@ -70,8 +70,8 @@
+     />
+ 
+     <link rel="canonical" href="https://www.paultakisaki.com/insights/wrong-plane.html" />
+-    <link rel="icon" href="../favicon.ico" />
+-    <link rel="manifest" href="../site.webmanifest" />
++    <link rel="icon" href="/favicon.ico" />
++    <link rel="manifest" href="/site.webmanifest" />
+     <!-- Google Fonts - Inter -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@@ -79,7 +79,7 @@
+     <script src="https://cdn.tailwindcss.com/"></script>
+     
+     <!-- Newsletter Script -->
+-    <script src="../js/newsletter.js"></script>
++    <script src="/js/newsletter.js"></script>
+     <script>
+       tailwind.config = {
+         theme: {
+@@ -618,13 +618,13 @@
+         class="flex flex-col items-center justify-center h-full space-y-8 text-2xl"
+       >
+         <a
+-          href="../index.html"
++          href="/"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Home</a
+         >
+         <a
+-          href="../about.html"
++          href="/about.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >About</a
+@@ -649,9 +649,9 @@
+       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
+     >
+       <div class="flex items-center">
+-        <a href="../index.html">
++        <a href="/">
+           <img
+-            src="../images/logo-shadow.png"
++            src="/images/logo-shadow.png"
+             alt="Paul Takisaki Logo"
+             class="h-8"
+           />
+@@ -659,12 +659,12 @@
+       </div>
+       <nav class="hidden md:flex space-x-8">
+         <a
+-          href="../index.html"
++          href="/"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Home</a
+         >
+         <a
+-          href="../about.html"
++          href="/about.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >About</a
+         >
+@@ -704,7 +704,7 @@
+           class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-10"
+         ></div>
+         <img
+-          src="images/wrongplane.webp"
++          src="/insights/images/wrongplane.webp"
+           alt="Business person panicking on an airplane"
+           class="w-full h-full object-cover object-center"
+         />
+@@ -741,7 +741,7 @@
+ 
+           <div class="flex items-center mt-8">
+             <img
+-              src="../images/headshot.webp"
++              src="/images/headshot.webp"
+               alt="Paul Takisaki"
+               class="w-12 h-12 rounded-full mr-4 object-cover"
+               onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+@@ -795,7 +795,7 @@
+               </p>
+               
+               <figure class="my-8">
+-                <img src="images/wrongplane2.webp" alt="Technical specialists focused on specs instead of solutions" class="w-full h-auto rounded-lg shadow-lg" />
++                <img src="/insights/images/wrongplane2.webp" alt="Technical specialists focused on specs instead of solutions" class="w-full h-auto rounded-lg shadow-lg" />
+                 <figcaption class="text-center text-gray-400 mt-2 italic">Masters of specifications. Lost on destination.</figcaption>
+               </figure>
+               
+@@ -877,7 +877,7 @@
+               </p>
+               
+               <figure class="my-8 flex flex-col items-center">
+-                <img src="images/wrongplane3.webp" alt="Team members realizing they're on the wrong plane" class="w-3/4 h-auto rounded-lg shadow-lg" />
++                <img src="/insights/images/wrongplane3.webp" alt="Team members realizing they're on the wrong plane" class="w-3/4 h-auto rounded-lg shadow-lg" />
+                 <figcaption class="text-center text-gray-400 mt-2 italic">"Wait, we're not here to be technical encyclopedias?"</figcaption>
+               </figure>
+               
+@@ -982,7 +982,7 @@
+                 <div class="flex-1">
+                   <figure>
+                     <img
+-                      src="images/results.webp"
++                      src="/insights/images/results.webp"
+                       alt="Chart showing dramatic revenue growth"
+                       class="rounded-lg shadow-lg"
+                     />
+@@ -1127,7 +1127,7 @@
+           class="author-box flex flex-col md:flex-row items-center md:items-start gap-6 my-12 transform hover:translate-y-[-5px] transition duration-300"
+         >
+           <img
+-            src="../images/headshot.webp"
++            src="/images/headshot.webp"
+             alt="Paul Takisaki"
+             class="w-24 h-24 rounded-full object-cover"
+             onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
+@@ -1189,7 +1189,7 @@
+               >
+                 <div class="h-48 overflow-hidden">
+                   <img
+-                    src="images/paul-takisaki-resume.webp"
++                    src="/insights/images/paul-takisaki-resume.webp"
+                     alt="The Invisible Resume"
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
+@@ -1218,7 +1218,7 @@
+               >
+                 <div class="h-48 overflow-hidden brightness-50">
+                   <img
+-                    src="images/broken.webp"
++                    src="/insights/images/broken.webp"
+                     alt="If It's Boring, It's Broken"
+                     class="w-full h-full object-cover"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Boring+Is+Broken';"
+@@ -1285,9 +1285,9 @@
+     <footer
+       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
+     >
+-      <a href="../index.html">
++      <a href="/">
+         <img
+-          src="../images/logo-shadow.png"
++          src="/images/logo-shadow.png"
+           alt="Takisaki Strategy Logo"
+           class="h-10 mb-2 opacity-80"
+         />
+diff --git a/leadership-accelerator.html b/leadership-accelerator.html
+index b5a1b6a..ee37809 100644
+--- a/leadership-accelerator.html
++++ b/leadership-accelerator.html
+@@ -22,7 +22,7 @@
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>90-Day Leadership Accelerator | Paul Takisaki</title>
+     <meta name="description" content="Transform your leadership in 90 days with Paul Takisaki's strength-based approach that delivers measurable results and builds high-performing teams.">
+-    <link rel="canonical" href="https://www.paultakisaki.com/leadership-accelerator" />
++    <link rel="canonical" href="https://www.paultakisaki.com/leadership-accelerator.html" />
+     
+     <style>
+         /* Custom styling to match your site */
+diff --git a/netlify.toml b/netlify.toml
+index 870600c..4b1e8e1 100644
+--- a/netlify.toml
++++ b/netlify.toml
+@@ -1,23 +1,72 @@
+-[[redirects]]
+-  from = "/about"
+-  to = "/about.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/articles/strategic-failure.html"
+-  to = "/insights/strategy.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/insights/wrong-plane-right-destination"
+-  to = "/insights/wrong-plane.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/leadership-accelerator"
+-  to = "/leadership-accelerator.html"
+-  status = 301
+-  force = true
+\ No newline at end of file
++# Enforce canonical domain (www)
++[[redirects]]
++  from = "https://paultakisaki.com/*"
++  to = "https://www.paultakisaki.com/:splat"
++  status = 301
++  force = true
++
++# Enforce HTTPS
++[[redirects]]
++  from = "http://www.paultakisaki.com/*"
++  to = "https://www.paultakisaki.com/:splat"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "http://paultakisaki.com/*"
++  to = "https://www.paultakisaki.com/:splat"
++  status = 301
++  force = true
++
++# Remove index.html from URLs
++[[redirects]]
++  from = "/index.html"
++  to = "/"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/*/index.html"
++  to = "/:splat/"
++  status = 301
++  force = true
++
++# Existing redirects
++[[redirects]]
++  from = "/about"
++  to = "/about.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/articles/strategic-failure.html"
++  to = "/insights/strategy.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/insights/wrong-plane-right-destination"
++  to = "/insights/wrong-plane.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/leadership-accelerator"
++  to = "/leadership-accelerator.html"
++  status = 301
++  force = true
++
++# Redirect old blog paths that might be indexed
++[[redirects]]
++  from = "/blogs/index.html"
++  to = "/insights/Insights.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/blogs/*"
++  to = "/insights/:splat"
++  status = 301
++  force = true
++
++# >> CONFIRMED <<
+\ No newline at end of file
+diff --git a/resume/case-studies/ai-sales.html b/resume/case-studies/ai-sales.html
+index eaae234..f494909 100644
+--- a/resume/case-studies/ai-sales.html
++++ b/resume/case-studies/ai-sales.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Case Study: AI-Powered Sales Intelligence</title>
+-    <link rel="stylesheet" href="case-studies-styles.css" />
++    <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+     <div class="container">
+@@ -332,7 +332,7 @@
+       </section>
+ 
+       <div class="next-prev-navigation">
+-        <a href="tso-reporting-case-study.html" class="nav-link prev-link">
++        <a href="tso-reporting.html" class="nav-link prev-link">
+           <svg
+             xmlns="http://www.w3.org/2000/svg"
+             width="16"
+diff --git a/resume/case-studies/cst.html b/resume/case-studies/cst.html
+index 7a41913..c7c6102 100644
+--- a/resume/case-studies/cst.html
++++ b/resume/case-studies/cst.html
+@@ -27,7 +27,7 @@
+             <li><a href="../index.html">Home</a></li>
+             <li><a href="../index.html#about">About</a></li>
+             <li><a href="../index.html#services">Services</a></li>
+-            <li><a href="case-studies.html" class="active">Case Studies</a></li>
++            <li><a href="/resume/" class="active">Case Studies</a></li>
+             <li><a href="../index.html#testimonials">Testimonials</a></li>
+             <li><a href="../index.html#blog">Insights</a></li>
+             <li><a href="../index.html#contact">Contact</a></li>
+diff --git a/resume/case-studies/tso-reporting.html b/resume/case-studies/tso-reporting.html
+index bef5534..4cf0e10 100644
+--- a/resume/case-studies/tso-reporting.html
++++ b/resume/case-studies/tso-reporting.html
+@@ -27,7 +27,7 @@
+             <li><a href="index.html">Home</a></li>
+             <li><a href="index.html#about">About</a></li>
+             <li><a href="index.html#services">Services</a></li>
+-            <li><a href="case-studies.html" class="active">Case Studies</a></li>
++            <li><a href="/resume/" class="active">Case Studies</a></li>
+             <li><a href="index.html#testimonials">Testimonials</a></li>
+             <li><a href="index.html#blog">Insights</a></li>
+             <li><a href="index.html#contact">Contact</a></li>
+@@ -507,11 +507,11 @@
+     <!-- Navigation Buttons -->
+     <div class="container">
+       <div class="nav-buttons">
+-        <a href="pdom-case-study.html" class="nav-btn">
++        <a href="pdom.html" class="nav-btn">
+           <i class="fas fa-arrow-left nav-btn-icon"></i>
+           Previous Case Study: PDOM (Project Domination)
+         </a>
+-        <a href="ai-sales-intelligence-case-study.html" class="nav-btn">
++        <a href="ai-sales.html" class="nav-btn">
+           Next Case Study: AI-Powered Sales Intelligence
+           <i class="fas fa-arrow-right nav-btn-icon"></i>
+         </a>
+@@ -569,7 +569,7 @@
+                 >
+               </li>
+               <li>
+-                <a href="case-studies.html"
++                <a href="/resume/"
+                   ><i
+                     class="fas fa-chevron-right"
+                     style="font-size: 0.8em; margin-right: 8px"
+diff --git a/sitemap.xml b/sitemap.xml
+index e3f1959..3660504 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -8,20 +8,27 @@
+     <changefreq>weekly</changefreq>
+   </url>
+ 
+-  <!-- About Page -->
++  <!-- Main Pages -->
+   <url>
+     <loc>https://www.paultakisaki.com/about.html</loc>
+     <priority>0.9</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+ 
+-  <!-- Insights Pages -->
+   <url>
+-    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
++    <loc>https://www.paultakisaki.com/leadership-accelerator.html</loc>
+     <priority>0.8</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+ 
++  <!-- Insights Main Page -->
++  <url>
++    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
++    <priority>0.8</priority>
++    <changefreq>weekly</changefreq>
++  </url>
++
++  <!-- Published Insights Articles -->
+   <url>
+     <loc>https://www.paultakisaki.com/insights/boring.html</loc>
+     <priority>0.7</priority>
+@@ -29,15 +36,72 @@
+   </url>
+ 
+   <url>
+-    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
++    <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
+     <priority>0.7</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+ 
+   <url>
+-    <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
++    <loc>https://www.paultakisaki.com/insights/strategy.html</loc>
+     <priority>0.7</priority>
+     <changefreq>monthly</changefreq>
+   </url>
+ 
++  <url>
++    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
++    <priority>0.7</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <!-- Resume Section -->
++  <url>
++    <loc>https://www.paultakisaki.com/resume/</loc>
++    <priority>0.8</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <!-- Case Studies -->
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/ai-sales.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/cst.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/customer-success.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/pdom.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/quota.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/tech-check.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
++  <url>
++    <loc>https://www.paultakisaki.com/resume/case-studies/tso-reporting.html</loc>
++    <priority>0.6</priority>
++    <changefreq>monthly</changefreq>
++  </url>
++
+ </urlset>
++<!-- >> CONFIRMED <<
+\ No newline at end of file
+diff --git a/vercel.json b/vercel.json
+index a36bd9b..6573d15 100644
+--- a/vercel.json
++++ b/vercel.json
+@@ -1,24 +1,57 @@
+-{
+-  "redirects": [
+-    {
+-      "source": "/about",
+-      "destination": "/about.html",
+-      "permanent": true
+-    },
+-    {
+-      "source": "/articles/strategic-failure.html",
+-      "destination": "/insights/strategy.html",
+-      "permanent": true
+-    },
+-    {
+-      "source": "/insights/wrong-plane-right-destination",
+-      "destination": "/insights/wrong-plane.html",
+-      "permanent": true
+-    },
+-    {
+-      "source": "/leadership-accelerator",
+-      "destination": "/leadership-accelerator.html",
+-      "permanent": true
+-    }
+-  ]
+-}
+\ No newline at end of file
++{
++  "redirects": [
++    {
++      "source": "/index.html",
++      "destination": "/",
++      "permanent": true
++    },
++    {
++      "source": "/(.*)/index.html",
++      "destination": "/$1/",
++      "permanent": true
++    },
++    {
++      "source": "/about",
++      "destination": "/about.html",
++      "permanent": true
++    },
++    {
++      "source": "/articles/strategic-failure.html",
++      "destination": "/insights/strategy.html",
++      "permanent": true
++    },
++    {
++      "source": "/insights/wrong-plane-right-destination",
++      "destination": "/insights/wrong-plane.html",
++      "permanent": true
++    },
++    {
++      "source": "/leadership-accelerator",
++      "destination": "/leadership-accelerator.html",
++      "permanent": true
++    },
++    {
++      "source": "/blogs/index.html",
++      "destination": "/insights/Insights.html",
++      "permanent": true
++    },
++    {
++      "source": "/blogs/(.*)",
++      "destination": "/insights/$1",
++      "permanent": true
++    }
++  ],
++  "rewrites": [
++    {
++      "source": "/((?!api/).*)",
++      "has": [
++        {
++          "type": "host",
++          "value": "paultakisaki.com"
++        }
++      ],
++      "destination": "https://www.paultakisaki.com/$1"
++    }
++  ]
++}
++# >> CONFIRMED <<
+\ No newline at end of file

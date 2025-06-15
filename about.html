@@ -72,10 +72,11 @@
     
     <link rel="icon" href="favicon.ico" />
     <link rel="manifest" href="site.webmanifest" />
-    <!-- Google Fonts - Inter -->
+    <!-- Font Preloading for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/css/quote-rotation.css">
     <script src="https://cdn.tailwindcss.com/"></script>
     <script>
@@ -183,13 +184,13 @@
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
-            <a href="index.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+            <a href="/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
             <a href="#about" class="text-outlier-cyan" onclick="closeMenu()">About</a>
-            <a href="insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
-            <a href="index.html#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+            <a href="/#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
             <a href="#impact" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Impact</a>
-            <a href="index.html#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
-            <a href="index.html#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
+            <a href="/#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
+            <a href="/#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
             <button onclick="closeMenu()" class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition">
                 Close Menu
             </button>
@@ -201,9 +202,9 @@
       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
     >
       <div class="flex items-center">
-        <a href="index.html">
+        <a href="/">
           <img
-            src="images/logo-shadow.png"
+            src="/images/logo-shadow.png"
             alt="Paul Takisaki Logo"
             class="h-8"
           />
@@ -211,18 +212,18 @@
       </div>
       <nav class="hidden md:flex space-x-8">
         <a
-          href="index.html"
+          href="/"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Home</a
         >
         <a href="#about" class="text-outlier-cyan">About</a>
         <a
-          href="insights/Insights.html"
+          href="/insights/Insights.html"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Insights</a
         >
         <a
-          href="index.html#proof"
+          href="/#proof"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Proof</a
         >
@@ -232,12 +233,12 @@
           >Impact</a
         >
         <a
-          href="index.html#coaching"
+          href="/#coaching"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Coaching</a
         >
         <a
-          href="index.html#action"
+          href="/#action"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Contact</a
         >
@@ -275,7 +276,7 @@
                 <!-- Main image with border effect -->
                 <div class="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-lg border-2 border-outlier-cyan relative">
                   <img
-                    src="images/headshot-square.webp"
+                    src="/images/headshot-square.webp"
                     alt="Paul Takisaki"
                     class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
                   />
@@ -571,7 +572,7 @@
             to build your path to extraordinary results.
           </p>
           <a
-            href="index.html#action"
+            href="/#action"
             class="inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-lg tracking-wider"
           >
             BOOK YOUR CLARITY CALL
@@ -584,7 +585,7 @@
     <footer
       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
     >
-      <a href="index.html">
+      <a href="/">
         <img
           src="images/logo-shadow.png"
           alt="Takisaki Strategy Logo"
@@ -672,7 +673,7 @@
         });
     </script>
     
-    <!-- Quote Rotation -->
-    <script src="/js/quote-rotation.js"></script>
+    <!-- Quote Rotation - Deferred for Performance -->
+    <script src="/js/quote-rotation.js" defer></script>
   </body>
 </html>
