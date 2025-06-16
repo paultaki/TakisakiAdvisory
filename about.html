@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"></script>
+    <!-- Google tag (gtag.js) - deferred for performance -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-F46XQSW1XF');
+      // Delay gtag initialization
+      window.addEventListener('load', function() {
+        gtag('js', new Date());
+        gtag('config', 'G-F46XQSW1XF');
+      });
     </script>
     
     <!-- Initialize dataLayer -->
@@ -28,22 +30,16 @@
     })(window,document,'script','dataLayer','GTM-K9B7LZB8');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Twitter conversion tracking base code -->
+    <!-- Twitter conversion tracking - deferred for performance -->
     <script>
-    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-    twq('config','psn9q');
+    window.addEventListener('load', function() {
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+      twq('config','psn9q');
+      twq('event', 'tw-psn9q-psn9q', {});
+    });
     </script>
-    <!-- End Twitter conversion tracking base code -->
-    
-    <!-- Twitter conversion tracking event code -->
-    <script type="text/javascript">
-      // Insert Twitter Event ID
-      twq('event', 'tw-psn9q-psn9q', {
-      });
-    </script>
-    <!-- End Twitter conversion tracking event code -->
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -88,13 +84,26 @@
     
     <link rel="icon" href="favicon.ico" />
     <link rel="manifest" href="site.webmanifest" />
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" href="/images/headshot-square.webp" fetchpriority="high">
     <!-- Font Preloading for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Critical inline styles -->
+    <style>
+      /* Critical CSS for above-the-fold content */
+      *{box-sizing:border-box;margin:0;padding:0}body{background:#000;color:#fff;font-family:Inter,system-ui,sans-serif}header{position:fixed;top:0;width:100%;background:rgba(0,0,0,.9);z-index:40;padding:1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(4px)}.text-outlier-cyan{color:#00ffff}.bg-black{background:#000}.bg-dark-gray{background:#121212}.text-white{color:#fff}.text-gray-300{color:#d3d3d3}.font-bold{font-weight:700}.text-6xl{font-size:3.75rem}.text-4xl{font-size:2.25rem}.text-xl{font-size:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.py-32{padding-top:8rem;padding-bottom:8rem}.px-8{padding-left:2rem;padding-right:2rem}.max-w-5xl{max-width:64rem}.mx-auto{margin-left:auto;margin-right:auto}
+    </style>
+    <!-- Font loading with preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
-    <link rel="stylesheet" href="/css/quote-rotation.css">
-    <script src="https://cdn.tailwindcss.com/"></script>
+    <!-- Defer non-critical CSS -->
+    <link rel="preload" href="/css/quote-rotation.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/quote-rotation.css"></noscript>
+    <!-- Defer Tailwind -->
+    <script src="https://cdn.tailwindcss.com/" defer></script>
     <script>
       tailwind.config = {
         theme: {
@@ -111,7 +120,8 @@
         },
       };
     </script>
-    <style>
+    <!-- Defer non-critical styles -->
+    <style id="non-critical-styles">
       /* Custom scrollbar styling */
       .custom-scrollbar::-webkit-scrollbar {
         width: 8px;
@@ -223,6 +233,8 @@
             src="/images/logo-shadow.png"
             alt="Paul Takisaki Logo"
             class="h-8"
+            width="120"
+            height="32"
           />
         </a>
       </div>
@@ -293,8 +305,13 @@
                 <div class="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-lg border-2 border-outlier-cyan relative">
                   <img
                     src="/images/headshot-square.webp"
+                    srcset="/images/headshot-square.webp 1x, /images/headshot-square.webp 2x"
                     alt="Paul Takisaki"
                     class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+                    width="320"
+                    height="320"
+                    fetchpriority="high"
+                    loading="eager"
                   />
                   <!-- Cyan accent overlay in corner -->
                   <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-outlier-cyan to-transparent opacity-30"></div>
@@ -420,7 +437,8 @@
                   title="The Paul Effect: Stories of Impact"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen>
+                  allowfullscreen
+                  loading="lazy">
                 </iframe>
               </div>
             </div>
@@ -609,6 +627,8 @@
           src="images/logo-shadow.png"
           alt="Takisaki Strategy Logo"
           class="h-10 mb-2 opacity-80"
+          width="150"
+          height="40"
         />
       </a>
       
