@@ -1,0 +1,137 @@
+/* Tailwind CSS compiled version */
+/* This file replaces the CDN version for better performance */
+
+/* Base styles from Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom color variables */
+:root {
+  --outlier-cyan: #00FFFF;
+  --dark-gray: #121212;
+  --medium-gray: #232323;
+}
+
+/* Custom utility classes */
+.text-outlier-cyan, 
+.hover\:text-outlier-cyan:hover,
+span.text-outlier-cyan,
+svg.text-outlier-cyan {
+    color: var(--outlier-cyan) !important;
+}
+        
+.bg-outlier-cyan,
+.hover\:bg-outlier-cyan:hover,
+button.bg-outlier-cyan {
+    background-color: var(--outlier-cyan) !important;
+}
+        
+.border-outlier-cyan {
+    border-color: var(--outlier-cyan) !important;
+}
+        
+.bg-dark-gray {
+    background-color: var(--dark-gray) !important;
+}
+        
+.bg-medium-gray {
+    background-color: var(--medium-gray) !important;
+}
+
+/* Fix for method section icons */
+#method .w-20 svg {
+    display: block !important;
+    visibility: visible !important;
+    color: var(--outlier-cyan) !important;
+    stroke: var(--outlier-cyan) !important;
+}
+
+/* Custom animation that can't be handled by Tailwind */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Hide scrollbar but maintain functionality */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Mobile scroll experience */
+@media (max-width: 767px) {
+    html {
+        -webkit-overflow-scrolling: touch;
+        scroll-padding-top: 80px;
+    }
+    
+    .no-scrollbar {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+    }
+    
+    .no-scrollbar > div {
+        scroll-snap-align: center;
+    }
+}
+
+/* Scroll Progress Bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--outlier-cyan);
+    width: 0%;
+    z-index: 100;
+    transition: width 0.05s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid var(--outlier-cyan);
+    color: var(--outlier-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+}

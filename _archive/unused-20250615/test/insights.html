@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Leadership insights, practical wisdom, and strategic guidance from Paul Takisaki, former Fortune 50 executive. Learn from two decades of leadership experience." />
+    <title>Leadership Insights | Paul Takisaki</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Leadership Insights | Paul Takisaki" />
+    <meta property="og:description" content="Practical wisdom from two decades of building winning teams without the burnout. Strategic leadership insights from Paul Takisaki." />
+    <meta property="og:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
+    <meta property="og:url" content="https://www.paultakisaki.com/insights.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Paul Takisaki" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Leadership Insights | Paul Takisaki" />
+    <meta name="twitter:description" content="Practical wisdom from two decades of building winning teams without the burnout. Strategic leadership insights from Paul Takisaki." />
+    <meta name="twitter:image" content="https://www.paultakisaki.com/images/headshot_bw.webp" />
+    
+    <!-- Favicon Package -->
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#121212" />
+    <meta name="theme-color" content="#121212" />
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Leadership Insights by Paul Takisaki",
+      "url": "https://www.paultakisaki.com/insights.html",
+      "description": "Practical wisdom from two decades of building winning teams without the burnout.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "url": "https://www.paultakisaki.com"
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "The Unscalable Advantage: Why I Still Held 1:1s with Everyone, 3 Layers Down",
+          "datePublished": "2025-03-22",
+          "author": {
+            "@type": "Person",
+            "name": "Paul Takisaki"
+          },
+          "url": "https://www.paultakisaki.com/blogs/unscalable.html"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "The Invisible Resume: Building a Legacy That Outlives Your Title",
+          "datePublished": "2025-04-05",
+          "author": {
+            "@type": "Person",
+            "name": "Paul Takisaki"
+          },
+          "url": "https://www.paultakisaki.com/blogs/resume.html"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Strategy That Sticks: Why Most Plans Fail and How to Make Yours Actually Work",
+          "datePublished": "2025-04-12",
+          "author": {
+            "@type": "Person",
+            "name": "Paul Takisaki"
+          },
+          "url": "https://www.paultakisaki.com/insights/boring-is-broken.html"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="images/logo-shadow.png" as="image" />
+    
+    <!-- Mobile Experience Enhancement -->
+    <script src="mobile-experience.js" defer></script>
+    
+    <!-- Font preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    
+    <!-- Phosphor Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css" rel="stylesheet"/>
+    <!-- Backup Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            accent: '#00e5ff',
+            primary: '#000000',
+            secondary: '#121212'
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            },
+            pulse: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0.8' }
+            },
+            glowPulse: {
+              '0%, 100%': { boxShadow: '0 0 5px rgba(0, 229, 255, 0.3)' },
+              '50%': { boxShadow: '0 0 20px rgba(0, 229, 255, 0.6)' }
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-1000px 0' },
+              '100%': { backgroundPosition: '1000px 0' }
+            }
+          },
+          animation: {
+            fadeIn: 'fadeIn 0.6s ease-out forwards',
+            slideUp: 'slideUp 0.8s ease-out forwards',
+            pulse: 'pulse 3s ease-in-out infinite',
+            glowPulse: 'glowPulse 3s ease-in-out infinite',
+            shimmer: 'shimmer 3s infinite linear'
+          },
+          backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          },
+          boxShadow: {
+            'glow': '0 0 15px rgba(0, 229, 255, 0.5)',
+            'subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            'card': '0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+            'inner-accent': 'inset 0 0 0 1px rgba(0, 229, 255, 0.15)',
+          },
+          transitionTimingFunction: {
+            'premium': 'cubic-bezier(0.16, 1, 0.3, 1)'
+          }
+        }
+      },
+      plugins: [],
+    }
+    </script>
+    <style>
+      /* Section fade-in animations */
+      .section-fade-in > * {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .scrolled.section-fade-in > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .scrolled.section-fade-in > *:nth-child(1) { transition-delay: 0.1s; }
+      .scrolled.section-fade-in > *:nth-child(2) { transition-delay: 0.2s; }
+      .scrolled.section-fade-in > *:nth-child(3) { transition-delay: 0.3s; }
+      .scrolled.section-fade-in > *:nth-child(4) { transition-delay: 0.4s; }
+      .scrolled.section-fade-in > *:nth-child(5) { transition-delay: 0.5s; }
+      
+      /* Text animation effects for hero */
+      .animate-text-line {
+        overflow: hidden;
+      }
+      
+      .animate-text-line span {
+        display: block;
+        opacity: 0;
+        transform: translateY(35px);
+        animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      @keyframes textReveal {
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      .animate-text-line:nth-child(1) span { animation-delay: 0.1s; }
+      .animate-text-line:nth-child(2) span { animation-delay: 0.2s; }
+      
+      /* Premium card hover effects */
+      .premium-card {
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                    border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .premium-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        border-color: rgba(0, 229, 255, 0.3);
+      }
+      
+      .premium-card:hover .card-accent-bar {
+        width: 100%;
+      }
+      
+      .premium-card .card-accent-bar {
+        width: 50px;
+        transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      /* Blog card hover effects */
+      .blog-card {
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .blog-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0, 229, 255, 0.2);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .blog-card .img-container {
+        overflow: hidden;
+      }
+      
+      .blog-card img {
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .blog-card:hover img {
+        transform: scale(1.05);
+      }
+      
+      /* Category buttons active state */
+      .category-button {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .category-button::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #00e5ff;
+        transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      .category-button:hover::after,
+      .category-button.active::after {
+        width: 100%;
+      }
+      
+      .category-button.active {
+        color: #00e5ff;
+      }
+      
+      /* Gradient text */
+      .text-gradient {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      /* Accessibility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+</head>
+<body class="bg-black text-white font-sans antialiased overflow-x-hidden">
+    <!-- Scroll progress indicator -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-accent/70 via-accent to-accent/70 w-0 z-[9999] transition-all duration-100 ease-linear"></div>
+    
+    <!-- Skip to content link for accessibility -->
+    <a class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:p-4 focus:bg-accent focus:text-black focus:font-bold" href="#main-content">Skip to main content</a>
+    
+    <!-- Header container for header.js -->
+    <div id="header-container"></div>
+    <script src="header_tailwind.js"></script>
+    
+    <!-- Page Loader -->
+    <div class="page-loader fixed inset-0 bg-black flex items-center justify-center z-[100] transition-opacity duration-500">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-white/10 border-t-accent rounded-full animate-spin mb-6"></div>
+            <div class="text-2xl font-bold tracking-wider">
+                PAUL <span class="text-accent">TAKISAKI</span>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content" class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative py-24 md:py-32 bg-gradient-to-br from-primary to-secondary overflow-hidden">
+            <!-- Background accent elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-gradient-radial from-accent/5 to-transparent blur-3xl"></div>
+                <div class="absolute bottom-[-20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-gradient-radial from-accent/3 to-transparent blur-3xl"></div>
+                
+                <!-- Subtle grid pattern overlay -->
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.4)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-block mb-4 opacity-0 animate-[fadeIn_0.6s_ease-out_forwards]">
+                    <span class="text-accent text-sm font-semibold tracking-wider uppercase">Leadership Wisdom</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    <div class="animate-text-line"><span>LEADERSHIP</span></div>
+                    <div class="animate-text-line"><span>INSIGHTS</span></div>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto opacity-0 animate-[fadeIn_1s_ease-out_0.6s_forwards]">
+                    Practical wisdom from two decades of building winning teams without the burnout.
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Categories Section -->
+        <section class="py-12 bg-black/60 backdrop-blur-sm border-y border-white/5 sticky top-[72px] z-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-center flex-wrap gap-4 md:gap-8">
+                    <button class="category-button px-5 py-2 text-accent hover:text-accent font-medium text-base active">All</button>
+                    <button class="category-button px-5 py-2 text-white/70 hover:text-accent font-medium text-base">Leadership</button>
+                    <button class="category-button px-5 py-2 text-white/70 hover:text-accent font-medium text-base">Strategy</button>
+                    <button class="category-button px-5 py-2 text-white/70 hover:text-accent font-medium text-base">Team Building</button>
+                    <button class="category-button px-5 py-2 text-white/70 hover:text-accent font-medium text-base">Culture</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post Section -->
+        <section class="py-16 section-fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <article class="premium-card grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gradient-to-b from-black/80 to-black/60 rounded-xl overflow-hidden shadow-card relative border border-white/10">
+                    <!-- Top accent bar that expands on hover -->
+                    <div class="absolute top-0 left-0 h-1 w-1/4 bg-accent card-accent-bar"></div>
+                    
+                    <div class="h-full w-full overflow-hidden img-container">
+                        <img src="images/unscalable.webp" alt="A leader having a one-on-one meeting with team member" class="w-full h-full object-cover" />
+                    </div>
+                    
+                    <div class="p-8 md:p-10 flex flex-col relative">
+                        <div class="absolute top-6 right-6 bg-accent/10 h-12 w-12 rounded-full flex items-center justify-center text-accent transition-all duration-300 group-hover:scale-110">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        
+                        <span class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-md mb-4 w-fit">Leadership</span>
+                        
+                        <h2 class="text-2xl md:text-3xl font-bold mb-4 leading-tight">
+                            <a href="blogs/unscalable.html" class="text-white hover:text-accent transition-colors">
+                                The Unscalable Advantage: Why I Still Held 1:1s with Everyone, 3 Layers Down
+                            </a>
+                        </h2>
+                        
+                        <p class="text-gray-300 mb-8 text-lg">
+                            Leadership at scale is a trap. The bigger things get, the easier it
+                            is to hide behind dashboards, reports, and filtered feedback. That's
+                            why I kept showing up. In market. In the field. On calls. I wanted
+                            to hear the stories, not just the stats.
+                        </p>
+                        
+                        <div class="flex items-center mt-auto space-x-6">
+                            <div class="flex items-center text-gray-400 text-sm">
+                                <i class="far fa-calendar mr-2 text-accent/70"></i>
+                                <span>March 22, 2025</span>
+                            </div>
+                            <div class="flex items-center text-gray-400 text-sm">
+                                <i class="far fa-clock mr-2 text-accent/70"></i>
+                                <span>4 min read</span>
+                            </div>
+                        </div>
+                        
+                        <a href="blogs/unscalable.html" class="inline-flex items-center text-accent font-semibold mt-6 group">
+                            Read More 
+                            <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Blog Grid Section -->
+        <section class="py-16 section-fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Blog Card 1 -->
+                    <article class="blog-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden shadow-card relative">
+                        <div class="absolute top-0 left-0 h-1 w-12 bg-accent"></div>
+                        
+                        <div class="h-56 overflow-hidden img-container">
+                            <img src="images/resume.webp" alt="Professional document with a pen" class="w-full h-full object-cover" />
+                        </div>
+                        
+                        <div class="p-6 md:p-8">
+                            <span class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-md mb-4 w-fit">Career Development</span>
+                            
+                            <h3 class="text-xl font-bold mb-3 leading-tight">
+                                <a href="blogs/resume.html" class="text-white hover:text-accent transition-colors">
+                                    The Invisible Resume: Building a Legacy That Outlives Your Title
+                                </a>
+                            </h3>
+                            
+                            <p class="text-white/70 mb-6">
+                                None of my jobs were won because of a bullet point on a resume.
+                                They were won in moments where people noticed how I showed up, not
+                                just what I had done.
+                            </p>
+                            
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <div class="flex items-center">
+                                    <i class="far fa-calendar mr-2 text-accent/70"></i>
+                                    <span>April 5, 2025</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="far fa-clock mr-2 text-accent/70"></i>
+                                    <span>3 min read</span>
+                                </div>
+                            </div>
+                            
+                            <a href="blogs/resume.html" class="inline-flex items-center text-accent font-semibold mt-6 group">
+                                Read More 
+                                <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Blog Card 2 -->
+                    <article class="blog-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden shadow-card relative">
+                        <div class="absolute top-0 left-0 h-1 w-12 bg-accent"></div>
+                        
+                        <div class="h-56 overflow-hidden img-container">
+                            <img src="images/strategy_sticks.webp" alt="Strategy board with chess pieces" class="w-full h-full object-cover" />
+                        </div>
+                        
+                        <div class="p-6 md:p-8">
+                            <span class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-md mb-4 w-fit">Strategy</span>
+                            
+                            <h3 class="text-xl font-bold mb-3 leading-tight">
+                                <a href="../insights/boring-is-broken.html" class="text-white hover:text-accent transition-colors">
+                                    Strategy That Sticks: Why Most Plans Fail and How to Make Yours Actually Work
+                                </a>
+                            </h3>
+                            
+                            <p class="text-white/70 mb-6">
+                                Most strategies fail for one of three reasons: The goal isn't bold
+                                enough, no one decides where not to play, and there's zero
+                                governance to support it.
+                            </p>
+                            
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <div class="flex items-center">
+                                    <i class="far fa-calendar mr-2 text-accent/70"></i>
+                                    <span>April 12, 2025</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="far fa-clock mr-2 text-accent/70"></i>
+                                    <span>5 min read</span>
+                                </div>
+                            </div>
+                            
+                            <a href="../insights/boring-is-broken.html" class="inline-flex items-center text-accent font-semibold mt-6 group">
+                                Read More 
+                                <i class="fas fa-arrow-right ml-2 transform transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Coming Soon Card 1 -->
+                    <div class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden p-8 text-center shadow-card border border-white/10 relative">
+                        <!-- Top accent bar that expands on hover -->
+                        <div class="absolute top-0 left-0 h-1 w-1/4 bg-accent card-accent-bar"></div>
+                        
+                        <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-accent mb-4">Coming Soon</h3>
+                        <p class="text-lg mb-4 text-white/90">
+                            The 80/20 Rule of Leadership: Focusing on What Actually Matters
+                        </p>
+                        <span class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-md">Leadership</span>
+                    </div>
+
+                    <!-- Coming Soon Card 2 -->
+                    <div class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden p-8 text-center shadow-card border border-white/10 relative">
+                        <!-- Top accent bar that expands on hover -->
+                        <div class="absolute top-0 left-0 h-1 w-1/4 bg-accent card-accent-bar"></div>
+                        
+                        <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-accent mb-4">Coming Soon</h3>
+                        <p class="text-lg mb-4 text-white/90">
+                            The Handlebar Test: How to Know If You're Leading or Just Controlling
+                        </p>
+                        <span class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-md">Team Building</span>
+                    </div>
+                    
+                    <!-- Coming Soon Card 3 -->
+                    <div class="premium-card bg-gradient-to-b from-black/60 to-black/40 rounded-xl overflow-hidden p-8 text-center shadow-card border border-white/10 relative">
+                        <!-- Top accent bar that expands on hover -->
+                        <div class="absolute top-0 left-0 h-1 w-1/4 bg-accent card-accent-bar"></div>
+                        
+                        <div class="w-16 h-16 mx-auto rounded-full bg-accent/10 flex items-center justify-center text-accent mb-6">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-accent mb-4">Coming Soon</h3>
+                        <p class="text-lg mb-4 text-white/90">
+                            Red Team Thinking: Stress-Test Your Plans Before Reality Does
+                        </p>
+                        <span class="inline-block bg-accent/10 text-accent text-xs font-semibold px-3 py-1.5 rounded-md">Strategy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section class="py-24 bg-gradient-to-b from-secondary to-black relative overflow-hidden section-fade-in my-24">
+            <!-- Background elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-accent/3 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent/3 blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="bg-black/40 backdrop-blur-sm rounded-xl p-10 md:p-16 border border-white/10 shadow-card">
+                    <div class="text-center mb-10">
+                        <span class="inline-block text-accent text-sm font-semibold tracking-wider uppercase mb-2">Newsletter</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Leadership Insights Delivered</h2>
+                        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                            Join my newsletter for practical wisdom on leadership, team building,
+                            and creating cultures that perform and endure.
+                        </p>
+                    </div>
+                    
+                    <form id="newsletter-form" class="max-w-xl mx-auto">
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <input 
+                                type="email" 
+                                id="newsletter-email"
+                                name="email"
+                                placeholder="Your Email" 
+                                required 
+                                class="flex-1 px-4 py-3 rounded-lg text-black bg-white focus:outline-none focus:ring-2 focus:ring-accent" 
+                            />
+                            <button 
+                                type="submit" 
+                                class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 hover:shadow-glow transition-all"
+                            >
+                                Subscribe
+                            </button>
+                        </div>
+                        <p class="text-center text-white/50 text-sm mt-4">No spam. Unsubscribe anytime.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <a aria-label="Back to top of page" class="back-to-top fixed bottom-6 right-6 bg-accent/20 text-accent w-12 h-12 rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-accent hover:text-black z-50" href="#">
+        <i data-lucide="chevron-up" class="w-6 h-6"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white pt-16 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+                <div class="footer-info">
+                    <div class="text-2xl font-bold mb-4 flex items-center">
+                        <span class="text-accent">PAUL</span>
+                        <span class="ml-2">TAKISAKI</span>
+                    </div>
+                    
+                    <p class="text-gray-400 mb-6 text-base max-w-md leading-relaxed">
+                        Leadership coaching for strategic outliers who redraw the curve rather than following it.
+                    </p>
+                    
+                    <div class="footer-social">
+                        <a aria-label="LinkedIn Profile" class="inline-flex items-center justify-center w-10 h-10 bg-accent/10 rounded-full text-accent hover:bg-accent hover:text-black transition-colors" href="https://www.linkedin.com/in/paultakisaki" rel="noopener" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold border-b border-white/20 pb-2 mb-3 text-accent">Navigation</h4>
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors inline-block">Home</a></li>
+                            <li><a href="takisaki-os.html" class="text-gray-400 hover:text-white transition-colors inline-block">Takisaki OS</a></li>
+                            <li><a href="services.html" class="text-gray-400 hover:text-white transition-colors inline-block">Services</a></li>
+                            <li><a href="impact.html" class="text-gray-400 hover:text-white transition-colors inline-block">Impact</a></li>
+                            <li><a href="insights.html" class="text-gray-400 hover:text-white transition-colors inline-block">Insights</a></li>
+                            <li><a href="about.html" class="text-gray-400 hover:text-white transition-colors inline-block">About</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-lg font-bold border-b border-white/20 pb-2 mb-3 text-accent">Contact</h4>
+                        <p class="text-gray-400 flex items-start gap-3">
+                            <i class="far fa-envelope mt-1 text-accent"></i>
+                            <span>paul@paultakisaki.com</span>
+                        </p>
+                        <p class="text-gray-400 flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-accent"></i>
+                            <span>Gilbert, AZ</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-sm text-gray-500 pt-6 border-t border-white/10">
+                <p>© 2025 Paul Takisaki. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide icons
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+        
+        // Page loader
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                const loader = document.querySelector('.page-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }
+            }, 800);
+        });
+        
+        // Scroll progress indicator
+        function updateScrollProgress() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            const progressBar = document.getElementById('scroll-progress');
+            if (progressBar) {
+                progressBar.style.width = progress + '%';
+            }
+        }
+        
+        // Back to top button visibility
+        function updateBackToTopButton() {
+            const scrollTop = window.scrollY;
+            const backToTopButton = document.querySelector('.back-to-top');
+            
+            if (backToTopButton) {
+                if (scrollTop > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            }
+        }
+        
+        // Scroll animations
+        function handleScrollAnimations() {
+            const sections = document.querySelectorAll('.section-fade-in');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('scrolled');
+                }
+            });
+        }
+        
+        // Handle scroll event for all functionality
+        function handleScroll() {
+            updateScrollProgress();
+            updateBackToTopButton();
+            handleScrollAnimations();
+        }
+        
+        // Add event listener
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            handleScroll();
+            
+            // Add click handler for back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            if (backToTopButton) {
+                backToTopButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Category buttons
+            const categoryButtons = document.querySelectorAll('.category-button');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.classList.add('text-white/70');
+                        btn.classList.remove('text-accent');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    this.classList.remove('text-white/70');
+                    this.classList.add('text-accent');
+                    
+                    // Filter logic would go here
+                    // For now, we'll just console.log the selected category
+                    console.log('Selected category:', this.textContent.trim());
+                });
+            });
+            
+            // Form submission handler
+            const subscribeForm = document.getElementById('newsletter-form');
+            if (subscribeForm) {
+                subscribeForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Get the email
+                    const emailInput = document.getElementById('newsletter-email');
+                    const email = emailInput.value;
+                    
+                    // Simple validation
+                    if (!email) {
+                        alert('Please enter your email address.');
+                        return;
+                    }
+                    
+                    // Disable the button and show loading state
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    const originalText = submitButton.textContent;
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = 'Subscribing...';
+                    
+                    try {
+                        // API call to our subscribe endpoint
+                        const response = await fetch('/api/subscribe', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ email })
+                        });
+                        
+                        if (response.ok) {
+                            // Success state
+                            submitButton.innerHTML = 'Subscribed!';
+                            submitButton.classList.add('bg-green-500');
+                            
+                            // Reset form
+                            emailInput.value = '';
+                        } else {
+                            const errorData = await response.json();
+                            throw new Error(errorData.error || 'Subscription failed');
+                        }
+                    } catch (err) {
+                        console.error('Error subscribing to newsletter:', err);
+                        alert(err.message || 'Failed to subscribe. Please try again later.');
+                        submitButton.innerHTML = originalText;
+                    } finally {
+                        // Reset button after delay
+                        setTimeout(() => {
+                            submitButton.innerHTML = originalText;
+                            submitButton.disabled = false;
+                            submitButton.classList.remove('bg-green-500');
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

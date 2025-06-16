@@ -1,0 +1,229 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takisaki Leadership Vault Teaser</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .format-card:hover .example {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .example {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Hero Section -->
+  <section class="py-16 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight">Takisaki Leadership Vault</h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-xl mx-auto">
+      Forged in Fortune 500 trenches. 91 assets. 20 formats. Your blueprint for leadership impact.
+    </p>
+    <div class="mt-6 text-3xl font-bold text-yellow-400">91 Assets Unlocked</div>
+  </section>
+
+  <!-- Grid Section -->
+  <section class="max-w-6xl mx-auto px-4 pb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Case Studies</h3>
+        <p class="text-gray-400">9 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota Model Transformation</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Frameworks</h3>
+        <p class="text-gray-400">7 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Five-Question Strategy Framework</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Playbooks</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Project Domination Prospecting</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Implementation Guides</h3>
+        <p class="text-gray-400">5 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota Model Change Rollout</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Templates</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota Transparency Scorecard</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Infographics</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Playing to Win Framework</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Quizzes/Assessments</h3>
+        <p class="text-gray-400">3 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Leadership Self-Assessment</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Mini Courses</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota Design Mastery</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Workshops</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Leadership Culture Transformation</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Slide Decks</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota System Overview</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Coaching Curriculums</h3>
+        <p class="text-gray-400">3 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Strategic Execution Coaching</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Toolkits</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">New Leader 90-Day Toolkit</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">PDF Downloads</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Leadership Operating System</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Blog Posts</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Building Trust Through Data</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">LinkedIn Carousels</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota Model Before/After</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Email Drip Series</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Leadership Transformation Journey</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Notion Vaults</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Case Study Index Vault</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Interactive Dashboards</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Sales Activity Heatmap</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">Licenseable IP</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Quota Scoring Model (4D)</p>
+        </div>
+      </div>
+      <div class="format-card bg-gray-800 rounded-lg p-4 relative">
+        <h3 class="text-lg font-semibold">TED-style Keynotes</h3>
+        <p class="text-gray-400">4 Assets</p>
+        <div class="example absolute inset-0 bg-gray-700 rounded-lg p-4 flex items-center justify-center">
+          <p class="text-sm text-gray-300">Letting Go of the Handlebars</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 text-center bg-gray-800">
+    <h2 class="text-2xl font-bold">Lead with Precision, Inspire with Purpose</h2>
+    <p class="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
+      Strength-based systems, proven in the field, to transform teams and drive results.
+    </p>
+    <a
+      href="#explore"
+      class="mt-6 inline-block px-6 py-2 bg-yellow-400 text-gray-900 font-semibold rounded-full hover:bg-yellow-500 transition"
+    >
+      Explore the Vault
+    </a>
+  </section>
+</body>
+</html>
