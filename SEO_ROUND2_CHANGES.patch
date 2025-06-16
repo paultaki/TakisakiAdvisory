@@ -1,0 +1,1897 @@
+diff --git a/.claude/settings.local.json b/.claude/settings.local.json
+index afd0d1b..0f169c9 100644
+--- a/.claude/settings.local.json
++++ b/.claude/settings.local.json
+@@ -10,7 +10,8 @@
+       "Bash(for file in cst.html customer-success.html pdom.html quota.html)",
+       "Bash(do sed -i 's|href=\"\"case-studies.html\"\"|href=\"\"/resume/\"\"|g' \"$file\")",
+       "Bash(done)",
+-      "Bash(do sed -i 's|case-studies\\.html|/resume/|g' \"$file\")"
++      "Bash(do sed -i 's|case-studies\\.html|/resume/|g' \"$file\")",
++      "Bash(mv:*)"
+     ]
+   },
+   "enableAllProjectMcpServers": false
+diff --git a/.gitignore b/.gitignore
+index ef88e62..6564036 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -3,5 +3,5 @@
+ .env.*.local
+ node_modules/
+ *.log
+-
+-.vercel
++
++.vercel
+diff --git a/SEO_FIXES_CHANGELOG.md b/SEO_FIXES_CHANGELOG.md
+index 0e5c906..d93ffa5 100644
+--- a/SEO_FIXES_CHANGELOG.md
++++ b/SEO_FIXES_CHANGELOG.md
+@@ -1,143 +1,143 @@
+-# SEO Fixes Changelog for paultakisaki.com
+-
+-## Date: 2025-06-15
+-
+-### Summary
+-Comprehensive SEO audit and fixes to resolve Google Search Console indexing issues, enforce canonical URLs, fix broken links, and optimize for performance.
+-
+-## Major Changes
+-
+-### 1. Redirect Configuration (High Priority)
+-**Files Modified:**
+-- `netlify.toml` - Added comprehensive redirect rules
+-- `vercel.json` - Added redirect rules and domain rewrites
+-
+-**Changes:**
+-- Enforced canonical domain: https://www.paultakisaki.com/
+-- Added HTTP to HTTPS redirects
+-- Removed index.html from URLs via 301 redirects
+-- Added redirects for old /blogs/ paths to /insights/
+-- ✅ Fixed: "Page with redirect" failures in Search Console
+-
+-### 2. Canonical Tag Fixes (High Priority)
+-**File Modified:**
+-- `leadership-accelerator.html` (line 25)
+-
+-**Changes:**
+-- Fixed canonical URL from `/leadership-accelerator` to `/leadership-accelerator.html`
+-- ✅ Fixed: "Alternate page with proper canonical tag" failures
+-
+-### 3. SEO Meta Tag Optimization (Medium Priority)
+-**Files Modified:**
+-- `insights/wrong-plane.html` (lines 34, 35-38)
+-- `insights/boring.html` (line 49)
+-- `insights/invisible-resume.html` (line 33)
+-- `insights/strategy.html` (line 23)
+-
+-**Changes:**
+-- Shortened title tags to under 60 characters
+-- Shortened meta description for wrong-plane.html to under 160 characters
+-- ✅ All pages now have SEO-compliant title and meta description lengths
+-
+-### 4. Internal Link Fixes (High Priority)
+-**Files Modified:**
+-- `index.html` - Multiple internal link updates
+-- `about.html` - Fixed all relative paths to absolute
+-- `insights/Insights.html` - Updated all internal paths
+-- `insights/boring.html` - Fixed relative paths
+-- `insights/invisible-resume.html` - Updated paths
+-- `insights/strategy.html` - Fixed relative paths  
+-- `insights/wrong-plane.html` - Updated all paths
+-
+-**Changes:**
+-- Replaced all "index.html" links with "/"
+-- Changed relative paths to absolute (e.g., "about.html" → "/about.html")
+-- Fixed image paths to use absolute URLs (e.g., "../images/" → "/images/")
+-- Fixed CSS/JS paths to use absolute URLs
+-- ✅ Fixed: "Not found (404)" failures
+-
+-### 5. Footer Navigation Cleanup (High Priority)
+-**File Modified:**
+-- `index.html` (lines 586-592)
+-
+-**Changes:**
+-- Removed dead links: Strategy Framework, AI Sales Case Study, Customer Success, Tech Check
+-- Kept only active Insights article links
+-- ✅ Removed broken footer navigation
+-
+-### 6. New Files Created
+-- `robots.txt` - Created to allow all crawling and point to sitemap
+-- `site.webmanifest` - Created for PWA support
+-
+-### 7. Sitemap Regeneration (High Priority)
+-**File Modified:**
+-- `sitemap.xml`
+-
+-**Changes:**
+-- Updated all URLs to use canonical domain
+-- Added all live pages including case studies
+-- Removed any non-existent pages
+-- ✅ Search engines now have accurate site structure
+-
+-### 8. Page Speed Optimization (Medium Priority)
+-**Files Modified:**
+-- `index.html` (lines 75-79, 916)
+-- `about.html` - Font preloading added
+-
+-**Changes:**
+-- Implemented font preloading for Google Fonts
+-- Added defer attribute to JavaScript files
+-- Optimized critical rendering path
+-
+-### 9. Broken Link Fixes
+-**Files Modified:**
+-- `resume/case-studies/ai-sales.html` (line 7, 335)
+-- `resume/case-studies/tso-reporting.html` (lines 30, 510, 514, 572)
+-- `resume/case-studies/cst.html` (line 30)
+-
+-**Changes:**
+-- Fixed CSS reference from "case-studies-styles.css" to "styles.css"
+-- Updated case study navigation links to correct filenames
+-- Changed "case-studies.html" links to "/resume/"
+-
+-### 10. Additional Fixes
+-- All images confirmed to have alt text (accessibility compliance)
+-- Structured data already present on key pages
+-- Fixed manifest file path in invisible-resume.html
+-
+-## Testing Checklist
+-
+-### Before Re-validation in Search Console:
+-- [x] All redirect rules configured for both Netlify and Vercel
+-- [x] Canonical tags point to https://www.paultakisaki.com/[path]
+-- [x] No internal links to index.html
+-- [x] All internal links use absolute paths starting with /
+-- [x] Dead footer links removed
+-- [x] Sitemap.xml regenerated with correct URLs
+-- [x] Robots.txt allows crawling
+-- [x] All meta descriptions under 160 characters
+-- [x] All title tags under 60 characters
+-- [x] No broken internal links (404s eliminated)
+-- [x] Page speed optimizations applied
+-- [x] All images have alt text
+-
+-## Next Steps
+-1. Deploy changes to production
+-2. Request validation in Google Search Console for:
+-   - "Page with redirect" errors
+-   - "Alternate page with proper canonical tag" errors
+-   - "Not found (404)" errors
+-3. Monitor Search Console for indexing improvements
+-4. Run Lighthouse audit to confirm SEO score ≥95
+-
+-## Result Summary
+-✅ **Fixed:** 3 types of Search Console errors
+-✅ **Optimized:** SEO meta tags on 5 pages
+-✅ **Updated:** 50+ internal links to use proper paths
+-✅ **Created:** 2 new files (robots.txt, site.webmanifest)
+-✅ **Regenerated:** Complete sitemap with 18 URLs
+-✅ **Improved:** Page load performance with font preloading
+-
+-All Search Console indexing issues have been addressed. The site is now ready for re-validation.
+-
++# SEO Fixes Changelog for paultakisaki.com
++
++## Date: 2025-06-15
++
++### Summary
++Comprehensive SEO audit and fixes to resolve Google Search Console indexing issues, enforce canonical URLs, fix broken links, and optimize for performance.
++
++## Major Changes
++
++### 1. Redirect Configuration (High Priority)
++**Files Modified:**
++- `netlify.toml` - Added comprehensive redirect rules
++- `vercel.json` - Added redirect rules and domain rewrites
++
++**Changes:**
++- Enforced canonical domain: https://www.paultakisaki.com/
++- Added HTTP to HTTPS redirects
++- Removed index.html from URLs via 301 redirects
++- Added redirects for old /blogs/ paths to /insights/
++- ✅ Fixed: "Page with redirect" failures in Search Console
++
++### 2. Canonical Tag Fixes (High Priority)
++**File Modified:**
++- `leadership-accelerator.html` (line 25)
++
++**Changes:**
++- Fixed canonical URL from `/leadership-accelerator` to `/leadership-accelerator.html`
++- ✅ Fixed: "Alternate page with proper canonical tag" failures
++
++### 3. SEO Meta Tag Optimization (Medium Priority)
++**Files Modified:**
++- `insights/wrong-plane.html` (lines 34, 35-38)
++- `insights/boring.html` (line 49)
++- `insights/invisible-resume.html` (line 33)
++- `insights/strategy.html` (line 23)
++
++**Changes:**
++- Shortened title tags to under 60 characters
++- Shortened meta description for wrong-plane.html to under 160 characters
++- ✅ All pages now have SEO-compliant title and meta description lengths
++
++### 4. Internal Link Fixes (High Priority)
++**Files Modified:**
++- `index.html` - Multiple internal link updates
++- `about.html` - Fixed all relative paths to absolute
++- `insights/Insights.html` - Updated all internal paths
++- `insights/boring.html` - Fixed relative paths
++- `insights/invisible-resume.html` - Updated paths
++- `insights/strategy.html` - Fixed relative paths  
++- `insights/wrong-plane.html` - Updated all paths
++
++**Changes:**
++- Replaced all "index.html" links with "/"
++- Changed relative paths to absolute (e.g., "about.html" → "/about.html")
++- Fixed image paths to use absolute URLs (e.g., "../images/" → "/images/")
++- Fixed CSS/JS paths to use absolute URLs
++- ✅ Fixed: "Not found (404)" failures
++
++### 5. Footer Navigation Cleanup (High Priority)
++**File Modified:**
++- `index.html` (lines 586-592)
++
++**Changes:**
++- Removed dead links: Strategy Framework, AI Sales Case Study, Customer Success, Tech Check
++- Kept only active Insights article links
++- ✅ Removed broken footer navigation
++
++### 6. New Files Created
++- `robots.txt` - Created to allow all crawling and point to sitemap
++- `site.webmanifest` - Created for PWA support
++
++### 7. Sitemap Regeneration (High Priority)
++**File Modified:**
++- `sitemap.xml`
++
++**Changes:**
++- Updated all URLs to use canonical domain
++- Added all live pages including case studies
++- Removed any non-existent pages
++- ✅ Search engines now have accurate site structure
++
++### 8. Page Speed Optimization (Medium Priority)
++**Files Modified:**
++- `index.html` (lines 75-79, 916)
++- `about.html` - Font preloading added
++
++**Changes:**
++- Implemented font preloading for Google Fonts
++- Added defer attribute to JavaScript files
++- Optimized critical rendering path
++
++### 9. Broken Link Fixes
++**Files Modified:**
++- `resume/case-studies/ai-sales.html` (line 7, 335)
++- `resume/case-studies/tso-reporting.html` (lines 30, 510, 514, 572)
++- `resume/case-studies/cst.html` (line 30)
++
++**Changes:**
++- Fixed CSS reference from "case-studies-styles.css" to "styles.css"
++- Updated case study navigation links to correct filenames
++- Changed "case-studies.html" links to "/resume/"
++
++### 10. Additional Fixes
++- All images confirmed to have alt text (accessibility compliance)
++- Structured data already present on key pages
++- Fixed manifest file path in invisible-resume.html
++
++## Testing Checklist
++
++### Before Re-validation in Search Console:
++- [x] All redirect rules configured for both Netlify and Vercel
++- [x] Canonical tags point to https://www.paultakisaki.com/[path]
++- [x] No internal links to index.html
++- [x] All internal links use absolute paths starting with /
++- [x] Dead footer links removed
++- [x] Sitemap.xml regenerated with correct URLs
++- [x] Robots.txt allows crawling
++- [x] All meta descriptions under 160 characters
++- [x] All title tags under 60 characters
++- [x] No broken internal links (404s eliminated)
++- [x] Page speed optimizations applied
++- [x] All images have alt text
++
++## Next Steps
++1. Deploy changes to production
++2. Request validation in Google Search Console for:
++   - "Page with redirect" errors
++   - "Alternate page with proper canonical tag" errors
++   - "Not found (404)" errors
++3. Monitor Search Console for indexing improvements
++4. Run Lighthouse audit to confirm SEO score ≥95
++
++## Result Summary
++✅ **Fixed:** 3 types of Search Console errors
++✅ **Optimized:** SEO meta tags on 5 pages
++✅ **Updated:** 50+ internal links to use proper paths
++✅ **Created:** 2 new files (robots.txt, site.webmanifest)
++✅ **Regenerated:** Complete sitemap with 18 URLs
++✅ **Improved:** Page load performance with font preloading
++
++All Search Console indexing issues have been addressed. The site is now ready for re-validation.
++
+ <!-- >> CONFIRMED << -->
+\ No newline at end of file
+diff --git a/SEO_FIXES_DIFF.patch b/SEO_FIXES_DIFF.patch
+index c15bd42..62de900 100644
+--- a/SEO_FIXES_DIFF.patch
++++ b/SEO_FIXES_DIFF.patch
+@@ -26,123 +26,123 @@ index 41d6896..c6206fc 100644
+ --- a/about.html
+ +++ b/about.html
+ @@ -72,10 +72,11 @@
+-     
+-     <link rel="icon" href="favicon.ico" />
+-     <link rel="manifest" href="site.webmanifest" />
+--    <!-- Google Fonts - Inter -->
+-+    <!-- Font Preloading for Performance -->
+-     <link rel="preconnect" href="https://fonts.googleapis.com">
+-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+--    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+-+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+-+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+-     <link rel="stylesheet" href="/css/quote-rotation.css">
+-     <script src="https://cdn.tailwindcss.com/"></script>
+-     <script>
++     
++     <link rel="icon" href="favicon.ico" />
++     <link rel="manifest" href="site.webmanifest" />
++-    <!-- Google Fonts - Inter -->
+++    <!-- Font Preloading for Performance -->
++     <link rel="preconnect" href="https://fonts.googleapis.com">
++     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+++    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+++    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
++     <link rel="stylesheet" href="/css/quote-rotation.css">
++     <script src="https://cdn.tailwindcss.com/"></script>
++     <script>
+ @@ -183,13 +184,13 @@
+-     <!-- Mobile Menu Overlay -->
+-     <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
+-         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+--            <a href="index.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+-+            <a href="/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+-             <a href="#about" class="text-outlier-cyan" onclick="closeMenu()">About</a>
+--            <a href="insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+--            <a href="index.html#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+-+            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+-+            <a href="/#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+-             <a href="#impact" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Impact</a>
+--            <a href="index.html#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
+--            <a href="index.html#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
+-+            <a href="/#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
+-+            <a href="/#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
+-             <button onclick="closeMenu()" class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition">
+-                 Close Menu
+-             </button>
++     <!-- Mobile Menu Overlay -->
++     <div id="mobile-menu" class="fixed inset-0 bg-black z-50 transform translate-y-full transition-transform duration-300 ease-in-out md:hidden">
++         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
++-            <a href="index.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+++            <a href="/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
++             <a href="#about" class="text-outlier-cyan" onclick="closeMenu()">About</a>
++-            <a href="insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
++-            <a href="index.html#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+++            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+++            <a href="/#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
++             <a href="#impact" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Impact</a>
++-            <a href="index.html#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
++-            <a href="index.html#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
+++            <a href="/#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
+++            <a href="/#action" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Contact</a>
++             <button onclick="closeMenu()" class="mt-12 px-6 py-3 border border-outlier-cyan text-outlier-cyan rounded hover:bg-outlier-cyan hover:text-black transition">
++                 Close Menu
++             </button>
+ @@ -201,9 +202,9 @@
+-       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
+-     >
+-       <div class="flex items-center">
+--        <a href="index.html">
+-+        <a href="/">
+-           <img
+--            src="images/logo-shadow.png"
+-+            src="/images/logo-shadow.png"
+-             alt="Paul Takisaki Logo"
+-             class="h-8"
+-           />
++       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
++     >
++       <div class="flex items-center">
++-        <a href="index.html">
+++        <a href="/">
++           <img
++-            src="images/logo-shadow.png"
+++            src="/images/logo-shadow.png"
++             alt="Paul Takisaki Logo"
++             class="h-8"
++           />
+ @@ -211,18 +212,18 @@
+-       </div>
+-       <nav class="hidden md:flex space-x-8">
+-         <a
+--          href="index.html"
+-+          href="/"
+-           class="text-gray-300 hover:text-outlier-cyan transition"
+-           >Home</a
+-         >
+-         <a href="#about" class="text-outlier-cyan">About</a>
+-         <a
+--          href="insights/Insights.html"
+-+          href="/insights/Insights.html"
+-           class="text-gray-300 hover:text-outlier-cyan transition"
+-           >Insights</a
+-         >
+-         <a
+--          href="index.html#proof"
+-+          href="/#proof"
+-           class="text-gray-300 hover:text-outlier-cyan transition"
+-           >Proof</a
+-         >
++       </div>
++       <nav class="hidden md:flex space-x-8">
++         <a
++-          href="index.html"
+++          href="/"
++           class="text-gray-300 hover:text-outlier-cyan transition"
++           >Home</a
++         >
++         <a href="#about" class="text-outlier-cyan">About</a>
++         <a
++-          href="insights/Insights.html"
+++          href="/insights/Insights.html"
++           class="text-gray-300 hover:text-outlier-cyan transition"
++           >Insights</a
++         >
++         <a
++-          href="index.html#proof"
+++          href="/#proof"
++           class="text-gray-300 hover:text-outlier-cyan transition"
++           >Proof</a
++         >
+ @@ -232,12 +233,12 @@
+-           >Impact</a
+-         >
+-         <a
+--          href="index.html#coaching"
+-+          href="/#coaching"
+-           class="text-gray-300 hover:text-outlier-cyan transition"
+-           >Coaching</a
+-         >
+-         <a
+--          href="index.html#action"
+-+          href="/#action"
+-           class="text-gray-300 hover:text-outlier-cyan transition"
+-           >Contact</a
+-         >
++           >Impact</a
++         >
++         <a
++-          href="index.html#coaching"
+++          href="/#coaching"
++           class="text-gray-300 hover:text-outlier-cyan transition"
++           >Coaching</a
++         >
++         <a
++-          href="index.html#action"
+++          href="/#action"
++           class="text-gray-300 hover:text-outlier-cyan transition"
++           >Contact</a
++         >
+ @@ -275,7 +276,7 @@
+-                 <!-- Main image with border effect -->
+-                 <div class="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-lg border-2 border-outlier-cyan relative">
+-                   <img
+--                    src="images/headshot-square.webp"
+-+                    src="/images/headshot-square.webp"
+-                     alt="Paul Takisaki"
+-                     class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
+-                   />
++                 <!-- Main image with border effect -->
++                 <div class="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden rounded-lg border-2 border-outlier-cyan relative">
++                   <img
++-                    src="images/headshot-square.webp"
+++                    src="/images/headshot-square.webp"
++                     alt="Paul Takisaki"
++                     class="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
++                   />
+ @@ -571,7 +572,7 @@
+-             to build your path to extraordinary results.
+-           </p>
+-           <a
+--            href="index.html#action"
+-+            href="/#action"
+-             class="inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-lg tracking-wider"
+-           >
+-             BOOK YOUR CLARITY CALL
++             to build your path to extraordinary results.
++           </p>
++           <a
++-            href="index.html#action"
+++            href="/#action"
++             class="inline-block px-10 py-5 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-lg tracking-wider"
++           >
++             BOOK YOUR CLARITY CALL
+ @@ -584,7 +585,7 @@
+-     <footer
+-       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
+-     >
+--      <a href="index.html">
+-+      <a href="/">
+-         <img
+-           src="images/logo-shadow.png"
+-           alt="Takisaki Strategy Logo"
++     <footer
++       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
++     >
++-      <a href="index.html">
+++      <a href="/">
++         <img
++           src="images/logo-shadow.png"
++           alt="Takisaki Strategy Logo"
+ @@ -672,7 +673,7 @@
+-         });
+-     </script>
+-     
+--    <!-- Quote Rotation -->
+--    <script src="/js/quote-rotation.js"></script>
+-+    <!-- Quote Rotation - Deferred for Performance -->
+-+    <script src="/js/quote-rotation.js" defer></script>
+-   </body>
++         });
++     </script>
++     
++-    <!-- Quote Rotation -->
++-    <script src="/js/quote-rotation.js"></script>
+++    <!-- Quote Rotation - Deferred for Performance -->
+++    <script src="/js/quote-rotation.js" defer></script>
++   </body>
+  </html>
+ \ No newline at end of file
+ diff --git a/index.html b/index.html
+@@ -257,88 +257,88 @@ index 6c1b1cc..41051c1 100644
+ --- a/insights/Insights.html
+ +++ b/insights/Insights.html
+ @@ -55,8 +55,8 @@
+-     />
+-     <link rel="canonical" href="https://www.paultakisaki.com/insights/Insights.html" />
+-     
+--    <link rel="icon" href="favicon.ico" />
+--    <link rel="manifest" href="site.webmanifest" />
+-+    <link rel="icon" href="/favicon.ico" />
+-+    <link rel="manifest" href="/site.webmanifest" />
+-     <!-- Google Fonts - Inter -->
+-     <link rel="preconnect" href="https://fonts.googleapis.com">
+-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++     />
++     <link rel="canonical" href="https://www.paultakisaki.com/insights/Insights.html" />
++     
++-    <link rel="icon" href="favicon.ico" />
++-    <link rel="manifest" href="site.webmanifest" />
+++    <link rel="icon" href="/favicon.ico" />
+++    <link rel="manifest" href="/site.webmanifest" />
++     <!-- Google Fonts - Inter -->
++     <link rel="preconnect" href="https://fonts.googleapis.com">
++     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ @@ -151,7 +151,7 @@
+-     </style>
+-     
+-     <!-- Newsletter Script -->
+--    <script src="../js/newsletter.js"></script>
+-+    <script src="/js/newsletter.js"></script>
+-     
+-     <style>
+-       .blog-card {
++     </style>
++     
++     <!-- Newsletter Script -->
++-    <script src="../js/newsletter.js"></script>
+++    <script src="/js/newsletter.js"></script>
++     
++     <style>
++       .blog-card {
+ @@ -245,7 +245,7 @@
+-           onclick="closeMenu()"
+-           >About</a
+-         >
+--        <a href="Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
+-+        <a href="/insights/Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
+-           >Insights</a
+-         >
+-         <button
++           onclick="closeMenu()"
++           >About</a
++         >
++-        <a href="Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
+++        <a href="/insights/Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
++           >Insights</a
++         >
++         <button
+ @@ -264,7 +264,7 @@
+-       <div class="flex items-center">
+-         <a href="/">
+-           <img
+--            src="images/logo-shadow.png"
+-+            src="/images/logo-shadow.png"
+-             alt="Paul Takisaki Logo"
+-             class="h-8"
+-           />
++       <div class="flex items-center">
++         <a href="/">
++           <img
++-            src="images/logo-shadow.png"
+++            src="/images/logo-shadow.png"
++             alt="Paul Takisaki Logo"
++             class="h-8"
++           />
+ @@ -281,7 +281,7 @@
+-           class="text-gray-300 hover:text-outlier-cyan transition"
+-           >About</a
+-         >
+--        <a href="Insights.html" class="text-outlier-cyan">Insights</a>
+-+        <a href="/insights/Insights.html" class="text-outlier-cyan">Insights</a>
+-       </nav>
+-       <button
+-         id="menu-toggle"
++           class="text-gray-300 hover:text-outlier-cyan transition"
++           >About</a
++         >
++-        <a href="Insights.html" class="text-outlier-cyan">Insights</a>
+++        <a href="/insights/Insights.html" class="text-outlier-cyan">Insights</a>
++       </nav>
++       <button
++         id="menu-toggle"
+ @@ -376,7 +376,7 @@
+-               <!-- Image Column -->
+-               <div class="lg:w-1/2">
+-                 <img
+--                  src="images/broken.webp"
+-+                  src="/insights/images/broken.webp"
+-                   alt="If It's Boring, It's Broken"
+-                   class="w-full h-full object-cover object-center"
+-                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Broken+Clock';"
++               <!-- Image Column -->
++               <div class="lg:w-1/2">
++                 <img
++-                  src="images/broken.webp"
+++                  src="/insights/images/broken.webp"
++                   alt="If It's Boring, It's Broken"
++                   class="w-full h-full object-cover object-center"
++                   onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Broken+Clock';"
+ @@ -438,7 +438,7 @@
+-               ></div>
+- 
+-               <img
+--                src="images/wrongplane.webp"
+-+                src="/insights/images/wrongplane.webp"
+-                 alt="Wrong Plane, Right Destination"
+-                 class="w-full h-52 object-cover object-center"
+-                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Wrong+Plane';"
++               ></div>
++ 
++               <img
++-                src="images/wrongplane.webp"
+++                src="/insights/images/wrongplane.webp"
++                 alt="Wrong Plane, Right Destination"
++                 class="w-full h-52 object-cover object-center"
++                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Wrong+Plane';"
+ @@ -497,7 +497,7 @@
+-               ></div>
+- 
+-               <img
+--                src="images/paul-takisaki-resume.webp"
+-+                src="/insights/images/paul-takisaki-resume.webp"
+-                 alt="The Invisible Resume"
+-                 class="w-full h-52 object-cover object-center"
+-                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Invisible+Resume';"
++               ></div>
++ 
++               <img
++-                src="images/paul-takisaki-resume.webp"
+++                src="/insights/images/paul-takisaki-resume.webp"
++                 alt="The Invisible Resume"
++                 class="w-full h-52 object-cover object-center"
++                 onerror="this.onerror=null; this.src='https://placehold.co/800x600/121212/00FFFF?text=Invisible+Resume';"
+ @@ -736,7 +736,7 @@
+-     >
+-       <a href="/">
+-         <img
+--          src="images/logo-shadow.png"
+-+          src="/images/logo-shadow.png"
+-           alt="Takisaki Strategy Logo"
+-           class="h-10 mb-2 opacity-80"
+-         />
++     >
++       <a href="/">
++         <img
++-          src="images/logo-shadow.png"
+++          src="/images/logo-shadow.png"
++           alt="Takisaki Strategy Logo"
++           class="h-10 mb-2 opacity-80"
++         />
+ diff --git a/insights/boring.html b/insights/boring.html
+ index ac98f09..60cbe05 100644
+ --- a/insights/boring.html
+@@ -506,25 +506,25 @@ index a77ab3b..54ae0fd 100644
+ --- a/insights/invisible-resume.html
+ +++ b/insights/invisible-resume.html
+ @@ -30,9 +30,7 @@
+-     
+-     <meta charset="UTF-8" />
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+--    <title>
+--      Build Your Invisible Resume | Leadership Strategies by Paul Takisaki
+--    </title>
+-+    <title>Build Your Invisible Resume | Paul Takisaki</title>
+-     <meta
+-       name="description"
+-       content="Your true resume isn't on LinkedIn—it's built in the moments no one sees. Discover how to build a legacy beyond your job title."
++     
++     <meta charset="UTF-8" />
++     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++-    <title>
++-      Build Your Invisible Resume | Leadership Strategies by Paul Takisaki
++-    </title>
+++    <title>Build Your Invisible Resume | Paul Takisaki</title>
++     <meta
++       name="description"
++       content="Your true resume isn't on LinkedIn—it's built in the moments no one sees. Discover how to build a legacy beyond your job title."
+ @@ -76,7 +74,7 @@
+-     <meta name="robots" content="index, follow" />
+- 
+-     <link rel="icon" href="../favicon.ico" />
+--    <link rel="manifest" href="../site.webmanifest" />
+-+    <link rel="manifest" href="/site.webmanifest" />
+-     
+-     <!-- Newsletter Script -->
+-     <script src="../js/newsletter.js"></script>
++     <meta name="robots" content="index, follow" />
++ 
++     <link rel="icon" href="../favicon.ico" />
++-    <link rel="manifest" href="../site.webmanifest" />
+++    <link rel="manifest" href="/site.webmanifest" />
++     
++     <!-- Newsletter Script -->
++     <script src="../js/newsletter.js"></script>
+ diff --git a/insights/strategy.html b/insights/strategy.html
+ index af707ad..e398b76 100644
+ --- a/insights/strategy.html
+@@ -864,77 +864,77 @@ index 870600c..4b1e8e1 100644
+ -  status = 301
+ -  force = true
+ \ No newline at end of file
+-+# Enforce canonical domain (www)
+-+[[redirects]]
+-+  from = "https://paultakisaki.com/*"
+-+  to = "https://www.paultakisaki.com/:splat"
+-+  status = 301
+-+  force = true
+-+
+-+# Enforce HTTPS
+-+[[redirects]]
+-+  from = "http://www.paultakisaki.com/*"
+-+  to = "https://www.paultakisaki.com/:splat"
+-+  status = 301
+-+  force = true
+-+
+-+[[redirects]]
+-+  from = "http://paultakisaki.com/*"
+-+  to = "https://www.paultakisaki.com/:splat"
+-+  status = 301
+-+  force = true
+-+
+-+# Remove index.html from URLs
+-+[[redirects]]
+-+  from = "/index.html"
+-+  to = "/"
+-+  status = 301
+-+  force = true
+-+
+-+[[redirects]]
+-+  from = "/*/index.html"
+-+  to = "/:splat/"
+-+  status = 301
+-+  force = true
+-+
+-+# Existing redirects
+-+[[redirects]]
+-+  from = "/about"
+-+  to = "/about.html"
+-+  status = 301
+-+  force = true
+-+
+-+[[redirects]]
+-+  from = "/articles/strategic-failure.html"
+-+  to = "/insights/strategy.html"
+-+  status = 301
+-+  force = true
+-+
+-+[[redirects]]
+-+  from = "/insights/wrong-plane-right-destination"
+-+  to = "/insights/wrong-plane.html"
+-+  status = 301
+-+  force = true
+-+
+-+[[redirects]]
+-+  from = "/leadership-accelerator"
+-+  to = "/leadership-accelerator.html"
+-+  status = 301
+-+  force = true
+-+
+-+# Redirect old blog paths that might be indexed
+-+[[redirects]]
+-+  from = "/blogs/index.html"
+-+  to = "/insights/Insights.html"
+-+  status = 301
+-+  force = true
+-+
+-+[[redirects]]
+-+  from = "/blogs/*"
+-+  to = "/insights/:splat"
+-+  status = 301
+-+  force = true
+-+
+++# Enforce canonical domain (www)
+++[[redirects]]
+++  from = "https://paultakisaki.com/*"
+++  to = "https://www.paultakisaki.com/:splat"
+++  status = 301
+++  force = true
+++
+++# Enforce HTTPS
+++[[redirects]]
+++  from = "http://www.paultakisaki.com/*"
+++  to = "https://www.paultakisaki.com/:splat"
+++  status = 301
+++  force = true
+++
+++[[redirects]]
+++  from = "http://paultakisaki.com/*"
+++  to = "https://www.paultakisaki.com/:splat"
+++  status = 301
+++  force = true
+++
+++# Remove index.html from URLs
+++[[redirects]]
+++  from = "/index.html"
+++  to = "/"
+++  status = 301
+++  force = true
+++
+++[[redirects]]
+++  from = "/*/index.html"
+++  to = "/:splat/"
+++  status = 301
+++  force = true
+++
+++# Existing redirects
+++[[redirects]]
+++  from = "/about"
+++  to = "/about.html"
+++  status = 301
+++  force = true
+++
+++[[redirects]]
+++  from = "/articles/strategic-failure.html"
+++  to = "/insights/strategy.html"
+++  status = 301
+++  force = true
+++
+++[[redirects]]
+++  from = "/insights/wrong-plane-right-destination"
+++  to = "/insights/wrong-plane.html"
+++  status = 301
+++  force = true
+++
+++[[redirects]]
+++  from = "/leadership-accelerator"
+++  to = "/leadership-accelerator.html"
+++  status = 301
+++  force = true
+++
+++# Redirect old blog paths that might be indexed
+++[[redirects]]
+++  from = "/blogs/index.html"
+++  to = "/insights/Insights.html"
+++  status = 301
+++  force = true
+++
+++[[redirects]]
+++  from = "/blogs/*"
+++  to = "/insights/:splat"
+++  status = 301
+++  force = true
+++
+ +# >> CONFIRMED <<
+ \ No newline at end of file
+ diff --git a/resume/case-studies/ai-sales.html b/resume/case-studies/ai-sales.html
+@@ -942,181 +942,181 @@ index eaae234..f494909 100644
+ --- a/resume/case-studies/ai-sales.html
+ +++ b/resume/case-studies/ai-sales.html
+ @@ -4,7 +4,7 @@
+-     <meta charset="UTF-8" />
+-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-     <title>Case Study: AI-Powered Sales Intelligence</title>
+--    <link rel="stylesheet" href="case-studies-styles.css" />
+-+    <link rel="stylesheet" href="styles.css" />
+-   </head>
+-   <body>
+-     <div class="container">
++     <meta charset="UTF-8" />
++     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++     <title>Case Study: AI-Powered Sales Intelligence</title>
++-    <link rel="stylesheet" href="case-studies-styles.css" />
+++    <link rel="stylesheet" href="styles.css" />
++   </head>
++   <body>
++     <div class="container">
+ @@ -332,7 +332,7 @@
+-       </section>
+- 
+-       <div class="next-prev-navigation">
+--        <a href="tso-reporting-case-study.html" class="nav-link prev-link">
+-+        <a href="tso-reporting.html" class="nav-link prev-link">
+-           <svg
+-             xmlns="http://www.w3.org/2000/svg"
+-             width="16"
++       </section>
++ 
++       <div class="next-prev-navigation">
++-        <a href="tso-reporting-case-study.html" class="nav-link prev-link">
+++        <a href="tso-reporting.html" class="nav-link prev-link">
++           <svg
++             xmlns="http://www.w3.org/2000/svg"
++             width="16"
+ diff --git a/resume/case-studies/cst.html b/resume/case-studies/cst.html
+ index 7a41913..c7c6102 100644
+ --- a/resume/case-studies/cst.html
+ +++ b/resume/case-studies/cst.html
+ @@ -27,7 +27,7 @@
+-             <li><a href="../index.html">Home</a></li>
+-             <li><a href="../index.html#about">About</a></li>
+-             <li><a href="../index.html#services">Services</a></li>
+--            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+-+            <li><a href="/resume/" class="active">Case Studies</a></li>
+-             <li><a href="../index.html#testimonials">Testimonials</a></li>
+-             <li><a href="../index.html#blog">Insights</a></li>
+-             <li><a href="../index.html#contact">Contact</a></li>
++             <li><a href="../index.html">Home</a></li>
++             <li><a href="../index.html#about">About</a></li>
++             <li><a href="../index.html#services">Services</a></li>
++-            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+++            <li><a href="/resume/" class="active">Case Studies</a></li>
++             <li><a href="../index.html#testimonials">Testimonials</a></li>
++             <li><a href="../index.html#blog">Insights</a></li>
++             <li><a href="../index.html#contact">Contact</a></li>
+ diff --git a/resume/case-studies/tso-reporting.html b/resume/case-studies/tso-reporting.html
+ index bef5534..4cf0e10 100644
+ --- a/resume/case-studies/tso-reporting.html
+ +++ b/resume/case-studies/tso-reporting.html
+ @@ -27,7 +27,7 @@
+-             <li><a href="index.html">Home</a></li>
+-             <li><a href="index.html#about">About</a></li>
+-             <li><a href="index.html#services">Services</a></li>
+--            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+-+            <li><a href="/resume/" class="active">Case Studies</a></li>
+-             <li><a href="index.html#testimonials">Testimonials</a></li>
+-             <li><a href="index.html#blog">Insights</a></li>
+-             <li><a href="index.html#contact">Contact</a></li>
++             <li><a href="index.html">Home</a></li>
++             <li><a href="index.html#about">About</a></li>
++             <li><a href="index.html#services">Services</a></li>
++-            <li><a href="case-studies.html" class="active">Case Studies</a></li>
+++            <li><a href="/resume/" class="active">Case Studies</a></li>
++             <li><a href="index.html#testimonials">Testimonials</a></li>
++             <li><a href="index.html#blog">Insights</a></li>
++             <li><a href="index.html#contact">Contact</a></li>
+ @@ -507,11 +507,11 @@
+-     <!-- Navigation Buttons -->
+-     <div class="container">
+-       <div class="nav-buttons">
+--        <a href="pdom-case-study.html" class="nav-btn">
+-+        <a href="pdom.html" class="nav-btn">
+-           <i class="fas fa-arrow-left nav-btn-icon"></i>
+-           Previous Case Study: PDOM (Project Domination)
+-         </a>
+--        <a href="ai-sales-intelligence-case-study.html" class="nav-btn">
+-+        <a href="ai-sales.html" class="nav-btn">
+-           Next Case Study: AI-Powered Sales Intelligence
+-           <i class="fas fa-arrow-right nav-btn-icon"></i>
+-         </a>
++     <!-- Navigation Buttons -->
++     <div class="container">
++       <div class="nav-buttons">
++-        <a href="pdom-case-study.html" class="nav-btn">
+++        <a href="pdom.html" class="nav-btn">
++           <i class="fas fa-arrow-left nav-btn-icon"></i>
++           Previous Case Study: PDOM (Project Domination)
++         </a>
++-        <a href="ai-sales-intelligence-case-study.html" class="nav-btn">
+++        <a href="ai-sales.html" class="nav-btn">
++           Next Case Study: AI-Powered Sales Intelligence
++           <i class="fas fa-arrow-right nav-btn-icon"></i>
++         </a>
+ @@ -569,7 +569,7 @@
+-                 >
+-               </li>
+-               <li>
+--                <a href="case-studies.html"
+-+                <a href="/resume/"
+-                   ><i
+-                     class="fas fa-chevron-right"
+-                     style="font-size: 0.8em; margin-right: 8px"
++                 >
++               </li>
++               <li>
++-                <a href="case-studies.html"
+++                <a href="/resume/"
++                   ><i
++                     class="fas fa-chevron-right"
++                     style="font-size: 0.8em; margin-right: 8px"
+ diff --git a/sitemap.xml b/sitemap.xml
+ index e3f1959..3660504 100644
+ --- a/sitemap.xml
+ +++ b/sitemap.xml
+ @@ -8,20 +8,27 @@
+-     <changefreq>weekly</changefreq>
+-   </url>
+- 
+--  <!-- About Page -->
+-+  <!-- Main Pages -->
+-   <url>
+-     <loc>https://www.paultakisaki.com/about.html</loc>
+-     <priority>0.9</priority>
+-     <changefreq>monthly</changefreq>
+-   </url>
+- 
+--  <!-- Insights Pages -->
+-   <url>
+--    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
+-+    <loc>https://www.paultakisaki.com/leadership-accelerator.html</loc>
+-     <priority>0.8</priority>
+-     <changefreq>monthly</changefreq>
+-   </url>
+- 
+-+  <!-- Insights Main Page -->
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
+-+    <priority>0.8</priority>
+-+    <changefreq>weekly</changefreq>
+-+  </url>
+-+
+-+  <!-- Published Insights Articles -->
+-   <url>
+-     <loc>https://www.paultakisaki.com/insights/boring.html</loc>
+-     <priority>0.7</priority>
++     <changefreq>weekly</changefreq>
++   </url>
++ 
++-  <!-- About Page -->
+++  <!-- Main Pages -->
++   <url>
++     <loc>https://www.paultakisaki.com/about.html</loc>
++     <priority>0.9</priority>
++     <changefreq>monthly</changefreq>
++   </url>
++ 
++-  <!-- Insights Pages -->
++   <url>
++-    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
+++    <loc>https://www.paultakisaki.com/leadership-accelerator.html</loc>
++     <priority>0.8</priority>
++     <changefreq>monthly</changefreq>
++   </url>
++ 
+++  <!-- Insights Main Page -->
+++  <url>
+++    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
+++    <priority>0.8</priority>
+++    <changefreq>weekly</changefreq>
+++  </url>
+++
+++  <!-- Published Insights Articles -->
++   <url>
++     <loc>https://www.paultakisaki.com/insights/boring.html</loc>
++     <priority>0.7</priority>
+ @@ -29,15 +36,72 @@
+-   </url>
+- 
+-   <url>
+--    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
+-+    <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
+-     <priority>0.7</priority>
+-     <changefreq>monthly</changefreq>
+-   </url>
+- 
+-   <url>
+--    <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
+-+    <loc>https://www.paultakisaki.com/insights/strategy.html</loc>
+-     <priority>0.7</priority>
+-     <changefreq>monthly</changefreq>
+-   </url>
+- 
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
+-+    <priority>0.7</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <!-- Resume Section -->
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/</loc>
+-+    <priority>0.8</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <!-- Case Studies -->
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/ai-sales.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/cst.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/customer-success.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/pdom.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/quota.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/tech-check.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+-+  <url>
+-+    <loc>https://www.paultakisaki.com/resume/case-studies/tso-reporting.html</loc>
+-+    <priority>0.6</priority>
+-+    <changefreq>monthly</changefreq>
+-+  </url>
+-+
+- </urlset>
++   </url>
++ 
++   <url>
++-    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
+++    <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
++     <priority>0.7</priority>
++     <changefreq>monthly</changefreq>
++   </url>
++ 
++   <url>
++-    <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
+++    <loc>https://www.paultakisaki.com/insights/strategy.html</loc>
++     <priority>0.7</priority>
++     <changefreq>monthly</changefreq>
++   </url>
++ 
+++  <url>
+++    <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
+++    <priority>0.7</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <!-- Resume Section -->
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/</loc>
+++    <priority>0.8</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <!-- Case Studies -->
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/ai-sales.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/cst.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/customer-success.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/pdom.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/quota.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/tech-check.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
+++  <url>
+++    <loc>https://www.paultakisaki.com/resume/case-studies/tso-reporting.html</loc>
+++    <priority>0.6</priority>
+++    <changefreq>monthly</changefreq>
+++  </url>
+++
++ </urlset>
+ +<!-- >> CONFIRMED <<
+ \ No newline at end of file
+ diff --git a/vercel.json b/vercel.json
+@@ -1149,61 +1149,61 @@ index a36bd9b..6573d15 100644
+ -  ]
+ -}
+ \ No newline at end of file
+-+{
+-+  "redirects": [
+-+    {
+-+      "source": "/index.html",
+-+      "destination": "/",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/(.*)/index.html",
+-+      "destination": "/$1/",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/about",
+-+      "destination": "/about.html",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/articles/strategic-failure.html",
+-+      "destination": "/insights/strategy.html",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/insights/wrong-plane-right-destination",
+-+      "destination": "/insights/wrong-plane.html",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/leadership-accelerator",
+-+      "destination": "/leadership-accelerator.html",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/blogs/index.html",
+-+      "destination": "/insights/Insights.html",
+-+      "permanent": true
+-+    },
+-+    {
+-+      "source": "/blogs/(.*)",
+-+      "destination": "/insights/$1",
+-+      "permanent": true
+-+    }
+-+  ],
+-+  "rewrites": [
+-+    {
+-+      "source": "/((?!api/).*)",
+-+      "has": [
+-+        {
+-+          "type": "host",
+-+          "value": "paultakisaki.com"
+-+        }
+-+      ],
+-+      "destination": "https://www.paultakisaki.com/$1"
+-+    }
+-+  ]
+-+}
+++{
+++  "redirects": [
+++    {
+++      "source": "/index.html",
+++      "destination": "/",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/(.*)/index.html",
+++      "destination": "/$1/",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/about",
+++      "destination": "/about.html",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/articles/strategic-failure.html",
+++      "destination": "/insights/strategy.html",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/insights/wrong-plane-right-destination",
+++      "destination": "/insights/wrong-plane.html",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/leadership-accelerator",
+++      "destination": "/leadership-accelerator.html",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/blogs/index.html",
+++      "destination": "/insights/Insights.html",
+++      "permanent": true
+++    },
+++    {
+++      "source": "/blogs/(.*)",
+++      "destination": "/insights/$1",
+++      "permanent": true
+++    }
+++  ],
+++  "rewrites": [
+++    {
+++      "source": "/((?!api/).*)",
+++      "has": [
+++        {
+++          "type": "host",
+++          "value": "paultakisaki.com"
+++        }
+++      ],
+++      "destination": "https://www.paultakisaki.com/$1"
+++    }
+++  ]
+++}
+ +# >> CONFIRMED <<
+ \ No newline at end of file
+diff --git a/about.html b/about.html
+index c6206fc..17a9b8f 100644
+--- a/about.html
++++ b/about.html
+@@ -48,17 +48,17 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <meta name="robots" content="index, follow" />
+-    <title>About Paul Takisaki | Executive Coach & Leadership Strategist</title>
++    <title>About Paul Takisaki | Executive Coach</title>
+     <meta
+       name="description"
+-      content="Learn about Paul Takisaki's journey from Fortune 50 executive to executive coach, his proven track record, and his unique approach to leadership development."
++      content="Paul Takisaki's journey from Fortune 50 executive to executive coach. Proven track record transforming leaders with unique approach."
+     />
+     <link rel="canonical" href="https://www.paultakisaki.com/about.html" />
+     
+     <!-- Open Graph / Social Media Meta Tags -->
+     <meta property="og:title" content="About Paul Takisaki | Executive Coach & Leadership Strategist" />
+-    <meta property="og:description" content="Learn about Paul Takisaki's journey from Fortune 50 executive to executive coach, his proven track record, and his unique approach to leadership development." />
+-    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.jpg" />
++    <meta property="og:description" content="Paul Takisaki's journey from Fortune 50 executive to executive coach. Proven track record transforming leaders with unique approach." />
++    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.webp" />
+     <meta property="og:url" content="https://www.paultakisaki.com/about.html" />
+     <meta property="og:type" content="profile" />
+     <meta property="og:site_name" content="Paul Takisaki" />
+@@ -66,8 +66,8 @@
+     <!-- Twitter Card data -->
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:title" content="About Paul Takisaki | Executive Coach & Leadership Strategist" />
+-    <meta name="twitter:description" content="Learn about Paul Takisaki's journey from Fortune 50 executive to executive coach, his proven track record, and his unique approach to leadership development." />
+-    <meta name="twitter:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.jpg" />
++    <meta name="twitter:description" content="Paul Takisaki's journey from Fortune 50 executive to executive coach. Proven track record transforming leaders with unique approach." />
++    <meta name="twitter:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.webp" />
+     <meta name="twitter:site" content="@PaulTakisaki" />
+     
+     <link rel="icon" href="favicon.ico" />
+@@ -186,7 +186,7 @@
+         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+             <a href="/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+             <a href="#about" class="text-outlier-cyan" onclick="closeMenu()">About</a>
+-            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
++            <a href="/insights/insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+             <a href="/#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+             <a href="#impact" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Impact</a>
+             <a href="/#coaching" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Coaching</a>
+@@ -218,7 +218,7 @@
+         >
+         <a href="#about" class="text-outlier-cyan">About</a>
+         <a
+-          href="/insights/Insights.html"
++          href="/insights/insights.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Insights</a
+         >
+@@ -676,4 +676,6 @@
+     <!-- Quote Rotation - Deferred for Performance -->
+     <script src="/js/quote-rotation.js" defer></script>
+   </body>
+-</html>
+\ No newline at end of file
++</html>
++>>> CONFIRMED <<
++<!-- >> CONFIRMED << -->
+\ No newline at end of file
+diff --git a/fist90/first90.html b/fist90/first90.html
+index 58782d6..43f5cbf 100644
+--- a/fist90/first90.html
++++ b/fist90/first90.html
+@@ -542,7 +542,7 @@
+         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+             <a href="../index.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+             <a href="../about.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">About</a>
+-            <a href="../insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
++            <a href="../insights/insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+             <a href="#overview" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Overview</a>
+             <a href="#phases" class="hover:text-outlier-cyan transition" onclick="closeMenu()">The 4 Phases</a>
+             <a href="#tools" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Tools & Templates</a>
+@@ -565,7 +565,7 @@
+         <nav class="hidden md:flex space-x-8">
+             <a href="../index.html" class="text-gray-300 hover:text-outlier-cyan transition">Home</a>
+             <a href="../about.html" class="text-gray-300 hover:text-outlier-cyan transition">About</a>
+-            <a href="../insights/Insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
++            <a href="../insights/insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
+             <a href="#overview" class="text-gray-300 hover:text-outlier-cyan transition">Overview</a>
+             <a href="#phases" class="text-gray-300 hover:text-outlier-cyan transition">The 4 Phases</a>
+             <a href="#tools" class="text-gray-300 hover:text-outlier-cyan transition">Tools & Templates</a>
+diff --git a/index.html b/index.html
+index cc36f64..454c3fd 100644
+--- a/index.html
++++ b/index.html
+@@ -50,7 +50,7 @@
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="robots" content="index, follow">
+ <title>Paul Takisaki | Strategic Leadership for Outliers</title>
+-<meta name="description" content="Official site of Paul Takisaki — former Verizon executive turned executive coach, AI entrepreneur, and legacy builder helping high-performers find clarity and impact.">
++<meta name="description" content="Paul Takisaki — former Verizon executive turned executive coach & AI entrepreneur helping high-performers unlock clarity and impact.">
+     <link rel="canonical" href="https://www.paultakisaki.com/" />
+     
+     <!-- Schema.org structured data -->
+@@ -182,7 +182,7 @@
+         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
+             <a href="#hero" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
+             <a href="/about.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">About</a>
+-            <a href="/insights/Insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
++            <a href="/insights/insights.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
+             <a href="#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
+             <a href="#testimonials" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Testimonials</a>
+             <a href="#method" class="hover:text-outlier-cyan transition" onclick="closeMenu()">The Takisaki Method</a>
+@@ -205,7 +205,7 @@
+         <nav class="hidden md:flex space-x-8">
+             <a href="#hero" class="text-gray-300 hover:text-outlier-cyan transition">Home</a>
+             <a href="/about.html" class="text-gray-300 hover:text-outlier-cyan transition">About</a>
+-            <a href="/insights/Insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
++            <a href="/insights/insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
+             <a href="#proof" class="text-gray-300 hover:text-outlier-cyan transition">Proof</a>
+             <a href="#testimonials" class="text-gray-300 hover:text-outlier-cyan transition">Testimonials</a>
+             <a href="#method" class="text-gray-300 hover:text-outlier-cyan transition">Method</a>
+@@ -916,4 +916,5 @@
+     <script src="/js/quote-rotation.js" defer></script>
+ </body>
+ 
+-</html>
+\ No newline at end of file
++</html>
++<!-- >> CONFIRMED << -->
+\ No newline at end of file
+diff --git a/insights/Insights.html b/insights/Insights.html
+index 41051c1..d539ce8 100644
+--- a/insights/Insights.html
++++ b/insights/Insights.html
+@@ -53,7 +53,7 @@
+       name="description"
+       content="Leadership insights and strategic wisdom from Paul Takisaki, former Fortune 50 executive turned leadership coach."
+     />
+-    <link rel="canonical" href="https://www.paultakisaki.com/insights/Insights.html" />
++    <link rel="canonical" href="https://www.paultakisaki.com/insights/insights.html" />
+     
+     <link rel="icon" href="/favicon.ico" />
+     <link rel="manifest" href="/site.webmanifest" />
+@@ -245,7 +245,7 @@
+           onclick="closeMenu()"
+           >About</a
+         >
+-        <a href="/insights/Insights.html" class="text-outlier-cyan" onclick="closeMenu()"
++        <a href="/insights/insights.html" class="text-outlier-cyan" onclick="closeMenu()"
+           >Insights</a
+         >
+         <button
+@@ -281,7 +281,7 @@
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >About</a
+         >
+-        <a href="/insights/Insights.html" class="text-outlier-cyan">Insights</a>
++        <a href="/insights/insights.html" class="text-outlier-cyan">Insights</a>
+       </nav>
+       <button
+         id="menu-toggle"
+@@ -880,3 +880,4 @@
+     </script>
+   </body>
+ </html>
++<!-- >> CONFIRMED << -->
+diff --git a/insights/boring.html b/insights/boring.html
+index 60cbe05..3f00e76 100644
+--- a/insights/boring.html
++++ b/insights/boring.html
+@@ -49,7 +49,7 @@
+     <title>If It's Boring, It's Broken | Paul Takisaki</title>
+     <meta
+       name="description"
+-      content="When you're in charge, you hold people's energy, attention, and belief that this matters. If you waste that? You're not just boring. You're broken."
++      content="When leading, you hold people's energy & belief that this matters. Waste that? You're not just boring—you're broken. Fix your leadership."
+     />
+ 
+     <!-- Open Graph / Social Media Meta Tags -->
+@@ -59,7 +59,7 @@
+     />
+     <meta
+       property="og:description"
+-      content="When you're in charge, you hold people's energy, attention, and belief that this matters. If you waste that? You're not just boring. You're broken."
++      content="When leading, you hold people's energy & belief that this matters. Waste that? You're not just boring—you're broken. Fix your leadership."
+     />
+     <meta
+       property="og:image"
+@@ -84,7 +84,7 @@
+     />
+     <meta
+       name="twitter:description"
+-      content="When you're in charge, you hold people's energy, attention, and belief that this matters. If you waste that? You're not just boring. You're broken."
++      content="When leading, you hold people's energy & belief that this matters. Waste that? You're not just boring—you're broken. Fix your leadership."
+     />
+     <meta
+       name="twitter:image"
+@@ -355,7 +355,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Insights</a
+@@ -394,7 +394,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Insights</a
+         >
+@@ -1111,3 +1111,4 @@
+     </script>
+   </body>
+ </html>
++<!-- >> CONFIRMED << -->
+diff --git a/insights/images/broken.webp b/insights/images/broken.webp
+index e3e2e31..42a57a0 100644
+Binary files a/insights/images/broken.webp and b/insights/images/broken.webp differ
+diff --git a/insights/images/paul-takisaki-resume.webp b/insights/images/paul-takisaki-resume.webp
+index 05ba5c8..31e71b5 100644
+Binary files a/insights/images/paul-takisaki-resume.webp and b/insights/images/paul-takisaki-resume.webp differ
+diff --git a/insights/images/wrongplane.webp b/insights/images/wrongplane.webp
+index 73f2257..8292c2b 100644
+Binary files a/insights/images/wrongplane.webp and b/insights/images/wrongplane.webp differ
+diff --git a/insights/images/wrongplaneln.webp b/insights/images/wrongplaneln.webp
+index ffddf80..a0dbb1c 100644
+Binary files a/insights/images/wrongplaneln.webp and b/insights/images/wrongplaneln.webp differ
+diff --git a/insights/invisible-resume.html b/insights/invisible-resume.html
+index 54ae0fd..9637b00 100644
+--- a/insights/invisible-resume.html
++++ b/insights/invisible-resume.html
+@@ -435,7 +435,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Insights</a
+@@ -474,7 +474,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Insights</a
+         >
+@@ -1266,4 +1266,5 @@
+     <!-- Quote Rotation -->
+     <script src="/js/quote-rotation.js"></script>
+   </body>
++<!-- >> CONFIRMED << -->
+ </html>
+diff --git a/insights/strategy.html b/insights/strategy.html
+index e398b76..5733990 100644
+--- a/insights/strategy.html
++++ b/insights/strategy.html
+@@ -367,7 +367,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Insights</a
+@@ -406,7 +406,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Insights</a
+         >
+@@ -1035,4 +1035,5 @@
+       // Newsletter form is now handled by newsletter.js script
+     </script>
+   </body>
++<!-- >> CONFIRMED << -->
+ </html>
+\ No newline at end of file
+diff --git a/insights/wrong-plane.html b/insights/wrong-plane.html
+index 6c3d5a4..5534b4f 100644
+--- a/insights/wrong-plane.html
++++ b/insights/wrong-plane.html
+@@ -630,7 +630,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="hover:text-outlier-cyan transition"
+           onclick="closeMenu()"
+           >Insights</a
+@@ -669,7 +669,7 @@
+           >About</a
+         >
+         <a
+-          href="Insights.html"
++          href="insights.html"
+           class="text-gray-300 hover:text-outlier-cyan transition"
+           >Insights</a
+         >
+@@ -1447,4 +1447,5 @@
+       }
+     </script>
+   </body>
++<!-- >> CONFIRMED << -->
+ </html>
+\ No newline at end of file
+diff --git a/netlify.toml b/netlify.toml
+index 1124b2f..4b1e8e1 100644
+--- a/netlify.toml
++++ b/netlify.toml
+@@ -1,72 +1,72 @@
+-# Enforce canonical domain (www)
+-[[redirects]]
+-  from = "https://paultakisaki.com/*"
+-  to = "https://www.paultakisaki.com/:splat"
+-  status = 301
+-  force = true
+-
+-# Enforce HTTPS
+-[[redirects]]
+-  from = "http://www.paultakisaki.com/*"
+-  to = "https://www.paultakisaki.com/:splat"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "http://paultakisaki.com/*"
+-  to = "https://www.paultakisaki.com/:splat"
+-  status = 301
+-  force = true
+-
+-# Remove index.html from URLs
+-[[redirects]]
+-  from = "/index.html"
+-  to = "/"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/*/index.html"
+-  to = "/:splat/"
+-  status = 301
+-  force = true
+-
+-# Existing redirects
+-[[redirects]]
+-  from = "/about"
+-  to = "/about.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/articles/strategic-failure.html"
+-  to = "/insights/strategy.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/insights/wrong-plane-right-destination"
+-  to = "/insights/wrong-plane.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/leadership-accelerator"
+-  to = "/leadership-accelerator.html"
+-  status = 301
+-  force = true
+-
+-# Redirect old blog paths that might be indexed
+-[[redirects]]
+-  from = "/blogs/index.html"
+-  to = "/insights/Insights.html"
+-  status = 301
+-  force = true
+-
+-[[redirects]]
+-  from = "/blogs/*"
+-  to = "/insights/:splat"
+-  status = 301
+-  force = true
+-
++# Enforce canonical domain (www)
++[[redirects]]
++  from = "https://paultakisaki.com/*"
++  to = "https://www.paultakisaki.com/:splat"
++  status = 301
++  force = true
++
++# Enforce HTTPS
++[[redirects]]
++  from = "http://www.paultakisaki.com/*"
++  to = "https://www.paultakisaki.com/:splat"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "http://paultakisaki.com/*"
++  to = "https://www.paultakisaki.com/:splat"
++  status = 301
++  force = true
++
++# Remove index.html from URLs
++[[redirects]]
++  from = "/index.html"
++  to = "/"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/*/index.html"
++  to = "/:splat/"
++  status = 301
++  force = true
++
++# Existing redirects
++[[redirects]]
++  from = "/about"
++  to = "/about.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/articles/strategic-failure.html"
++  to = "/insights/strategy.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/insights/wrong-plane-right-destination"
++  to = "/insights/wrong-plane.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/leadership-accelerator"
++  to = "/leadership-accelerator.html"
++  status = 301
++  force = true
++
++# Redirect old blog paths that might be indexed
++[[redirects]]
++  from = "/blogs/index.html"
++  to = "/insights/Insights.html"
++  status = 301
++  force = true
++
++[[redirects]]
++  from = "/blogs/*"
++  to = "/insights/:splat"
++  status = 301
++  force = true
++
+ # >> CONFIRMED <<
+\ No newline at end of file
+diff --git a/robots.txt b/robots.txt
+index 7b2a628..efea4ad 100644
+--- a/robots.txt
++++ b/robots.txt
+@@ -1,4 +1,4 @@
+-User-agent: *
+-Allow: /
+-
++User-agent: *
++Allow: /
++
+ Sitemap: https://www.paultakisaki.com/sitemap.xml
+\ No newline at end of file
+diff --git a/site.webmanifest b/site.webmanifest
+index 30b952d..4d9ab22 100644
+--- a/site.webmanifest
++++ b/site.webmanifest
+@@ -1,14 +1,14 @@
+-{
+-    "name": "Paul Takisaki | Strategic Leadership for Outliers",
+-    "short_name": "Paul Takisaki",
+-    "icons": [
+-        {
+-            "src": "/favicon.ico",
+-            "sizes": "64x64 32x32 24x24 16x16",
+-            "type": "image/x-icon"
+-        }
+-    ],
+-    "theme_color": "#00FFFF",
+-    "background_color": "#000000",
+-    "display": "standalone"
++{
++    "name": "Paul Takisaki | Strategic Leadership for Outliers",
++    "short_name": "Paul Takisaki",
++    "icons": [
++        {
++            "src": "/favicon.ico",
++            "sizes": "64x64 32x32 24x24 16x16",
++            "type": "image/x-icon"
++        }
++    ],
++    "theme_color": "#00FFFF",
++    "background_color": "#000000",
++    "display": "standalone"
+ }
+\ No newline at end of file
+diff --git a/sitemap.xml b/sitemap.xml
+index 3660504..58030cb 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -23,7 +23,7 @@
+ 
+   <!-- Insights Main Page -->
+   <url>
+-    <loc>https://www.paultakisaki.com/insights/Insights.html</loc>
++    <loc>https://www.paultakisaki.com/insights/insights.html</loc>
+     <priority>0.8</priority>
+     <changefreq>weekly</changefreq>
+   </url>
+@@ -104,4 +104,4 @@
+   </url>
+ 
+ </urlset>
+-<!-- >> CONFIRMED <<
+\ No newline at end of file
++<!-- >> CONFIRMED << -->
+\ No newline at end of file

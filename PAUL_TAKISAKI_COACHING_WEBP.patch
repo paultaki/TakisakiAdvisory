@@ -1,0 +1,31 @@
+diff --git a/about.html b/about.html
+index c6206fc..fcf449f 100644
+--- a/about.html
++++ b/about.html
+@@ -58,7 +58,7 @@
+     <!-- Open Graph / Social Media Meta Tags -->
+     <meta property="og:title" content="About Paul Takisaki | Executive Coach & Leadership Strategist" />
+     <meta property="og:description" content="Learn about Paul Takisaki's journey from Fortune 50 executive to executive coach, his proven track record, and his unique approach to leadership development." />
+-    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.jpg" />
++    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.webp" />
+     <meta property="og:url" content="https://www.paultakisaki.com/about.html" />
+     <meta property="og:type" content="profile" />
+     <meta property="og:site_name" content="Paul Takisaki" />
+@@ -67,7 +67,7 @@
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:title" content="About Paul Takisaki | Executive Coach & Leadership Strategist" />
+     <meta name="twitter:description" content="Learn about Paul Takisaki's journey from Fortune 50 executive to executive coach, his proven track record, and his unique approach to leadership development." />
+-    <meta name="twitter:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.jpg" />
++    <meta name="twitter:image" content="https://www.paultakisaki.com/images/paul-takisaki-coaching.webp" />
+     <meta name="twitter:site" content="@PaulTakisaki" />
+     
+     <link rel="icon" href="favicon.ico" />
+@@ -676,4 +676,5 @@
+     <!-- Quote Rotation - Deferred for Performance -->
+     <script src="/js/quote-rotation.js" defer></script>
+   </body>
+-</html>
+\ No newline at end of file
++</html>
++>> CONFIRMED <<
+\ No newline at end of file
