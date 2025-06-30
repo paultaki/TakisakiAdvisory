@@ -3,21 +3,31 @@
   <head>
     <!-- Twitter conversion tracking base code -->
     <script>
-    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-    twq('config','psn9q');
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq =
+            function () {
+              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }),
+          (s.version = "1.1"),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = "https://static.ads-twitter.com/uwt.js"),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, "script");
+      twq("config", "psn9q");
     </script>
     <!-- End Twitter conversion tracking base code -->
-    
+
     <!-- Twitter conversion tracking event code -->
     <script type="text/javascript">
       // Insert Twitter Event ID
-      twq('event', 'tw-psn9q-psn9q', {
-      });
+      twq("event", "tw-psn9q-psn9q", {});
     </script>
     <!-- End Twitter conversion tracking event code -->
-    
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Article Title | Leadership Insights | Paul Takisaki</title>
@@ -340,19 +350,19 @@
         class="flex flex-col items-center justify-center h-full space-y-8 text-2xl"
       >
         <a
-          href="../index.html"
+          href="/"
           class="hover:text-outlier-cyan transition"
           onclick="closeMenu()"
           >Home</a
         >
         <a
-          href="../about.html"
+          href="/about.html"
           class="hover:text-outlier-cyan transition"
           onclick="closeMenu()"
           >About</a
         >
         <a
-          href="Insights.html"
+          href="/Insights.html"
           class="hover:text-outlier-cyan transition"
           onclick="closeMenu()"
           >Insights</a
@@ -371,7 +381,7 @@
       class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur"
     >
       <div class="flex items-center">
-        <a href="../index.html">
+        <a href="/">
           <img
             src="../images/logo-shadow.png"
             alt="Paul Takisaki Logo"
@@ -380,18 +390,16 @@
         </a>
       </div>
       <nav class="hidden md:flex space-x-8">
-        <a
-          href="../index.html"
-          class="text-gray-300 hover:text-outlier-cyan transition"
+        <a href="/" class="text-gray-300 hover:text-outlier-cyan transition"
           >Home</a
         >
         <a
-          href="../about.html"
+          href="/about.html"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >About</a
         >
         <a
-          href="Insights.html"
+          href="/Insights.html"
           class="text-gray-300 hover:text-outlier-cyan transition"
           >Insights</a
         >
@@ -860,7 +868,7 @@
     <footer
       class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center"
     >
-      <a href="../index.html">
+      <a href="/">
         <img
           src="../images/logo-shadow.png"
           alt="Takisaki Strategy Logo"
