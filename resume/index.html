@@ -3,18 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Story | Paul Takisaki - Fortune 50 Executive Track Record</title>
+    <title>Paul Takisaki | Executive Resume - Precision Systems, Elite Results</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Paul Takisaki's executive track record: 4x President's Cabinet Winner, transformed 3 markets to #1 nationally, $1B+ revenue leader at Verizon.">
-    <meta name="keywords" content="Paul Takisaki, Executive Track Record, Verizon AVP, Business Transformation, Leadership Story">
+    <meta name="description" content="Paul Takisaki - Fortune 50 executive turned entrepreneur. 20-year track record at Verizon with 4x President's Cabinet Awards. Precision systems, elite results.">
+    <meta name="keywords" content="Paul Takisaki, Executive Resume, Leadership, Verizon, Strategic Advisor, Business Transformation">
+    <meta name="author" content="Paul Takisaki">
     
-    <!-- Fonts - Matching main site -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.paultakisaki.com/resume/">
+    <meta property="og:title" content="Paul Takisaki | Executive Resume">
+    <meta property="og:description" content="Fortune 50 executive with 20-year track record. Precision systems, elite results.">
+    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-og.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.paultakisaki.com/resume/">
+    <meta property="twitter:title" content="Paul Takisaki | Executive Resume">
+    <meta property="twitter:description" content="Fortune 50 executive with 20-year track record. Precision systems, elite results.">
+    
+    <link rel="canonical" href="https://www.paultakisaki.com/resume/" />
+    <link rel="icon" href="/favicon.ico" />
+    
+    <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Tailwind CSS -->
@@ -24,39 +41,30 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-cyan': '#00FFFF',
-                        'dark-bg': '#0A0A0A',
-                        'darker-bg': '#050505',
-                        'card-bg': '#121212',
-                        'border-gray': '#232323',
+                        'outlier-cyan': '#00FFFF',
+                        'dark-gray': '#121212',
+                        'medium-gray': '#232323',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'Helvetica', 'Arial', 'sans-serif'],
                     },
                     animation: {
-                        'fade-up': 'fadeUp 0.6s ease-out',
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'slide-left': 'slideLeft 0.6s ease-out',
-                        'slide-right': 'slideRight 0.6s ease-out',
-                        'glow-pulse': 'glowPulse 3s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-in',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
                     },
                     keyframes: {
-                        fadeUp: {
-                            '0%': { opacity: '0', transform: 'translateY(30px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
                         fadeIn: {
                             '0%': { opacity: '0' },
                             '100%': { opacity: '1' },
                         },
-                        slideLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
                         },
-                        slideRight: {
-                            '0%': { opacity: '0', transform: 'translateX(-30px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        glowPulse: {
+                        pulseGlow: {
                             '0%, 100%': { boxShadow: '0 0 20px rgba(0, 255, 255, 0.3)' },
-                            '50%': { boxShadow: '0 0 40px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(0, 255, 255, 0.6)' },
                         }
                     }
                 }
@@ -65,25 +73,18 @@
     </script>
     
     <style>
-        /* Matching main site styles */
-        body {
-            background-color: #0A0A0A;
-            color: #FFFFFF;
-            font-family: 'Inter', sans-serif;
-        }
-        
-        /* Custom scrollbar - matching main site */
-        ::-webkit-scrollbar {
+        /* Custom scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
         }
-        ::-webkit-scrollbar-track {
-            background: #121212;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #000000;
         }
-        ::-webkit-scrollbar-thumb {
+        .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #00FFFF;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #00CCCC;
         }
         
@@ -92,43 +93,36 @@
             scroll-behavior: smooth;
         }
         
-        /* Cyan gradient text */
-        .gradient-cyan {
-            background: linear-gradient(135deg, #00FFFF 0%, #00CCCC 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #00FFFF;
+            width: 0%;
+            z-index: 100;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         }
         
-        /* Subtle glow for key elements */
-        .cyan-glow {
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-        }
-        
-        /* Timeline styles */
-        .timeline-line {
+        /* Timeline connector */
+        .timeline-connector {
             background: linear-gradient(to bottom, transparent, #00FFFF, transparent);
         }
         
-        /* Card hover effect - subtle */
-        .card-hover {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 255, 255, 0.1);
+        /* Hover effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card-hover:hover {
-            border-color: rgba(0, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
         }
         
-        /* Section reveal animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.8s ease;
+        /* Glowing text */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
         }
         
         /* Metric emphasis */
@@ -137,192 +131,348 @@
             font-weight: 700;
         }
         
-        /* Professional navigation styling */
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
+        /* Section reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
         }
-        .nav-link::after {
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Interactive card */
+        .interactive-card {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .interactive-card::before {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #00FFFF;
-            transition: width 0.3s ease;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00FFFF, transparent, #00FFFF);
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
         }
-        .nav-link:hover::after {
-            width: 100%;
+        .interactive-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* Mobile menu backdrop */
+        .menu-backdrop {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.9);
         }
     </style>
 </head>
-<body>
-    <!-- Navigation - Matching main site -->
-    <nav class="fixed top-0 w-full bg-dark-bg/95 backdrop-blur-md z-50 border-b border-border-gray">
+<body class="bg-black text-white font-sans custom-scrollbar">
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-black bg-opacity-90 backdrop-blur-lg z-50 transition-all duration-300" id="header">
         <div class="container max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="/" class="text-2xl font-bold">
-                    Paul<span class="text-primary-cyan">Takisaki</span>
+                    Paul<span class="text-outlier-cyan">Takisaki</span>
                 </a>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="nav-link text-gray-300 hover:text-white">Home</a>
-                    <a href="/about" class="nav-link text-gray-300 hover:text-white">About</a>
-                    <a href="/story" class="nav-link text-primary-cyan">My Story</a>
-                    <a href="/insights" class="nav-link text-gray-300 hover:text-white">Insights</a>
-                    <a href="/programs" class="nav-link text-gray-300 hover:text-white">Programs</a>
-                    <a href="/contact" class="bg-primary-cyan text-black px-6 py-2 rounded-full font-semibold hover:bg-white transition">
-                        Work With Me
-                    </a>
-                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#summary" class="text-gray-300 hover:text-outlier-cyan transition">Summary</a>
+                    <a href="#experience" class="text-gray-300 hover:text-outlier-cyan transition">Experience</a>
+                    <a href="#impact" class="text-gray-300 hover:text-outlier-cyan transition">Impact</a>
+                    <a href="#skills" class="text-gray-300 hover:text-outlier-cyan transition">Skills</a>
+                    <a href="/insights/insights.html" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
+                    <a href="/#action" class="text-outlier-cyan border border-outlier-cyan px-4 py-2 rounded hover:bg-outlier-cyan hover:text-black transition">Hire Me</a>
+                </nav>
                 
-                <!-- Mobile menu button -->
-                <button id="mobile-menu-btn" class="md:hidden text-primary-cyan">
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-outlier-cyan">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-    </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+        <div class="menu-backdrop h-full w-full flex items-center justify-center">
+            <nav class="text-center space-y-8">
+                <a href="#summary" class="block text-2xl text-gray-300 hover:text-outlier-cyan transition">Summary</a>
+                <a href="#experience" class="block text-2xl text-gray-300 hover:text-outlier-cyan transition">Experience</a>
+                <a href="#impact" class="block text-2xl text-gray-300 hover:text-outlier-cyan transition">Impact</a>
+                <a href="#skills" class="block text-2xl text-gray-300 hover:text-outlier-cyan transition">Skills</a>
+                <a href="/" class="block text-2xl text-outlier-cyan">Back to Main Site</a>
+            </nav>
+        </div>
+    </div>
     
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-6">
         <div class="container max-w-6xl mx-auto">
-            <div class="text-center">
-                <p class="text-primary-cyan mb-4 animate-fade-in">EXECUTIVE TRACK RECORD</p>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-up">
-                    From Mall Kiosk to <span class="gradient-cyan">Fortune 50 AVP</span>
+            <div class="text-center mb-12 animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                    Paul <span class="text-outlier-cyan glow-text">Takisaki</span>
                 </h1>
-                <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto animate-fade-up animation-delay-200">
-                    20 years. 12 promotions. 4 President's Cabinet awards. 3 markets transformed to #1 nationally.
-                    This is the story of building empires and creating leaders.
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                    Precision Systems. Elite Results.
                 </p>
-                
-                <!-- Key Metrics -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
-                    <div class="bg-card-bg rounded-lg p-6 card-hover animate-fade-up animation-delay-300">
-                        <div class="text-3xl md:text-4xl font-bold text-primary-cyan mb-2">$1B+</div>
-                        <div class="text-sm text-gray-400">Revenue Managed</div>
-                    </div>
-                    <div class="bg-card-bg rounded-lg p-6 card-hover animate-fade-up animation-delay-400">
-                        <div class="text-3xl md:text-4xl font-bold text-primary-cyan mb-2">450+</div>
-                        <div class="text-sm text-gray-400">AVP Team Size</div>
-                    </div>
-                    <div class="bg-card-bg rounded-lg p-6 card-hover animate-fade-up animation-delay-500">
-                        <div class="text-3xl md:text-4xl font-bold text-primary-cyan mb-2">$700M</div>
-                        <div class="text-sm text-gray-400">Revenue Generated</div>
-                    </div>
-                    <div class="bg-card-bg rounded-lg p-6 card-hover animate-fade-up animation-delay-600">
-                        <div class="text-3xl md:text-4xl font-bold text-primary-cyan mb-2">1,000+</div>
-                        <div class="text-sm text-gray-400">Leaders Developed</div>
-                    </div>
+                <div class="flex flex-wrap justify-center gap-6 text-sm md:text-base">
+                    <a href="mailto:paul@paultakisaki.com" class="flex items-center gap-2 text-gray-400 hover:text-outlier-cyan transition">
+                        <i class="fas fa-envelope"></i> paul@paultakisaki.com
+                    </a>
+                    <a href="https://linkedin.com/in/paultakisaki" target="_blank" class="flex items-center gap-2 text-gray-400 hover:text-outlier-cyan transition">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <span class="flex items-center gap-2 text-gray-400">
+                        <i class="fas fa-map-marker-alt"></i> Gilbert, Arizona
+                    </span>
+                </div>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center p-6 bg-dark-gray rounded-lg hover-lift">
+                    <div class="text-3xl md:text-4xl font-bold text-outlier-cyan mb-2">20+</div>
+                    <div class="text-sm text-gray-400">Years at Fortune 50</div>
+                </div>
+                <div class="text-center p-6 bg-dark-gray rounded-lg hover-lift">
+                    <div class="text-3xl md:text-4xl font-bold text-outlier-cyan mb-2">4x</div>
+                    <div class="text-sm text-gray-400">President's Cabinet</div>
+                </div>
+                <div class="text-center p-6 bg-dark-gray rounded-lg hover-lift">
+                    <div class="text-3xl md:text-4xl font-bold text-outlier-cyan mb-2">$1B+</div>
+                    <div class="text-sm text-gray-400">Revenue Managed</div>
+                </div>
+                <div class="text-center p-6 bg-dark-gray rounded-lg hover-lift">
+                    <div class="text-3xl md:text-4xl font-bold text-outlier-cyan mb-2">1,000+</div>
+                    <div class="text-sm text-gray-400">Team Members Led</div>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Executive Summary -->
-    <section class="py-20 px-6 bg-darker-bg">
+    <section id="summary" class="py-20 px-6 bg-dark-gray">
         <div class="container max-w-4xl mx-auto reveal">
             <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
-                Executive <span class="text-primary-cyan">Summary</span>
+                Executive <span class="text-outlier-cyan">Summary</span>
             </h2>
-            <div class="bg-card-bg p-8 rounded-lg card-hover">
-                <p class="text-lg leading-relaxed mb-6 text-gray-300">
-                    Transformational executive with a 20-year track record of turning underperforming organizations 
-                    into industry leaders. From retail sales to Associate Vice President at Verizon, I've earned 
-                    12 promotions and 4 President's Cabinet Awards (top 1% of 20,000+ leaders nationally).
+            <div class="bg-medium-gray p-8 rounded-lg border border-gray-800">
+                <p class="text-lg leading-relaxed mb-6">
+                    Trailblazing executive, strategist, and culture architect with a 20-year track record of redefining leadership through performance, empathy, and precision. From mall kiosk to Associate VP at Verizon, I earned 12 promotions, 4 President's Cabinet Awards (top 1% nationally), and a farewell video from the CRO.
                 </p>
-                <p class="text-lg leading-relaxed text-gray-300">
-                    I specialize in rapid organizational turnarounds, innovative system design, and building 
-                    high-performance cultures. My approach combines data-driven strategy with authentic leadership, 
-                    consistently delivering results that redefine what's possible.
+                <p class="text-lg leading-relaxed">
+                    I specialize in fixing broken systems, building elite teams, and turning chaos into clarity—without sacrificing my soul or my family dinners. Quietly competitive. Ruthlessly focused. Results that speak louder than I do.
                 </p>
+            </div>
+            
+            <!-- Core Strengths -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <div class="text-center p-6 bg-medium-gray rounded-lg hover-lift">
+                    <i class="fas fa-rocket text-outlier-cyan text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">System Design</h3>
+                    <p class="text-gray-400">Identifying structural problems and creating scalable solutions</p>
+                </div>
+                <div class="text-center p-6 bg-medium-gray rounded-lg hover-lift">
+                    <i class="fas fa-users text-outlier-cyan text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Team Building</h3>
+                    <p class="text-gray-400">Transforming underperformers into top 1% national teams</p>
+                </div>
+                <div class="text-center p-6 bg-medium-gray rounded-lg hover-lift">
+                    <i class="fas fa-chart-line text-outlier-cyan text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Growth Strategy</h3>
+                    <p class="text-gray-400">19 consecutive months of YOY growth across multiple regions</p>
+                </div>
             </div>
         </div>
     </section>
     
-    <!-- Career Timeline -->
-    <section class="py-20 px-6">
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 px-6">
         <div class="container max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center reveal">
-                The <span class="text-primary-cyan">Journey</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Career <span class="text-outlier-cyan">Journey</span>
             </h2>
             
             <!-- Timeline -->
             <div class="relative">
-                <!-- Timeline line -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-line hidden md:block"></div>
+                <!-- Timeline Line -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 timeline-connector hidden md:block"></div>
                 
-                <!-- AVP Role -->
-                <div class="mb-16 reveal">
+                <!-- Associate VP -->
+                <div class="timeline-item mb-12 reveal">
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 md:pr-8 md:text-right mb-8 md:mb-0">
-                            <h3 class="text-2xl font-bold text-primary-cyan mb-2">Associate Vice President</h3>
-                            <p class="text-lg text-gray-300 mb-2">Verizon — National Technical Sales</p>
-                            <p class="text-gray-500 mb-4">2022 - 2024 | 450+ employees</p>
-                            <div class="bg-card-bg p-6 rounded-lg card-hover mt-4">
-                                <ul class="space-y-3 text-left text-gray-300">
-                                    <li>• Stood up first <span class="metric">Customer Success Team</span>: 50% churn reduction, $53M protected revenue</li>
-                                    <li>• Launched <span class="metric">AI-powered sales intelligence</span>: 94% adoption in 90 days</li>
-                                    <li>• Delivered <span class="metric">28% increase</span> in quota attainment through system redesign</li>
-                                    <li>• Achieved <span class="metric">100% 5-star</span> customer satisfaction scores</li>
+                            <div class="bg-medium-gray p-6 rounded-lg interactive-card hover-lift" onclick="toggleDetails('avp-details')">
+                                <h3 class="text-2xl font-bold text-outlier-cyan mb-2">Associate Vice President</h3>
+                                <p class="text-lg text-gray-300 mb-2">Verizon — National Technical Sales</p>
+                                <p class="text-sm text-gray-500 mb-4">Jan 2022 - Present | 450+ person org</p>
+                                <p class="text-sm text-outlier-cyan cursor-pointer">Click to expand →</p>
+                            </div>
+                            <div id="avp-details" class="hidden mt-4 bg-dark-gray p-6 rounded-lg">
+                                <ul class="text-left space-y-3 text-sm">
+                                    <li>• Led nationwide organization including architects, engineers, and customer success professionals</li>
+                                    <li>• Designed real-time commission dashboards, increasing quota attainment by <span class="metric">28%</span></li>
+                                    <li>• Drove AI-powered sales intelligence adoption—<span class="metric">94% daily usage</span> in 90 days</li>
+                                    <li>• Created first Customer Success Team, cutting churn by <span class="metric">50%</span> and saving <span class="metric">$53M</span></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="md:w-1/2 md:pl-8">
-                            <div class="hidden md:flex w-16 h-16 bg-primary-cyan rounded-full items-center justify-center mx-auto cyan-glow">
+                            <!-- Timeline dot -->
+                            <div class="hidden md:flex w-16 h-16 bg-outlier-cyan rounded-full items-center justify-center mx-auto mb-8 animate-pulse-glow">
                                 <i class="fas fa-crown text-black text-2xl"></i>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Sr Director Roles -->
-                <div class="mb-16 reveal">
+                <!-- Sr. Director Southwest -->
+                <div class="timeline-item mb-12 reveal">
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 md:pr-8 order-2 md:order-1">
-                            <div class="hidden md:flex w-16 h-16 bg-primary-cyan rounded-full items-center justify-center mx-auto">
+                            <!-- Timeline dot -->
+                            <div class="hidden md:flex w-16 h-16 bg-outlier-cyan rounded-full items-center justify-center mx-auto mb-8">
                                 <i class="fas fa-trophy text-black text-2xl"></i>
                             </div>
                         </div>
                         <div class="md:w-1/2 md:pl-8 order-1 md:order-2 mb-8 md:mb-0">
-                            <h3 class="text-2xl font-bold text-primary-cyan mb-2">Regional Transformation Leader</h3>
-                            <p class="text-lg text-gray-300 mb-2">Verizon — Multiple Markets</p>
-                            <p class="text-gray-500 mb-4">2017 - 2022 | Sr. Director Roles</p>
-                            <div class="bg-card-bg p-6 rounded-lg card-hover">
-                                <ul class="space-y-3 text-gray-300">
-                                    <li>• Transformed <span class="metric">3 regions to #1 nationally</span> - unprecedented achievement</li>
-                                    <li>• Generated <span class="metric">$700M incremental revenue</span> across markets</li>
-                                    <li>• Delivered <span class="metric">19 consecutive months</span> of YoY growth</li>
-                                    <li>• Won <span class="metric">President's Cabinet</span> (top 1% of leaders) multiple times</li>
-                                    <li>• Increased employee satisfaction from <span class="metric">20% to 80%</span></li>
+                            <div class="bg-medium-gray p-6 rounded-lg interactive-card hover-lift" onclick="toggleDetails('southwest-details')">
+                                <h3 class="text-2xl font-bold text-outlier-cyan mb-2">Sr. Director, Business Sales</h3>
+                                <p class="text-lg text-gray-300 mb-2">Verizon — Southwest Region</p>
+                                <p class="text-sm text-gray-500 mb-4">Jul 2020 - Jan 2022 | 150+ team members</p>
+                                <p class="text-sm text-outlier-cyan cursor-pointer">Click to expand →</p>
+                            </div>
+                            <div id="southwest-details" class="hidden mt-4 bg-dark-gray p-6 rounded-lg">
+                                <ul class="space-y-3 text-sm">
+                                    <li>• Led sales across AZ, NM, NV, El Paso with 150+ reps and support staff</li>
+                                    <li>• Grew revenue <span class="metric">+37% YoY</span>, Net Adds up <span class="metric">96%</span></li>
+                                    <li>• Increased quota attainment by <span class="metric">20%</span> through cultural reset</li>
+                                    <li>• Won President's Cabinet (top <span class="metric">1%</span> nationally)</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Early Career -->
-                <div class="mb-16 reveal">
-                    <div class="flex flex-col md:flex-row items-center">
-                        <div class="md:w-1/2 md:pr-8 md:text-right mb-8 md:mb-0">
-                            <h3 class="text-2xl font-bold text-primary-cyan mb-2">The Foundation</h3>
-                            <p class="text-lg text-gray-300 mb-2">Verizon — Sales Leadership Journey</p>
-                            <p class="text-gray-500 mb-4">2003 - 2017 | Multiple Progressive Roles</p>
-                            <div class="bg-card-bg p-6 rounded-lg card-hover">
-                                <p class="text-gray-300 text-left">
-                                    Started in a mall kiosk, earned 12 promotions through consistent excellence. 
-                                    Built reputation for turning around underperforming teams, creating innovative 
-                                    solutions, and developing future leaders.
-                                </p>
-                            </div>
+                <!-- Additional roles with similar pattern... -->
+                <div class="text-center mt-12">
+                    <button onclick="toggleAllRoles()" class="bg-outlier-cyan text-black px-8 py-3 rounded font-semibold hover:bg-white transition">
+                        View All 12 Roles <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                </div>
+                
+                <!-- Hidden additional roles -->
+                <div id="all-roles" class="hidden mt-12 space-y-12">
+                    <!-- PNW Indirect -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Sr. Director, Indirect Distribution</h3>
+                            <p class="text-gray-300 mb-2">Verizon — Pacific Northwest | Apr 2019 - Jul 2020</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Managed 600+ indirect points of distribution during COVID-19</li>
+                                <li>• Preserved partner relationships and market share in unprecedented downturn</li>
+                                <li>• Key lesson: Sometimes leadership is about protecting the floor, not chasing the ceiling</li>
+                            </ul>
                         </div>
-                        <div class="md:w-1/2 md:pl-8">
-                            <div class="hidden md:flex w-16 h-16 bg-primary-cyan rounded-full items-center justify-center mx-auto">
-                                <i class="fas fa-rocket text-black text-2xl"></i>
-                            </div>
+                    </div>
+                    
+                    <!-- PNW Business Sales -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Sr. Director, Business Sales</h3>
+                            <p class="text-gray-300 mb-2">Verizon — Pacific Northwest | Jun 2017 - Mar 2019</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Led full regional turnaround: <span class="metric">19 consecutive months</span> of YoY growth</li>
+                                <li>• Won Winners Circle (2018) and President's Cabinet (2019)</li>
+                                <li>• Employee satisfaction: <span class="metric">20% → 80%</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Minneapolis-St. Paul -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Sr. Director, Business Sales</h3>
+                            <p class="text-gray-300 mb-2">Verizon — Minneapolis-St. Paul | Jan 2014 - Jun 2017</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Increased new acquisitions by <span class="metric">60%</span>, ranked <span class="metric">#1 of 21</span> territories</li>
+                                <li>• Achieved <span class="metric">22% increase</span> in subscriber base over 3 years</li>
+                                <li>• Customer satisfaction scores improved by <span class="metric">100% in 2 years</span></li>
+                                <li>• President's Cabinet 2017 & 2018</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Regional Director Data Sales -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Regional Director, Data Sales</h3>
+                            <p class="text-gray-300 mb-2">Verizon — Kansas City | 2011 - 2014</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Increased IoT sales by <span class="metric">260% year 1</span>, <span class="metric">550% year 2</span></li>
+                                <li>• Received <span class="metric">2 Presidential Awards</span> and Winners Circle 2012</li>
+                                <li>• Led Kansas City region to top national performance</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Director Technical Solutions -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Director, Technical Solutions Sales</h3>
+                            <p class="text-gray-300 mb-2">Verizon | 2008 - 2011</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Increased results by <span class="metric">500% in 3 years</span></li>
+                                <li>• Created "Prospecting Maps" leading to <span class="metric">34% uptick</span> in daily interactions</li>
+                                <li>• Launched "Failure Fridays" innovation culture</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Principal Manager -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Principal Manager - Solutions Architect</h3>
+                            <p class="text-gray-300 mb-2">Verizon | 2010 - 2011</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Increased market penetration through technical product strategies</li>
+                                <li>• Developed go-to-market strategies for emerging technologies</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Client Executive -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Client Executive</h3>
+                            <p class="text-gray-300 mb-2">Verizon | 2008 - 2010</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• Managed Fortune 100 accounts</li>
+                                <li>• Provided world-class support to largest enterprise clients</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Early Career Roles -->
+                    <div class="timeline-item reveal">
+                        <div class="bg-medium-gray p-6 rounded-lg">
+                            <h3 class="text-xl font-bold text-outlier-cyan mb-2">Early Career Progression</h3>
+                            <p class="text-gray-300 mb-2">Verizon | 2005 - 2008</p>
+                            <ul class="space-y-2 text-sm text-gray-400">
+                                <li>• <strong>Solutions Architect</strong> (2007-2008): Data solution support for Retail and Indirect channels</li>
+                                <li>• <strong>Data Sales Consultant</strong> (2006-2007): Supporting solutions sales</li>
+                                <li>• <strong>Indirect Account Manager</strong> (2005-2006): First role at Verizon, beginning 20-year journey</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -330,278 +480,336 @@
         </div>
     </section>
     
-    <!-- Signature Achievements -->
-    <section class="py-20 px-6 bg-darker-bg">
+    <!-- Signature Initiatives -->
+    <section id="impact" class="py-20 px-6 bg-dark-gray">
         <div class="container max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center reveal">
-                Signature <span class="text-primary-cyan">Achievements</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Signature <span class="text-outlier-cyan">Initiatives</span>
             </h2>
             
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Quota Model -->
+                <div class="bg-medium-gray rounded-lg overflow-hidden interactive-card hover-lift reveal">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-balance-scale text-outlier-cyan text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Quota Model Transformation</h3>
+                        </div>
+                        <p class="text-gray-400 mb-4">Overhauled unfair quota system that became the national standard</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Complaints</span>
+                                <span class="metric">Zero for full quarter</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Growth</span>
+                                <span class="metric">19 consecutive months</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Adoption</span>
+                                <span class="metric">National standard</span>
+                            </div>
+                        </div>
+                        <button onclick="openModal('quota')" class="mt-6 text-outlier-cyan hover:text-white transition">
+                            Read Case Study →
+                        </button>
+                    </div>
+                </div>
+                
                 <!-- Customer Success -->
-                <div class="bg-card-bg rounded-lg p-8 card-hover reveal">
-                    <div class="text-primary-cyan mb-4">
-                        <i class="fas fa-handshake text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Customer Success Revolution</h3>
-                    <p class="text-gray-400 mb-4">Built Verizon's first Customer Success team from scratch</p>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Churn Reduction</span>
-                            <span class="metric">50%</span>
+                <div class="bg-medium-gray rounded-lg overflow-hidden interactive-card hover-lift reveal">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-handshake text-outlier-cyan text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">Customer Success Revolution</h3>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Revenue Protected</span>
-                            <span class="metric">$53M</span>
+                        <p class="text-gray-400 mb-4">Created Verizon's first Customer Success team</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Churn Reduction</span>
+                                <span class="metric">50%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Revenue Protected</span>
+                                <span class="metric">$53M</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Customer Rating</span>
+                                <span class="metric">100% 5-star</span>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Customer Rating</span>
-                            <span class="metric">100%</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Market Transformation -->
-                <div class="bg-card-bg rounded-lg p-8 card-hover reveal animation-delay-200">
-                    <div class="text-primary-cyan mb-4">
-                        <i class="fas fa-chart-line text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">Market Domination</h3>
-                    <p class="text-gray-400 mb-4">Every market touched became #1 nationally</p>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Markets Transformed</span>
-                            <span class="metric">3</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Revenue Generated</span>
-                            <span class="metric">$700M</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Growth Streak</span>
-                            <span class="metric">19 months</span>
-                        </div>
+                        <button onclick="openModal('customer')" class="mt-6 text-outlier-cyan hover:text-white transition">
+                            Read Case Study →
+                        </button>
                     </div>
                 </div>
                 
-                <!-- AI Innovation -->
-                <div class="bg-card-bg rounded-lg p-8 card-hover reveal animation-delay-400">
-                    <div class="text-primary-cyan mb-4">
-                        <i class="fas fa-brain text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">AI Pioneer</h3>
-                    <p class="text-gray-400 mb-4">First to implement AI at scale in Verizon</p>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Productivity Gain</span>
-                            <span class="metric">23%</span>
+                <!-- AI Sales Intelligence -->
+                <div class="bg-medium-gray rounded-lg overflow-hidden interactive-card hover-lift reveal">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-brain text-outlier-cyan text-2xl mr-3"></i>
+                            <h3 class="text-xl font-bold">AI-Powered Intelligence</h3>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Win Rate Increase</span>
-                            <span class="metric">12%</span>
+                        <p class="text-gray-400 mb-4">Transformed knowledge management with AI assistant</p>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Productivity</span>
+                                <span class="metric">+23%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Win Rate</span>
+                                <span class="metric">+12%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Adoption</span>
+                                <span class="metric">94% in 90 days</span>
+                            </div>
                         </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Adoption Rate</span>
-                            <span class="metric">94%</span>
-                        </div>
+                        <button onclick="openModal('ai')" class="mt-6 text-outlier-cyan hover:text-white transition">
+                            Read Case Study →
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Leadership Philosophy -->
-    <section class="py-20 px-6">
+    <!-- Skills & Philosophy -->
+    <section id="skills" class="py-20 px-6">
         <div class="container max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center reveal">
-                Leadership <span class="text-primary-cyan">Philosophy</span>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+                Leadership <span class="text-outlier-cyan">Philosophy</span>
             </h2>
             
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="text-center reveal">
-                    <div class="w-20 h-20 bg-primary-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary-cyan/30">
-                        <i class="fas fa-bicycle text-primary-cyan text-3xl"></i>
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="reveal">
+                    <h3 class="text-2xl font-semibold mb-6 text-outlier-cyan">Core Principles</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-outlier-cyan mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">The Handlebar Test</h4>
+                                <p class="text-gray-400 text-sm">Let go. Let others fly.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-outlier-cyan mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">Failure Fridays</h4>
+                                <p class="text-gray-400 text-sm">Celebrate smart risks. Normalize learning.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-outlier-cyan mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold mb-1">The Vital Few</h4>
+                                <p class="text-gray-400 text-sm">Focus on the 20% that drives 80% of results.</p>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-lg font-bold mb-3">The Handlebar Test</h3>
-                    <p class="text-gray-400 text-sm">Let go. Let others fly. Create leaders who don't need you.</p>
                 </div>
                 
-                <div class="text-center reveal animation-delay-200">
-                    <div class="w-20 h-20 bg-primary-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary-cyan/30">
-                        <i class="fas fa-calendar-day text-primary-cyan text-3xl"></i>
+                <div class="reveal">
+                    <h3 class="text-2xl font-semibold mb-6 text-outlier-cyan">Technical Expertise</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">Strategic Planning</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">Team Turnarounds</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">System Design</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">AI Strategy</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">Sales Transformation</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">P&L Management</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">Culture Building</span>
+                        <span class="px-4 py-2 bg-medium-gray rounded-full text-sm">Process Optimization</span>
                     </div>
-                    <h3 class="text-lg font-bold mb-3">Failure Fridays</h3>
-                    <p class="text-gray-400 text-sm">Celebrate smart risks. Innovation requires permission to fail.</p>
-                </div>
-                
-                <div class="text-center reveal animation-delay-400">
-                    <div class="w-20 h-20 bg-primary-cyan/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary-cyan/30">
-                        <i class="fas fa-bullseye text-primary-cyan text-3xl"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-3">The Vital Few</h3>
-                    <p class="text-gray-400 text-sm">Focus on the 20% that drives 80% of results.</p>
                 </div>
             </div>
             
-            <!-- Key Principles -->
-            <div class="bg-card-bg rounded-lg p-8 max-w-4xl mx-auto reveal">
-                <h3 class="text-xl font-bold mb-6 text-center">Core Principles</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="flex items-start">
-                        <i class="fas fa-check-circle text-primary-cyan mt-1 mr-3"></i>
-                        <div>
-                            <h4 class="font-semibold mb-1">Systems Over Symptoms</h4>
-                            <p class="text-sm text-gray-400">Fix root causes, not surface issues</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-check-circle text-primary-cyan mt-1 mr-3"></i>
-                        <div>
-                            <h4 class="font-semibold mb-1">Culture Is Strategy</h4>
-                            <p class="text-sm text-gray-400">Build environments where excellence is inevitable</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-check-circle text-primary-cyan mt-1 mr-3"></i>
-                        <div>
-                            <h4 class="font-semibold mb-1">Data + Intuition</h4>
-                            <p class="text-sm text-gray-400">Numbers tell what, people tell why</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <i class="fas fa-check-circle text-primary-cyan mt-1 mr-3"></i>
-                        <div>
-                            <h4 class="font-semibold mb-1">Speed Matters</h4>
-                            <p class="text-sm text-gray-400">90-day transformations, not 5-year plans</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials -->
-    <section class="py-20 px-6 bg-darker-bg">
-        <div class="container max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center reveal">
-                Executive <span class="text-primary-cyan">Endorsements</span>
-            </h2>
-            
-            <!-- Featured Quote -->
-            <div class="bg-card-bg p-8 rounded-lg mb-12 max-w-4xl mx-auto text-center cyan-glow reveal">
-                <i class="fas fa-quote-left text-primary-cyan text-3xl mb-6"></i>
-                <p class="text-xl md:text-2xl font-light mb-6 leading-relaxed">
+            <!-- Testimonial -->
+            <div class="bg-medium-gray p-8 rounded-lg text-center reveal">
+                <i class="fas fa-quote-left text-outlier-cyan text-3xl mb-4"></i>
+                <p class="text-xl italic mb-4">
                     "You've had an indelible mark on the business markets with all that you've done... 
                     always with a smile. I'm going to personally miss working with you."
                 </p>
-                <p class="text-primary-cyan font-bold">— Aparna Khurjekar</p>
-                <p class="text-gray-400">Chief Revenue Officer, Verizon</p>
-            </div>
-            
-            <!-- Additional Testimonials -->
-            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                <div class="bg-card-bg p-6 rounded-lg card-hover reveal">
-                    <p class="text-gray-300 mb-4 italic">
-                        "Paul's leadership was pivotal in the growth of our Fixed Wireless Access business. 
-                        He brings a calm, thoughtful, and empowering leadership style."
-                    </p>
-                    <p class="text-primary-cyan font-semibold">— Mike Caralis</p>
-                    <p class="text-sm text-gray-400">VP Advanced Solutions, Verizon</p>
-                </div>
-                
-                <div class="bg-card-bg p-6 rounded-lg card-hover reveal animation-delay-200">
-                    <p class="text-gray-300 mb-4 italic">
-                        "One of the most strategic, people-first leaders I've ever worked for. 
-                        Paul drives leaders through creative, business-first mindset."
-                    </p>
-                    <p class="text-primary-cyan font-semibold">— Zachary Lagen</p>
-                    <p class="text-sm text-gray-400">Sr. Director SMB Sales, Verizon</p>
-                </div>
+                <p class="text-outlier-cyan font-semibold">— Aparna Khurjekar, Chief Revenue Officer, Verizon</p>
             </div>
         </div>
     </section>
     
     <!-- CTA Section -->
-    <section class="py-20 px-6">
+    <section class="py-20 px-6 bg-dark-gray">
         <div class="container max-w-4xl mx-auto text-center reveal">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Write Your <span class="text-primary-cyan">Success Story?</span>
+                Ready to Build Something <span class="text-outlier-cyan">Extraordinary?</span>
             </h2>
-            <p class="text-xl text-gray-400 mb-8">
-                I now help ambitious executives achieve in months what took me decades to master.
+            <p class="text-xl text-gray-300 mb-8">
+                Whether you need a strategic advisor, executive coach, or someone to fix what's broken,
+                let's have a conversation.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/programs" class="bg-primary-cyan text-black px-8 py-3 rounded-full font-semibold hover:bg-white transition">
-                    Explore Programs <i class="fas fa-arrow-right ml-2"></i>
+                <a href="https://calendly.com/paultakisaki/30min" target="_blank" 
+                   class="bg-outlier-cyan text-black px-8 py-4 rounded font-semibold hover:bg-white transition">
+                    Book Strategy Call <i class="fas fa-arrow-right ml-2"></i>
                 </a>
-                <a href="/contact" class="border border-primary-cyan text-primary-cyan px-8 py-3 rounded-full font-semibold hover:bg-primary-cyan hover:text-black transition">
-                    Schedule Call
+                <a href="/" 
+                   class="border border-outlier-cyan text-outlier-cyan px-8 py-4 rounded font-semibold hover:bg-outlier-cyan hover:text-black transition">
+                    Back to Main Site
                 </a>
             </div>
         </div>
     </section>
     
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t border-border-gray">
+    <footer class="py-8 px-6 border-t border-gray-800">
         <div class="container max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 className="text-xl font-bold mb-4">Paul<span class="text-primary-cyan">Takisaki</span></h3>
-                    <p class="text-gray-400 text-sm">
-                        Former Fortune 50 executive helping leaders achieve extraordinary results through proven systems.
-                    </p>
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    © 2025 Paul Takisaki. All Rights Reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/paultakisaki" target="_blank" class="text-gray-500 hover:text-outlier-cyan transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="mailto:paul@paultakisaki.com" class="text-gray-500 hover:text-outlier-cyan transition">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
                 </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="/" class="hover:text-primary-cyan transition">Home</a></li>
-                        <li><a href="/about" class="hover:text-primary-cyan transition">About</a></li>
-                        <li><a href="/story" class="hover:text-primary-cyan transition">My Story</a></li>
-                        <li><a href="/programs" class="hover:text-primary-cyan transition">Programs</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Connect</h4>
-                    <div class="flex space-x-4">
-                        <a href="https://linkedin.com/in/paultaki" target="_blank" class="text-gray-400 hover:text-primary-cyan transition">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="mailto:paul@paultakisaki.com" class="text-gray-400 hover:text-primary-cyan transition">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-border-gray text-center text-sm text-gray-500">
-                <p>&copy; 2025 Paul Takisaki. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
+    <!-- Modals (hidden by default) -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-black bg-opacity-80 z-50 hidden" onclick="closeModal()">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-medium-gray rounded-lg max-w-3xl w-full max-h-[80vh] overflow-y-auto p-8" onclick="event.stopPropagation()">
+                <button onclick="closeModal()" class="float-right text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+                <div id="modal-content">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- JavaScript -->
     <script>
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar').style.width = scrolled + '%';
+            
+            // Header shadow on scroll
+            const header = document.getElementById('header');
+            if (winScroll > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
         
-        // Reveal animations on scroll
+        // Toggle details
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+        
+        // Toggle all roles
+        function toggleAllRoles() {
+            const allRoles = document.getElementById('all-roles');
+            allRoles.classList.toggle('hidden');
+        }
+        
+        // Modal functions
+        function openModal(type) {
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+            
+            // Modal content based on type
+            const modalData = {
+                quota: {
+                    title: 'National Quota Model Transformation',
+                    content: `
+                        <h2 class="text-2xl font-bold mb-4 text-outlier-cyan">National Quota Model Transformation</h2>
+                        <p class="mb-4">When I inherited the B2B sales organization, the quota system was fundamentally broken. High performers were punished with crushing quotas, while underperformers coasted.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-outlier-cyan">The Solution</h3>
+                        <p class="mb-4">I designed a revolutionary 4-dimensional model that balanced territory potential, geographic complexity, customer base, and performance history.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-outlier-cyan">The Results</h3>
+                        <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li>Quota complaints dropped to <span class="metric">zero</span> for a full quarter</li>
+                            <li><span class="metric">19 consecutive months</span> of YoY growth</li>
+                            <li>Adopted as the <span class="metric">national standard</span> for all B2B SMB reps</li>
+                            <li>Still in use <span class="metric">6+ years later</span></li>
+                        </ul>
+                    `
+                },
+                customer: {
+                    title: 'Customer Success Revolution',
+                    content: `
+                        <h2 class="text-2xl font-bold mb-4 text-outlier-cyan">Customer Success Revolution</h2>
+                        <p class="mb-4">Analysis revealed that new B2B customers were churning within 90 days due to poor onboarding experiences.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-outlier-cyan">The Innovation</h3>
+                        <p class="mb-4">Created Verizon's first Customer Success team with a 5-touchpoint onboarding process over 90 days.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-outlier-cyan">The Impact</h3>
+                        <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li><span class="metric">50% reduction</span> in customer churn</li>
+                            <li><span class="metric">$53M</span> in protected revenue (year 2 projection)</li>
+                            <li><span class="metric">100% 5-star</span> customer reviews</li>
+                            <li>Saved <span class="metric">2,000 hours/month</span> in sales rep time</li>
+                        </ul>
+                    `
+                },
+                ai: {
+                    title: 'AI-Powered Sales Intelligence',
+                    content: `
+                        <h2 class="text-2xl font-bold mb-4 text-outlier-cyan">AI-Powered Sales Intelligence</h2>
+                        <p class="mb-4">Sales teams were losing 5.7 hours per week searching through outdated systems for basic information.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-outlier-cyan">The Transformation</h3>
+                        <p class="mb-4">Led a 3-phase initiative: content rationalization, unified digital experience, and AI-powered assistant development.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-outlier-cyan">The Outcomes</h3>
+                        <ul class="list-disc list-inside space-y-2 mb-4">
+                            <li><span class="metric">23% increase</span> in productivity</li>
+                            <li><span class="metric">12% improvement</span> in win rates</li>
+                            <li><span class="metric">94% adoption</span> within 90 days</li>
+                            <li>Most widely adopted sales tool in the organization</li>
+                        </ul>
+                    `
+                }
+            };
+            
+            content.innerHTML = modalData[type].content;
+            backdrop.classList.remove('hidden');
+        }
+        
+        function closeModal() {
+            document.getElementById('modal-backdrop').classList.add('hidden');
+        }
+        
+        // Reveal animations
         const revealElements = document.querySelectorAll('.reveal');
         
         const revealOnScroll = () => {
             revealElements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 100;
+                const elementVisible = 150;
                 
                 if (elementTop < window.innerHeight - elementVisible) {
                     element.classList.add('active');
@@ -611,31 +819,6 @@
         
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll(); // Check on load
-        
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.createElement('div');
-        mobileMenu.className = 'fixed inset-0 bg-dark-bg/95 backdrop-blur-md z-40 hidden';
-        mobileMenu.innerHTML = `
-            <div class="flex flex-col items-center justify-center h-full space-y-8">
-                <a href="/" class="text-2xl hover:text-primary-cyan transition">Home</a>
-                <a href="/about" class="text-2xl hover:text-primary-cyan transition">About</a>
-                <a href="/story" class="text-2xl text-primary-cyan">My Story</a>
-                <a href="/insights" class="text-2xl hover:text-primary-cyan transition">Insights</a>
-                <a href="/programs" class="text-2xl hover:text-primary-cyan transition">Programs</a>
-                <a href="/contact" class="bg-primary-cyan text-black px-8 py-3 rounded-full font-semibold">Work With Me</a>
-                <button id="close-menu" class="absolute top-6 right-6 text-3xl">&times;</button>
-            </div>
-        `;
-        document.body.appendChild(mobileMenu);
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-        
-        document.getElementById('close-menu').addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
     </script>
 </body>
 </html>
