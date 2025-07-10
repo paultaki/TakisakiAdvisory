@@ -49,7 +49,9 @@
       "Bash(md5sum:*)",
       "Bash(do mv \"resume/images/$file\" \"_archive/unused-$(date +%Y%m%d)/logo-variations/\")",
       "Bash(then echo \"=== $file ===\")",
-      "Bash(do mv \"resume/images/$file\" \"_archive/unused-$(date +%Y%m%d)/\")"
+      "Bash(do mv \"resume/images/$file\" \"_archive/unused-$(date +%Y%m%d)/\")",
+      "Bash(cp:*)",
+      "Bash(rm:*)"
     ]
   },
   "enableAllProjectMcpServers": false

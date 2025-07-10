@@ -24,7 +24,7 @@
       dataLayer.push({
         pageType: "about",
         pageTitle:
-          "About Paul Takisaki | Executive Coach & Leadership Strategist",
+          "About Paul Takisaki | Former Verizon AVP & Executive Leadership Coach",
       });
     </script>
 
@@ -68,26 +68,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    <title>About Paul Takisaki | Executive Coach</title>
+    <title>About Paul Takisaki | Former Verizon AVP & Executive Leadership Coach</title>
     <meta
       name="description"
-      content="Paul Takisaki is a former Verizon AVP turned executive coach helping high-performers align identity, performance, and legacy."
+      content="Paul Takisaki's journey from Fortune 50 AVP to elite executive coach. 20+ years transforming leaders, 1000+ mentored, 4x President's Cabinet winner."
     />
     <link rel="canonical" href="https://www.paultakisaki.com/about.html" />
 
-    <!-- Structured Data -->
+    <!-- Comprehensive Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Paul Takisaki",
-        "url": "https://www.paultakisaki.com/about.html",
-        "sameAs": [
-          "https://www.linkedin.com/in/paultaki",
-          "https://medium.com/@paultaki"
-        ],
-        "jobTitle": "Executive Coach",
-        "description": "Former Verizon AVP. Helping high-performers align identity and legacy."
+        "@graph": [
+          {
+            "@type": "ProfilePage",
+            "@id": "https://www.paultakisaki.com/about.html",
+            "url": "https://www.paultakisaki.com/about.html",
+            "name": "About Paul Takisaki",
+            "isPartOf": {"@id": "https://www.paultakisaki.com/#website"},
+            "about": {"@id": "https://www.paultakisaki.com/#person"},
+            "description": "Learn about Paul Takisaki's journey from Fortune 50 executive to elite leadership coach"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.paultakisaki.com/#person",
+            "name": "Paul Takisaki",
+            "givenName": "Paul",
+            "familyName": "Takisaki",
+            "image": "https://www.paultakisaki.com/images/headshot.webp",
+            "url": "https://www.paultakisaki.com/about.html",
+            "sameAs": [
+              "https://www.linkedin.com/in/paultaki",
+              "https://medium.com/@paul_31198",
+              "https://x.com/PaulTakisaki",
+              "https://www.crunchbase.com/person/paul-takisaki-bc76"
+            ],
+            "jobTitle": "Executive Coach & AI Strategist",
+            "description": "Paul Takisaki is a former Fortune 50 executive (Verizon AVP) who transforms high-performers into legacy leaders. 4x President's Cabinet winner, led 1000+ team members, generated $220M in revenue.",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Bellevue University"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Takisaki Strategy",
+              "url": "https://www.paultakisaki.com"
+            },
+            "award": [
+              "Verizon President's Cabinet (4x)",
+              "Top 1% Performance Leader",
+              "19 Consecutive Record-Breaking Months",
+              "$220M Incremental Revenue Generated"
+            ],
+            "knowsAbout": [
+              "Executive Leadership",
+              "Fortune 50 Strategy",
+              "Team Transformation",
+              "AI Strategy",
+              "Career Development",
+              "Performance Coaching"
+            ]
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.paultakisaki.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About Paul Takisaki",
+                "item": "https://www.paultakisaki.com/about.html"
+              }
+            ]
+          }
+        ]
       }
     </script>
 
