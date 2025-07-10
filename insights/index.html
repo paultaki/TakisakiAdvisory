@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - deferred for performance -->
     <script
-      async
+      defer
       src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"
     ></script>
     <script>
@@ -11,9 +11,11 @@
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
-
-      gtag("config", "G-F46XQSW1XF");
+      // Delay gtag initialization
+      window.addEventListener("load", function () {
+        gtag("js", new Date());
+        gtag("config", "G-F46XQSW1XF");
+      });
     </script>
 
     <!-- Initialize dataLayer -->
@@ -40,32 +42,27 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Twitter conversion tracking base code -->
+    <!-- Twitter conversion tracking - deferred for performance -->
     <script>
-      !(function (e, t, n, s, u, a) {
-        e.twq ||
-          ((s = e.twq =
-            function () {
-              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
-            }),
-          (s.version = "1.1"),
-          (s.queue = []),
-          (u = t.createElement(n)),
-          (u.async = !0),
-          (u.src = "https://static.ads-twitter.com/uwt.js"),
-          (a = t.getElementsByTagName(n)[0]),
-          a.parentNode.insertBefore(u, a));
-      })(window, document, "script");
-      twq("config", "psn9q");
+      window.addEventListener("load", function () {
+        !(function (e, t, n, s, u, a) {
+          e.twq ||
+            ((s = e.twq =
+              function () {
+                s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+              }),
+            (s.version = "1.1"),
+            (s.queue = []),
+            (u = t.createElement(n)),
+            (u.async = !0),
+            (u.src = "https://static.ads-twitter.com/uwt.js"),
+            (a = t.getElementsByTagName(n)[0]),
+            a.parentNode.insertBefore(u, a));
+        })(window, document, "script");
+        twq("config", "psn9q");
+        twq("event", "tw-psn9q-psn9q", {});
+      });
     </script>
-    <!-- End Twitter conversion tracking base code -->
-
-    <!-- Twitter conversion tracking event code -->
-    <script type="text/javascript">
-      // Insert Twitter Event ID
-      twq("event", "tw-psn9q-psn9q", {});
-    </script>
-    <!-- End Twitter conversion tracking event code -->
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

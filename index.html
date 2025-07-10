@@ -2,14 +2,16 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"></script>
+    <!-- Google tag (gtag.js) - Deferred for performance -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-F46XQSW1XF');
+      // Delay initialization until after page load
+      window.addEventListener('load', function() {
+        gtag('js', new Date());
+        gtag('config', 'G-F46XQSW1XF');
+      });
     </script>
     
     <!-- Initialize dataLayer -->
@@ -29,22 +31,17 @@
     })(window,document,'script','dataLayer','GTM-K9B7LZB8');</script>
     <!-- End Google Tag Manager -->
     
-    <!-- Twitter conversion tracking base code -->
+    <!-- Twitter conversion tracking - Deferred for performance -->
     <script>
-    !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
-    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
-    twq('config','psn9q');
+    window.addEventListener('load', function() {
+      !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+      twq('config','psn9q');
+      twq('event', 'tw-psn9q-psn9q', {});
+    });
     </script>
-    <!-- End Twitter conversion tracking base code -->
-    
-    <!-- Twitter conversion tracking event code -->
-    <script type="text/javascript">
-      // Insert Twitter Event ID
-      twq('event', 'tw-psn9q-psn9q', {
-      });
-    </script>
-    <!-- End Twitter conversion tracking event code -->
+    <!-- End Twitter conversion tracking -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,6 +49,13 @@
 <title>Paul Takisaki | Fortune 50 Executive Leadership Coach & AI Strategist</title>
 <meta name="description" content="Paul Takisaki transforms high-performers into legacy leaders. Former Verizon AVP, 4x President's Cabinet winner. $1,500-$2,500/mo coaching. Book your strategy call.">
     <link rel="canonical" href="https://www.paultakisaki.com/" />
+    
+    <!-- Resource Hints for Performance -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://static.ads-twitter.com">
     
     <!-- Open Graph and Twitter Card Tags -->
     <meta property="og:title" content="Paul Takisaki | Fortune 50 Executive Leadership Coach">
@@ -633,7 +637,7 @@
     <!-- Footer -->
     <footer class="bg-black text-gray-400 text-sm py-6 flex flex-col items-center">
         <a href="/">
-            <img src="/images/logo-shadow.png" alt="Takisaki Strategy Logo" class="h-[50px] mb-2 opacity-80" />
+            <img src="/images/logo-shadow.png" alt="Takisaki Strategy Logo" class="h-[50px] mb-2 opacity-80" loading="lazy" />
         </a>
         
         <!-- Quote Rotation Container -->
@@ -794,7 +798,9 @@
                 });
             });
 
-            window.addEventListener('scroll', function() {
+            // Optimized scroll handler with throttling
+            let ticking = false;
+            function updateProgress() {
                 // Calculate scroll position
                 const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -815,6 +821,15 @@
                     backToTopBtn.classList.add('visible');
                 } else {
                     backToTopBtn.classList.remove('visible');
+                }
+                
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateProgress);
+                    ticking = true;
                 }
             });
         }
