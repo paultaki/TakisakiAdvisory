@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Story: From Verizon VP to Executive Coach | Paul Takisaki</title>
+    <meta name="description" content="Paul Takisaki shares why he left his Verizon AVP role after 20 years and 4 President's Cabinet wins to become an executive coach focused on legacy-driven leadership.">
+    <link rel="canonical" href="https://www.paultakisaki.com/my-story/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Paul Takisaki: Why I Left My Fortune 50 VP Role">
+    <meta property="og:description" content="The real story behind leaving Verizon after 20 years to build something more meaningful.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.paultakisaki.com/my-story/">
+    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-story.jpg">
+    <meta property="article:author" content="Paul Takisaki">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:wght@700&display=swap"></noscript>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --outlier-cyan: #00d4ff;
+            --dark-bg: #000000;
+            --dark-gray: #0a0a0a;
+            --medium-gray: #1a1a1a;
+            --light-gray: #666;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --gold: #FFD700;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--dark-gray);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--outlier-cyan);
+            border-radius: 4px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.98);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--outlier-cyan);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .nav-logo:hover {
+            opacity: 0.8;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--outlier-cyan);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .story-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 6rem 2rem 4rem;
+            background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.1), transparent 50%);
+        }
+        
+        .story-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, transparent 70%, var(--dark-bg));
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--outlier-cyan);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-title .gradient-text {
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--outlier-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: var(--outlier-cyan);
+            opacity: 0.5;
+        }
+        
+        /* Story Content */
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .story-section {
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .story-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .story-section h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--outlier-cyan);
+        }
+        
+        .story-section p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .story-section p:first-of-type::first-letter {
+            font-size: 4rem;
+            font-weight: 700;
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+            color: var(--outlier-cyan);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--dark-gray);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .stat-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--outlier-cyan);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+        }
+        
+        /* Quote Section */
+        .quote-section {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border-left: 4px solid var(--outlier-cyan);
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 6rem;
+            color: var(--outlier-cyan);
+            opacity: 0.2;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .quote-text {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .quote-author {
+            text-align: right;
+            color: var(--outlier-cyan);
+            font-weight: 600;
+        }
+        
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .value-card {
+            padding: 2rem;
+            background: var(--dark-gray);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--outlier-cyan);
+            transform: translateX(-100%);
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover::before {
+            transform: translateX(0);
+        }
+        
+        .value-card:hover {
+            border-color: var(--outlier-cyan);
+            transform: translateY(-5px);
+        }
+        
+        .value-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--outlier-cyan);
+        }
+        
+        /* CTA Section */
+        .story-cta {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.1), transparent 50%);
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .cta-content p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--outlier-cyan);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #00a8cc;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--outlier-cyan);
+            color: var(--outlier-cyan);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .story-section h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .quote-text {
+                font-size: 1.25rem;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        footer a {
+            color: var(--outlier-cyan);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "My Story: From Verizon VP to Executive Coach",
+      "author": {
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "jobTitle": "Executive Leadership Coach",
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "Verizon Communications",
+          "sameAs": "https://www.wikidata.org/wiki/Q467752"
+        },
+        "award": [
+          "Verizon President's Cabinet Winner 2019",
+          "Verizon President's Cabinet Winner 2020",
+          "Verizon President's Cabinet Winner 2021",
+          "Verizon President's Cabinet Winner 2022"
+        ]
+      },
+      "datePublished": "2025-01-11",
+      "dateModified": "2025-01-11",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Takisaki Strategy",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.paultakisaki.com/images/logo.png"
+        }
+      },
+      "description": "Paul Takisaki shares his journey from mall kiosk to Verizon AVP, and why he left it all behind to help leaders build legacies, not just careers."
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Paul Takisaki</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/my-story/" class="active">My Story</a>
+                <a href="/services/">Services</a>
+                <a href="/insights/">Insights</a>
+                <a href="/contact/">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="story-hero">
+        <div class="hero-content">
+            <div class="hero-badge">20 Years at Verizon • 4x President's Cabinet Winner</div>
+            <h1 class="hero-title">
+                Why I Left My <span class="gradient-text">Fortune 50 VP Role</span>
+            </h1>
+            <p class="hero-subtitle">The real story of trading titles for transformation</p>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Story Content -->
+    <article class="story-content">
+        <!-- Opening Section -->
+        <section class="story-section">
+            <p>Most people think leaving a Fortune 50 VP role means you had a midlife crisis.</p>
+            <p>I didn't. I had a clarity crisis.</p>
+            <p>For 20 years, I climbed every ladder they put in front of me. Started at a mall kiosk, selling phones in khakis. Finished as an Associate Vice President at Verizon, overseeing multiple regions, racking up trophies, flying first class, and mentoring the next generation of leaders.</p>
+        </section>
+        
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Promotions</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">President's Cabinet Wins</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1,000+</span>
+                <span class="stat-label">Team Members Led</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$220M</span>
+                <span class="stat-label">Revenue Generated</span>
+            </div>
+        </div>
+        
+        <!-- The Question Section -->
+        <section class="story-section">
+            <p>By all accounts, I'd made it. But somewhere between the metrics and the meetings, I started asking a dangerous question:</p>
+        </section>
+        
+        <div class="quote-section">
+            <p class="quote-text">What if this isn't the kind of success I want to pass down?</p>
+        </div>
+        
+        <!-- The High Cost Section -->
+        <section class="story-section">
+            <h2>The High Cost of Climbing</h2>
+            <p>Let's be real: corporate leadership at the top isn't glamorous. It's pressure layered on sacrifice wrapped in optics.</p>
+            <p>You're always visible.<br>
+            You're rarely present.<br>
+            And if you don't guard your values, you'll lose them—quietly, and with applause.</p>
+            <p>I'm not bitter. I loved much of my time in leadership. I built incredible teams. I shaped strategy. I found out I was good at turning chaos into growth.</p>
+            <p>But I also moved my family across the country six times.<br>
+            Missed birthday parties.<br>
+            Said "maybe next year" more than I want to admit.</p>
+            <p>And I watched my identity slowly blur into a title I no longer believed in.</p>
+        </section>
+        
+        <!-- The Rescue Section -->
+        <section class="story-section">
+            <h2>Coaching Wasn't the Plan. It Was the Rescue.</h2>
+            <p>I didn't leave to become a coach. I left to become whole.</p>
+            <p>At first, retirement sounded like freedom. But the truth is, if you've spent two decades leading others, you don't retire—you rewire.</p>
+            <p>I couldn't sit still. I missed the fire. The pressure. The accountability.<br>
+            But I didn't miss the politics.<br>
+            The shallow recognition.<br>
+            The endless performance theater.</p>
+            <p>So I built something new. Something I wish I'd had on the way up.</p>
+            <p>A space where leaders could be human.<br>
+            Where quiet confidence beats loud credentials.<br>
+            Where the goal isn't just getting promoted—but getting aligned.</p>
+        </section>
+        
+        <!-- Why Coaching Matters Section -->
+        <section class="story-section">
+            <h2>Why Coaching Matters Now More Than Ever</h2>
+            <p>Most leadership development programs are designed for compliance, not transformation. They teach tactics, not ownership.</p>
+            <p>I coach differently—because I lived it differently.</p>
+        </section>
+        
+        <!-- Values Grid -->
+        <div class="values-grid">
+            <div class="value-card">
+                <h3>No More Generic Feedback Loops</h3>
+                <p>We don't do "strengths and opportunities." We break down belief systems, strategy gaps, and internal sabotage patterns. You either shift—or you don't grow.</p>
+            </div>
+            <div class="value-card">
+                <h3>We Lead with Identity, Not Just Execution</h3>
+                <p>Every leader has an 80/20 zone of genius. But most are burning 80% of their time trying to fix what they were never built to carry. I help people flip that equation.</p>
+            </div>
+            <div class="value-card">
+                <h3>We Build Legacy, Not Just Promotion Plans</h3>
+                <p>Your next level isn't just about a title—it's about the ripple effect you leave behind. How you lead at home, not just on the scoreboard.</p>
+            </div>
+        </div>
+        
+        <!-- What I See Section -->
+        <section class="story-section">
+            <h2>What I See in My Clients (That They Often Miss)</h2>
+            <p>They're more powerful than they know.<br>
+            They're one decision away from breakthrough—but stuck in self-doubt, old playbooks, or a culture that rewards pretending.</p>
+            <p>They don't need fluff.<br>
+            They need someone who's been in the fire—and made it out with their integrity intact.</p>
+            <p>That's where I come in.<br>
+            No scripts. No safe coaching calls.<br>
+            Just honest, strategic conversations that move the needle—internally and externally.</p>
+        </section>
+        
+        <!-- What It Took Section -->
+        <section class="story-section">
+            <h2>What It Took to Get Here</h2>
+            <p>You don't leave a legacy by playing it safe.<br>
+            And I didn't just leave my job—I left a version of myself behind.</p>
+            <p>The one who made everyone else comfortable first.<br>
+            The one who smiled through dysfunction.<br>
+            The one who believed productivity could fix pain.</p>
+            <p>It cost me comfort.<br>
+            It cost me certainty.<br>
+            But it gave me something deeper: clarity, authority, and peace.</p>
+        </section>
+        
+        <!-- Final Section -->
+        <section class="story-section">
+            <p>I don't coach because it's popular. I coach because it's necessary.<br>
+            And I'm not for everyone.</p>
+            <p>If you're looking for soft platitudes or checkbox sessions—keep scrolling.</p>
+            <p>But if you're a leader who knows you're capable of more—and you're ready to get uncomfortable to get there—I'm your guy.</p>
+            <p>Because I don't just play the game.<br>
+            I help people rewire it.</p>
+        </section>
+    </article>
+    
+    <!-- CTA Section -->
+    <section class="story-cta">
+        <div class="cta-content">
+            <h2>Ready to Write Your Next Chapter?</h2>
+            <p>Stop building someone else's legacy. Start creating your own.</p>
+            <div class="cta-buttons">
+                <a href="/services/" class="btn-primary">Explore Coaching Options</a>
+                <a href="/contact/" class="btn-secondary">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p class="text-center text-gray-400 mt-8" itemscope itemtype="https://schema.org/Person">
+            © 2025 <span itemprop="name">Paul Takisaki</span> | 
+            <span itemprop="jobTitle">Former Verizon AVP</span> | 
+            <span itemprop="jobTitle">Executive Leadership Coach</span> | 
+            <a href="/about.html" class="text-outlier-cyan hover:underline">About Paul Takisaki</a>
+        </p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.story-section, .stat-item, .value-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.8s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

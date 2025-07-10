@@ -548,7 +548,7 @@
           <div class="text-gray-400 text-sm mb-6 text-center">
             <time datetime="2024-07-22">Published July 22, 2024</time> • 
             <span>Last updated: <time datetime="2025-01-10">January 10, 2025</time></span> • 
-            By <strong class="text-outlier-cyan">Paul Takisaki</strong>
+            By <strong class="text-outlier-cyan">Paul Takisaki</strong>, Former Verizon AVP
           </div>
           <div
             class="flex items-center justify-center text-gray-300 text-sm mt-2"
@@ -1014,19 +1014,25 @@
         <!-- Author box -->
         <div
           class="author-box flex flex-col md:flex-row items-center md:items-start gap-6 my-12"
+          itemscope itemtype="https://schema.org/Person"
         >
           <img
+            itemprop="image"
             src="https://paultakisaki.com/images/headshot.webp"
             alt="Paul Takisaki"
             class="w-24 h-24 rounded-full object-cover"
             onerror="this.onerror=null; this.src='https://placehold.co/100x100/121212/00FFFF?text=PT';"
           />
           <div>
-            <h3 class="text-xl font-bold mb-2">Paul Takisaki</h3>
+            <h3 class="text-xl font-bold mb-2" itemprop="name">Paul Takisaki</h3>
             <p class="text-gray-300 mb-4">
-              Executive Coach & Leadership Strategist. Former Fortune 50
+              <span itemprop="jobTitle">Executive Coach & Leadership Strategist</span>. 
+              <span itemprop="alumniOf" itemscope itemtype="https://schema.org/Organization">
+                Former <span itemprop="name">Fortune 50</span>
+              </span>
               executive who turned three underperforming territories to #1,
               breaking sales records for 19 consecutive months.
+              <span itemprop="award" class="hidden">4-time President's Cabinet Winner</span>
             </p>
             <div class="flex space-x-4">
               <a
