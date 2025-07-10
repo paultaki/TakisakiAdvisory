@@ -117,10 +117,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <script src="https://cdn.tailwindcss.com/"></script>
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      />
+    </noscript>
+    <script defer src="https://cdn.tailwindcss.com/"></script>
 
     <!-- Newsletter Script -->
     <script src="/js/newsletter.js"></script>
@@ -450,6 +458,13 @@
         ></div>
         <img
           src="/insights/images/broken.webp"
+          srcset="/insights/images/broken-mobile.webp 400w,
+                  /insights/images/broken-tablet.webp 800w,
+                  /insights/images/broken.webp 1598w"
+          sizes="(max-width: 640px) 100vw,
+                 (max-width: 1024px) 50vw,
+                 1200px"
+          fetchpriority="high"
           alt="If It's Boring, It's Broken"
           class="w-full h-full object-cover object-center"
           onerror="this.onerror=null; this.src='https://placehold.co/1200x600/121212/00FFFF?text=Broken+Clock';"
@@ -552,6 +567,13 @@
 
           <img
             src="/insights/images/notebook.webp"
+            srcset="/insights/images/notebook-mobile.webp 400w,
+                    /insights/images/notebook-tablet.webp 800w,
+                    /insights/images/notebook.webp 1200w"
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 80vw,
+                   800px"
+            loading="lazy"
             alt="Blank notebook after a week of meetings"
             class="my-8 rounded-lg shadow-lg"
           />
@@ -614,6 +636,13 @@
 
           <img
             src="/insights/images/quantum.webp"
+            srcset="/insights/images/quantum-mobile.webp 400w,
+                    /insights/images/quantum-tablet.webp 800w,
+                    /insights/images/quantum.webp 1200w"
+            sizes="(max-width: 640px) 100vw,
+                   (max-width: 1024px) 80vw,
+                   800px"
+            loading="lazy"
             alt="Quantum computer visualization"
             class="my-8 rounded-lg shadow-lg"
           />
@@ -852,6 +881,13 @@
                 <div class="h-48 overflow-hidden">
                   <img
                     src="/insights/images/wrongplane.webp"
+                    srcset="/insights/images/wrongplane-mobile.webp 400w,
+                            /insights/images/wrongplane-tablet.webp 800w,
+                            /insights/images/wrongplane.webp 976w"
+                    sizes="(max-width: 640px) 100vw,
+                           (max-width: 1024px) 50vw,
+                           400px"
+                    loading="lazy"
                     alt="Wrong Plane, Right Destination"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Wrong+Plane';"
@@ -879,6 +915,13 @@
                 <div class="h-48 overflow-hidden">
                   <img
                     src="/insights/images/paul-takisaki-resume.webp"
+                    srcset="/insights/images/paul-takisaki-resume-mobile.webp 400w,
+                            /insights/images/paul-takisaki-resume-tablet.webp 800w,
+                            /insights/images/paul-takisaki-resume.webp 1200w"
+                    sizes="(max-width: 640px) 100vw,
+                           (max-width: 1024px) 50vw,
+                           400px"
+                    loading="lazy"
                     alt="The Invisible Resume"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     onerror="this.onerror=null; this.src='https://placehold.co/600x400/121212/00FFFF?text=Invisible+Resume';"
