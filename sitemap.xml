@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Home -->
   <url>
     <loc>https://www.paultakisaki.com/</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -12,34 +12,55 @@
   <!-- About -->
   <url>
     <loc>https://www.paultakisaki.com/about.html</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Services -->
+  <url>
+    <loc>https://www.paultakisaki.com/services/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.paultakisaki.com/contact/</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 
   <!-- Insights Hub -->
   <url>
-    <loc>https://www.paultakisaki.com/insights/insights.html</loc>
+    <loc>https://www.paultakisaki.com/insights/</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
   </url>
 
   <!-- Articles -->
   <url>
     <loc>https://www.paultakisaki.com/insights/boring.html</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
   </url>
 
   <url>
     <loc>https://www.paultakisaki.com/insights/wrong-plane.html</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
   </url>
 
   <url>
     <loc>https://www.paultakisaki.com/insights/invisible-resume.html</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
+    <changefreq>yearly</changefreq>
   </url>
 
 </urlset>

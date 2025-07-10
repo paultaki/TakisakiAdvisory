@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Paul Takisaki - Executive Leadership Coach</title>
+    <meta name="description" content="Transform your leadership with Paul Takisaki's executive coaching, fractional CRO services, and strategic consulting. Former Fortune 50 AVP delivering elite results.">
+    <link rel="canonical" href="https://www.paultakisaki.com/services.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Paul Takisaki's Executive Coaching & Strategic Services">
+    <meta property="og:description" content="Work with former Verizon AVP Paul Takisaki. Executive coaching, fractional CRO, and strategic consulting for ambitious leaders.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.paultakisaki.com/services.html">
+    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-services.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --outlier-cyan: #00d4ff;
+            --dark-bg: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #666;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--outlier-cyan);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--outlier-cyan);
+        }
+        
+        .cta-button {
+            background: var(--outlier-cyan);
+            color: var(--dark-bg);
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #00a8cc;
+            transform: translateY(-1px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--text-primary), var(--outlier-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* Services Grid */
+        .services-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: var(--dark-gray);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            padding: 3rem;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            border-color: var(--outlier-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--outlier-cyan);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--outlier-cyan);
+        }
+        
+        .service-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .service-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: start;
+        }
+        
+        .service-features li i {
+            color: var(--outlier-cyan);
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        
+        .price-box {
+            background: var(--medium-gray);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--outlier-cyan);
+        }
+        
+        .price-note {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 4rem 2rem;
+            background: var(--dark-gray);
+            margin-top: 4rem;
+        }
+        
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: var(--outlier-cyan);
+            color: var(--dark-bg);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .process-step h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .process-step p {
+            color: var(--text-secondary);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--dark-bg), var(--dark-gray));
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background: var(--outlier-cyan);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background: #00a8cc;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            border: 1px solid var(--outlier-cyan);
+            color: var(--outlier-cyan);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        footer a {
+            color: var(--outlier-cyan);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Executive Coaching and Business Consulting",
+      "provider": {
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "jobTitle": "Executive Leadership Coach",
+        "alumniOf": {
+          "@type": "Organization",
+          "name": "Verizon"
+        },
+        "description": "Former Fortune 50 AVP turned executive coach, helping leaders transform their careers"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Paul Takisaki Coaching Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Executive Coaching",
+              "description": "One-on-one coaching for leaders ready to accelerate their careers"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Fractional CRO",
+              "description": "Part-time revenue leadership for growing companies"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Strategic Consulting",
+              "description": "Transform underperforming teams with proven frameworks"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Paul Takisaki</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/services.html">Services</a>
+                <a href="/insights/insights.html">Insights</a>
+                <a href="#contact" class="cta-button">Let's Talk</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transform Your Leadership.<br>Transform Your Results.</h1>
+        <p>Work directly with Paul Takisaki to unlock your next level of performance through executive coaching, fractional leadership, or strategic consulting.</p>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-grid">
+            
+            <!-- Executive Coaching -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h2>Executive Coaching & Career Acceleration</h2>
+                <p>Whether you're gunning for the next big role or navigating a new position, I help ambitious leaders build influence, accelerate growth, and deliver elite results. My coaching isn't about feel-good mantras—it's about practical strategies that work in the real world.</p>
+                
+                <h3>Two Coaching Programs:</h3>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.25rem; margin-bottom: 1rem;">Unstuck to Unstoppable</h4>
+                    <p>A 90-day intensive for high performers ready to break through their ceiling.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> 3 private sessions per month (60 min)</li>
+                        <li><i class="fas fa-check"></i> Resume & LinkedIn optimization (Week 1)</li>
+                        <li><i class="fas fa-check"></i> Custom leadership development plan</li>
+                        <li><i class="fas fa-check"></i> Weekly action targets & accountability</li>
+                        <li><i class="fas fa-check"></i> Email/text support between sessions</li>
+                        <li><i class="fas fa-check"></i> Mock interviews & exec presence drills</li>
+                    </ul>
+                    <div class="price-box">
+                        <div class="price">$1,500/month</div>
+                        <div class="price-note">or $4,050 upfront (save $450)</div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 style="color: var(--text-primary); font-size: 1.25rem; margin-bottom: 1rem;">Elite Transformation</h4>
+                    <p>White-glove partnership for executives architecting their legacy.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Everything in Unstuck to Unstoppable</li>
+                        <li><i class="fas fa-check"></i> 5 sessions per month (90 min each)</li>
+                        <li><i class="fas fa-check"></i> Complete Takisaki Playbook Library access</li>
+                        <li><i class="fas fa-check"></i> Direct line access (priority response)</li>
+                        <li><i class="fas fa-check"></i> Custom frameworks for your specific role</li>
+                        <li><i class="fas fa-check"></i> Organizational influence mapping</li>
+                        <li><i class="fas fa-check"></i> Pre-decision advisory on major moves</li>
+                        <li><i class="fas fa-check"></i> Personal brand transformation</li>
+                    </ul>
+                    <div class="price-box">
+                        <div class="price">$2,500/month</div>
+                        <div class="price-note">or $6,750 upfront (save $750)</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contact" class="btn-primary">Apply for Coaching</a>
+                </div>
+            </div>
+            
+            <!-- Fractional CRO -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2>Fractional Chief Revenue Officer</h2>
+                <p>Get Fortune 50 revenue leadership without the Fortune 50 price tag. I step into your organization part-time to diagnose problems, build systems, and drive measurable revenue growth. Perfect for companies between $5M-$50M ready to scale.</p>
+                
+                <h3>What You Get:</h3>
+                <ul class="service-features">
+                    <li><i class="fas fa-check"></i> Complete revenue engine assessment</li>
+                    <li><i class="fas fa-check"></i> Sales process optimization & playbooks</li>
+                    <li><i class="fas fa-check"></i> Team structure & compensation design</li>
+                    <li><i class="fas fa-check"></i> Pipeline acceleration strategies</li>
+                    <li><i class="fas fa-check"></i> Quota modeling & territory planning</li>
+                    <li><i class="fas fa-check"></i> Performance dashboards & KPI systems</li>
+                    <li><i class="fas fa-check"></i> Direct team coaching & enablement</li>
+                    <li><i class="fas fa-check"></i> Board/investor reporting frameworks</li>
+                </ul>
+                
+                <h3>Engagement Options:</h3>
+                <p style="margin-bottom: 1rem;">• <strong>Part-Time CRO:</strong> 2-3 days/week for 6-12 months</p>
+                <p style="margin-bottom: 1rem;">• <strong>Project-Based:</strong> 90-day revenue transformation sprints</p>
+                <p>• <strong>Advisory:</strong> Monthly strategy sessions + on-demand support</p>
+                
+                <div class="price-box">
+                    <div class="price">Custom Pricing</div>
+                    <div class="price-note">Based on scope and company size</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contact" class="btn-primary">Discuss Your Needs</a>
+                </div>
+            </div>
+            
+            <!-- Strategic Consulting -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-chess-knight"></i>
+                </div>
+                <h2>Strategic Consulting</h2>
+                <p>When you need a surgical strike on a specific problem, I bring battle-tested frameworks that deliver results. From underperforming teams to broken processes, I've seen it all and fixed most of it.</p>
+                
+                <h3>Signature Engagements:</h3>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.25rem; margin-bottom: 0.5rem;">Team Transformation</h4>
+                    <p>Turn your B-players into A-players with proven leadership frameworks</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Leadership team assessment & alignment</li>
+                        <li><i class="fas fa-check"></i> Custom playbooks for your industry</li>
+                        <li><i class="fas fa-check"></i> 90-day transformation roadmap</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.25rem; margin-bottom: 0.5rem;">Revenue Acceleration</h4>
+                    <p>Identify and eliminate the bottlenecks killing your growth</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Full-funnel revenue audit</li>
+                        <li><i class="fas fa-check"></i> Quick-win identification</li>
+                        <li><i class="fas fa-check"></i> Implementation support</li>
+                    </ul>
+                </div>
+                
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="color: var(--text-primary); font-size: 1.25rem; margin-bottom: 0.5rem;">Executive Advisory</h4>
+                    <p>On-demand strategic counsel for critical decisions</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> M&A integration planning</li>
+                        <li><i class="fas fa-check"></i> Market expansion strategy</li>
+                        <li><i class="fas fa-check"></i> Crisis management support</li>
+                    </ul>
+                </div>
+                
+                <div class="price-box">
+                    <div class="price">Starting at $15,000</div>
+                    <div class="price-note">Minimum 30-day engagement</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#contact" class="btn-primary">Start a Conversation</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="process-container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">How We'll Work Together</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">My process is designed for speed and impact. No lengthy assessments or theoretical frameworks—just practical strategies that work.</p>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Strategic Clarity Call</h3>
+                    <p>We'll diagnose your exact situation and determine if we're a fit. No fluff, just honest assessment.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Custom Game Plan</h3>
+                    <p>I'll design a roadmap specifically for your goals, timeline, and constraints. Cookie-cutter doesn't work here.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Rapid Implementation</h3>
+                    <p>We execute with weekly targets and real accountability. Progress is measured in results, not activities.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Sustainable Success</h3>
+                    <p>You'll have the systems and confidence to maintain momentum long after our work together ends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="cta-container">
+            <h2>Your Next Chapter Starts With One Conversation</h2>
+            <p>Stop settling for incremental progress. It's time for transformation.</p>
+            <div class="cta-buttons">
+                <a href="https://calendly.com/paultakisaki/strategic-clarity" class="btn-primary">Schedule Your Clarity Call</a>
+                <a href="/about.html" class="btn-secondary">Learn About Paul</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Paul Takisaki. All rights reserved. | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+    </footer>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        function toggleMobileMenu() {
+            // Mobile menu implementation would go here
+            alert('Mobile menu would open here');
+        }
+    </script>
+</body>
+</html>

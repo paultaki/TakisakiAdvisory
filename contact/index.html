@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Paul Takisaki | Executive Leadership Coach</title>
+    <meta name="description" content="Ready to transform your leadership? Contact Paul Takisaki for executive coaching, fractional CRO services, or strategic consulting. Let's discuss your next breakthrough.">
+    <link rel="canonical" href="https://www.paultakisaki.com/contact.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Paul Takisaki - Start Your Transformation">
+    <meta property="og:description" content="Schedule a strategic clarity call with Paul Takisaki. Former Verizon AVP helping leaders achieve elite results.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.paultakisaki.com/contact.html">
+    <meta property="og:image" content="https://www.paultakisaki.com/images/paul-takisaki-contact.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --outlier-cyan: #00d4ff;
+            --dark-bg: #000000;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #666;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--outlier-cyan);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--outlier-cyan);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--text-primary), var(--outlier-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        /* Contact Options */
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-card {
+            background: var(--dark-gray);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            border-color: var(--outlier-cyan);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--outlier-cyan);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-btn {
+            background: var(--outlier-cyan);
+            color: var(--dark-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        
+        .contact-btn:hover {
+            background: #00a8cc;
+            transform: translateY(-1px);
+        }
+        
+        .contact-link {
+            color: var(--outlier-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Contact Form */
+        .contact-form-container {
+            background: var(--dark-gray);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            padding: 2.5rem;
+        }
+        
+        .form-header {
+            margin-bottom: 2rem;
+        }
+        
+        .form-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .form-header p {
+            color: var(--text-secondary);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--medium-gray);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 4px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--outlier-cyan);
+            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            background: var(--outlier-cyan);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .form-submit:hover {
+            background: #00a8cc;
+            transform: translateY(-1px);
+        }
+        
+        .form-note {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 4rem 2rem;
+            background: var(--dark-gray);
+            margin-top: 4rem;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .faq-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-item {
+            background: var(--medium-gray);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .faq-question h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--text-primary);
+        }
+        
+        .faq-icon {
+            color: var(--outlier-cyan);
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-answer p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        
+        footer a {
+            color: var(--outlier-cyan);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-form-container {
+                padding: 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Paul Takisaki",
+        "jobTitle": "Executive Leadership Coach",
+        "email": "paul@paultakisaki.com",
+        "url": "https://www.paultakisaki.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Spokane",
+          "addressRegion": "WA",
+          "addressCountry": "US"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/paultakisaki",
+          "https://www.youtube.com/@paultakisaki"
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Paul Takisaki</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about.html">About</a>
+                <a href="/services.html">Services</a>
+                <a href="/insights/insights.html">Insights</a>
+                <a href="/contact.html" class="active">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Let's Create Your Breakthrough</h1>
+        <p>Whether you need executive coaching, revenue leadership, or strategic guidance, the first step is a conversation. No pitch, just clarity on your path forward.</p>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-grid">
+            <!-- Contact Options -->
+            <div class="contact-options">
+                <div class="contact-card">
+                    <h3><i class="fas fa-calendar-check"></i> Strategic Clarity Call</h3>
+                    <p>The fastest way to determine if we're a fit. Book a 30-minute call to discuss your situation and explore how I can help.</p>
+                    <a href="https://calendly.com/paultakisaki/strategic-clarity" class="contact-btn" target="_blank">Schedule Your Call</a>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-envelope"></i> Direct Email</h3>
+                    <p>Have a specific question or proposal? Send me a direct message and I'll respond within 24 hours.</p>
+                    <p><a href="mailto:paul@paultakisaki.com" class="contact-link">paul@paultakisaki.com</a></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fab fa-linkedin"></i> Connect on LinkedIn</h3>
+                    <p>Let's connect professionally. I share insights on leadership, career acceleration, and business growth.</p>
+                    <a href="https://www.linkedin.com/in/paultakisaki" class="contact-btn" target="_blank" style="background: #0077b5;">View LinkedIn Profile</a>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h2>Send a Message</h2>
+                    <p>Tell me about your situation and what you're looking to achieve.</p>
+                </div>
+                
+                <form id="contact-form" method="POST" action="#" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Service Interest *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="executive-coaching">Executive Coaching</option>
+                            <option value="fractional-cro">Fractional CRO</option>
+                            <option value="strategic-consulting">Strategic Consulting</option>
+                            <option value="speaking">Speaking Engagement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell me about your current situation and what you're looking to achieve..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Send Message</button>
+                    
+                    <p class="form-note">I typically respond within 24 hours. Your information is kept strictly confidential.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What's the best way to reach you?</h3>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Strategic Clarity Call is the most efficient way to connect. It ensures we both have dedicated time to discuss your needs. For urgent matters or specific proposals, email works well too.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>How quickly do you typically respond?</h3>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>I respond to all emails within 24 hours on business days. For scheduled calls, I maintain a reliable calendar and show up prepared. Current coaching clients have priority access with same-day responses.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Do you offer free consultations?</h3>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The Strategic Clarity Call is complimentary. It's a 30-minute focused conversation to understand your situation and determine if we're a good fit. There's no pitch—just honest assessment and recommendations.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>What if I'm not sure which service I need?</h3>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>That's perfectly normal. Many clients aren't sure exactly what they need—they just know they want better results. During our call, I'll help diagnose your situation and recommend the best path forward, whether that's coaching, consulting, or something else entirely.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <h3>Are you available for speaking engagements?</h3>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, I speak at corporate events, conferences, and leadership retreats on topics including executive presence, revenue transformation, and career acceleration. Send me details about your event and I'll provide availability and requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Paul Takisaki. All rights reserved. | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+            
+            // Close other FAQs
+            const allFAQs = document.querySelectorAll('.faq-item');
+            allFAQs.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+        
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send the data to your server
+            // For now, we'll just show a success message
+            alert('Thank you for your message! I\'ll respond within 24 hours.');
+            
+            // Reset form
+            event.target.reset();
+            
+            // In production, you'd integrate with:
+            // - Email service (SendGrid, AWS SES)
+            // - CRM (HubSpot, Salesforce)
+            // - Calendar booking system
+        }
+    </script>
+</body>
+</html>
