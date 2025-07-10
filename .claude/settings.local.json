@@ -51,7 +51,8 @@
       "Bash(then echo \"=== $file ===\")",
       "Bash(do mv \"resume/images/$file\" \"_archive/unused-$(date +%Y%m%d)/\")",
       "Bash(cp:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "WebFetch(domain:www.paultakisaki.com)"
     ]
   },
   "enableAllProjectMcpServers": false
