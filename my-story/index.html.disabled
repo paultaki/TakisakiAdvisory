@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Under Construction | Paul Takisaki</title>
+    <meta http-equiv="refresh" content="5;url=/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --outlier-cyan: #00d4ff;
+            --dark-bg: #000000;
+        }
+    </style>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center">
+    <div class="text-center max-w-2xl mx-auto px-4">
+        <h1 class="text-4xl font-bold mb-4">This Page is Currently Being Updated</h1>
+        <p class="text-xl text-gray-300 mb-8">We're refreshing this content to better serve you.</p>
+        <p class="text-lg text-gray-400 mb-8">You'll be redirected to the homepage in 5 seconds...</p>
+        <a href="/" class="inline-block px-8 py-3 bg-[#00d4ff] text-black font-bold hover:bg-opacity-80 transition">
+            Return to Homepage
+        </a>
+    </div>
+</body>
+</html>
