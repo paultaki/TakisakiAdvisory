@@ -17,6 +17,13 @@
     <changefreq>monthly</changefreq>
   </url>
 
+  <!-- My Story -->
+  <url>
+    <loc>https://www.paultakisaki.com/my-story/</loc>
+    <lastmod>2025-08-05</lastmod>
+    <priority>0.95</priority>
+    <changefreq>monthly</changefreq>
+  </url>
 
   <!-- Resume/Experience -->
   <url>
