@@ -1,6 +1,12 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "paultakisaki.com" }],
+      "destination": "https://www.paultakisaki.com/:path*",
+      "statusCode": 308
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true
