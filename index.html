@@ -2,8 +2,8 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <!-- Google tag (gtag.js) - Deferred for performance -->
-    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"></script>
+    <!-- Google tag (gtag.js) - Async for performance -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F46XQSW1XF"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -23,13 +23,7 @@
     });
     </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K9B7LZB8');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager - Moved to bottom for better performance -->
     
     <!-- Twitter conversion tracking - Deferred for performance -->
     <script>
@@ -315,7 +309,6 @@
         <div class="flex flex-col items-center justify-center h-full space-y-8 text-2xl">
             <a href="#hero" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Home</a>
             <a href="/about.html" class="hover:text-outlier-cyan transition" onclick="closeMenu()">About</a>
-            <a href="/my-story/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">My Story</a>
             <a href="/resume/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Experience</a>
             <a href="/insights/" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Insights</a>
             <a href="#proof" class="hover:text-outlier-cyan transition" onclick="closeMenu()">Proof</a>
@@ -333,14 +326,13 @@
     <header class="fixed top-0 w-full bg-black bg-opacity-90 z-40 py-4 px-6 flex justify-between items-center backdrop-blur">
         <div class="flex items-center">
             <a href="#hero">
-                <img src="/images/logo-shadow.png" alt="Paul Takisaki Logo" class="h-8">
+                <img src="/images/logo-shadow.png" alt="Paul Takisaki Logo" class="h-8" loading="eager">
             </a>
         </div>
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-8">
             <a href="#hero" class="text-gray-300 hover:text-outlier-cyan transition">Home</a>
             <a href="/about.html" class="text-gray-300 hover:text-outlier-cyan transition">About</a>
-            <a href="/my-story/" class="text-gray-300 hover:text-outlier-cyan transition">My Story</a>
             <a href="/resume/" class="text-gray-300 hover:text-outlier-cyan transition">Experience</a>
             <a href="/insights/" class="text-gray-300 hover:text-outlier-cyan transition">Insights</a>
             <a href="#proof" class="text-gray-300 hover:text-outlier-cyan transition">Proof</a>
@@ -366,11 +358,11 @@
                     </h1>
                     <p class="text-4xl md:text-5xl font-bold mt-4">Precision Systems. Elite Results.</p>
                     <p class="text-gray-400 mt-8 mb-10 text-xl leading-relaxed mx-auto max-w-lg">
-                        From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership. <a href="/my-story/" class="text-outlier-cyan hover:underline">Learn my story</a>.
+                        From Outlier to Fortune 50. Now Your Secret Weapon in Strategic Leadership.
                     </p>
-                    <button onclick="openContactModal()" class="inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-base tracking-wider mx-auto">
+                    <a href="mailto:paul@paultakisaki.com?subject=Strategy%20Call%20Request" onclick="openContactModal(); return false;" class="inline-block px-8 py-4 bg-outlier-cyan text-black font-bold tracking-wide hover:bg-opacity-80 transition text-base tracking-wider mx-auto cursor-pointer">
                         BOOK YOUR STRATEGY CALL
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -393,9 +385,6 @@
                         Based in Spokane, Washington, Paul Takisaki brings a rare combination of corporate excellence, entrepreneurial insight, and genuine care for his clients' success. Whether you're navigating a career transition, seeking your next promotion, or building something bold, Paul Takisaki provides the precision systems and strategic clarity you need to achieve elite results.
                     </p>
                     <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                        <a href="/my-story/" class="inline-block px-6 py-3 bg-outlier-cyan text-black font-bold hover:bg-opacity-80 transition text-center">
-                            READ MY STORY
-                        </a>
                         <a href="/about.html" class="inline-block px-6 py-3 border-2 border-outlier-cyan text-outlier-cyan font-bold hover:bg-outlier-cyan hover:text-black transition text-center">
                             LEARN MORE ABOUT PAUL
                         </a>
@@ -442,7 +431,7 @@
                 <h2 class="text-4xl font-bold mb-4 text-outlier-cyan tracking-wide text-center">PROVEN TRACK RECORD</h2>
                 <p class="text-5xl font-bold mb-20 text-center">No Fluff. Real Results.</p>
             
-            <div class="relative max-w-full">
+            <div class="relative max-w-full swipe-indicator">
                 <div class="no-scrollbar flex space-x-6 pb-8 mx-auto justify-start md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-6 pl-[calc(50%-40vw)] pr-5 md:pl-0 md:pr-0">
                     <!-- Stat Card 1 -->
                     <div class="group flex-shrink-0 w-96 max-w-[85vw] bg-dark-gray p-8 rounded relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:bg-opacity-80">
@@ -525,7 +514,7 @@
         <section id="testimonials" class="py-24 px-8">
             <div class="max-w-6xl mx-auto w-full px-4">
                 <h2 class="text-3xl font-bold mb-16 text-outlier-cyan tracking-wide">CLIENT IMPACT</h2>
-                <div class="relative max-w-full">
+                <div class="relative max-w-full swipe-indicator">
                     <div class="no-scrollbar flex space-x-4 pb-8 mx-auto justify-start md:justify-center max-w-full overflow-x-auto md:overflow-x-visible md:pb-8 md:flex-wrap md:gap-4 pl-[calc(50%-40vw)] pr-5 md:pl-0 md:pr-0">
                         <!-- Testimonial 1 -->
                         <div class="flex-shrink-0 w-80 max-w-[80vw] bg-dark-gray p-6 rounded border-l-4 border-outlier-cyan">
@@ -824,7 +813,6 @@
                 <span itemprop="jobTitle">Executive Leadership Coach</span>
             </span> | 
             <a href="/about.html" class="text-outlier-cyan hover:underline">About</a> | 
-            <a href="/my-story/" class="text-outlier-cyan hover:underline">My Story</a>
         </p>
     </footer>
     
@@ -1132,6 +1120,41 @@
     
     <!-- Quote Rotation - Deferred for Performance -->
     <script src="/js/quote-rotation.js" defer></script>
+    
+    <!-- Google Tag Manager (moved from head for performance) -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K9B7LZB8');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Sticky CTA Button (Mobile Only) -->
+    <a href="#contact" class="sticky-cta-mobile" onclick="openContactModal(); return false;">
+        Book Your Strategy Call
+    </a>
+    
+    <!-- Script to hide sticky CTA near footer -->
+    <script>
+    (function() {
+        const stickyCTA = document.querySelector('.sticky-cta-mobile');
+        if (!stickyCTA) return;
+        
+        window.addEventListener('scroll', function() {
+            const footer = document.querySelector('footer');
+            if (!footer) return;
+            
+            const footerTop = footer.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (footerTop < windowHeight + 100) {
+                stickyCTA.classList.add('hide-near-footer');
+            } else {
+                stickyCTA.classList.remove('hide-near-footer');
+            }
+        });
+    })();
+    </script>
 </body>
 
 </html>
